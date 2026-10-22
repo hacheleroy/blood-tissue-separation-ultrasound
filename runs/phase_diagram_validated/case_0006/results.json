@@ -1,0 +1,2532 @@
+{
+  "config": {
+    "blas_threads": 1,
+    "save_iq": false,
+    "measurement_window": 32,
+    "measurement_hop": 32,
+    "methods": [
+      {
+        "id": "svd_fixed",
+        "method": "svd",
+        "params": {
+          "window": 64,
+          "discard": 1
+        }
+      },
+      {
+        "id": "aer_temporal",
+        "method": "aer",
+        "params": {
+          "epsilon_rel": 0.001
+        }
+      },
+      {
+        "id": "aer_spatial",
+        "method": "aer",
+        "params": {
+          "domain": "spatial",
+          "epsilon_rel": 0.001
+        }
+      },
+      {
+        "id": "axis1",
+        "method": "axis1",
+        "params": {
+          "packet": 64,
+          "patch_shape": [
+            4,
+            4
+          ],
+          "stride": [
+            2,
+            2
+          ]
+        }
+      },
+      {
+        "id": "axis2",
+        "method": "axis2",
+        "params": {
+          "packet": 64,
+          "patch_shape": [
+            4,
+            4
+          ],
+          "stride": [
+            2,
+            2
+          ],
+          "rank": 4,
+          "use_memory": false
+        }
+      }
+    ]
+  },
+  "results": [
+    {
+      "id": "svd_fixed",
+      "method": "svd",
+      "oracle": false,
+      "spec": {
+        "id": "svd_fixed",
+        "method": "svd",
+        "params": {
+          "window": 64,
+          "discard": 1
+        }
+      },
+      "status": "ok",
+      "metrics": {
+        "coherence_flow_median": 0.9589495509977073,
+        "velocity_invalid_fraction": 0.0,
+        "power_output": 0.3450926485473622,
+        "velocity_nrmse": 0.03511396554538394,
+        "near_wall_velocity_nrmse": null,
+        "velocity_mean_bias_mps": 2.404961981715794e-05,
+        "velocity_peak_bias_mps": 0.00039113449869583594,
+        "blood_iq_nrmse": 0.28066760144715414,
+        "output_to_blood_power_ratio": 0.9731403144949372,
+        "tissue_roi_output_power_ratio": 9.081074310845623e-07,
+        "wss_invalid_fraction": 0.0,
+        "wss_nrmse": 10.576870255223854,
+        "wss_analytic_nrmse": 9.050389452932523,
+        "frozen_component_metrics_available": true,
+        "frozen_blood_power_retention": 0.9472976219055425,
+        "frozen_tissue_power_retention": 1.211881875174087e-07,
+        "frozen_tissue_to_blood_power_ratio": 0.002125721192411322
+      },
+      "diagnostics": {
+        "centered": false,
+        "windows": [
+          {
+            "start": 0,
+            "stop": 64,
+            "discard": 1,
+            "upper": 48
+          },
+          {
+            "start": 64,
+            "stop": 128,
+            "discard": 1,
+            "upper": 48
+          }
+        ]
+      },
+      "readout": {
+        "window_frames": 32,
+        "hop_frames": 32,
+        "records": [
+          {
+            "start": 0,
+            "stop": 32,
+            "metrics": {
+              "coherence_flow_median": 0.946745726372387,
+              "velocity_invalid_fraction": 0.0,
+              "power_output": 0.35142272737063834,
+              "velocity_nrmse": 0.1260524559797388,
+              "near_wall_velocity_nrmse": null,
+              "velocity_mean_bias_mps": 0.0003991326342643609,
+              "velocity_peak_bias_mps": 0.0015262505288248986,
+              "blood_iq_nrmse": 0.26023202098916576,
+              "output_to_blood_power_ratio": 1.0254422549186688,
+              "tissue_roi_output_power_ratio": 9.427320692785417e-07,
+              "wss_invalid_fraction": 0.0,
+              "wss_nrmse": 10.348689024937535,
+              "wss_analytic_nrmse": 8.736255275199863
+            }
+          },
+          {
+            "start": 32,
+            "stop": 64,
+            "metrics": {
+              "coherence_flow_median": 0.9453693555202078,
+              "velocity_invalid_fraction": 0.0,
+              "power_output": 0.28284014116160444,
+              "velocity_nrmse": 0.11379529684922371,
+              "near_wall_velocity_nrmse": null,
+              "velocity_mean_bias_mps": -0.00031027136632197057,
+              "velocity_peak_bias_mps": 0.00028731765032015237,
+              "blood_iq_nrmse": 0.2801903569607205,
+              "output_to_blood_power_ratio": 0.937268713048285,
+              "tissue_roi_output_power_ratio": 8.807937367994043e-07,
+              "wss_invalid_fraction": 0.0,
+              "wss_nrmse": 10.35971011938385,
+              "wss_analytic_nrmse": 8.751662852174919
+            }
+          },
+          {
+            "start": 64,
+            "stop": 96,
+            "metrics": {
+              "coherence_flow_median": 0.966113141748727,
+              "velocity_invalid_fraction": 0.0,
+              "power_output": 0.46654108434006886,
+              "velocity_nrmse": 0.13861903560354225,
+              "near_wall_velocity_nrmse": null,
+              "velocity_mean_bias_mps": -0.00010090055173236018,
+              "velocity_peak_bias_mps": 0.0013363945231232958,
+              "blood_iq_nrmse": 0.2751988328200795,
+              "output_to_blood_power_ratio": 1.08222212820473,
+              "tissue_roi_output_power_ratio": 9.573940138331928e-07,
+              "wss_invalid_fraction": 0.0,
+              "wss_nrmse": 8.70931700713287,
+              "wss_analytic_nrmse": 7.341868018410168
+            }
+          },
+          {
+            "start": 96,
+            "stop": 128,
+            "metrics": {
+              "coherence_flow_median": 0.9412241233201992,
+              "velocity_invalid_fraction": 0.0,
+              "power_output": 0.279566641317137,
+              "velocity_nrmse": 0.08142483167522027,
+              "near_wall_velocity_nrmse": null,
+              "velocity_mean_bias_mps": 7.927691217275065e-05,
+              "velocity_peak_bias_mps": 0.00090376931543798,
+              "blood_iq_nrmse": 0.3063966157532625,
+              "output_to_blood_power_ratio": 0.8152993904716531,
+              "tissue_roi_output_power_ratio": 8.515032999511731e-07,
+              "wss_invalid_fraction": 0.0,
+              "wss_nrmse": 6.780453926185986,
+              "wss_analytic_nrmse": 5.841229177109868
+            }
+          }
+        ],
+        "unattributed_velocity_temporal_std_mps": 0.0006798547200574523,
+        "interpretation": "temporal variability includes real pulsatility and artifacts"
+      },
+      "wall_time_s": 0.005942216999756056,
+      "process_high_water_rss_bytes": 88444928
+    },
+    {
+      "id": "aer_temporal",
+      "method": "aer",
+      "oracle": false,
+      "spec": {
+        "id": "aer_temporal",
+        "method": "aer",
+        "params": {
+          "epsilon_rel": 0.001
+        }
+      },
+      "status": "ok",
+      "metrics": {
+        "coherence_flow_median": 0.9594265576283201,
+        "velocity_invalid_fraction": 0.0,
+        "power_output": 0.008267602815457542,
+        "velocity_nrmse": 0.15908388213097324,
+        "near_wall_velocity_nrmse": null,
+        "velocity_mean_bias_mps": -0.0009572748166923436,
+        "velocity_peak_bias_mps": 0.000366113275543525,
+        "blood_iq_nrmse": 0.9762697938481578,
+        "output_to_blood_power_ratio": 0.02331413792157144,
+        "tissue_roi_output_power_ratio": 1.325735951529928e-06,
+        "wss_invalid_fraction": 0.0,
+        "wss_nrmse": 0.8998557409503296,
+        "wss_analytic_nrmse": 0.9116337851510153,
+        "frozen_component_metrics_available": true,
+        "frozen_blood_power_retention": 0.0012740415519851272,
+        "frozen_tissue_power_retention": 1.32470039087623e-06,
+        "frozen_tissue_to_blood_power_ratio": 17.276928307217904
+      },
+      "diagnostics": {
+        "centered": false,
+        "domain": "temporal",
+        "epsilon_absolute": 754.2319617900359,
+        "epsilon_rel": 0.001,
+        "epsilon_rule": "relative",
+        "alpha": 0.5,
+        "covariance_denominator": 48,
+        "numerical_rank": 48,
+        "amplitude_calibration": "changed; no truth-based gain normalization"
+      },
+      "readout": {
+        "window_frames": 32,
+        "hop_frames": 32,
+        "records": [
+          {
+            "start": 0,
+            "stop": 32,
+            "metrics": {
+              "coherence_flow_median": 0.9521334466389416,
+              "velocity_invalid_fraction": 0.0,
+              "power_output": 0.00826638681797321,
+              "velocity_nrmse": 0.20071425575200078,
+              "near_wall_velocity_nrmse": null,
+              "velocity_mean_bias_mps": -0.0009667727019876863,
+              "velocity_peak_bias_mps": 0.00097398748300127,
+              "blood_iq_nrmse": 0.9767752826584707,
+              "output_to_blood_power_ratio": 0.024121098831812904,
+              "tissue_roi_output_power_ratio": 1.328452601355377e-06,
+              "wss_invalid_fraction": 0.0,
+              "wss_nrmse": 0.7309685252234718,
+              "wss_analytic_nrmse": 0.7629954159550119
+            }
+          },
+          {
+            "start": 32,
+            "stop": 64,
+            "metrics": {
+              "coherence_flow_median": 0.9498363878413076,
+              "velocity_invalid_fraction": 0.0,
+              "power_output": 0.008196268574346077,
+              "velocity_nrmse": 0.2795548534542453,
+              "near_wall_velocity_nrmse": null,
+              "velocity_mean_bias_mps": -0.0016236119330015515,
+              "velocity_peak_bias_mps": -0.00022142234554630574,
+              "blood_iq_nrmse": 0.978550909886115,
+              "output_to_blood_power_ratio": 0.027160593496119694,
+              "tissue_roi_output_power_ratio": 1.3263065152317193e-06,
+              "wss_invalid_fraction": 0.0,
+              "wss_nrmse": 0.9341141640099415,
+              "wss_analytic_nrmse": 0.9408541673347439
+            }
+          },
+          {
+            "start": 64,
+            "stop": 96,
+            "metrics": {
+              "coherence_flow_median": 0.9679379957956342,
+              "velocity_invalid_fraction": 0.0,
+              "power_output": 0.008398014380031169,
+              "velocity_nrmse": 0.1596048348149861,
+              "near_wall_velocity_nrmse": null,
+              "velocity_mean_bias_mps": -0.0005190353271210681,
+              "velocity_peak_bias_mps": 0.0012430895649652423,
+              "blood_iq_nrmse": 0.9737739654967853,
+              "output_to_blood_power_ratio": 0.019480635897066032,
+              "tissue_roi_output_power_ratio": 1.3289979192746833e-06,
+              "wss_invalid_fraction": 0.0,
+              "wss_nrmse": 1.0121772604619945,
+              "wss_analytic_nrmse": 1.0069725849402509
+            }
+          },
+          {
+            "start": 96,
+            "stop": 128,
+            "metrics": {
+              "coherence_flow_median": 0.9566959826137952,
+              "velocity_invalid_fraction": 0.0,
+              "power_output": 0.008209741489479715,
+              "velocity_nrmse": 0.19125563161870135,
+              "near_wall_velocity_nrmse": null,
+              "velocity_mean_bias_mps": -0.0010282958601189774,
+              "velocity_peak_bias_mps": 7.635857179568752e-05,
+              "blood_iq_nrmse": 0.9768881720450516,
+              "output_to_blood_power_ratio": 0.023942045448511664,
+              "tissue_roi_output_power_ratio": 1.3191860629021353e-06,
+              "wss_invalid_fraction": 0.0,
+              "wss_nrmse": 0.995027625538102,
+              "wss_analytic_nrmse": 0.9939867025540887
+            }
+          }
+        ],
+        "unattributed_velocity_temporal_std_mps": 0.0007867042636198874,
+        "interpretation": "temporal variability includes real pulsatility and artifacts"
+      },
+      "wall_time_s": 0.007704571999965992,
+      "process_high_water_rss_bytes": 88444928
+    },
+    {
+      "id": "aer_spatial",
+      "method": "aer",
+      "oracle": false,
+      "spec": {
+        "id": "aer_spatial",
+        "method": "aer",
+        "params": {
+          "domain": "spatial",
+          "epsilon_rel": 0.001
+        }
+      },
+      "status": "ok",
+      "metrics": {
+        "coherence_flow_median": 0.9594265576283209,
+        "velocity_invalid_fraction": 0.0,
+        "power_output": 0.022046940841220077,
+        "velocity_nrmse": 0.15908388213097197,
+        "near_wall_velocity_nrmse": null,
+        "velocity_mean_bias_mps": -0.0009572748166923328,
+        "velocity_peak_bias_mps": 0.0003661132755435094,
+        "blood_iq_nrmse": 0.9734044654708325,
+        "output_to_blood_power_ratio": 0.06217103445752373,
+        "tissue_roi_output_power_ratio": 3.5352958707464667e-06,
+        "wss_invalid_fraction": 0.0,
+        "wss_nrmse": 0.8998557409503207,
+        "wss_analytic_nrmse": 0.9116337851510076,
+        "frozen_component_metrics_available": true,
+        "frozen_blood_power_retention": 0.0034845895910896032,
+        "frozen_tissue_power_retention": 3.537817274800758e-06,
+        "frozen_tissue_to_blood_power_ratio": 16.870044271759912
+      },
+      "diagnostics": {
+        "centered": false,
+        "domain": "spatial",
+        "epsilon_absolute": 282.8369856712642,
+        "epsilon_rel": 0.001,
+        "epsilon_rule": "relative",
+        "alpha": 0.5,
+        "covariance_denominator": 128,
+        "numerical_rank": 48,
+        "amplitude_calibration": "changed; no truth-based gain normalization"
+      },
+      "readout": {
+        "window_frames": 32,
+        "hop_frames": 32,
+        "records": [
+          {
+            "start": 0,
+            "stop": 32,
+            "metrics": {
+              "coherence_flow_median": 0.9521334466389394,
+              "velocity_invalid_fraction": 0.0,
+              "power_output": 0.022043698181261766,
+              "velocity_nrmse": 0.20071425575199817,
+              "near_wall_velocity_nrmse": null,
+              "velocity_mean_bias_mps": -0.0009667727019876761,
+              "velocity_peak_bias_mps": 0.000973987483001133,
+              "blood_iq_nrmse": 0.974660221642284,
+              "output_to_blood_power_ratio": 0.06432293021816736,
+              "tissue_roi_output_power_ratio": 3.5425402702809813e-06,
+              "wss_invalid_fraction": 0.0,
+              "wss_nrmse": 0.7309685252234848,
+              "wss_analytic_nrmse": 0.7629954159550213
+            }
+          },
+          {
+            "start": 32,
+            "stop": 64,
+            "metrics": {
+              "coherence_flow_median": 0.9498363878413116,
+              "velocity_invalid_fraction": 0.0,
+              "power_output": 0.02185671619825623,
+              "velocity_nrmse": 0.2795548534542452,
+              "near_wall_velocity_nrmse": null,
+              "velocity_mean_bias_mps": -0.0016236119330015517,
+              "velocity_peak_bias_mps": -0.000221422345546278,
+              "blood_iq_nrmse": 0.9791700727652265,
+              "output_to_blood_power_ratio": 0.07242824932298593,
+              "tissue_roi_output_power_ratio": 3.5368173739512527e-06,
+              "wss_invalid_fraction": 0.0,
+              "wss_nrmse": 0.934114164009943,
+              "wss_analytic_nrmse": 0.9408541673347445
+            }
+          },
+          {
+            "start": 64,
+            "stop": 96,
+            "metrics": {
+              "coherence_flow_median": 0.9679379957956316,
+              "velocity_invalid_fraction": 0.0,
+              "power_output": 0.022394705013416394,
+              "velocity_nrmse": 0.15960483481498702,
+              "near_wall_velocity_nrmse": null,
+              "velocity_mean_bias_mps": -0.0005190353271210876,
+              "velocity_peak_bias_mps": 0.0012430895649652336,
+              "blood_iq_nrmse": 0.9672672473758966,
+              "output_to_blood_power_ratio": 0.051948362392175956,
+              "tissue_roi_output_power_ratio": 3.543994451399147e-06,
+              "wss_invalid_fraction": 0.0,
+              "wss_nrmse": 1.0121772604619925,
+              "wss_analytic_nrmse": 1.0069725849402493
+            }
+          },
+          {
+            "start": 96,
+            "stop": 128,
+            "metrics": {
+              "coherence_flow_median": 0.9566959826137942,
+              "velocity_invalid_fraction": 0.0,
+              "power_output": 0.021892643971945906,
+              "velocity_nrmse": 0.19125563161869927,
+              "near_wall_velocity_nrmse": null,
+              "velocity_mean_bias_mps": -0.0010282958601189436,
+              "velocity_peak_bias_mps": 7.635857179567537e-05,
+              "blood_iq_nrmse": 0.9747500285075342,
+              "output_to_blood_power_ratio": 0.06384545452936444,
+              "tissue_roi_output_power_ratio": 3.5178295010723576e-06,
+              "wss_invalid_fraction": 0.0,
+              "wss_nrmse": 0.9950276255380829,
+              "wss_analytic_nrmse": 0.9939867025540733
+            }
+          }
+        ],
+        "unattributed_velocity_temporal_std_mps": 0.0007867042636198904,
+        "interpretation": "temporal variability includes real pulsatility and artifacts"
+      },
+      "wall_time_s": 0.005339841000022716,
+      "process_high_water_rss_bytes": 88444928
+    },
+    {
+      "id": "axis1",
+      "method": "axis1",
+      "oracle": false,
+      "spec": {
+        "id": "axis1",
+        "method": "axis1",
+        "params": {
+          "packet": 64,
+          "patch_shape": [
+            4,
+            4
+          ],
+          "stride": [
+            2,
+            2
+          ]
+        }
+      },
+      "status": "ok",
+      "metrics": {
+        "coherence_flow_median": 0.9590277953853892,
+        "velocity_invalid_fraction": 0.0,
+        "power_output": 0.3178339123307054,
+        "velocity_nrmse": 0.039092017745448904,
+        "near_wall_velocity_nrmse": null,
+        "velocity_mean_bias_mps": -1.8389220094821586e-05,
+        "velocity_peak_bias_mps": 0.00039626902426099196,
+        "blood_iq_nrmse": 0.2963422882028401,
+        "output_to_blood_power_ratio": 0.8962723335446814,
+        "tissue_roi_output_power_ratio": 9.68469997532661e-07,
+        "wss_invalid_fraction": 0.0,
+        "wss_nrmse": 6.367293525133126,
+        "wss_analytic_nrmse": 5.489113081410316,
+        "frozen_component_metrics_available": false
+      },
+      "diagnostics": {
+        "centered": false,
+        "packets": [
+          {
+            "patch": 0,
+            "start": 0,
+            "q": 0.9999987716678743,
+            "reset": false,
+            "discard": 1
+          },
+          {
+            "patch": 0,
+            "start": 64,
+            "q": 0.999998684083061,
+            "reset": false,
+            "discard": 1
+          },
+          {
+            "patch": 1,
+            "start": 0,
+            "q": 0.9999987716678743,
+            "reset": false,
+            "discard": 1
+          },
+          {
+            "patch": 1,
+            "start": 64,
+            "q": 0.999998684083061,
+            "reset": false,
+            "discard": 1
+          },
+          {
+            "patch": 2,
+            "start": 0,
+            "q": 0.9999987716678743,
+            "reset": false,
+            "discard": 1
+          },
+          {
+            "patch": 2,
+            "start": 64,
+            "q": 0.999998684083061,
+            "reset": false,
+            "discard": 1
+          },
+          {
+            "patch": 3,
+            "start": 0,
+            "q": 0.9999987716678743,
+            "reset": false,
+            "discard": 1
+          },
+          {
+            "patch": 3,
+            "start": 64,
+            "q": 0.999998684083061,
+            "reset": false,
+            "discard": 1
+          },
+          {
+            "patch": 4,
+            "start": 0,
+            "q": 0.9999987716678743,
+            "reset": false,
+            "discard": 1
+          },
+          {
+            "patch": 4,
+            "start": 64,
+            "q": 0.999998684083061,
+            "reset": false,
+            "discard": 1
+          },
+          {
+            "patch": 5,
+            "start": 0,
+            "q": 0.9999987716678743,
+            "reset": false,
+            "discard": 1
+          },
+          {
+            "patch": 5,
+            "start": 64,
+            "q": 0.999998684083061,
+            "reset": false,
+            "discard": 1
+          }
+        ],
+        "motion_phase_rad": [
+          0.0,
+          0.04127426107639888,
+          0.0841908374427369,
+          0.12812231144417793,
+          0.17310278127776826,
+          0.2193481231545915,
+          0.26675238008138447,
+          0.31589751527117665,
+          0.3656434835228136,
+          0.416690834044877,
+          0.46930641009560276,
+          0.5228848184354506,
+          0.5776308478121975,
+          0.6341481254313015,
+          0.6912336467584089,
+          0.749661611973763,
+          0.8093044058250113,
+          0.8704922095319302,
+          0.9326972679308976,
+          0.9961877649564971,
+          1.0608347722504698,
+          1.126778168791597,
+          1.1938123271395749,
+          1.2620558486620703,
+          1.3319180779002926,
+          1.40254863271553,
+          1.47463555756709,
+          1.5476460851011489,
+          1.622102868475809,
+          1.6977583321394503,
+          1.7748395800150831,
+          1.852915845298735,
+          1.932299368857563,
+          2.012822353349151,
+          2.094549165637201,
+          2.177813574975602,
+          2.2621635937746576,
+          2.347551222621739,
+          2.4342815872241474,
+          2.521892419578816,
+          2.611044568534109,
+          2.7017598011958857,
+          2.7931537932713244,
+          2.8860899040331836,
+          2.9801900804667247,
+          3.0755121143329287,
+          3.1718925837649157,
+          3.269580655487906,
+          3.3682439261404857,
+          3.4687531656165778,
+          3.5695963866585987,
+          3.6725172969376345,
+          3.776446237991959,
+          3.881486410081759,
+          3.9879522277801693,
+          4.0952678641009514,
+          4.204126763138432,
+          4.314215727828922,
+          4.4251888703169975,
+          4.537638449711629,
+          4.651225166931329,
+          4.765944355221181,
+          4.882143744395112,
+          4.999397009496044,
+          5.118064244965384,
+          5.2379792500354645,
+          5.358742226714878,
+          5.480850319913747,
+          5.60452445221178,
+          5.729153966613536,
+          5.854921724170812,
+          5.981718957414221,
+          6.110272870557166,
+          6.239830037477713,
+          6.370398343897974,
+          6.502758471752381,
+          6.635654695499184,
+          6.77052034500858,
+          6.905778290428657,
+          7.042669037052075,
+          7.180889553916743,
+          7.320151879912311,
+          7.4608650353249315,
+          7.60227322377859,
+          7.745463505871634,
+          7.88963653574315,
+          8.035176997894991,
+          8.181961492751332,
+          8.329812865693714,
+          8.478796472135077,
+          8.629225464265108,
+          8.780793357145763,
+          8.933558378547927,
+          9.087279032596696,
+          9.242980872451664,
+          9.399319301856767,
+          9.55715413785864,
+          9.715984657785414,
+          9.87615397942715,
+          10.037541892149278,
+          10.199864639724307,
+          10.363888283421018,
+          10.528805311794361,
+          10.695017719883243,
+          10.862378985458959,
+          11.03123158731376,
+          11.20134620925194,
+          11.372535251930504,
+          11.544700170763239,
+          11.718550279870623,
+          11.893255696871066,
+          12.069132179113963,
+          12.246564264573761,
+          12.42504266566138,
+          12.604694167704794,
+          12.785674085016394,
+          12.968135022191627,
+          13.151411193611821,
+          13.335843208386699,
+          13.521799752760389,
+          13.708858416904668,
+          13.897179901474752,
+          14.086461577781087,
+          14.277631284796188,
+          14.469356277503193,
+          14.66232413494421,
+          14.856947069877704,
+          15.052394056294643
+        ],
+        "motion_shifts_pixels": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "valid_fraction": 1.0,
+        "lab_frame_phase_restored": true,
+        "registration": "bulk IQ phase only",
+        "component_classifier": null
+      },
+      "readout": {
+        "window_frames": 32,
+        "hop_frames": 32,
+        "records": [
+          {
+            "start": 0,
+            "stop": 32,
+            "metrics": {
+              "coherence_flow_median": 0.944140370224185,
+              "velocity_invalid_fraction": 0.0,
+              "power_output": 0.3080367314261739,
+              "velocity_nrmse": 0.1302667523235007,
+              "near_wall_velocity_nrmse": null,
+              "velocity_mean_bias_mps": 0.000405093047319383,
+              "velocity_peak_bias_mps": 0.0022903751802521456,
+              "blood_iq_nrmse": 0.3151962340037115,
+              "output_to_blood_power_ratio": 0.8988430624132241,
+              "tissue_roi_output_power_ratio": 9.20759066632894e-07,
+              "wss_invalid_fraction": 0.0,
+              "wss_nrmse": 10.028238074765326,
+              "wss_analytic_nrmse": 8.491357266007503
+            }
+          },
+          {
+            "start": 32,
+            "stop": 64,
+            "metrics": {
+              "coherence_flow_median": 0.9440194041155724,
+              "velocity_invalid_fraction": 0.0,
+              "power_output": 0.2648475445053294,
+              "velocity_nrmse": 0.1147061939017632,
+              "near_wall_velocity_nrmse": null,
+              "velocity_mean_bias_mps": -0.000373285474437623,
+              "velocity_peak_bias_mps": 8.939456252042913e-05,
+              "blood_iq_nrmse": 0.30765030335656596,
+              "output_to_blood_power_ratio": 0.8776452881582925,
+              "tissue_roi_output_power_ratio": 8.777502265496287e-07,
+              "wss_invalid_fraction": 0.0,
+              "wss_nrmse": 9.81249494837049,
+              "wss_analytic_nrmse": 8.415597246255329
+            }
+          },
+          {
+            "start": 64,
+            "stop": 96,
+            "metrics": {
+              "coherence_flow_median": 0.9677024755800734,
+              "velocity_invalid_fraction": 0.0,
+              "power_output": 0.40870292048452095,
+              "velocity_nrmse": 0.15967280652452834,
+              "near_wall_velocity_nrmse": null,
+              "velocity_mean_bias_mps": 8.44243444246258e-06,
+              "velocity_peak_bias_mps": 0.001227771087908799,
+              "blood_iq_nrmse": 0.2826423830322305,
+              "output_to_blood_power_ratio": 0.948056579059696,
+              "tissue_roi_output_power_ratio": 1.0496546443680313e-06,
+              "wss_invalid_fraction": 0.0,
+              "wss_nrmse": 7.003651270679973,
+              "wss_analytic_nrmse": 5.8178275014085425
+            }
+          },
+          {
+            "start": 96,
+            "stop": 128,
+            "metrics": {
+              "coherence_flow_median": 0.9454840883527986,
+              "velocity_invalid_fraction": 0.0,
+              "power_output": 0.28974845290679735,
+              "velocity_nrmse": 0.0815869996073518,
+              "near_wall_velocity_nrmse": null,
+              "velocity_mean_bias_mps": -0.00013598219908907854,
+              "velocity_peak_bias_mps": 0.0008549811322851406,
+              "blood_iq_nrmse": 0.2832965129586762,
+              "output_to_blood_power_ratio": 0.8449925782705883,
+              "tissue_roi_output_power_ratio": 1.025720690854768e-06,
+              "wss_invalid_fraction": 0.0,
+              "wss_nrmse": 3.134932376779393,
+              "wss_analytic_nrmse": 2.7852844875122598
+            }
+          }
+        ],
+        "unattributed_velocity_temporal_std_mps": 0.0007286380022112467,
+        "interpretation": "temporal variability includes real pulsatility and artifacts"
+      },
+      "wall_time_s": 0.007804832999681821,
+      "process_high_water_rss_bytes": 88444928
+    },
+    {
+      "id": "axis2",
+      "method": "axis2",
+      "oracle": false,
+      "spec": {
+        "id": "axis2",
+        "method": "axis2",
+        "params": {
+          "packet": 64,
+          "patch_shape": [
+            4,
+            4
+          ],
+          "stride": [
+            2,
+            2
+          ],
+          "rank": 4,
+          "use_memory": false
+        }
+      },
+      "status": "ok",
+      "metrics": {
+        "coherence_flow_median": 0.9959857011305492,
+        "velocity_invalid_fraction": 0.0,
+        "power_output": 905.6046263095319,
+        "velocity_nrmse": 0.5497756491586392,
+        "near_wall_velocity_nrmse": null,
+        "velocity_mean_bias_mps": -0.003993138759238325,
+        "velocity_peak_bias_mps": -0.0014731113563680454,
+        "blood_iq_nrmse": 50.52814039861354,
+        "output_to_blood_power_ratio": 2553.7500568748765,
+        "tissue_roi_output_power_ratio": 0.1542118380839047,
+        "wss_invalid_fraction": 0.0,
+        "wss_nrmse": 1.0782726423041138,
+        "wss_analytic_nrmse": 1.065738812216744,
+        "frozen_component_metrics_available": false
+      },
+      "diagnostics": {
+        "centered": false,
+        "packets": [
+          {
+            "patch": 0,
+            "start": 0,
+            "q": 0.9999987716678743,
+            "reset": false,
+            "rank": 4,
+            "sweeps": 20,
+            "ajd_relative_offdiag": 0.23001320190360947,
+            "blood_weights": [
+              0.9533681305716796,
+              0.9382321260761716,
+              0.9608562830289938,
+              0.46933588908535684
+            ],
+            "phase_rad_per_frame": [
+              0.3199328352185452,
+              0.161204915171819,
+              0.24677808474076995,
+              0.0016757599655970103
+            ],
+            "lag1_coherence": [
+              0.9580472352729181,
+              0.9780181472073625,
+              0.9657707377458384,
+              0.9993564979085238
+            ],
+            "spatial_extent": [
+              0.291464249693805,
+              0.2769623240765855,
+              0.2787243412389261,
+              0.28176862366609373
+            ]
+          },
+          {
+            "patch": 0,
+            "start": 64,
+            "q": 0.999998684083061,
+            "reset": false,
+            "rank": 4,
+            "sweeps": 27,
+            "ajd_relative_offdiag": 0.27079521737927637,
+            "blood_weights": [
+              0.8878524331623956,
+              0.7833518432493735,
+              0.9939183590443261,
+              0.4693177713171087
+            ],
+            "phase_rad_per_frame": [
+              0.17300204320989615,
+              0.09990909489908177,
+              0.22546952761344277,
+              0.0006755852975607527
+            ],
+            "lag1_coherence": [
+              0.9197325373833688,
+              0.994030004382784,
+              0.9977102647179984,
+              0.9999102258271872
+            ],
+            "spatial_extent": [
+              0.29886791428946774,
+              0.33303682720048394,
+              0.32900108171262893,
+              0.2816502100162073
+            ]
+          },
+          {
+            "patch": 1,
+            "start": 0,
+            "q": 0.9999987716678743,
+            "reset": false,
+            "rank": 4,
+            "sweeps": 11,
+            "ajd_relative_offdiag": 0.22810904566330792,
+            "blood_weights": [
+              0.9497484282418739,
+              0.9787065214662918,
+              0.8751558405430382,
+              0.24496010161702475
+            ],
+            "phase_rad_per_frame": [
+              0.2164958603413118,
+              0.3223382388241123,
+              0.13514495129717627,
+              0.00039317286962742385
+            ],
+            "lag1_coherence": [
+              0.9606196469789627,
+              0.9808526438165709,
+              0.9782637700763576,
+              1.0
+            ],
+            "spatial_extent": [
+              0.5890030473601451,
+              0.399110182141249,
+              0.42926404417525493,
+              0.5701028737374696
+            ]
+          },
+          {
+            "patch": 1,
+            "start": 64,
+            "q": 0.999998684083061,
+            "reset": false,
+            "rank": 4,
+            "sweeps": 21,
+            "ajd_relative_offdiag": 0.25757490104947034,
+            "blood_weights": [
+              0.9600103390423419,
+              0.6530345464378231,
+              0.9717000002627005,
+              0.2505631124021006
+            ],
+            "phase_rad_per_frame": [
+              0.2696320622174258,
+              0.08646009496240899,
+              0.19550345452420526,
+              0.0012246370199792645
+            ],
+            "lag1_coherence": [
+              0.9644683315990692,
+              0.9952976149637238,
+              0.9906072779483223,
+              0.9945687820949248
+            ],
+            "spatial_extent": [
+              0.6257040206301807,
+              0.5312975629977835,
+              0.6936423105739272,
+              0.5656735156875242
+            ]
+          },
+          {
+            "patch": 2,
+            "start": 0,
+            "q": 0.9999987716678743,
+            "reset": false,
+            "rank": 4,
+            "sweeps": 11,
+            "ajd_relative_offdiag": 0.22967060922974336,
+            "blood_weights": [
+              0.937212178854397,
+              0.9487694802218833,
+              0.8104256695463841,
+              0.3165157448426129
+            ],
+            "phase_rad_per_frame": [
+              0.17914464003389138,
+              0.3541396160286618,
+              0.13755214529144066,
+              0.0022508865491910513
+            ],
+            "lag1_coherence": [
+              0.9668946697837312,
+              0.9538945984643863,
+              0.9057595268115803,
+              1.0
+            ],
+            "spatial_extent": [
+              0.47799542807361656,
+              0.5034537616771219,
+              0.48184096806448284,
+              0.46762432987939634
+            ]
+          },
+          {
+            "patch": 2,
+            "start": 64,
+            "q": 0.999998684083061,
+            "reset": false,
+            "rank": 4,
+            "sweeps": 16,
+            "ajd_relative_offdiag": 0.25370169638776563,
+            "blood_weights": [
+              0.9446883590756016,
+              0.7058749960861073,
+              0.9340418052556717,
+              0.3167079557490259
+            ],
+            "phase_rad_per_frame": [
+              0.2904087094535576,
+              0.09282889253413995,
+              0.21319103710015921,
+              0.0005139598491355483
+            ],
+            "lag1_coherence": [
+              0.9503460353664199,
+              0.9865420649683752,
+              0.9473787024215431,
+              0.9966472854066384
+            ],
+            "spatial_extent": [
+              0.5184986297031605,
+              0.4624649169991655,
+              0.6252151812459791,
+              0.4684314278527051
+            ]
+          },
+          {
+            "patch": 3,
+            "start": 0,
+            "q": 0.9999987716678743,
+            "reset": false,
+            "rank": 4,
+            "sweeps": 10,
+            "ajd_relative_offdiag": 0.19019347398659384,
+            "blood_weights": [
+              0.9435705492671264,
+              0.973030077474851,
+              0.9492637578875956,
+              0.33806648932451216
+            ],
+            "phase_rad_per_frame": [
+              0.34386631438816434,
+              0.2716412504585498,
+              0.16756121274295216,
+              0.0015484877426981182
+            ],
+            "lag1_coherence": [
+              0.9492174133463295,
+              0.9760817267716584,
+              0.9895567666940033,
+              0.9977659864365821
+            ],
+            "spatial_extent": [
+              0.44068642179036843,
+              0.44135086292650333,
+              0.43959339053845065,
+              0.43921284058006654
+            ]
+          },
+          {
+            "patch": 3,
+            "start": 64,
+            "q": 0.999998684083061,
+            "reset": false,
+            "rank": 4,
+            "sweeps": 18,
+            "ajd_relative_offdiag": 0.24652060934880823,
+            "blood_weights": [
+              0.930491863200599,
+              0.6950238985277625,
+              0.9644663901637334,
+              0.3383935957196525
+            ],
+            "phase_rad_per_frame": [
+              0.26428746648186247,
+              0.09143354370191904,
+              0.20494404335000257,
+              0.0025758450806361334
+            ],
+            "lag1_coherence": [
+              0.937928711926703,
+              0.9671437930564017,
+              0.9768449928832335,
+              0.9980793158329007
+            ],
+            "spatial_extent": [
+              0.4461591759753784,
+              0.44183292768795446,
+              0.47229017824483577,
+              0.4390307686777906
+            ]
+          },
+          {
+            "patch": 4,
+            "start": 0,
+            "q": 0.9999987716678743,
+            "reset": false,
+            "rank": 4,
+            "sweeps": 7,
+            "ajd_relative_offdiag": 0.14771961563461147,
+            "blood_weights": [
+              0.9634810848468385,
+              0.9606355173114469,
+              0.9459904495867419,
+              0.3606038138171592
+            ],
+            "phase_rad_per_frame": [
+              0.35026198689651394,
+              0.26175252528940895,
+              0.152933615245711,
+              0.001342712877470832
+            ],
+            "lag1_coherence": [
+              0.9671357372508684,
+              0.965106074362764,
+              1.0,
+              0.9991522789058694
+            ],
+            "spatial_extent": [
+              0.4910194130251103,
+              0.36564062354337906,
+              0.313658444124396,
+              0.40923365893193264
+            ]
+          },
+          {
+            "patch": 4,
+            "start": 64,
+            "q": 0.999998684083061,
+            "reset": false,
+            "rank": 4,
+            "sweeps": 16,
+            "ajd_relative_offdiag": 0.23727343552526414,
+            "blood_weights": [
+              0.9512780640567278,
+              0.9693649737082343,
+              0.6969793228719436,
+              0.36597097128016004
+            ],
+            "phase_rad_per_frame": [
+              0.27187390715217385,
+              0.2118933487993377,
+              0.0887848599855949,
+              0.001256013753050259
+            ],
+            "lag1_coherence": [
+              0.9565159946116347,
+              0.9776842794880516,
+              0.9873826656195914,
+              0.9968202877909048
+            ],
+            "spatial_extent": [
+              0.524438060142065,
+              0.2978953585201671,
+              0.42636266426333747,
+              0.4030344333654971
+            ]
+          },
+          {
+            "patch": 5,
+            "start": 0,
+            "q": 0.9999987716678743,
+            "reset": false,
+            "rank": 4,
+            "sweeps": 8,
+            "ajd_relative_offdiag": 0.21936609846863994,
+            "blood_weights": [
+              0.7860244323306695,
+              0.9579212061756907,
+              0.9271255147913162,
+              0.42086044647876886
+            ],
+            "phase_rad_per_frame": [
+              0.2366893348099513,
+              0.32873894429156947,
+              0.14659703898508314,
+              0.0009864408193123785
+            ],
+            "lag1_coherence": [
+              0.8086478845434486,
+              0.9621389612155538,
+              0.9949447269499336,
+              1.0
+            ],
+            "spatial_extent": [
+              0.33614160140675914,
+              0.34536748824324076,
+              0.3399649111413958,
+              0.335467902548179
+            ]
+          },
+          {
+            "patch": 5,
+            "start": 64,
+            "q": 0.999998684083061,
+            "reset": false,
+            "rank": 4,
+            "sweeps": 14,
+            "ajd_relative_offdiag": 0.23474885883684973,
+            "blood_weights": [
+              0.8929212186850684,
+              0.9365514057700557,
+              0.7348829513025814,
+              0.4207995542815273
+            ],
+            "phase_rad_per_frame": [
+              0.250606879030563,
+              0.27421200972613663,
+              0.0898459742343372,
+              0.0008593913593910015
+            ],
+            "lag1_coherence": [
+              0.9044261350281078,
+              0.9431546570416278,
+              0.9886690219262483,
+              0.9985605907555875
+            ],
+            "spatial_extent": [
+              0.3422229810628505,
+              0.3586667318792184,
+              0.3362559384251653,
+              0.33570794251707775
+            ]
+          }
+        ],
+        "motion_phase_rad": [
+          0.0,
+          0.04127426107639888,
+          0.0841908374427369,
+          0.12812231144417793,
+          0.17310278127776826,
+          0.2193481231545915,
+          0.26675238008138447,
+          0.31589751527117665,
+          0.3656434835228136,
+          0.416690834044877,
+          0.46930641009560276,
+          0.5228848184354506,
+          0.5776308478121975,
+          0.6341481254313015,
+          0.6912336467584089,
+          0.749661611973763,
+          0.8093044058250113,
+          0.8704922095319302,
+          0.9326972679308976,
+          0.9961877649564971,
+          1.0608347722504698,
+          1.126778168791597,
+          1.1938123271395749,
+          1.2620558486620703,
+          1.3319180779002926,
+          1.40254863271553,
+          1.47463555756709,
+          1.5476460851011489,
+          1.622102868475809,
+          1.6977583321394503,
+          1.7748395800150831,
+          1.852915845298735,
+          1.932299368857563,
+          2.012822353349151,
+          2.094549165637201,
+          2.177813574975602,
+          2.2621635937746576,
+          2.347551222621739,
+          2.4342815872241474,
+          2.521892419578816,
+          2.611044568534109,
+          2.7017598011958857,
+          2.7931537932713244,
+          2.8860899040331836,
+          2.9801900804667247,
+          3.0755121143329287,
+          3.1718925837649157,
+          3.269580655487906,
+          3.3682439261404857,
+          3.4687531656165778,
+          3.5695963866585987,
+          3.6725172969376345,
+          3.776446237991959,
+          3.881486410081759,
+          3.9879522277801693,
+          4.0952678641009514,
+          4.204126763138432,
+          4.314215727828922,
+          4.4251888703169975,
+          4.537638449711629,
+          4.651225166931329,
+          4.765944355221181,
+          4.882143744395112,
+          4.999397009496044,
+          5.118064244965384,
+          5.2379792500354645,
+          5.358742226714878,
+          5.480850319913747,
+          5.60452445221178,
+          5.729153966613536,
+          5.854921724170812,
+          5.981718957414221,
+          6.110272870557166,
+          6.239830037477713,
+          6.370398343897974,
+          6.502758471752381,
+          6.635654695499184,
+          6.77052034500858,
+          6.905778290428657,
+          7.042669037052075,
+          7.180889553916743,
+          7.320151879912311,
+          7.4608650353249315,
+          7.60227322377859,
+          7.745463505871634,
+          7.88963653574315,
+          8.035176997894991,
+          8.181961492751332,
+          8.329812865693714,
+          8.478796472135077,
+          8.629225464265108,
+          8.780793357145763,
+          8.933558378547927,
+          9.087279032596696,
+          9.242980872451664,
+          9.399319301856767,
+          9.55715413785864,
+          9.715984657785414,
+          9.87615397942715,
+          10.037541892149278,
+          10.199864639724307,
+          10.363888283421018,
+          10.528805311794361,
+          10.695017719883243,
+          10.862378985458959,
+          11.03123158731376,
+          11.20134620925194,
+          11.372535251930504,
+          11.544700170763239,
+          11.718550279870623,
+          11.893255696871066,
+          12.069132179113963,
+          12.246564264573761,
+          12.42504266566138,
+          12.604694167704794,
+          12.785674085016394,
+          12.968135022191627,
+          13.151411193611821,
+          13.335843208386699,
+          13.521799752760389,
+          13.708858416904668,
+          13.897179901474752,
+          14.086461577781087,
+          14.277631284796188,
+          14.469356277503193,
+          14.66232413494421,
+          14.856947069877704,
+          15.052394056294643
+        ],
+        "motion_shifts_pixels": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "valid_fraction": 1.0,
+        "lab_frame_phase_restored": true,
+        "registration": "bulk IQ phase only",
+        "component_classifier": "data-only heuristic"
+      },
+      "readout": {
+        "window_frames": 32,
+        "hop_frames": 32,
+        "records": [
+          {
+            "start": 0,
+            "stop": 32,
+            "metrics": {
+              "coherence_flow_median": 0.9965470668558313,
+              "velocity_invalid_fraction": 0.0,
+              "power_output": 892.3755205614383,
+              "velocity_nrmse": 0.7042952540635312,
+              "near_wall_velocity_nrmse": null,
+              "velocity_mean_bias_mps": -0.005254141985282567,
+              "velocity_peak_bias_mps": -0.00212618291413278,
+              "blood_iq_nrmse": 51.02216407685809,
+              "output_to_blood_power_ratio": 2603.9282458633547,
+              "tissue_roi_output_power_ratio": 0.15189290631281888,
+              "wss_invalid_fraction": 0.0,
+              "wss_nrmse": 1.088222455788028,
+              "wss_analytic_nrmse": 1.0742148119063855
+            }
+          },
+          {
+            "start": 32,
+            "stop": 64,
+            "metrics": {
+              "coherence_flow_median": 0.9973800466755953,
+              "velocity_invalid_fraction": 0.0,
+              "power_output": 956.911259788783,
+              "velocity_nrmse": 0.5919836907231462,
+              "near_wall_velocity_nrmse": null,
+              "velocity_mean_bias_mps": -0.004307883893850691,
+              "velocity_peak_bias_mps": -0.0012887926689097613,
+              "blood_iq_nrmse": 56.30645958238154,
+              "output_to_blood_power_ratio": 3170.989030341347,
+              "tissue_roi_output_power_ratio": 0.16301484006321634,
+              "wss_invalid_fraction": 0.0,
+              "wss_nrmse": 1.0362631820588448,
+              "wss_analytic_nrmse": 1.0302395170819239
+            }
+          },
+          {
+            "start": 64,
+            "stop": 96,
+            "metrics": {
+              "coherence_flow_median": 0.9983846087376788,
+              "velocity_invalid_fraction": 0.0,
+              "power_output": 939.7899883725717,
+              "velocity_nrmse": 0.47155491477776257,
+              "near_wall_velocity_nrmse": null,
+              "velocity_mean_bias_mps": -0.003377538353319701,
+              "velocity_peak_bias_mps": -0.000846746575017562,
+              "blood_iq_nrmse": 46.686618870248644,
+              "output_to_blood_power_ratio": 2180.004195602013,
+              "tissue_roi_output_power_ratio": 0.16004330403130368,
+              "wss_invalid_fraction": 0.0,
+              "wss_nrmse": 1.117272733468523,
+              "wss_analytic_nrmse": 1.0979551114691177
+            }
+          },
+          {
+            "start": 96,
+            "stop": 128,
+            "metrics": {
+              "coherence_flow_median": 0.9987974682782265,
+              "velocity_invalid_fraction": 0.0,
+              "power_output": 833.3417365153349,
+              "velocity_nrmse": 0.42338083021421,
+              "near_wall_velocity_nrmse": null,
+              "velocity_mean_bias_mps": -0.0028737428074917977,
+              "velocity_peak_bias_mps": -0.0010264707080448066,
+              "blood_iq_nrmse": 49.28672287362226,
+              "output_to_blood_power_ratio": 2430.272104835327,
+              "tissue_roi_output_power_ratio": 0.14189506852431386,
+              "wss_invalid_fraction": 0.0,
+              "wss_nrmse": 1.050133770190797,
+              "wss_analytic_nrmse": 1.042033152260162
+            }
+          }
+        ],
+        "unattributed_velocity_temporal_std_mps": 0.0009652332310185384,
+        "interpretation": "temporal variability includes real pulsatility and artifacts"
+      },
+      "wall_time_s": 0.04112457600058406,
+      "process_high_water_rss_bytes": 88444928
+    }
+  ],
+  "acquisition": {
+    "generator": "statistical_IQ_surrogate",
+    "seed": 0,
+    "not_acoustic_ground_truth": true,
+    "contrast_agent": false,
+    "clutter_db": 40.0,
+    "snr_db": 20,
+    "simulation_parameters": {
+      "n_frames": 128,
+      "shape": [
+        6,
+        8
+      ],
+      "snr_db": 20,
+      "umax_mps": 0.01,
+      "tissue_acceleration_mps2": 0.03,
+      "clutter_db": 40.0,
+      "seed": 0
+    }
+  },
+  "code_sha256": "ebfe13ed207a8e639e75e73d302f8c2561cdaacfcf20b4eae53ecea2ffc4edf1",
+  "iq_shape": [
+    128,
+    6,
+    8
+  ],
+  "input_sha256": "c4f6f50bd3647695dd69e81c815bfeb29934b99455e24227604a96891579227e",
+  "runtime": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+    "blas_threads": 1,
+    "elapsed_s": 0.06904640199991263
+  },
+  "interpretation": "synthetic smoke test unless independent experimental truth is provided"
+}

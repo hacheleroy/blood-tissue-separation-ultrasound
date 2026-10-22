@@ -1,0 +1,26 @@
+# Python environments, build products, and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+.coverage
+htmlcov/
+
+# Acquisition data and generated IQ arrays
+data/
+*.npz
+*.npy
+*.h5
+*.hdf5
+*.mat
+
+# Local configuration and editor files
+.env
+.env.*
+.DS_Store
+.idea/
+.vscode/

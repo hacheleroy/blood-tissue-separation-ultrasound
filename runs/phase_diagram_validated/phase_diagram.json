@@ -1,0 +1,2034 @@
+[
+  {
+    "case": "case_0000",
+    "parameters": {
+      "n_frames": 128,
+      "shape": [
+        6,
+        8
+      ],
+      "snr_db": 20,
+      "umax_mps": 0.01,
+      "tissue_acceleration_mps2": 0.0,
+      "clutter_db": 20.0,
+      "seed": 0
+    },
+    "input_sha256": "d03b1b7896868cf1e2e90a63886cae309ca5442ea44b930c43415828cb41b35f",
+    "results": [
+      {
+        "id": "svd_fixed",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9595157743542031,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.35676693842596424,
+          "velocity_nrmse": 0.04254832129078776,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -6.063866321069117e-06,
+          "velocity_peak_bias_mps": 0.0003911811335628162,
+          "blood_iq_nrmse": 0.21534212639266376,
+          "output_to_blood_power_ratio": 1.0060611030767568,
+          "tissue_roi_output_power_ratio": 9.057770358007377e-05,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 10.888978625338943,
+          "wss_analytic_nrmse": 9.313886489267135,
+          "frozen_component_metrics_available": true,
+          "frozen_blood_power_retention": 0.9796868582360856,
+          "frozen_tissue_power_retention": 1.203115645573875e-05,
+          "frozen_tissue_to_blood_power_ratio": 0.002040574951146596
+        }
+      },
+      {
+        "id": "aer_temporal",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9382964054095863,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.03182687717350662,
+          "velocity_nrmse": 0.05125490294288024,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -6.577126611060698e-05,
+          "velocity_peak_bias_mps": 0.0004227460000955502,
+          "blood_iq_nrmse": 0.7707608169304618,
+          "output_to_blood_power_ratio": 0.08974986106598333,
+          "tissue_roi_output_power_ratio": 0.0001435451908359891,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 0.34762523300855724,
+          "wss_analytic_nrmse": 0.4470500038782269,
+          "frozen_component_metrics_available": true,
+          "frozen_blood_power_retention": 0.06479622404236808,
+          "frozen_tissue_power_retention": 0.0001335120934927481,
+          "frozen_tissue_to_blood_power_ratio": 0.34237604157161167
+        }
+      },
+      {
+        "id": "aer_spatial",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9382964054095884,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.08487167246268423,
+          "velocity_nrmse": 0.05125490294288024,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -6.57712661106063e-05,
+          "velocity_peak_bias_mps": 0.0004227460000955155,
+          "blood_iq_nrmse": 0.6556636272661626,
+          "output_to_blood_power_ratio": 0.23933296284262195,
+          "tissue_roi_output_power_ratio": 0.0003827871755626363,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 0.347625233008546,
+          "wss_analytic_nrmse": 0.4470500038782161,
+          "frozen_component_metrics_available": true,
+          "frozen_blood_power_retention": 0.1740963659928105,
+          "frozen_tissue_power_retention": 0.00036421175022992135,
+          "frozen_tissue_to_blood_power_ratio": 0.3476135573031997
+        }
+      },
+      {
+        "id": "axis1",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9593537565278945,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.32426578079392054,
+          "velocity_nrmse": 0.046308460457239395,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -0.00011039583630134632,
+          "velocity_peak_bias_mps": 0.0003902112489703267,
+          "blood_iq_nrmse": 0.2789073858387521,
+          "output_to_blood_power_ratio": 0.9144098120607567,
+          "tissue_roi_output_power_ratio": 9.736691422686002e-05,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 5.791965334435735,
+          "wss_analytic_nrmse": 5.003587516364563,
+          "frozen_component_metrics_available": false
+        }
+      },
+      {
+        "id": "axis2",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9794356602339345,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 9.158647362947894,
+          "velocity_nrmse": 0.24251339378920492,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -0.0015638752574665318,
+          "velocity_peak_bias_mps": 0.000233702169638526,
+          "blood_iq_nrmse": 5.0045791925303105,
+          "output_to_blood_power_ratio": 25.826829440280367,
+          "tissue_roi_output_power_ratio": 0.15076008724355425,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 0.6329721180865496,
+          "wss_analytic_nrmse": 0.6877456638864216,
+          "frozen_component_metrics_available": false
+        }
+      }
+    ]
+  },
+  {
+    "case": "case_0001",
+    "parameters": {
+      "n_frames": 128,
+      "shape": [
+        6,
+        8
+      ],
+      "snr_db": 20,
+      "umax_mps": 0.01,
+      "tissue_acceleration_mps2": 0.0,
+      "clutter_db": 20.0,
+      "seed": 1
+    },
+    "input_sha256": "5b55dc896fd753b18f9e776d15e3f57199dc68c6013e069453d04f818253c109",
+    "results": [
+      {
+        "id": "svd_fixed",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9508446290074903,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.3500820172801258,
+          "velocity_nrmse": 0.04903990996296079,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": 7.072516246970522e-05,
+          "velocity_peak_bias_mps": 0.0008530898355439843,
+          "blood_iq_nrmse": 0.2382525438244218,
+          "output_to_blood_power_ratio": 1.002523917692671,
+          "tissue_roi_output_power_ratio": 8.980262566019368e-05,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 11.405146053630707,
+          "wss_analytic_nrmse": 9.664511747065015,
+          "frozen_component_metrics_available": true,
+          "frozen_blood_power_retention": 0.969472666974181,
+          "frozen_tissue_power_retention": 1.1466312394121042e-05,
+          "frozen_tissue_to_blood_power_ratio": 0.001967757687446417
+        }
+      },
+      {
+        "id": "aer_temporal",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9313650605192911,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.03229217709705137,
+          "velocity_nrmse": 0.06775924304411134,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -6.480331269816601e-05,
+          "velocity_peak_bias_mps": 0.0009514815025301552,
+          "blood_iq_nrmse": 0.7665872876362715,
+          "output_to_blood_power_ratio": 0.09247455823546909,
+          "tissue_roi_output_power_ratio": 0.00014548226689228627,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 0.39450370892764164,
+          "wss_analytic_nrmse": 0.48029463130874783,
+          "frozen_component_metrics_available": true,
+          "frozen_blood_power_retention": 0.06684280375780499,
+          "frozen_tissue_power_retention": 0.00013533819176108413,
+          "frozen_tissue_to_blood_power_ratio": 0.3368597550473135
+        }
+      },
+      {
+        "id": "aer_spatial",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9313650605192927,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.08611247225880357,
+          "velocity_nrmse": 0.06775924304411228,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -6.480331269815849e-05,
+          "velocity_peak_bias_mps": 0.0009514815025301777,
+          "blood_iq_nrmse": 0.6497951076955305,
+          "output_to_blood_power_ratio": 0.24659882196125063,
+          "tissue_roi_output_power_ratio": 0.00038795271171276316,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 0.3945037089276364,
+          "wss_analytic_nrmse": 0.480294631308744,
+          "frozen_component_metrics_available": true,
+          "frozen_blood_power_retention": 0.18006435059431702,
+          "frozen_tissue_power_retention": 0.0003737601645315487,
+          "frozen_tissue_to_blood_power_ratio": 0.34534143588322325
+        }
+      },
+      {
+        "id": "axis1",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9499741258517098,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.3239313687334342,
+          "velocity_nrmse": 0.0527174118794835,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -8.111845468588897e-05,
+          "velocity_peak_bias_mps": 0.0004472173311862726,
+          "blood_iq_nrmse": 0.28588530424631936,
+          "output_to_blood_power_ratio": 0.9276367502942509,
+          "tissue_roi_output_power_ratio": 9.464028798724355e-05,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 7.079671690736879,
+          "wss_analytic_nrmse": 6.095038074709367,
+          "frozen_component_metrics_available": false
+        }
+      },
+      {
+        "id": "axis2",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9811424408357949,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 14.656065649043233,
+          "velocity_nrmse": 0.2750151261393045,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -0.0018139860020722545,
+          "velocity_peak_bias_mps": -0.0009865787650473,
+          "blood_iq_nrmse": 6.42182441467044,
+          "output_to_blood_power_ratio": 41.97032588704158,
+          "tissue_roi_output_power_ratio": 0.2483213724143988,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 0.7037517103293077,
+          "wss_analytic_nrmse": 0.7250196452452222,
+          "frozen_component_metrics_available": false
+        }
+      }
+    ]
+  },
+  {
+    "case": "case_0002",
+    "parameters": {
+      "n_frames": 128,
+      "shape": [
+        6,
+        8
+      ],
+      "snr_db": 20,
+      "umax_mps": 0.01,
+      "tissue_acceleration_mps2": 0.0,
+      "clutter_db": 40.0,
+      "seed": 0
+    },
+    "input_sha256": "8615ffdeea758b72be94fe3ceea7c89cd17ae2815f64afcf21e2f0ff21619ec7",
+    "results": [
+      {
+        "id": "svd_fixed",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9595184054775938,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.35675533896250994,
+          "velocity_nrmse": 0.04253459130506869,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -5.975449094761023e-06,
+          "velocity_peak_bias_mps": 0.000390824896251047,
+          "blood_iq_nrmse": 0.2154801549886852,
+          "output_to_blood_power_ratio": 1.0060283932941478,
+          "tissue_roi_output_power_ratio": 9.081321217638976e-07,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 10.904037064923273,
+          "wss_analytic_nrmse": 9.326258142266546,
+          "frozen_component_metrics_available": true,
+          "frozen_blood_power_retention": 0.9796630265775442,
+          "frozen_tissue_power_retention": 1.2212947333070918e-07,
+          "frozen_tissue_to_blood_power_ratio": 0.002071458446043377
+        }
+      },
+      {
+        "id": "aer_temporal",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9595946312074041,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.008277419047193367,
+          "velocity_nrmse": 0.2092303162423176,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -0.0013175167825333586,
+          "velocity_peak_bias_mps": 0.00034936892921298354,
+          "blood_iq_nrmse": 0.9756691084332174,
+          "output_to_blood_power_ratio": 0.023341819099013974,
+          "tissue_roi_output_power_ratio": 1.325745699383413e-06,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 0.584490372493961,
+          "wss_analytic_nrmse": 0.64160057799477,
+          "frozen_component_metrics_available": true,
+          "frozen_blood_power_retention": 0.001300343385080306,
+          "frozen_tissue_power_retention": 1.3247117981978629e-06,
+          "frozen_tissue_to_blood_power_ratio": 16.927616469067154
+        }
+      },
+      {
+        "id": "aer_spatial",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9595946312074045,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.022073117459182306,
+          "velocity_nrmse": 0.2092303162423176,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -0.0013175167825333555,
+          "velocity_peak_bias_mps": 0.0003493689292129714,
+          "blood_iq_nrmse": 0.9724351804661813,
+          "output_to_blood_power_ratio": 0.06224485093070392,
+          "tissue_roi_output_power_ratio": 3.5353218650224344e-06,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 0.584490372493969,
+          "wss_analytic_nrmse": 0.6416005779947774,
+          "frozen_component_metrics_available": true,
+          "frozen_blood_power_retention": 0.003483837097424193,
+          "frozen_tissue_power_retention": 3.533356536646682e-06,
+          "frozen_tissue_to_blood_power_ratio": 16.852412550805195
+        }
+      },
+      {
+        "id": "axis1",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9595271376005756,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.3277203856313465,
+          "velocity_nrmse": 0.0433718368465738,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -6.645601614337162e-05,
+          "velocity_peak_bias_mps": 0.00039039420743127926,
+          "blood_iq_nrmse": 0.26358697374659457,
+          "output_to_blood_power_ratio": 0.924151587934858,
+          "tissue_roi_output_power_ratio": 9.75081075083864e-07,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 5.747258386951238,
+          "wss_analytic_nrmse": 4.967740191945193,
+          "frozen_component_metrics_available": false
+        }
+      },
+      {
+        "id": "axis2",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.995920559170953,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 885.1486617163813,
+          "velocity_nrmse": 0.7543810713094754,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -0.005642977103423104,
+          "velocity_peak_bias_mps": -0.001810307666902408,
+          "blood_iq_nrmse": 49.95296501146635,
+          "output_to_blood_power_ratio": 2496.065478831065,
+          "tissue_roi_output_power_ratio": 0.1507255660572999,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 1.0862339412248316,
+          "wss_analytic_nrmse": 1.0723079925386987,
+          "frozen_component_metrics_available": false
+        }
+      }
+    ]
+  },
+  {
+    "case": "case_0003",
+    "parameters": {
+      "n_frames": 128,
+      "shape": [
+        6,
+        8
+      ],
+      "snr_db": 20,
+      "umax_mps": 0.01,
+      "tissue_acceleration_mps2": 0.0,
+      "clutter_db": 40.0,
+      "seed": 1
+    },
+    "input_sha256": "c59dd5cf78dfec51c39ef0da8a6b82700c7141c67f5a0983ab9ea82812fca1eb",
+    "results": [
+      {
+        "id": "svd_fixed",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9508592800878177,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.35008781871772204,
+          "velocity_nrmse": 0.04904993502812979,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": 7.064370419551271e-05,
+          "velocity_peak_bias_mps": 0.0008531116656776468,
+          "blood_iq_nrmse": 0.23805006427859138,
+          "output_to_blood_power_ratio": 1.002540531170828,
+          "tissue_roi_output_power_ratio": 8.954238178258375e-07,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 11.283041947988469,
+          "wss_analytic_nrmse": 9.560812132253497,
+          "frozen_component_metrics_available": true,
+          "frozen_blood_power_retention": 0.9695257967482369,
+          "frozen_tissue_power_retention": 1.1354075455359975e-07,
+          "frozen_tissue_to_blood_power_ratio": 0.0019483896961251307
+        }
+      },
+      {
+        "id": "aer_temporal",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9576747686823923,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.008278585986662222,
+          "velocity_nrmse": 0.1989946912896735,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -0.001220116881423541,
+          "velocity_peak_bias_mps": -9.924346332050409e-05,
+          "blood_iq_nrmse": 0.975495442474433,
+          "output_to_blood_power_ratio": 0.023707245864226286,
+          "tissue_roi_output_power_ratio": 1.344585330568857e-06,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 0.5861023176924686,
+          "wss_analytic_nrmse": 0.6324296536622165,
+          "frozen_component_metrics_available": true,
+          "frozen_blood_power_retention": 0.0013162006676957468,
+          "frozen_tissue_power_retention": 1.343538489480052e-06,
+          "frozen_tissue_to_blood_power_ratio": 16.982883208909062
+        }
+      },
+      {
+        "id": "aer_spatial",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9576747686823919,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.02207622929776587,
+          "velocity_nrmse": 0.19899469128967154,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -0.001220116881423527,
+          "velocity_peak_bias_mps": -9.924346332045378e-05,
+          "blood_iq_nrmse": 0.9723448827613188,
+          "output_to_blood_power_ratio": 0.06321932230460327,
+          "tissue_roi_output_power_ratio": 3.585560881516943e-06,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 0.5861023176924681,
+          "wss_analytic_nrmse": 0.6324296536622163,
+          "frozen_component_metrics_available": true,
+          "frozen_blood_power_retention": 0.003534640377710054,
+          "frozen_tissue_power_retention": 3.584214305259827e-06,
+          "frozen_tissue_to_blood_power_ratio": 16.87066305895486
+        }
+      },
+      {
+        "id": "axis1",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9513107999210162,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.3273834856262177,
+          "velocity_nrmse": 0.05136323382874819,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -3.3021857073248284e-05,
+          "velocity_peak_bias_mps": 0.0005360149568460881,
+          "blood_iq_nrmse": 0.2687436644673286,
+          "output_to_blood_power_ratio": 0.9375225187166749,
+          "tissue_roi_output_power_ratio": 9.558336606006613e-07,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 6.4294134802699485,
+          "wss_analytic_nrmse": 5.5485746866679415,
+          "frozen_component_metrics_available": false
+        }
+      },
+      {
+        "id": "axis2",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9953653331512521,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 1436.599856623876,
+          "velocity_nrmse": 0.7996285832486972,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -0.006117138959278693,
+          "velocity_peak_bias_mps": -0.006664343227936144,
+          "blood_iq_nrmse": 64.13469986850312,
+          "output_to_blood_power_ratio": 4113.966571630183,
+          "tissue_roi_output_power_ratio": 0.24837077043910005,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 1.0149904834982608,
+          "wss_analytic_nrmse": 1.0126050764132473,
+          "frozen_component_metrics_available": false
+        }
+      }
+    ]
+  },
+  {
+    "case": "case_0004",
+    "parameters": {
+      "n_frames": 128,
+      "shape": [
+        6,
+        8
+      ],
+      "snr_db": 20,
+      "umax_mps": 0.01,
+      "tissue_acceleration_mps2": 0.03,
+      "clutter_db": 20.0,
+      "seed": 0
+    },
+    "input_sha256": "402f7f9003798f82bc350c5a0caa5eddfc57ec8813e335658fa82a4741fdc75f",
+    "results": [
+      {
+        "id": "svd_fixed",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9589394063956489,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.34501893704606235,
+          "velocity_nrmse": 0.03508517731776414,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": 2.352613468382882e-05,
+          "velocity_peak_bias_mps": 0.00038921685054574794,
+          "blood_iq_nrmse": 0.28151133560709274,
+          "output_to_blood_power_ratio": 0.9729324525371158,
+          "tissue_roi_output_power_ratio": 9.21018305229989e-05,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 10.17106132774725,
+          "wss_analytic_nrmse": 8.70807981871585,
+          "frozen_component_metrics_available": true,
+          "frozen_blood_power_retention": 0.9470416482520385,
+          "frozen_tissue_power_retention": 1.3387755060199698e-05,
+          "frozen_tissue_to_blood_power_ratio": 0.002348935754438032
+        }
+      },
+      {
+        "id": "aer_temporal",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9347498683954014,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.03138782389369859,
+          "velocity_nrmse": 0.052008293779498734,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -4.644908822591065e-05,
+          "velocity_peak_bias_mps": 0.0004014153464547282,
+          "blood_iq_nrmse": 0.775653365676646,
+          "output_to_blood_power_ratio": 0.08851175747672711,
+          "tissue_roi_output_power_ratio": 0.0001435547664494418,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 0.790943351910136,
+          "wss_analytic_nrmse": 0.8218022303713427,
+          "frozen_component_metrics_available": true,
+          "frozen_blood_power_retention": 0.0636522241985769,
+          "frozen_tissue_power_retention": 0.00013350299098755924,
+          "frozen_tissue_to_blood_power_ratio": 0.348505688255847
+        }
+      },
+      {
+        "id": "aer_spatial",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9347498683954003,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.08370086371652918,
+          "velocity_nrmse": 0.052008293779497304,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -4.6449088225889615e-05,
+          "velocity_peak_bias_mps": 0.00040141534645476984,
+          "blood_iq_nrmse": 0.6640557742105423,
+          "output_to_blood_power_ratio": 0.23603135327127123,
+          "tissue_roi_output_power_ratio": 0.00038281271053184403,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 0.79094335191013,
+          "wss_analytic_nrmse": 0.821802230371338,
+          "frozen_component_metrics_available": true,
+          "frozen_blood_power_retention": 0.17563849322807154,
+          "frozen_tissue_power_retention": 0.0003934119638168697,
+          "frozen_tissue_to_blood_power_ratio": 0.3721862454146158
+        }
+      },
+      {
+        "id": "axis1",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9587214343618092,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.3133348456759087,
+          "velocity_nrmse": 0.04137633192285253,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -4.867303332893031e-05,
+          "velocity_peak_bias_mps": 0.00037998002370443276,
+          "blood_iq_nrmse": 0.3181061383396696,
+          "output_to_blood_power_ratio": 0.8835852387664754,
+          "tissue_roi_output_power_ratio": 9.853830283372188e-05,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 6.570555834212705,
+          "wss_analytic_nrmse": 5.65702957083659,
+          "frozen_component_metrics_available": false
+        }
+      },
+      {
+        "id": "axis2",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9827730420968873,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 9.307186933455109,
+          "velocity_nrmse": 0.18983832917040178,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -0.0011720879803390255,
+          "velocity_peak_bias_mps": 0.00035016367407126117,
+          "blood_iq_nrmse": 5.060898345407005,
+          "output_to_blood_power_ratio": 26.245702009623134,
+          "tissue_roi_output_power_ratio": 0.15401036442006763,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 0.9505953769161174,
+          "wss_analytic_nrmse": 0.9571644437751196,
+          "frozen_component_metrics_available": false
+        }
+      }
+    ]
+  },
+  {
+    "case": "case_0005",
+    "parameters": {
+      "n_frames": 128,
+      "shape": [
+        6,
+        8
+      ],
+      "snr_db": 20,
+      "umax_mps": 0.01,
+      "tissue_acceleration_mps2": 0.03,
+      "clutter_db": 20.0,
+      "seed": 1
+    },
+    "input_sha256": "3beee3a9de18e28539e95f3671f6cf6db607ebe406b73b64bf113341c2029176",
+    "results": [
+      {
+        "id": "svd_fixed",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9485395147598927,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.33538637185770986,
+          "velocity_nrmse": 0.049288825144336884,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": 9.845217009433669e-05,
+          "velocity_peak_bias_mps": 0.0008822981919746203,
+          "blood_iq_nrmse": 0.3131118196171585,
+          "output_to_blood_power_ratio": 0.9604402478819076,
+          "tissue_roi_output_power_ratio": 8.815148401186469e-05,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 11.585606217824706,
+          "wss_analytic_nrmse": 9.812997240693774,
+          "frozen_component_metrics_available": true,
+          "frozen_blood_power_retention": 0.927913368836849,
+          "frozen_tissue_power_retention": 1.0407414922783615e-05,
+          "frozen_tissue_to_blood_power_ratio": 0.0018660310017857202
+        }
+      },
+      {
+        "id": "aer_temporal",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9308936484650608,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.03173212128925482,
+          "velocity_nrmse": 0.07356157372435335,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -7.719267283488975e-05,
+          "velocity_peak_bias_mps": 0.0009274644407777505,
+          "blood_iq_nrmse": 0.7745344377279484,
+          "output_to_blood_power_ratio": 0.09087073594570702,
+          "tissue_roi_output_power_ratio": 0.00014558873081041345,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 0.8189703954319472,
+          "wss_analytic_nrmse": 0.8448341529351351,
+          "frozen_component_metrics_available": true,
+          "frozen_blood_power_retention": 0.06521270175833596,
+          "frozen_tissue_power_retention": 0.00013540811523253226,
+          "frozen_tissue_to_blood_power_ratio": 0.3454585270363905
+        }
+      },
+      {
+        "id": "aer_spatial",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9308936484650603,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.08461899010467921,
+          "velocity_nrmse": 0.0735615737243501,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -7.719267283487077e-05,
+          "velocity_peak_bias_mps": 0.0009274644407777227,
+          "blood_iq_nrmse": 0.6637589766110712,
+          "output_to_blood_power_ratio": 0.24232196252188454,
+          "tissue_roi_output_power_ratio": 0.0003882366154944349,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 0.8189703954319414,
+          "wss_analytic_nrmse": 0.8448341529351308,
+          "frozen_component_metrics_available": true,
+          "frozen_blood_power_retention": 0.1822082631187293,
+          "frozen_tissue_power_retention": 0.0004129405165193565,
+          "frozen_tissue_to_blood_power_ratio": 0.3770533863709621
+        }
+      },
+      {
+        "id": "axis1",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9478460916963205,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.3154943546450862,
+          "velocity_nrmse": 0.05038025642045082,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -3.602502808465783e-05,
+          "velocity_peak_bias_mps": 0.0005483968195854911,
+          "blood_iq_nrmse": 0.2972986606916928,
+          "output_to_blood_power_ratio": 0.9034758165702236,
+          "tissue_roi_output_power_ratio": 9.447170709321488e-05,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 5.092167173401545,
+          "wss_analytic_nrmse": 4.423855895360869,
+          "frozen_component_metrics_available": false
+        }
+      },
+      {
+        "id": "axis2",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9823635336532519,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 14.676304987665814,
+          "velocity_nrmse": 0.1892320359284115,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -0.0012203678367024415,
+          "velocity_peak_bias_mps": -0.0006551051135524413,
+          "blood_iq_nrmse": 6.442167551737561,
+          "output_to_blood_power_ratio": 42.028284936766724,
+          "tissue_roi_output_power_ratio": 0.24964096158636612,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 0.8961391053071364,
+          "wss_analytic_nrmse": 0.9063729708702368,
+          "frozen_component_metrics_available": false
+        }
+      }
+    ]
+  },
+  {
+    "case": "case_0006",
+    "parameters": {
+      "n_frames": 128,
+      "shape": [
+        6,
+        8
+      ],
+      "snr_db": 20,
+      "umax_mps": 0.01,
+      "tissue_acceleration_mps2": 0.03,
+      "clutter_db": 40.0,
+      "seed": 0
+    },
+    "input_sha256": "c4f6f50bd3647695dd69e81c815bfeb29934b99455e24227604a96891579227e",
+    "results": [
+      {
+        "id": "svd_fixed",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9589495509977073,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.3450926485473622,
+          "velocity_nrmse": 0.03511396554538394,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": 2.404961981715794e-05,
+          "velocity_peak_bias_mps": 0.00039113449869583594,
+          "blood_iq_nrmse": 0.28066760144715414,
+          "output_to_blood_power_ratio": 0.9731403144949372,
+          "tissue_roi_output_power_ratio": 9.081074310845623e-07,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 10.576870255223854,
+          "wss_analytic_nrmse": 9.050389452932523,
+          "frozen_component_metrics_available": true,
+          "frozen_blood_power_retention": 0.9472976219055425,
+          "frozen_tissue_power_retention": 1.211881875174087e-07,
+          "frozen_tissue_to_blood_power_ratio": 0.002125721192411322
+        }
+      },
+      {
+        "id": "aer_temporal",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9594265576283201,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.008267602815457542,
+          "velocity_nrmse": 0.15908388213097324,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -0.0009572748166923436,
+          "velocity_peak_bias_mps": 0.000366113275543525,
+          "blood_iq_nrmse": 0.9762697938481578,
+          "output_to_blood_power_ratio": 0.02331413792157144,
+          "tissue_roi_output_power_ratio": 1.325735951529928e-06,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 0.8998557409503296,
+          "wss_analytic_nrmse": 0.9116337851510153,
+          "frozen_component_metrics_available": true,
+          "frozen_blood_power_retention": 0.0012740415519851272,
+          "frozen_tissue_power_retention": 1.32470039087623e-06,
+          "frozen_tissue_to_blood_power_ratio": 17.276928307217904
+        }
+      },
+      {
+        "id": "aer_spatial",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9594265576283209,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.022046940841220077,
+          "velocity_nrmse": 0.15908388213097197,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -0.0009572748166923328,
+          "velocity_peak_bias_mps": 0.0003661132755435094,
+          "blood_iq_nrmse": 0.9734044654708325,
+          "output_to_blood_power_ratio": 0.06217103445752373,
+          "tissue_roi_output_power_ratio": 3.5352958707464667e-06,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 0.8998557409503207,
+          "wss_analytic_nrmse": 0.9116337851510076,
+          "frozen_component_metrics_available": true,
+          "frozen_blood_power_retention": 0.0034845895910896032,
+          "frozen_tissue_power_retention": 3.537817274800758e-06,
+          "frozen_tissue_to_blood_power_ratio": 16.870044271759912
+        }
+      },
+      {
+        "id": "axis1",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9590277953853892,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.3178339123307054,
+          "velocity_nrmse": 0.039092017745448904,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -1.8389220094821586e-05,
+          "velocity_peak_bias_mps": 0.00039626902426099196,
+          "blood_iq_nrmse": 0.2963422882028401,
+          "output_to_blood_power_ratio": 0.8962723335446814,
+          "tissue_roi_output_power_ratio": 9.68469997532661e-07,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 6.367293525133126,
+          "wss_analytic_nrmse": 5.489113081410316,
+          "frozen_component_metrics_available": false
+        }
+      },
+      {
+        "id": "axis2",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9959857011305492,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 905.6046263095319,
+          "velocity_nrmse": 0.5497756491586392,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -0.003993138759238325,
+          "velocity_peak_bias_mps": -0.0014731113563680454,
+          "blood_iq_nrmse": 50.52814039861354,
+          "output_to_blood_power_ratio": 2553.7500568748765,
+          "tissue_roi_output_power_ratio": 0.1542118380839047,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 1.0782726423041138,
+          "wss_analytic_nrmse": 1.065738812216744,
+          "frozen_component_metrics_available": false
+        }
+      }
+    ]
+  },
+  {
+    "case": "case_0007",
+    "parameters": {
+      "n_frames": 128,
+      "shape": [
+        6,
+        8
+      ],
+      "snr_db": 20,
+      "umax_mps": 0.01,
+      "tissue_acceleration_mps2": 0.03,
+      "clutter_db": 40.0,
+      "seed": 1
+    },
+    "input_sha256": "2a01380e763d63f5974e4258327f1f68385e69a50660615d15873d81399ea9d9",
+    "results": [
+      {
+        "id": "svd_fixed",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9485483641476635,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.33538136012261566,
+          "velocity_nrmse": 0.04926456377364385,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": 9.945839682753506e-05,
+          "velocity_peak_bias_mps": 0.0008816412655794376,
+          "blood_iq_nrmse": 0.3131189978208221,
+          "output_to_blood_power_ratio": 0.9604258958613723,
+          "tissue_roi_output_power_ratio": 8.828670738093155e-07,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 10.960239868210016,
+          "wss_analytic_nrmse": 9.291584327944605,
+          "frozen_component_metrics_available": true,
+          "frozen_blood_power_retention": 0.9279282636920465,
+          "frozen_tissue_power_retention": 1.0476740341557674e-07,
+          "frozen_tissue_to_blood_power_ratio": 0.0018784307736312209
+        }
+      },
+      {
+        "id": "aer_temporal",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9586281605957153,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.008268142785417714,
+          "velocity_nrmse": 0.1520505171538781,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -0.000870413576293078,
+          "velocity_peak_bias_mps": 5.094687481685921e-05,
+          "blood_iq_nrmse": 0.9775001441300629,
+          "output_to_blood_power_ratio": 0.02367733984647011,
+          "tissue_roi_output_power_ratio": 1.344756231486079e-06,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 0.8090622443903827,
+          "wss_analytic_nrmse": 0.8344871828863812,
+          "frozen_component_metrics_available": true,
+          "frozen_blood_power_retention": 0.0012863956975508572,
+          "frozen_tissue_power_retention": 1.3437076878891898e-06,
+          "frozen_tissue_to_blood_power_ratio": 17.37855410268457
+        }
+      },
+      {
+        "id": "aer_spatial",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9586281605957154,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.022048380761113862,
+          "velocity_nrmse": 0.1520505171538794,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -0.0008704135762930906,
+          "velocity_peak_bias_mps": 5.094687481671002e-05,
+          "blood_iq_nrmse": 0.9756111466685361,
+          "output_to_blood_power_ratio": 0.06313957292392018,
+          "tissue_roi_output_power_ratio": 3.5860166172962037e-06,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 0.8090622443903838,
+          "wss_analytic_nrmse": 0.8344871828863817,
+          "frozen_component_metrics_available": true,
+          "frozen_blood_power_retention": 0.003535614931017089,
+          "frozen_tissue_power_retention": 3.5895304325009763e-06,
+          "frozen_tissue_to_blood_power_ratio": 16.891028613644508
+        }
+      },
+      {
+        "id": "axis1",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9488528397248099,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.3169134554927126,
+          "velocity_nrmse": 0.048611667613405636,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": 4.110661791250946e-06,
+          "velocity_peak_bias_mps": 0.0005344390708319942,
+          "blood_iq_nrmse": 0.2890199666710608,
+          "output_to_blood_power_ratio": 0.9075396715274606,
+          "tissue_roi_output_power_ratio": 9.43435731493161e-07,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 5.394105719135891,
+          "wss_analytic_nrmse": 4.6785643770578655,
+          "frozen_component_metrics_available": false
+        }
+      },
+      {
+        "id": "axis2",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9951678448648344,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 1429.7442098442843,
+          "velocity_nrmse": 0.5946178517141884,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -0.004400416611770444,
+          "velocity_peak_bias_mps": -0.005429058242698645,
+          "blood_iq_nrmse": 63.98867743356535,
+          "output_to_blood_power_ratio": 4094.3341725678406,
+          "tissue_roi_output_power_ratio": 0.24721807537066745,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 1.0052052350804077,
+          "wss_analytic_nrmse": 1.0043601088146432,
+          "frozen_component_metrics_available": false
+        }
+      }
+    ]
+  },
+  {
+    "case": "case_0008",
+    "parameters": {
+      "n_frames": 128,
+      "shape": [
+        6,
+        8
+      ],
+      "snr_db": 20,
+      "umax_mps": 0.04,
+      "tissue_acceleration_mps2": 0.0,
+      "clutter_db": 20.0,
+      "seed": 0
+    },
+    "input_sha256": "ed97a4fe527b1ce3c71fd3a2bd48307ab3090aaaac2b0e58db2b5849975dd14b",
+    "results": [
+      {
+        "id": "svd_fixed",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9624242002760499,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.3919973537418752,
+          "velocity_nrmse": 0.016084729096442766,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": 1.8217347113897435e-05,
+          "velocity_peak_bias_mps": 0.0014522856251612329,
+          "blood_iq_nrmse": 0.1635246112989881,
+          "output_to_blood_power_ratio": 1.0224071312574015,
+          "tissue_roi_output_power_ratio": 8.586961600275618e-05,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 3.057805231158824,
+          "wss_analytic_nrmse": 2.7165722292745547,
+          "frozen_component_metrics_available": true,
+          "frozen_blood_power_retention": 0.996436066368043,
+          "frozen_tissue_power_retention": 5.392143879115932e-06,
+          "frozen_tissue_to_blood_power_ratio": 0.0008316593422139333
+        }
+      },
+      {
+        "id": "aer_temporal",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9362491786459197,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.03443807198867669,
+          "velocity_nrmse": 0.02122812817501829,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -0.00012099482999262121,
+          "velocity_peak_bias_mps": 0.001429836781238883,
+          "blood_iq_nrmse": 0.7649245661379891,
+          "output_to_blood_power_ratio": 0.08982134713889912,
+          "tissue_roi_output_power_ratio": 0.00014337356055085825,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 0.0673269432724088,
+          "wss_analytic_nrmse": 0.20715049010921976,
+          "frozen_component_metrics_available": true,
+          "frozen_blood_power_retention": 0.06674861097424402,
+          "frozen_tissue_power_retention": 0.00013314824938593538,
+          "frozen_tissue_to_blood_power_ratio": 0.3065678903122735
+        }
+      },
+      {
+        "id": "aer_spatial",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9362491786459212,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.09183485863647106,
+          "velocity_nrmse": 0.021228128175018304,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -0.00012099482999262136,
+          "velocity_peak_bias_mps": 0.0014298367812389037,
+          "blood_iq_nrmse": 0.6444631466009706,
+          "output_to_blood_power_ratio": 0.23952359237039736,
+          "tissue_roi_output_power_ratio": 0.0003823294948022872,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 0.06732694327240941,
+          "wss_analytic_nrmse": 0.20715049010922154,
+          "frozen_component_metrics_available": true,
+          "frozen_blood_power_retention": 0.1775717049928274,
+          "frozen_tissue_power_retention": 0.00035405478598452244,
+          "frozen_tissue_to_blood_power_ratio": 0.3064291960137731
+        }
+      },
+      {
+        "id": "axis1",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9595781299809604,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.3751084432863596,
+          "velocity_nrmse": 0.017659514948027005,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -0.00021583935227683206,
+          "velocity_peak_bias_mps": 0.0004368842695359129,
+          "blood_iq_nrmse": 0.21027366139604653,
+          "output_to_blood_power_ratio": 0.9783574908094276,
+          "tissue_roi_output_power_ratio": 9.427553101312177e-05,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 2.2850958884086916,
+          "wss_analytic_nrmse": 2.067757312420955,
+          "frozen_component_metrics_available": false
+        }
+      },
+      {
+        "id": "axis2",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9016402145153902,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 9.0301413545545,
+          "velocity_nrmse": 0.31045647829271317,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -0.007334783853685141,
+          "velocity_peak_bias_mps": 2.396942490218157e-05,
+          "blood_iq_nrmse": 4.778248596628013,
+          "output_to_blood_power_ratio": 23.552406231901124,
+          "tissue_roi_output_power_ratio": 0.14835416138925717,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 0.4295866702340085,
+          "wss_analytic_nrmse": 0.5024273652451478,
+          "frozen_component_metrics_available": false
+        }
+      }
+    ]
+  },
+  {
+    "case": "case_0009",
+    "parameters": {
+      "n_frames": 128,
+      "shape": [
+        6,
+        8
+      ],
+      "snr_db": 20,
+      "umax_mps": 0.04,
+      "tissue_acceleration_mps2": 0.0,
+      "clutter_db": 20.0,
+      "seed": 1
+    },
+    "input_sha256": "7c26d2400c6df57d827606c279c558067d3fedc331972d2c170ababd3afcd463",
+    "results": [
+      {
+        "id": "svd_fixed",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9609839997353251,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.3829036564032462,
+          "velocity_nrmse": 0.012170906625613457,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -0.00014608945834869262,
+          "velocity_peak_bias_mps": 6.446550823928365e-05,
+          "blood_iq_nrmse": 0.1665419209313817,
+          "output_to_blood_power_ratio": 1.0231944350346673,
+          "tissue_roi_output_power_ratio": 8.922611471323913e-05,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 2.6939970639705484,
+          "wss_analytic_nrmse": 2.423706221726702,
+          "frozen_component_metrics_available": true,
+          "frozen_blood_power_retention": 0.9964962493930809,
+          "frozen_tissue_power_retention": 1.1068893309843443e-05,
+          "frozen_tissue_to_blood_power_ratio": 0.0017244700908237852
+        }
+      },
+      {
+        "id": "aer_temporal",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9407017540122546,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.034391592532286554,
+          "velocity_nrmse": 0.01771408417051754,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -0.0003420643497126473,
+          "velocity_peak_bias_mps": 4.545176555866004e-05,
+          "blood_iq_nrmse": 0.7625281976456082,
+          "output_to_blood_power_ratio": 0.09190114929055843,
+          "tissue_roi_output_power_ratio": 0.000145412917983032,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 0.041847743189883754,
+          "wss_analytic_nrmse": 0.18531900673537316,
+          "frozen_component_metrics_available": true,
+          "frozen_blood_power_retention": 0.06835654880515209,
+          "frozen_tissue_power_retention": 0.00013527331021494164,
+          "frozen_tissue_to_blood_power_ratio": 0.30722681820368114
+        }
+      },
+      {
+        "id": "aer_spatial",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9407017540122551,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.09171091341943056,
+          "velocity_nrmse": 0.017714084170517595,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -0.0003420643497126373,
+          "velocity_peak_bias_mps": 4.545176555867392e-05,
+          "blood_iq_nrmse": 0.6414867684091952,
+          "output_to_blood_power_ratio": 0.24506973144148853,
+          "tissue_roi_output_power_ratio": 0.00038776778128808334,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 0.04184774318988274,
+          "wss_analytic_nrmse": 0.18531900673537147,
+          "frozen_component_metrics_available": true,
+          "frozen_blood_power_retention": 0.1817613372449016,
+          "frozen_tissue_power_retention": 0.00035935282680170486,
+          "frozen_tissue_to_blood_power_ratio": 0.30693519476216136
+        }
+      },
+      {
+        "id": "axis1",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9588901065642952,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.3505309731106388,
+          "velocity_nrmse": 0.03652269959425419,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -0.0005814940025021831,
+          "velocity_peak_bias_mps": -0.00027739449291125373,
+          "blood_iq_nrmse": 0.25216486235259206,
+          "output_to_blood_power_ratio": 0.9366882112412535,
+          "tissue_roi_output_power_ratio": 9.741388676261341e-05,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 1.9493269021143442,
+          "wss_analytic_nrmse": 1.7971963843399907,
+          "frozen_component_metrics_available": false
+        }
+      },
+      {
+        "id": "axis2",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.8908071616924256,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 14.189088045000682,
+          "velocity_nrmse": 0.3091553304977684,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -0.007819118471783805,
+          "velocity_peak_bias_mps": -0.0009528037487029697,
+          "blood_iq_nrmse": 6.097430078985689,
+          "output_to_blood_power_ratio": 37.9160545559589,
+          "tissue_roi_output_power_ratio": 0.23984750509118588,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 0.6511525177657606,
+          "wss_analytic_nrmse": 0.6824098793011592,
+          "frozen_component_metrics_available": false
+        }
+      }
+    ]
+  },
+  {
+    "case": "case_0010",
+    "parameters": {
+      "n_frames": 128,
+      "shape": [
+        6,
+        8
+      ],
+      "snr_db": 20,
+      "umax_mps": 0.04,
+      "tissue_acceleration_mps2": 0.0,
+      "clutter_db": 40.0,
+      "seed": 0
+    },
+    "input_sha256": "79f91d850d207debecdca6710eff92b848229bee5df702fdf03799e197bb7de3",
+    "results": [
+      {
+        "id": "svd_fixed",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9624329417355456,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.39200285989603506,
+          "velocity_nrmse": 0.01608333738444594,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": 1.8365614324292758e-05,
+          "velocity_peak_bias_mps": 0.0014518103903963867,
+          "blood_iq_nrmse": 0.16342980205429658,
+          "output_to_blood_power_ratio": 1.0224214924035293,
+          "tissue_roi_output_power_ratio": 8.578528363031163e-07,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 3.063281336824179,
+          "wss_analytic_nrmse": 2.721179557229905,
+          "frozen_component_metrics_available": true,
+          "frozen_blood_power_retention": 0.9964509162876897,
+          "frozen_tissue_power_retention": 5.295295721225013e-08,
+          "frozen_tissue_to_blood_power_ratio": 0.0008167097586500171
+        }
+      },
+      {
+        "id": "aer_temporal",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.8931428247053728,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.008318401908883886,
+          "velocity_nrmse": 0.25174303202246934,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -0.005568977986083075,
+          "velocity_peak_bias_mps": -2.4091296318251576e-05,
+          "blood_iq_nrmse": 0.9744284503396194,
+          "output_to_blood_power_ratio": 0.02169604807564174,
+          "tissue_roi_output_power_ratio": 1.3256609461694602e-06,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 0.3990010956686001,
+          "wss_analytic_nrmse": 0.4633548194234883,
+          "frozen_component_metrics_available": true,
+          "frozen_blood_power_retention": 0.0013081044283536091,
+          "frozen_tissue_power_retention": 1.3246028258636485e-06,
+          "frozen_tissue_to_blood_power_ratio": 15.562404463070404
+        }
+      },
+      {
+        "id": "aer_spatial",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.8931428247053731,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.022182405090356974,
+          "velocity_nrmse": 0.2517430320224718,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -0.005568977986083132,
+          "velocity_peak_bias_mps": -2.4091296318265454e-05,
+          "blood_iq_nrmse": 0.9695246874612236,
+          "output_to_blood_power_ratio": 0.05785612820171116,
+          "tissue_roi_output_power_ratio": 3.5350958564518845e-06,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 0.3990010956686,
+          "wss_analytic_nrmse": 0.4633548194234876,
+          "frozen_component_metrics_available": true,
+          "frozen_blood_power_retention": 0.003487577123679659,
+          "frozen_tissue_power_retention": 3.5321643062214713e-06,
+          "frozen_tissue_to_blood_power_ratio": 15.565049788619623
+        }
+      },
+      {
+        "id": "axis1",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9601637954818503,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.3760010693384412,
+          "velocity_nrmse": 0.0167541205159986,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -0.000184222420861624,
+          "velocity_peak_bias_mps": 0.00045768307995448093,
+          "blood_iq_nrmse": 0.20542247966035068,
+          "output_to_blood_power_ratio": 0.9806856372432814,
+          "tissue_roi_output_power_ratio": 9.402377650893258e-07,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 2.281015171867308,
+          "wss_analytic_nrmse": 2.064463561170393,
+          "frozen_component_metrics_available": false
+        }
+      },
+      {
+        "id": "axis2",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9792767455024651,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 870.8334395083654,
+          "velocity_nrmse": 0.868349278520286,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -0.025884861120450853,
+          "velocity_peak_bias_mps": -0.003005505627365547,
+          "blood_iq_nrmse": 47.65075517276497,
+          "output_to_blood_power_ratio": 2271.306962130781,
+          "tissue_roi_output_power_ratio": 0.14834015116277108,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 1.0204220479984174,
+          "wss_analytic_nrmse": 1.016857247540801,
+          "frozen_component_metrics_available": false
+        }
+      }
+    ]
+  },
+  {
+    "case": "case_0011",
+    "parameters": {
+      "n_frames": 128,
+      "shape": [
+        6,
+        8
+      ],
+      "snr_db": 20,
+      "umax_mps": 0.04,
+      "tissue_acceleration_mps2": 0.0,
+      "clutter_db": 40.0,
+      "seed": 1
+    },
+    "input_sha256": "e871c7965f6f056766e692843838ecef464a1e55a816e9b5ddbde350cda1d9b5",
+    "results": [
+      {
+        "id": "svd_fixed",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.960995223538033,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.38291442055181885,
+          "velocity_nrmse": 0.012167657113776511,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -0.0001460068805355071,
+          "velocity_peak_bias_mps": 6.546389254404039e-05,
+          "blood_iq_nrmse": 0.16634963367407593,
+          "output_to_blood_power_ratio": 1.023223198972366,
+          "tissue_roi_output_power_ratio": 8.903003171777346e-07,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 2.7027366555868824,
+          "wss_analytic_nrmse": 2.4310841431773924,
+          "frozen_component_metrics_available": true,
+          "frozen_blood_power_retention": 0.9965266900135678,
+          "frozen_tissue_power_retention": 1.086722427875267e-07,
+          "frozen_tissue_to_blood_power_ratio": 0.0016929994953155082
+        }
+      },
+      {
+        "id": "aer_temporal",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.8959827002635042,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.008313457273146866,
+          "velocity_nrmse": 0.2253343921062325,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -0.005316837874846548,
+          "velocity_peak_bias_mps": -0.0007559244516163466,
+          "blood_iq_nrmse": 0.9743538308883125,
+          "output_to_blood_power_ratio": 0.022215204988338257,
+          "tissue_roi_output_power_ratio": 1.3445494902844506e-06,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 0.45818172044914635,
+          "wss_analytic_nrmse": 0.5177238602025634,
+          "frozen_component_metrics_available": true,
+          "frozen_blood_power_retention": 0.0013267696977188321,
+          "frozen_tissue_power_retention": 1.343504278894392e-06,
+          "frozen_tissue_to_blood_power_ratio": 15.720655230594524
+        }
+      },
+      {
+        "id": "aer_spatial",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.8959827002635051,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.022169219395058223,
+          "velocity_nrmse": 0.22533439210623235,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -0.005316837874846526,
+          "velocity_peak_bias_mps": -0.0007559244516163466,
+          "blood_iq_nrmse": 0.9696789640237962,
+          "output_to_blood_power_ratio": 0.05924054663556845,
+          "tissue_roi_output_power_ratio": 3.585465307425187e-06,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 0.45818172044914535,
+          "wss_analytic_nrmse": 0.5177238602025636,
+          "frozen_component_metrics_available": true,
+          "frozen_blood_power_retention": 0.003534874181588041,
+          "frozen_tissue_power_retention": 3.582415597212135e-06,
+          "frozen_tissue_to_blood_power_ratio": 15.733637508459292
+        }
+      },
+      {
+        "id": "axis1",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9589924355888475,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.35523084662330556,
+          "velocity_nrmse": 0.03220793817203616,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -0.0004864410119504391,
+          "velocity_peak_bias_mps": -7.113627770510139e-05,
+          "blood_iq_nrmse": 0.23708967480635162,
+          "output_to_blood_power_ratio": 0.9492472044582393,
+          "tissue_roi_output_power_ratio": 9.735103144776531e-07,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 1.9483385800338238,
+          "wss_analytic_nrmse": 1.7963802099042567,
+          "frozen_component_metrics_available": false
+        }
+      },
+      {
+        "id": "axis2",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.976991448077938,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 1387.3833884713429,
+          "velocity_nrmse": 0.9114593016390878,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -0.028013225377150452,
+          "velocity_peak_bias_mps": -0.02339574244722268,
+          "blood_iq_nrmse": 60.88166514135906,
+          "output_to_blood_power_ratio": 3707.3632978015694,
+          "tissue_roi_output_power_ratio": 0.23992599183829605,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 1.0436218415621876,
+          "wss_analytic_nrmse": 1.0360212282917487,
+          "frozen_component_metrics_available": false
+        }
+      }
+    ]
+  },
+  {
+    "case": "case_0012",
+    "parameters": {
+      "n_frames": 128,
+      "shape": [
+        6,
+        8
+      ],
+      "snr_db": 20,
+      "umax_mps": 0.04,
+      "tissue_acceleration_mps2": 0.03,
+      "clutter_db": 20.0,
+      "seed": 0
+    },
+    "input_sha256": "d4bc51f576177524ad0e63d19c85ff40b9568f45a4e5ce28431791b139c5498d",
+    "results": [
+      {
+        "id": "svd_fixed",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9617458157687736,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.39213406379054777,
+          "velocity_nrmse": 0.015902116378569742,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": 2.0299612588461104e-05,
+          "velocity_peak_bias_mps": 0.0014574556582231876,
+          "blood_iq_nrmse": 0.1621016695431725,
+          "output_to_blood_power_ratio": 1.0227636982784365,
+          "tissue_roi_output_power_ratio": 8.57219653781785e-05,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 3.030495904849779,
+          "wss_analytic_nrmse": 2.6935122911943967,
+          "frozen_component_metrics_available": true,
+          "frozen_blood_power_retention": 0.9968781763609775,
+          "frozen_tissue_power_retention": 5.252003449417681e-06,
+          "frozen_tissue_to_blood_power_ratio": 0.0008096854798674592
+        }
+      },
+      {
+        "id": "aer_temporal",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9369889815925658,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.034431383749812,
+          "velocity_nrmse": 0.02058388147321255,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -9.974686041863458e-05,
+          "velocity_peak_bias_mps": 0.0014936358977488892,
+          "blood_iq_nrmse": 0.7650322730481015,
+          "output_to_blood_power_ratio": 0.08980390288055008,
+          "tissue_roi_output_power_ratio": 0.0001433878306954707,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 0.16695806703941973,
+          "wss_analytic_nrmse": 0.2961774381357123,
+          "frozen_component_metrics_available": true,
+          "frozen_blood_power_retention": 0.06675338640406524,
+          "frozen_tissue_power_retention": 0.00013315777779688995,
+          "frozen_tissue_to_blood_power_ratio": 0.3065678961095187
+        }
+      },
+      {
+        "id": "aer_spatial",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9369889815925678,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.09181702333283188,
+          "velocity_nrmse": 0.020583881473212235,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -9.974686041862967e-05,
+          "velocity_peak_bias_mps": 0.0014936358977488892,
+          "blood_iq_nrmse": 0.6446579027506064,
+          "output_to_blood_power_ratio": 0.23947707434813326,
+          "tissue_roi_output_power_ratio": 0.000382367548521253,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 0.16695806703942465,
+          "wss_analytic_nrmse": 0.29617743813571645,
+          "frozen_component_metrics_available": true,
+          "frozen_blood_power_retention": 0.1775944098107253,
+          "frozen_tissue_power_retention": 0.0003545518525374297,
+          "frozen_tissue_to_blood_power_ratio": 0.30682016889485453
+        }
+      },
+      {
+        "id": "axis1",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9594534830953625,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.3752553634372777,
+          "velocity_nrmse": 0.017576156946585684,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -0.00021148660682465754,
+          "velocity_peak_bias_mps": 0.00045229872020751544,
+          "blood_iq_nrmse": 0.20877421307414748,
+          "output_to_blood_power_ratio": 0.9787406878095863,
+          "tissue_roi_output_power_ratio": 9.386624873811315e-05,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 2.301052015276268,
+          "wss_analytic_nrmse": 2.0818852057406283,
+          "frozen_component_metrics_available": false
+        }
+      },
+      {
+        "id": "axis2",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9142103090451668,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 9.026208507317099,
+          "velocity_nrmse": 0.2946264603531155,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -0.006936800439003935,
+          "velocity_peak_bias_mps": -6.469917002913106e-07,
+          "blood_iq_nrmse": 4.777814866101211,
+          "output_to_blood_power_ratio": 23.542148583416303,
+          "tissue_roi_output_power_ratio": 0.1483313255124189,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 0.4816536136666531,
+          "wss_analytic_nrmse": 0.5515580341050806,
+          "frozen_component_metrics_available": false
+        }
+      }
+    ]
+  },
+  {
+    "case": "case_0013",
+    "parameters": {
+      "n_frames": 128,
+      "shape": [
+        6,
+        8
+      ],
+      "snr_db": 20,
+      "umax_mps": 0.04,
+      "tissue_acceleration_mps2": 0.03,
+      "clutter_db": 20.0,
+      "seed": 1
+    },
+    "input_sha256": "991f387fa90216af05ef99052d894341b4ba29eb1ea2af344e46119ae51d5bd1",
+    "results": [
+      {
+        "id": "svd_fixed",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9605748961971543,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.3828886081510207,
+          "velocity_nrmse": 0.012270318303613305,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -0.00013997619973170022,
+          "velocity_peak_bias_mps": 6.517585319347485e-05,
+          "blood_iq_nrmse": 0.1663022225262403,
+          "output_to_blood_power_ratio": 1.0231542231231938,
+          "tissue_roi_output_power_ratio": 8.894779972083662e-05,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 2.4794416045251557,
+          "wss_analytic_nrmse": 2.2448000697183033,
+          "frozen_component_metrics_available": true,
+          "frozen_blood_power_retention": 0.9964912103097964,
+          "frozen_tissue_power_retention": 1.0732445953753986e-05,
+          "frozen_tissue_to_blood_power_ratio": 0.001672061977760478
+        }
+      },
+      {
+        "id": "aer_temporal",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9408103851432337,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.03439262884522246,
+          "velocity_nrmse": 0.01768864597961103,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -0.00034405916450619515,
+          "velocity_peak_bias_mps": 5.380132056947984e-05,
+          "blood_iq_nrmse": 0.7628544547871903,
+          "output_to_blood_power_ratio": 0.09190391852404901,
+          "tissue_roi_output_power_ratio": 0.00014546806011083653,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 0.14596301473203319,
+          "wss_analytic_nrmse": 0.2791663470225267,
+          "frozen_component_metrics_available": true,
+          "frozen_blood_power_retention": 0.06835988199499475,
+          "frozen_tissue_power_retention": 0.00013530881564992342,
+          "frozen_tissue_to_blood_power_ratio": 0.3072924724519984
+        }
+      },
+      {
+        "id": "aer_spatial",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9408103851432326,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.09171367692059289,
+          "velocity_nrmse": 0.01768864597961068,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -0.00034405916450619325,
+          "velocity_peak_bias_mps": 5.380132056948678e-05,
+          "blood_iq_nrmse": 0.6421221249179293,
+          "output_to_blood_power_ratio": 0.24507711606412977,
+          "tissue_roi_output_power_ratio": 0.00038791482696222976,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 0.1459630147320355,
+          "wss_analytic_nrmse": 0.27916634702252857,
+          "frozen_component_metrics_available": true,
+          "frozen_blood_power_retention": 0.18180903884455896,
+          "frozen_tissue_power_retention": 0.00035971635224148375,
+          "frozen_tissue_to_blood_power_ratio": 0.30716508125966957
+        }
+      },
+      {
+        "id": "axis1",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9585922822304567,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.3516153573266529,
+          "velocity_nrmse": 0.03651357740456485,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -0.0005797524857470007,
+          "velocity_peak_bias_mps": -0.00023534989548003316,
+          "blood_iq_nrmse": 0.2486878348381303,
+          "output_to_blood_power_ratio": 0.9395859007166878,
+          "tissue_roi_output_power_ratio": 9.744582659128794e-05,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 1.8805759700531113,
+          "wss_analytic_nrmse": 1.7394032168121034,
+          "frozen_component_metrics_available": false
+        }
+      },
+      {
+        "id": "axis2",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9041861987473847,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 14.187266438008004,
+          "velocity_nrmse": 0.2866084373935065,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -0.007277904147702067,
+          "velocity_peak_bias_mps": -0.00085568541887341,
+          "blood_iq_nrmse": 6.098756809427877,
+          "output_to_blood_power_ratio": 37.911186861157454,
+          "tissue_roi_output_power_ratio": 0.2399711693131836,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 0.6911727009234889,
+          "wss_analytic_nrmse": 0.7238912250182211,
+          "frozen_component_metrics_available": false
+        }
+      }
+    ]
+  },
+  {
+    "case": "case_0014",
+    "parameters": {
+      "n_frames": 128,
+      "shape": [
+        6,
+        8
+      ],
+      "snr_db": 20,
+      "umax_mps": 0.04,
+      "tissue_acceleration_mps2": 0.03,
+      "clutter_db": 40.0,
+      "seed": 0
+    },
+    "input_sha256": "451177c11433dafbe254bcbe9d48c0acd88bf710a3220706e773f624e98d6823",
+    "results": [
+      {
+        "id": "svd_fixed",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.961742539514209,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.39213188470443966,
+          "velocity_nrmse": 0.015903784702265753,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": 2.019725776554792e-05,
+          "velocity_peak_bias_mps": 0.001457560587713888,
+          "blood_iq_nrmse": 0.16214073745178698,
+          "output_to_blood_power_ratio": 1.0227580147880881,
+          "tissue_roi_output_power_ratio": 8.578077375456457e-07,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 3.025249321740245,
+          "wss_analytic_nrmse": 2.6891631489388277,
+          "frozen_component_metrics_available": true,
+          "frozen_blood_power_retention": 0.9968723708228409,
+          "frozen_tissue_power_retention": 5.285605699324851e-08,
+          "frozen_tissue_to_blood_power_ratio": 0.0008148705826363892
+        }
+      },
+      {
+        "id": "aer_temporal",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9052778304788562,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.008318303080951378,
+          "velocity_nrmse": 0.23925767827926367,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -0.005281162079336133,
+          "velocity_peak_bias_mps": -6.556300365251344e-07,
+          "blood_iq_nrmse": 0.974501928195302,
+          "output_to_blood_power_ratio": 0.02169579031272064,
+          "tissue_roi_output_power_ratio": 1.3256803737662918e-06,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 0.4480569298949716,
+          "wss_analytic_nrmse": 0.5153653667754953,
+          "frozen_component_metrics_available": true,
+          "frozen_blood_power_retention": 0.001308112206267691,
+          "frozen_tissue_power_retention": 1.324621942807053e-06,
+          "frozen_tissue_to_blood_power_ratio": 15.562536528975746
+        }
+      },
+      {
+        "id": "aer_spatial",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9052778304788567,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.02218214154920368,
+          "velocity_nrmse": 0.23925767827926536,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -0.005281162079336168,
+          "velocity_peak_bias_mps": -6.556300365320733e-07,
+          "blood_iq_nrmse": 0.9696451428442309,
+          "output_to_blood_power_ratio": 0.05785544083392172,
+          "tissue_roi_output_power_ratio": 3.5351476633767777e-06,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 0.44805692989497364,
+          "wss_analytic_nrmse": 0.5153653667754966,
+          "frozen_component_metrics_available": true,
+          "frozen_blood_power_retention": 0.0034876332723438514,
+          "frozen_tissue_power_retention": 3.532265388016464e-06,
+          "frozen_tissue_to_blood_power_ratio": 15.565244627283722
+        }
+      },
+      {
+        "id": "axis1",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9599908535658556,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.3760455201845918,
+          "velocity_nrmse": 0.016617209900011958,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -0.00017942298593741877,
+          "velocity_peak_bias_mps": 0.0004606919092738568,
+          "blood_iq_nrmse": 0.20464500429623578,
+          "output_to_blood_power_ratio": 0.9808015738986211,
+          "tissue_roi_output_power_ratio": 9.394284694541601e-07,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 2.2920762760899165,
+          "wss_analytic_nrmse": 2.0745523970537874,
+          "frozen_component_metrics_available": false
+        }
+      },
+      {
+        "id": "axis2",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9807642832053168,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 870.3170438977644,
+          "velocity_nrmse": 0.8145114544258178,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -0.024210642836882495,
+          "velocity_peak_bias_mps": -0.003312340778296341,
+          "blood_iq_nrmse": 47.637272628622156,
+          "output_to_blood_power_ratio": 2269.9600995823766,
+          "tissue_roi_output_power_ratio": 0.1482548250468274,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 1.0181831298390795,
+          "wss_analytic_nrmse": 1.0149613326986524,
+          "frozen_component_metrics_available": false
+        }
+      }
+    ]
+  },
+  {
+    "case": "case_0015",
+    "parameters": {
+      "n_frames": 128,
+      "shape": [
+        6,
+        8
+      ],
+      "snr_db": 20,
+      "umax_mps": 0.04,
+      "tissue_acceleration_mps2": 0.03,
+      "clutter_db": 40.0,
+      "seed": 1
+    },
+    "input_sha256": "faffb61642556352fe326477e4dd0c5f7f5b2032bcf6ec15941d5b37bfad6513",
+    "results": [
+      {
+        "id": "svd_fixed",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9605823198120899,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.3828781361410802,
+          "velocity_nrmse": 0.012274209849651005,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -0.00013995993286964884,
+          "velocity_peak_bias_mps": 6.45271783722215e-05,
+          "blood_iq_nrmse": 0.16647466407089487,
+          "output_to_blood_power_ratio": 1.0231262398378018,
+          "tissue_roi_output_power_ratio": 8.912224682477033e-07,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 2.4693218021334697,
+          "wss_analytic_nrmse": 2.2362944114251877,
+          "frozen_component_metrics_available": true,
+          "frozen_blood_power_retention": 0.9964596652080807,
+          "frozen_tissue_power_retention": 1.0893417889806597e-07,
+          "frozen_tissue_to_blood_power_ratio": 0.0016971943356265365
+        }
+      },
+      {
+        "id": "aer_temporal",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9030101025826452,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.008313414218781475,
+          "velocity_nrmse": 0.21490073302461452,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -0.005108061346990181,
+          "velocity_peak_bias_mps": -0.0007106066584020437,
+          "blood_iq_nrmse": 0.9745978664939388,
+          "output_to_blood_power_ratio": 0.02221508993854352,
+          "tissue_roi_output_power_ratio": 1.3445997508872481e-06,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 0.5149904140676617,
+          "wss_analytic_nrmse": 0.574036178989786,
+          "frozen_component_metrics_available": true,
+          "frozen_blood_power_retention": 0.0013265883938292265,
+          "frozen_tissue_power_retention": 1.3435530669234073e-06,
+          "frozen_tissue_to_blood_power_ratio": 15.72337471939927
+        }
+      },
+      {
+        "id": "aer_spatial",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9030101025826467,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.02216910458341724,
+          "velocity_nrmse": 0.2149007330246142,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -0.005108061346990179,
+          "velocity_peak_bias_mps": -0.0007106066584020229,
+          "blood_iq_nrmse": 0.9700792999108747,
+          "output_to_blood_power_ratio": 0.05924023983611599,
+          "tissue_roi_output_power_ratio": 3.5855993356993234e-06,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 0.5149904140676637,
+          "wss_analytic_nrmse": 0.5740361789897886,
+          "frozen_component_metrics_available": true,
+          "frozen_blood_power_retention": 0.003535018214754135,
+          "frozen_tissue_power_retention": 3.582574940818625e-06,
+          "frozen_tissue_to_blood_power_ratio": 15.733696240369826
+        }
+      },
+      {
+        "id": "axis1",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9585777253004288,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 0.35529865230577107,
+          "velocity_nrmse": 0.032225657542683896,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -0.00048453415029810226,
+          "velocity_peak_bias_mps": -6.600348281890489e-05,
+          "blood_iq_nrmse": 0.23684211776192254,
+          "output_to_blood_power_ratio": 0.9494283946762021,
+          "tissue_roi_output_power_ratio": 9.747781324744994e-07,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 1.8855122827442434,
+          "wss_analytic_nrmse": 1.7435425370512272,
+          "frozen_component_metrics_available": false
+        }
+      },
+      {
+        "id": "axis2",
+        "status": "ok",
+        "metrics": {
+          "coherence_flow_median": 0.9794136811624644,
+          "velocity_invalid_fraction": 0.0,
+          "power_output": 1387.5290958170735,
+          "velocity_nrmse": 0.8570776231768558,
+          "near_wall_velocity_nrmse": null,
+          "velocity_mean_bias_mps": -0.026234335306992155,
+          "velocity_peak_bias_mps": -0.021699107360678305,
+          "blood_iq_nrmse": 60.88658713177928,
+          "output_to_blood_power_ratio": 3707.75265669852,
+          "tissue_roi_output_power_ratio": 0.2399640387145118,
+          "wss_invalid_fraction": 0.0,
+          "wss_nrmse": 1.0480629496142,
+          "wss_analytic_nrmse": 1.0396929753096256,
+          "frozen_component_metrics_available": false
+        }
+      }
+    ]
+  }
+]

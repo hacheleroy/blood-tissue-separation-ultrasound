@@ -1,0 +1,1710 @@
+{
+  "config": {
+    "blas_threads": 1,
+    "save_iq": false,
+    "geometry_factor": 2.0,
+    "methods": [
+      {
+        "id": "oracle_svd_velocity",
+        "method": "svd",
+        "params": {
+          "centered": false,
+          "window": 64
+        },
+        "oracle_grid": {
+          "discard": "all"
+        },
+        "objective": "velocity_nrmse"
+      },
+      {
+        "id": "oracle_svd_wss",
+        "method": "svd",
+        "params": {
+          "centered": false,
+          "window": 64
+        },
+        "oracle_grid": {
+          "discard": "all"
+        },
+        "objective": "wss_nrmse"
+      },
+      {
+        "id": "oracle_aer_wss",
+        "method": "aer",
+        "params": {
+          "centered": false,
+          "domain": "temporal",
+          "window": 64
+        },
+        "oracle_grid": {
+          "epsilon_rel": [
+            1e-05,
+            0.001,
+            0.1
+          ],
+          "alpha": [
+            0.25,
+            0.5
+          ]
+        },
+        "objective": "wss_nrmse"
+      }
+    ]
+  },
+  "results": [
+    {
+      "id": "oracle_svd_velocity",
+      "method": "svd",
+      "oracle": true,
+      "spec": {
+        "id": "oracle_svd_velocity",
+        "method": "svd",
+        "params": {
+          "centered": false,
+          "window": 64
+        },
+        "oracle_grid": {
+          "discard": "all"
+        },
+        "objective": "velocity_nrmse"
+      },
+      "selection_uses_test_truth": true,
+      "objective": "velocity_nrmse",
+      "selected": {
+        "id": "oracle_svd_velocity",
+        "method": "svd",
+        "params": {
+          "centered": false,
+          "window": 64,
+          "discard": 1
+        },
+        "oracle_grid": {
+          "discard": "all"
+        },
+        "objective": "velocity_nrmse"
+      },
+      "curve": [
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 0
+          },
+          "loss": 0.8342763409450484
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 1
+          },
+          "loss": 0.013619252319564238
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 2
+          },
+          "loss": 0.03767696168083039
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 3
+          },
+          "loss": 0.041312914142664386
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 4
+          },
+          "loss": 0.046193405770648226
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 5
+          },
+          "loss": 0.05248504525842461
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 6
+          },
+          "loss": 0.05647061311190352
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 7
+          },
+          "loss": 0.08786588548665064
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 8
+          },
+          "loss": 0.11325960845871468
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 9
+          },
+          "loss": 0.14710637984089478
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 10
+          },
+          "loss": 0.23237769190756827
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 11
+          },
+          "loss": 0.35251340354514865
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 12
+          },
+          "loss": 0.548498227228074
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 13
+          },
+          "loss": 0.8346110618072541
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 14
+          },
+          "loss": 1.3299156698003562
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 15
+          },
+          "loss": 1.9405804332125682
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 16
+          },
+          "loss": 2.498384560437026
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 17
+          },
+          "loss": 2.8398622664888564
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 18
+          },
+          "loss": 3.3976623730447812
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 19
+          },
+          "loss": 3.69069788181121
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 20
+          },
+          "loss": 3.969600951527106
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 21
+          },
+          "loss": 4.200545450310796
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 22
+          },
+          "loss": 4.316419506104647
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 23
+          },
+          "loss": 4.254225943505091
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 24
+          },
+          "loss": 4.321023006942717
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 25
+          },
+          "loss": 4.318074495740164
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 26
+          },
+          "loss": 4.32099763922595
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 27
+          },
+          "loss": 4.2838117313486235
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 28
+          },
+          "loss": 4.319253570968888
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 29
+          },
+          "loss": 4.302079016303555
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 30
+          },
+          "loss": 4.2806421341209635
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 31
+          },
+          "loss": 4.2957957869533345
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 32
+          },
+          "loss": 4.300035150176602
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 33
+          },
+          "loss": 4.293779147918419
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 34
+          },
+          "loss": 4.288728314389296
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 35
+          },
+          "loss": 4.277491504584314
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 36
+          },
+          "loss": 4.286680540825581
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 37
+          },
+          "loss": 4.283668590724543
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 38
+          },
+          "loss": 4.269854259881382
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 39
+          },
+          "loss": 4.276174966322302
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 40
+          },
+          "loss": 4.272060456235171
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 41
+          },
+          "loss": 4.273111337081546
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 42
+          },
+          "loss": 4.258760926702861
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 43
+          },
+          "loss": 4.25347678279799
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 44
+          },
+          "loss": 4.243296248879048
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 45
+          },
+          "loss": 4.264495636337424
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 46
+          },
+          "loss": 4.281399763526137
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 47
+          },
+          "loss": 4.2782525407711445
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 48
+          },
+          "loss": 4.27835271947123
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 49
+          },
+          "loss": 4.262568014873512
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 50
+          },
+          "loss": 4.2729101630631545
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 51
+          },
+          "loss": 4.244992538777006
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 52
+          },
+          "loss": 4.285994804424321
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 53
+          },
+          "loss": 4.255461929505739
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 54
+          },
+          "loss": 4.245254421493515
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 55
+          },
+          "loss": 4.2709403228528675
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 56
+          },
+          "loss": 4.2651002048230735
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 57
+          },
+          "loss": 4.286104802810511
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 58
+          },
+          "loss": 4.3040539664039
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 59
+          },
+          "loss": 4.373687404286451
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 60
+          },
+          "loss": 4.350877447846156
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 61
+          },
+          "loss": 4.351761854611777
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 62
+          },
+          "loss": 4.319099538938189
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 63
+          },
+          "loss": 4.461881306259793
+        }
+      ],
+      "status": "ok",
+      "metrics": {
+        "coherence_flow_median": 0.9666606903211739,
+        "velocity_invalid_fraction": 0.0,
+        "power_output": 0.6252528824749325,
+        "velocity_nrmse": 0.013619252319564238,
+        "near_wall_velocity_nrmse": 0.024748864137719494,
+        "velocity_mean_bias_mps": 7.046126972131035e-05,
+        "velocity_peak_bias_mps": 0.0004910894708033617,
+        "blood_iq_nrmse": 0.16862439665809717,
+        "output_to_blood_power_ratio": 1.0038105598970586,
+        "tissue_roi_output_power_ratio": 8.0479523685145e-06,
+        "wss_invalid_fraction": 0.0,
+        "wss_nrmse": 1.1132885592876867,
+        "wss_analytic_nrmse": 1.0079490948908127,
+        "frozen_component_metrics_available": true,
+        "frozen_blood_power_retention": 0.9877139310264541,
+        "frozen_tissue_power_retention": 5.769081018161295e-07,
+        "frozen_tissue_to_blood_power_ratio": 0.0004620129536720452
+      },
+      "diagnostics": {
+        "centered": false,
+        "windows": [
+          {
+            "start": 0,
+            "stop": 64,
+            "discard": 1,
+            "upper": 64
+          },
+          {
+            "start": 64,
+            "stop": 128,
+            "discard": 1,
+            "upper": 64
+          },
+          {
+            "start": 128,
+            "stop": 192,
+            "discard": 1,
+            "upper": 64
+          },
+          {
+            "start": 192,
+            "stop": 256,
+            "discard": 1,
+            "upper": 64
+          }
+        ]
+      },
+      "readout": {
+        "window_frames": 64,
+        "hop_frames": 64,
+        "records": [
+          {
+            "start": 0,
+            "stop": 64,
+            "metrics": {
+              "coherence_flow_median": 0.9634931947654104,
+              "velocity_invalid_fraction": 0.0,
+              "power_output": 0.6283193858714567,
+              "velocity_nrmse": 0.03465607305863956,
+              "near_wall_velocity_nrmse": 0.06912729106580182,
+              "velocity_mean_bias_mps": 0.00011619434382343984,
+              "velocity_peak_bias_mps": 0.001399947250607634,
+              "blood_iq_nrmse": 0.1693679674131844,
+              "output_to_blood_power_ratio": 1.0038725494381284,
+              "tissue_roi_output_power_ratio": 8.18130015670026e-06,
+              "wss_invalid_fraction": 0.0,
+              "wss_nrmse": 0.8020780471150847,
+              "wss_analytic_nrmse": 0.6279441993396017
+            }
+          },
+          {
+            "start": 64,
+            "stop": 128,
+            "metrics": {
+              "coherence_flow_median": 0.9650769583304387,
+              "velocity_invalid_fraction": 0.0,
+              "power_output": 0.6391620971953287,
+              "velocity_nrmse": 0.02829485982786838,
+              "near_wall_velocity_nrmse": 0.06178092921588077,
+              "velocity_mean_bias_mps": 0.00014758291894718787,
+              "velocity_peak_bias_mps": 0.0008315313586600981,
+              "blood_iq_nrmse": 0.1642122755624098,
+              "output_to_blood_power_ratio": 1.006253049423004,
+              "tissue_roi_output_power_ratio": 7.965240116849153e-06,
+              "wss_invalid_fraction": 0.0,
+              "wss_nrmse": 1.1361605797012069,
+              "wss_analytic_nrmse": 1.0091285620131323
+            }
+          },
+          {
+            "start": 128,
+            "stop": 192,
+            "metrics": {
+              "coherence_flow_median": 0.9639420074907714,
+              "velocity_invalid_fraction": 0.0,
+              "power_output": 0.5839117848908758,
+              "velocity_nrmse": 0.03310824480762771,
+              "near_wall_velocity_nrmse": 0.06169908637745804,
+              "velocity_mean_bias_mps": 0.00012709276953217817,
+              "velocity_peak_bias_mps": 0.0013926435501638336,
+              "blood_iq_nrmse": 0.1699241157998572,
+              "output_to_blood_power_ratio": 1.0051848398885963,
+              "tissue_roi_output_power_ratio": 8.05217909476344e-06,
+              "wss_invalid_fraction": 0.0,
+              "wss_nrmse": 1.1922274362746526,
+              "wss_analytic_nrmse": 1.0611251723167132
+            }
+          },
+          {
+            "start": 192,
+            "stop": 256,
+            "metrics": {
+              "coherence_flow_median": 0.9671575670303653,
+              "velocity_invalid_fraction": 0.0,
+              "power_output": 0.6496182619420687,
+              "velocity_nrmse": 0.03620141281984493,
+              "near_wall_velocity_nrmse": 0.08477971265856202,
+              "velocity_mean_bias_mps": 0.0002026229908657729,
+              "velocity_peak_bias_mps": 0.0023369296959955613,
+              "blood_iq_nrmse": 0.17098122249632025,
+              "output_to_blood_power_ratio": 1.0001331975770336,
+              "tissue_roi_output_power_ratio": 7.993095738857556e-06,
+              "wss_invalid_fraction": 0.0,
+              "wss_nrmse": 1.088850673614849,
+              "wss_analytic_nrmse": 0.995642821400314
+            }
+          }
+        ],
+        "unattributed_velocity_temporal_std_mps": 0.00044094730295234444,
+        "interpretation": "temporal variability includes real pulsatility and artifacts"
+      },
+      "wall_time_s": 0.6832714490001308,
+      "process_high_water_rss_bytes": 92807168
+    },
+    {
+      "id": "oracle_svd_wss",
+      "method": "svd",
+      "oracle": true,
+      "spec": {
+        "id": "oracle_svd_wss",
+        "method": "svd",
+        "params": {
+          "centered": false,
+          "window": 64
+        },
+        "oracle_grid": {
+          "discard": "all"
+        },
+        "objective": "wss_nrmse"
+      },
+      "selection_uses_test_truth": true,
+      "objective": "wss_nrmse",
+      "selected": {
+        "id": "oracle_svd_wss",
+        "method": "svd",
+        "params": {
+          "centered": false,
+          "window": 64,
+          "discard": 0
+        },
+        "oracle_grid": {
+          "discard": "all"
+        },
+        "objective": "wss_nrmse"
+      },
+      "curve": [
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 0
+          },
+          "loss": 0.8156821152711204
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 1
+          },
+          "loss": 1.1132885592876867
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 2
+          },
+          "loss": 1.1828750606466358
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 3
+          },
+          "loss": 1.387252550146062
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 4
+          },
+          "loss": 1.5168018127153535
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 5
+          },
+          "loss": 1.4365160341391783
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 6
+          },
+          "loss": 1.4191208007610887
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 7
+          },
+          "loss": 1.4717390907425758
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 8
+          },
+          "loss": 1.1291832601597414
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 9
+          },
+          "loss": 1.5208524328935704
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 10
+          },
+          "loss": 1.4084368686545938
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 11
+          },
+          "loss": 1.0120470865786975
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 12
+          },
+          "loss": 1.361104140197864
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 13
+          },
+          "loss": 1.9773709146590785
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 14
+          },
+          "loss": 5.9635152711991894
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 15
+          },
+          "loss": 10.449645200714222
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 16
+          },
+          "loss": 10.97713384246169
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 17
+          },
+          "loss": 5.960476512927301
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 18
+          },
+          "loss": 4.302209597425047
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 19
+          },
+          "loss": 2.792357453378529
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 20
+          },
+          "loss": 2.64029023412868
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 21
+          },
+          "loss": 2.5300719927984727
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 22
+          },
+          "loss": 2.4087360835084217
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 23
+          },
+          "loss": 2.418850854033284
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 24
+          },
+          "loss": 2.375744641509626
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 25
+          },
+          "loss": 2.0623893671857694
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 26
+          },
+          "loss": 1.7274777699231791
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 27
+          },
+          "loss": 1.6328329998624926
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 28
+          },
+          "loss": 1.6105660109359774
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 29
+          },
+          "loss": 1.587437882974785
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 30
+          },
+          "loss": 1.6728022561084417
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 31
+          },
+          "loss": 1.7104225676674023
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 32
+          },
+          "loss": 1.6315300803122195
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 33
+          },
+          "loss": 1.4302967196039518
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 34
+          },
+          "loss": 1.412319886112842
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 35
+          },
+          "loss": 1.4142828818511088
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 36
+          },
+          "loss": 1.3855558287183105
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 37
+          },
+          "loss": 1.3136108374857673
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 38
+          },
+          "loss": 1.4047664681077165
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 39
+          },
+          "loss": 1.2598208737272083
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 40
+          },
+          "loss": 1.2501355721068592
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 41
+          },
+          "loss": 1.496582026479645
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 42
+          },
+          "loss": 1.3978488157972557
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 43
+          },
+          "loss": 1.389288970267071
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 44
+          },
+          "loss": 1.5425361266421505
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 45
+          },
+          "loss": 1.4626298799615725
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 46
+          },
+          "loss": 1.337172611336589
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 47
+          },
+          "loss": 1.2197298162556542
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 48
+          },
+          "loss": 1.1715634615658075
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 49
+          },
+          "loss": 1.1817017018604064
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 50
+          },
+          "loss": 1.075441353022111
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 51
+          },
+          "loss": 1.1075701302133367
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 52
+          },
+          "loss": 0.9318285860541805
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 53
+          },
+          "loss": 1.0092915471905544
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 54
+          },
+          "loss": 1.134218573426023
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 55
+          },
+          "loss": 1.2250175921600308
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 56
+          },
+          "loss": 1.2179650768907313
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 57
+          },
+          "loss": 1.1797742533897484
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 58
+          },
+          "loss": 1.0321519525614735
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 59
+          },
+          "loss": 1.2425334359001456
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 60
+          },
+          "loss": 1.0401516823493415
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 61
+          },
+          "loss": 0.8699681756122674
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 62
+          },
+          "loss": 1.1868054665219343
+        },
+        {
+          "params": {
+            "centered": false,
+            "window": 64,
+            "discard": 63
+          },
+          "loss": 1.288463917006922
+        }
+      ],
+      "status": "ok",
+      "metrics": {
+        "coherence_flow_median": 0.9841058362874814,
+        "velocity_invalid_fraction": 0.0,
+        "power_output": 493.3229111470814,
+        "velocity_nrmse": 0.8342763409450484,
+        "near_wall_velocity_nrmse": 0.7030128275534069,
+        "velocity_mean_bias_mps": -0.013499486732163194,
+        "velocity_peak_bias_mps": -0.01466956844737677,
+        "blood_iq_nrmse": 28.125063946172595,
+        "output_to_blood_power_ratio": 792.003941970555,
+        "tissue_roi_output_power_ratio": 0.9999999999999999,
+        "wss_invalid_fraction": 0.0,
+        "wss_nrmse": 0.8156821152711204,
+        "wss_analytic_nrmse": 0.8177815966871642,
+        "frozen_component_metrics_available": true,
+        "frozen_blood_power_retention": 1.0000000000000007,
+        "frozen_tissue_power_retention": 1.0,
+        "frozen_tissue_to_blood_power_ratio": 791.0040251124793
+      },
+      "diagnostics": {
+        "centered": false,
+        "windows": [
+          {
+            "start": 0,
+            "stop": 64,
+            "discard": 0,
+            "upper": 64
+          },
+          {
+            "start": 64,
+            "stop": 128,
+            "discard": 0,
+            "upper": 64
+          },
+          {
+            "start": 128,
+            "stop": 192,
+            "discard": 0,
+            "upper": 64
+          },
+          {
+            "start": 192,
+            "stop": 256,
+            "discard": 0,
+            "upper": 64
+          }
+        ]
+      },
+      "readout": {
+        "window_frames": 64,
+        "hop_frames": 64,
+        "records": [
+          {
+            "start": 0,
+            "stop": 64,
+            "metrics": {
+              "coherence_flow_median": 0.9858220074086848,
+              "velocity_invalid_fraction": 0.0,
+              "power_output": 493.34792195266635,
+              "velocity_nrmse": 0.867632160495138,
+              "near_wall_velocity_nrmse": 0.757243463010446,
+              "velocity_mean_bias_mps": -0.014127727163275013,
+              "velocity_peak_bias_mps": -0.015959806752065254,
+              "blood_iq_nrmse": 28.056980936884045,
+              "output_to_blood_power_ratio": 788.2272094529123,
+              "tissue_roi_output_power_ratio": 0.9999999999999999,
+              "wss_invalid_fraction": 0.0,
+              "wss_nrmse": 0.8330657885373528,
+              "wss_analytic_nrmse": 0.832671845328734
+            }
+          },
+          {
+            "start": 64,
+            "stop": 128,
+            "metrics": {
+              "coherence_flow_median": 0.985852283497068,
+              "velocity_invalid_fraction": 0.0,
+              "power_output": 493.3610838516368,
+              "velocity_nrmse": 0.8430502053330979,
+              "near_wall_velocity_nrmse": 0.7314674597943785,
+              "velocity_mean_bias_mps": -0.013685031404581409,
+              "velocity_peak_bias_mps": -0.009932984523188441,
+              "blood_iq_nrmse": 27.851859067074948,
+              "output_to_blood_power_ratio": 776.713915407023,
+              "tissue_roi_output_power_ratio": 0.9999999999999992,
+              "wss_invalid_fraction": 0.0,
+              "wss_nrmse": 0.8068964299982473,
+              "wss_analytic_nrmse": 0.8137191041284138
+            }
+          },
+          {
+            "start": 128,
+            "stop": 192,
+            "metrics": {
+              "coherence_flow_median": 0.9875622699596602,
+              "velocity_invalid_fraction": 0.0,
+              "power_output": 493.30257653643406,
+              "velocity_nrmse": 0.8297015028678562,
+              "near_wall_velocity_nrmse": 0.6879504953772543,
+              "velocity_mean_bias_mps": -0.013347097151509424,
+              "velocity_peak_bias_mps": -0.012509505809523739,
+              "blood_iq_nrmse": 29.123661830671615,
+              "output_to_blood_power_ratio": 849.2040822657419,
+              "tissue_roi_output_power_ratio": 0.9999999999999993,
+              "wss_invalid_fraction": 0.0,
+              "wss_nrmse": 0.8608902654810541,
+              "wss_analytic_nrmse": 0.8527128122822542
+            }
+          },
+          {
+            "start": 192,
+            "stop": 256,
+            "metrics": {
+              "coherence_flow_median": 0.986060207376564,
+              "velocity_invalid_fraction": 0.0,
+              "power_output": 493.2800622475883,
+              "velocity_nrmse": 0.8112841364443342,
+              "near_wall_velocity_nrmse": 0.6629591580663137,
+              "velocity_mean_bias_mps": -0.013051410274610388,
+              "velocity_peak_bias_mps": -0.015347084562843262,
+              "blood_iq_nrmse": 27.541473045993087,
+              "output_to_blood_power_ratio": 759.4394967927701,
+              "tissue_roi_output_power_ratio": 1.0,
+              "wss_invalid_fraction": 0.0,
+              "wss_nrmse": 0.8172540517293659,
+              "wss_analytic_nrmse": 0.8179407305608256
+            }
+          }
+        ],
+        "unattributed_velocity_temporal_std_mps": 0.000714558786267662,
+        "interpretation": "temporal variability includes real pulsatility and artifacts"
+      },
+      "wall_time_s": 0.6094439329999659,
+      "process_high_water_rss_bytes": 93835264
+    },
+    {
+      "id": "oracle_aer_wss",
+      "method": "aer",
+      "oracle": true,
+      "spec": {
+        "id": "oracle_aer_wss",
+        "method": "aer",
+        "params": {
+          "centered": false,
+          "domain": "temporal",
+          "window": 64
+        },
+        "oracle_grid": {
+          "epsilon_rel": [
+            1e-05,
+            0.001,
+            0.1
+          ],
+          "alpha": [
+            0.25,
+            0.5
+          ]
+        },
+        "objective": "wss_nrmse"
+      },
+      "selection_uses_test_truth": true,
+      "objective": "wss_nrmse",
+      "selected": {
+        "id": "oracle_aer_wss",
+        "method": "aer",
+        "params": {
+          "centered": false,
+          "domain": "temporal",
+          "window": 64,
+          "epsilon_rel": 0.001,
+          "alpha": 0.5
+        },
+        "oracle_grid": {
+          "epsilon_rel": [
+            1e-05,
+            0.001,
+            0.1
+          ],
+          "alpha": [
+            0.25,
+            0.5
+          ]
+        },
+        "objective": "wss_nrmse"
+      },
+      "curve": [
+        {
+          "params": {
+            "centered": false,
+            "domain": "temporal",
+            "window": 64,
+            "epsilon_rel": 1e-05,
+            "alpha": 0.25
+          },
+          "loss": 0.3274414032202093
+        },
+        {
+          "params": {
+            "centered": false,
+            "domain": "temporal",
+            "window": 64,
+            "epsilon_rel": 1e-05,
+            "alpha": 0.5
+          },
+          "loss": 0.32752191557447907
+        },
+        {
+          "params": {
+            "centered": false,
+            "domain": "temporal",
+            "window": 64,
+            "epsilon_rel": 0.001,
+            "alpha": 0.25
+          },
+          "loss": 0.543634740706259
+        },
+        {
+          "params": {
+            "centered": false,
+            "domain": "temporal",
+            "window": 64,
+            "epsilon_rel": 0.001,
+            "alpha": 0.5
+          },
+          "loss": 0.11662908091976024
+        },
+        {
+          "params": {
+            "centered": false,
+            "domain": "temporal",
+            "window": 64,
+            "epsilon_rel": 0.1,
+            "alpha": 0.25
+          },
+          "loss": 0.8272155685050963
+        },
+        {
+          "params": {
+            "centered": false,
+            "domain": "temporal",
+            "window": 64,
+            "epsilon_rel": 0.1,
+            "alpha": 0.5
+          },
+          "loss": 0.7286996511505154
+        }
+      ],
+      "status": "ok",
+      "metrics": {
+        "coherence_flow_median": 0.9603468823406165,
+        "velocity_invalid_fraction": 0.0,
+        "power_output": 0.032482572281917726,
+        "velocity_nrmse": 0.03130597478806336,
+        "near_wall_velocity_nrmse": 0.03506071782953899,
+        "velocity_mean_bias_mps": -0.00026203912615583593,
+        "velocity_peak_bias_mps": 0.0004977615743072226,
+        "blood_iq_nrmse": 0.8533667084159439,
+        "output_to_blood_power_ratio": 0.05214905837801676,
+        "tissue_roi_output_power_ratio": 3.193023070647094e-05,
+        "wss_invalid_fraction": 0.0,
+        "wss_nrmse": 0.11662908091976024,
+        "wss_analytic_nrmse": 0.21594431312072704,
+        "frozen_component_metrics_available": true,
+        "frozen_blood_power_retention": 0.026595579222189865,
+        "frozen_tissue_power_retention": 3.16974775094596e-05,
+        "frozen_tissue_to_blood_power_ratio": 0.9427443593699014
+      },
+      "diagnostics": {
+        "window": 64,
+        "windows": [
+          {
+            "centered": false,
+            "domain": "temporal",
+            "epsilon_absolute": 31.5340545642749,
+            "epsilon_rel": 0.001,
+            "epsilon_rule": "relative",
+            "alpha": 0.5,
+            "covariance_denominator": 192,
+            "numerical_rank": 64,
+            "amplitude_calibration": "changed; no truth-based gain normalization"
+          },
+          {
+            "centered": false,
+            "domain": "temporal",
+            "epsilon_absolute": 31.534202992284346,
+            "epsilon_rel": 0.001,
+            "epsilon_rule": "relative",
+            "alpha": 0.5,
+            "covariance_denominator": 192,
+            "numerical_rank": 64,
+            "amplitude_calibration": "changed; no truth-based gain normalization"
+          },
+          {
+            "centered": false,
+            "domain": "temporal",
+            "epsilon_absolute": 31.53399454409884,
+            "epsilon_rel": 0.001,
+            "epsilon_rule": "relative",
+            "alpha": 0.5,
+            "covariance_denominator": 192,
+            "numerical_rank": 64,
+            "amplitude_calibration": "changed; no truth-based gain normalization"
+          },
+          {
+            "centered": false,
+            "domain": "temporal",
+            "epsilon_absolute": 31.528348415081382,
+            "epsilon_rel": 0.001,
+            "epsilon_rule": "relative",
+            "alpha": 0.5,
+            "covariance_denominator": 192,
+            "numerical_rank": 64,
+            "amplitude_calibration": "changed; no truth-based gain normalization"
+          }
+        ]
+      },
+      "readout": {
+        "window_frames": 64,
+        "hop_frames": 64,
+        "records": [
+          {
+            "start": 0,
+            "stop": 64,
+            "metrics": {
+              "coherence_flow_median": 0.9557179354503844,
+              "velocity_invalid_fraction": 0.0,
+              "power_output": 0.032655420549194215,
+              "velocity_nrmse": 0.055491180155592026,
+              "near_wall_velocity_nrmse": 0.06431178626949058,
+              "velocity_mean_bias_mps": -0.0003471326223775296,
+              "velocity_peak_bias_mps": 0.0014276859132356483,
+              "blood_iq_nrmse": 0.8527039155503948,
+              "output_to_blood_power_ratio": 0.05217391189391131,
+              "tissue_roi_output_power_ratio": 3.193342702173392e-05,
+              "wss_invalid_fraction": 0.0,
+              "wss_nrmse": 0.11951062150480579,
+              "wss_analytic_nrmse": 0.1949361235993091
+            }
+          },
+          {
+            "start": 64,
+            "stop": 128,
+            "metrics": {
+              "coherence_flow_median": 0.9562042345803587,
+              "velocity_invalid_fraction": 0.0,
+              "power_output": 0.032863885993426704,
+              "velocity_nrmse": 0.04438904587373831,
+              "near_wall_velocity_nrmse": 0.06683007919555577,
+              "velocity_mean_bias_mps": -0.00028202178962836744,
+              "velocity_peak_bias_mps": 0.0005007530277302726,
+              "blood_iq_nrmse": 0.8527095639192169,
+              "output_to_blood_power_ratio": 0.051738652279109607,
+              "tissue_roi_output_power_ratio": 3.192658761400136e-05,
+              "wss_invalid_fraction": 0.0,
+              "wss_nrmse": 0.20304759854458834,
+              "wss_analytic_nrmse": 0.2828111700088057
+            }
+          },
+          {
+            "start": 128,
+            "stop": 192,
+            "metrics": {
+              "coherence_flow_median": 0.9563456175210332,
+              "velocity_invalid_fraction": 0.0,
+              "power_output": 0.031512440952671236,
+              "velocity_nrmse": 0.04912294710026255,
+              "near_wall_velocity_nrmse": 0.0635673763047653,
+              "velocity_mean_bias_mps": -0.0003215328947688445,
+              "velocity_peak_bias_mps": 0.001377579315119594,
+              "blood_iq_nrmse": 0.8535091151756594,
+              "output_to_blood_power_ratio": 0.054247625639940476,
+              "tissue_roi_output_power_ratio": 3.192881931536055e-05,
+              "wss_invalid_fraction": 0.0,
+              "wss_nrmse": 0.2088809965474055,
+              "wss_analytic_nrmse": 0.26217914087581656
+            }
+          },
+          {
+            "start": 192,
+            "stop": 256,
+            "metrics": {
+              "coherence_flow_median": 0.9575957717545627,
+              "velocity_invalid_fraction": 0.0,
+              "power_output": 0.032898541632378764,
+              "velocity_nrmse": 0.04663976588197492,
+              "near_wall_velocity_nrmse": 0.06500326179868325,
+              "velocity_mean_bias_mps": -0.0002168349529890194,
+              "velocity_peak_bias_mps": 0.0012292051330707737,
+              "blood_iq_nrmse": 0.8545193733219774,
+              "output_to_blood_power_ratio": 0.050649628506512535,
+              "tissue_roi_output_power_ratio": 3.193208922156262e-05,
+              "wss_invalid_fraction": 0.0,
+              "wss_nrmse": 0.2600661141499786,
+              "wss_analytic_nrmse": 0.33012839999216703
+            }
+          }
+        ],
+        "unattributed_velocity_temporal_std_mps": 0.00048765297823117617,
+        "interpretation": "temporal variability includes real pulsatility and artifacts"
+      },
+      "wall_time_s": 0.053240293999806454,
+      "process_high_water_rss_bytes": 95887360
+    }
+  ],
+  "acquisition": {
+    "generator": "statistical_IQ_surrogate",
+    "seed": 0,
+    "not_acoustic_ground_truth": true,
+    "contrast_agent": false,
+    "clutter_db": 30.0,
+    "snr_db": 20.0
+  },
+  "code_sha256": "ebfe13ed207a8e639e75e73d302f8c2561cdaacfcf20b4eae53ecea2ffc4edf1",
+  "iq_shape": [
+    256,
+    12,
+    16
+  ],
+  "input_sha256": "fbeb0a56dd6d3f9108d4541d1c6db897437b583bdc3c275501b2f3b4a7768105",
+  "runtime": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+    "blas_threads": 1,
+    "elapsed_s": 1.3568995340001493
+  },
+  "interpretation": "synthetic smoke test unless independent experimental truth is provided"
+}

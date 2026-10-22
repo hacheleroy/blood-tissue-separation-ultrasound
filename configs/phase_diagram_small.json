@@ -1,0 +1,22 @@
+{
+  "simulation_base": {"n_frames": 128, "shape": [6, 8], "snr_db": 20},
+  "simulation_grid": {
+    "umax_mps": [0.01, 0.04],
+    "tissue_acceleration_mps2": [0.0, 0.03],
+    "clutter_db": [20.0, 40.0],
+    "seed": [0, 1]
+  },
+  "benchmark": {
+    "blas_threads": 1,
+    "save_iq": false,
+    "measurement_window": 32,
+    "measurement_hop": 32,
+    "methods": [
+      {"id":"svd_fixed","method":"svd","params":{"window":64,"discard":1}},
+      {"id":"aer_temporal","method":"aer","params":{"epsilon_rel":0.001}},
+      {"id":"aer_spatial","method":"aer","params":{"domain":"spatial","epsilon_rel":0.001}},
+      {"id":"axis1","method":"axis1","params":{"packet":64,"patch_shape":[4,4],"stride":[2,2]}},
+      {"id":"axis2","method":"axis2","params":{"packet":64,"patch_shape":[4,4],"stride":[2,2],"rank":4,"use_memory":false}}
+    ]
+  }
+}

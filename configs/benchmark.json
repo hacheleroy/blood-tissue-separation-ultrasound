@@ -1,0 +1,418 @@
+{
+  "blas_threads": 1,
+  "methods": [
+    {
+      "id": "svd_fixed_uncentered",
+      "method": "svd",
+      "params": {
+        "centered": false,
+        "window": 64,
+        "selector": "fixed",
+        "discard": 1
+      }
+    },
+    {
+      "id": "svd_energy_uncentered",
+      "method": "svd",
+      "params": {
+        "centered": false,
+        "window": 64,
+        "selector": "energy",
+        "discard": 1
+      }
+    },
+    {
+      "id": "svd_ssm_surrogate_uncentered",
+      "method": "svd",
+      "params": {
+        "centered": false,
+        "window": 64,
+        "selector": "ssm_surrogate",
+        "discard": 1
+      }
+    },
+    {
+      "id": "svd_long_uncentered",
+      "method": "sliding",
+      "params": {
+        "method": "svd",
+        "centered": false,
+        "window": 256,
+        "hop": 64,
+        "discard": 1
+      }
+    },
+    {
+      "id": "svd_local_uncentered",
+      "method": "local",
+      "params": {
+        "method": "svd",
+        "centered": false,
+        "patch_shape": [
+          6,
+          6
+        ],
+        "stride": [
+          3,
+          3
+        ],
+        "window": 64,
+        "discard": 1
+      }
+    },
+    {
+      "id": "aer_temporal_alpha0.5_uncentered",
+      "method": "aer",
+      "params": {
+        "domain": "temporal",
+        "centered": false,
+        "epsilon_rel": 0.001,
+        "alpha": 0.5,
+        "window": 256
+      }
+    },
+    {
+      "id": "aer_temporal_alpha0.25_uncentered",
+      "method": "aer",
+      "params": {
+        "domain": "temporal",
+        "centered": false,
+        "epsilon_rel": 0.001,
+        "alpha": 0.25,
+        "window": 256
+      }
+    },
+    {
+      "id": "aer_spatial_alpha0.5_uncentered",
+      "method": "aer",
+      "params": {
+        "domain": "spatial",
+        "centered": false,
+        "epsilon_rel": 0.001,
+        "alpha": 0.5,
+        "window": 256
+      }
+    },
+    {
+      "id": "aer_spatial_alpha0.25_uncentered",
+      "method": "aer",
+      "params": {
+        "domain": "spatial",
+        "centered": false,
+        "epsilon_rel": 0.001,
+        "alpha": 0.25,
+        "window": 256
+      }
+    },
+    {
+      "id": "aer_noise_floor_uncentered",
+      "method": "aer",
+      "params": {
+        "centered": false,
+        "domain": "temporal",
+        "epsilon_rule": "noise_floor",
+        "window": 256
+      }
+    },
+    {
+      "id": "axis1_uncentered",
+      "method": "axis1",
+      "params": {
+        "packet": 64,
+        "centered": false,
+        "patch_shape": [
+          6,
+          6
+        ],
+        "stride": [
+          3,
+          3
+        ]
+      }
+    },
+    {
+      "id": "axis1_rigid_uncentered",
+      "method": "axis1",
+      "params": {
+        "packet": 64,
+        "centered": false,
+        "patch_shape": [
+          6,
+          6
+        ],
+        "stride": [
+          3,
+          3
+        ],
+        "rigid": true
+      }
+    },
+    {
+      "id": "axis2_uncentered",
+      "method": "axis2",
+      "params": {
+        "packet": 64,
+        "centered": false,
+        "patch_shape": [
+          6,
+          6
+        ],
+        "stride": [
+          3,
+          3
+        ],
+        "rank": 6,
+        "lags": [
+          1,
+          2,
+          4,
+          8,
+          16
+        ],
+        "use_memory": false
+      }
+    },
+    {
+      "id": "axis2_with_memory_uncentered",
+      "method": "axis2",
+      "params": {
+        "packet": 64,
+        "centered": false,
+        "patch_shape": [
+          6,
+          6
+        ],
+        "stride": [
+          3,
+          3
+        ],
+        "rank": 6,
+        "lags": [
+          1,
+          2,
+          4,
+          8,
+          16
+        ],
+        "use_memory": true
+      }
+    },
+    {
+      "id": "svd_fixed_centered",
+      "method": "svd",
+      "params": {
+        "centered": true,
+        "window": 64,
+        "selector": "fixed",
+        "discard": 1
+      }
+    },
+    {
+      "id": "svd_energy_centered",
+      "method": "svd",
+      "params": {
+        "centered": true,
+        "window": 64,
+        "selector": "energy",
+        "discard": 1
+      }
+    },
+    {
+      "id": "svd_ssm_surrogate_centered",
+      "method": "svd",
+      "params": {
+        "centered": true,
+        "window": 64,
+        "selector": "ssm_surrogate",
+        "discard": 1
+      }
+    },
+    {
+      "id": "svd_long_centered",
+      "method": "sliding",
+      "params": {
+        "method": "svd",
+        "centered": true,
+        "window": 256,
+        "hop": 64,
+        "discard": 1
+      }
+    },
+    {
+      "id": "svd_local_centered",
+      "method": "local",
+      "params": {
+        "method": "svd",
+        "centered": true,
+        "patch_shape": [
+          6,
+          6
+        ],
+        "stride": [
+          3,
+          3
+        ],
+        "window": 64,
+        "discard": 1
+      }
+    },
+    {
+      "id": "aer_temporal_alpha0.5_centered",
+      "method": "aer",
+      "params": {
+        "domain": "temporal",
+        "centered": true,
+        "epsilon_rel": 0.001,
+        "alpha": 0.5,
+        "window": 256
+      }
+    },
+    {
+      "id": "aer_temporal_alpha0.25_centered",
+      "method": "aer",
+      "params": {
+        "domain": "temporal",
+        "centered": true,
+        "epsilon_rel": 0.001,
+        "alpha": 0.25,
+        "window": 256
+      }
+    },
+    {
+      "id": "aer_spatial_alpha0.5_centered",
+      "method": "aer",
+      "params": {
+        "domain": "spatial",
+        "centered": true,
+        "epsilon_rel": 0.001,
+        "alpha": 0.5,
+        "window": 256
+      }
+    },
+    {
+      "id": "aer_spatial_alpha0.25_centered",
+      "method": "aer",
+      "params": {
+        "domain": "spatial",
+        "centered": true,
+        "epsilon_rel": 0.001,
+        "alpha": 0.25,
+        "window": 256
+      }
+    },
+    {
+      "id": "aer_noise_floor_centered",
+      "method": "aer",
+      "params": {
+        "centered": true,
+        "domain": "temporal",
+        "epsilon_rule": "noise_floor",
+        "window": 256
+      }
+    },
+    {
+      "id": "axis1_centered",
+      "method": "axis1",
+      "params": {
+        "packet": 64,
+        "centered": true,
+        "patch_shape": [
+          6,
+          6
+        ],
+        "stride": [
+          3,
+          3
+        ]
+      }
+    },
+    {
+      "id": "axis1_rigid_centered",
+      "method": "axis1",
+      "params": {
+        "packet": 64,
+        "centered": true,
+        "patch_shape": [
+          6,
+          6
+        ],
+        "stride": [
+          3,
+          3
+        ],
+        "rigid": true
+      }
+    },
+    {
+      "id": "axis2_centered",
+      "method": "axis2",
+      "params": {
+        "packet": 64,
+        "centered": true,
+        "patch_shape": [
+          6,
+          6
+        ],
+        "stride": [
+          3,
+          3
+        ],
+        "rank": 6,
+        "lags": [
+          1,
+          2,
+          4,
+          8,
+          16
+        ],
+        "use_memory": false
+      }
+    },
+    {
+      "id": "axis2_with_memory_centered",
+      "method": "axis2",
+      "params": {
+        "packet": 64,
+        "centered": true,
+        "patch_shape": [
+          6,
+          6
+        ],
+        "stride": [
+          3,
+          3
+        ],
+        "rank": 6,
+        "lags": [
+          1,
+          2,
+          4,
+          8,
+          16
+        ],
+        "use_memory": true
+      }
+    },
+    {
+      "id": "ica_circular_complex",
+      "method": "ica",
+      "params": {
+        "packet": 64,
+        "patch_shape": [
+          6,
+          6
+        ],
+        "stride": [
+          3,
+          3
+        ],
+        "rank": 6
+      }
+    },
+    {
+      "id": "rpca_pcp",
+      "method": "rpca",
+      "params": {}
+    }
+  ]
+}

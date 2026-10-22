@@ -33,5 +33,6 @@
       "ieee_download_status": 418,
       "algorithm_verified": false
     }
-  ]
+  ],
+  "author_note_path": "docs/notes/Research_Directions_Beyond_SVD.pdf"
 }

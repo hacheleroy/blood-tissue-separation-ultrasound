@@ -16,10 +16,38 @@
 - Baranger J et al. *Adaptive spatiotemporal SVD clutter filtering for ultrafast
   Doppler imaging using similarity of spatial singular vectors.* IEEE TMI
   37(7), 1574–1586 (2018). DOI:10.1109/TMI.2018.2789499.
-  Our two-block SSM rule is explicitly an adaptation, not the authors' software.
+  Current Baranger arm uses the full SSM and published square-fitting objective;
+  the historical two-block surrogate is preserved under its explicit name.
 - Song P et al. *Ultrasound small vessel imaging with block-wise adaptive local
   clutter filtering.* IEEE TMI 36(1), 251–262 (2017).
-  Local-patch comparator; algorithm-specific threshold reproduction is separate.
+  DOI:10.1109/TMI.2016.2605819.
+  The local adaptive threshold reconstruction is provisional; see the source audit.
+- Maresca D, Correia M, Tanter M, Ghaleh B, Pernot M. *Adaptive Spatiotemporal
+  Filtering for Coronary Ultrafast Doppler Angiography.* IEEE TUFFC 65(11),
+  2201-2204 (2018). DOI:10.1109/TUFFC.2018.2870083. IEEE document 8466597.
+  https://pubmed.ncbi.nlm.nih.gov/30418874/
+  https://hal.science/hal-04089080/file/Maresca2018.pdf
+  Identity/abstract verified; full-text algorithm verification remains pending.
+- Baranger J, Aguet J, Villemain O. *Fast Thresholding of SVD Clutter Filter
+  Using the Spatial Similarity Matrix and a Sum-Table Algorithm.* IEEE TUFFC
+  70(8), 821-830 (2023). DOI:10.1109/TUFFC.2023.3289235.
+  https://www.mathworks.com/matlabcentral/fileexchange/130139-svd_ssm_autoth
+- Song P, Trzasko JD, Manduca A, Qiang B, Kadirvel R, Kallmes DF, Chen S.
+  *Accelerated Singular Value-Based Ultrasound Blood Flow Clutter Filtering
+  With Randomized Singular Value Decomposition and Randomized Spatial
+  Downsampling.* IEEE TUFFC 64(4), 706-716 (2017).
+  DOI:10.1109/TUFFC.2017.2665342. https://pubmed.ncbi.nlm.nih.gov/28186887/
+- Huang C, Lok U-W, Zhang J, Liu H, Chen S. *Real-time Adaptive and Localized
+  Spatiotemporal Clutter Filtering for Ultrasound Small Vessel Imaging.*
+  arXiv:2405.11105 (2024). https://arxiv.org/abs/2405.11105
+  EVD rules and Gaussian-weighted statistics; paper PD and IQ extension distinguished.
+- Ozgun KA, Byram B. *Multidimensional Clutter Filtering of Aperture Domain
+  Data for Improved Blood Flow Sensitivity.* IEEE TUFFC 68(8), 2645-2656 (2021).
+  DOI:10.1109/TUFFC.2021.3073292. https://par.nsf.gov/servlets/purl/10312674
+  Section III-A documents the Song noise-cutoff procedure used for reconstruction.
+- Bjaerum S, Torp H, Kristoffersen K. *Clutter filter design for ultrasound
+  color flow imaging.* IEEE TUFFC 49(2), 204-216 (2002).
+  DOI:10.1109/58.985705. Temporal wall-filter background.
 - Belouchrani A, Abed-Meraim K, Cardoso JF, Moulines E. *A blind source separation
   technique using second-order statistics.* IEEE TSP 45(2), 434–444 (1997).
   DOI:10.1109/78.554307. Complex lag-based joint diagonalization principle.

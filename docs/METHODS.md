@@ -25,13 +25,22 @@ Energy threshold: reject the smallest leading block carrying the configured
 fraction (default 95%) of total squared singular values; retain at least one
 mode. This is data-only and can remove genuine blood.
 
-SSM surrogate: form Pearson correlations between absolute spatial singular
+Historical SSM surrogate (`ssm_surrogate`, removed from the default matrix):
+form Pearson correlations between absolute spatial singular
 vectors. For each split k, maximize the average within-block off-diagonal
 correlation minus the between-block correlation. Integral-image sums accelerate
 the search, capped at 64 modes. This implements a transparent two-block
 criterion inspired by spatial-similarity filtering. It does not replicate the
-published Baranger three-region cutoff/sum-table method. Publication comparisons
-should add the authors' implementation with its original settings.
+published Baranger square-fitting cutoff/sum-table method. Publication comparisons
+using this historical arm must retain its surrogate label.
+
+The current `baranger` arm implements the published two-square correlation
+objective with a summed-area-table search over both cutoffs. Its SSM includes
+the diagonal and all available modes. See the equations and source-fidelity
+table in [the literature audit](SVD_LITERATURE_AUDIT.md). New randomized SVD,
+complex temporal-Gram EVD, Huang eigenvalue/NCC/sigmoid rules, weighted
+Gaussian covariance localization and the provisional Song-style local arm
+are also specified there. None accesses the evaluation truth.
 
 ## AER/ZCA
 
@@ -121,7 +130,12 @@ distinguished. The ICA baseline assumes circular complex, non-Gaussian sources.
 PCP/RPCA solves min ||L||_*+lambda||S||_1, X=L+S with complex soft-thresholding
 and inexact augmented-Lagrangian updates. S is candidate blood. Its sparse
 pixel-time assumption can fail for dense blood speckle. Convergence is logged.
-The optional temporal Butterworth arm is an offline zero-phase wall filter.
+Butterworth high-pass filtering is in the default matrix, with three fixed
+cutoff frequencies and an initialized causal control. The offline
+forward/backward arm squares the one-pass amplitude response (one-half
+amplitude at its design cutoff); the causal arm has 1/sqrt(2) amplitude there.
+Short ensembles are rejected when they cannot support the stated padding.
+Frequency-based filters validate their PRF against the acquisition revisit rate.
 
 STAP requires `(time,view,z,x)` data, actual Tx/Rx directions and view offsets.
 Its steering phase is 2*pi*f0/c*(n_tx+n_rx).v*t, with explicit IQ phase sign.
@@ -130,6 +144,10 @@ guard-excluded local training, and LCMV response constraints. The adaptive arm
 requires an independently defined tissue training ROI. The same coherent view
 mean must form the input to other methods. Full channel/near-field manifolds,
 aberrated transmit fields and calibrated view gains need dedicated validation.
+The new [STAP benchmark](STAP_BENCHMARK.md) preserves each view, uses absolute
+snapshot times and independent tissue calibration, and includes calibration,
+training-support and identifiability controls. LCMV detection is separate
+from phase-preserving IQ reconstruction and WSS estimation.
 
 Optional downstream CCA works on power-Doppler movies, using separate functional
 and nuisance ROIs. It whitens each dataset, SVDs their concatenation, selects

@@ -1,4 +1,66 @@
-# Verification performed for version 0.1.0
+# Numerical verification
+
+## Current literature / Axis 3 revision
+
+Date: 22 October 2026. **85 numerical tests pass.** Numerical implementation
+hash (SHA-256 over sorted package module names and bytes):
+`f6cfb106623e3631b51c1f98758ec6a13267ac13d17875e1fbbbb40e76060d3c`.
+The verified study records and integration run all contain this same hash.
+The current wheel builds and installs into a clean target directory. Running
+the installed CLI outside the source tree exposes both new study commands;
+the installed Butterworth operator and literature/STAP modules import correctly.
+
+| Execution | Cases | Comparison outputs | Result |
+|---|---:|---:|---|
+| `runs/integration_v02_verified` | 1 | 55 | 55 returned outputs, including the legacy Axes 1/2/AER/ICA/PCP arms |
+| `runs/svd_literature_v02_verified` | 24 | 480 | All 20 arms returned on every case |
+| `runs/stap_v02_verified` | 42 | 504 | All 12 comparison outputs returned on every case |
+| STAP LCMV detector | 42 | 42 spectra | Candidate-grid scores and rejected constraints retained |
+
+The default configuration has 52 data-only entries; the demo adds three
+same-case oracle searches. The STAP oracle searches 45 lower/upper bands;
+its 42 selected outputs are included in the 504 above. Candidate evaluations
+are not counted as independent study cases.
+
+New checks compare the Baranger sum-table objective with an independent,
+literal binary-template/corr2 search, including boundaries beyond rank 64.
+They also cover complex EVD/direct-SVD equivalence, randomized range exactness,
+spatial-subsampling component rejection/preservation, eigenvalue versus singular
+value thresholding, Gaussian weighting before covariance estimation, frozen
+component linearity, analytic Butterworth cutoff gain for both Doppler signs,
+causal initialization, padding limits and acquisition-PRF consistency.
+
+STAP checks cover absolute snapshot timing, complex angular gains, sequential
+view offsets, both IQ phase signs, single-column projectors, independent
+calibration recovery, guard exclusion, insufficient-training fallback, frozen
+view operators, LCMV known-target detection and unidentifiable constraints.
+Across the 42-case study, the largest relative frozen-mixture reconstruction
+error is **8.27e-14**. The largest accepted LCMV constraint-response error is
+**1.47e-12**. These establish numerical identities, not model fidelity.
+
+Complete execution means an output was returned. Invalid velocity/WSS estimates,
+empty-output oracle selections and iterative convergence flags remain explicit.
+Song's reconstructed tail fits converged in all 576 local fits of the 24-case
+bank; this does not establish parity with the unavailable original algorithm.
+The ICA integration arm still contains iteration-limit fits on this Gaussian
+surrogate (59 of 60 patch/packet fits) and must not be presented as a converged
+ICA result. Three STAP IQ-oracle cases select an empty band; their invalid
+velocity/WSS outputs remain in the records.
+
+Configs are saved before execution; input and calibration hashes, numerical
+environment, fitted cutoffs, fallbacks, oracle objectives and candidate curves
+are preserved. Small CPU timings are operational diagnostics. They are not a
+controlled hardware throughput comparison. Generated IQ arrays are excluded
+from Git. Detailed SVD case traces are reproducible locally; the tracked portable
+aggregate preserves all global metrics and fitted-method diagnostics.
+
+See [source fidelity](SVD_LITERATURE_AUDIT.md), [the STAP protocol](STAP_BENCHMARK.md),
+and [the first results](RESULTS_FIRST_BENCHMARK.md). Original Song threshold
+parity remains unverified. IEEE document 8466597 is identified as Maresca et al.
+(2018), DOI 10.1109/TUFFC.2018.2870083; its full-text algorithm check is pending
+because publisher and HAL PDF retrieval were blocked.
+
+## Historical initial package (version 0.1.0)
 
 Date: 22 October 2026. CPU, Python 3.12, NumPy/SciPy, one BLAS thread per run.
 Pinned tested direct dependencies are in `requirements-tested.txt`.
@@ -76,5 +138,5 @@ The surrogate does not model physical RBC scattering/aggregation, a cell-free
 layer, acoustic attenuation/aberration or sub-resolution wall motion. There is
 no independent experimental WSS ground truth in this delivery. Registration
 and component labeling for Axes 1/2, local ultrasound STAP calibration, the
-reference three-region SSM algorithm, and full 3D+t vector WSS remain research
+original-author SSM software parity, and full 3D+t vector WSS remain research
 work. All numerical and statistical checks above are implementation evidence.

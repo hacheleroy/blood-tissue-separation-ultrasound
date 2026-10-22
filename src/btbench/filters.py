@@ -55,19 +55,41 @@ def choose_rank(u, s, selector="fixed", discard=1, energy_fraction=0.95, **kwarg
 
 
 def svd_filter(iq, centered=False, selector="fixed", discard=1, upper=None,
-               window=None, energy_fraction=0.95):
+               window=None, energy_fraction=0.95, selector_options=None, backend="svd"):
     """Retain zero-based singular indices [discard, upper); no mean add-back."""
     y = np.empty_like(iq, dtype=np.complex128)
     info = []
     operators = []
     for sl in chunks(len(iq), window or len(iq)):
         x, _ = prepare(casorati(iq[sl]), centered)
-        u, s, vh = decompose(x)
-        k, d = choose_rank(u,s,selector,discard,energy_fraction)
-        hi = len(s) if upper is None else int(upper)
+        if backend == "svd":
+            u, s, vh = decompose(x)
+        elif backend == "gram":
+            from .svd_literature import gram_decompose
+            u, s, vh = gram_decompose(x)
+        else:
+            raise ValueError("backend must be svd or gram")
+        options = dict(selector_options or {})
+        auto_hi = len(s)
+        if selector == "baranger":
+            from .svd_literature import baranger_band
+            k, auto_hi, d = baranger_band(u, **options)
+        elif selector == "song":
+            from .svd_literature import song_band
+            k, auto_hi, d = song_band(s,vh,**options)
+        elif selector == "temporal_frequency":
+            from .svd_literature import temporal_statistics
+            freq = temporal_statistics(vh,options["prf_hz"])
+            good = np.flatnonzero(freq > options["cutoff_hz"])
+            k = int(good[0]) if len(good) else len(s)
+            d = {"cutoff_hz":options["cutoff_hz"],"frequency_statistic":"folded PSD mean absolute frequency"}
+        else:
+            k, d = choose_rank(u,s,selector,discard,energy_fraction,**options)
+        hi = auto_hi if upper is None else int(upper)
         if not k <= hi <= len(s):
             raise ValueError("Require 0 <= discard <= upper <= min(P,T)")
-        y[sl] = frames((u[:,k:hi]*s[k:hi]) @ vh[k:hi], iq[sl].shape)
+        v = vh[k:hi].conj().T
+        y[sl] = frames((x@v)@v.conj().T, iq[sl].shape)
         info.append({"start":sl.start,"stop":sl.stop,"discard":k,"upper":hi,**d})
         operators.append((sl,vh[k:hi].conj().T))
     def frozen(other):
@@ -77,7 +99,7 @@ def svd_filter(iq, centered=False, selector="fixed", discard=1, upper=None,
             x,_=prepare(casorati(other[sl]),centered)
             out[sl]=frames((x@v)@v.conj().T,other[sl].shape)
         return out
-    return FilterResult(y,{"centered":centered,"windows":info},frozen)
+    return FilterResult(y,{"centered":centered,"backend":backend,"windows":info},frozen)
 
 
 class SpatialMoments:
@@ -241,10 +263,36 @@ def sliding_filter(iq,method="svd",window=256,hop=64,**kwargs):
         "windows":[{"start":sl.start,"stop":sl.stop,**r.diagnostics} for sl,r in ops]},frozen)
 
 
-def temporal_highpass(iq, cutoff_hz, prf_hz, order=3):
-    sos = signal.butter(order,cutoff_hz,fs=prf_hz,btype="highpass",output="sos")
-    return FilterResult(signal.sosfiltfilt(sos,iq,axis=0),
-                        {"cutoff_hz":cutoff_hz,"zero_phase_offline":True})
+def temporal_highpass(iq, cutoff_hz, prf_hz, order=3, phase_mode="zero_phase"):
+    """Pixelwise complex-IQ Butterworth wall filter along slow time.
+
+    ``zero_phase`` uses forward/backward filtering (squared magnitude response).
+    ``causal`` uses a one-pass filter initialized at each pixel's first sample.
+    Both are linear, including their edge initialization/padding operations.
+    """
+    iq = np.asarray(iq)
+    if (iq.ndim < 2 or not np.iscomplexobj(iq) or not np.isfinite(iq).all()
+            or not np.isfinite([cutoff_hz, prf_hz]).all()
+            or not 0 < cutoff_hz < prf_hz/2 or int(order) != order or order < 1):
+        raise ValueError("Need finite complex IQ, integer order >=1, 0<cutoff<PRF/2")
+    if phase_mode not in ("zero_phase", "causal"):
+        raise ValueError("phase_mode must be zero_phase or causal")
+    sos = signal.butter(int(order), cutoff_hz, fs=prf_hz, btype="highpass", output="sos")
+    padlen = 3*(2*len(sos)+1-min((sos[:, 2] == 0).sum(), (sos[:, 5] == 0).sum()))
+    if phase_mode == "zero_phase" and len(iq) <= padlen:
+        raise ValueError(f"Zero-phase filter needs more than {padlen} frames")
+    def apply(other):
+        if other.shape != iq.shape:
+            raise ValueError("Frozen-operator shape mismatch")
+        if phase_mode == "zero_phase":
+            return signal.sosfiltfilt(sos, other, axis=0, padlen=int(padlen))
+        zi = signal.sosfilt_zi(sos).reshape((len(sos), 2)+(1,)*(other.ndim-1))
+        return signal.sosfilt(sos, other, axis=0, zi=zi*other[0])[0]
+    return FilterResult(apply(iq), {"cutoff_hz":float(cutoff_hz), "prf_hz":float(prf_hz),
+        "order":int(order), "phase_mode":phase_mode, "zero_phase_offline":phase_mode=="zero_phase",
+        "padding_frames":int(padlen) if phase_mode=="zero_phase" else 0,
+        "initialization":"odd extension" if phase_mode=="zero_phase" else "first-sample steady state",
+        "magnitude_response_power":2 if phase_mode=="zero_phase" else 1}, apply)
 
 
 def rpca_filter(iq, centered=False, sparse_lambda=None, max_iter=300, tol=1e-7):

@@ -14,6 +14,8 @@ def main(argv=None):
     p=sub.add_parser("run");p.add_argument("dataset");p.add_argument("--config",required=True);p.add_argument("--output",required=True)
     p=sub.add_parser("inspect-openhrf");p.add_argument("source");p.add_argument("--output")
     p=sub.add_parser("write-config");p.add_argument("output")
+    p=sub.add_parser("stap-study");p.add_argument("--config");p.add_argument("--output",required=True)
+    p=sub.add_parser("literature-study");p.add_argument("--config");p.add_argument("--output",required=True)
     args=parser.parse_args(argv)
     if args.cmd=="simulate":
         save_acquisition(args.output,poiseuille(seed=args.seed))
@@ -25,7 +27,7 @@ def main(argv=None):
         print(json.dumps({"methods":len(r["results"]),"ok":sum(x["status"]=="ok" for x in r["results"]),"output":args.output}))
     elif args.cmd=="demo":
         a=poiseuille(seed=args.seed)
-        cfg={"blas_threads":1,"save_iq":False,"methods":standard_methods()}
+        cfg={"blas_threads":1,"save_iq":False,"methods":standard_methods(prf_hz=a.prf_hz)}
         for centered in (False,True):
             cfg["methods"].append({"id":f"oracle_svd_velocity_centered{centered}","method":"svd",
                 "params":{"centered":centered,"window":64},"oracle_grid":{"discard":list(range(9))},"objective":"velocity_nrmse"})
@@ -39,6 +41,16 @@ def main(argv=None):
         result=json.dumps(data,indent=2)
         if args.output: Path(args.output).write_text(result)
         else: print(result)
+    elif args.cmd=="stap-study":
+        from .stap_experiment import run_stap_study,default_stap_config
+        config=json.loads(Path(args.config).read_text()) if args.config else default_stap_config()
+        result=run_stap_study(config,args.output)
+        print(json.dumps({"cases":len(result["records"]),"output":args.output,"elapsed_s":result["runtime"]["elapsed_s"]}))
+    elif args.cmd=="literature-study":
+        from .literature_experiment import run_literature_study,default_literature_config
+        config=json.loads(Path(args.config).read_text()) if args.config else default_literature_config()
+        result=run_literature_study(config,args.output)
+        print(json.dumps({"cases":len(result["records"]),"output":args.output}))
 
 
 if __name__=="__main__":

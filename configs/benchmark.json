@@ -22,12 +22,12 @@
       }
     },
     {
-      "id": "svd_ssm_surrogate_uncentered",
+      "id": "svd_baranger_uncentered",
       "method": "svd",
       "params": {
         "centered": false,
         "window": 64,
-        "selector": "ssm_surrogate",
+        "selector": "baranger",
         "discard": 1
       }
     },
@@ -58,6 +58,114 @@
         ],
         "window": 64,
         "discard": 1
+      }
+    },
+    {
+      "id": "song_local_reconstruction_uncentered",
+      "method": "song_local",
+      "params": {
+        "centered": false,
+        "patch_shape": [
+          6,
+          6
+        ],
+        "stride": [
+          3,
+          3
+        ],
+        "window": 64,
+        "selector_options": {
+          "prf_hz": 1000.0,
+          "slope_threshold": 0.1,
+          "tail_tolerance": 0.1
+        }
+      }
+    },
+    {
+      "id": "svd_temporal_frequency_uncentered",
+      "method": "svd",
+      "params": {
+        "centered": false,
+        "window": 64,
+        "selector": "temporal_frequency",
+        "selector_options": {
+          "prf_hz": 1000.0,
+          "cutoff_hz": 30.0
+        }
+      }
+    },
+    {
+      "id": "evd_fixed_uncentered",
+      "method": "svd",
+      "params": {
+        "centered": false,
+        "window": 64,
+        "discard": 1,
+        "backend": "gram"
+      }
+    },
+    {
+      "id": "song_rsvd_uncentered",
+      "method": "rsvd",
+      "params": {
+        "centered": false,
+        "window": 64,
+        "discard": 1,
+        "seed": 0
+      }
+    },
+    {
+      "id": "song_rsvd_downsampled_uncentered",
+      "method": "rsvd",
+      "params": {
+        "centered": false,
+        "window": 64,
+        "discard": 1,
+        "seed": 0,
+        "spatial_fraction": 0.5
+      }
+    },
+    {
+      "id": "huang_evd_median_uncentered",
+      "method": "huang_evd",
+      "params": {
+        "centered": false,
+        "window": 64,
+        "rule": "median",
+        "beta": 1.43
+      }
+    },
+    {
+      "id": "huang_evd_ncc_uncentered",
+      "method": "huang_evd",
+      "params": {
+        "centered": false,
+        "window": 64,
+        "rule": "ncc",
+        "beta": 1.43
+      }
+    },
+    {
+      "id": "huang_evd_sigmoid_uncentered",
+      "method": "huang_evd",
+      "params": {
+        "centered": false,
+        "window": 64,
+        "rule": "sigmoid",
+        "beta": 2.0
+      }
+    },
+    {
+      "id": "huang_gaussian_iq_extension_uncentered",
+      "method": "gaussian_evd",
+      "params": {
+        "centered": false,
+        "window": 64,
+        "grid_shape": [
+          2,
+          2
+        ],
+        "rule": "ncc"
       }
     },
     {
@@ -218,12 +326,12 @@
       }
     },
     {
-      "id": "svd_ssm_surrogate_centered",
+      "id": "svd_baranger_centered",
       "method": "svd",
       "params": {
         "centered": true,
         "window": 64,
-        "selector": "ssm_surrogate",
+        "selector": "baranger",
         "discard": 1
       }
     },
@@ -254,6 +362,114 @@
         ],
         "window": 64,
         "discard": 1
+      }
+    },
+    {
+      "id": "song_local_reconstruction_centered",
+      "method": "song_local",
+      "params": {
+        "centered": true,
+        "patch_shape": [
+          6,
+          6
+        ],
+        "stride": [
+          3,
+          3
+        ],
+        "window": 64,
+        "selector_options": {
+          "prf_hz": 1000.0,
+          "slope_threshold": 0.1,
+          "tail_tolerance": 0.1
+        }
+      }
+    },
+    {
+      "id": "svd_temporal_frequency_centered",
+      "method": "svd",
+      "params": {
+        "centered": true,
+        "window": 64,
+        "selector": "temporal_frequency",
+        "selector_options": {
+          "prf_hz": 1000.0,
+          "cutoff_hz": 30.0
+        }
+      }
+    },
+    {
+      "id": "evd_fixed_centered",
+      "method": "svd",
+      "params": {
+        "centered": true,
+        "window": 64,
+        "discard": 1,
+        "backend": "gram"
+      }
+    },
+    {
+      "id": "song_rsvd_centered",
+      "method": "rsvd",
+      "params": {
+        "centered": true,
+        "window": 64,
+        "discard": 1,
+        "seed": 0
+      }
+    },
+    {
+      "id": "song_rsvd_downsampled_centered",
+      "method": "rsvd",
+      "params": {
+        "centered": true,
+        "window": 64,
+        "discard": 1,
+        "seed": 0,
+        "spatial_fraction": 0.5
+      }
+    },
+    {
+      "id": "huang_evd_median_centered",
+      "method": "huang_evd",
+      "params": {
+        "centered": true,
+        "window": 64,
+        "rule": "median",
+        "beta": 1.43
+      }
+    },
+    {
+      "id": "huang_evd_ncc_centered",
+      "method": "huang_evd",
+      "params": {
+        "centered": true,
+        "window": 64,
+        "rule": "ncc",
+        "beta": 1.43
+      }
+    },
+    {
+      "id": "huang_evd_sigmoid_centered",
+      "method": "huang_evd",
+      "params": {
+        "centered": true,
+        "window": 64,
+        "rule": "sigmoid",
+        "beta": 2.0
+      }
+    },
+    {
+      "id": "huang_gaussian_iq_extension_centered",
+      "method": "gaussian_evd",
+      "params": {
+        "centered": true,
+        "window": 64,
+        "grid_shape": [
+          2,
+          2
+        ],
+        "rule": "ncc"
       }
     },
     {
@@ -413,6 +629,46 @@
       "id": "rpca_pcp",
       "method": "rpca",
       "params": {}
+    },
+    {
+      "id": "butterworth_hp_0.01_prf",
+      "method": "highpass",
+      "params": {
+        "cutoff_hz": 10.0,
+        "prf_hz": 1000.0,
+        "order": 3,
+        "phase_mode": "zero_phase"
+      }
+    },
+    {
+      "id": "butterworth_hp_0.03_prf",
+      "method": "highpass",
+      "params": {
+        "cutoff_hz": 30.0,
+        "prf_hz": 1000.0,
+        "order": 3,
+        "phase_mode": "zero_phase"
+      }
+    },
+    {
+      "id": "butterworth_hp_0.08_prf",
+      "method": "highpass",
+      "params": {
+        "cutoff_hz": 80.0,
+        "prf_hz": 1000.0,
+        "order": 3,
+        "phase_mode": "zero_phase"
+      }
+    },
+    {
+      "id": "butterworth_hp_causal_0.03_prf",
+      "method": "highpass",
+      "params": {
+        "cutoff_hz": 30.0,
+        "prf_hz": 1000.0,
+        "order": 3,
+        "phase_mode": "causal"
+      }
     }
   ]
 }

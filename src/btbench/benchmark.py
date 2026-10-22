@@ -13,11 +13,23 @@ from threadpoolctl import threadpool_limits
 from .filters import svd_filter,aer_filter,local_filter,rpca_filter,temporal_highpass,sliding_filter
 from .axes import motion_packet_filter,multilag_filter,ica_filter
 from .measurements import evaluate,frozen_component_metrics,evaluate_windows
+from .svd_literature import randomized_svd_filter,huang_evd_filter,gaussian_local_evd,song_local_filter
 
 
-def run_filter(iq,spec,tissue_roi=None,views=None):
+def run_filter(iq,spec,tissue_roi=None,views=None,prf_hz=None):
     p=dict(spec.get("params",{}))
     method=spec["method"]
+    if prf_hz is not None:
+        if method=="highpass":
+            if "prf_hz" in p and not np.isclose(p["prf_hz"],prf_hz,rtol=1e-9,atol=0):
+                raise ValueError("Filter PRF differs from the acquisition revisit rate")
+            p.setdefault("prf_hz",prf_hz)
+        if method=="song_local" or p.get("selector") in ("song","temporal_frequency"):
+            options=dict(p.get("selector_options",{}))
+            if "prf_hz" in options and not np.isclose(options["prf_hz"],prf_hz,rtol=1e-9,atol=0):
+                raise ValueError("Spectral selector PRF differs from the acquisition revisit rate")
+            options.setdefault("prf_hz",prf_hz)
+            p["selector_options"]=options
     if method=="stap":
         from .stap import local_stap
         if views is None:
@@ -27,7 +39,9 @@ def run_filter(iq,spec,tissue_roi=None,views=None):
         return local_stap(views,**p)
     registry={"svd":svd_filter,"aer":aer_filter,"local":local_filter,"rpca":rpca_filter,
               "axis1":motion_packet_filter,"axis2":multilag_filter,"ica":ica_filter,
-              "highpass":temporal_highpass,"sliding":sliding_filter}
+              "highpass":temporal_highpass,"sliding":sliding_filter,
+              "rsvd":randomized_svd_filter,"song_local":song_local_filter,
+              "huang_evd":huang_evd_filter,"gaussian_evd":gaussian_local_evd}
     if method not in registry:
         raise ValueError("Unknown IQ method "+method)
     if method in ("axis1","axis2","ica"):
@@ -60,7 +74,7 @@ def oracle(acquisition,base,grid,objective="velocity_nrmse",geometry_factor=2.):
     best=None;curve=[]
     for spec in grid_specs(base,grid):
         try:
-            result=run_filter(acquisition.iq,spec,acquisition.tissue_roi,acquisition.iq_views)
+            result=run_filter(acquisition.iq,spec,acquisition.tissue_roi,acquisition.iq_views,acquisition.prf_hz)
         except (ValueError,MemoryError,np.linalg.LinAlgError) as exc:
             curve.append({"params":spec["params"],"loss":None,"status":"invalid","reason":str(exc)})
             continue
@@ -77,18 +91,35 @@ def oracle(acquisition,base,grid,objective="velocity_nrmse",geometry_factor=2.):
                     "objective":objective,"selected":best[2],"curve":curve}
 
 
-def standard_methods(packet=64,long_window=256):
+def standard_methods(packet=64,long_window=256,prf_hz=1000.):
     """Factorial controls; short window and long window report distinct latency."""
     methods=[]
     for centered in (False,True):
         tag="centered" if centered else "uncentered"
-        for sel in ("fixed","energy","ssm_surrogate"):
+        for sel in ("fixed","energy","baranger"):
             methods.append({"id":f"svd_{sel}_{tag}","method":"svd","params":{
                 "centered":centered,"window":packet,"selector":sel,"discard":1}})
         methods.append({"id":f"svd_long_{tag}","method":"sliding","params":{
             "method":"svd","centered":centered,"window":long_window,"hop":packet,"discard":1}})
         methods.append({"id":f"svd_local_{tag}","method":"local","params":{
             "method":"svd","centered":centered,"patch_shape":[6,6],"stride":[3,3],"window":packet,"discard":1}})
+        methods.append({"id":f"song_local_reconstruction_{tag}","method":"song_local","params":{
+            "centered":centered,"patch_shape":[6,6],"stride":[3,3],"window":packet,
+            "selector_options":{"prf_hz":prf_hz,"slope_threshold":0.1,"tail_tolerance":0.1}}})
+        methods.append({"id":f"svd_temporal_frequency_{tag}","method":"svd","params":{
+            "centered":centered,"window":packet,"selector":"temporal_frequency",
+            "selector_options":{"prf_hz":prf_hz,"cutoff_hz":.03*prf_hz}}})
+        methods.append({"id":f"evd_fixed_{tag}","method":"svd","params":{
+            "centered":centered,"window":packet,"discard":1,"backend":"gram"}})
+        methods.append({"id":f"song_rsvd_{tag}","method":"rsvd","params":{
+            "centered":centered,"window":packet,"discard":1,"seed":0}})
+        methods.append({"id":f"song_rsvd_downsampled_{tag}","method":"rsvd","params":{
+            "centered":centered,"window":packet,"discard":1,"seed":0,"spatial_fraction":.5}})
+        for rule,beta in (("median",1.43),("ncc",1.43),("sigmoid",2.)):
+            methods.append({"id":f"huang_evd_{rule}_{tag}","method":"huang_evd","params":{
+                "centered":centered,"window":packet,"rule":rule,"beta":beta}})
+        methods.append({"id":f"huang_gaussian_iq_extension_{tag}","method":"gaussian_evd","params":{
+            "centered":centered,"window":packet,"grid_shape":[2,2],"rule":"ncc"}})
         for domain in ("temporal","spatial"):
             for alpha in (0.5,0.25):
                 methods.append({"id":f"aer_{domain}_alpha{alpha}_{tag}","method":"aer",
@@ -109,6 +140,11 @@ def standard_methods(packet=64,long_window=256):
         {"id":"ica_circular_complex","method":"ica","params":{"packet":packet,"patch_shape":[6,6],"stride":[3,3],"rank":6}},
         {"id":"rpca_pcp","method":"rpca","params":{}},
     ]
+    for fraction in (.01,.03,.08):
+        methods.append({"id":f"butterworth_hp_{fraction:g}_prf","method":"highpass","params":{
+            "cutoff_hz":fraction*prf_hz,"prf_hz":prf_hz,"order":3,"phase_mode":"zero_phase"}})
+    methods.append({"id":"butterworth_hp_causal_0.03_prf","method":"highpass","params":{
+        "cutoff_hz":.03*prf_hz,"prf_hz":prf_hz,"order":3,"phase_mode":"causal"}})
     return methods
 
 
@@ -130,8 +166,14 @@ def run_benchmark(acquisition,config,output):
                     result,diag=oracle(a,spec,spec["oracle_grid"],spec.get("objective","velocity_nrmse"),config.get("geometry_factor",2.))
                     row.update(diag)
                 else:
-                    result=run_filter(a.iq,spec,a.tissue_roi,a.iq_views)
+                    result=run_filter(a.iq,spec,a.tissue_roi,a.iq_views,a.prf_hz)
                 metrics=evaluate(result.iq,a,config.get("geometry_factor",2.))
+                if getattr(result,"power_doppler",None) is not None:
+                    pd=result.power_doppler
+                    row["paper_power_doppler"]={"mean":float(pd.mean()),"max":float(pd.max()),
+                        "interpretation":"separate incoherent power aggregation; no phase/velocity output",
+                        "flow_mean":float(pd[a.flow_mask].mean()) if a.flow_mask is not None else None,
+                        "tissue_mean":float(pd[a.tissue_roi].mean()) if a.tissue_roi is not None else None}
                 metrics.update(frozen_component_metrics(result,a))
                 row.update(status="ok",metrics=metrics,diagnostics=result.diagnostics)
                 row["readout"]=evaluate_windows(result.iq,a,config.get("measurement_window",64),

@@ -1,0 +1,37 @@
+{
+  "consulted_on": "2026-10-22",
+  "articles": [
+    {
+      "source_url": "https://access.archive-ouverte.unige.ch/access/metadata/88011ea7-bad6-4e52-bee4-2fdc8137efc3/download",
+      "download_sha256": "5665e3a38054d1f91c421ac65d27d6a68e5e0b7cf21e2deb72021ed0146806cc",
+      "bytes": 3679705,
+      "article_redistributed": false
+    },
+    {
+      "source_url": "https://arxiv.org/pdf/2405.11105",
+      "download_sha256": "5df2462b91a875665298b44dae288f6ef7d0d8059c5f714b0c9ded18731374e8",
+      "bytes": 2535654,
+      "article_redistributed": false
+    },
+    {
+      "source_url": "https://par.nsf.gov/servlets/purl/10312674",
+      "download_sha256": "e771a5c80eb3d4155f7c9a83fdecd56e17ed2f842d0ba8f046ea2f98fa53bb0c",
+      "bytes": 6908528,
+      "article_redistributed": false
+    }
+  ],
+  "author_note_sha256": "7def82665dd017f6d31b8da714f933bd9a7403c3411c5d6dfefc38c6c306f710",
+  "identified_pending_full_text": [
+    {
+      "title": "Adaptive Spatiotemporal Filtering for Coronary Ultrafast Doppler Angiography",
+      "doi": "10.1109/TUFFC.2018.2870083",
+      "ieee_document": "8466597",
+      "metadata_url": "https://pubmed.ncbi.nlm.nih.gov/30418874/",
+      "hal_identifier": "hal-04089080v1",
+      "pdf_url": "https://hal.science/hal-04089080/file/Maresca2018.pdf",
+      "hal_download_status": 403,
+      "ieee_download_status": 418,
+      "algorithm_verified": false
+    }
+  ]
+}

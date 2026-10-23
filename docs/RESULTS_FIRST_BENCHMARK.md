@@ -7,7 +7,9 @@ STAP cases. Parameters were frozen before execution. The source audit separates
 equation-level implementations, method-family variants and provisional arms.
 No experimental or acoustic benchmark was performed.
 
-## Axis 3: rejection and preservation must be measured together
+## Axis 3: Local ultrasound STAP
+
+Rejection and preservation must be measured together.
 
 The following are medians across three seeds, at 40 dB clutter and constant
 tissue velocity. Suppression is -10 log10 of the frozen tissue-power retention.

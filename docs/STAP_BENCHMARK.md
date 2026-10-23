@@ -1,4 +1,6 @@
-# First Axis 3 benchmark: local angle-time STAP
+# Axis 3: Local ultrasound STAP
+
+The first benchmark uses local angle-time snapshots for space-time adaptive processing.
 
 Version 0.2.0 re-executes this frozen 42-case bank with blood waveform, spectral
 and noise-gain diagnostics. See [current fidelity results](../runs/stap_fidelity_v03/SUMMARY.md)

@@ -93,7 +93,7 @@ RSS is recorded as the process's cumulative high-water mark, including the
 input/truth arrays and previous methods. It is a resource diagnostic, not an
 isolated per-method peak-memory comparison; those require separate processes.
 
-## Motion compensation and covariance memory (Axis 1)
+## Axis 1: Motion-compensated virtual long ensemble
 
 Estimate increments from a separately specified tissue ROI:
 delta_phi[t]=arg sum_roi X[t+1] conj(X[t]). Integrate and demodulate each
@@ -121,7 +121,9 @@ lab coordinates. Without restoration, the Doppler estimate would be relative
 to the demodulated tissue frame. Boundary validity fraction is reported;
 boundary losses remain in evaluation and are not silently masked using truth.
 
-## Multi-lag complex SOBI (Axis 2)
+## Axis 2: Motion-demodulated multi-lag separation
+
+The current implementation uses multi-lag complex SOBI.
 
 R(tau)=mean_t x(t+tau) x(t)^H for lags 1,2,4,8,16 by default. Whiten a
 rank-reduced R0 and jointly diagonalize both Hermitian parts of every lag:
@@ -155,7 +157,7 @@ last option bounds that map's gain; it does not prove stability or correct
 source identification of the entire adaptive, centered, motion-compensated
 pipeline. Unconstrained gain and lag signatures remain recorded.
 
-## Other baselines and Axis 3
+## Other baselines
 
 PCP/RPCA solves min ||L||_*+lambda||S||_1, X=L+S with complex soft-thresholding
 and inexact augmented-Lagrangian updates. S is candidate blood. Its sparse
@@ -167,7 +169,10 @@ amplitude at its design cutoff); the causal arm has 1/sqrt(2) amplitude there.
 Short ensembles are rejected when they cannot support the stated padding.
 Frequency-based filters validate their PRF against the acquisition revisit rate.
 
-STAP requires `(time,view,z,x)` data, actual Tx/Rx directions and view offsets.
+## Axis 3: Local ultrasound STAP
+
+STAP (space-time adaptive processing) requires `(time,view,z,x)` data, actual
+Tx/Rx directions and view offsets.
 Its steering phase is 2*pi*f0/c*(n_tx+n_rx).v*t, with explicit IQ phase sign.
 Implemented: orthogonal tissue null, loaded oblique covariance-adaptive null,
 guard-excluded local training, and LCMV response constraints. The adaptive arm
@@ -178,6 +183,8 @@ The new [STAP benchmark](STAP_BENCHMARK.md) preserves each view, uses absolute
 snapshot times and independent tissue calibration, and includes calibration,
 training-support and identifiability controls. LCMV detection is separate
 from phase-preserving IQ reconstruction and WSS estimation.
+
+## Downstream fUS denoising
 
 Optional downstream CCA works on power-Doppler movies, using separate functional
 and nuisance ROIs. It whitens each dataset, SVDs their concatenation, selects

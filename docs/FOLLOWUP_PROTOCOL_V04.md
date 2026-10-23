@@ -1,5 +1,7 @@
 # Frozen follow-up protocol, 23 October 2026
 
+Axis labels follow the [names in the research note](REFERENCES.md#collaboration-note-and-proposed-research-axes).
+
 ## Scope and correction to the previous interpretation
 
 The objective remains tissue rejection while preserving blood information.

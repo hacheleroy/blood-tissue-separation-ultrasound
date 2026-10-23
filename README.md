@@ -48,6 +48,10 @@ an empty output is not accepted by a blood-preservation constraint.
 
 ## Implemented scope
 
+The three research axes retain the names from the [research note](docs/notes/Research_Directions_Beyond_SVD.pdf).
+Short labels such as "Axis 1" in figures and result records refer to these names.
+STAP means space-time adaptive processing.
+
 | Family | Implementation | Status |
 |---|---|---|
 | Global SVD | Fixed cutoff, cumulative-energy cutoff, full-rank Baranger SSM two-boundary square fit; explicit upper bound | SVD algebra and published SSM objective checked independently |
@@ -59,10 +63,10 @@ an empty output is not accepted by a blood-preservation constraint.
 | Long ensemble | Same SVD on a longer contiguous window | Ensemble length explicit; no joining across gaps |
 | ZCA-AER | Lee centered temporal covariance /P and streamed spatial covariance /(T-1) | Published algorithms checked; absolute and relative regularizers distinguished |
 | AER ablations | Centering on/off; full/partial whitening; relative, absolute, or noise-floor regularization; oracle grid | Parameter rules and gain changes recorded |
-| Axis 1 | Bulk phase correction, optional rigid integer registration, Gaussian patches, q-normalized covariance memory, event reset/fallback | Research prototype |
-| Axis 2 | Complex lag AJD, rank/whitening controls, optional spectral-norm cap, lag-signature diagnostics | Conditioning controls do not guarantee source identification |
+| [Axis 1: Motion-compensated virtual long ensemble](docs/METHODS.md#axis-1-motion-compensated-virtual-long-ensemble) | Bulk phase correction, optional rigid integer registration, Gaussian patches, q-normalized covariance memory, event reset/fallback | Research prototype |
+| [Axis 2: Motion-demodulated multi-lag separation](docs/METHODS.md#axis-2-motion-demodulated-multi-lag-separation) | Complex lag AJD, rank/whitening controls, optional spectral-norm cap, lag-signature diagnostics | Conditioning controls do not guarantee source identification |
 | Other baselines | Centered complex kurtosis FastICA with explicit convergence fallback, complex PCP/RPCA; Butterworth controls | ICA stopping/conditioning diagnostics; nonlinear RPCA injection responses |
-| Axis 3 | Physical angle-time steering, tissue projector, loaded covariance adaptation, LCMV, guarded training | 42-case statistical-IQ study; uncompounded views and independent tissue calibration |
+| [Axis 3: Local ultrasound STAP](docs/STAP_BENCHMARK.md) | Physical angle-time steering, tissue projector, loaded covariance adaptation, LCMV, guarded training | 42-case statistical-IQ study; uncompounded views and independent tissue calibration |
 | Downstream fUS | Faure-style whitening/common-mode CCA regression | Separate power-Doppler denoising API; outside IQ benchmark |
 
 Every SVD/AER centering flag means temporal per-pixel mean subtraction **without

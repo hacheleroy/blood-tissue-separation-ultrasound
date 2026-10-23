@@ -33,6 +33,7 @@ jobs:
       - run: python -m pip install -e '.[test,io]'
       - run: python -m pytest -q -ra
       - run: python scripts/verify_results.py
+      - run: python scripts/verify_results.py --manifest runs/followup_v04_manifest.json --require-current-code
 
   packages:
     runs-on: ubuntu-latest
@@ -58,7 +59,7 @@ jobs:
           import btbench
           from btbench.synthetic import poiseuille
           from btbench.benchmark import run_benchmark
-          assert btbench.__version__ == '0.2.0'
+          assert btbench.__version__ == '0.3.0'
           a=poiseuille(n_frames=32,shape=(4,7))
           r=run_benchmark(a,{'methods':[{'id':'svd','method':'svd'}]},'wheel_smoke')
           assert r['results'][0]['status']=='ok'

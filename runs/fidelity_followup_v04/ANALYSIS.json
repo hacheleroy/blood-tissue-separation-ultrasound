@@ -1,0 +1,4949 @@
+{
+  "cases": 35,
+  "outputs": 3850,
+  "errors": [],
+  "max_equivalent_output_difference": 1.3512190910148015e-12,
+  "max_frozen_attribution_difference": 0.9960493061322645,
+  "max_original_axis2_local_gain": 41.18423598226767,
+  "max_capped_axis2_local_gain": 1.0000000000000018,
+  "matched_target": 0.0001,
+  "matched_operating_points_at_target": [
+    {
+      "condition": "accelerating",
+      "family": "aer_common_equivalence",
+      "status": "selected_on_calibration",
+      "selected_id": "aer_common_equivalence_temporal",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.8632473482534669,
+          "refitted_background_to_tissue_power": 2.5610007210527274e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.8540945372336111
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.8776043651024396,
+          "refitted_background_to_tissue_power": 2.028697564584796e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.8675031579555218
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.8585618949287531,
+          "refitted_background_to_tissue_power": 2.6790071647126812e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.849335917312224
+        }
+      ]
+    },
+    {
+      "condition": "accelerating",
+      "family": "axis1_memory",
+      "status": "selected_on_calibration",
+      "selected_id": "axis1_memory_c0_k1",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.27591534873285856,
+          "refitted_background_to_tissue_power": 2.256945696842213e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.25073930784220916
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.3364721829811134,
+          "refitted_background_to_tissue_power": 1.8192721639487355e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.311693385816236
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.27602927935842514,
+          "refitted_background_to_tissue_power": 2.3840521618639977e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.24661634857357448
+        }
+      ]
+    },
+    {
+      "condition": "accelerating",
+      "family": "axis1_no_memory",
+      "status": "selected_on_calibration",
+      "selected_id": "axis1_no_memory_c0_k1",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.328516199680467,
+          "refitted_background_to_tissue_power": 2.2156254271944865e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.3083469955930378
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.370837815672563,
+          "refitted_background_to_tissue_power": 1.7847688307384962e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.3486094550147443
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.3174765272685641,
+          "refitted_background_to_tissue_power": 2.33792499337575e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.29310376995504117
+        }
+      ]
+    },
+    {
+      "condition": "accelerating",
+      "family": "axis1_no_phase",
+      "status": "selected_on_calibration",
+      "selected_id": "axis1_no_phase_c0",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.27591534873285833,
+          "refitted_background_to_tissue_power": 2.256945696842213e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.250739307842209
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.33647218298111325,
+          "refitted_background_to_tissue_power": 1.819272163948736e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.3116933858162362
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.27602927935842525,
+          "refitted_background_to_tissue_power": 2.3840521618639977e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.24661634857357453
+        }
+      ]
+    },
+    {
+      "condition": "accelerating",
+      "family": "axis1_rigid_memory",
+      "status": "selected_on_calibration",
+      "selected_id": "axis1_rigid_memory_c0_k1",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.27591534873285856,
+          "refitted_background_to_tissue_power": 2.256945696842213e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.25073930784220916
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.3364721829811134,
+          "refitted_background_to_tissue_power": 1.8192721639487355e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.311693385816236
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.27602927935842514,
+          "refitted_background_to_tissue_power": 2.3840521618639977e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.24661634857357448
+        }
+      ]
+    },
+    {
+      "condition": "accelerating",
+      "family": "axis1_rigid_no_memory",
+      "status": "selected_on_calibration",
+      "selected_id": "axis1_rigid_no_memory_c0_k1",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.328516199680467,
+          "refitted_background_to_tissue_power": 2.2156254271944865e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.3083469955930378
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.370837815672563,
+          "refitted_background_to_tissue_power": 1.7847688307384962e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.3486094550147443
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.3174765272685641,
+          "refitted_background_to_tissue_power": 2.33792499337575e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.29310376995504117
+        }
+      ]
+    },
+    {
+      "condition": "accelerating",
+      "family": "axis2_gain_capped",
+      "status": "selected_on_calibration",
+      "selected_id": "axis2_cap_c1",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.38875752446595874,
+          "refitted_background_to_tissue_power": 2.7409566457745327e-07,
+          "refitted_blood_response_nrmse_alpha1": 0.38834339329845685
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.461232591057275,
+          "refitted_background_to_tissue_power": 2.9509728491720215e-07,
+          "refitted_blood_response_nrmse_alpha1": 0.4608196832030418
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.4158417534641979,
+          "refitted_background_to_tissue_power": 2.976862334056627e-07,
+          "refitted_blood_response_nrmse_alpha1": 0.41547205868403647
+        }
+      ]
+    },
+    {
+      "condition": "accelerating",
+      "family": "axis2_original",
+      "status": "selected_on_calibration",
+      "selected_id": "axis2_original_c1_m0",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.3421369589608514,
+          "refitted_background_to_tissue_power": 6.10650026998023e-07,
+          "refitted_blood_response_nrmse_alpha1": 0.3411911547748655
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.38688500774985424,
+          "refitted_background_to_tissue_power": 7.219616863070961e-07,
+          "refitted_blood_response_nrmse_alpha1": 0.3859386458929851
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.33197657870850017,
+          "refitted_background_to_tissue_power": 7.970201066815957e-07,
+          "refitted_blood_response_nrmse_alpha1": 0.33085190658259334
+        }
+      ]
+    },
+    {
+      "condition": "accelerating",
+      "family": "axis2_ridge",
+      "status": "selected_on_calibration",
+      "selected_id": "axis2_ridge_c1",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.38795792566656406,
+          "refitted_background_to_tissue_power": 2.740922541830277e-07,
+          "refitted_blood_response_nrmse_alpha1": 0.3875396212892256
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.4609525547944738,
+          "refitted_background_to_tissue_power": 2.9510217484832095e-07,
+          "refitted_blood_response_nrmse_alpha1": 0.460534402518309
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.4156937784021979,
+          "refitted_background_to_tissue_power": 2.976875674391761e-07,
+          "refitted_blood_response_nrmse_alpha1": 0.41531813203206835
+        }
+      ]
+    },
+    {
+      "condition": "accelerating",
+      "family": "axis2_ridge_capped",
+      "status": "selected_on_calibration",
+      "selected_id": "axis2_ridge_cap_c1_e0.0001",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.38868574306396675,
+          "refitted_background_to_tissue_power": 2.740922541830277e-07,
+          "refitted_blood_response_nrmse_alpha1": 0.3882716037930461
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.461170108782306,
+          "refitted_background_to_tissue_power": 2.9510217484832095e-07,
+          "refitted_blood_response_nrmse_alpha1": 0.4607569412184669
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.4157774949001816,
+          "refitted_background_to_tissue_power": 2.976875674391761e-07,
+          "refitted_blood_response_nrmse_alpha1": 0.4154065825234637
+        }
+      ]
+    },
+    {
+      "condition": "accelerating",
+      "family": "baranger",
+      "status": "selected_on_calibration",
+      "selected_id": "baranger_w32",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.40177058280234734,
+          "refitted_background_to_tissue_power": 4.066456658924115e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.4000168805876039
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.3645328395854845,
+          "refitted_background_to_tissue_power": 2.7963109349774e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.36299436637666
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.3103176235920839,
+          "refitted_background_to_tissue_power": 3.292868838215541e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.3084422633031112
+        }
+      ]
+    },
+    {
+      "condition": "accelerating",
+      "family": "butterworth",
+      "status": "infeasible_on_calibration",
+      "selected_id": null,
+      "evaluation": []
+    },
+    {
+      "condition": "accelerating",
+      "family": "identity",
+      "status": "infeasible_on_calibration",
+      "selected_id": null,
+      "evaluation": []
+    },
+    {
+      "condition": "accelerating",
+      "family": "lee_spatial_raw_w256",
+      "status": "selected_on_calibration",
+      "selected_id": "lee_spatial_absolute1",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.6080671272971739,
+          "refitted_background_to_tissue_power": 4.8055453612437366e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.5870234283537987
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.5537742525346837,
+          "refitted_background_to_tissue_power": 3.8498643883627334e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.5269866983202622
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.572384111502454,
+          "refitted_background_to_tissue_power": 5.051802288245527e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.5489622238416524
+        }
+      ]
+    },
+    {
+      "condition": "accelerating",
+      "family": "lee_spatial_raw_w32",
+      "status": "selected_on_calibration",
+      "selected_id": "lee_spatial_w32_relative0.001",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.8929115606329608,
+          "refitted_background_to_tissue_power": 2.501949852534365e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.8843971166304909
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.8997405698573764,
+          "refitted_background_to_tissue_power": 1.9787579643368892e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.8900571250090907
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.8863667379034679,
+          "refitted_background_to_tissue_power": 2.6185473571358185e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.877656905684621
+        }
+      ]
+    },
+    {
+      "condition": "accelerating",
+      "family": "lee_spatial_unit_extension",
+      "status": "selected_on_calibration",
+      "selected_id": "lee_spatial_unit_relative1e-06",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.889735524375468,
+          "refitted_background_to_tissue_power": 1.94832463089484e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.8873747283635522
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.8565141263157579,
+          "refitted_background_to_tissue_power": 1.645114061935749e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.854002028766
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.8799248610611261,
+          "refitted_background_to_tissue_power": 2.0363206596148092e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.8779484021155185
+        }
+      ]
+    },
+    {
+      "condition": "accelerating",
+      "family": "lee_temporal_raw_w256",
+      "status": "selected_on_calibration",
+      "selected_id": "lee_temporal_absolute1",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.7226295872664499,
+          "refitted_background_to_tissue_power": 3.2002896076966774e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.7129456033483788
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.6765818677066816,
+          "refitted_background_to_tissue_power": 2.5717245545345624e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.6651743598502665
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.693750890054578,
+          "refitted_background_to_tissue_power": 3.373683527942574e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.6835431180218753
+        }
+      ]
+    },
+    {
+      "condition": "accelerating",
+      "family": "lee_temporal_raw_w32",
+      "status": "selected_on_calibration",
+      "selected_id": "lee_temporal_w32_relative0.001",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.8280082092617173,
+          "refitted_background_to_tissue_power": 7.747973736880647e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.799776768299413
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.8424752756128606,
+          "refitted_background_to_tissue_power": 6.127766599236841e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.8096654953596957
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.8188120683499777,
+          "refitted_background_to_tissue_power": 8.109049880162567e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.7881471293793283
+        }
+      ]
+    },
+    {
+      "condition": "accelerating",
+      "family": "lee_temporal_unit_extension",
+      "status": "selected_on_calibration",
+      "selected_id": "lee_temporal_unit_relative1e-06",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.892908895328718,
+          "refitted_background_to_tissue_power": 1.869861796865911e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.8907353468559664
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.8602322469904844,
+          "refitted_background_to_tissue_power": 1.598009040569612e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.8579766767351712
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.883436654443212,
+          "refitted_background_to_tissue_power": 1.949370846226963e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.8816560658286015
+        }
+      ]
+    },
+    {
+      "condition": "accelerating",
+      "family": "local_svd_long",
+      "status": "selected_on_calibration",
+      "selected_id": "local_svd_long_c0_k1",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.17100114825417762,
+          "refitted_background_to_tissue_power": 2.276932831761785e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.12665466928220745
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.2044579403455597,
+          "refitted_background_to_tissue_power": 1.8353287420385976e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.15923416649078034
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.1807820390227169,
+          "refitted_background_to_tissue_power": 2.406245674091845e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.13177925018759162
+        }
+      ]
+    },
+    {
+      "condition": "accelerating",
+      "family": "local_svd_short",
+      "status": "selected_on_calibration",
+      "selected_id": "local_svd_short_c0_k1",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.3285161996804642,
+          "refitted_background_to_tissue_power": 2.215625427194486e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.30834699559303475
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.3708378156725608,
+          "refitted_background_to_tissue_power": 1.784768830738495e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.34860945501474205
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.3174765272685644,
+          "refitted_background_to_tissue_power": 2.3379249933757492e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.2931037699550417
+        }
+      ]
+    },
+    {
+      "condition": "accelerating",
+      "family": "maresca",
+      "status": "selected_on_calibration",
+      "selected_id": "maresca_offset0",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.5673878983007093,
+          "refitted_background_to_tissue_power": 2.18381084092139e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.5567260424956021
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.5849812676117715,
+          "refitted_background_to_tissue_power": 1.763849548965965e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.5726107153860923
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.5682195999327077,
+          "refitted_background_to_tissue_power": 2.3095163391892306e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.5556548986051113
+        }
+      ]
+    },
+    {
+      "condition": "accelerating",
+      "family": "song_pdf_none",
+      "status": "selected_on_calibration",
+      "selected_id": "song_pdf_none",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.6194538141658595,
+          "refitted_background_to_tissue_power": 2.23555305893972e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.620064637113026
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.7413140018947344,
+          "refitted_background_to_tissue_power": 1.3460347295955722e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.7417101404863913
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.7894098155125678,
+          "refitted_background_to_tissue_power": 2.5747029698238604e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.7898612829868505
+        }
+      ]
+    },
+    {
+      "condition": "accelerating",
+      "family": "song_pdf_paper",
+      "status": "selected_on_calibration",
+      "selected_id": "song_pdf_paper",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.994668722439582,
+          "refitted_background_to_tissue_power": 4.039051124464312e-07,
+          "refitted_blood_response_nrmse_alpha1": 0.9948156211173701
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9948137421638922,
+          "refitted_background_to_tissue_power": 4.2517827801525035e-07,
+          "refitted_blood_response_nrmse_alpha1": 0.9950790497206553
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9954326852072187,
+          "refitted_background_to_tissue_power": 4.444412583097573e-07,
+          "refitted_blood_response_nrmse_alpha1": 0.995671495701785
+        }
+      ]
+    },
+    {
+      "condition": "accelerating",
+      "family": "svd_long",
+      "status": "selected_on_calibration",
+      "selected_id": "svd_long_c0_k1",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.16654263106415765,
+          "refitted_background_to_tissue_power": 2.3518259292029096e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.11875196439346711
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.19914576521558555,
+          "refitted_background_to_tissue_power": 1.8974936040528885e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.15051235791833412
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.1736727242290052,
+          "refitted_background_to_tissue_power": 2.4881258022491635e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.1196870676324977
+        }
+      ]
+    },
+    {
+      "condition": "accelerating",
+      "family": "svd_short",
+      "status": "selected_on_calibration",
+      "selected_id": "svd_short_c0_k1",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.32635959574420514,
+          "refitted_background_to_tissue_power": 2.2882746665246994e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.30535921044967396
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.36801173985398394,
+          "refitted_background_to_tissue_power": 1.8448989664736003e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.3448171906594127
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.3139212956694562,
+          "refitted_background_to_tissue_power": 2.4173892270826852e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.28837367336428893
+        }
+      ]
+    },
+    {
+      "condition": "accelerating",
+      "family": "svd_spatial_equivalence",
+      "status": "selected_on_calibration",
+      "selected_id": "svd_spatial_equivalence_w256",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.16654263106418435,
+          "refitted_background_to_tissue_power": 2.3518259292029136e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.11875196439350566
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.19914576521558935,
+          "refitted_background_to_tissue_power": 1.8974936040528875e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.15051235791833917
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.1736727242290056,
+          "refitted_background_to_tissue_power": 2.4881258022491662e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.11968706763249785
+        }
+      ]
+    },
+    {
+      "condition": "equal_static_failure_control",
+      "family": "aer_common_equivalence",
+      "status": "infeasible_on_calibration",
+      "selected_id": null,
+      "evaluation": []
+    },
+    {
+      "condition": "equal_static_failure_control",
+      "family": "axis1_memory",
+      "status": "selected_on_calibration",
+      "selected_id": "axis1_memory_c1_k16",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0011584278890293,
+          "refitted_background_to_tissue_power": 2.959272336328223e-06,
+          "refitted_blood_response_nrmse_alpha1": 1.0000010695683668
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.001492618331036,
+          "refitted_background_to_tissue_power": 2.9669624531509063e-06,
+          "refitted_blood_response_nrmse_alpha1": 1.0000011017834112
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0011899542757543,
+          "refitted_background_to_tissue_power": 2.949987255444542e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.9999981888033441
+        }
+      ]
+    },
+    {
+      "condition": "equal_static_failure_control",
+      "family": "axis1_no_memory",
+      "status": "selected_on_calibration",
+      "selected_id": "axis1_no_memory_c1_k16",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0004510952052459,
+          "refitted_background_to_tissue_power": 1.0754601076453152e-06,
+          "refitted_blood_response_nrmse_alpha1": 1.0000000243791245
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0004811582774495,
+          "refitted_background_to_tissue_power": 1.0829931548508908e-06,
+          "refitted_blood_response_nrmse_alpha1": 1.0000000394861717
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0004910283806001,
+          "refitted_background_to_tissue_power": 1.0854964479694296e-06,
+          "refitted_blood_response_nrmse_alpha1": 1.0000000480498221
+        }
+      ]
+    },
+    {
+      "condition": "equal_static_failure_control",
+      "family": "axis1_no_phase",
+      "status": "selected_on_calibration",
+      "selected_id": "axis1_no_phase_c1",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.007313086395288,
+          "refitted_background_to_tissue_power": 1.7829451922210623e-05,
+          "refitted_blood_response_nrmse_alpha1": 1.0000000000021767
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0079752903120343,
+          "refitted_background_to_tissue_power": 1.7870949624483364e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.9999999999989181
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.007865540821742,
+          "refitted_background_to_tissue_power": 1.7579779990299378e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.9999999999997772
+        }
+      ]
+    },
+    {
+      "condition": "equal_static_failure_control",
+      "family": "axis1_rigid_memory",
+      "status": "selected_on_calibration",
+      "selected_id": "axis1_rigid_memory_c1_k16",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0011584278890293,
+          "refitted_background_to_tissue_power": 2.959272336328223e-06,
+          "refitted_blood_response_nrmse_alpha1": 1.0000010695683668
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.001492618331036,
+          "refitted_background_to_tissue_power": 2.9669624531509063e-06,
+          "refitted_blood_response_nrmse_alpha1": 1.0000011017834112
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0011899542757543,
+          "refitted_background_to_tissue_power": 2.949987255444542e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.9999981888033441
+        }
+      ]
+    },
+    {
+      "condition": "equal_static_failure_control",
+      "family": "axis1_rigid_no_memory",
+      "status": "selected_on_calibration",
+      "selected_id": "axis1_rigid_no_memory_c1_k16",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0004510952052459,
+          "refitted_background_to_tissue_power": 1.0754601076453152e-06,
+          "refitted_blood_response_nrmse_alpha1": 1.0000000243791245
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0004811582774495,
+          "refitted_background_to_tissue_power": 1.0829931548508908e-06,
+          "refitted_blood_response_nrmse_alpha1": 1.0000000394861717
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0004910283806001,
+          "refitted_background_to_tissue_power": 1.0854964479694296e-06,
+          "refitted_blood_response_nrmse_alpha1": 1.0000000480498221
+        }
+      ]
+    },
+    {
+      "condition": "equal_static_failure_control",
+      "family": "axis2_gain_capped",
+      "status": "selected_on_calibration",
+      "selected_id": "axis2_cap_c1",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0001190695287838,
+          "refitted_background_to_tissue_power": 2.3172312514597826e-07,
+          "refitted_blood_response_nrmse_alpha1": 1.0000032356683901
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0000897604955998,
+          "refitted_background_to_tissue_power": 2.2824999329898714e-07,
+          "refitted_blood_response_nrmse_alpha1": 0.9999999797548408
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0000946394682124,
+          "refitted_background_to_tissue_power": 2.2491461548162818e-07,
+          "refitted_blood_response_nrmse_alpha1": 0.9999997378767796
+        }
+      ]
+    },
+    {
+      "condition": "equal_static_failure_control",
+      "family": "axis2_original",
+      "status": "selected_on_calibration",
+      "selected_id": "axis2_original_c1_m1",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0001190695287838,
+          "refitted_background_to_tissue_power": 2.3172312514597826e-07,
+          "refitted_blood_response_nrmse_alpha1": 1.0000032356683901
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0000897604955998,
+          "refitted_background_to_tissue_power": 2.2824999329898714e-07,
+          "refitted_blood_response_nrmse_alpha1": 0.9999999797548408
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0000946394682124,
+          "refitted_background_to_tissue_power": 2.2491461548162818e-07,
+          "refitted_blood_response_nrmse_alpha1": 0.9999997378767796
+        }
+      ]
+    },
+    {
+      "condition": "equal_static_failure_control",
+      "family": "axis2_ridge",
+      "status": "selected_on_calibration",
+      "selected_id": "axis2_ridge_c1",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.00011903794258,
+          "refitted_background_to_tissue_power": 2.3172776811305563e-07,
+          "refitted_blood_response_nrmse_alpha1": 1.000003225758373
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0000897635044084,
+          "refitted_background_to_tissue_power": 2.2824680528759797e-07,
+          "refitted_blood_response_nrmse_alpha1": 0.9999999789989236
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0000946416199066,
+          "refitted_background_to_tissue_power": 2.2491714175193723e-07,
+          "refitted_blood_response_nrmse_alpha1": 0.9999997372022573
+        }
+      ]
+    },
+    {
+      "condition": "equal_static_failure_control",
+      "family": "axis2_ridge_capped",
+      "status": "selected_on_calibration",
+      "selected_id": "axis2_ridge_cap_c1_e0.0001",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.00011903794258,
+          "refitted_background_to_tissue_power": 2.3172776811305563e-07,
+          "refitted_blood_response_nrmse_alpha1": 1.000003225758373
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0000897635044084,
+          "refitted_background_to_tissue_power": 2.2824680528759797e-07,
+          "refitted_blood_response_nrmse_alpha1": 0.9999999789989236
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0000946416199066,
+          "refitted_background_to_tissue_power": 2.2491714175193723e-07,
+          "refitted_blood_response_nrmse_alpha1": 0.9999997372022573
+        }
+      ]
+    },
+    {
+      "condition": "equal_static_failure_control",
+      "family": "baranger",
+      "status": "selected_on_calibration",
+      "selected_id": "baranger_w128",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.002069085454264,
+          "refitted_background_to_tissue_power": 4.937132926412424e-06,
+          "refitted_blood_response_nrmse_alpha1": 1.0000003592376225
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0014172482452675,
+          "refitted_background_to_tissue_power": 3.1913737692688606e-06,
+          "refitted_blood_response_nrmse_alpha1": 1.0000007992464028
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0008503252638703,
+          "refitted_background_to_tissue_power": 1.8800674697719404e-06,
+          "refitted_blood_response_nrmse_alpha1": 1.0000000473328523
+        }
+      ]
+    },
+    {
+      "condition": "equal_static_failure_control",
+      "family": "butterworth",
+      "status": "selected_on_calibration",
+      "selected_id": "butterworth_80Hz",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0066366622627294,
+          "refitted_background_to_tissue_power": 1.6014434489602093e-05,
+          "refitted_blood_response_nrmse_alpha1": 1.0000000000000002
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0071108636229331,
+          "refitted_background_to_tissue_power": 1.6037593153401917e-05,
+          "refitted_blood_response_nrmse_alpha1": 1.0000000000000002
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0071240860373496,
+          "refitted_background_to_tissue_power": 1.586426166754756e-05,
+          "refitted_blood_response_nrmse_alpha1": 1.0
+        }
+      ]
+    },
+    {
+      "condition": "equal_static_failure_control",
+      "family": "identity",
+      "status": "infeasible_on_calibration",
+      "selected_id": null,
+      "evaluation": []
+    },
+    {
+      "condition": "equal_static_failure_control",
+      "family": "lee_spatial_raw_w256",
+      "status": "selected_on_calibration",
+      "selected_id": "lee_spatial_absolute1000",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0000083215757092,
+          "refitted_background_to_tissue_power": 1.9836073536549096e-08,
+          "refitted_blood_response_nrmse_alpha1": 1.0
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0000088382286352,
+          "refitted_background_to_tissue_power": 1.9887921136489593e-08,
+          "refitted_blood_response_nrmse_alpha1": 1.0
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0000088312723583,
+          "refitted_background_to_tissue_power": 1.9517712440667495e-08,
+          "refitted_blood_response_nrmse_alpha1": 1.0
+        }
+      ]
+    },
+    {
+      "condition": "equal_static_failure_control",
+      "family": "lee_spatial_raw_w32",
+      "status": "infeasible_on_calibration",
+      "selected_id": null,
+      "evaluation": []
+    },
+    {
+      "condition": "equal_static_failure_control",
+      "family": "lee_spatial_unit_extension",
+      "status": "selected_on_calibration",
+      "selected_id": "lee_spatial_unit_relative1e-06",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0013545566451427,
+          "refitted_background_to_tissue_power": 3.231019235339206e-06,
+          "refitted_blood_response_nrmse_alpha1": 1.0000000000000007
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0013896654494863,
+          "refitted_background_to_tissue_power": 3.1292060062915644e-06,
+          "refitted_blood_response_nrmse_alpha1": 1.0
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.001537863142079,
+          "refitted_background_to_tissue_power": 3.4013805321255763e-06,
+          "refitted_blood_response_nrmse_alpha1": 1.0
+        }
+      ]
+    },
+    {
+      "condition": "equal_static_failure_control",
+      "family": "lee_temporal_raw_w256",
+      "status": "selected_on_calibration",
+      "selected_id": "lee_temporal_absolute1000",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0000083213859263,
+          "refitted_background_to_tissue_power": 1.9835621154277438e-08,
+          "refitted_blood_response_nrmse_alpha1": 1.0
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0000088380264147,
+          "refitted_background_to_tissue_power": 1.9887466094733043e-08,
+          "refitted_blood_response_nrmse_alpha1": 1.0
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0000088310745385,
+          "refitted_background_to_tissue_power": 1.951727524216205e-08,
+          "refitted_blood_response_nrmse_alpha1": 1.0
+        }
+      ]
+    },
+    {
+      "condition": "equal_static_failure_control",
+      "family": "lee_temporal_raw_w32",
+      "status": "infeasible_on_calibration",
+      "selected_id": null,
+      "evaluation": []
+    },
+    {
+      "condition": "equal_static_failure_control",
+      "family": "lee_temporal_unit_extension",
+      "status": "selected_on_calibration",
+      "selected_id": "lee_temporal_unit_relative1e-06",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0000000205781765,
+          "refitted_background_to_tissue_power": 4.905184218544429e-11,
+          "refitted_blood_response_nrmse_alpha1": 1.0
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.000000022529034,
+          "refitted_background_to_tissue_power": 5.0694960037467846e-11,
+          "refitted_blood_response_nrmse_alpha1": 1.0000000000000002
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0000000219636775,
+          "refitted_background_to_tissue_power": 4.854099905282403e-11,
+          "refitted_blood_response_nrmse_alpha1": 1.0
+        }
+      ]
+    },
+    {
+      "condition": "equal_static_failure_control",
+      "family": "local_svd_long",
+      "status": "selected_on_calibration",
+      "selected_id": "local_svd_long_c1_k16",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0018484128582057,
+          "refitted_background_to_tissue_power": 4.41010070803981e-06,
+          "refitted_blood_response_nrmse_alpha1": 1.0000000000000016
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0019585959750037,
+          "refitted_background_to_tissue_power": 4.41156000934843e-06,
+          "refitted_blood_response_nrmse_alpha1": 1.0000000000000027
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0019483612891738,
+          "refitted_background_to_tissue_power": 4.310186740248318e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.9999999999999997
+        }
+      ]
+    },
+    {
+      "condition": "equal_static_failure_control",
+      "family": "local_svd_short",
+      "status": "selected_on_calibration",
+      "selected_id": "local_svd_short_c1_k16",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0004541230884019,
+          "refitted_background_to_tissue_power": 1.0827308639637323e-06,
+          "refitted_blood_response_nrmse_alpha1": 1.0000000000000007
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.000483672640479,
+          "refitted_background_to_tissue_power": 1.0886261819963816e-06,
+          "refitted_blood_response_nrmse_alpha1": 1.0000000000000007
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0004948301865804,
+          "refitted_background_to_tissue_power": 1.0938741064421945e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.9999999999999998
+        }
+      ]
+    },
+    {
+      "condition": "equal_static_failure_control",
+      "family": "maresca",
+      "status": "selected_on_calibration",
+      "selected_id": "maresca_offset26",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.001652473068807,
+          "refitted_background_to_tissue_power": 3.7665260678158355e-06,
+          "refitted_blood_response_nrmse_alpha1": 1.0000005745229967
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0017371767379442,
+          "refitted_background_to_tissue_power": 3.8050068625877033e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.9999988154658889
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0019042946511705,
+          "refitted_background_to_tissue_power": 3.7920873782955766e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.9999981006471723
+        }
+      ]
+    },
+    {
+      "condition": "equal_static_failure_control",
+      "family": "song_pdf_none",
+      "status": "selected_on_calibration",
+      "selected_id": "song_pdf_none",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0008513315697265,
+          "refitted_background_to_tissue_power": 2.0301875191697172e-06,
+          "refitted_blood_response_nrmse_alpha1": 1.0000001956125324
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0009012499803385,
+          "refitted_background_to_tissue_power": 2.0297437638334604e-06,
+          "refitted_blood_response_nrmse_alpha1": 1.0000003351713225
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0008469192988847,
+          "refitted_background_to_tissue_power": 1.8734241238014025e-06,
+          "refitted_blood_response_nrmse_alpha1": 1.0000002565252215
+        }
+      ]
+    },
+    {
+      "condition": "equal_static_failure_control",
+      "family": "song_pdf_paper",
+      "status": "selected_on_calibration",
+      "selected_id": "song_pdf_paper",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0001385036423065,
+          "refitted_background_to_tissue_power": 3.3018896358266525e-07,
+          "refitted_blood_response_nrmse_alpha1": 1.0000000300829948
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0001588148573624,
+          "refitted_background_to_tissue_power": 3.5753732503573494e-07,
+          "refitted_blood_response_nrmse_alpha1": 1.000000096751543
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0001627959490305,
+          "refitted_background_to_tissue_power": 3.601851922518437e-07,
+          "refitted_blood_response_nrmse_alpha1": 1.0000000445700679
+        }
+      ]
+    },
+    {
+      "condition": "equal_static_failure_control",
+      "family": "svd_long",
+      "status": "selected_on_calibration",
+      "selected_id": "svd_long_c0_k96",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0,
+          "refitted_background_to_tissue_power": 0.0,
+          "refitted_blood_response_nrmse_alpha1": 1.0
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0,
+          "refitted_background_to_tissue_power": 0.0,
+          "refitted_blood_response_nrmse_alpha1": 1.0
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0,
+          "refitted_background_to_tissue_power": 0.0,
+          "refitted_blood_response_nrmse_alpha1": 1.0
+        }
+      ]
+    },
+    {
+      "condition": "equal_static_failure_control",
+      "family": "svd_short",
+      "status": "selected_on_calibration",
+      "selected_id": "svd_short_c0_k32",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0,
+          "refitted_background_to_tissue_power": 0.0,
+          "refitted_blood_response_nrmse_alpha1": 1.0
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0,
+          "refitted_background_to_tissue_power": 0.0,
+          "refitted_blood_response_nrmse_alpha1": 1.0
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0,
+          "refitted_background_to_tissue_power": 0.0,
+          "refitted_blood_response_nrmse_alpha1": 1.0
+        }
+      ]
+    },
+    {
+      "condition": "equal_static_failure_control",
+      "family": "svd_spatial_equivalence",
+      "status": "selected_on_calibration",
+      "selected_id": "svd_spatial_equivalence_w32",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.007979008998402,
+          "refitted_background_to_tissue_power": 1.909527347802959e-05,
+          "refitted_blood_response_nrmse_alpha1": 1.0000002227184441
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0084544331821133,
+          "refitted_background_to_tissue_power": 1.9104656088345567e-05,
+          "refitted_blood_response_nrmse_alpha1": 1.0000001863712438
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0084823934343328,
+          "refitted_background_to_tissue_power": 1.8826080658887205e-05,
+          "refitted_blood_response_nrmse_alpha1": 1.0000002059830266
+        }
+      ]
+    },
+    {
+      "condition": "opposed_flow",
+      "family": "aer_common_equivalence",
+      "status": "selected_on_calibration",
+      "selected_id": "aer_common_equivalence_temporal",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.8685119025407237,
+          "refitted_background_to_tissue_power": 2.5611138915228627e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.8590278389213964
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.8853159023221582,
+          "refitted_background_to_tissue_power": 2.02878323505519e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.8758016337989074
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.8644826666036296,
+          "refitted_background_to_tissue_power": 2.679070901872802e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.8547567378663444
+        }
+      ]
+    },
+    {
+      "condition": "opposed_flow",
+      "family": "axis1_memory",
+      "status": "selected_on_calibration",
+      "selected_id": "axis1_memory_c0_k1",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.20227176086919035,
+          "refitted_background_to_tissue_power": 2.2557432066728618e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.1632437344310237
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.21542761893360735,
+          "refitted_background_to_tissue_power": 1.8184402911567212e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.17772199546804096
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.21289579618365032,
+          "refitted_background_to_tissue_power": 2.3820743163754455e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.17184508350690636
+        }
+      ]
+    },
+    {
+      "condition": "opposed_flow",
+      "family": "axis1_no_memory",
+      "status": "selected_on_calibration",
+      "selected_id": "axis1_no_memory_c0_k1",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.37621441365735797,
+          "refitted_background_to_tissue_power": 2.2143932460951512e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.3570921078764143
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.36920458055429967,
+          "refitted_background_to_tissue_power": 1.782899469910214e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.34900988470397837
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.3780562652621051,
+          "refitted_background_to_tissue_power": 2.339160254213756e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.3569507422783296
+        }
+      ]
+    },
+    {
+      "condition": "opposed_flow",
+      "family": "axis1_no_phase",
+      "status": "selected_on_calibration",
+      "selected_id": "axis1_no_phase_c0",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.20227176086919058,
+          "refitted_background_to_tissue_power": 2.255743206672862e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.16324373443102386
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.2154276189336072,
+          "refitted_background_to_tissue_power": 1.8184402911567233e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.17772199546804082
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.21289579618365032,
+          "refitted_background_to_tissue_power": 2.382074316375444e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.17184508350690625
+        }
+      ]
+    },
+    {
+      "condition": "opposed_flow",
+      "family": "axis1_rigid_memory",
+      "status": "selected_on_calibration",
+      "selected_id": "axis1_rigid_memory_c0_k1",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.20227176086919035,
+          "refitted_background_to_tissue_power": 2.2557432066728618e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.1632437344310237
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.21542761893360735,
+          "refitted_background_to_tissue_power": 1.8184402911567212e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.17772199546804096
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.21289579618365032,
+          "refitted_background_to_tissue_power": 2.3820743163754455e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.17184508350690636
+        }
+      ]
+    },
+    {
+      "condition": "opposed_flow",
+      "family": "axis1_rigid_no_memory",
+      "status": "selected_on_calibration",
+      "selected_id": "axis1_rigid_no_memory_c0_k1",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.37621441365735797,
+          "refitted_background_to_tissue_power": 2.2143932460951512e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.3570921078764143
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.36920458055429967,
+          "refitted_background_to_tissue_power": 1.782899469910214e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.34900988470397837
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.3780562652621051,
+          "refitted_background_to_tissue_power": 2.339160254213756e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.3569507422783296
+        }
+      ]
+    },
+    {
+      "condition": "opposed_flow",
+      "family": "axis2_gain_capped",
+      "status": "selected_on_calibration",
+      "selected_id": "axis2_cap_c1",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.2962048892187356,
+          "refitted_background_to_tissue_power": 3.0174461687685154e-07,
+          "refitted_blood_response_nrmse_alpha1": 0.2957277255053726
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.30761194169816436,
+          "refitted_background_to_tissue_power": 2.8969288380256803e-07,
+          "refitted_blood_response_nrmse_alpha1": 0.30722241525956007
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.31601584781286307,
+          "refitted_background_to_tissue_power": 3.401940757417086e-07,
+          "refitted_blood_response_nrmse_alpha1": 0.31563397879205274
+        }
+      ]
+    },
+    {
+      "condition": "opposed_flow",
+      "family": "axis2_original",
+      "status": "selected_on_calibration",
+      "selected_id": "axis2_original_c1_m1",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.29211869376594746,
+          "refitted_background_to_tissue_power": 3.0174461687685154e-07,
+          "refitted_blood_response_nrmse_alpha1": 0.2916296013206011
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.30543310851519057,
+          "refitted_background_to_tissue_power": 2.8969288380256803e-07,
+          "refitted_blood_response_nrmse_alpha1": 0.30503288123053546
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.3126587037356744,
+          "refitted_background_to_tissue_power": 3.401940757417086e-07,
+          "refitted_blood_response_nrmse_alpha1": 0.31224438767977936
+        }
+      ]
+    },
+    {
+      "condition": "opposed_flow",
+      "family": "axis2_ridge",
+      "status": "selected_on_calibration",
+      "selected_id": "axis2_ridge_c1",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.2915506536483047,
+          "refitted_background_to_tissue_power": 3.01754641803041e-07,
+          "refitted_blood_response_nrmse_alpha1": 0.29105860242518344
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.3051626909160892,
+          "refitted_background_to_tissue_power": 2.896901684728618e-07,
+          "refitted_blood_response_nrmse_alpha1": 0.3047604128870895
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.3124990891130255,
+          "refitted_background_to_tissue_power": 3.4020192277660197e-07,
+          "refitted_blood_response_nrmse_alpha1": 0.31208826208454177
+        }
+      ]
+    },
+    {
+      "condition": "opposed_flow",
+      "family": "axis2_ridge_capped",
+      "status": "selected_on_calibration",
+      "selected_id": "axis2_ridge_cap_c1_e0.01",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.29362694812363915,
+          "refitted_background_to_tissue_power": 3.01754641803041e-07,
+          "refitted_blood_response_nrmse_alpha1": 0.29316693857268916
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.30654743017728375,
+          "refitted_background_to_tissue_power": 2.896901684728618e-07,
+          "refitted_blood_response_nrmse_alpha1": 0.30615583638667115
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.3141812692544371,
+          "refitted_background_to_tissue_power": 3.4020192277660197e-07,
+          "refitted_blood_response_nrmse_alpha1": 0.3137949149312341
+        }
+      ]
+    },
+    {
+      "condition": "opposed_flow",
+      "family": "baranger",
+      "status": "selected_on_calibration",
+      "selected_id": "baranger_w32",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.3691474149694405,
+          "refitted_background_to_tissue_power": 4.318550562550841e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.3681247845284881
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.3624501757618013,
+          "refitted_background_to_tissue_power": 3.1831611682183207e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.36092814614303353
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.37115672293858515,
+          "refitted_background_to_tissue_power": 3.576754699501371e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.36962073467357254
+        }
+      ]
+    },
+    {
+      "condition": "opposed_flow",
+      "family": "butterworth",
+      "status": "selected_on_calibration",
+      "selected_id": "butterworth_80Hz",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9840911748651326,
+          "refitted_background_to_tissue_power": 2.0706759682125964e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.9773108760227419
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9842417232785498,
+          "refitted_background_to_tissue_power": 1.7020942314283684e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.9771726297131763
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9823285219459453,
+          "refitted_background_to_tissue_power": 2.175673717688824e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.9749396005820486
+        }
+      ]
+    },
+    {
+      "condition": "opposed_flow",
+      "family": "identity",
+      "status": "infeasible_on_calibration",
+      "selected_id": null,
+      "evaluation": []
+    },
+    {
+      "condition": "opposed_flow",
+      "family": "lee_spatial_raw_w256",
+      "status": "selected_on_calibration",
+      "selected_id": "lee_spatial_absolute1",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.6447566720411403,
+          "refitted_background_to_tissue_power": 4.8046161900822386e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.6229141994493892
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.6562838725549915,
+          "refitted_background_to_tissue_power": 3.849736250735952e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.6340350519010426
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.6297205710455509,
+          "refitted_background_to_tissue_power": 5.0485473640798554e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.6062820801401572
+        }
+      ]
+    },
+    {
+      "condition": "opposed_flow",
+      "family": "lee_spatial_raw_w32",
+      "status": "selected_on_calibration",
+      "selected_id": "lee_spatial_w32_relative0.001",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9230106548056868,
+          "refitted_background_to_tissue_power": 2.5421522497597356e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.9140013208318487
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9242250167934217,
+          "refitted_background_to_tissue_power": 2.0045170938958902e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.9149228269383839
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9193751703002859,
+          "refitted_background_to_tissue_power": 2.6629695222904828e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.9099324795205911
+        }
+      ]
+    },
+    {
+      "condition": "opposed_flow",
+      "family": "lee_spatial_unit_extension",
+      "status": "selected_on_calibration",
+      "selected_id": "lee_spatial_unit_relative1e-06",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.904145248810973,
+          "refitted_background_to_tissue_power": 1.9473829999904924e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.900563812343231
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.8955980810015263,
+          "refitted_background_to_tissue_power": 1.643659683743958e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.8915393653907736
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9011451072415503,
+          "refitted_background_to_tissue_power": 2.0330250453832163e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.8976742034926091
+        }
+      ]
+    },
+    {
+      "condition": "opposed_flow",
+      "family": "lee_temporal_raw_w256",
+      "status": "selected_on_calibration",
+      "selected_id": "lee_temporal_absolute1",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.7526963461916064,
+          "refitted_background_to_tissue_power": 3.199417650681499e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.7417871549472631
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.7588293310119867,
+          "refitted_background_to_tissue_power": 2.571590349599403e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.7476217052019584
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.7410027748634753,
+          "refitted_background_to_tissue_power": 3.370561548220821e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.7296006516663731
+        }
+      ]
+    },
+    {
+      "condition": "opposed_flow",
+      "family": "lee_temporal_raw_w32",
+      "status": "selected_on_calibration",
+      "selected_id": "lee_temporal_w32_relative0.001",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.8828979325895645,
+          "refitted_background_to_tissue_power": 7.872471483126948e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.8537921663318091
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.8843211780305705,
+          "refitted_background_to_tissue_power": 6.207536806903417e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.8544732621353018
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.878380461702831,
+          "refitted_background_to_tissue_power": 8.246615294835073e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.8471320263331774
+        }
+      ]
+    },
+    {
+      "condition": "opposed_flow",
+      "family": "lee_temporal_unit_extension",
+      "status": "selected_on_calibration",
+      "selected_id": "lee_temporal_unit_relative1e-06",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.906730362972636,
+          "refitted_background_to_tissue_power": 1.868194695730147e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.9033914699476709
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.8979380846747939,
+          "refitted_background_to_tissue_power": 1.5969105716377796e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.8941255175463197
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9038191509160908,
+          "refitted_background_to_tissue_power": 1.9461707408198353e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.9006023515970774
+        }
+      ]
+    },
+    {
+      "condition": "opposed_flow",
+      "family": "local_svd_long",
+      "status": "selected_on_calibration",
+      "selected_id": "local_svd_long_c0_k1",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.15611621635917944,
+          "refitted_background_to_tissue_power": 2.276174121965095e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.09979886876605129
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.15407377072005332,
+          "refitted_background_to_tissue_power": 1.8350443593898686e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.09386415993351084
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.1631657991736209,
+          "refitted_background_to_tissue_power": 2.4027438085511425e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.10337406708585399
+        }
+      ]
+    },
+    {
+      "condition": "opposed_flow",
+      "family": "local_svd_short",
+      "status": "selected_on_calibration",
+      "selected_id": "local_svd_short_c0_k1",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.3762144136573576,
+          "refitted_background_to_tissue_power": 2.2143932460951512e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.35709210787641354
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.36920458055430005,
+          "refitted_background_to_tissue_power": 1.782899469910215e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.3490098847039789
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.37805626526210384,
+          "refitted_background_to_tissue_power": 2.3391602542137556e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.3569507422783283
+        }
+      ]
+    },
+    {
+      "condition": "opposed_flow",
+      "family": "maresca",
+      "status": "selected_on_calibration",
+      "selected_id": "maresca_offset0",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.6802348094134988,
+          "refitted_background_to_tissue_power": 2.1846404296461832e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.670708488296619
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.7005715972597235,
+          "refitted_background_to_tissue_power": 1.7638040665555565e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.690409899134544
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.6722648903866882,
+          "refitted_background_to_tissue_power": 2.3101127241883037e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.6614002893784019
+        }
+      ]
+    },
+    {
+      "condition": "opposed_flow",
+      "family": "song_pdf_none",
+      "status": "selected_on_calibration",
+      "selected_id": "song_pdf_none",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9082355024988473,
+          "refitted_background_to_tissue_power": 2.236777569360993e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.9084654153790517
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9081714227475891,
+          "refitted_background_to_tissue_power": 1.3405748626842436e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.9080927796870538
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.8870161693914091,
+          "refitted_background_to_tissue_power": 2.7732993423190626e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.8876561169233065
+        }
+      ]
+    },
+    {
+      "condition": "opposed_flow",
+      "family": "song_pdf_paper",
+      "status": "selected_on_calibration",
+      "selected_id": "song_pdf_paper",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9954804494906154,
+          "refitted_background_to_tissue_power": 4.2671604292216497e-07,
+          "refitted_blood_response_nrmse_alpha1": 0.995588752140288
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9966423718333741,
+          "refitted_background_to_tissue_power": 4.1379785109416243e-07,
+          "refitted_blood_response_nrmse_alpha1": 0.9967075246760969
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9948961258915209,
+          "refitted_background_to_tissue_power": 3.834758389678206e-07,
+          "refitted_blood_response_nrmse_alpha1": 0.9950472861221323
+        }
+      ]
+    },
+    {
+      "condition": "opposed_flow",
+      "family": "svd_long",
+      "status": "selected_on_calibration",
+      "selected_id": "svd_long_c0_k1",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.14537484027422293,
+          "refitted_background_to_tissue_power": 2.350963036653658e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.07904416575257234
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.1448863899432472,
+          "refitted_background_to_tissue_power": 1.897370948567719e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.07454229770080752
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.15363726301664496,
+          "refitted_background_to_tissue_power": 2.4847602260061383e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.08440005840626469
+        }
+      ]
+    },
+    {
+      "condition": "opposed_flow",
+      "family": "svd_short",
+      "status": "selected_on_calibration",
+      "selected_id": "svd_short_c0_k1",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.37251031020544684,
+          "refitted_background_to_tissue_power": 2.2867847546335655e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.3525405109084056
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.3658328684104595,
+          "refitted_background_to_tissue_power": 1.8434858844198738e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.3447267401840985
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.3745717509187187,
+          "refitted_background_to_tissue_power": 2.4193180666201905e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.3525008953908467
+        }
+      ]
+    },
+    {
+      "condition": "opposed_flow",
+      "family": "svd_spatial_equivalence",
+      "status": "selected_on_calibration",
+      "selected_id": "svd_spatial_equivalence_w256",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.145374840274246,
+          "refitted_background_to_tissue_power": 2.3509630366536538e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.07904416575261533
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.14488638994327127,
+          "refitted_background_to_tissue_power": 1.897370948567717e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.07454229770085437
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.1536372630166449,
+          "refitted_background_to_tissue_power": 2.4847602260061373e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.0844000584062627
+        }
+      ]
+    },
+    {
+      "condition": "psf_deforming",
+      "family": "aer_common_equivalence",
+      "status": "infeasible_on_calibration",
+      "selected_id": null,
+      "evaluation": []
+    },
+    {
+      "condition": "psf_deforming",
+      "family": "axis1_memory",
+      "status": "selected_on_calibration",
+      "selected_id": "axis1_memory_c1_k16",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0020897472586783,
+          "refitted_background_to_tissue_power": 5.614779112343914e-06,
+          "refitted_blood_response_nrmse_alpha1": 1.0008544783811735
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.002073721808633,
+          "refitted_background_to_tissue_power": 5.172761677404416e-06,
+          "refitted_blood_response_nrmse_alpha1": 1.0011527663099904
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0029956260188726,
+          "refitted_background_to_tissue_power": 6.784480670016987e-06,
+          "refitted_blood_response_nrmse_alpha1": 1.0017576126669965
+        }
+      ]
+    },
+    {
+      "condition": "psf_deforming",
+      "family": "axis1_no_memory",
+      "status": "selected_on_calibration",
+      "selected_id": "axis1_no_memory_c1_k16",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.000546309517284,
+          "refitted_background_to_tissue_power": 1.5811372285019957e-06,
+          "refitted_blood_response_nrmse_alpha1": 1.000033096480058
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0005395115569682,
+          "refitted_background_to_tissue_power": 1.4442355846912615e-06,
+          "refitted_blood_response_nrmse_alpha1": 1.0000331875887494
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.000688706639293,
+          "refitted_background_to_tissue_power": 1.7440946913682424e-06,
+          "refitted_blood_response_nrmse_alpha1": 1.0000542910590091
+        }
+      ]
+    },
+    {
+      "condition": "psf_deforming",
+      "family": "axis1_no_phase",
+      "status": "infeasible_on_calibration",
+      "selected_id": null,
+      "evaluation": []
+    },
+    {
+      "condition": "psf_deforming",
+      "family": "axis1_rigid_memory",
+      "status": "selected_on_calibration",
+      "selected_id": "axis1_rigid_memory_c0_k16",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0014800911894803,
+          "refitted_background_to_tissue_power": 4.1247888218204055e-06,
+          "refitted_blood_response_nrmse_alpha1": 1.0003976731555726
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0035009582976147,
+          "refitted_background_to_tissue_power": 5.361738885815189e-06,
+          "refitted_blood_response_nrmse_alpha1": 1.0027337745241593
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0011908847009197,
+          "refitted_background_to_tissue_power": 4.272230539434608e-06,
+          "refitted_blood_response_nrmse_alpha1": 1.0001745412701324
+        }
+      ]
+    },
+    {
+      "condition": "psf_deforming",
+      "family": "axis1_rigid_no_memory",
+      "status": "selected_on_calibration",
+      "selected_id": "axis1_rigid_no_memory_c1_k16",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0005187257114718,
+          "refitted_background_to_tissue_power": 1.5080164085884476e-06,
+          "refitted_blood_response_nrmse_alpha1": 1.0000792407629389
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0005343738133687,
+          "refitted_background_to_tissue_power": 1.4295322521490663e-06,
+          "refitted_blood_response_nrmse_alpha1": 1.0000396468962114
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0007151426816607,
+          "refitted_background_to_tissue_power": 1.816113548403682e-06,
+          "refitted_blood_response_nrmse_alpha1": 1.0000593444487538
+        }
+      ]
+    },
+    {
+      "condition": "psf_deforming",
+      "family": "axis2_gain_capped",
+      "status": "infeasible_on_calibration",
+      "selected_id": null,
+      "evaluation": []
+    },
+    {
+      "condition": "psf_deforming",
+      "family": "axis2_original",
+      "status": "infeasible_on_calibration",
+      "selected_id": null,
+      "evaluation": []
+    },
+    {
+      "condition": "psf_deforming",
+      "family": "axis2_ridge",
+      "status": "infeasible_on_calibration",
+      "selected_id": null,
+      "evaluation": []
+    },
+    {
+      "condition": "psf_deforming",
+      "family": "axis2_ridge_capped",
+      "status": "infeasible_on_calibration",
+      "selected_id": null,
+      "evaluation": []
+    },
+    {
+      "condition": "psf_deforming",
+      "family": "baranger",
+      "status": "selected_on_calibration",
+      "selected_id": "baranger_w32",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.000807602634247,
+          "refitted_background_to_tissue_power": 2.3496679662798446e-06,
+          "refitted_blood_response_nrmse_alpha1": 1.000004379818171
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.000730361250003,
+          "refitted_background_to_tissue_power": 1.960655449978562e-06,
+          "refitted_blood_response_nrmse_alpha1": 1.000004822463485
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0010098881523322,
+          "refitted_background_to_tissue_power": 2.4012931351074643e-06,
+          "refitted_blood_response_nrmse_alpha1": 1.0000717853939367
+        }
+      ]
+    },
+    {
+      "condition": "psf_deforming",
+      "family": "butterworth",
+      "status": "infeasible_on_calibration",
+      "selected_id": null,
+      "evaluation": []
+    },
+    {
+      "condition": "psf_deforming",
+      "family": "identity",
+      "status": "infeasible_on_calibration",
+      "selected_id": null,
+      "evaluation": []
+    },
+    {
+      "condition": "psf_deforming",
+      "family": "lee_spatial_raw_w256",
+      "status": "infeasible_on_calibration",
+      "selected_id": null,
+      "evaluation": []
+    },
+    {
+      "condition": "psf_deforming",
+      "family": "lee_spatial_raw_w32",
+      "status": "selected_on_calibration",
+      "selected_id": "lee_spatial_w32_relative0.1",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0107811902433645,
+          "refitted_background_to_tissue_power": 4.236243932112324e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.9960324825039579
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0100708799391347,
+          "refitted_background_to_tissue_power": 3.95007695077085e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.995954298701532
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.015021055992186,
+          "refitted_background_to_tissue_power": 4.767488182998616e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.9951737108549379
+        }
+      ]
+    },
+    {
+      "condition": "psf_deforming",
+      "family": "lee_spatial_unit_extension",
+      "status": "selected_on_calibration",
+      "selected_id": "lee_spatial_unit_relative1e-06",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9992932782031849,
+          "refitted_background_to_tissue_power": 1.7063447566317882e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.9942416801002857
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9990425164088094,
+          "refitted_background_to_tissue_power": 1.792856830366727e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.9925915485382432
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.001046041964953,
+          "refitted_background_to_tissue_power": 2.1565214653773744e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.9917973357611459
+        }
+      ]
+    },
+    {
+      "condition": "psf_deforming",
+      "family": "lee_temporal_raw_w256",
+      "status": "selected_on_calibration",
+      "selected_id": "lee_temporal_w256_relative0.1",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0091633251392211,
+          "refitted_background_to_tissue_power": 6.610620054486315e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.9898789675109422
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.011906889880271,
+          "refitted_background_to_tissue_power": 5.785140169503625e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.9897878031335862
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0175370521537987,
+          "refitted_background_to_tissue_power": 6.245662638057768e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.9887410555847074
+        }
+      ]
+    },
+    {
+      "condition": "psf_deforming",
+      "family": "lee_temporal_raw_w32",
+      "status": "infeasible_on_calibration",
+      "selected_id": null,
+      "evaluation": []
+    },
+    {
+      "condition": "psf_deforming",
+      "family": "lee_temporal_unit_extension",
+      "status": "selected_on_calibration",
+      "selected_id": "lee_temporal_unit_relative1e-06",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9988903322184297,
+          "refitted_background_to_tissue_power": 1.4502289431526842e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.9947159530128411
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9986350374305736,
+          "refitted_background_to_tissue_power": 1.5324058987607155e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.993146048171667
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0003810406048923,
+          "refitted_background_to_tissue_power": 1.843257802029544e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.9923876187250078
+        }
+      ]
+    },
+    {
+      "condition": "psf_deforming",
+      "family": "local_svd_long",
+      "status": "selected_on_calibration",
+      "selected_id": "local_svd_long_c0_k16",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9983833221444924,
+          "refitted_background_to_tissue_power": 8.955031132282609e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.9959873358523694
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9999435523828757,
+          "refitted_background_to_tissue_power": 8.876598028255122e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.9983727217896334
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0017721269121753,
+          "refitted_background_to_tissue_power": 1.4357714647771607e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.9995919621036938
+        }
+      ]
+    },
+    {
+      "condition": "psf_deforming",
+      "family": "local_svd_short",
+      "status": "selected_on_calibration",
+      "selected_id": "local_svd_short_c1_k16",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0005462482059813,
+          "refitted_background_to_tissue_power": 1.582867470994958e-06,
+          "refitted_blood_response_nrmse_alpha1": 1.000024401234645
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0005440920343047,
+          "refitted_background_to_tissue_power": 1.454281550122997e-06,
+          "refitted_blood_response_nrmse_alpha1": 1.0000271231870579
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0006921653382392,
+          "refitted_background_to_tissue_power": 1.753218101323753e-06,
+          "refitted_blood_response_nrmse_alpha1": 1.000030962916054
+        }
+      ]
+    },
+    {
+      "condition": "psf_deforming",
+      "family": "maresca",
+      "status": "selected_on_calibration",
+      "selected_id": "maresca_offset26",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0009363140389984,
+          "refitted_background_to_tissue_power": 2.732604324864597e-06,
+          "refitted_blood_response_nrmse_alpha1": 1.0000080376693194
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0009726912891033,
+          "refitted_background_to_tissue_power": 2.5976265142842835e-06,
+          "refitted_blood_response_nrmse_alpha1": 1.0000150873178273
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0012534585279413,
+          "refitted_background_to_tissue_power": 3.169009327155494e-06,
+          "refitted_blood_response_nrmse_alpha1": 1.0000227291607804
+        }
+      ]
+    },
+    {
+      "condition": "psf_deforming",
+      "family": "song_pdf_none",
+      "status": "infeasible_on_calibration",
+      "selected_id": null,
+      "evaluation": []
+    },
+    {
+      "condition": "psf_deforming",
+      "family": "song_pdf_paper",
+      "status": "selected_on_calibration",
+      "selected_id": "song_pdf_paper",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9998228216019684,
+          "refitted_background_to_tissue_power": 2.360000106140942e-07,
+          "refitted_blood_response_nrmse_alpha1": 0.9997468221814113
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0000884193749657,
+          "refitted_background_to_tissue_power": 3.570020467185597e-07,
+          "refitted_blood_response_nrmse_alpha1": 1.000004808093747
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0000511532482177,
+          "refitted_background_to_tissue_power": 5.413167285133224e-07,
+          "refitted_blood_response_nrmse_alpha1": 0.9998465352547125
+        }
+      ]
+    },
+    {
+      "condition": "psf_deforming",
+      "family": "svd_long",
+      "status": "selected_on_calibration",
+      "selected_id": "svd_long_c0_k96",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0,
+          "refitted_background_to_tissue_power": 0.0,
+          "refitted_blood_response_nrmse_alpha1": 1.0
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0,
+          "refitted_background_to_tissue_power": 0.0,
+          "refitted_blood_response_nrmse_alpha1": 1.0
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0,
+          "refitted_background_to_tissue_power": 0.0,
+          "refitted_blood_response_nrmse_alpha1": 1.0
+        }
+      ]
+    },
+    {
+      "condition": "psf_deforming",
+      "family": "svd_short",
+      "status": "selected_on_calibration",
+      "selected_id": "svd_short_c0_k32",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0,
+          "refitted_background_to_tissue_power": 0.0,
+          "refitted_blood_response_nrmse_alpha1": 1.0
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0,
+          "refitted_background_to_tissue_power": 0.0,
+          "refitted_blood_response_nrmse_alpha1": 1.0
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0,
+          "refitted_background_to_tissue_power": 0.0,
+          "refitted_blood_response_nrmse_alpha1": 1.0
+        }
+      ]
+    },
+    {
+      "condition": "psf_deforming",
+      "family": "svd_spatial_equivalence",
+      "status": "infeasible_on_calibration",
+      "selected_id": null,
+      "evaluation": []
+    },
+    {
+      "condition": "slow_overlap",
+      "family": "aer_common_equivalence",
+      "status": "selected_on_calibration",
+      "selected_id": "aer_common_equivalence_spatial",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9707595650780627,
+          "refitted_background_to_tissue_power": 2.508006642585298e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.9596056829700256
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9775719715944872,
+          "refitted_background_to_tissue_power": 1.9946663290169507e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.9669015253910755
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9692014934436557,
+          "refitted_background_to_tissue_power": 2.620406158892894e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.959213496306457
+        }
+      ]
+    },
+    {
+      "condition": "slow_overlap",
+      "family": "axis1_memory",
+      "status": "selected_on_calibration",
+      "selected_id": "axis1_memory_c0_k1",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.6540944325577811,
+          "refitted_background_to_tissue_power": 2.255741615226817e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.6398640369346343
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.6136220735414468,
+          "refitted_background_to_tissue_power": 1.818440177153689e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.5985486358501135
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.6095560526095356,
+          "refitted_background_to_tissue_power": 2.3820767259174288e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.595810339000992
+        }
+      ]
+    },
+    {
+      "condition": "slow_overlap",
+      "family": "axis1_no_memory",
+      "status": "selected_on_calibration",
+      "selected_id": "axis1_no_memory_c0_k1",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9153458447318844,
+          "refitted_background_to_tissue_power": 2.214387670703714e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.9057214695948461
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9130250182925166,
+          "refitted_background_to_tissue_power": 1.7829014904342465e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.9031072052511461
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9244804549127136,
+          "refitted_background_to_tissue_power": 2.3391655329708153e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.9154786085371723
+        }
+      ]
+    },
+    {
+      "condition": "slow_overlap",
+      "family": "axis1_no_phase",
+      "status": "selected_on_calibration",
+      "selected_id": "axis1_no_phase_c0",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.6540944325577812,
+          "refitted_background_to_tissue_power": 2.2557416152268207e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.6398640369346322
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.6136220735414464,
+          "refitted_background_to_tissue_power": 1.818440177153689e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.5985486358501141
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.6095560526095366,
+          "refitted_background_to_tissue_power": 2.3820767259174275e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.5958103390009928
+        }
+      ]
+    },
+    {
+      "condition": "slow_overlap",
+      "family": "axis1_rigid_memory",
+      "status": "selected_on_calibration",
+      "selected_id": "axis1_rigid_memory_c0_k1",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.6540944325577811,
+          "refitted_background_to_tissue_power": 2.255741615226817e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.6398640369346343
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.6136220735414468,
+          "refitted_background_to_tissue_power": 1.818440177153689e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.5985486358501135
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.6095560526095356,
+          "refitted_background_to_tissue_power": 2.3820767259174288e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.595810339000992
+        }
+      ]
+    },
+    {
+      "condition": "slow_overlap",
+      "family": "axis1_rigid_no_memory",
+      "status": "selected_on_calibration",
+      "selected_id": "axis1_rigid_no_memory_c0_k1",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9153458447318844,
+          "refitted_background_to_tissue_power": 2.214387670703714e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.9057214695948461
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9130250182925166,
+          "refitted_background_to_tissue_power": 1.7829014904342465e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.9031072052511461
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9244804549127136,
+          "refitted_background_to_tissue_power": 2.3391655329708153e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.9154786085371723
+        }
+      ]
+    },
+    {
+      "condition": "slow_overlap",
+      "family": "axis2_gain_capped",
+      "status": "selected_on_calibration",
+      "selected_id": "axis2_cap_c1",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.6995346593342106,
+          "refitted_background_to_tissue_power": 3.018551359922024e-08,
+          "refitted_blood_response_nrmse_alpha1": 0.6993944187714332
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.6760807817633164,
+          "refitted_background_to_tissue_power": 2.8967909285665586e-08,
+          "refitted_blood_response_nrmse_alpha1": 0.6758653653816357
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.6859695353820415,
+          "refitted_background_to_tissue_power": 3.4014404262381365e-08,
+          "refitted_blood_response_nrmse_alpha1": 0.6858285442480077
+        }
+      ]
+    },
+    {
+      "condition": "slow_overlap",
+      "family": "axis2_original",
+      "status": "selected_on_calibration",
+      "selected_id": "axis2_original_c1_m1",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.6982373527663339,
+          "refitted_background_to_tissue_power": 3.018551359922024e-08,
+          "refitted_blood_response_nrmse_alpha1": 0.6980888551477071
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.6753263596752022,
+          "refitted_background_to_tissue_power": 2.8967909285665586e-08,
+          "refitted_blood_response_nrmse_alpha1": 0.6751081767306235
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.6802514581939039,
+          "refitted_background_to_tissue_power": 3.4014404262381365e-08,
+          "refitted_blood_response_nrmse_alpha1": 0.6800909374354068
+        }
+      ]
+    },
+    {
+      "condition": "slow_overlap",
+      "family": "axis2_ridge",
+      "status": "selected_on_calibration",
+      "selected_id": "axis2_ridge_c1",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.6979588803363447,
+          "refitted_background_to_tissue_power": 3.0186886250831424e-08,
+          "refitted_blood_response_nrmse_alpha1": 0.6978107103570642
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.6741086237652942,
+          "refitted_background_to_tissue_power": 2.8967639885450066e-08,
+          "refitted_blood_response_nrmse_alpha1": 0.6738915601545888
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.679929741763101,
+          "refitted_background_to_tissue_power": 3.401519998388341e-08,
+          "refitted_blood_response_nrmse_alpha1": 0.679768096585255
+        }
+      ]
+    },
+    {
+      "condition": "slow_overlap",
+      "family": "axis2_ridge_capped",
+      "status": "selected_on_calibration",
+      "selected_id": "axis2_ridge_cap_c1_e0.01",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.7014791729700162,
+          "refitted_background_to_tissue_power": 3.0186886250831424e-08,
+          "refitted_blood_response_nrmse_alpha1": 0.7013403182839222
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.6749141218358696,
+          "refitted_background_to_tissue_power": 2.8967639885450066e-08,
+          "refitted_blood_response_nrmse_alpha1": 0.6747134653495861
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.6816560941923216,
+          "refitted_background_to_tissue_power": 3.401519998388341e-08,
+          "refitted_blood_response_nrmse_alpha1": 0.6815168697863854
+        }
+      ]
+    },
+    {
+      "condition": "slow_overlap",
+      "family": "baranger",
+      "status": "selected_on_calibration",
+      "selected_id": "baranger_w128",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.818601980170308,
+          "refitted_background_to_tissue_power": 2.782332883510265e-07,
+          "refitted_blood_response_nrmse_alpha1": 0.8187521787935718
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.8118741785072986,
+          "refitted_background_to_tissue_power": 3.562642307179776e-07,
+          "refitted_blood_response_nrmse_alpha1": 0.8124088838991564
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.8020722800731653,
+          "refitted_background_to_tissue_power": 2.2362481723004138e-07,
+          "refitted_blood_response_nrmse_alpha1": 0.8024682071179615
+        }
+      ]
+    },
+    {
+      "condition": "slow_overlap",
+      "family": "butterworth",
+      "status": "selected_on_calibration",
+      "selected_id": "butterworth_80Hz",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0077964664415064,
+          "refitted_background_to_tissue_power": 3.3518923620746406e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.9948390124416441
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0100524022419284,
+          "refitted_background_to_tissue_power": 2.9878867920950737e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.9949915710137585
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0077343215115488,
+          "refitted_background_to_tissue_power": 3.4493676579852012e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.9953935239962267
+        }
+      ]
+    },
+    {
+      "condition": "slow_overlap",
+      "family": "identity",
+      "status": "infeasible_on_calibration",
+      "selected_id": null,
+      "evaluation": []
+    },
+    {
+      "condition": "slow_overlap",
+      "family": "lee_spatial_raw_w256",
+      "status": "selected_on_calibration",
+      "selected_id": "lee_spatial_absolute1",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.7546628614111462,
+          "refitted_background_to_tissue_power": 4.804672172681256e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.7294630283532019
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.7687515787810343,
+          "refitted_background_to_tissue_power": 3.849771244380632e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.7447203359725136
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.7663800554418224,
+          "refitted_background_to_tissue_power": 5.048609368732778e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.7434991948983095
+        }
+      ]
+    },
+    {
+      "condition": "slow_overlap",
+      "family": "lee_spatial_raw_w32",
+      "status": "selected_on_calibration",
+      "selected_id": "lee_spatial_w32_relative0.001",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0063689618065537,
+          "refitted_background_to_tissue_power": 2.4357594990917872e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.9962107593810042
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0069021944829324,
+          "refitted_background_to_tissue_power": 1.936257147325613e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.9968123360484995
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.005632883605404,
+          "refitted_background_to_tissue_power": 2.5453052843729458e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.9963973937836602
+        }
+      ]
+    },
+    {
+      "condition": "slow_overlap",
+      "family": "lee_spatial_unit_extension",
+      "status": "selected_on_calibration",
+      "selected_id": "lee_spatial_unit_relative1e-06",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.8243680481319582,
+          "refitted_background_to_tissue_power": 3.271578179776224e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.8097971717732836
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.8178727736234392,
+          "refitted_background_to_tissue_power": 2.841724131144223e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.8023515826947142
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.8363035458706011,
+          "refitted_background_to_tissue_power": 3.3988469315779078e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.8232087273176436
+        }
+      ]
+    },
+    {
+      "condition": "slow_overlap",
+      "family": "lee_temporal_raw_w256",
+      "status": "selected_on_calibration",
+      "selected_id": "lee_temporal_w256_relative1e-06",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.8285179574548674,
+          "refitted_background_to_tissue_power": 3.080316217354943e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.8148682182487447
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.8369652150011833,
+          "refitted_background_to_tissue_power": 2.1316595854125094e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.8257517912369479
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.8374422160017252,
+          "refitted_background_to_tissue_power": 3.342318981594308e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.8245969898782084
+        }
+      ]
+    },
+    {
+      "condition": "slow_overlap",
+      "family": "lee_temporal_raw_w32",
+      "status": "selected_on_calibration",
+      "selected_id": "lee_temporal_w32_relative0.001",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.023982482317827,
+          "refitted_background_to_tissue_power": 7.542997158477821e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.9934640561060473
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.025058335704598,
+          "refitted_background_to_tissue_power": 5.996151165911595e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.9944922182395244
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0218816538144573,
+          "refitted_background_to_tissue_power": 7.882235719348502e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.9937871490259489
+        }
+      ]
+    },
+    {
+      "condition": "slow_overlap",
+      "family": "lee_temporal_unit_extension",
+      "status": "selected_on_calibration",
+      "selected_id": "lee_temporal_unit_relative1e-06",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.824744942744054,
+          "refitted_background_to_tissue_power": 3.257769502881199e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.8102607366830493
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.818167551295677,
+          "refitted_background_to_tissue_power": 2.8334292052824302e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.8027244657702564
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.8366627422700236,
+          "refitted_background_to_tissue_power": 3.383745651565965e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.8236477034071602
+        }
+      ]
+    },
+    {
+      "condition": "slow_overlap",
+      "family": "local_svd_long",
+      "status": "selected_on_calibration",
+      "selected_id": "local_svd_long_c0_k1",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.3441925470765434,
+          "refitted_background_to_tissue_power": 2.2761733826902405e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.31694257018024846
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.37796403967537734,
+          "refitted_background_to_tissue_power": 1.8350427483800684e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.3525870748606119
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.3571571375199778,
+          "refitted_background_to_tissue_power": 2.402744677593355e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.3324883335946797
+        }
+      ]
+    },
+    {
+      "condition": "slow_overlap",
+      "family": "local_svd_short",
+      "status": "selected_on_calibration",
+      "selected_id": "local_svd_short_c0_k1",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9153458447318846,
+          "refitted_background_to_tissue_power": 2.214387670703713e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.9057214695948469
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9130250182925131,
+          "refitted_background_to_tissue_power": 1.7829014904342416e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.9031072052511415
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9244804549127126,
+          "refitted_background_to_tissue_power": 2.339165532970816e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.915478608537171
+        }
+      ]
+    },
+    {
+      "condition": "slow_overlap",
+      "family": "maresca",
+      "status": "selected_on_calibration",
+      "selected_id": "maresca_offset0",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9181990975043838,
+          "refitted_background_to_tissue_power": 2.1846399070891856e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.9089659049424222
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9300258598369027,
+          "refitted_background_to_tissue_power": 1.763803481473875e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.920920573225271
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9267727676825017,
+          "refitted_background_to_tissue_power": 2.3101140655027642e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.9180664096583682
+        }
+      ]
+    },
+    {
+      "condition": "slow_overlap",
+      "family": "song_pdf_none",
+      "status": "selected_on_calibration",
+      "selected_id": "song_pdf_none",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9975394885863523,
+          "refitted_background_to_tissue_power": 2.236782618289063e-07,
+          "refitted_blood_response_nrmse_alpha1": 0.9971858145180665
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.997756649305139,
+          "refitted_background_to_tissue_power": 1.340571254087162e-07,
+          "refitted_blood_response_nrmse_alpha1": 0.9974632504784795
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9982111966491719,
+          "refitted_background_to_tissue_power": 2.7732981607404066e-07,
+          "refitted_blood_response_nrmse_alpha1": 0.9979745337616261
+        }
+      ]
+    },
+    {
+      "condition": "slow_overlap",
+      "family": "song_pdf_paper",
+      "status": "selected_on_calibration",
+      "selected_id": "song_pdf_paper",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9993773531588747,
+          "refitted_background_to_tissue_power": 4.2671958537420197e-08,
+          "refitted_blood_response_nrmse_alpha1": 0.9994769776278029
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9994828608895943,
+          "refitted_background_to_tissue_power": 4.1379607265551534e-08,
+          "refitted_blood_response_nrmse_alpha1": 0.9996540764444797
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.999553375153491,
+          "refitted_background_to_tissue_power": 3.8347557517210495e-08,
+          "refitted_blood_response_nrmse_alpha1": 0.9996227565074245
+        }
+      ]
+    },
+    {
+      "condition": "slow_overlap",
+      "family": "svd_long",
+      "status": "selected_on_calibration",
+      "selected_id": "svd_long_c0_k1",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.3395940548059624,
+          "refitted_background_to_tissue_power": 2.350962669291415e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.31099246286531235
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.376854363349687,
+          "refitted_background_to_tissue_power": 1.8973701900198764e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.3505000677836379
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.352801991916363,
+          "refitted_background_to_tissue_power": 2.48476060664e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.3269182256767224
+        }
+      ]
+    },
+    {
+      "condition": "slow_overlap",
+      "family": "svd_short",
+      "status": "selected_on_calibration",
+      "selected_id": "svd_short_c0_k1",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9152528864558154,
+          "refitted_background_to_tissue_power": 2.2867832493929754e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.9053109677089795
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.913138520889655,
+          "refitted_background_to_tissue_power": 1.8434850111182898e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.9028828063650453
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9243901345690642,
+          "refitted_background_to_tissue_power": 2.4193216542016627e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.9150774376593294
+        }
+      ]
+    },
+    {
+      "condition": "slow_overlap",
+      "family": "svd_spatial_equivalence",
+      "status": "selected_on_calibration",
+      "selected_id": "svd_spatial_equivalence_w256",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.3395940548059677,
+          "refitted_background_to_tissue_power": 2.3509626692914242e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.3109924628653157
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.37685436334968414,
+          "refitted_background_to_tissue_power": 1.8973701900198791e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.3505000677836316
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.3528019919163598,
+          "refitted_background_to_tissue_power": 2.484760606640005e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.3269182256767206
+        }
+      ]
+    },
+    {
+      "condition": "texture_jump",
+      "family": "aer_common_equivalence",
+      "status": "selected_on_calibration",
+      "selected_id": "aer_common_equivalence_temporal",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.8580736416093944,
+          "refitted_background_to_tissue_power": 5.726587581253255e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.8367312492062885
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9038160422085827,
+          "refitted_background_to_tissue_power": 3.559409672738556e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.8811631588044547
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.8594373196517606,
+          "refitted_background_to_tissue_power": 5.5069491812505276e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.8358792451415332
+        }
+      ]
+    },
+    {
+      "condition": "texture_jump",
+      "family": "axis1_memory",
+      "status": "selected_on_calibration",
+      "selected_id": "axis1_memory_c1_k1",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.6517461293808429,
+          "refitted_background_to_tissue_power": 2.4253229257089065e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.640991989809764
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.6869982190489374,
+          "refitted_background_to_tissue_power": 1.541492373946006e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.6748299721860597
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.6776000482162531,
+          "refitted_background_to_tissue_power": 2.3522504116679186e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.6656643462488245
+        }
+      ]
+    },
+    {
+      "condition": "texture_jump",
+      "family": "axis1_no_memory",
+      "status": "selected_on_calibration",
+      "selected_id": "axis1_no_memory_c0_k1",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.6175996859025039,
+          "refitted_background_to_tissue_power": 2.4869925676869946e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.6056652969844623
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.6714593664809562,
+          "refitted_background_to_tissue_power": 1.5805250189585587e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.6584171107914679
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.6238164873064614,
+          "refitted_background_to_tissue_power": 2.4191533082508755e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.6102905866754587
+        }
+      ]
+    },
+    {
+      "condition": "texture_jump",
+      "family": "axis1_no_phase",
+      "status": "infeasible_on_calibration",
+      "selected_id": null,
+      "evaluation": []
+    },
+    {
+      "condition": "texture_jump",
+      "family": "axis1_rigid_memory",
+      "status": "selected_on_calibration",
+      "selected_id": "axis1_rigid_memory_c1_k1",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.7183066230333901,
+          "refitted_background_to_tissue_power": 2.202714435854815e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.7095006704016024
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.7403732139299956,
+          "refitted_background_to_tissue_power": 1.398112811318913e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.7298610445546962
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.6776000482162531,
+          "refitted_background_to_tissue_power": 2.3522504116679186e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.6656643462488245
+        }
+      ]
+    },
+    {
+      "condition": "texture_jump",
+      "family": "axis1_rigid_no_memory",
+      "status": "selected_on_calibration",
+      "selected_id": "axis1_rigid_no_memory_c0_k1",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.6658600606567147,
+          "refitted_background_to_tissue_power": 2.236299013035057e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.6559290228322678
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.7019684725448945,
+          "refitted_background_to_tissue_power": 1.4166542851454182e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.6908083764596086
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.6238164873064614,
+          "refitted_background_to_tissue_power": 2.4191533082508755e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.6102905866754587
+        }
+      ]
+    },
+    {
+      "condition": "texture_jump",
+      "family": "axis2_gain_capped",
+      "status": "infeasible_on_calibration",
+      "selected_id": null,
+      "evaluation": []
+    },
+    {
+      "condition": "texture_jump",
+      "family": "axis2_original",
+      "status": "selected_on_calibration",
+      "selected_id": "axis2_original_c1_m0",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.6434021752048827,
+          "refitted_background_to_tissue_power": 7.435443587448282e-07,
+          "refitted_blood_response_nrmse_alpha1": 0.64300082230552
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.6937954258415978,
+          "refitted_background_to_tissue_power": 6.317584030913731e-07,
+          "refitted_blood_response_nrmse_alpha1": 0.6934224322654214
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.651350489488511,
+          "refitted_background_to_tissue_power": 8.631000292126916e-07,
+          "refitted_blood_response_nrmse_alpha1": 0.6509209984648738
+        }
+      ]
+    },
+    {
+      "condition": "texture_jump",
+      "family": "axis2_ridge",
+      "status": "infeasible_on_calibration",
+      "selected_id": null,
+      "evaluation": []
+    },
+    {
+      "condition": "texture_jump",
+      "family": "axis2_ridge_capped",
+      "status": "infeasible_on_calibration",
+      "selected_id": null,
+      "evaluation": []
+    },
+    {
+      "condition": "texture_jump",
+      "family": "baranger",
+      "status": "selected_on_calibration",
+      "selected_id": "baranger_w32",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.6129278444227068,
+          "refitted_background_to_tissue_power": 4.5953227665842415e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.612203589249188
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.6645190050374246,
+          "refitted_background_to_tissue_power": 2.587708131607138e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.6636458008716802
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.6189319124057547,
+          "refitted_background_to_tissue_power": 4.658835930138367e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.6177160769674013
+        }
+      ]
+    },
+    {
+      "condition": "texture_jump",
+      "family": "butterworth",
+      "status": "infeasible_on_calibration",
+      "selected_id": null,
+      "evaluation": []
+    },
+    {
+      "condition": "texture_jump",
+      "family": "identity",
+      "status": "infeasible_on_calibration",
+      "selected_id": null,
+      "evaluation": []
+    },
+    {
+      "condition": "texture_jump",
+      "family": "lee_spatial_raw_w256",
+      "status": "selected_on_calibration",
+      "selected_id": "lee_spatial_absolute1",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.6781248764950832,
+          "refitted_background_to_tissue_power": 8.169297868815561e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.6421968390978048
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.6870637899536206,
+          "refitted_background_to_tissue_power": 5.140758998998209e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.6461402126436585
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.6732952824187061,
+          "refitted_background_to_tissue_power": 7.874374893594217e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.6325516947408464
+        }
+      ]
+    },
+    {
+      "condition": "texture_jump",
+      "family": "lee_spatial_raw_w32",
+      "status": "selected_on_calibration",
+      "selected_id": "lee_spatial_w32_relative0.001",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9353646356782086,
+          "refitted_background_to_tissue_power": 2.955274536202603e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.9252929520689691
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9461664315862289,
+          "refitted_background_to_tissue_power": 1.8071434746986617e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.936046348901886
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.932924067503542,
+          "refitted_background_to_tissue_power": 2.8372687309617025e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.9218594694856792
+        }
+      ]
+    },
+    {
+      "condition": "texture_jump",
+      "family": "lee_spatial_unit_extension",
+      "status": "selected_on_calibration",
+      "selected_id": "lee_spatial_unit_relative1e-06",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9246892831297173,
+          "refitted_background_to_tissue_power": 1.9864397536725816e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.9212930088967306
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.8997882262822058,
+          "refitted_background_to_tissue_power": 1.4664131716204965e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.8948231794340635
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9210116500780774,
+          "refitted_background_to_tissue_power": 1.9054548795173518e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.9171545494824097
+        }
+      ]
+    },
+    {
+      "condition": "texture_jump",
+      "family": "lee_temporal_raw_w256",
+      "status": "selected_on_calibration",
+      "selected_id": "lee_temporal_absolute1",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.7682062007984212,
+          "refitted_background_to_tissue_power": 4.6186596638418536e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.7521599990219372
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.7657723850839122,
+          "refitted_background_to_tissue_power": 2.9144363546443035e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.7473054489210358
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.7604649358558631,
+          "refitted_background_to_tissue_power": 4.461962485238178e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.7421610877822321
+        }
+      ]
+    },
+    {
+      "condition": "texture_jump",
+      "family": "lee_temporal_raw_w32",
+      "status": "selected_on_calibration",
+      "selected_id": "lee_temporal_w32_relative0.001",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9076241193967017,
+          "refitted_background_to_tissue_power": 9.15181791856294e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.876247399482437
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9269636315542834,
+          "refitted_background_to_tissue_power": 5.596315276486199e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.8940309680750603
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9056146127709701,
+          "refitted_background_to_tissue_power": 8.786380586204006e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.8706632209389074
+        }
+      ]
+    },
+    {
+      "condition": "texture_jump",
+      "family": "lee_temporal_unit_extension",
+      "status": "selected_on_calibration",
+      "selected_id": "lee_temporal_unit_relative1e-06",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9278336569014495,
+          "refitted_background_to_tissue_power": 1.853182034874612e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.924766392459415
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9022619504432864,
+          "refitted_background_to_tissue_power": 1.4166604088473127e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.8976367468903148
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9246696435592843,
+          "refitted_background_to_tissue_power": 1.7754209368142184e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.9212487989913577
+        }
+      ]
+    },
+    {
+      "condition": "texture_jump",
+      "family": "local_svd_long",
+      "status": "selected_on_calibration",
+      "selected_id": "local_svd_long_c0_k4",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.7606496062733304,
+          "refitted_background_to_tissue_power": 2.0986220011029704e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.7540681719338742
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.75735609794871,
+          "refitted_background_to_tissue_power": 1.3264031470711259e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.7494060291051142
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.7572906159826446,
+          "refitted_background_to_tissue_power": 2.0349972609318904e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.7498187851350107
+        }
+      ]
+    },
+    {
+      "condition": "texture_jump",
+      "family": "local_svd_short",
+      "status": "selected_on_calibration",
+      "selected_id": "local_svd_short_c0_k1",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.6175996859025016,
+          "refitted_background_to_tissue_power": 2.4869925676869953e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.6056652969844604
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.6714593664809523,
+          "refitted_background_to_tissue_power": 1.5805250189585587e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.6584171107914639
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.6238164873064592,
+          "refitted_background_to_tissue_power": 2.4191533082508748e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.6102905866754555
+        }
+      ]
+    },
+    {
+      "condition": "texture_jump",
+      "family": "maresca",
+      "status": "selected_on_calibration",
+      "selected_id": "maresca_offset0",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.8005127944168661,
+          "refitted_background_to_tissue_power": 2.4424274683329585e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.7910473426090833
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.8097517809292377,
+          "refitted_background_to_tissue_power": 1.5546320812135815e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.7988335287577752
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.8018365430264359,
+          "refitted_background_to_tissue_power": 2.3731835021627727e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.7921693456271552
+        }
+      ]
+    },
+    {
+      "condition": "texture_jump",
+      "family": "song_pdf_none",
+      "status": "selected_on_calibration",
+      "selected_id": "song_pdf_none",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9804180893133628,
+          "refitted_background_to_tissue_power": 2.475380347933329e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.9804273529324223
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9745301976586156,
+          "refitted_background_to_tissue_power": 1.2819533744549122e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.9745165758197318
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9831864266865982,
+          "refitted_background_to_tissue_power": 2.7123653857702157e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.9835776076340036
+        }
+      ]
+    },
+    {
+      "condition": "texture_jump",
+      "family": "song_pdf_paper",
+      "status": "selected_on_calibration",
+      "selected_id": "song_pdf_paper",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.998583796907596,
+          "refitted_background_to_tissue_power": 4.661372433980864e-07,
+          "refitted_blood_response_nrmse_alpha1": 0.9987160939676151
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9981145893996861,
+          "refitted_background_to_tissue_power": 3.644155289825082e-07,
+          "refitted_blood_response_nrmse_alpha1": 0.9982321844130927
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9982034854474259,
+          "refitted_background_to_tissue_power": 3.761404131038638e-07,
+          "refitted_blood_response_nrmse_alpha1": 0.9982544986920823
+        }
+      ]
+    },
+    {
+      "condition": "texture_jump",
+      "family": "svd_long",
+      "status": "selected_on_calibration",
+      "selected_id": "svd_long_c0_k4",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.6321398370717212,
+          "refitted_background_to_tissue_power": 2.4726582512180666e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.6210847615891683
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.6448342071779977,
+          "refitted_background_to_tissue_power": 1.5701724266606908e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.6319850288059065
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.6496844241198128,
+          "refitted_background_to_tissue_power": 2.401840081975175e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.6373978366928803
+        }
+      ]
+    },
+    {
+      "condition": "texture_jump",
+      "family": "svd_short",
+      "status": "selected_on_calibration",
+      "selected_id": "svd_short_c0_k1",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.6150040823657936,
+          "refitted_background_to_tissue_power": 2.5715549871129858e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.6026064090583705
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.6668980190983674,
+          "refitted_background_to_tissue_power": 1.63367099776425e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.6533164411105442
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.6211578098342624,
+          "refitted_background_to_tissue_power": 2.4992856210142642e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.6071153916864243
+        }
+      ]
+    },
+    {
+      "condition": "texture_jump",
+      "family": "svd_spatial_equivalence",
+      "status": "selected_on_calibration",
+      "selected_id": "svd_spatial_equivalence_w32",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.6150040823657937,
+          "refitted_background_to_tissue_power": 2.5715549871129827e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.6026064090583704
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.6668980190983699,
+          "refitted_background_to_tissue_power": 1.6336709977642518e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.6533164411105463
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.6211578098342628,
+          "refitted_background_to_tissue_power": 2.499285621014266e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.607115391686425
+        }
+      ]
+    },
+    {
+      "condition": "translated_texture",
+      "family": "aer_common_equivalence",
+      "status": "infeasible_on_calibration",
+      "selected_id": null,
+      "evaluation": []
+    },
+    {
+      "condition": "translated_texture",
+      "family": "axis1_memory",
+      "status": "infeasible_on_calibration",
+      "selected_id": null,
+      "evaluation": []
+    },
+    {
+      "condition": "translated_texture",
+      "family": "axis1_no_memory",
+      "status": "selected_on_calibration",
+      "selected_id": "axis1_no_memory_c0_k4",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.947876316477235,
+          "refitted_background_to_tissue_power": 6.905646443430957e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.943230195625979
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9431125131200339,
+          "refitted_background_to_tissue_power": 7.572978363240082e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.9381756272377264
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9427850064720437,
+          "refitted_background_to_tissue_power": 5.0622639041271855e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.937975224829296
+        }
+      ]
+    },
+    {
+      "condition": "translated_texture",
+      "family": "axis1_no_phase",
+      "status": "infeasible_on_calibration",
+      "selected_id": null,
+      "evaluation": []
+    },
+    {
+      "condition": "translated_texture",
+      "family": "axis1_rigid_memory",
+      "status": "selected_on_calibration",
+      "selected_id": "axis1_rigid_memory_c1_k16",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0001246157793515,
+          "refitted_background_to_tissue_power": 4.967171847080053e-06,
+          "refitted_blood_response_nrmse_alpha1": 1.0003300691232588
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.000094234469634,
+          "refitted_background_to_tissue_power": 4.183668324387672e-06,
+          "refitted_blood_response_nrmse_alpha1": 1.0002684805220252
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.000133207332973,
+          "refitted_background_to_tissue_power": 4.535651409015187e-06,
+          "refitted_blood_response_nrmse_alpha1": 1.0004337480159164
+        }
+      ]
+    },
+    {
+      "condition": "translated_texture",
+      "family": "axis1_rigid_no_memory",
+      "status": "selected_on_calibration",
+      "selected_id": "axis1_rigid_no_memory_c1_k4",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9807135569021209,
+          "refitted_background_to_tissue_power": 4.8399088117468084e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.9788342060970218
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9826911253271301,
+          "refitted_background_to_tissue_power": 5.7219660779280904e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.9807236701483847
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9726475481840592,
+          "refitted_background_to_tissue_power": 3.867339553457001e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.9704588521008136
+        }
+      ]
+    },
+    {
+      "condition": "translated_texture",
+      "family": "axis2_gain_capped",
+      "status": "infeasible_on_calibration",
+      "selected_id": null,
+      "evaluation": []
+    },
+    {
+      "condition": "translated_texture",
+      "family": "axis2_original",
+      "status": "infeasible_on_calibration",
+      "selected_id": null,
+      "evaluation": []
+    },
+    {
+      "condition": "translated_texture",
+      "family": "axis2_ridge",
+      "status": "infeasible_on_calibration",
+      "selected_id": null,
+      "evaluation": []
+    },
+    {
+      "condition": "translated_texture",
+      "family": "axis2_ridge_capped",
+      "status": "infeasible_on_calibration",
+      "selected_id": null,
+      "evaluation": []
+    },
+    {
+      "condition": "translated_texture",
+      "family": "baranger",
+      "status": "selected_on_calibration",
+      "selected_id": "baranger_w256",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.8880601203480065,
+          "refitted_background_to_tissue_power": 6.758131493042012e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.8832055377992587
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.8871874797677641,
+          "refitted_background_to_tissue_power": 7.415777163283155e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.8820188214125297
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.8776137214394827,
+          "refitted_background_to_tissue_power": 4.9868984204306545e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.8725748069173975
+        }
+      ]
+    },
+    {
+      "condition": "translated_texture",
+      "family": "butterworth",
+      "status": "infeasible_on_calibration",
+      "selected_id": null,
+      "evaluation": []
+    },
+    {
+      "condition": "translated_texture",
+      "family": "identity",
+      "status": "infeasible_on_calibration",
+      "selected_id": null,
+      "evaluation": []
+    },
+    {
+      "condition": "translated_texture",
+      "family": "lee_spatial_raw_w256",
+      "status": "infeasible_on_calibration",
+      "selected_id": null,
+      "evaluation": []
+    },
+    {
+      "condition": "translated_texture",
+      "family": "lee_spatial_raw_w32",
+      "status": "infeasible_on_calibration",
+      "selected_id": null,
+      "evaluation": []
+    },
+    {
+      "condition": "translated_texture",
+      "family": "lee_spatial_unit_extension",
+      "status": "selected_on_calibration",
+      "selected_id": "lee_spatial_unit_relative1e-06",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.978352371759886,
+          "refitted_background_to_tissue_power": 3.214125492330256e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.9769881463253544
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9791062485900109,
+          "refitted_background_to_tissue_power": 3.137514888119191e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.9778886875113155
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9769739840623792,
+          "refitted_background_to_tissue_power": 2.7042580821336773e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.9751166883500142
+        }
+      ]
+    },
+    {
+      "condition": "translated_texture",
+      "family": "lee_temporal_raw_w256",
+      "status": "infeasible_on_calibration",
+      "selected_id": null,
+      "evaluation": []
+    },
+    {
+      "condition": "translated_texture",
+      "family": "lee_temporal_raw_w32",
+      "status": "infeasible_on_calibration",
+      "selected_id": null,
+      "evaluation": []
+    },
+    {
+      "condition": "translated_texture",
+      "family": "lee_temporal_unit_extension",
+      "status": "selected_on_calibration",
+      "selected_id": "lee_temporal_unit_relative1e-06",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9859608225736423,
+          "refitted_background_to_tissue_power": 1.757235540283135e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.9855113646730718
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9875515750964893,
+          "refitted_background_to_tissue_power": 1.4638225200232605e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.9872296289264364
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.983177895464152,
+          "refitted_background_to_tissue_power": 1.8103377610477273e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.982280321073689
+        }
+      ]
+    },
+    {
+      "condition": "translated_texture",
+      "family": "local_svd_long",
+      "status": "infeasible_on_calibration",
+      "selected_id": null,
+      "evaluation": []
+    },
+    {
+      "condition": "translated_texture",
+      "family": "local_svd_short",
+      "status": "selected_on_calibration",
+      "selected_id": "local_svd_short_c0_k4",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9478763164772352,
+          "refitted_background_to_tissue_power": 6.905646443430956e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.943230195625979
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9431125131200345,
+          "refitted_background_to_tissue_power": 7.572978363240082e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.9381756272377266
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9427850064720439,
+          "refitted_background_to_tissue_power": 5.0622639041271835e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.937975224829296
+        }
+      ]
+    },
+    {
+      "condition": "translated_texture",
+      "family": "maresca",
+      "status": "selected_on_calibration",
+      "selected_id": "maresca_offset8",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9938984029437966,
+          "refitted_background_to_tissue_power": 4.529635127540647e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.9921387801312478
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9962453163906556,
+          "refitted_background_to_tissue_power": 4.957474680465616e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.9946478053206064
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9973895717607923,
+          "refitted_background_to_tissue_power": 3.298570476287272e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.9958735388368107
+        }
+      ]
+    },
+    {
+      "condition": "translated_texture",
+      "family": "song_pdf_none",
+      "status": "infeasible_on_calibration",
+      "selected_id": null,
+      "evaluation": []
+    },
+    {
+      "condition": "translated_texture",
+      "family": "song_pdf_paper",
+      "status": "selected_on_calibration",
+      "selected_id": "song_pdf_paper",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9981423756222547,
+          "refitted_background_to_tissue_power": 1.3216254086072394e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.9983023103962667
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9983814515544971,
+          "refitted_background_to_tissue_power": 1.359941361985167e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.9983077413661916
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.998320784835871,
+          "refitted_background_to_tissue_power": 1.2285043389990794e-06,
+          "refitted_blood_response_nrmse_alpha1": 0.9982251839753253
+        }
+      ]
+    },
+    {
+      "condition": "translated_texture",
+      "family": "svd_long",
+      "status": "selected_on_calibration",
+      "selected_id": "svd_long_c0_k96",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0,
+          "refitted_background_to_tissue_power": 0.0,
+          "refitted_blood_response_nrmse_alpha1": 1.0
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0,
+          "refitted_background_to_tissue_power": 0.0,
+          "refitted_blood_response_nrmse_alpha1": 1.0
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 1.0,
+          "refitted_background_to_tissue_power": 0.0,
+          "refitted_blood_response_nrmse_alpha1": 1.0
+        }
+      ]
+    },
+    {
+      "condition": "translated_texture",
+      "family": "svd_short",
+      "status": "selected_on_calibration",
+      "selected_id": "svd_short_c0_k4",
+      "evaluation": [
+        {
+          "seed": 61,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9274548061779365,
+          "refitted_background_to_tissue_power": 7.926029986353435e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.9219297881328495
+        },
+        {
+          "seed": 73,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.9171543975926635,
+          "refitted_background_to_tissue_power": 8.68857637864684e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.911249586491786
+        },
+        {
+          "seed": 89,
+          "meets_target": true,
+          "blood_iq_nrmse": 0.919824021058541,
+          "refitted_background_to_tissue_power": 5.816168930813714e-05,
+          "refitted_blood_response_nrmse_alpha1": 0.9141102301185412
+        }
+      ]
+    },
+    {
+      "condition": "translated_texture",
+      "family": "svd_spatial_equivalence",
+      "status": "infeasible_on_calibration",
+      "selected_id": null,
+      "evaluation": []
+    }
+  ],
+  "axis2_cap_pairs": [
+    {
+      "condition": "slow_overlap",
+      "seed": 61,
+      "centered": false,
+      "original_gain": 35.401461441838244,
+      "capped_gain": 1.0000000000000004,
+      "original_output_error": 50.44312788340981,
+      "capped_output_error": 7.872794350505536
+    },
+    {
+      "condition": "slow_overlap",
+      "seed": 61,
+      "centered": true,
+      "original_gain": 1.4162144755382726,
+      "capped_gain": 1.0000000000000007,
+      "original_output_error": 0.6982373527663339,
+      "capped_output_error": 0.6995346593342106
+    },
+    {
+      "condition": "slow_overlap",
+      "seed": 73,
+      "centered": false,
+      "original_gain": 32.071630715672384,
+      "capped_gain": 1.0000000000000009,
+      "original_output_error": 58.7102968105796,
+      "capped_output_error": 10.66577315926061
+    },
+    {
+      "condition": "slow_overlap",
+      "seed": 73,
+      "centered": true,
+      "original_gain": 1.1555000469969732,
+      "capped_gain": 1.0000000000000007,
+      "original_output_error": 0.6753263596752022,
+      "capped_output_error": 0.6760807817633164
+    },
+    {
+      "condition": "slow_overlap",
+      "seed": 89,
+      "centered": false,
+      "original_gain": 41.18423598226767,
+      "capped_gain": 1.0000000000000009,
+      "original_output_error": 49.73856253199779,
+      "capped_output_error": 9.867724029807366
+    },
+    {
+      "condition": "slow_overlap",
+      "seed": 89,
+      "centered": true,
+      "original_gain": 1.8417486397651108,
+      "capped_gain": 1.0000000000000007,
+      "original_output_error": 0.6802514581939039,
+      "capped_output_error": 0.6859695353820415
+    },
+    {
+      "condition": "accelerating",
+      "seed": 61,
+      "centered": false,
+      "original_gain": 6.32485949856533,
+      "capped_gain": 1.0000000000000009,
+      "original_output_error": 13.36888735055321,
+      "capped_output_error": 9.490613609648818
+    },
+    {
+      "condition": "accelerating",
+      "seed": 61,
+      "centered": true,
+      "original_gain": 1.1997487819265904,
+      "capped_gain": 1.0000000000000004,
+      "original_output_error": 0.3880113386405289,
+      "capped_output_error": 0.38875752446595874
+    },
+    {
+      "condition": "accelerating",
+      "seed": 73,
+      "centered": false,
+      "original_gain": 19.18530376999752,
+      "capped_gain": 1.000000000000001,
+      "original_output_error": 17.026701206780213,
+      "capped_output_error": 10.451376550639162
+    },
+    {
+      "condition": "accelerating",
+      "seed": 73,
+      "centered": true,
+      "original_gain": 1.0913301196453562,
+      "capped_gain": 1.000000000000001,
+      "original_output_error": 0.4610031221908045,
+      "capped_output_error": 0.461232591057275
+    },
+    {
+      "condition": "accelerating",
+      "seed": 89,
+      "centered": false,
+      "original_gain": 17.530208372967465,
+      "capped_gain": 1.0000000000000016,
+      "original_output_error": 14.335225476896861,
+      "capped_output_error": 10.098648463565226
+    },
+    {
+      "condition": "accelerating",
+      "seed": 89,
+      "centered": true,
+      "original_gain": 1.0772101017105713,
+      "capped_gain": 1.0000000000000009,
+      "original_output_error": 0.41573718141967575,
+      "capped_output_error": 0.4158417534641979
+    },
+    {
+      "condition": "texture_jump",
+      "seed": 61,
+      "centered": false,
+      "original_gain": 10.166009641836315,
+      "capped_gain": 1.0000000000000013,
+      "original_output_error": 13.157783585269106,
+      "capped_output_error": 7.362943242885233
+    },
+    {
+      "condition": "texture_jump",
+      "seed": 61,
+      "centered": true,
+      "original_gain": 3.707605790660089,
+      "capped_gain": 1.000000000000001,
+      "original_output_error": 6.378181344479547,
+      "capped_output_error": 4.072516394395041
+    },
+    {
+      "condition": "texture_jump",
+      "seed": 73,
+      "centered": false,
+      "original_gain": 30.607194447172553,
+      "capped_gain": 1.0000000000000009,
+      "original_output_error": 17.438105779075162,
+      "capped_output_error": 7.083367698146957
+    },
+    {
+      "condition": "texture_jump",
+      "seed": 73,
+      "centered": true,
+      "original_gain": 4.447075007321573,
+      "capped_gain": 1.0000000000000004,
+      "original_output_error": 7.461977112142945,
+      "capped_output_error": 4.654014652438785
+    },
+    {
+      "condition": "texture_jump",
+      "seed": 89,
+      "centered": false,
+      "original_gain": 16.810011272929568,
+      "capped_gain": 1.0000000000000007,
+      "original_output_error": 15.174708289009041,
+      "capped_output_error": 7.6810709194758875
+    },
+    {
+      "condition": "texture_jump",
+      "seed": 89,
+      "centered": true,
+      "original_gain": 3.789923312050805,
+      "capped_gain": 1.0000000000000009,
+      "original_output_error": 7.92756592638644,
+      "capped_output_error": 5.993378425943506
+    },
+    {
+      "condition": "opposed_flow",
+      "seed": 61,
+      "centered": false,
+      "original_gain": 28.301187738655784,
+      "capped_gain": 1.0000000000000009,
+      "original_output_error": 14.14381443326262,
+      "capped_output_error": 6.857622838623243
+    },
+    {
+      "condition": "opposed_flow",
+      "seed": 61,
+      "centered": true,
+      "original_gain": 1.4370870366296276,
+      "capped_gain": 1.000000000000001,
+      "original_output_error": 0.29211869376594746,
+      "capped_output_error": 0.2962048892187356
+    },
+    {
+      "condition": "opposed_flow",
+      "seed": 73,
+      "centered": false,
+      "original_gain": 8.99145799299384,
+      "capped_gain": 1.000000000000001,
+      "original_output_error": 16.25280170278255,
+      "capped_output_error": 8.217974782627758
+    },
+    {
+      "condition": "opposed_flow",
+      "seed": 73,
+      "centered": true,
+      "original_gain": 1.1409721314422325,
+      "capped_gain": 1.0000000000000007,
+      "original_output_error": 0.30543310851519057,
+      "capped_output_error": 0.30761194169816436
+    },
+    {
+      "condition": "opposed_flow",
+      "seed": 89,
+      "centered": false,
+      "original_gain": 31.327020467284846,
+      "capped_gain": 1.000000000000001,
+      "original_output_error": 15.243657374404643,
+      "capped_output_error": 8.571000703138992
+    },
+    {
+      "condition": "opposed_flow",
+      "seed": 89,
+      "centered": true,
+      "original_gain": 1.307397782688219,
+      "capped_gain": 1.0000000000000009,
+      "original_output_error": 0.3126587037356744,
+      "capped_output_error": 0.31601584781286307
+    },
+    {
+      "condition": "translated_texture",
+      "seed": 61,
+      "centered": false,
+      "original_gain": 6.945799889114244,
+      "capped_gain": 1.0000000000000007,
+      "original_output_error": 6.592724216316811,
+      "capped_output_error": 5.738154485921946
+    },
+    {
+      "condition": "translated_texture",
+      "seed": 61,
+      "centered": true,
+      "original_gain": 10.484907441963115,
+      "capped_gain": 1.000000000000001,
+      "original_output_error": 4.867103063236269,
+      "capped_output_error": 4.0736932935012735
+    },
+    {
+      "condition": "translated_texture",
+      "seed": 73,
+      "centered": false,
+      "original_gain": 7.289067569746288,
+      "capped_gain": 1.0000000000000007,
+      "original_output_error": 6.703927072407957,
+      "capped_output_error": 6.393042095644089
+    },
+    {
+      "condition": "translated_texture",
+      "seed": 73,
+      "centered": true,
+      "original_gain": 17.984736821331747,
+      "capped_gain": 1.0000000000000004,
+      "original_output_error": 6.118218614952238,
+      "capped_output_error": 5.843018836256269
+    },
+    {
+      "condition": "translated_texture",
+      "seed": 89,
+      "centered": false,
+      "original_gain": 5.02834700592562,
+      "capped_gain": 1.0000000000000004,
+      "original_output_error": 8.095853592713953,
+      "capped_output_error": 7.769872611291944
+    },
+    {
+      "condition": "translated_texture",
+      "seed": 89,
+      "centered": true,
+      "original_gain": 13.403266959088892,
+      "capped_gain": 1.0000000000000007,
+      "original_output_error": 7.0731903623679555,
+      "capped_output_error": 6.794007667806071
+    },
+    {
+      "condition": "psf_deforming",
+      "seed": 61,
+      "centered": false,
+      "original_gain": 20.57725582756454,
+      "capped_gain": 1.000000000000001,
+      "original_output_error": 17.822856878952297,
+      "capped_output_error": 15.691629003856741
+    },
+    {
+      "condition": "psf_deforming",
+      "seed": 61,
+      "centered": true,
+      "original_gain": 26.973387910722558,
+      "capped_gain": 1.0000000000000018,
+      "original_output_error": 15.38115853156053,
+      "capped_output_error": 13.534386979202475
+    },
+    {
+      "condition": "psf_deforming",
+      "seed": 73,
+      "centered": false,
+      "original_gain": 20.857037741523566,
+      "capped_gain": 1.0000000000000013,
+      "original_output_error": 18.26966234661909,
+      "capped_output_error": 16.580090348662107
+    },
+    {
+      "condition": "psf_deforming",
+      "seed": 73,
+      "centered": true,
+      "original_gain": 21.91985057879023,
+      "capped_gain": 1.0000000000000009,
+      "original_output_error": 15.801527898702144,
+      "capped_output_error": 13.741347247950332
+    },
+    {
+      "condition": "psf_deforming",
+      "seed": 89,
+      "centered": false,
+      "original_gain": 32.109110529505216,
+      "capped_gain": 1.0000000000000009,
+      "original_output_error": 18.33479724346029,
+      "capped_output_error": 16.731805313882898
+    },
+    {
+      "condition": "psf_deforming",
+      "seed": 89,
+      "centered": true,
+      "original_gain": 37.13113438181605,
+      "capped_gain": 1.0000000000000013,
+      "original_output_error": 14.56728250575865,
+      "capped_output_error": 12.946001435415868
+    },
+    {
+      "condition": "equal_static_failure_control",
+      "seed": 61,
+      "centered": false,
+      "original_gain": 24.72115103935593,
+      "capped_gain": 1.0000000000000007,
+      "original_output_error": 14.095162224805925,
+      "capped_output_error": 7.047220182604861
+    },
+    {
+      "condition": "equal_static_failure_control",
+      "seed": 61,
+      "centered": true,
+      "original_gain": 0.42172620420096435,
+      "capped_gain": 0.42172620420096435,
+      "original_output_error": 1.0001190695287838,
+      "capped_output_error": 1.0001190695287838
+    },
+    {
+      "condition": "equal_static_failure_control",
+      "seed": 73,
+      "centered": false,
+      "original_gain": 18.12226773885811,
+      "capped_gain": 1.0000000000000007,
+      "original_output_error": 15.606222237867653,
+      "capped_output_error": 8.863390119477804
+    },
+    {
+      "condition": "equal_static_failure_control",
+      "seed": 73,
+      "centered": true,
+      "original_gain": 0.4720789742072207,
+      "capped_gain": 0.4720789742072207,
+      "original_output_error": 1.0000897604955998,
+      "capped_output_error": 1.0000897604955998
+    },
+    {
+      "condition": "equal_static_failure_control",
+      "seed": 89,
+      "centered": false,
+      "original_gain": 25.238199289967238,
+      "capped_gain": 1.0000000000000009,
+      "original_output_error": 14.878387986487025,
+      "capped_output_error": 6.960865484803511
+    },
+    {
+      "condition": "equal_static_failure_control",
+      "seed": 89,
+      "centered": true,
+      "original_gain": 0.4987339758294787,
+      "capped_gain": 0.4987339758294787,
+      "original_output_error": 1.0000946394682124,
+      "capped_output_error": 1.0000946394682124
+    }
+  ]
+}

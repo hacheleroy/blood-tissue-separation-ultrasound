@@ -1,0 +1,155 @@
+{
+  "version": "0.3.0",
+  "date": "2026-10-23",
+  "code_sha256": "b249dda5158ec26f472e4ba36e09b5c7cadd79fc755751646a7b300ea0af160b",
+  "archives": [
+    {
+      "path": "runs/fidelity_followup_v04/results.json.xz",
+      "codec": "xz",
+      "sha256": "296a00b23b594f1646c4772a3abb24fde68b59868d9c8cf7fef348922dd3aac6",
+      "decoded_sha256": "265d299d4a7f3c88d5e3a5d60842ba4057748a4940ad719c5f40e7a879f8eea6",
+      "outputs": 3850,
+      "cases": 35,
+      "config_path": "runs/fidelity_followup_v04/frozen_config.json",
+      "config_sha256": "d3b5ee8103a8ae0372a5fb717035fed1de63b083b50f42752a67c74804c5ca0b",
+      "parts": [
+        {
+          "path": "runs/fidelity_followup_v04/results.json.xz.part000",
+          "bytes": 450000,
+          "sha256": "1e910a1b00b6c16c1a2eb140bca9bde0139ffe71c504002b5fb73947b83db1c3"
+        },
+        {
+          "path": "runs/fidelity_followup_v04/results.json.xz.part001",
+          "bytes": 450000,
+          "sha256": "ebc90c089afc2cba6397228722a795561aa2c85c7e4ce4c1e9e8fd42559cf973"
+        },
+        {
+          "path": "runs/fidelity_followup_v04/results.json.xz.part002",
+          "bytes": 450000,
+          "sha256": "d4f39d3156bd2d52ef882d7e66bb914eb09bd7c914714499559b44a66c013c1d"
+        },
+        {
+          "path": "runs/fidelity_followup_v04/results.json.xz.part003",
+          "bytes": 450000,
+          "sha256": "6964d234ecb3b92f5f47c5637ac31b0f241d6ae6fd804b4e376bfec4ff6f2f05"
+        },
+        {
+          "path": "runs/fidelity_followup_v04/results.json.xz.part004",
+          "bytes": 450000,
+          "sha256": "14bf8b698dd700745e547be5a7fb586b0c4697ae0e8557a86b88e91547bbe70a"
+        },
+        {
+          "path": "runs/fidelity_followup_v04/results.json.xz.part005",
+          "bytes": 450000,
+          "sha256": "b98124004bec4b9353ffb6c455109fcc43e8d5728473c6d2d711fcb285c687c7"
+        },
+        {
+          "path": "runs/fidelity_followup_v04/results.json.xz.part006",
+          "bytes": 450000,
+          "sha256": "fe63f8e8874eb0c1a21f51b032d02612312b81d65be4e5302892654868795a86"
+        },
+        {
+          "path": "runs/fidelity_followup_v04/results.json.xz.part007",
+          "bytes": 450000,
+          "sha256": "69fd87e7c7c76c7fa53559d80d3e6a494df4bea6abef28f5536974db661b1ad3"
+        },
+        {
+          "path": "runs/fidelity_followup_v04/results.json.xz.part008",
+          "bytes": 450000,
+          "sha256": "28be3be1fb1fe2e741acbf116534afe3d4bfdf37a76c7a9cc499d1b63156b294"
+        },
+        {
+          "path": "runs/fidelity_followup_v04/results.json.xz.part009",
+          "bytes": 450000,
+          "sha256": "b1246de31779f60c70fa7e6ea6bd98ee26cc24c2f0001a2d2e363105530d8e11"
+        },
+        {
+          "path": "runs/fidelity_followup_v04/results.json.xz.part010",
+          "bytes": 450000,
+          "sha256": "3b0dc5ff15b7dedc8a6402da809c45905d1facc182ba11f26f6db181baca826d"
+        },
+        {
+          "path": "runs/fidelity_followup_v04/results.json.xz.part011",
+          "bytes": 450000,
+          "sha256": "7c8f0234e071421c6e9470aecd8774c00b1a183f08e17fc5346516736b2fa623"
+        },
+        {
+          "path": "runs/fidelity_followup_v04/results.json.xz.part012",
+          "bytes": 450000,
+          "sha256": "80665faf8d6d4f38eb35630c2243cc660a58e9008ba0f3a500fbef2b1cee22ed"
+        },
+        {
+          "path": "runs/fidelity_followup_v04/results.json.xz.part013",
+          "bytes": 450000,
+          "sha256": "b9a09a0b5bd12b6bef7c7cd98fb00c72a0fc358bb09726b383b9146352811ea2"
+        },
+        {
+          "path": "runs/fidelity_followup_v04/results.json.xz.part014",
+          "bytes": 406704,
+          "sha256": "6485cb53130fab5309021d4890e6283385d2e2e83a526fd1932840ab02fe2222"
+        }
+      ],
+      "independent_source_truth_available": true,
+      "required_metrics": [
+        "blood_iq_nrmse",
+        "refitted_background_to_tissue_power",
+        "refitted_blood_response_nrmse_alpha1",
+        "refitted_blood_response_nrmse_alpha0.1"
+      ]
+    },
+    {
+      "path": "runs/openhrf_followup_v04/results.json.xz",
+      "codec": "xz",
+      "sha256": "98c4cb04742f11034df7c4e1872226671d3665506a30915dd412c36dadd939c4",
+      "decoded_sha256": "a05656a454cb6836959d007a2f4b2818b1aedc53aa003bf44a8806c6e46ae5e2",
+      "outputs": 58,
+      "cases": 2,
+      "config_path": "runs/openhrf_followup_v04/frozen_config.json",
+      "config_sha256": "037da823306fc581aeaa1cbfe2f2c6768cd9d00a6f7764a6fa0b4c126032eff4",
+      "parts": [
+        {
+          "path": "runs/openhrf_followup_v04/results.json.xz.part000",
+          "bytes": 450000,
+          "sha256": "14824c1a9e871fa8a9f7f184583f678ba2c5b90953d2a1033218460de0443f55"
+        },
+        {
+          "path": "runs/openhrf_followup_v04/results.json.xz.part001",
+          "bytes": 450000,
+          "sha256": "9d823f5bfeb1050892150a62e11f250d27beb5ec284e08470618f335f2fe9e46"
+        },
+        {
+          "path": "runs/openhrf_followup_v04/results.json.xz.part002",
+          "bytes": 450000,
+          "sha256": "0fe1eb59343ff2727231b66c11b56695d2ef4e4b73f17b3e67f97119c87bca64"
+        },
+        {
+          "path": "runs/openhrf_followup_v04/results.json.xz.part003",
+          "bytes": 450000,
+          "sha256": "160a57c804d183371d00304986f496432b0e4319acf9045f59cd8fa448cd6585"
+        },
+        {
+          "path": "runs/openhrf_followup_v04/results.json.xz.part004",
+          "bytes": 450000,
+          "sha256": "cfb1002362eb049d07304ef8765fece9b31e905d60c3aa49137cad04d9ace9f4"
+        },
+        {
+          "path": "runs/openhrf_followup_v04/results.json.xz.part005",
+          "bytes": 450000,
+          "sha256": "3b5688cccc7865df69d9fdfc413041c57a9493bfe17c2705e0c2ee69f5713e56"
+        },
+        {
+          "path": "runs/openhrf_followup_v04/results.json.xz.part006",
+          "bytes": 450000,
+          "sha256": "2e670452237edac84616c7512dd91cbc202ffb3c1e06a941834ef822c37472fd"
+        },
+        {
+          "path": "runs/openhrf_followup_v04/results.json.xz.part007",
+          "bytes": 227504,
+          "sha256": "9f6c1538a642407c80b274f9b023022ea33876dfad91cd8d84a096e492269b2a"
+        }
+      ],
+      "independent_source_truth_available": false
+    }
+  ],
+  "interpretation": "Actual output error and refitted background/injection responses are primary; frozen attribution is representation-dependent. Experimental truth is unavailable."
+}

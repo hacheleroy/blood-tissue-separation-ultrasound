@@ -1,0 +1,1847 @@
+{
+  "blas_threads": 1,
+  "calibration_seeds": [
+    11,
+    23
+  ],
+  "comparison_scope": "declared discrete grids, two calibration seeds and three held-out seeds per condition; no universal ranking",
+  "conditions": [
+    {
+      "clutter_db": 40.0,
+      "decorrelation": 0.995,
+      "generator": "statistical",
+      "label": "slow_overlap",
+      "tissue_acceleration_mps2": 0.0,
+      "tissue_velocity_mps": 0.002,
+      "umax_mps": 0.003
+    },
+    {
+      "clutter_db": 30.0,
+      "generator": "statistical",
+      "label": "accelerating",
+      "tissue_acceleration_mps2": 0.03,
+      "umax_mps": 0.025
+    },
+    {
+      "clutter_db": 30.0,
+      "generator": "statistical",
+      "label": "texture_jump",
+      "motion_event": true,
+      "umax_mps": 0.006
+    },
+    {
+      "clutter_db": 30.0,
+      "generator": "statistical",
+      "label": "opposed_flow",
+      "tissue_acceleration_mps2": 0.0,
+      "tissue_velocity_mps": 0.002,
+      "umax_mps": -0.006
+    },
+    {
+      "clutter_db": 30.0,
+      "generator": "translated",
+      "label": "translated_texture",
+      "translation_amplitude_pixels": 2,
+      "umax_mps": 0.006
+    },
+    {
+      "generator": "psf",
+      "label": "psf_deforming",
+      "lateral_motion_m": 0.00035,
+      "motion_frequency_hz": 8.0,
+      "n_blood": 192,
+      "n_tissue": 192,
+      "strain_motion_m": 0.00015,
+      "tissue_velocity_mps": 0.001,
+      "umax_mps": 0.003
+    },
+    {
+      "generator": "psf",
+      "label": "equal_static_failure_control",
+      "n_blood": 192,
+      "n_tissue": 192,
+      "tissue_velocity_mps": 0.0,
+      "umax_mps": 0.0,
+      "uniform_flow": true
+    }
+  ],
+  "date": "2026-10-23",
+  "evaluation_seeds": [
+    61,
+    73,
+    89
+  ],
+  "frozen_attribution": "secondary, representation-dependent diagnostic; left/right equivalent outputs can have different component attributions",
+  "generator": {
+    "f0_hz": 5000000.0,
+    "n_frames": 256,
+    "prf_hz": 1000.0,
+    "shape": [
+      8,
+      12
+    ]
+  },
+  "matched_tissue_retention_targets": [
+    0.01,
+    0.0001,
+    1e-06
+  ],
+  "methods": [
+    {
+      "family": "identity",
+      "id": "unfiltered",
+      "method": "identity",
+      "params": {}
+    },
+    {
+      "family": "svd_short",
+      "id": "svd_short_c0_k0",
+      "method": "svd",
+      "params": {
+        "centered": false,
+        "discard": 0,
+        "window": 32
+      }
+    },
+    {
+      "family": "svd_short",
+      "id": "svd_short_c0_k1",
+      "method": "svd",
+      "params": {
+        "centered": false,
+        "discard": 1,
+        "window": 32
+      }
+    },
+    {
+      "family": "svd_short",
+      "id": "svd_short_c0_k4",
+      "method": "svd",
+      "params": {
+        "centered": false,
+        "discard": 4,
+        "window": 32
+      }
+    },
+    {
+      "family": "svd_short",
+      "id": "svd_short_c0_k16",
+      "method": "svd",
+      "params": {
+        "centered": false,
+        "discard": 16,
+        "window": 32
+      }
+    },
+    {
+      "family": "svd_short",
+      "id": "svd_short_c0_k32",
+      "method": "svd",
+      "params": {
+        "centered": false,
+        "discard": 32,
+        "window": 32
+      }
+    },
+    {
+      "family": "local_svd_short",
+      "id": "local_svd_short_c0_k1",
+      "method": "local",
+      "params": {
+        "centered": false,
+        "discard": 1,
+        "method": "svd",
+        "patch_shape": [
+          4,
+          6
+        ],
+        "stride": [
+          4,
+          6
+        ],
+        "window": 32
+      }
+    },
+    {
+      "family": "local_svd_short",
+      "id": "local_svd_short_c0_k4",
+      "method": "local",
+      "params": {
+        "centered": false,
+        "discard": 4,
+        "method": "svd",
+        "patch_shape": [
+          4,
+          6
+        ],
+        "stride": [
+          4,
+          6
+        ],
+        "window": 32
+      }
+    },
+    {
+      "family": "local_svd_short",
+      "id": "local_svd_short_c0_k16",
+      "method": "local",
+      "params": {
+        "centered": false,
+        "discard": 16,
+        "method": "svd",
+        "patch_shape": [
+          4,
+          6
+        ],
+        "stride": [
+          4,
+          6
+        ],
+        "window": 32
+      }
+    },
+    {
+      "family": "svd_short",
+      "id": "svd_short_c1_k0",
+      "method": "svd",
+      "params": {
+        "centered": true,
+        "discard": 0,
+        "window": 32
+      }
+    },
+    {
+      "family": "svd_short",
+      "id": "svd_short_c1_k1",
+      "method": "svd",
+      "params": {
+        "centered": true,
+        "discard": 1,
+        "window": 32
+      }
+    },
+    {
+      "family": "svd_short",
+      "id": "svd_short_c1_k4",
+      "method": "svd",
+      "params": {
+        "centered": true,
+        "discard": 4,
+        "window": 32
+      }
+    },
+    {
+      "family": "svd_short",
+      "id": "svd_short_c1_k16",
+      "method": "svd",
+      "params": {
+        "centered": true,
+        "discard": 16,
+        "window": 32
+      }
+    },
+    {
+      "family": "svd_short",
+      "id": "svd_short_c1_k32",
+      "method": "svd",
+      "params": {
+        "centered": true,
+        "discard": 32,
+        "window": 32
+      }
+    },
+    {
+      "family": "local_svd_short",
+      "id": "local_svd_short_c1_k1",
+      "method": "local",
+      "params": {
+        "centered": true,
+        "discard": 1,
+        "method": "svd",
+        "patch_shape": [
+          4,
+          6
+        ],
+        "stride": [
+          4,
+          6
+        ],
+        "window": 32
+      }
+    },
+    {
+      "family": "local_svd_short",
+      "id": "local_svd_short_c1_k4",
+      "method": "local",
+      "params": {
+        "centered": true,
+        "discard": 4,
+        "method": "svd",
+        "patch_shape": [
+          4,
+          6
+        ],
+        "stride": [
+          4,
+          6
+        ],
+        "window": 32
+      }
+    },
+    {
+      "family": "local_svd_short",
+      "id": "local_svd_short_c1_k16",
+      "method": "local",
+      "params": {
+        "centered": true,
+        "discard": 16,
+        "method": "svd",
+        "patch_shape": [
+          4,
+          6
+        ],
+        "stride": [
+          4,
+          6
+        ],
+        "window": 32
+      }
+    },
+    {
+      "family": "svd_long",
+      "id": "svd_long_c0_k0",
+      "method": "svd",
+      "params": {
+        "centered": false,
+        "discard": 0,
+        "window": 256
+      }
+    },
+    {
+      "family": "svd_long",
+      "id": "svd_long_c0_k1",
+      "method": "svd",
+      "params": {
+        "centered": false,
+        "discard": 1,
+        "window": 256
+      }
+    },
+    {
+      "family": "svd_long",
+      "id": "svd_long_c0_k4",
+      "method": "svd",
+      "params": {
+        "centered": false,
+        "discard": 4,
+        "window": 256
+      }
+    },
+    {
+      "family": "svd_long",
+      "id": "svd_long_c0_k16",
+      "method": "svd",
+      "params": {
+        "centered": false,
+        "discard": 16,
+        "window": 256
+      }
+    },
+    {
+      "family": "svd_long",
+      "id": "svd_long_c0_k96",
+      "method": "svd",
+      "params": {
+        "centered": false,
+        "discard": 96,
+        "window": 256
+      }
+    },
+    {
+      "family": "local_svd_long",
+      "id": "local_svd_long_c0_k1",
+      "method": "local",
+      "params": {
+        "centered": false,
+        "discard": 1,
+        "method": "svd",
+        "patch_shape": [
+          4,
+          6
+        ],
+        "stride": [
+          4,
+          6
+        ],
+        "window": 256
+      }
+    },
+    {
+      "family": "local_svd_long",
+      "id": "local_svd_long_c0_k4",
+      "method": "local",
+      "params": {
+        "centered": false,
+        "discard": 4,
+        "method": "svd",
+        "patch_shape": [
+          4,
+          6
+        ],
+        "stride": [
+          4,
+          6
+        ],
+        "window": 256
+      }
+    },
+    {
+      "family": "local_svd_long",
+      "id": "local_svd_long_c0_k16",
+      "method": "local",
+      "params": {
+        "centered": false,
+        "discard": 16,
+        "method": "svd",
+        "patch_shape": [
+          4,
+          6
+        ],
+        "stride": [
+          4,
+          6
+        ],
+        "window": 256
+      }
+    },
+    {
+      "family": "svd_long",
+      "id": "svd_long_c1_k0",
+      "method": "svd",
+      "params": {
+        "centered": true,
+        "discard": 0,
+        "window": 256
+      }
+    },
+    {
+      "family": "svd_long",
+      "id": "svd_long_c1_k1",
+      "method": "svd",
+      "params": {
+        "centered": true,
+        "discard": 1,
+        "window": 256
+      }
+    },
+    {
+      "family": "svd_long",
+      "id": "svd_long_c1_k4",
+      "method": "svd",
+      "params": {
+        "centered": true,
+        "discard": 4,
+        "window": 256
+      }
+    },
+    {
+      "family": "svd_long",
+      "id": "svd_long_c1_k16",
+      "method": "svd",
+      "params": {
+        "centered": true,
+        "discard": 16,
+        "window": 256
+      }
+    },
+    {
+      "family": "svd_long",
+      "id": "svd_long_c1_k96",
+      "method": "svd",
+      "params": {
+        "centered": true,
+        "discard": 96,
+        "window": 256
+      }
+    },
+    {
+      "family": "local_svd_long",
+      "id": "local_svd_long_c1_k1",
+      "method": "local",
+      "params": {
+        "centered": true,
+        "discard": 1,
+        "method": "svd",
+        "patch_shape": [
+          4,
+          6
+        ],
+        "stride": [
+          4,
+          6
+        ],
+        "window": 256
+      }
+    },
+    {
+      "family": "local_svd_long",
+      "id": "local_svd_long_c1_k4",
+      "method": "local",
+      "params": {
+        "centered": true,
+        "discard": 4,
+        "method": "svd",
+        "patch_shape": [
+          4,
+          6
+        ],
+        "stride": [
+          4,
+          6
+        ],
+        "window": 256
+      }
+    },
+    {
+      "family": "local_svd_long",
+      "id": "local_svd_long_c1_k16",
+      "method": "local",
+      "params": {
+        "centered": true,
+        "discard": 16,
+        "method": "svd",
+        "patch_shape": [
+          4,
+          6
+        ],
+        "stride": [
+          4,
+          6
+        ],
+        "window": 256
+      }
+    },
+    {
+      "family": "axis1_no_memory",
+      "id": "axis1_no_memory_c0_k1",
+      "method": "axis1",
+      "params": {
+        "centered": false,
+        "discard": 1,
+        "packet": 32,
+        "patch_shape": [
+          4,
+          6
+        ],
+        "q_min": 0.3,
+        "rho": 0.0,
+        "rigid": false,
+        "stride": [
+          4,
+          6
+        ]
+      }
+    },
+    {
+      "family": "axis1_no_memory",
+      "id": "axis1_no_memory_c0_k4",
+      "method": "axis1",
+      "params": {
+        "centered": false,
+        "discard": 4,
+        "packet": 32,
+        "patch_shape": [
+          4,
+          6
+        ],
+        "q_min": 0.3,
+        "rho": 0.0,
+        "rigid": false,
+        "stride": [
+          4,
+          6
+        ]
+      }
+    },
+    {
+      "family": "axis1_no_memory",
+      "id": "axis1_no_memory_c0_k16",
+      "method": "axis1",
+      "params": {
+        "centered": false,
+        "discard": 16,
+        "packet": 32,
+        "patch_shape": [
+          4,
+          6
+        ],
+        "q_min": 0.3,
+        "rho": 0.0,
+        "rigid": false,
+        "stride": [
+          4,
+          6
+        ]
+      }
+    },
+    {
+      "family": "axis1_no_memory",
+      "id": "axis1_no_memory_c1_k1",
+      "method": "axis1",
+      "params": {
+        "centered": true,
+        "discard": 1,
+        "packet": 32,
+        "patch_shape": [
+          4,
+          6
+        ],
+        "q_min": 0.3,
+        "rho": 0.0,
+        "rigid": false,
+        "stride": [
+          4,
+          6
+        ]
+      }
+    },
+    {
+      "family": "axis1_no_memory",
+      "id": "axis1_no_memory_c1_k4",
+      "method": "axis1",
+      "params": {
+        "centered": true,
+        "discard": 4,
+        "packet": 32,
+        "patch_shape": [
+          4,
+          6
+        ],
+        "q_min": 0.3,
+        "rho": 0.0,
+        "rigid": false,
+        "stride": [
+          4,
+          6
+        ]
+      }
+    },
+    {
+      "family": "axis1_no_memory",
+      "id": "axis1_no_memory_c1_k16",
+      "method": "axis1",
+      "params": {
+        "centered": true,
+        "discard": 16,
+        "packet": 32,
+        "patch_shape": [
+          4,
+          6
+        ],
+        "q_min": 0.3,
+        "rho": 0.0,
+        "rigid": false,
+        "stride": [
+          4,
+          6
+        ]
+      }
+    },
+    {
+      "family": "axis1_rigid_no_memory",
+      "id": "axis1_rigid_no_memory_c0_k1",
+      "method": "axis1",
+      "params": {
+        "centered": false,
+        "discard": 1,
+        "packet": 32,
+        "patch_shape": [
+          4,
+          6
+        ],
+        "q_min": 0.3,
+        "rho": 0.0,
+        "rigid": true,
+        "stride": [
+          4,
+          6
+        ]
+      }
+    },
+    {
+      "family": "axis1_rigid_no_memory",
+      "id": "axis1_rigid_no_memory_c0_k4",
+      "method": "axis1",
+      "params": {
+        "centered": false,
+        "discard": 4,
+        "packet": 32,
+        "patch_shape": [
+          4,
+          6
+        ],
+        "q_min": 0.3,
+        "rho": 0.0,
+        "rigid": true,
+        "stride": [
+          4,
+          6
+        ]
+      }
+    },
+    {
+      "family": "axis1_rigid_no_memory",
+      "id": "axis1_rigid_no_memory_c0_k16",
+      "method": "axis1",
+      "params": {
+        "centered": false,
+        "discard": 16,
+        "packet": 32,
+        "patch_shape": [
+          4,
+          6
+        ],
+        "q_min": 0.3,
+        "rho": 0.0,
+        "rigid": true,
+        "stride": [
+          4,
+          6
+        ]
+      }
+    },
+    {
+      "family": "axis1_rigid_no_memory",
+      "id": "axis1_rigid_no_memory_c1_k1",
+      "method": "axis1",
+      "params": {
+        "centered": true,
+        "discard": 1,
+        "packet": 32,
+        "patch_shape": [
+          4,
+          6
+        ],
+        "q_min": 0.3,
+        "rho": 0.0,
+        "rigid": true,
+        "stride": [
+          4,
+          6
+        ]
+      }
+    },
+    {
+      "family": "axis1_rigid_no_memory",
+      "id": "axis1_rigid_no_memory_c1_k4",
+      "method": "axis1",
+      "params": {
+        "centered": true,
+        "discard": 4,
+        "packet": 32,
+        "patch_shape": [
+          4,
+          6
+        ],
+        "q_min": 0.3,
+        "rho": 0.0,
+        "rigid": true,
+        "stride": [
+          4,
+          6
+        ]
+      }
+    },
+    {
+      "family": "axis1_rigid_no_memory",
+      "id": "axis1_rigid_no_memory_c1_k16",
+      "method": "axis1",
+      "params": {
+        "centered": true,
+        "discard": 16,
+        "packet": 32,
+        "patch_shape": [
+          4,
+          6
+        ],
+        "q_min": 0.3,
+        "rho": 0.0,
+        "rigid": true,
+        "stride": [
+          4,
+          6
+        ]
+      }
+    },
+    {
+      "family": "axis1_memory",
+      "id": "axis1_memory_c0_k1",
+      "method": "axis1",
+      "params": {
+        "centered": false,
+        "discard": 1,
+        "packet": 32,
+        "patch_shape": [
+          4,
+          6
+        ],
+        "q_min": 0.3,
+        "rho": 0.9,
+        "rigid": false,
+        "stride": [
+          4,
+          6
+        ]
+      }
+    },
+    {
+      "family": "axis1_memory",
+      "id": "axis1_memory_c0_k4",
+      "method": "axis1",
+      "params": {
+        "centered": false,
+        "discard": 4,
+        "packet": 32,
+        "patch_shape": [
+          4,
+          6
+        ],
+        "q_min": 0.3,
+        "rho": 0.9,
+        "rigid": false,
+        "stride": [
+          4,
+          6
+        ]
+      }
+    },
+    {
+      "family": "axis1_memory",
+      "id": "axis1_memory_c0_k16",
+      "method": "axis1",
+      "params": {
+        "centered": false,
+        "discard": 16,
+        "packet": 32,
+        "patch_shape": [
+          4,
+          6
+        ],
+        "q_min": 0.3,
+        "rho": 0.9,
+        "rigid": false,
+        "stride": [
+          4,
+          6
+        ]
+      }
+    },
+    {
+      "family": "axis1_memory",
+      "id": "axis1_memory_c1_k1",
+      "method": "axis1",
+      "params": {
+        "centered": true,
+        "discard": 1,
+        "packet": 32,
+        "patch_shape": [
+          4,
+          6
+        ],
+        "q_min": 0.3,
+        "rho": 0.9,
+        "rigid": false,
+        "stride": [
+          4,
+          6
+        ]
+      }
+    },
+    {
+      "family": "axis1_memory",
+      "id": "axis1_memory_c1_k4",
+      "method": "axis1",
+      "params": {
+        "centered": true,
+        "discard": 4,
+        "packet": 32,
+        "patch_shape": [
+          4,
+          6
+        ],
+        "q_min": 0.3,
+        "rho": 0.9,
+        "rigid": false,
+        "stride": [
+          4,
+          6
+        ]
+      }
+    },
+    {
+      "family": "axis1_memory",
+      "id": "axis1_memory_c1_k16",
+      "method": "axis1",
+      "params": {
+        "centered": true,
+        "discard": 16,
+        "packet": 32,
+        "patch_shape": [
+          4,
+          6
+        ],
+        "q_min": 0.3,
+        "rho": 0.9,
+        "rigid": false,
+        "stride": [
+          4,
+          6
+        ]
+      }
+    },
+    {
+      "family": "axis1_rigid_memory",
+      "id": "axis1_rigid_memory_c0_k1",
+      "method": "axis1",
+      "params": {
+        "centered": false,
+        "discard": 1,
+        "packet": 32,
+        "patch_shape": [
+          4,
+          6
+        ],
+        "q_min": 0.3,
+        "rho": 0.9,
+        "rigid": true,
+        "stride": [
+          4,
+          6
+        ]
+      }
+    },
+    {
+      "family": "axis1_rigid_memory",
+      "id": "axis1_rigid_memory_c0_k4",
+      "method": "axis1",
+      "params": {
+        "centered": false,
+        "discard": 4,
+        "packet": 32,
+        "patch_shape": [
+          4,
+          6
+        ],
+        "q_min": 0.3,
+        "rho": 0.9,
+        "rigid": true,
+        "stride": [
+          4,
+          6
+        ]
+      }
+    },
+    {
+      "family": "axis1_rigid_memory",
+      "id": "axis1_rigid_memory_c0_k16",
+      "method": "axis1",
+      "params": {
+        "centered": false,
+        "discard": 16,
+        "packet": 32,
+        "patch_shape": [
+          4,
+          6
+        ],
+        "q_min": 0.3,
+        "rho": 0.9,
+        "rigid": true,
+        "stride": [
+          4,
+          6
+        ]
+      }
+    },
+    {
+      "family": "axis1_rigid_memory",
+      "id": "axis1_rigid_memory_c1_k1",
+      "method": "axis1",
+      "params": {
+        "centered": true,
+        "discard": 1,
+        "packet": 32,
+        "patch_shape": [
+          4,
+          6
+        ],
+        "q_min": 0.3,
+        "rho": 0.9,
+        "rigid": true,
+        "stride": [
+          4,
+          6
+        ]
+      }
+    },
+    {
+      "family": "axis1_rigid_memory",
+      "id": "axis1_rigid_memory_c1_k4",
+      "method": "axis1",
+      "params": {
+        "centered": true,
+        "discard": 4,
+        "packet": 32,
+        "patch_shape": [
+          4,
+          6
+        ],
+        "q_min": 0.3,
+        "rho": 0.9,
+        "rigid": true,
+        "stride": [
+          4,
+          6
+        ]
+      }
+    },
+    {
+      "family": "axis1_rigid_memory",
+      "id": "axis1_rigid_memory_c1_k16",
+      "method": "axis1",
+      "params": {
+        "centered": true,
+        "discard": 16,
+        "packet": 32,
+        "patch_shape": [
+          4,
+          6
+        ],
+        "q_min": 0.3,
+        "rho": 0.9,
+        "rigid": true,
+        "stride": [
+          4,
+          6
+        ]
+      }
+    },
+    {
+      "family": "axis1_no_phase",
+      "id": "axis1_no_phase_c0",
+      "method": "axis1",
+      "params": {
+        "centered": false,
+        "discard": 1,
+        "packet": 32,
+        "patch_shape": [
+          4,
+          6
+        ],
+        "phase_compensation": false,
+        "q_min": 0.3,
+        "rho": 0.9,
+        "stride": [
+          4,
+          6
+        ]
+      }
+    },
+    {
+      "family": "axis2_original",
+      "id": "axis2_original_c0_m0",
+      "method": "axis2",
+      "params": {
+        "centered": false,
+        "lags": [
+          1,
+          2,
+          4,
+          8,
+          16
+        ],
+        "packet": 32,
+        "patch_shape": [
+          4,
+          6
+        ],
+        "q_min": 0.3,
+        "rank": 6,
+        "stride": [
+          4,
+          6
+        ],
+        "use_memory": false
+      }
+    },
+    {
+      "family": "axis2_original",
+      "id": "axis2_original_c0_m1",
+      "method": "axis2",
+      "params": {
+        "centered": false,
+        "lags": [
+          1,
+          2,
+          4,
+          8,
+          16
+        ],
+        "packet": 32,
+        "patch_shape": [
+          4,
+          6
+        ],
+        "q_min": 0.3,
+        "rank": 6,
+        "stride": [
+          4,
+          6
+        ],
+        "use_memory": true
+      }
+    },
+    {
+      "family": "axis2_gain_capped",
+      "id": "axis2_cap_c0",
+      "method": "axis2",
+      "params": {
+        "centered": false,
+        "lags": [
+          1,
+          2,
+          4,
+          8,
+          16
+        ],
+        "operator_gain_cap": 1.0,
+        "packet": 32,
+        "patch_shape": [
+          4,
+          6
+        ],
+        "q_min": 0.3,
+        "rank": 6,
+        "stride": [
+          4,
+          6
+        ],
+        "use_memory": true
+      }
+    },
+    {
+      "family": "axis2_ridge",
+      "id": "axis2_ridge_c0",
+      "method": "axis2",
+      "params": {
+        "centered": false,
+        "lags": [
+          1,
+          2,
+          4,
+          8,
+          16
+        ],
+        "packet": 32,
+        "patch_shape": [
+          4,
+          6
+        ],
+        "q_min": 0.3,
+        "rank": 6,
+        "stride": [
+          4,
+          6
+        ],
+        "use_memory": true,
+        "whitening_regularization_rel": 0.001
+      }
+    },
+    {
+      "family": "axis2_ridge_capped",
+      "id": "axis2_ridge_cap_c0_e0.0001",
+      "method": "axis2",
+      "params": {
+        "centered": false,
+        "epsilon_rel": 0.0001,
+        "lags": [
+          1,
+          2,
+          4,
+          8,
+          16
+        ],
+        "operator_gain_cap": 1.0,
+        "packet": 32,
+        "patch_shape": [
+          4,
+          6
+        ],
+        "q_min": 0.3,
+        "rank": 6,
+        "stride": [
+          4,
+          6
+        ],
+        "use_memory": true,
+        "whitening_regularization_rel": 0.001
+      }
+    },
+    {
+      "family": "axis2_ridge_capped",
+      "id": "axis2_ridge_cap_c0_e0.01",
+      "method": "axis2",
+      "params": {
+        "centered": false,
+        "epsilon_rel": 0.01,
+        "lags": [
+          1,
+          2,
+          4,
+          8,
+          16
+        ],
+        "operator_gain_cap": 1.0,
+        "packet": 32,
+        "patch_shape": [
+          4,
+          6
+        ],
+        "q_min": 0.3,
+        "rank": 6,
+        "stride": [
+          4,
+          6
+        ],
+        "use_memory": true,
+        "whitening_regularization_rel": 0.001
+      }
+    },
+    {
+      "family": "axis1_no_phase",
+      "id": "axis1_no_phase_c1",
+      "method": "axis1",
+      "params": {
+        "centered": true,
+        "discard": 1,
+        "packet": 32,
+        "patch_shape": [
+          4,
+          6
+        ],
+        "phase_compensation": false,
+        "q_min": 0.3,
+        "rho": 0.9,
+        "stride": [
+          4,
+          6
+        ]
+      }
+    },
+    {
+      "family": "axis2_original",
+      "id": "axis2_original_c1_m0",
+      "method": "axis2",
+      "params": {
+        "centered": true,
+        "lags": [
+          1,
+          2,
+          4,
+          8,
+          16
+        ],
+        "packet": 32,
+        "patch_shape": [
+          4,
+          6
+        ],
+        "q_min": 0.3,
+        "rank": 6,
+        "stride": [
+          4,
+          6
+        ],
+        "use_memory": false
+      }
+    },
+    {
+      "family": "axis2_original",
+      "id": "axis2_original_c1_m1",
+      "method": "axis2",
+      "params": {
+        "centered": true,
+        "lags": [
+          1,
+          2,
+          4,
+          8,
+          16
+        ],
+        "packet": 32,
+        "patch_shape": [
+          4,
+          6
+        ],
+        "q_min": 0.3,
+        "rank": 6,
+        "stride": [
+          4,
+          6
+        ],
+        "use_memory": true
+      }
+    },
+    {
+      "family": "axis2_gain_capped",
+      "id": "axis2_cap_c1",
+      "method": "axis2",
+      "params": {
+        "centered": true,
+        "lags": [
+          1,
+          2,
+          4,
+          8,
+          16
+        ],
+        "operator_gain_cap": 1.0,
+        "packet": 32,
+        "patch_shape": [
+          4,
+          6
+        ],
+        "q_min": 0.3,
+        "rank": 6,
+        "stride": [
+          4,
+          6
+        ],
+        "use_memory": true
+      }
+    },
+    {
+      "family": "axis2_ridge",
+      "id": "axis2_ridge_c1",
+      "method": "axis2",
+      "params": {
+        "centered": true,
+        "lags": [
+          1,
+          2,
+          4,
+          8,
+          16
+        ],
+        "packet": 32,
+        "patch_shape": [
+          4,
+          6
+        ],
+        "q_min": 0.3,
+        "rank": 6,
+        "stride": [
+          4,
+          6
+        ],
+        "use_memory": true,
+        "whitening_regularization_rel": 0.001
+      }
+    },
+    {
+      "family": "axis2_ridge_capped",
+      "id": "axis2_ridge_cap_c1_e0.0001",
+      "method": "axis2",
+      "params": {
+        "centered": true,
+        "epsilon_rel": 0.0001,
+        "lags": [
+          1,
+          2,
+          4,
+          8,
+          16
+        ],
+        "operator_gain_cap": 1.0,
+        "packet": 32,
+        "patch_shape": [
+          4,
+          6
+        ],
+        "q_min": 0.3,
+        "rank": 6,
+        "stride": [
+          4,
+          6
+        ],
+        "use_memory": true,
+        "whitening_regularization_rel": 0.001
+      }
+    },
+    {
+      "family": "axis2_ridge_capped",
+      "id": "axis2_ridge_cap_c1_e0.01",
+      "method": "axis2",
+      "params": {
+        "centered": true,
+        "epsilon_rel": 0.01,
+        "lags": [
+          1,
+          2,
+          4,
+          8,
+          16
+        ],
+        "operator_gain_cap": 1.0,
+        "packet": 32,
+        "patch_shape": [
+          4,
+          6
+        ],
+        "q_min": 0.3,
+        "rank": 6,
+        "stride": [
+          4,
+          6
+        ],
+        "use_memory": true,
+        "whitening_regularization_rel": 0.001
+      }
+    },
+    {
+      "family": "lee_temporal_raw_w32",
+      "id": "lee_temporal_w32_relative1e-06",
+      "method": "lee_aer",
+      "params": {
+        "domain": "temporal",
+        "epsilon_rel": 1e-06,
+        "window": 32
+      }
+    },
+    {
+      "family": "lee_temporal_raw_w32",
+      "id": "lee_temporal_w32_relative0.001",
+      "method": "lee_aer",
+      "params": {
+        "domain": "temporal",
+        "epsilon_rel": 0.001,
+        "window": 32
+      }
+    },
+    {
+      "family": "lee_temporal_raw_w32",
+      "id": "lee_temporal_w32_relative0.1",
+      "method": "lee_aer",
+      "params": {
+        "domain": "temporal",
+        "epsilon_rel": 0.1,
+        "window": 32
+      }
+    },
+    {
+      "family": "lee_temporal_raw_w256",
+      "id": "lee_temporal_w256_relative1e-06",
+      "method": "lee_aer",
+      "params": {
+        "domain": "temporal",
+        "epsilon_rel": 1e-06,
+        "window": 256
+      }
+    },
+    {
+      "family": "lee_temporal_unit_extension",
+      "id": "lee_temporal_unit_relative1e-06",
+      "method": "lee_aer",
+      "params": {
+        "domain": "temporal",
+        "epsilon_rel": 1e-06,
+        "gain_normalization": "unit_operator",
+        "window": 256
+      }
+    },
+    {
+      "family": "lee_temporal_raw_w256",
+      "id": "lee_temporal_w256_relative0.001",
+      "method": "lee_aer",
+      "params": {
+        "domain": "temporal",
+        "epsilon_rel": 0.001,
+        "window": 256
+      }
+    },
+    {
+      "family": "lee_temporal_unit_extension",
+      "id": "lee_temporal_unit_relative0.001",
+      "method": "lee_aer",
+      "params": {
+        "domain": "temporal",
+        "epsilon_rel": 0.001,
+        "gain_normalization": "unit_operator",
+        "window": 256
+      }
+    },
+    {
+      "family": "lee_temporal_raw_w256",
+      "id": "lee_temporal_w256_relative0.1",
+      "method": "lee_aer",
+      "params": {
+        "domain": "temporal",
+        "epsilon_rel": 0.1,
+        "window": 256
+      }
+    },
+    {
+      "family": "lee_temporal_unit_extension",
+      "id": "lee_temporal_unit_relative0.1",
+      "method": "lee_aer",
+      "params": {
+        "domain": "temporal",
+        "epsilon_rel": 0.1,
+        "gain_normalization": "unit_operator",
+        "window": 256
+      }
+    },
+    {
+      "family": "lee_temporal_raw_w256",
+      "id": "lee_temporal_absolute1",
+      "method": "lee_aer",
+      "params": {
+        "domain": "temporal",
+        "epsilon_abs": 1.0
+      }
+    },
+    {
+      "family": "lee_temporal_raw_w256",
+      "id": "lee_temporal_absolute26",
+      "method": "lee_aer",
+      "params": {
+        "domain": "temporal",
+        "epsilon_abs": 26.0
+      }
+    },
+    {
+      "family": "lee_temporal_raw_w256",
+      "id": "lee_temporal_absolute1000",
+      "method": "lee_aer",
+      "params": {
+        "domain": "temporal",
+        "epsilon_abs": 1000.0
+      }
+    },
+    {
+      "family": "lee_spatial_raw_w32",
+      "id": "lee_spatial_w32_relative1e-06",
+      "method": "lee_aer",
+      "params": {
+        "domain": "spatial",
+        "epsilon_rel": 1e-06,
+        "window": 32
+      }
+    },
+    {
+      "family": "lee_spatial_raw_w32",
+      "id": "lee_spatial_w32_relative0.001",
+      "method": "lee_aer",
+      "params": {
+        "domain": "spatial",
+        "epsilon_rel": 0.001,
+        "window": 32
+      }
+    },
+    {
+      "family": "lee_spatial_raw_w32",
+      "id": "lee_spatial_w32_relative0.1",
+      "method": "lee_aer",
+      "params": {
+        "domain": "spatial",
+        "epsilon_rel": 0.1,
+        "window": 32
+      }
+    },
+    {
+      "family": "lee_spatial_raw_w256",
+      "id": "lee_spatial_w256_relative1e-06",
+      "method": "lee_aer",
+      "params": {
+        "domain": "spatial",
+        "epsilon_rel": 1e-06,
+        "window": 256
+      }
+    },
+    {
+      "family": "lee_spatial_unit_extension",
+      "id": "lee_spatial_unit_relative1e-06",
+      "method": "lee_aer",
+      "params": {
+        "domain": "spatial",
+        "epsilon_rel": 1e-06,
+        "gain_normalization": "unit_operator",
+        "window": 256
+      }
+    },
+    {
+      "family": "lee_spatial_raw_w256",
+      "id": "lee_spatial_w256_relative0.001",
+      "method": "lee_aer",
+      "params": {
+        "domain": "spatial",
+        "epsilon_rel": 0.001,
+        "window": 256
+      }
+    },
+    {
+      "family": "lee_spatial_unit_extension",
+      "id": "lee_spatial_unit_relative0.001",
+      "method": "lee_aer",
+      "params": {
+        "domain": "spatial",
+        "epsilon_rel": 0.001,
+        "gain_normalization": "unit_operator",
+        "window": 256
+      }
+    },
+    {
+      "family": "lee_spatial_raw_w256",
+      "id": "lee_spatial_w256_relative0.1",
+      "method": "lee_aer",
+      "params": {
+        "domain": "spatial",
+        "epsilon_rel": 0.1,
+        "window": 256
+      }
+    },
+    {
+      "family": "lee_spatial_unit_extension",
+      "id": "lee_spatial_unit_relative0.1",
+      "method": "lee_aer",
+      "params": {
+        "domain": "spatial",
+        "epsilon_rel": 0.1,
+        "gain_normalization": "unit_operator",
+        "window": 256
+      }
+    },
+    {
+      "family": "lee_spatial_raw_w256",
+      "id": "lee_spatial_absolute1",
+      "method": "lee_aer",
+      "params": {
+        "domain": "spatial",
+        "epsilon_abs": 1.0
+      }
+    },
+    {
+      "family": "lee_spatial_raw_w256",
+      "id": "lee_spatial_absolute26",
+      "method": "lee_aer",
+      "params": {
+        "domain": "spatial",
+        "epsilon_abs": 26.0
+      }
+    },
+    {
+      "family": "lee_spatial_raw_w256",
+      "id": "lee_spatial_absolute1000",
+      "method": "lee_aer",
+      "params": {
+        "domain": "spatial",
+        "epsilon_abs": 1000.0
+      }
+    },
+    {
+      "family": "baranger",
+      "id": "baranger_w32",
+      "method": "svd",
+      "params": {
+        "selector": "baranger",
+        "window": 32
+      }
+    },
+    {
+      "family": "baranger",
+      "id": "baranger_w128",
+      "method": "svd",
+      "params": {
+        "selector": "baranger",
+        "window": 128
+      }
+    },
+    {
+      "family": "baranger",
+      "id": "baranger_w256",
+      "method": "svd",
+      "params": {
+        "selector": "baranger",
+        "window": 256
+      }
+    },
+    {
+      "family": "maresca",
+      "id": "maresca_offset0",
+      "method": "sliding",
+      "params": {
+        "hop": 45,
+        "method": "svd",
+        "selector": "maresca",
+        "selector_options": {
+          "offset": 0
+        },
+        "window": 60
+      }
+    },
+    {
+      "family": "maresca",
+      "id": "maresca_offset8",
+      "method": "sliding",
+      "params": {
+        "hop": 45,
+        "method": "svd",
+        "selector": "maresca",
+        "selector_options": {
+          "offset": 8
+        },
+        "window": 60
+      }
+    },
+    {
+      "family": "maresca",
+      "id": "maresca_offset26",
+      "method": "sliding",
+      "params": {
+        "hop": 45,
+        "method": "svd",
+        "selector": "maresca",
+        "selector_options": {
+          "offset": 26
+        },
+        "window": 60
+      }
+    },
+    {
+      "family": "song_pdf_paper",
+      "id": "song_pdf_paper",
+      "method": "song_pdf_local",
+      "params": {
+        "normalization": "paper",
+        "patch_shape": [
+          8,
+          8
+        ],
+        "selector_options": {
+          "noise_tail_fraction": 0.25,
+          "prf_hz": 1000.0,
+          "slope_threshold": 0.1,
+          "tail_tolerance_decades": 0.05,
+          "tissue_cutoff_hz": 10.0
+        },
+        "stride": [
+          4,
+          4
+        ],
+        "window": 60
+      }
+    },
+    {
+      "family": "song_pdf_none",
+      "id": "song_pdf_none",
+      "method": "song_pdf_local",
+      "params": {
+        "normalization": "none",
+        "patch_shape": [
+          8,
+          8
+        ],
+        "selector_options": {
+          "noise_tail_fraction": 0.25,
+          "prf_hz": 1000.0,
+          "slope_threshold": 0.1,
+          "tail_tolerance_decades": 0.05,
+          "tissue_cutoff_hz": 10.0
+        },
+        "stride": [
+          4,
+          4
+        ],
+        "window": 60
+      }
+    },
+    {
+      "family": "butterworth",
+      "id": "butterworth_10Hz",
+      "method": "highpass",
+      "params": {
+        "cutoff_hz": 10.0,
+        "prf_hz": 1000.0
+      }
+    },
+    {
+      "family": "butterworth",
+      "id": "butterworth_30Hz",
+      "method": "highpass",
+      "params": {
+        "cutoff_hz": 30.0,
+        "prf_hz": 1000.0
+      }
+    },
+    {
+      "family": "butterworth",
+      "id": "butterworth_80Hz",
+      "method": "highpass",
+      "params": {
+        "cutoff_hz": 80.0,
+        "prf_hz": 1000.0
+      }
+    },
+    {
+      "family": "svd_spatial_equivalence",
+      "id": "svd_spatial_equivalence_w32",
+      "method": "svd",
+      "params": {
+        "discard": 1,
+        "projection_side": "spatial",
+        "window": 32
+      }
+    },
+    {
+      "family": "svd_spatial_equivalence",
+      "id": "svd_spatial_equivalence_w256",
+      "method": "svd",
+      "params": {
+        "discard": 1,
+        "projection_side": "spatial",
+        "window": 256
+      }
+    },
+    {
+      "family": "aer_common_equivalence",
+      "id": "aer_common_equivalence_temporal",
+      "method": "aer",
+      "params": {
+        "centered": true,
+        "domain": "temporal",
+        "epsilon_rel": 0.001,
+        "normalization": "common"
+      }
+    },
+    {
+      "family": "aer_common_equivalence",
+      "id": "aer_common_equivalence_spatial",
+      "method": "aer",
+      "params": {
+        "centered": true,
+        "domain": "spatial",
+        "epsilon_rel": 0.001,
+        "normalization": "common"
+      }
+    }
+  ],
+  "phase_control": "uncentered Axis 1 is exactly invariant to global phase demodulation/restoration; spatial registration is separate",
+  "primary_loss_metric": "blood_iq_nrmse",
+  "primary_rejection_metric": "refitted_background_to_tissue_power",
+  "refitted_injection_amplitudes": [
+    0.1,
+    1.0
+  ],
+  "selection": "minimum mean calibration output-to-blood IQ error subject to every calibration refitted background/tissue power <= target",
+  "source_truth_use": "calibration-assisted operating points; evaluation truth never selects settings",
+  "version": 4
+}

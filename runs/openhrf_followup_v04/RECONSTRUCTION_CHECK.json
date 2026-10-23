@@ -1,0 +1,6 @@
+{
+  "first_64_frame_relative_difference_vs_v02": 1.1676748717476111e-05,
+  "numerical_code_sha256": "b249dda5158ec26f472e4ba36e09b5c7cadd79fc755751646a7b300ea0af160b",
+  "maximum_decoded_rf_batch_bytes": 33554432,
+  "total_decoded_rf_bytes": 4294967296
+}

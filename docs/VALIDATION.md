@@ -1,5 +1,53 @@
 # Numerical verification
 
+## PDF-audited follow-up, v0.3.0
+
+23 October 2026: **134 tests pass** on Python 3.12. Numerical package hash:
+`b249dda5158ec26f472e4ba36e09b5c7cadd79fc755751646a7b300ea0af160b`.
+All new executions contain this source identity and their frozen configuration
+hashes. Numerical modules were unchanged between execution and verification.
+
+| Execution | Cases | Settings per case | Returned outputs |
+|---|---:|---:|---:|
+| Synthetic, two calibration and three held-out seeds per condition | 35 | 110 | 3,850 |
+| Waterloo Acq0 / subject 1 and Acq12 / subject 3 | 2 | 29 | 58 |
+
+All returned statuses are `ok`. The two portable reports contain 3,908 outputs.
+The [manifest](../runs/followup_v04_manifest.json) records source/configuration
+hashes, compressed and decoded hashes, and 23 XZ-part hashes. Reassembly retains
+the exact frozen JSON bytes; the local original GZIP and XZ decoded bytes were
+compared for equality. Verify current source and restore the reports with:
+
+```bash
+python scripts/verify_results.py --manifest runs/followup_v04_manifest.json --require-current-code --restore
+```
+
+New tests check PDF-derived threshold equations, coherent Song normalization,
+Lee temporal/spatial covariance denominators, left/right mixture equivalence
+and unequal frozen attribution, representation-independent refitted responses,
+calibration-only operating-point selection, Axis 2 ridge/gain controls and
+batched RF reconstruction identity. Truth-dependent metrics are excluded from
+experimental reports. New finite primary metrics, component closure and archive
+integrity are verified separately.
+
+Equivalent mixture outputs differ by at most 1.36e-12, while normalized frozen
+blood attribution differences reach 0.996. The maximum paired synthetic Axis 2
+local gain is 41.18 originally and 1.0000000000000018 after capping. These are
+implementation/conditioning results, not proof of correct source identification.
+Four PNG/SVG figures were visually inspected. Sixteen displayed experimental
+outputs were regenerated and their powers checked against archived records.
+
+The [results](RESULTS_FOLLOWUP_V04.md) correct the prior preservation claim,
+retain infeasible settings/failure controls, and qualify raw-amplitude AER
+comparisons and the two-subject experimental pilot. See the [PDF audit](PDF_METHOD_AUDIT.md)
+for source-specific assumptions and the [frozen protocol](FOLLOWUP_PROTOCOL_V04.md)
+for calibration/evaluation separation.
+
+CI checks Python 3.10/3.12; local verification uses Python 3.12. Package-content,
+installed-wheel and source-distribution checks are recorded in
+[the v0.3.0 package record](PACKAGING_V03.json). Direct tested dependency versions
+are pinned; a complete transitive-environment lock is not claimed.
+
 ## Separation-fidelity milestone, v0.2.0
 
 22 October 2026: **114 tests pass** locally on Python 3.12. Numerical package
@@ -28,7 +76,7 @@ decoded SHA256 values, counts, frozen configuration hashes and numerical source
 identity. Verify with:
 
 ```bash
-python scripts/verify_results.py --require-current-code
+python scripts/verify_results.py
 ```
 
 The separation-fidelity archive is stored in six numbered parts to keep upload

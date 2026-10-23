@@ -15,6 +15,7 @@ from .axes import motion_packet_filter,multilag_filter,ica_filter
 from .measurements import evaluate,frozen_component_metrics,evaluate_windows,injection_response
 from .svd_literature import randomized_svd_filter,huang_evd_filter,gaussian_local_evd,song_local_filter
 from .core import FilterResult
+from .paper_filters import song_pdf_local_filter,lee_aer_filter
 
 
 def run_filter(iq,spec,tissue_roi=None,views=None,prf_hz=None,view_geometry=None):
@@ -25,7 +26,7 @@ def run_filter(iq,spec,tissue_roi=None,views=None,prf_hz=None,view_geometry=None
             if "prf_hz" in p and not np.isclose(p["prf_hz"],prf_hz,rtol=1e-9,atol=0):
                 raise ValueError("Filter PRF differs from the acquisition revisit rate")
             p.setdefault("prf_hz",prf_hz)
-        if method=="song_local" or p.get("selector") in ("song","temporal_frequency"):
+        if method in ("song_local","song_pdf_local") or p.get("selector") in ("song","song_pdf","temporal_frequency"):
             options=dict(p.get("selector_options",{}))
             if "prf_hz" in options and not np.isclose(options["prf_hz"],prf_hz,rtol=1e-9,atol=0):
                 raise ValueError("Spectral selector PRF differs from the acquisition revisit rate")
@@ -65,6 +66,7 @@ def run_filter(iq,spec,tissue_roi=None,views=None,prf_hz=None,view_geometry=None
               "axis1":motion_packet_filter,"axis2":multilag_filter,"ica":ica_filter,
               "highpass":temporal_highpass,"sliding":sliding_filter,
               "rsvd":randomized_svd_filter,"song_local":song_local_filter,
+              "song_pdf_local":song_pdf_local_filter,"lee_aer":lee_aer_filter,
               "huang_evd":huang_evd_filter,"gaussian_evd":gaussian_local_evd}
     if method not in registry:
         raise ValueError("Unknown IQ method "+method)

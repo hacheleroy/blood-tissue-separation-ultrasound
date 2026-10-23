@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-23",
+  "sources": [
+    {
+      "file": "Adaptive_Spatiotemporal_Filtering_for_Coronary_Ultrafast_Doppler_Angiography.pdf",
+      "sha256": "91ba079d952ed348c2b9e8c774eeb2a2e10f9b6035c5631f0df46ace4385eea8",
+      "source": "user-supplied full PDF; not redistributed",
+      "checked": "methods, equations and implementation appendices"
+    },
+    {
+      "file": "Adaptive_Spatiotemporal_SVD_Clutter_Filtering_for_Ultrafast_Doppler_Imaging_Using_Similarity_of_Spatial_Singular_Vectors.pdf",
+      "sha256": "25fabd8fff812d2968797fdd75fd6deb60077e82343a2d60f058fa3924c50a33",
+      "source": "user-supplied full PDF; not redistributed",
+      "checked": "methods, equations and implementation appendices"
+    },
+    {
+      "file": "Fast_Thresholding_of_SVD_Clutter_Filter_Using_the_Spatial_Similarity_Matrix_and_a_Sum-Table_Algorithm.pdf",
+      "sha256": "cf7ffcd0996ac1bbd8054812340b19b0a21985f36e648ce6ec25f536164f891b",
+      "source": "user-supplied full PDF; not redistributed",
+      "checked": "methods, equations and implementation appendices"
+    },
+    {
+      "file": "Ultrasound_Small_Vessel_Imaging_With_Block-Wise_Adaptive_Local_Clutter_Filtering.pdf",
+      "sha256": "41fc27c5286736eb5dc0b05dc3d0972cbeeb6dbda38097ce490c1a59b15a7f7a",
+      "source": "user-supplied full PDF; not redistributed",
+      "checked": "methods, equations and implementation appendices"
+    },
+    {
+      "url": "https://arxiv.org/html/2610.23099v1",
+      "sha256": "50b13b54f79d84ed36f9581ea4d5700a5661bbac65285a07c28ef9da17a4ebdb",
+      "source": "Lee et al. 2026 arXiv v1; Algorithms 1-2",
+      "checked": "row-wise temporal mean removal; temporal covariance /P; streamed globally centered spatial covariance /(T-1); regularized ZCA"
+    },
+    {
+      "url": "https://www.mathworks.com/matlabcentral/fileexchange/130139-svd_ssm_autoth",
+      "source": "version 1.0.2 public description; package download requires sign-in; public viewer returned no source content",
+      "checked": "corr(abs(U)), two-square objective and rank constraints; independent author sum-table equation checked against supplied 2023 PDF Appendix B",
+      "author_matlab_execution_parity": false
+    }
+  ]
+}

@@ -3,8 +3,10 @@
 ## Common separation objective
 
 For X=B+T+N, estimate a tissue-rejecting filter that preserves blood waveform,
-spatial support, spectrum and temporal/phase information. Primary scores measure
-source fidelity with the mixture-fitted operator frozen. Conventional Doppler,
+spatial support, spectrum and temporal/phase information. Primary follow-up scores
+measure output-to-blood reconstruction and refitted background/injection responses;
+frozen source attribution is representation-dependent and remains a secondary
+diagnostic. Conventional Doppler,
 fUSi, ULM and WSS are downstream endpoints. See [the full fidelity protocol](SEPARATION_FIDELITY.md).
 
 ## Matrix and centering
@@ -76,6 +78,12 @@ uses Chan/Welford merged complex moments and global centering, not separately
 centered packet covariances. It needs two passes to estimate then apply the
 fixed transform. It does not create additional information by changing sides.
 
+The dedicated `lee_aer` wrapper follows the published centered Algorithms 1-2:
+temporal denominator P, spatial denominator T-1. Absolute regularization retains
+the current input units; relative regularization and unit-operator scaling are
+labeled extensions. Identical adaptive outputs do not imply identical frozen
+left/right component attributions. See [the PDF audit](PDF_METHOD_AUDIT.md).
+
 The shipped demo uses 64-frame SVD packets and 256-frame long-SVD/AER windows.
 Use additional matched-window arms to isolate filtering effects from observation
 time. It is an offline benchmark. Report latency and ensemble support separately
@@ -141,6 +149,12 @@ Poorly conditioned mixed modes can amplify blood/noise even when scalar source
 weights lie in [0,1]. The current classifier and reconstruction are research
 prototypes; large distortion must remain visible in benchmark conclusions.
 
+The v0.3.0 follow-up exposes eigenvalue truncation, Tikhonov whitening and a
+separate spectral-norm-ball projection of each local reconstruction map. This
+last option bounds that map's gain; it does not prove stability or correct
+source identification of the entire adaptive, centered, motion-compensated
+pipeline. Unconstrained gain and lag signatures remain recorded.
+
 ## Other baselines and Axis 3
 
 PCP/RPCA solves min ||L||_*+lambda||S||_1, X=L+S with complex soft-thresholding
@@ -191,8 +205,11 @@ grid expands all lower cutoffs including the empty-output endpoint; upper bounds
 only cutoffs 0..8 for speed. Distinct velocity, IQ and WSS oracles can choose
 different settings. Real in-vivo processed flow maps must never enter truth slots.
 
-Primary metrics are frozen blood-IQ distortion, tissue power retention, blood
-retention, spectral total variation, spatial/weak-flow distortion and noise gain.
+The historical v0.2.0 metrics include frozen blood-IQ distortion, tissue power
+retention, blood retention, spectral total variation, spatial/weak-flow distortion
+and noise gain. These are secondary, representation-dependent diagnostics in
+v0.3.0; the primary actual-output and refitted-response endpoints are described
+at the start of this document and in the follow-up protocol.
 The SAME transform fitted to the mixture is applied to each known component.
 Axes 1–2 replay their motion, confidence/reset schedule and component-wise pooled
 mean; STAP/view-SVD use actual view-level truth. Independently refitting on

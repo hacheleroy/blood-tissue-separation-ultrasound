@@ -1,11 +1,18 @@
 # Tissue rejection and blood-information preservation
 
+Interpretation update, v0.3.0: the frozen-component quantities below depend on
+the chosen fitted operator. Equal adaptive SVD/AER outputs can have different
+left/right frozen attributions. In particular, uncentered Axis 1 without memory
+equals local SVD at matching support. The numerical v0.2.0 records are retained,
+but their low isolated-blood distortion does not establish a superior filter.
+See [the equivalence correction and new primary endpoints](FOLLOWUP_PROTOCOL_V04.md).
+
 The common upstream objective is to remove tissue while preserving the blood
 signal's spatial, temporal, spectral and phase information. Conventional Doppler,
 fUSi, ULM and WSS are downstream tests. Each application may also require its own
 subsequent processing; blood physiology should remain available at this stage.
 
-## Primary measurements
+## Historical frozen-operator measurements
 
 Write the input as \(X=B+T+N\). Fit the adaptive filter on this mixture, then
 freeze its motion estimates, confidence/reset schedule, bases and component
@@ -79,7 +86,7 @@ D_\alpha=\frac{F(T+N+\alpha B)-F(T+N)}{\alpha},
 This measures an incremental response, not an additive attribution of \(F(X)\).
 Each background/injected fit retains its convergence diagnostics.
 
-## Prospective Axes 1–2 study
+## Historical v0.2.0 Axes 1–2 study
 
 [Configuration](../configs/separation_fidelity.json): 30 cases, 39 settings,
 three seeds (17, 29, 43). Five statistical-IQ conditions cover slow spectral

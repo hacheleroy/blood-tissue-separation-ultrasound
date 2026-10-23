@@ -164,17 +164,28 @@ def component_weights(sources,mixing,lags,phase_width=0.10,coherence_floor=0.1):
     dc_tissue = np.exp(-(phase/phase_width)**2)*coh*np.sqrt(extent)
     flow_coherence = np.clip((coh-coherence_floor)/(1-coherence_floor),0,1)
     weights = np.clip((1-dc_tissue)*flow_coherence,0,1)
+    separation=np.linalg.norm(corr[:,None,:]-corr[None,:,:],axis=2)/np.sqrt(len(lags))
+    np.fill_diagonal(separation,np.inf)
     return weights,{"blood_weights":weights.tolist(),"phase_rad_per_frame":phase.tolist(),
+                    "normalized_lag_signatures_real":corr.real.tolist(),
+                    "normalized_lag_signatures_imag":corr.imag.tolist(),
+                    "minimum_pairwise_lag_signature_distance":float(separation.min()) if len(corr)>1 else None,
                     "lag1_coherence":coh.tolist(),"spatial_extent":extent.tolist()}
 
 
-def _separate(x,covs,lags,rank=8,epsilon_rel=1e-6,ica=False,seed=0,ica_options=None):
+def _separate(x,covs,lags,rank=8,epsilon_rel=1e-6,ica=False,seed=0,ica_options=None,
+              whitening_regularization_rel=0.,operator_gain_cap=None):
+    if (not np.isfinite([epsilon_rel,whitening_regularization_rel]).all() or
+            not 0<=epsilon_rel<1 or whitening_regularization_rel<0 or
+            (operator_gain_cap is not None and (not np.isfinite(operator_gain_cap) or operator_gain_cap<=0))):
+        raise ValueError("Invalid whitening threshold, regularization or operator gain cap")
     c0 = (covs[0]+covs[0].conj().T)/2
     ev,u = linalg.eigh(c0)
     idx = np.flatnonzero(ev>max(ev[-1],1e-30)*epsilon_rel)[-rank:]
     if not len(idx):
         return np.zeros_like(x),{"rank":0},np.zeros((len(x),len(x)),complex)
-    b = u[:,idx]/np.sqrt(ev[idx])[None,:]
+    ridge=whitening_regularization_rel*max(ev[-1],1e-30)
+    b = u[:,idx]/np.sqrt(ev[idx]+ridge)[None,:]
     z = b.conj().T@x
     if ica:
         q,info = complex_fastica_rotation(z,seed=seed,**(ica_options or {}))
@@ -189,8 +200,16 @@ def _separate(x,covs,lags,rank=8,epsilon_rel=1e-6,ica=False,seed=0,ica_options=N
     mixing = np.linalg.pinv(demix)
     weights,score = component_weights(sources,mixing,lags)
     operator=(mixing*weights)@demix
+    gain=float(linalg.svdvals(operator)[0])
+    if operator_gain_cap is not None and gain>operator_gain_cap:
+        left,s,right=linalg.svd(operator,full_matrices=False)
+        operator=(left*np.minimum(s,operator_gain_cap))@right
     return operator@x,{"rank":len(idx),**info,**score,
         "whitening_eigenvalue_condition":float(ev[idx[-1]]/ev[idx[0]]),
+        "whitening_regularization_absolute":float(ridge),
+        "whitening_residual":float(np.linalg.norm(b.conj().T@c0@b-np.eye(len(idx)))/np.sqrt(len(idx))),
+        "unconstrained_operator_gain_max":gain,"operator_gain_cap":operator_gain_cap,
+        "operator_projection":"spectral-norm ball" if operator_gain_cap is not None else "none",
         "operator_gain_max":float(linalg.svdvals(operator)[0])},operator
 
 
@@ -230,7 +249,8 @@ def _packet_pipeline(iq,kind,packet=64,centered=False,patch_shape=(8,8),stride=(
                      tissue_roi=None,rigid=False,rho=0.9,q_min=0.3,rank=8,
                      discard=1,lags=(1,2,4,8,16),use_memory=True,seed=0,
                      ica_options=None,ica_nonconvergence="svd_fallback",
-                     phase_compensation=True,motion_phase_error_rad_per_frame=0.,max_operator_bytes=512*1024**2):
+                     phase_compensation=True,motion_phase_error_rad_per_frame=0.,max_operator_bytes=512*1024**2,
+                     epsilon_rel=1e-6,whitening_regularization_rel=0.,operator_gain_cap=None):
     if ica_nonconvergence not in ("svd_fallback","retain","error"):
         raise ValueError("Unknown ICA nonconvergence policy")
     if (not 0<=q_min<=1 or rank<1 or int(rank)!=rank or
@@ -287,7 +307,9 @@ def _packet_pipeline(iq,kind,packet=64,centered=False,patch_shape=(8,8),stride=(
                 out[:,ts] = operator@x
                 info = {"discard":discard}
             else:
-                out[:,ts],info,operator = _separate(x,covs,lags,rank,ica=kind=="ica",seed=seed,ica_options=ica_options)
+                out[:,ts],info,operator = _separate(x,covs,lags,rank,epsilon_rel,ica=kind=="ica",seed=seed,
+                    ica_options=ica_options,whitening_regularization_rel=whitening_regularization_rel,
+                    operator_gain_cap=operator_gain_cap)
                 if kind=="ica" and not info.get("ica_converged",True):
                     if ica_nonconvergence=="error":
                         raise ValueError("ICA did not converge under the frozen stopping rule")
@@ -340,6 +362,7 @@ def _packet_pipeline(iq,kind,packet=64,centered=False,patch_shape=(8,8),stride=(
         "valid_fraction":float(valid.mean()),"lab_frame_phase_restored":True,
         "registration":"integer rigid 2D" if rigid else "bulk IQ phase only",
         "phase_compensation":phase_compensation,
+        "uncentered_axis1_global_phase_invariant":kind=="svd_memory" and not centered,
         "frozen_operator_bytes_estimate":operator_bytes,
         "motion_phase_error_rad_per_frame":float(motion_phase_error_rad_per_frame),
         "component_classifier":"data-only heuristic" if kind != "svd_memory" else None,

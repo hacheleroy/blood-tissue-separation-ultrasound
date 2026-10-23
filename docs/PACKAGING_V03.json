@@ -1,0 +1,27 @@
+{
+  "python": "3.12.14",
+  "wheel_import_outside_source_tree": true,
+  "numerical_code_sha256": "b249dda5158ec26f472e4ba36e09b5c7cadd79fc755751646a7b300ea0af160b",
+  "installed_wheel_smoke_status": "ok",
+  "installed_wheel_smoke_methods": [
+    "svd",
+    "lee_aer",
+    "song_pdf_local",
+    "axis2_capped"
+  ],
+  "source_distribution_tests_passed": 134,
+  "artifact_manifest": [
+    {
+      "file": "blood_tissue_benchmark-0.3.0-py3-none-any.whl",
+      "bytes": 75396,
+      "sha256": "1e5505148158165596c08af124c7e3c4ee2ab90f478fee9a82358578341f3cd5",
+      "entries": 24
+    },
+    {
+      "file": "blood_tissue_benchmark-0.3.0.tar.gz",
+      "bytes": 2181212,
+      "sha256": "104a3f324c260483cb5fb62c70f3e6021588f347edae68823267493d8755c51a",
+      "entries": 113
+    }
+  ]
+}

@@ -40,3 +40,10 @@ runs/openhrf_waterloo_pilot_v03/results.json
 runs/integration_fidelity_v03/results.json
 # Reassembled from the tracked numbered archive parts by verify_results.py --restore.
 runs/separation_fidelity_v03/results.json.gz
+# Portable follow-up aggregates are tracked; these are resumable/generated duplicates.
+runs/fidelity_followup_v04/checkpoint.json.gz
+runs/fidelity_followup_v04/results.json.gz
+runs/openhrf_followup_v04/results.json.gz
+runs/fidelity_followup_v04/results.json.xz
+runs/openhrf_followup_v04/results.json.xz
+runs/openhrf_followup_v04/*/results.json

@@ -14,7 +14,8 @@ def verify(directory):
     for path in wheels+sources:
         if path.suffix==".whl":
             with zipfile.ZipFile(path) as f:names=f.namelist()
-            required=["btbench/measurements.py","btbench/axes.py","btbench/experimental.py","btbench/separation_experiment.py"]
+            required=["btbench/measurements.py","btbench/axes.py","btbench/experimental.py","btbench/separation_experiment.py",
+                      "btbench/paper_filters.py","btbench/followup_experiment.py"]
         else:
             with tarfile.open(path) as f:
                 members=f.getmembers()
@@ -22,7 +23,8 @@ def verify(directory):
                 names=[m.name for m in members]
             root=names[0].split('/')[0]+"/"
             required=[root+p for p in ["src/btbench/core.py","tests/test_frozen.py","tests/test_multiview_io.py",
-                "tests/test_separation_study.py","configs/separation_fidelity.json","scripts/verify_artifacts.py"]]
+                "tests/test_separation_study.py","configs/separation_fidelity.json","scripts/verify_artifacts.py",
+                "tests/test_attribution_equivalence.py","configs/fidelity_followup_v04.json"]]
         for name in names:
             p=PurePosixPath(name)
             if p.is_absolute() or ".." in p.parts:raise ValueError("Unsafe archive path: "+name)

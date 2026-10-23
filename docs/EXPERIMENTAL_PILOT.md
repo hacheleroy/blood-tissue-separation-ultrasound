@@ -1,5 +1,8 @@
 # First bounded Open H-RF processing pilot
 
+Historical v0.2.0 pilot. The [v0.3.0 follow-up](RESULTS_FOLLOWUP_V04.md) adds
+two subjects and longer disjoint calibration/evaluation segments.
+
 This is an engineering check on experimental channel data. It has no independent
 blood/tissue source truth, no experimental oracle, and no separation-accuracy or
 physiological conclusion. The target is a traceable unfiltered complex-IQ path

@@ -1,0 +1,711 @@
+{
+  "version": 3,
+  "blas_threads": 1,
+  "seeds": [
+    17,
+    29,
+    43
+  ],
+  "generator": {
+    "n_frames": 96,
+    "shape": [
+      8,
+      13
+    ],
+    "prf_hz": 1000.0,
+    "f0_hz": 5000000.0
+  },
+  "statistical_conditions": [
+    {
+      "label": "slow_overlap",
+      "umax_mps": 0.003,
+      "tissue_velocity_mps": 0.002,
+      "tissue_acceleration_mps2": 0.0,
+      "clutter_db": 40.0,
+      "decorrelation": 0.995
+    },
+    {
+      "label": "fast_accelerating",
+      "umax_mps": 0.025,
+      "tissue_acceleration_mps2": 0.03,
+      "clutter_db": 30.0
+    },
+    {
+      "label": "texture_jump",
+      "umax_mps": 0.01,
+      "motion_event": true,
+      "clutter_db": 30.0
+    },
+    {
+      "label": "weak_decorrelating",
+      "umax_mps": 0.003,
+      "snr_db": 0.0,
+      "decorrelation": 0.8,
+      "clutter_db": 40.0
+    },
+    {
+      "label": "opposed_flow",
+      "umax_mps": -0.006,
+      "tissue_velocity_mps": 0.002,
+      "tissue_acceleration_mps2": 0.0
+    }
+  ],
+  "scatterer_conditions": [
+    {
+      "label": "psf_stationary_tissue",
+      "umax_mps": 0.02,
+      "tissue_velocity_mps": 0.0
+    },
+    {
+      "label": "psf_bulk_motion",
+      "umax_mps": 0.006,
+      "tissue_velocity_mps": 0.002
+    },
+    {
+      "label": "psf_deforming_tissue",
+      "umax_mps": 0.003,
+      "tissue_velocity_mps": 0.001,
+      "strain_motion_m": 8e-05,
+      "lateral_motion_m": 6e-05
+    },
+    {
+      "label": "psf_opposed_flow",
+      "umax_mps": -0.006,
+      "tissue_velocity_mps": 0.002
+    },
+    {
+      "label": "psf_equal_static",
+      "umax_mps": 0.0,
+      "tissue_velocity_mps": 0.0,
+      "uniform_flow": true
+    }
+  ],
+  "methods": [
+    {
+      "id": "unfiltered",
+      "method": "identity"
+    },
+    {
+      "id": "svd_fixed_uncentered",
+      "method": "svd",
+      "params": {
+        "centered": false,
+        "window": 32,
+        "selector": "fixed",
+        "discard": 1
+      }
+    },
+    {
+      "id": "svd_fixed_centered",
+      "method": "svd",
+      "params": {
+        "centered": true,
+        "window": 32,
+        "selector": "fixed",
+        "discard": 1
+      }
+    },
+    {
+      "id": "svd_baranger_uncentered",
+      "method": "svd",
+      "params": {
+        "centered": false,
+        "window": 32,
+        "selector": "baranger",
+        "discard": 1
+      }
+    },
+    {
+      "id": "svd_baranger_centered",
+      "method": "svd",
+      "params": {
+        "centered": true,
+        "window": 32,
+        "selector": "baranger",
+        "discard": 1
+      }
+    },
+    {
+      "id": "svd_local_uncentered",
+      "method": "local",
+      "params": {
+        "method": "svd",
+        "centered": false,
+        "patch_shape": [
+          6,
+          6
+        ],
+        "stride": [
+          3,
+          3
+        ],
+        "window": 32,
+        "discard": 1
+      }
+    },
+    {
+      "id": "svd_local_centered",
+      "method": "local",
+      "params": {
+        "method": "svd",
+        "centered": true,
+        "patch_shape": [
+          6,
+          6
+        ],
+        "stride": [
+          3,
+          3
+        ],
+        "window": 32,
+        "discard": 1
+      }
+    },
+    {
+      "id": "svd_long_uncentered",
+      "method": "sliding",
+      "params": {
+        "method": "svd",
+        "centered": false,
+        "window": 96,
+        "hop": 32,
+        "discard": 1
+      }
+    },
+    {
+      "id": "svd_long_centered",
+      "method": "sliding",
+      "params": {
+        "method": "svd",
+        "centered": true,
+        "window": 96,
+        "hop": 32,
+        "discard": 1
+      }
+    },
+    {
+      "id": "butterworth_hp_0.01_prf",
+      "method": "highpass",
+      "params": {
+        "cutoff_hz": 10.0,
+        "prf_hz": 1000.0,
+        "order": 3,
+        "phase_mode": "zero_phase"
+      }
+    },
+    {
+      "id": "butterworth_hp_0.03_prf",
+      "method": "highpass",
+      "params": {
+        "cutoff_hz": 30.0,
+        "prf_hz": 1000.0,
+        "order": 3,
+        "phase_mode": "zero_phase"
+      }
+    },
+    {
+      "id": "butterworth_hp_0.08_prf",
+      "method": "highpass",
+      "params": {
+        "cutoff_hz": 80.0,
+        "prf_hz": 1000.0,
+        "order": 3,
+        "phase_mode": "zero_phase"
+      }
+    },
+    {
+      "id": "aer_temporal_alpha0.5_uncentered",
+      "method": "aer",
+      "params": {
+        "domain": "temporal",
+        "centered": false,
+        "epsilon_rel": 0.001,
+        "alpha": 0.5,
+        "window": 96
+      }
+    },
+    {
+      "id": "aer_temporal_alpha0.25_uncentered",
+      "method": "aer",
+      "params": {
+        "domain": "temporal",
+        "centered": false,
+        "epsilon_rel": 0.001,
+        "alpha": 0.25,
+        "window": 96
+      }
+    },
+    {
+      "id": "aer_temporal_alpha0.5_centered",
+      "method": "aer",
+      "params": {
+        "domain": "temporal",
+        "centered": true,
+        "epsilon_rel": 0.001,
+        "alpha": 0.5,
+        "window": 96
+      }
+    },
+    {
+      "id": "aer_temporal_alpha0.25_centered",
+      "method": "aer",
+      "params": {
+        "domain": "temporal",
+        "centered": true,
+        "epsilon_rel": 0.001,
+        "alpha": 0.25,
+        "window": 96
+      }
+    },
+    {
+      "id": "aer_spatial_alpha0.5_uncentered",
+      "method": "aer",
+      "params": {
+        "domain": "spatial",
+        "centered": false,
+        "epsilon_rel": 0.001,
+        "alpha": 0.5,
+        "window": 96
+      }
+    },
+    {
+      "id": "aer_spatial_alpha0.5_centered",
+      "method": "aer",
+      "params": {
+        "domain": "spatial",
+        "centered": true,
+        "epsilon_rel": 0.001,
+        "alpha": 0.5,
+        "window": 96
+      }
+    },
+    {
+      "id": "axis1_uncentered",
+      "method": "axis1",
+      "params": {
+        "packet": 32,
+        "centered": false,
+        "patch_shape": [
+          6,
+          6
+        ],
+        "stride": [
+          3,
+          3
+        ]
+      }
+    },
+    {
+      "id": "axis1_centered",
+      "method": "axis1",
+      "params": {
+        "packet": 32,
+        "centered": true,
+        "patch_shape": [
+          6,
+          6
+        ],
+        "stride": [
+          3,
+          3
+        ]
+      }
+    },
+    {
+      "id": "axis1_rigid_uncentered",
+      "method": "axis1",
+      "params": {
+        "packet": 32,
+        "centered": false,
+        "patch_shape": [
+          6,
+          6
+        ],
+        "stride": [
+          3,
+          3
+        ],
+        "rigid": true
+      }
+    },
+    {
+      "id": "axis1_rigid_centered",
+      "method": "axis1",
+      "params": {
+        "packet": 32,
+        "centered": true,
+        "patch_shape": [
+          6,
+          6
+        ],
+        "stride": [
+          3,
+          3
+        ],
+        "rigid": true
+      }
+    },
+    {
+      "id": "axis2_uncentered",
+      "method": "axis2",
+      "params": {
+        "packet": 32,
+        "centered": false,
+        "patch_shape": [
+          6,
+          6
+        ],
+        "stride": [
+          3,
+          3
+        ],
+        "rank": 6,
+        "lags": [
+          1,
+          2,
+          4,
+          8,
+          16
+        ],
+        "use_memory": false
+      }
+    },
+    {
+      "id": "axis2_centered",
+      "method": "axis2",
+      "params": {
+        "packet": 32,
+        "centered": true,
+        "patch_shape": [
+          6,
+          6
+        ],
+        "stride": [
+          3,
+          3
+        ],
+        "rank": 6,
+        "lags": [
+          1,
+          2,
+          4,
+          8,
+          16
+        ],
+        "use_memory": false
+      }
+    },
+    {
+      "id": "axis2_with_memory_uncentered",
+      "method": "axis2",
+      "params": {
+        "packet": 32,
+        "centered": false,
+        "patch_shape": [
+          6,
+          6
+        ],
+        "stride": [
+          3,
+          3
+        ],
+        "rank": 6,
+        "lags": [
+          1,
+          2,
+          4,
+          8,
+          16
+        ],
+        "use_memory": true
+      }
+    },
+    {
+      "id": "axis2_with_memory_centered",
+      "method": "axis2",
+      "params": {
+        "packet": 32,
+        "centered": true,
+        "patch_shape": [
+          6,
+          6
+        ],
+        "stride": [
+          3,
+          3
+        ],
+        "rank": 6,
+        "lags": [
+          1,
+          2,
+          4,
+          8,
+          16
+        ],
+        "use_memory": true
+      }
+    },
+    {
+      "id": "ica_circular_complex",
+      "method": "ica",
+      "params": {
+        "packet": 32,
+        "patch_shape": [
+          6,
+          6
+        ],
+        "stride": [
+          3,
+          3
+        ],
+        "rank": 6,
+        "centered": true,
+        "ica_nonconvergence": "svd_fallback"
+      }
+    },
+    {
+      "id": "rpca_pcp",
+      "method": "rpca",
+      "params": {}
+    },
+    {
+      "id": "ica_uncentered_retained_300",
+      "method": "ica",
+      "params": {
+        "packet": 32,
+        "patch_shape": [
+          6,
+          6
+        ],
+        "stride": [
+          3,
+          3
+        ],
+        "rank": 6,
+        "centered": false,
+        "ica_nonconvergence": "retain"
+      }
+    },
+    {
+      "id": "ica_centered_retained_300",
+      "method": "ica",
+      "params": {
+        "packet": 32,
+        "patch_shape": [
+          6,
+          6
+        ],
+        "stride": [
+          3,
+          3
+        ],
+        "rank": 6,
+        "centered": true,
+        "ica_nonconvergence": "retain"
+      }
+    },
+    {
+      "id": "ica_centered_retained_1500",
+      "method": "ica",
+      "params": {
+        "packet": 32,
+        "patch_shape": [
+          6,
+          6
+        ],
+        "stride": [
+          3,
+          3
+        ],
+        "rank": 6,
+        "centered": true,
+        "ica_nonconvergence": "retain",
+        "ica_options": {
+          "max_iter": 1500
+        }
+      }
+    },
+    {
+      "id": "axis1_no_memory",
+      "method": "axis1",
+      "params": {
+        "packet": 32,
+        "centered": false,
+        "patch_shape": [
+          6,
+          6
+        ],
+        "stride": [
+          3,
+          3
+        ],
+        "rho": 0.0
+      }
+    },
+    {
+      "id": "axis1_no_phase",
+      "method": "axis1",
+      "params": {
+        "packet": 32,
+        "centered": false,
+        "patch_shape": [
+          6,
+          6
+        ],
+        "stride": [
+          3,
+          3
+        ],
+        "phase_compensation": false
+      }
+    },
+    {
+      "id": "axis2_no_phase",
+      "method": "axis2",
+      "params": {
+        "packet": 32,
+        "centered": false,
+        "patch_shape": [
+          6,
+          6
+        ],
+        "stride": [
+          3,
+          3
+        ],
+        "rank": 6,
+        "lags": [
+          1,
+          2,
+          4,
+          8,
+          16
+        ],
+        "use_memory": true,
+        "phase_compensation": false
+      }
+    },
+    {
+      "id": "axis1_phase_error",
+      "method": "axis1",
+      "params": {
+        "packet": 32,
+        "centered": false,
+        "patch_shape": [
+          6,
+          6
+        ],
+        "stride": [
+          3,
+          3
+        ],
+        "motion_phase_error_rad_per_frame": 0.02
+      }
+    },
+    {
+      "id": "axis2_phase_error",
+      "method": "axis2",
+      "params": {
+        "packet": 32,
+        "centered": false,
+        "patch_shape": [
+          6,
+          6
+        ],
+        "stride": [
+          3,
+          3
+        ],
+        "rank": 6,
+        "lags": [
+          1,
+          2,
+          4,
+          8,
+          16
+        ],
+        "use_memory": true,
+        "motion_phase_error_rad_per_frame": 0.02
+      }
+    },
+    {
+      "id": "oracle_svd_iq",
+      "method": "svd",
+      "params": {
+        "window": 32
+      },
+      "oracle_grid": {
+        "discard": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          8,
+          16,
+          32
+        ]
+      },
+      "objective": "blood_iq_nrmse",
+      "constraints": {}
+    },
+    {
+      "id": "oracle_svd_distortion_025",
+      "method": "svd",
+      "params": {
+        "window": 32
+      },
+      "oracle_grid": {
+        "discard": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          8,
+          16,
+          32
+        ]
+      },
+      "objective": "frozen_tissue_power_retention",
+      "constraints": {
+        "frozen_blood_iq_nrmse": {
+          "max": 0.25
+        }
+      }
+    },
+    {
+      "id": "oracle_svd_distortion_050",
+      "method": "svd",
+      "params": {
+        "window": 32
+      },
+      "oracle_grid": {
+        "discard": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          8,
+          16,
+          32
+        ]
+      },
+      "objective": "frozen_tissue_power_retention",
+      "constraints": {
+        "frozen_blood_iq_nrmse": {
+          "max": 0.5
+        }
+      }
+    }
+  ],
+  "measurement_window": 32,
+  "measurement_hop": 32,
+  "injection_amplitudes": [
+    0.1,
+    1.0
+  ],
+  "filter_roi": "estimated from mixture; evaluation flow mask is never passed to filters",
+  "scope": "statistical IQ and linear 2-D PSF transport; no RF, RBC or fluid-structure validation"
+}

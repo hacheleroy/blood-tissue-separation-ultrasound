@@ -120,3 +120,13 @@ assigned to such outputs without a separate velocity estimator.
   3 October 2026, supplied six-page note. The original attachment is unchanged.
 
 No third-party source code or full article PDF is redistributed in this repository.
+
+
+## v0.2.0 full-text follow-up
+
+A fresh primary-source search and retrieval attempt on 22 October 2026 did not
+remove the Song/Maresca verification limits. Song's PubMed record links to the
+publisher and supplies the original abstract; no accessible original full text
+was recovered. The Maresca HAL PDF returned HTTP 403 again; IEEE PDF retrieval
+returned HTTP 418. The pending source-specific implementations remain labeled.
+No generic adaptive/energy rule has been renamed as Maresca's method.

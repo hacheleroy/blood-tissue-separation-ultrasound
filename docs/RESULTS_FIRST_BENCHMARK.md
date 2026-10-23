@@ -1,5 +1,7 @@
 # First benchmark findings
 
+Historical initial results. Current source-fidelity measurements and executed studies are in [SEPARATION_FIDELITY.md](SEPARATION_FIDELITY.md) and [VALIDATION.md](VALIDATION.md).
+
 The verified study contains 24 statistical-IQ SVD/EVD cases and 42 angular-IQ
 STAP cases. Parameters were frozen before execution. The source audit separates
 equation-level implementations, method-family variants and provisional arms.

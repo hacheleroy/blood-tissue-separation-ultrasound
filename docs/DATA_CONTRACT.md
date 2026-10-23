@@ -57,7 +57,7 @@ Prefer a provider/zea reconstruction that preserves IQ before envelope/log
 processing and before the provider's existing wall filter. Their B-mode example
 alone does not establish quantitative phase accuracy.
 
-The CPU reference example takes an explicit geometry JSON with:
+The CPU reference adapter `export_openhrf_rf_window` takes an explicit geometry JSON with:
 
 - `frames_start_stop`: bounded contiguous range, e.g. [0,64].
 - `transmit_indices`: selected stored plane-wave events.
@@ -66,7 +66,9 @@ The CPU reference example takes an explicit geometry JSON with:
 - `initial_times_s`: A/D start time for each event.
 - `tx_reference_times_s`, optional `tx_origins_zx_m`: the verified far-field Tx
   wavefront time origin satisfying the equation in `beamform.py`.
-- `revisit_prf_hz`, `frame_times_s`: same-view slow-time timing, not pulse PRF.
+- Optional `revisit_prf_hz`, `frame_times_s`: checked against recorded event intervals.
+  The adapter derives same-view revisit timing and constant view offsets from
+  `scan/time_to_next_transmit`; it rejects gaps/varying schedules.
 - `phase_sign`, optional `f_number`, `max_raw_bytes`.
 - `time_reference_verified=true`, `full_receive_aperture_verified=true`.
 
@@ -98,3 +100,28 @@ same arguments under `params` and requires `Acquisition.iq_views` plus a matchin
 an independently measured/estimated nuisance parameter; truth-assisted steering
 must be labeled explicitly as an oracle study. Significant tissue deformation,
 strong aberration and unknown channel gains violate this initial model.
+
+
+## Embedded multi-view acquisition
+
+RF export embeds all complex views, with `iq = iq_views.mean(axis=1)`, and stores
+`tx_angles_rad`, `rx_angles_rad`, `view_offsets_s` and `timestamps_s`. The loader
+restores these arrays directly; a sidecar is no longer needed. The standard STAP
+runner derives physical frequencies, geometry and absolute packet origin from
+these fields and rejects mismatched declared settings.
+
+Independent simulated view components can be supplied as `blood_views_true` and
+`tissue_views_true`, together with their coherent means in `blood_true` and
+`tissue_true`. Their dimensions and mean consistency are checked. Those fields
+are evaluation-only. A scalar/compounded component cannot substitute for its
+unknown angular distribution in STAP diagnostics.
+
+The `write-config` CLI accepts `--prf-hz`, `--packet` and `--long-window`:
+
+```bash
+btbench write-config configs/my_3khz.json --prf-hz 3000 --packet 32 --long-window 96
+```
+
+The [bounded experimental pilot](EXPERIMENTAL_PILOT.md) preserves disjoint
+calibration/evaluation packets and their clock origin. It removes every source
+truth field, including any that may have accompanied an input simulation.

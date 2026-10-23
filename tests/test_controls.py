@@ -32,7 +32,7 @@ def test_overlapping_stap_constraints_rejected():
 def test_exhaustive_lower_cutoff_grid():
     a=poiseuille(n_frames=20,shape=(3,4))
     _,d=oracle(a,{"method":"svd","params":{}},{"discard":"all"})
-    assert len(d["curve"])==12
+    assert len(d["curve"])==13  # includes the empty-output endpoint
 
 
 def test_svd_upper_cutoff_is_real_control():

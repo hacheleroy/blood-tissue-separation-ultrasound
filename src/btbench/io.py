@@ -8,7 +8,8 @@ def save_acquisition(path,acquisition):
     path=Path(path);path.parent.mkdir(parents=True,exist_ok=True)
     a=acquisition
     arrays={k:getattr(a,k) for k in ("iq","iq_views","timestamps_s","z_m","x_m","tissue_roi","flow_mask",
-        "near_wall_mask","blood_true","tissue_true","velocity_true_mps") if getattr(a,k) is not None}
+        "near_wall_mask","blood_true","tissue_true","velocity_true_mps","tx_angles_rad","rx_angles_rad",
+        "view_offsets_s","blood_views_true","tissue_views_true") if getattr(a,k) is not None}
     meta={k:getattr(a,k) for k in ("prf_hz","f0_hz","sound_speed_mps","phase_sign","wall","metadata")}
     np.savez_compressed(path,**arrays,metadata_json=np.array(json.dumps(meta)))
 
@@ -19,12 +20,17 @@ def load_acquisition(path):
         return Acquisition(**{k:f[k] for k in f.files if k!="metadata_json"},**meta)
 
 
-def _open_h5(path):
+def _open_h5(path,block_size=256*1024):
     import h5py
+    try:
+        import hdf5plugin  # registers provider Blosc filters, including metadata arrays
+    except ImportError:
+        pass  # uncompressed files and metadata-only inspection still work
     if str(path).startswith(("https://","http://")):
         import fsspec
         # HTTPFile uses range reads; it raises if the server cannot seek.
-        stream=fsspec.open(path,"rb",block_size=256*1024,cache_type="blockcache",
+        stream=fsspec.open(path,"rb",block_size=block_size,cache_type="blockcache",
+                          cache_options={"maxblocks":16},
                           client_kwargs={"trust_env":True}).open()
         return h5py.File(stream,"r")
     return h5py.File(path,"r")
@@ -69,3 +75,94 @@ def export_h5_iq(source,iq_key,output,metadata,time_axis=0,start=0,stop=None):
                   "independent_truth_available":False},**metadata)
     save_acquisition(output,a)
     return a
+
+
+def selected_view_timing(intervals_s,transmit_indices,start=0,stop=None):
+    """Recover absolute event times from recorded sequential TX intervals.
+
+    Every selected view must have a constant offset and uniform revisit rate.
+    Bursts/gaps and varying schedules must be split before this adapter is used.
+    """
+    dt=np.asarray(intervals_s,float)
+    tx=np.asarray(transmit_indices,int)
+    stop=len(dt) if stop is None else stop
+    if (dt.ndim!=2 or not 0<=start<stop<=len(dt) or stop-start<3 or
+            tx.ndim!=1 or not len(tx) or len(set(tx))!=len(tx) or np.any(tx<0) or np.any(tx>=dt.shape[1])):
+        raise ValueError("Invalid frame range or transmit selection")
+    flat=dt[:stop].ravel()
+    if not np.isfinite(flat).all() or np.any(flat[:-1]<=0):
+        raise ValueError("Transmit intervals must be finite and positive")
+    events=np.r_[0.,np.cumsum(flat[:-1])].reshape(stop,dt.shape[1])[start:stop,tx]
+    times=events[:,0]
+    step=np.mean(np.diff(times))
+    offsets=events-times[:,None]
+    if (not np.allclose(np.diff(events,axis=0),step,rtol=1e-4,atol=1e-9) or
+            not np.allclose(offsets,offsets[:1],rtol=1e-4,atol=1e-9)):
+        raise ValueError("Gapped/nonuniform view timing: split contiguous acquisition segments")
+    return times,offsets[0],float(1/step)
+
+
+def export_openhrf_rf_window(source,geometry,output):
+    """Bounded real-RF DAS export with all views embedded in the acquisition.
+
+    Geometry is an explicit verified far-field plane-wave contract. Hardware
+    gain and complex phases are preserved; no wall filtering, normalization,
+    truth-based calibration or de-aliasing is applied.
+    """
+    from .beamform import plane_wave_das
+    g=dict(geometry)
+    if not g.get("time_reference_verified") or not g.get("full_receive_aperture_verified"):
+        raise ValueError("Verify transmit time reference and simultaneous receive aperture")
+    start,stop=g["frames_start_stop"]
+    if int(start)!=start or int(stop)!=stop or not 0<=start<stop or not 3<=stop-start<=2048:
+        raise ValueError("RF adapter requires 3..2048 contiguous frames")
+    tx=np.asarray(g["transmit_indices"],int)
+    if tx.ndim!=1 or not len(tx) or len(set(tx))!=len(tx):raise ValueError("Select distinct transmit indices")
+    root=g.get("root","").strip("/")
+    def key(s):return root+"/"+s if root else s
+    with _open_h5(source,block_size=g.get("http_block_bytes",4*1024**2)) as f:
+        ds=f[key("data/raw_data")]
+        if ds.ndim!=5 or ds.shape[-1]!=1 or ds.dtype.kind not in "fiu":
+            raise ValueError("Need real RF (time,transmit,sample,element,1); DDC IQ needs a separate phase model")
+        if stop>len(ds) or np.any(tx<0) or np.any(tx>=ds.shape[1]):raise ValueError("RF selection exceeds stored dimensions")
+        # Waterloo chunks contain all transmits; read/decompress each frame once.
+        raw_bytes=(stop-start)*np.prod(ds.shape[1:])*ds.dtype.itemsize
+        if raw_bytes>g.get("max_raw_bytes",512*1024**2):
+            raise MemoryError("Decoded RF window exceeds memory budget")
+        dt=f[key("scan/time_to_next_transmit")][:stop]
+        times,offsets,prf=selected_view_timing(dt,tx,start,stop)
+        if "revisit_prf_hz" in g and not np.isclose(prf,g["revisit_prf_hz"],rtol=1e-4):
+            raise ValueError("Declared PRF disagrees with recorded event timing")
+        if "frame_times_s" in g and not np.allclose(times,g["frame_times_s"],rtol=1e-6,atol=1e-9):
+            raise ValueError("Declared frame times disagree with recorded event timing")
+        for field,h5name in (("fs_hz","sampling_frequency"),("f0_hz","center_frequency"),("sound_speed_mps","sound_speed")):
+            value=float(f[key("scan/"+h5name)][()])
+            if field in g and not np.isclose(g[field],value,rtol=1e-5):
+                raise ValueError(f"Declared {field} disagrees with stored scan metadata")
+            g[field]=value
+        angles=np.asarray(f[key("scan/polar_angles")][()])[tx]
+        if not np.allclose(angles,g["tx_angles_rad"],atol=1e-6):
+            raise ValueError("Declared transmit angles disagree with stored scan metadata")
+        initial=np.asarray(f[key("scan/initial_times")][()])[tx]
+        if not np.allclose(initial,g["initial_times_s"],rtol=1e-5,atol=.1/g["fs_hz"]):
+            raise ValueError("Declared A/D start time disagrees with stored metadata")
+        elements=np.asarray(f["probe/probe_geometry"][()])[:,[2,0]]
+        if elements.shape!=(ds.shape[3],2):raise ValueError("Receive geometry does not match channels")
+        raw=np.asarray(ds[start:stop])[...,0][:,tx]
+        attrs={k:str(v) for k,v in f.attrs.items()}
+    z,x=np.asarray(g["z_m"]),np.asarray(g["x_m"])
+    views=plane_wave_das(raw,elements,z,x,angles,g["fs_hz"],g["f0_hz"],initial,
+        g["tx_reference_times_s"],g.get("tx_origins_zx_m"),g["sound_speed_mps"],g.get("f_number",1.5))
+    acquisition=Acquisition(iq=views.mean(axis=1),iq_views=views,prf_hz=prf,f0_hz=g["f0_hz"],
+        sound_speed_mps=g["sound_speed_mps"],phase_sign=g["phase_sign"],timestamps_s=times,
+        tx_angles_rad=angles,rx_angles_rad=np.zeros(len(tx)),view_offsets_s=offsets,z_m=z,x_m=x,
+        metadata={"source":str(source),"source_attributes":attrs,"unfiltered_iq":True,
+            "frames_start_stop":[start,stop],"transmit_indices":tx.tolist(),"decoded_raw_bytes":int(raw_bytes),
+            "contrast_status":g.get("contrast_status","unconfirmed"),"independent_truth_available":False,
+            "time_reference_evidence":g.get("time_reference_evidence"),
+            "receive_aperture_evidence":g.get("receive_aperture_evidence"),
+            "amplitude_processing":"hardware gain retained; no frame normalization",
+            "baseline":"coherent mean of embedded uncompounded views",
+            "beamformer":"CPU far-field plane-wave DAS, normal receive; experimental phase validation pending"})
+    save_acquisition(output,acquisition)
+    return acquisition

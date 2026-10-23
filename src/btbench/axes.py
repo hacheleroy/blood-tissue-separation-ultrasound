@@ -61,6 +61,17 @@ def restore(iq,motion):
     return y,valid
 
 
+def apply_motion(iq,motion):
+    """Replay fitted registration/demodulation, with no new motion estimation."""
+    out=np.array(iq,dtype=complex)
+    if len(out)!=len(motion["phase"]):
+        raise ValueError("Frozen motion length mismatch")
+    if motion["rigid"]:
+        for t,s in enumerate(motion["shifts"]):
+            out[t]=shift_complex(out[t],s)
+    return out*np.exp(-1j*motion["phase"])[:,None,None]
+
+
 class LagMemory:
     """Exponentially weighted raw pair moments; center after merging.
 
@@ -157,16 +168,16 @@ def component_weights(sources,mixing,lags,phase_width=0.10,coherence_floor=0.1):
                     "lag1_coherence":coh.tolist(),"spatial_extent":extent.tolist()}
 
 
-def _separate(x,covs,lags,rank=8,epsilon_rel=1e-6,ica=False,seed=0):
+def _separate(x,covs,lags,rank=8,epsilon_rel=1e-6,ica=False,seed=0,ica_options=None):
     c0 = (covs[0]+covs[0].conj().T)/2
     ev,u = linalg.eigh(c0)
     idx = np.flatnonzero(ev>max(ev[-1],1e-30)*epsilon_rel)[-rank:]
     if not len(idx):
-        return np.zeros_like(x),{"rank":0}
+        return np.zeros_like(x),{"rank":0},np.zeros((len(x),len(x)),complex)
     b = u[:,idx]/np.sqrt(ev[idx])[None,:]
     z = b.conj().T@x
     if ica:
-        q,info = complex_fastica_rotation(z,seed=seed)
+        q,info = complex_fastica_rotation(z,seed=seed,**(ica_options or {}))
     else:
         stack = []
         for lag in lags:
@@ -177,11 +188,16 @@ def _separate(x,covs,lags,rank=8,epsilon_rel=1e-6,ica=False,seed=0):
     sources = demix@x
     mixing = np.linalg.pinv(demix)
     weights,score = component_weights(sources,mixing,lags)
-    return mixing@(weights[:,None]*sources),{"rank":len(idx),**info,**score}
+    operator=(mixing*weights)@demix
+    return operator@x,{"rank":len(idx),**info,**score,
+        "whitening_eigenvalue_condition":float(ev[idx[-1]]/ev[idx[0]]),
+        "operator_gain_max":float(linalg.svdvals(operator)[0])},operator
 
 
 def complex_fastica_rotation(z,seed=0,max_iter=300,tol=1e-7):
     """Symmetric circular-complex kurtosis ICA in a whitened reduced space."""
+    if max_iter<1 or tol<=0 or z.ndim!=2 or not np.isfinite(z).all():
+        raise ValueError("Invalid ICA data or stopping settings")
     rng = np.random.default_rng(seed)
     w = rng.normal(size=(len(z),len(z)))+1j*rng.normal(size=(len(z),len(z)))
     def orth(a):
@@ -198,13 +214,34 @@ def complex_fastica_rotation(z,seed=0,max_iter=300,tol=1e-7):
         if change < tol:
             converged=True
             break
-    return w.conj().T,{"ica_iterations":it+1,"ica_converged":converged}
+    y=w@z
+    covariance=z@z.conj().T/z.shape[1]
+    pseudo=z@z.T/z.shape[1]
+    power=np.mean(abs(y)**2,axis=1)
+    cumulant=np.mean(abs(y)**4,axis=1)-2*power**2-abs(np.mean(y*y,axis=1))**2
+    return w.conj().T,{"ica_iterations":it+1,"ica_converged":converged,
+        "ica_final_change":float(change),"ica_tolerance":float(tol),
+        "ica_whitening_error":float(np.linalg.norm(covariance-np.eye(len(z)))/np.sqrt(len(z))),
+        "ica_circularity_ratio":float(np.linalg.norm(pseudo)/max(np.linalg.norm(covariance),1e-30)),
+        "ica_source_normalized_fourth_cumulants":(cumulant/np.maximum(power**2,1e-30)).tolist()}
 
 
 def _packet_pipeline(iq,kind,packet=64,centered=False,patch_shape=(8,8),stride=(4,4),
                      tissue_roi=None,rigid=False,rho=0.9,q_min=0.3,rank=8,
-                     discard=1,lags=(1,2,4,8,16),use_memory=True,seed=0):
+                     discard=1,lags=(1,2,4,8,16),use_memory=True,seed=0,
+                     ica_options=None,ica_nonconvergence="svd_fallback",
+                     phase_compensation=True,motion_phase_error_rad_per_frame=0.,max_operator_bytes=512*1024**2):
+    if ica_nonconvergence not in ("svd_fallback","retain","error"):
+        raise ValueError("Unknown ICA nonconvergence policy")
+    if (not 0<=q_min<=1 or rank<1 or int(rank)!=rank or
+            not np.isfinite(motion_phase_error_rad_per_frame) or max_operator_bytes<=0 or
+            not lags or any(int(l)!=l or l<1 for l in lags)):
+        raise ValueError("Invalid packet rank, confidence, lag, phase or memory settings")
     aligned,motion = compensate(iq,tissue_roi,rigid)
+    if not phase_compensation:
+        motion["phase"]=np.zeros(len(iq))
+    motion["phase"]=motion["phase"]+motion_phase_error_rad_per_frame*np.arange(len(iq))
+    aligned=apply_motion(iq,motion)
     if packet <= max(lags) or len(iq) % packet and len(iq) % packet <= max(lags):
         # chunks merges only 1-2 frames; avoid silent unequal lag supports.
         if kind in ("sobi","ica"):
@@ -212,10 +249,13 @@ def _packet_pipeline(iq,kind,packet=64,centered=False,patch_shape=(8,8),stride=(
     y = np.zeros_like(aligned)
     den = np.zeros(iq.shape[1:])
     records = []
+    plans=[]
+    operator_bytes=0
     for patch_id,(sl,w) in enumerate(patches(iq.shape[1:],patch_shape,stride)):
         allx = casorati(aligned[(slice(None),)+sl])
         out = np.empty_like(allx)
         memory = LagMemory((0,)+tuple(lags) if kind != "svd_memory" else (0,),rho)
+        packet_plans=[]
         for ts in chunks(len(iq),packet):
             raw = allx[:,ts]
             confidence = float(np.min(motion["confidence"][ts]))
@@ -227,6 +267,9 @@ def _packet_pipeline(iq,kind,packet=64,centered=False,patch_shape=(8,8),stride=(
                 # no unreliable registration enters covariance memory.
                 fb = svd_filter(frames(raw,(raw.shape[1],)+w.shape),centered,discard=discard)
                 out[:,ts] = casorati(fb.iq)
+                operator_bytes+=(ts.stop-ts.start)**2*16
+                if operator_bytes>max_operator_bytes:raise MemoryError("Frozen packet operators exceed memory cap")
+                packet_plans.append((ts,confidence,True,fb.apply_frozen))
                 records.append({"patch":patch_id,"start":ts.start,"q":confidence,"reset":True,"fallback":"local_svd"})
                 continue
             covs = memory.update(raw,confidence,centered)
@@ -240,19 +283,68 @@ def _packet_pipeline(iq,kind,packet=64,centered=False,patch_shape=(8,8),stride=(
                 if discard < 0 or discard > len(ev):
                     raise ValueError("Invalid rejection rank")
                 tissue = u[:,-discard:] if discard else u[:,:0]
-                out[:,ts] = x-tissue@(tissue.conj().T@x)
+                operator=np.eye(len(x))-tissue@tissue.conj().T
+                out[:,ts] = operator@x
                 info = {"discard":discard}
             else:
-                out[:,ts],info = _separate(x,covs,lags,rank,ica=kind=="ica",seed=seed)
+                out[:,ts],info,operator = _separate(x,covs,lags,rank,ica=kind=="ica",seed=seed,ica_options=ica_options)
+                if kind=="ica" and not info.get("ica_converged",True):
+                    if ica_nonconvergence=="error":
+                        raise ValueError("ICA did not converge under the frozen stopping rule")
+                    if ica_nonconvergence=="svd_fallback":
+                        _,u=linalg.eigh((covs[0]+covs[0].conj().T)/2)
+                        if not 0<=discard<=len(u):raise ValueError("Invalid fallback rejection rank")
+                        tissue=u[:,-discard:] if discard else u[:,:0]
+                        operator=np.eye(len(x))-tissue@tissue.conj().T
+                        out[:,ts]=operator@x
+                        info["ica_candidate_operator_gain_max"]=info["operator_gain_max"]
+                        info["operator_gain_max"]=float(linalg.svdvals(operator)[0])
+                        info["fallback"]="local_svd_ica_nonconvergence"
+            packet_plans.append((ts,confidence,False,operator))
+            operator_bytes+=operator.nbytes
+            if operator_bytes>max_operator_bytes:raise MemoryError("Frozen packet operators exceed memory cap")
             records.append({"patch":patch_id,"start":ts.start,"q":confidence,"reset":False,**info})
         y[(slice(None),)+sl] += frames(out,(len(iq),)+w.shape)*w
         den[sl] += w
+        plans.append((sl,w,packet_plans))
     y,valid = restore(y/den,motion)
+    def frozen(other):
+        if other.shape!=iq.shape:
+            raise ValueError("Frozen packet-operator shape mismatch")
+        aligned_other=apply_motion(other,motion)
+        output=np.zeros_like(other,dtype=complex)
+        for sl,w,packet_plans in plans:
+            raw_all=casorati(aligned_other[(slice(None),)+sl])
+            filtered=np.empty_like(raw_all)
+            mass=0.;mean_sum=np.zeros((len(raw_all),1),complex)
+            for ts,confidence,reset,operator in packet_plans:
+                raw=raw_all[:,ts]
+                if not use_memory or reset:
+                    mass=0.;mean_sum[:]=0
+                if reset:
+                    filtered[:,ts]=casorati(operator(frames(raw,(raw.shape[1],)+w.shape)))
+                    continue
+                if centered:
+                    # Recompute each COMPONENT's linear pooled mean using the
+                    # mixture's frozen confidence/reset schedule. Subtracting
+                    # the mixture mean from every component would be affine.
+                    weight=(1-rho)*confidence
+                    mass=rho*mass+weight
+                    mean_sum=rho*mean_sum+weight*raw.mean(axis=1,keepdims=True)
+                    raw=raw-mean_sum/mass
+                filtered[:,ts]=operator@raw
+            output[(slice(None),)+sl]+=frames(filtered,(len(other),)+w.shape)*w
+        return restore(output/den,motion)[0]
     return FilterResult(y,{"centered":centered,"packets":records,
         "motion_phase_rad":motion["phase"].tolist(),"motion_shifts_pixels":motion["shifts"].tolist(),
         "valid_fraction":float(valid.mean()),"lab_frame_phase_restored":True,
         "registration":"integer rigid 2D" if rigid else "bulk IQ phase only",
-        "component_classifier":"data-only heuristic" if kind != "svd_memory" else None})
+        "phase_compensation":phase_compensation,
+        "frozen_operator_bytes_estimate":operator_bytes,
+        "motion_phase_error_rad_per_frame":float(motion_phase_error_rad_per_frame),
+        "component_classifier":"data-only heuristic" if kind != "svd_memory" else None,
+        "frozen_parameters":"motion, confidence/reset schedule, covariance bases and component weights",
+        "frozen_centering":"component-wise replay of confidence-weighted pooled mean"},frozen)
 
 
 def motion_packet_filter(iq,**kwargs):
@@ -263,5 +355,6 @@ def multilag_filter(iq,**kwargs):
     return _packet_pipeline(iq,"sobi",**kwargs)
 
 
-def ica_filter(iq,**kwargs):
-    return _packet_pipeline(iq,"ica",use_memory=False,**kwargs)
+def ica_filter(iq,centered=True,**kwargs):
+    """ICA uses zero-mean input by default; uncentered is an explicit ablation."""
+    return _packet_pipeline(iq,"ica",use_memory=False,centered=centered,**kwargs)

@@ -1,5 +1,12 @@
 # First Axis 3 benchmark: local angle-time STAP
 
+Version 0.2.0 re-executes this frozen 42-case bank with blood waveform, spectral
+and noise-gain diagnostics. See [current fidelity results](../runs/stap_fidelity_v03/SUMMARY.md)
+and [verification](VALIDATION.md). The pooled median isolated blood distortion is
+0.485 for the orthogonal projector and 0.964 for the covariance-adaptive arm;
+these mixed-condition medians do not determine a universal ranking. The original
+report and figures below remain a historical record of the first study.
+
 This is an executable, frozen-parameter study of **uncompounded angular IQ**.
 The statistical forward model supplies explicit phase, geometry, source
 components and flow truth. It is a first algorithmic study; RF propagation,

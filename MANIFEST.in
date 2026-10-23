@@ -1,0 +1,7 @@
+include README.md pyproject.toml requirements-tested.txt
+recursive-include tests *.py
+recursive-include configs *.json
+recursive-include examples *.py
+recursive-include scripts *.py
+recursive-include docs *.md *.json *.pdf *.png *.svg
+global-exclude *.py[cod] __pycache__

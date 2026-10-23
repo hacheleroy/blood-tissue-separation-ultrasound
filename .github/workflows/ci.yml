@@ -1,0 +1,80 @@
+name: Numerical and package verification
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ['3.10', '3.12']
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+          cache-dependency-path: |
+            pyproject.toml
+            requirements-tested.txt
+      - if: matrix.python == '3.12'
+        run: python -m pip install -r requirements-tested.txt
+      - run: python -m pip install -e '.[test,io]'
+      - run: python -m pytest -q -ra
+      - run: python scripts/verify_results.py
+
+  packages:
+    runs-on: ubuntu-latest
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.12'
+      - run: python -m pip install build
+      - run: python -m build
+      - run: python scripts/verify_artifacts.py dist
+      - run: python -m pip install -r requirements-tested.txt
+      - run: python -m pip install --no-deps dist/*.whl
+      - name: Installed wheel smoke test outside source tree
+        working-directory: ${{ runner.temp }}
+        run: |
+          python - <<'PY'
+          import btbench
+          from btbench.synthetic import poiseuille
+          from btbench.benchmark import run_benchmark
+          assert btbench.__version__ == '0.2.0'
+          a=poiseuille(n_frames=32,shape=(4,7))
+          r=run_benchmark(a,{'methods':[{'id':'svd','method':'svd'}]},'wheel_smoke')
+          assert r['results'][0]['status']=='ok'
+          assert r['results'][0]['metrics']['frozen_component_metrics_available']
+          PY
+      - name: Verify tests from the source distribution
+        run: |
+          python - <<'PY'
+          import pathlib,tarfile,subprocess,tempfile
+          with tempfile.TemporaryDirectory() as tmp:
+              with tarfile.open(next(pathlib.Path('dist').glob('*.tar.gz'))) as f:
+                  f.extractall(tmp,filter='data')
+              root=next(pathlib.Path(tmp).iterdir())
+              subprocess.run(['python','-m','pytest','-q','-ra'],cwd=root,check=True)
+          PY
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: python-packages
+          path: dist/*

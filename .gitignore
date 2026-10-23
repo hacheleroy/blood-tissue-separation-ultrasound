@@ -30,3 +30,13 @@ runs/svd_literature_v02/case_*/
 runs/svd_literature_v02_verified/case_*/
 runs/stap_v02/
 runs/svd_literature_v02/
+runs/separation_fidelity_v03/case_*/
+runs/svd_fidelity_v03/case_*/
+# Generated plain JSON is archived losslessly as results.json.gz for this milestone.
+runs/separation_fidelity_v03/results.json
+runs/stap_fidelity_v03/results.json
+runs/svd_fidelity_v03/results.json
+runs/openhrf_waterloo_pilot_v03/results.json
+runs/integration_fidelity_v03/results.json
+# Reassembled from the tracked numbered archive parts by verify_results.py --restore.
+runs/separation_fidelity_v03/results.json.gz

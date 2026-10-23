@@ -54,7 +54,7 @@ def run_literature_study(config,output):
     (out/"results.json").write_text(json.dumps(_clean(result),separators=(',',':'),allow_nan=False))
     lines=["# Literature SVD/EVD comparison","",
         "Frozen statistical-IQ cases. See SVD_LITERATURE_AUDIT.md for source fidelity and provisional arms.","",
-        "| Method | Completed | Median velocity NRMSE | Median WSS NRMSE | Median blood retention | Median tissue retention |",
+        "| Method | Completed | Median blood IQ distortion | Median tissue retention | Median blood retention | Median spectral TV |",
         "|---|---:|---:|---:|---:|---:|"]
     for method in config["methods"]:
         rows=[r for c in records for r in c["results"] if r["id"]==method["id"] and r["status"]=="ok"]
@@ -62,7 +62,7 @@ def run_literature_study(config,output):
             vals=[r.get("metrics",{}).get(key) for r in rows]
             vals=[v for v in vals if v is not None]
             return 'n/a' if not vals else f'{np.median(vals):.4g}'
-        lines.append(f"| {method['id']} | {len(rows)}/{len(records)} | {median('velocity_nrmse')} | {median('wss_nrmse')} | {median('frozen_blood_power_retention')} | {median('frozen_tissue_power_retention')} |")
+        lines.append(f"| {method['id']} | {len(rows)}/{len(records)} | {median('frozen_blood_iq_nrmse')} | {median('frozen_tissue_power_retention')} | {median('frozen_blood_power_retention')} | {median('frozen_blood_spectral_tv')} |")
     lines.extend(["","Every failed or skipped method is retained in results.json. Pooled medians do not establish a universal ranking.",
         "Gaussian-localized IQ overlap-add is an extension; paper power aggregation is reported separately.",
         "Song thresholds are a documented reconstruction, pending original-paper/software parity."])

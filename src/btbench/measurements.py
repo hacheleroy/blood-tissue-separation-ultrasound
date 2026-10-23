@@ -148,6 +148,8 @@ def evaluate_windows(iq,acquisition,window=64,hop=64,geometry_factor=2.):
         truth=a.velocity_true_mps
         if truth is not None and truth.ndim==3:truth=truth[sl]
         sub=replace(a,iq=a.iq[sl],iq_views=None,timestamps_s=None,
+            tx_angles_rad=None,rx_angles_rad=None,view_offsets_s=None,
+            blood_views_true=None,tissue_views_true=None,
             blood_true=None if a.blood_true is None else a.blood_true[sl],
             tissue_true=None if a.tissue_true is None else a.tissue_true[sl],velocity_true_mps=truth)
         metrics=evaluate(iq[sl],sub,geometry_factor)
@@ -169,12 +171,105 @@ def frozen_component_metrics(result,acquisition):
     different data-adaptive operator and an invalid decomposition diagnostic.
     """
     a=acquisition
-    if result.apply_frozen is None or a.blood_true is None or a.tissue_true is None:
-        return {"frozen_component_metrics_available":False}
-    b=result.apply_frozen(a.blood_true)
-    t=result.apply_frozen(a.tissue_true)
-    pb=max(np.sum(abs(b)**2),1e-30)
-    return {"frozen_component_metrics_available":True,
-        "frozen_blood_power_retention":float(np.sum(abs(b)**2)/max(np.sum(abs(a.blood_true)**2),1e-30)),
-        "frozen_tissue_power_retention":float(np.sum(abs(t)**2)/max(np.sum(abs(a.tissue_true)**2),1e-30)),
-        "frozen_tissue_to_blood_power_ratio":float(np.sum(abs(t)**2)/pb)}
+    unavailable={"frozen_component_metrics_available":False,
+        "frozen_component_unavailable_reason":"requires a frozen operator and independent component truth"}
+    if a.blood_true is None or a.tissue_true is None:
+        return unavailable
+    if result.apply_frozen_views is not None and a.blood_views_true is not None and a.tissue_views_true is not None:
+        op=result.apply_frozen_views
+        b_input,t_input,total=a.blood_views_true,a.tissue_views_true,a.iq_views
+        domain="uncompounded_views_to_coherent_mean"
+    elif result.apply_frozen is not None:
+        op=result.apply_frozen
+        b_input,t_input,total=a.blood_true,a.tissue_true,a.iq
+        domain="compounded_iq"
+    else:
+        return unavailable
+    b,t=op(b_input),op(t_input)
+    n=op(total-b_input-t_input)
+    power=lambda x:float(np.sum(abs(x)**2))
+    ratio=lambda num,den:float(num/den) if den>0 else None
+    out={"frozen_component_metrics_available":True,"frozen_component_input_domain":domain,
+        "frozen_blood_power_retention":ratio(power(b),power(a.blood_true)),
+        "frozen_tissue_power_retention":ratio(power(t),power(a.tissue_true)),
+        "frozen_tissue_to_blood_power_ratio":ratio(power(t),power(b)),
+        "frozen_noise_power_gain":ratio(power(n),power(a.iq-a.blood_true-a.tissue_true)),
+        "frozen_noise_to_blood_power_ratio":ratio(power(n),power(b)),
+        "frozen_component_closure_nrmse":relative_norm(b+t+n-result.iq,a.iq),
+        "frozen_blood_iq_nrmse":relative_norm(b-a.blood_true,a.blood_true),
+        "frozen_blood_amplitude_nrmse":relative_norm(abs(b)-abs(a.blood_true),abs(a.blood_true))}
+    # A zero output has undefined leakage/output-blood and spectral shape;
+    # explicit flags prevent a zero denominator from looking like success.
+    out["frozen_blood_output_zero"]=power(b)<=1e-28*max(power(a.blood_true),1e-30)
+    out.update(blood_fidelity(b,a.blood_true,a.flow_mask))
+    if a.near_wall_mask is not None:
+        out["frozen_near_wall_blood_iq_nrmse"]=relative_norm(
+            (b-a.blood_true)[:,a.near_wall_mask],a.blood_true[:,a.near_wall_mask])
+    return out
+
+
+def relative_norm(error,reference):
+    """Uncalibrated complex error. A zero reference has no relative metric."""
+    den=np.linalg.norm(reference)
+    return float(np.linalg.norm(error)/den) if den>0 else None
+
+
+def blood_fidelity(filtered,reference,flow_mask=None):
+    """Isolated blood diagnostics, with physical amplitude and phase retained.
+
+    No fitted gain, phase, alignment, or frequency-dependent equalization.
+    Normalized spectral shape is reported separately from absolute power.
+    Weak support is the lowest truth-power quartile of nonzero flow pixels;
+    it is evaluation-only and is never passed to a filter.
+    """
+    mask=np.ones(reference.shape[1:],bool) if flow_mask is None else np.asarray(flow_mask,bool)
+    truth_power=np.mean(abs(reference)**2,axis=0)
+    active=mask&(truth_power>0)
+    if not active.any():
+        return {}
+    r,f=reference[:,active],filtered[:,active]
+    out_power=np.mean(abs(f)**2,axis=0)
+    out={"frozen_blood_spatial_power_nrmse":relative_norm(out_power-truth_power[active],truth_power[active]),
+         "frozen_flow_blood_iq_nrmse":relative_norm(f-r,r)}
+    p_ref=np.sum(abs(np.fft.fft(r,axis=0))**2,axis=1)
+    p_out=np.sum(abs(np.fft.fft(f,axis=0))**2,axis=1)
+    spectral_valid=bool(p_out.sum()>1e-28*max(p_ref.sum(),1e-30))
+    out["frozen_blood_spectral_shape_valid"]=spectral_valid
+    out["frozen_blood_spectral_tv"]=(float(.5*np.sum(abs(p_out/p_out.sum()-p_ref/p_ref.sum())))
+        if spectral_valid else None)
+    r_cov=np.mean(r[1:]*r[:-1].conj(),axis=0)
+    f_cov=np.mean(f[1:]*f[:-1].conj(),axis=0)
+    out["frozen_blood_lag1_covariance_nrmse"]=relative_norm(f_cov-r_cov,r_cov)
+    local=np.sqrt(np.sum(abs(f-r)**2,axis=0)/np.sum(abs(r)**2,axis=0))
+    out["frozen_blood_pixel_nrmse_p90"]=float(np.quantile(local,.9))
+    retention=np.sum(abs(f)**2,axis=0)/np.sum(abs(r)**2,axis=0)
+    out["frozen_blood_pixel_power_retention_p10"]=float(np.quantile(retention,.1))
+    weak=truth_power[active]<=np.quantile(truth_power[active],.25)
+    out["frozen_weak_blood_iq_nrmse"]=relative_norm((f-r)[:,weak],r[:,weak])
+    return out
+
+
+def injection_response(filter_fn,mixture,blood,amplitudes=(.1,1.)):
+    """Refitted counterfactual blood injection, suitable for nonlinear filters.
+
+    D_alpha=[F(T+N+alpha B)-F(T+N)]/alpha. This is a finite incremental
+    response, not an additive decomposition of F(X) or a frozen linear map.
+    The injected source is independent simulation truth; all fits see IQ only.
+    """
+    if not amplitudes or any(not np.isfinite(a) or a<=0 for a in amplitudes):
+        raise ValueError("Injection amplitudes must be finite and positive")
+    def fit(x):
+        r=filter_fn(x)
+        return (r.iq,r.diagnostics) if hasattr(r,"iq") else (r,{})
+    background=mixture-blood
+    baseline,background_diagnostics=fit(background)
+    rows=[]
+    for alpha in amplitudes:
+        perturbed,diagnostics=fit(background+alpha*blood)
+        incremental=(perturbed-baseline)/alpha
+        rows.append({"amplitude":float(alpha),"incremental_blood_iq_nrmse":relative_norm(incremental-blood,blood),
+            "incremental_power_ratio":float(np.sum(abs(incremental)**2)/max(np.sum(abs(blood)**2),1e-30)),
+            "fit_diagnostics":diagnostics})
+    return {"interpretation":"refitted counterfactual response; no additive source attribution",
+            "background_output_power":float(np.mean(abs(baseline)**2)),
+            "background_fit_diagnostics":background_diagnostics,"responses":rows}

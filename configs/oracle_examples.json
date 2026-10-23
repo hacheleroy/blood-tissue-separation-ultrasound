@@ -4,24 +4,98 @@
   "geometry_factor": 2.0,
   "methods": [
     {
+      "id": "oracle_svd_blood_distortion_0.5",
+      "method": "svd",
+      "params": {
+        "window": 64
+      },
+      "oracle_grid": {
+        "discard": [
+          0,
+          1,
+          2,
+          4,
+          8,
+          16,
+          32,
+          64
+        ]
+      },
+      "objective": "frozen_tissue_power_retention",
+      "constraints": {
+        "frozen_blood_iq_nrmse": {
+          "max": 0.5
+        }
+      }
+    },
+    {
+      "id": "oracle_svd_blood_distortion_0.25",
+      "method": "svd",
+      "params": {
+        "window": 64
+      },
+      "oracle_grid": {
+        "discard": [
+          0,
+          1,
+          2,
+          4,
+          8,
+          16,
+          32,
+          64
+        ]
+      },
+      "objective": "frozen_tissue_power_retention",
+      "constraints": {
+        "frozen_blood_iq_nrmse": {
+          "max": 0.25
+        }
+      }
+    },
+    {
       "id": "oracle_svd_velocity",
       "method": "svd",
-      "params": {"centered": false, "window": 64},
-      "oracle_grid": {"discard": "all"},
+      "params": {
+        "centered": false,
+        "window": 64
+      },
+      "oracle_grid": {
+        "discard": "all"
+      },
       "objective": "velocity_nrmse"
     },
     {
       "id": "oracle_svd_wss",
       "method": "svd",
-      "params": {"centered": false, "window": 64},
-      "oracle_grid": {"discard": "all"},
+      "params": {
+        "centered": false,
+        "window": 64
+      },
+      "oracle_grid": {
+        "discard": "all"
+      },
       "objective": "wss_nrmse"
     },
     {
       "id": "oracle_aer_wss",
       "method": "aer",
-      "params": {"centered": false, "domain": "temporal", "window": 64},
-      "oracle_grid": {"epsilon_rel": [0.00001, 0.001, 0.1], "alpha": [0.25, 0.5]},
+      "params": {
+        "centered": false,
+        "domain": "temporal",
+        "window": 64
+      },
+      "oracle_grid": {
+        "epsilon_rel": [
+          1e-05,
+          0.001,
+          0.1
+        ],
+        "alpha": [
+          0.25,
+          0.5
+        ]
+      },
       "objective": "wss_nrmse"
     }
   ]

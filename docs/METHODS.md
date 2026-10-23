@@ -95,6 +95,14 @@ isolated per-method peak-memory comparison; those require separate processes.
 
 ## Axis 1: Motion-compensated virtual long ensemble
 
+The [shared v05 runner](SHARED_BENCHMARK_PROTOCOL_V05.md) provides a controlled
+finite-history version in `btbench.shared`: common view/phase calibration,
+subpixel rigid or eight-coefficient smooth registration, 64-frame expiring
+exponential moments, and direct weighted-SVD equivalence controls. Known motion
+is a separate evaluation-only path. That version omits quality gates/resets so
+their effects cannot be confused with memory or registration. The original
+`motion_packet_filter` API described below remains available.
+
 Estimate increments from a separately specified tissue ROI:
 delta_phi[t]=arg sum_roi X[t+1] conj(X[t]). Integrate and demodulate each
 frame. If no ROI is supplied, the brightest quartile of time-mean power is
@@ -102,8 +110,8 @@ used; this assumption is logged through the method description.
 
 Optional integer rigid registration aligns envelope texture to the first frame
 using FFT cross-correlation, with a maximum shift. Complex interpolation has
-zero boundaries; there is no periodic wrapping. Deformation and subpixel rigid
-refinement are future extensions. The reference coordinate system must remain
+zero boundaries; there is no periodic wrapping. Subpixel/smooth registration is
+provided by the shared runner rather than this original API. The reference coordinate system must remain
 consistent across all packets; covariance states cannot be pooled across
 independently drifting coordinate systems.
 
@@ -122,6 +130,12 @@ to the demodulated tissue frame. Boundary validity fraction is reported;
 boundary losses remain in evaluation and are not silently masked using truth.
 
 ## Axis 2: Motion-demodulated multi-lag separation
+
+The shared runner uses the same bounded history and motion/calibration arms as
+its SVD and STAP comparators. It adds truth-fitted diagonal component weights
+only after fitting, as an evaluation-only basis/identification diagnostic. The
+[protocol](SHARED_BENCHMARK_PROTOCOL_V05.md) specifies rank, lag, ridge, gain cap
+and convergence rules; no diagnostic truth selects held-out operating points.
 
 The current implementation uses multi-lag complex SOBI.
 
@@ -170,6 +184,12 @@ Short ensembles are rejected when they cannot support the stated padding.
 Frequency-based filters validate their PRF against the acquisition revisit rate.
 
 ## Axis 3: Local ultrasound STAP
+
+The [shared runner](SHARED_BENCHMARK_PROTOCOL_V05.md) returns full three-view IQ
+under matched calibration/history, using guarded ROI training and explicit
+snapshot-count diagnostics. Its nominal calibrated tissue null is tested under
+drift and motion mismatch against joint-view SVD and Lee AER. It is distinct
+from the optional LCMV detector in the earlier dedicated STAP study.
 
 STAP (space-time adaptive processing) requires `(time,view,z,x)` data, actual
 Tx/Rx directions and view offsets.

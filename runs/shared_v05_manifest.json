@@ -1,0 +1,151 @@
+{
+  "version": "0.4.0",
+  "study": "shared_axes_v05",
+  "date": "2026-10-23",
+  "code_sha256": "c1e959c03e87c005932c4b35938d3ce3d5a10c7b9b4266f3861bc9a00ad47e93",
+  "archives": [
+    {
+      "path": "runs/shared_axes_v05/results.json.xz",
+      "codec": "xz",
+      "sha256": "5a4e08310d7c407e6302ffa540c0c8ab0eb34ca4aab304b00919b9ab39eff2a5",
+      "decoded_sha256": "a85b052e285850402ebe1a647e937514b717cb6f4e70d077fa2991354d937ed6",
+      "outputs": 2920,
+      "cases": 40,
+      "config_path": "runs/shared_axes_v05/frozen_config.json",
+      "config_sha256": "143976628504ddb1d3a7769fb83b777269604ae64b8f7d19614cfd9b49eb950c",
+      "parts": [
+        {
+          "path": "runs/shared_axes_v05/results.json.xz.part000",
+          "bytes": 450000,
+          "sha256": "d43b5c39166316e7954e708ac56ef8d9634bd1c9f953ec3377d5eb1a0c1b85d1"
+        },
+        {
+          "path": "runs/shared_axes_v05/results.json.xz.part001",
+          "bytes": 450000,
+          "sha256": "e8059aa686cd26dc5331b5ea2eae60d0c4fe5ebba47377034870f62ae04e9e87"
+        },
+        {
+          "path": "runs/shared_axes_v05/results.json.xz.part002",
+          "bytes": 113452,
+          "sha256": "7fa974ba6e1c549091ab070d39e395c0a5e30b4d3e53f604c24423430b79ed71"
+        }
+      ],
+      "independent_source_truth_available": true,
+      "required_metrics": [
+        "blood_iq_nrmse",
+        "refitted_background_to_tissue_power",
+        "refitted_blood_response_nrmse_alpha1",
+        "refitted_blood_response_nrmse_alpha0_1"
+      ]
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "docs/figures/shared_01_operating_points.png",
+      "bytes": 200849,
+      "sha256": "67a71e2c23ef5acff3ed6e9a43197481ff96fec09b2a6cd6a4c1be52738db6a7"
+    },
+    {
+      "path": "docs/figures/shared_01_operating_points.svg",
+      "bytes": 168879,
+      "sha256": "66fe735b35b39eb6cd1bbb1df918a856fdde1ee51b3e6ff38bfc1fdac9e97757"
+    },
+    {
+      "path": "docs/figures/shared_02_memory_motion.png",
+      "bytes": 312652,
+      "sha256": "8ef3f216112c71adbad8ea9a0120a379f954011317d6df92b40488658dde8101"
+    },
+    {
+      "path": "docs/figures/shared_02_memory_motion.svg",
+      "bytes": 149558,
+      "sha256": "fe597484d04cee1c5ce21f6c7369f88dd3b881084e8258e43f1f5a8b5ab5d1a7"
+    },
+    {
+      "path": "docs/figures/shared_03_axis2_basis_identification.png",
+      "bytes": 173338,
+      "sha256": "d44ec3a63e646bb1dcc4a77f4fab311b1646c5818ae9de1ee46c20d386a906b1"
+    },
+    {
+      "path": "docs/figures/shared_03_axis2_basis_identification.svg",
+      "bytes": 99024,
+      "sha256": "4313136fb59af3c92d2284a63c7fedcf108c47c324f2595a9f546a4d58eb54a2"
+    },
+    {
+      "path": "docs/figures/shared_04_stap_lee.png",
+      "bytes": 121893,
+      "sha256": "73924b6f7eb2015f4e685038978f475ee8c60edfd02112547759468e63caebf6"
+    },
+    {
+      "path": "docs/figures/shared_04_stap_lee.svg",
+      "bytes": 127573,
+      "sha256": "166c971ee44d38974966677ef4c00a98d947360828e7743c25e7492a57fb293a"
+    },
+    {
+      "path": "runs/shared_axes_v05/SUMMARY.md",
+      "bytes": 8643,
+      "sha256": "5c096ad796e2e6fba9648649997f310be6a5c3b02e1c40b86876609bbe0cc0d4"
+    },
+    {
+      "path": "runs/shared_axes_v05/baranger_bands.csv",
+      "bytes": 46730,
+      "sha256": "d49179915363c6ba01dd895f3773ff3fb9d4b82607a3a28b31005785f103379a"
+    },
+    {
+      "path": "runs/shared_axes_v05/method_ledger.csv",
+      "bytes": 6233,
+      "sha256": "54b3905224633b9d455861369e1349304bdb48356a40d0a06cfa62cbe6db4490"
+    },
+    {
+      "path": "runs/shared_axes_v05/metrics/calibration_drift.csv",
+      "bytes": 165876,
+      "sha256": "a56589bebc6ed5fec83ac9f0d7e20888d62bd97a6f47c5b7ac69a372d26d4b3a"
+    },
+    {
+      "path": "runs/shared_axes_v05/metrics/identical_statistics.csv",
+      "bytes": 169050,
+      "sha256": "a1d122b46e0ad7364984f324b3d3d10beb6826e849d41c3fc6406ce132e84a63"
+    },
+    {
+      "path": "runs/shared_axes_v05/metrics/opposed_flow.csv",
+      "bytes": 164639,
+      "sha256": "f88111b8e8202549e4c809aa5a7ca3ae082597109122a5f5b8b8e70c3380bf92"
+    },
+    {
+      "path": "runs/shared_axes_v05/metrics/separated_low_rank.csv",
+      "bytes": 167319,
+      "sha256": "a3c0ee1e526395db5665dc91f268b3a7ec4e1d09979692834eb7b0deeab3279d"
+    },
+    {
+      "path": "runs/shared_axes_v05/metrics/slow_overlap.csv",
+      "bytes": 164484,
+      "sha256": "d8da1c83bb5988d7d1ddb5816c6e6f686fc5a3e6b0fd2dbf00d124c8a3bf3d53"
+    },
+    {
+      "path": "runs/shared_axes_v05/metrics/smooth_deformation.csv",
+      "bytes": 165511,
+      "sha256": "a48bc5cbcf7a514ba9477c75120e6beb562f70d6519525dd6948d890a05d79f7"
+    },
+    {
+      "path": "runs/shared_axes_v05/metrics/subpixel_translation.csv",
+      "bytes": 166215,
+      "sha256": "7ab22ec4b58f33c76d7fdcf954898067d3bfc945a8a327f9a64477f5e858d981"
+    },
+    {
+      "path": "runs/shared_axes_v05/metrics/unmodeled_deformation.csv",
+      "bytes": 166617,
+      "sha256": "e7a2e764de0136075a9cf830c5115fe47739f288be5e7e8a1d1249ac631dae09"
+    },
+    {
+      "path": "runs/shared_axes_v05/operating_points.csv",
+      "bytes": 8326,
+      "sha256": "07674772ad7a581e5b3931dd334deefdc9e718d4d379e8b210cfd9317513ab41"
+    },
+    {
+      "path": "runs/shared_axes_v05/summary.json",
+      "bytes": 197122,
+      "sha256": "a1948bf86859b24f96531d95375ece3e4e75e5eb2afb3f23e651a705d2addc64"
+    }
+  ],
+  "provenance": "Only software-generated synthetic angular-IQ metrics and plots; no empirical arrays, private documents or source PDFs.",
+  "interpretation": "Actual output and refitted responses are primary. Known motion and truth-fitted diagonal weights are evaluation-only; global operating points use training seeds only."
+}

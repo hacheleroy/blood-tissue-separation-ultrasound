@@ -1,6 +1,31 @@
 # Numerical verification
 
-## PDF-audited follow-up, v0.3.0
+## Shared three-axis benchmark, v0.4.0
+
+The [frozen shared protocol](SHARED_BENCHMARK_PROTOCOL_V05.md) adds 25 numerical
+tests to the previous 134: **159 pass** locally on Python 3.12. They check exact
+finite-history moments versus direct weighted SVD, matching lag endpoint means,
+frozen replay/closure in all views, packet causality after registration, Lee's
+full-history covariance output, truth isolation, calibration reuse, subpixel
+translation, boundary loss and global training-only selection.
+
+Current numerical package hash:
+`c1e959c03e87c005932c4b35938d3ce3d5a10c7b9b4266f3861bc9a00ad47e93`.
+The [results](RESULTS_SHARED_V05.md), [manifest](../runs/shared_v05_manifest.json)
+and [package checks](PACKAGING_V04.json) record the executed study and portable
+artifacts. CI verifies historical archives without requiring their source to
+match the updated code, then enforces the current source identity for v05:
+
+```bash
+python scripts/verify_results.py --manifest runs/shared_v05_manifest.json --require-current-code --restore
+python scripts/verify_shared_results.py
+```
+
+The shared-result check verifies the full case grid, common calibration and
+view/tile support, packet/history boundaries, known-warp labels, Axis 2 gain
+and diagnostic isolation, and reproducible global training-only selection.
+
+## Historical PDF-audited follow-up, v0.3.0
 
 23 October 2026: **134 tests pass** on Python 3.12. Numerical package hash:
 `b249dda5158ec26f472e4ba36e09b5c7cadd79fc755751646a7b300ea0af160b`.
@@ -16,10 +41,10 @@ All returned statuses are `ok`. The two portable reports contain 3,908 outputs.
 The [manifest](../runs/followup_v04_manifest.json) records source/configuration
 hashes, compressed and decoded hashes, and 23 XZ-part hashes. Reassembly retains
 the exact frozen JSON bytes; the local original GZIP and XZ decoded bytes were
-compared for equality. Verify current source and restore the reports with:
+compared for equality. Verify archive integrity and restore the reports with:
 
 ```bash
-python scripts/verify_results.py --manifest runs/followup_v04_manifest.json --require-current-code --restore
+python scripts/verify_results.py --manifest runs/followup_v04_manifest.json --restore
 ```
 
 New tests check PDF-derived threshold equations, coherent Song normalization,

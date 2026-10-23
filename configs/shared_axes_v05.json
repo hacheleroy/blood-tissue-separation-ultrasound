@@ -1,0 +1,905 @@
+{
+  "study": "shared_axes_v05",
+  "version": "0.4.0",
+  "blas_threads": 1,
+  "case_workers": 4,
+  "packet_frames": 16,
+  "score_start": 64,
+  "generator": {
+    "n_frames": 128,
+    "calibration_frames": 64,
+    "shape": [
+      8,
+      16
+    ],
+    "prf_hz": 1000.0,
+    "f0_hz": 5000000.0,
+    "clutter_db": 30.0,
+    "snr_db": 20.0,
+    "decorrelation": 0.985
+  },
+  "training_seeds": [
+    101,
+    211
+  ],
+  "evaluation_seeds": [
+    307,
+    419,
+    523
+  ],
+  "background_targets": [
+    0.01,
+    0.0001
+  ],
+  "selection": "global pooled training means, grouped by family/motion/support",
+  "conditions": [
+    {
+      "id": "slow_overlap",
+      "flow_mps": 0.003,
+      "clutter_db": 40.0
+    },
+    {
+      "id": "separated_low_rank",
+      "flow_mps": 0.02,
+      "low_rank": true
+    },
+    {
+      "id": "subpixel_translation",
+      "flow_mps": 0.006,
+      "motion": "translation",
+      "amplitude_pixels": 0.8
+    },
+    {
+      "id": "smooth_deformation",
+      "flow_mps": 0.006,
+      "motion": "smooth",
+      "amplitude_pixels": 0.8
+    },
+    {
+      "id": "unmodeled_deformation",
+      "flow_mps": 0.006,
+      "motion": "unmodeled",
+      "amplitude_pixels": 0.8
+    },
+    {
+      "id": "calibration_drift",
+      "flow_mps": 0.006,
+      "acceleration_mps2": 0.02,
+      "view_phase_drift_rad": 0.3
+    },
+    {
+      "id": "opposed_flow",
+      "flow_mps": -0.008,
+      "phase_sign": -1
+    },
+    {
+      "id": "identical_statistics",
+      "flow_mps": 0.0,
+      "identical_statistics": true
+    }
+  ],
+  "methods": [
+    {
+      "id": "svd_none_h64_k1",
+      "family": "svd",
+      "method": "svd",
+      "motion": "none",
+      "horizon": 64,
+      "evaluation_only": false,
+      "discard": 1
+    },
+    {
+      "id": "svd_none_h64_k4",
+      "family": "svd",
+      "method": "svd",
+      "motion": "none",
+      "horizon": 64,
+      "evaluation_only": false,
+      "discard": 4
+    },
+    {
+      "id": "svd_none_h64_kall",
+      "family": "svd",
+      "method": "svd",
+      "motion": "none",
+      "horizon": 64,
+      "evaluation_only": false,
+      "discard": "all"
+    },
+    {
+      "id": "weighted_svd_none_h64_k1",
+      "family": "weighted_svd",
+      "method": "weighted_svd",
+      "motion": "none",
+      "horizon": 64,
+      "evaluation_only": false,
+      "discard": 1,
+      "rho": 0.75
+    },
+    {
+      "id": "weighted_svd_none_h64_k4",
+      "family": "weighted_svd",
+      "method": "weighted_svd",
+      "motion": "none",
+      "horizon": 64,
+      "evaluation_only": false,
+      "discard": 4,
+      "rho": 0.75
+    },
+    {
+      "id": "axis1_none_h64_k1",
+      "family": "axis1",
+      "method": "axis1",
+      "motion": "none",
+      "horizon": 64,
+      "evaluation_only": false,
+      "discard": 1,
+      "rho": 0.75
+    },
+    {
+      "id": "axis1_none_h64_k4",
+      "family": "axis1",
+      "method": "axis1",
+      "motion": "none",
+      "horizon": 64,
+      "evaluation_only": false,
+      "discard": 4,
+      "rho": 0.75
+    },
+    {
+      "id": "svd_none_h64_centered_k1",
+      "family": "svd",
+      "method": "svd",
+      "motion": "none",
+      "horizon": 64,
+      "evaluation_only": false,
+      "discard": 1,
+      "centered": true,
+      "rho": 0.75
+    },
+    {
+      "id": "weighted_svd_none_h64_centered_k1",
+      "family": "weighted_svd",
+      "method": "weighted_svd",
+      "motion": "none",
+      "horizon": 64,
+      "evaluation_only": false,
+      "discard": 1,
+      "centered": true,
+      "rho": 0.75
+    },
+    {
+      "id": "axis1_none_h64_centered_k1",
+      "family": "axis1",
+      "method": "axis1",
+      "motion": "none",
+      "horizon": 64,
+      "evaluation_only": false,
+      "discard": 1,
+      "centered": true,
+      "rho": 0.75
+    },
+    {
+      "id": "baranger_none_h64",
+      "family": "baranger",
+      "method": "baranger",
+      "motion": "none",
+      "horizon": 64,
+      "evaluation_only": false
+    },
+    {
+      "id": "lee_aer_none_h64_temporal_abs1",
+      "family": "lee_temporal_raw",
+      "method": "lee_aer",
+      "motion": "none",
+      "horizon": 64,
+      "evaluation_only": false,
+      "domain": "temporal",
+      "epsilon_abs": 1.0
+    },
+    {
+      "id": "lee_aer_none_h64_temporal_abs26",
+      "family": "lee_temporal_raw",
+      "method": "lee_aer",
+      "motion": "none",
+      "horizon": 64,
+      "evaluation_only": false,
+      "domain": "temporal",
+      "epsilon_abs": 26.0
+    },
+    {
+      "id": "lee_aer_none_h64_temporal_abs1000",
+      "family": "lee_temporal_raw",
+      "method": "lee_aer",
+      "motion": "none",
+      "horizon": 64,
+      "evaluation_only": false,
+      "domain": "temporal",
+      "epsilon_abs": 1000.0
+    },
+    {
+      "id": "lee_aer_none_h64_temporal_relative",
+      "family": "lee_temporal_raw",
+      "method": "lee_aer",
+      "motion": "none",
+      "horizon": 64,
+      "evaluation_only": false,
+      "domain": "temporal",
+      "epsilon_rel": 0.001
+    },
+    {
+      "id": "lee_aer_none_h64_spatial_abs26",
+      "family": "lee_spatial_raw",
+      "method": "lee_aer",
+      "motion": "none",
+      "horizon": 64,
+      "evaluation_only": false,
+      "domain": "spatial",
+      "epsilon_abs": 26.0
+    },
+    {
+      "id": "lee_aer_none_h64_spatial_relative",
+      "family": "lee_spatial_raw",
+      "method": "lee_aer",
+      "motion": "none",
+      "horizon": 64,
+      "evaluation_only": false,
+      "domain": "spatial",
+      "epsilon_rel": 0.001
+    },
+    {
+      "id": "lee_aer_none_h64_temporal_unit",
+      "family": "lee_unit_extension",
+      "method": "lee_aer",
+      "motion": "none",
+      "horizon": 64,
+      "evaluation_only": false,
+      "domain": "temporal",
+      "epsilon_rel": 0.001,
+      "unit_operator": true
+    },
+    {
+      "id": "axis2_none_h64_r4_p0.1",
+      "family": "axis2",
+      "method": "axis2",
+      "motion": "none",
+      "horizon": 64,
+      "evaluation_only": false,
+      "rank": 4,
+      "phase_width": 0.1,
+      "rho": 0.75,
+      "ridge_rel": 0.001,
+      "epsilon_rel": 1e-06,
+      "lags": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "gain_cap": 1.0
+    },
+    {
+      "id": "axis2_none_h64_r4_p0.3",
+      "family": "axis2",
+      "method": "axis2",
+      "motion": "none",
+      "horizon": 64,
+      "evaluation_only": false,
+      "rank": 4,
+      "phase_width": 0.3,
+      "rho": 0.75,
+      "ridge_rel": 0.001,
+      "epsilon_rel": 1e-06,
+      "lags": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "gain_cap": 1.0
+    },
+    {
+      "id": "axis2_none_h64_r8_p0.1",
+      "family": "axis2",
+      "method": "axis2",
+      "motion": "none",
+      "horizon": 64,
+      "evaluation_only": false,
+      "rank": 8,
+      "phase_width": 0.1,
+      "rho": 0.75,
+      "ridge_rel": 0.001,
+      "epsilon_rel": 1e-06,
+      "lags": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "gain_cap": 1.0
+    },
+    {
+      "id": "axis2_none_h64_r8_p0.3",
+      "family": "axis2",
+      "method": "axis2",
+      "motion": "none",
+      "horizon": 64,
+      "evaluation_only": false,
+      "rank": 8,
+      "phase_width": 0.3,
+      "rho": 0.75,
+      "ridge_rel": 0.001,
+      "epsilon_rel": 1e-06,
+      "lags": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "gain_cap": 1.0
+    },
+    {
+      "id": "stap_none_h64_orthogonal",
+      "family": "stap_orthogonal",
+      "method": "stap",
+      "motion": "none",
+      "horizon": 64,
+      "evaluation_only": false,
+      "adaptive": false
+    },
+    {
+      "id": "stap_none_h64_loaded0.01",
+      "family": "stap_loaded",
+      "method": "stap",
+      "motion": "none",
+      "horizon": 64,
+      "evaluation_only": false,
+      "adaptive": true,
+      "loading_rel": 0.01
+    },
+    {
+      "id": "stap_none_h64_loaded0.1",
+      "family": "stap_loaded",
+      "method": "stap",
+      "motion": "none",
+      "horizon": 64,
+      "evaluation_only": false,
+      "adaptive": true,
+      "loading_rel": 0.1
+    },
+    {
+      "id": "svd_smooth_h64_k1",
+      "family": "svd",
+      "method": "svd",
+      "motion": "smooth",
+      "horizon": 64,
+      "evaluation_only": false,
+      "discard": 1
+    },
+    {
+      "id": "svd_smooth_h64_k4",
+      "family": "svd",
+      "method": "svd",
+      "motion": "smooth",
+      "horizon": 64,
+      "evaluation_only": false,
+      "discard": 4
+    },
+    {
+      "id": "svd_smooth_h64_kall",
+      "family": "svd",
+      "method": "svd",
+      "motion": "smooth",
+      "horizon": 64,
+      "evaluation_only": false,
+      "discard": "all"
+    },
+    {
+      "id": "weighted_svd_smooth_h64_k1",
+      "family": "weighted_svd",
+      "method": "weighted_svd",
+      "motion": "smooth",
+      "horizon": 64,
+      "evaluation_only": false,
+      "discard": 1,
+      "rho": 0.75
+    },
+    {
+      "id": "weighted_svd_smooth_h64_k4",
+      "family": "weighted_svd",
+      "method": "weighted_svd",
+      "motion": "smooth",
+      "horizon": 64,
+      "evaluation_only": false,
+      "discard": 4,
+      "rho": 0.75
+    },
+    {
+      "id": "axis1_smooth_h64_k1",
+      "family": "axis1",
+      "method": "axis1",
+      "motion": "smooth",
+      "horizon": 64,
+      "evaluation_only": false,
+      "discard": 1,
+      "rho": 0.75
+    },
+    {
+      "id": "axis1_smooth_h64_k4",
+      "family": "axis1",
+      "method": "axis1",
+      "motion": "smooth",
+      "horizon": 64,
+      "evaluation_only": false,
+      "discard": 4,
+      "rho": 0.75
+    },
+    {
+      "id": "svd_smooth_h64_centered_k1",
+      "family": "svd",
+      "method": "svd",
+      "motion": "smooth",
+      "horizon": 64,
+      "evaluation_only": false,
+      "discard": 1,
+      "centered": true,
+      "rho": 0.75
+    },
+    {
+      "id": "weighted_svd_smooth_h64_centered_k1",
+      "family": "weighted_svd",
+      "method": "weighted_svd",
+      "motion": "smooth",
+      "horizon": 64,
+      "evaluation_only": false,
+      "discard": 1,
+      "centered": true,
+      "rho": 0.75
+    },
+    {
+      "id": "axis1_smooth_h64_centered_k1",
+      "family": "axis1",
+      "method": "axis1",
+      "motion": "smooth",
+      "horizon": 64,
+      "evaluation_only": false,
+      "discard": 1,
+      "centered": true,
+      "rho": 0.75
+    },
+    {
+      "id": "baranger_smooth_h64",
+      "family": "baranger",
+      "method": "baranger",
+      "motion": "smooth",
+      "horizon": 64,
+      "evaluation_only": false
+    },
+    {
+      "id": "lee_aer_smooth_h64_temporal_abs1",
+      "family": "lee_temporal_raw",
+      "method": "lee_aer",
+      "motion": "smooth",
+      "horizon": 64,
+      "evaluation_only": false,
+      "domain": "temporal",
+      "epsilon_abs": 1.0
+    },
+    {
+      "id": "lee_aer_smooth_h64_temporal_abs26",
+      "family": "lee_temporal_raw",
+      "method": "lee_aer",
+      "motion": "smooth",
+      "horizon": 64,
+      "evaluation_only": false,
+      "domain": "temporal",
+      "epsilon_abs": 26.0
+    },
+    {
+      "id": "lee_aer_smooth_h64_temporal_abs1000",
+      "family": "lee_temporal_raw",
+      "method": "lee_aer",
+      "motion": "smooth",
+      "horizon": 64,
+      "evaluation_only": false,
+      "domain": "temporal",
+      "epsilon_abs": 1000.0
+    },
+    {
+      "id": "lee_aer_smooth_h64_temporal_relative",
+      "family": "lee_temporal_raw",
+      "method": "lee_aer",
+      "motion": "smooth",
+      "horizon": 64,
+      "evaluation_only": false,
+      "domain": "temporal",
+      "epsilon_rel": 0.001
+    },
+    {
+      "id": "lee_aer_smooth_h64_spatial_abs26",
+      "family": "lee_spatial_raw",
+      "method": "lee_aer",
+      "motion": "smooth",
+      "horizon": 64,
+      "evaluation_only": false,
+      "domain": "spatial",
+      "epsilon_abs": 26.0
+    },
+    {
+      "id": "lee_aer_smooth_h64_spatial_relative",
+      "family": "lee_spatial_raw",
+      "method": "lee_aer",
+      "motion": "smooth",
+      "horizon": 64,
+      "evaluation_only": false,
+      "domain": "spatial",
+      "epsilon_rel": 0.001
+    },
+    {
+      "id": "lee_aer_smooth_h64_temporal_unit",
+      "family": "lee_unit_extension",
+      "method": "lee_aer",
+      "motion": "smooth",
+      "horizon": 64,
+      "evaluation_only": false,
+      "domain": "temporal",
+      "epsilon_rel": 0.001,
+      "unit_operator": true
+    },
+    {
+      "id": "axis2_smooth_h64_r4_p0.1",
+      "family": "axis2",
+      "method": "axis2",
+      "motion": "smooth",
+      "horizon": 64,
+      "evaluation_only": false,
+      "rank": 4,
+      "phase_width": 0.1,
+      "rho": 0.75,
+      "ridge_rel": 0.001,
+      "epsilon_rel": 1e-06,
+      "lags": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "gain_cap": 1.0
+    },
+    {
+      "id": "axis2_smooth_h64_r4_p0.3",
+      "family": "axis2",
+      "method": "axis2",
+      "motion": "smooth",
+      "horizon": 64,
+      "evaluation_only": false,
+      "rank": 4,
+      "phase_width": 0.3,
+      "rho": 0.75,
+      "ridge_rel": 0.001,
+      "epsilon_rel": 1e-06,
+      "lags": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "gain_cap": 1.0
+    },
+    {
+      "id": "axis2_smooth_h64_r8_p0.1",
+      "family": "axis2",
+      "method": "axis2",
+      "motion": "smooth",
+      "horizon": 64,
+      "evaluation_only": false,
+      "rank": 8,
+      "phase_width": 0.1,
+      "rho": 0.75,
+      "ridge_rel": 0.001,
+      "epsilon_rel": 1e-06,
+      "lags": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "gain_cap": 1.0
+    },
+    {
+      "id": "axis2_smooth_h64_r8_p0.3",
+      "family": "axis2",
+      "method": "axis2",
+      "motion": "smooth",
+      "horizon": 64,
+      "evaluation_only": false,
+      "rank": 8,
+      "phase_width": 0.3,
+      "rho": 0.75,
+      "ridge_rel": 0.001,
+      "epsilon_rel": 1e-06,
+      "lags": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "gain_cap": 1.0
+    },
+    {
+      "id": "stap_smooth_h64_orthogonal",
+      "family": "stap_orthogonal",
+      "method": "stap",
+      "motion": "smooth",
+      "horizon": 64,
+      "evaluation_only": false,
+      "adaptive": false
+    },
+    {
+      "id": "stap_smooth_h64_loaded0.01",
+      "family": "stap_loaded",
+      "method": "stap",
+      "motion": "smooth",
+      "horizon": 64,
+      "evaluation_only": false,
+      "adaptive": true,
+      "loading_rel": 0.01
+    },
+    {
+      "id": "stap_smooth_h64_loaded0.1",
+      "family": "stap_loaded",
+      "method": "stap",
+      "motion": "smooth",
+      "horizon": 64,
+      "evaluation_only": false,
+      "adaptive": true,
+      "loading_rel": 0.1
+    },
+    {
+      "id": "svd_none_h16_k1",
+      "family": "svd",
+      "method": "svd",
+      "motion": "none",
+      "horizon": 16,
+      "evaluation_only": false,
+      "discard": 1
+    },
+    {
+      "id": "svd_none_h16_k4",
+      "family": "svd",
+      "method": "svd",
+      "motion": "none",
+      "horizon": 16,
+      "evaluation_only": false,
+      "discard": 4
+    },
+    {
+      "id": "svd_none_h16_kall",
+      "family": "svd",
+      "method": "svd",
+      "motion": "none",
+      "horizon": 16,
+      "evaluation_only": false,
+      "discard": "all"
+    },
+    {
+      "id": "weighted_svd_none_h16_k1",
+      "family": "weighted_svd",
+      "method": "weighted_svd",
+      "motion": "none",
+      "horizon": 16,
+      "evaluation_only": false,
+      "discard": 1,
+      "rho": 0.75
+    },
+    {
+      "id": "axis1_none_h16_k1",
+      "family": "axis1",
+      "method": "axis1",
+      "motion": "none",
+      "horizon": 16,
+      "evaluation_only": false,
+      "discard": 1,
+      "rho": 0.75
+    },
+    {
+      "id": "axis2_none_h16_r4_p0.1",
+      "family": "axis2",
+      "method": "axis2",
+      "motion": "none",
+      "horizon": 16,
+      "evaluation_only": false,
+      "rank": 4,
+      "phase_width": 0.1,
+      "rho": 0.75,
+      "ridge_rel": 0.001,
+      "epsilon_rel": 1e-06,
+      "lags": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "gain_cap": 1.0
+    },
+    {
+      "id": "stap_none_h16_orthogonal",
+      "family": "stap_orthogonal",
+      "method": "stap",
+      "motion": "none",
+      "horizon": 16,
+      "evaluation_only": false,
+      "adaptive": false
+    },
+    {
+      "id": "stap_none_h16_loaded0.01",
+      "family": "stap_loaded",
+      "method": "stap",
+      "motion": "none",
+      "horizon": 16,
+      "evaluation_only": false,
+      "adaptive": true,
+      "loading_rel": 0.01
+    },
+    {
+      "id": "lee_aer_none_h16_temporal_abs26",
+      "family": "lee_temporal_raw",
+      "method": "lee_aer",
+      "motion": "none",
+      "horizon": 16,
+      "evaluation_only": false,
+      "domain": "temporal",
+      "epsilon_abs": 26.0
+    },
+    {
+      "id": "svd_rigid_h64_k1",
+      "family": "svd",
+      "method": "svd",
+      "motion": "rigid",
+      "horizon": 64,
+      "evaluation_only": false,
+      "discard": 1
+    },
+    {
+      "id": "axis1_rigid_h64_k1",
+      "family": "axis1",
+      "method": "axis1",
+      "motion": "rigid",
+      "horizon": 64,
+      "evaluation_only": false,
+      "discard": 1,
+      "rho": 0.75
+    },
+    {
+      "id": "axis2_rigid_h64_r4_p0.1",
+      "family": "axis2",
+      "method": "axis2",
+      "motion": "rigid",
+      "horizon": 64,
+      "evaluation_only": false,
+      "rank": 4,
+      "phase_width": 0.1,
+      "rho": 0.75,
+      "ridge_rel": 0.001,
+      "epsilon_rel": 1e-06,
+      "lags": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "gain_cap": 1.0
+    },
+    {
+      "id": "stap_rigid_h64_loaded0.01",
+      "family": "stap_loaded",
+      "method": "stap",
+      "motion": "rigid",
+      "horizon": 64,
+      "evaluation_only": false,
+      "adaptive": true,
+      "loading_rel": 0.01
+    },
+    {
+      "id": "lee_aer_rigid_h64_temporal_abs26",
+      "family": "lee_temporal_raw",
+      "method": "lee_aer",
+      "motion": "rigid",
+      "horizon": 64,
+      "evaluation_only": false,
+      "domain": "temporal",
+      "epsilon_abs": 26.0
+    },
+    {
+      "id": "svd_known_h64_k1",
+      "family": "svd",
+      "method": "svd",
+      "motion": "known",
+      "horizon": 64,
+      "evaluation_only": true,
+      "discard": 1
+    },
+    {
+      "id": "axis1_known_h64_k1",
+      "family": "axis1",
+      "method": "axis1",
+      "motion": "known",
+      "horizon": 64,
+      "evaluation_only": true,
+      "discard": 1,
+      "rho": 0.75
+    },
+    {
+      "id": "axis2_known_h64_r4_p0.1",
+      "family": "axis2",
+      "method": "axis2",
+      "motion": "known",
+      "horizon": 64,
+      "evaluation_only": true,
+      "rank": 4,
+      "phase_width": 0.1,
+      "rho": 0.75,
+      "ridge_rel": 0.001,
+      "epsilon_rel": 1e-06,
+      "lags": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "gain_cap": 1.0
+    },
+    {
+      "id": "stap_known_h64_loaded0.01",
+      "family": "stap_loaded",
+      "method": "stap",
+      "motion": "known",
+      "horizon": 64,
+      "evaluation_only": true,
+      "adaptive": true,
+      "loading_rel": 0.01
+    },
+    {
+      "id": "lee_aer_known_h64_temporal_abs26",
+      "family": "lee_temporal_raw",
+      "method": "lee_aer",
+      "motion": "known",
+      "horizon": 64,
+      "evaluation_only": true,
+      "domain": "temporal",
+      "epsilon_abs": 26.0
+    },
+    {
+      "id": "identity_none_h16",
+      "family": "identity",
+      "method": "identity",
+      "motion": "none",
+      "horizon": 16,
+      "evaluation_only": false
+    },
+    {
+      "id": "roundtrip_rigid_h16",
+      "family": "roundtrip",
+      "method": "roundtrip",
+      "motion": "rigid",
+      "horizon": 16,
+      "evaluation_only": false
+    },
+    {
+      "id": "roundtrip_smooth_h16",
+      "family": "roundtrip",
+      "method": "roundtrip",
+      "motion": "smooth",
+      "horizon": 16,
+      "evaluation_only": false
+    },
+    {
+      "id": "roundtrip_known_h16",
+      "family": "roundtrip",
+      "method": "roundtrip",
+      "motion": "known",
+      "horizon": 16,
+      "evaluation_only": true
+    }
+  ]
+}

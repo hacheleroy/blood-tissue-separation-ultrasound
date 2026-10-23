@@ -1,8 +1,14 @@
 # Blood/tissue separation benchmark — CPU reference pipeline
 
-Development benchmark v0.3.0 · 23 October 2026 · prepared for Henri Leroy
+Development benchmark v0.4.0 · 23 October 2026 · prepared for Henri Leroy
 
-New: [full-PDF method audit](docs/PDF_METHOD_AUDIT.md) and
+New: the [shared three-axis benchmark](docs/RESULTS_SHARED_V05.md) uses the same
+three-view input, disjoint-time calibration, spatial tile and score interval for
+all families, including Stephen Lee AER. Its [frozen protocol](docs/SHARED_BENCHMARK_PROTOCOL_V05.md)
+separates training-only operating points, matched weighted-history controls,
+estimated/known motion, and evaluation-only source-identification diagnostics.
+
+Earlier: [full-PDF method audit](docs/PDF_METHOD_AUDIT.md) and
 [frozen follow-up protocol](docs/FOLLOWUP_PROTOCOL_V04.md), including Lee AER,
 matched operating points, Axis 2 conditioning and a longer two-subject RF pilot.
 The [previous separation-fidelity study](docs/SEPARATION_FIDELITY.md),
@@ -63,7 +69,7 @@ STAP means space-time adaptive processing.
 | Long ensemble | Same SVD on a longer contiguous window | Ensemble length explicit; no joining across gaps |
 | ZCA-AER | Lee centered temporal covariance /P and streamed spatial covariance /(T-1) | Published algorithms checked; absolute and relative regularizers distinguished |
 | AER ablations | Centering on/off; full/partial whitening; relative, absolute, or noise-floor regularization; oracle grid | Parameter rules and gain changes recorded |
-| [Axis 1: Motion-compensated virtual long ensemble](docs/METHODS.md#axis-1-motion-compensated-virtual-long-ensemble) | Bulk phase correction, optional rigid integer registration, Gaussian patches, q-normalized covariance memory, event reset/fallback | Research prototype |
+| [Axis 1: Motion-compensated virtual long ensemble](docs/METHODS.md#axis-1-motion-compensated-virtual-long-ensemble) | Original quality-gated patch memory; shared runner adds finite-history expiration, subpixel smooth registration and exact weighted-SVD controls | Research prototype; matched memory is algebraically equivalent to weighted SVD |
 | [Axis 2: Motion-demodulated multi-lag separation](docs/METHODS.md#axis-2-motion-demodulated-multi-lag-separation) | Complex lag AJD, rank/whitening controls, optional spectral-norm cap, lag-signature diagnostics | Conditioning controls do not guarantee source identification |
 | Other baselines | Centered complex kurtosis FastICA with explicit convergence fallback, complex PCP/RPCA; Butterworth controls | ICA stopping/conditioning diagnostics; nonlinear RPCA injection responses |
 | [Axis 3: Local ultrasound STAP](docs/STAP_BENCHMARK.md) | Physical angle-time steering, tissue projector, loaded covariance adaptation, LCMV, guarded training | 42-case statistical-IQ study; uncompounded views and independent tissue calibration |
@@ -100,6 +106,26 @@ btbench fidelity-followup --config configs/fidelity_followup_v04.json --output r
 python examples/prepare_openhrf_followup.py configs/openhrf_followup_v04.json configs/openhrf_waterloo_acq0_geometry.json data/my_followup
 btbench openhrf-followup data/my_followup/waterloo_acq0.npz data/my_followup/waterloo_acq12.npz --config configs/openhrf_followup_v04.json --output runs/my_real_followup
 ```
+
+Run the shared benchmark (40 synthetic cases × 73 settings, with three
+counterfactual fits per setting; four CPU workers, one BLAS thread each).
+Install the plot extra to regenerate figures:
+
+```bash
+python -m pip install -e '.[plot]'
+btbench shared-study --config configs/shared_axes_v05.json --output runs/my_shared_study
+python scripts/plot_shared_benchmark.py runs/my_shared_study
+python scripts/verify_results.py --manifest runs/shared_v05_manifest.json --require-current-code
+python scripts/verify_shared_results.py
+```
+
+The score uses all three complex views on frames [64,128), with 16-frame packet
+latency and declared 16/64-frame history. A single setting per family, motion arm
+and support is selected across all training conditions; held-out seeds never
+change that choice. The scene specifies angular IQ and an image warp, with a
+shared calibration tissue texture. It does not provide acoustic/experimental
+validation. Portable results, selection candidates, CSV tables and four PNG/SVG
+figures are included; source and artifact hashes are checked by CI.
 
 Earlier studies, with their historical source fingerprints and interpretation limits:
 
@@ -157,8 +183,11 @@ provider/zea pipeline, before envelope detection and clutter filtering.
 
 ## What remains experimental
 
-Axis 1 currently has global phase and integer rigid 2-D registration; affine
-and nonrigid tissue warps are not implemented. Axis 2 and ICA have an explicit,
+The original Axis 1 packet API has global phase and integer rigid registration.
+The shared runner adds subpixel translation and an eight-coefficient smooth
+deformation model, with known-warp and round-trip controls. General nonrigid
+motion, acoustic realism and transfer to independent tissue/calibration remain
+unvalidated. Axis 2 and ICA have an explicit,
 untrained component score; its thresholds must be frozen or calibrated on
 training cases. Supplied full texts now support the Song/Maresca/Baranger audit.
 Song's unspecified detector tolerances and author-software execution parity

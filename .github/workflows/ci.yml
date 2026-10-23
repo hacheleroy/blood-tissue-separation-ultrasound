@@ -33,7 +33,9 @@ jobs:
       - run: python -m pip install -e '.[test,io]'
       - run: python -m pytest -q -ra
       - run: python scripts/verify_results.py
-      - run: python scripts/verify_results.py --manifest runs/followup_v04_manifest.json --require-current-code
+      - run: python scripts/verify_results.py --manifest runs/followup_v04_manifest.json
+      - run: python scripts/verify_results.py --manifest runs/shared_v05_manifest.json --require-current-code
+      - run: python scripts/verify_shared_results.py
 
   packages:
     runs-on: ubuntu-latest
@@ -59,11 +61,15 @@ jobs:
           import btbench
           from btbench.synthetic import poiseuille
           from btbench.benchmark import run_benchmark
-          assert btbench.__version__ == '0.3.0'
+          assert btbench.__version__ == '0.4.0'
           a=poiseuille(n_frames=32,shape=(4,7))
           r=run_benchmark(a,{'methods':[{'id':'svd','method':'svd'}]},'wheel_smoke')
           assert r['results'][0]['status']=='ok'
           assert r['results'][0]['metrics']['frozen_component_metrics_available']
+          from btbench.shared import shared_scene, SharedContext, fit_shared
+          a=shared_scene(n_frames=32,calibration_frames=16,shape=(4,8))
+          c=SharedContext(a.public,packet=16,score_start=16)
+          assert fit_shared(c,{'method':'axis1','horizon':16,'discard':1}).views.shape == (16,3,4,8)
           PY
       - name: Verify tests from the source distribution
         run: |

@@ -77,7 +77,7 @@ the actual sequence and comparing with the provider reconstruction. Some US4R-li
 files multiplex two receive subapertures across separate events. Their assembly
 and motion-dependent phase cannot be guessed from the element count. Avoid those
 files for the first pilot. Compounding different transmit times also requires
-an explicit motion/phase model. Preserve uncompounded views for Axis 3.
+an explicit motion/phase model. Preserve uncompounded views for Axis 3: Local ultrasound STAP.
 
 ## STAP API
 

@@ -25,7 +25,7 @@ truth-fitted amplitude or phase correction. Background response refits on
 tissue leakage within `F(X)`. Refitted blood-injection responses at amplitudes
 0.1 and 1 describe incremental adaptive behavior, not additive attribution.
 
-## 1. Axis 1 versus SVD and Lee AER
+## 1. Axis 1: Motion-compensated virtual long ensemble
 
 Two calibration seeds select one setting per family and condition; three
 different seeds evaluate it. A candidate must meet the background/tissue power
@@ -70,7 +70,7 @@ normalization. This is not a replication of Lee's contrast-enhanced transcranial
 animal ULM experiment, long ensembles or trajectory counts. Negative Doppler
 bins are not labeled noise solely because their FFT index exceeds PRF/2.
 
-## 2. Axis 2 conditioning
+## 2. Axis 2: Motion-demodulated multi-lag separation
 
 The grid varies rank selection, ridge whitening, centering and a local
 operator-gain cap. Across 42 paired held-out cap-only comparisons, the largest

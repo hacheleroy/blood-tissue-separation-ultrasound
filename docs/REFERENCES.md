@@ -89,6 +89,12 @@ present eigenvalue processing are grouped here by their implementation.
 - Leroy H. [*Research Directions Beyond SVD for Blood and Tissue Separation.*](notes/Research_Directions_Beyond_SVD.pdf)
   Collaboration note, 3 October 2026. Original supplied PDF.
 
-The Axis 1/2/3 equations and proposed controls follow this collaboration note.
+The three research axes retain the note's names:
+
+- [Axis 1: Motion-compensated virtual long ensemble](METHODS.md#axis-1-motion-compensated-virtual-long-ensemble)
+- [Axis 2: Motion-demodulated multi-lag separation](METHODS.md#axis-2-motion-demodulated-multi-lag-separation)
+- [Axis 3: Local ultrasound STAP](STAP_BENCHMARK.md)
+
+Their equations and proposed controls follow this collaboration note.
 They are implemented as testable prototypes; the note did not supply a validated
 classifier, motion-registration implementation or ultrasound STAP calibration.

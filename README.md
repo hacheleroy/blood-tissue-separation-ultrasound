@@ -6,6 +6,9 @@ The [motion-repair held-out study](docs/RESULTS_MOTION_REPAIR_V06.md) fixes
 registration and gates each displacement on independent spatial pixels. Its
 predeclared software gate passes on five reserved seeds, permitting a phantom
 experiment while leaving significant reconstruction and blood-response losses.
+The [preregistered phantom protocol](docs/PHANTOM_PROTOCOL_V07.md) fixes
+physical controls, independent motion references, data eligibility and the
+paired flow-response/tissue-leakage gate. It has **no experimental results yet**.
 
 The [shared three-axis benchmark](docs/RESULTS_SHARED_V05.md) uses the same
 three-view input, disjoint-time calibration, spatial tile and score interval for

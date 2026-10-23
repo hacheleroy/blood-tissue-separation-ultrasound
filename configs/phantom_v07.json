@@ -1,0 +1,412 @@
+{
+  "study": "phantom_v07",
+  "status": "preregistered_analysis_no_acquisition",
+  "version": "0.5.0",
+  "numerical_source_sha256": "8587a156b3283238920777e96cd059d72203d5a9638a61f5cc43876324cd4e13",
+  "n_frames": 256,
+  "calibration_frames": 64,
+  "packet_frames": 16,
+  "score_start": 64,
+  "tile_shape": [
+    8,
+    16
+  ],
+  "n_views": 3,
+  "splits": [
+    "development",
+    "heldout"
+  ],
+  "motions": [
+    "static",
+    "rigid",
+    "nonrigid"
+  ],
+  "flow_speeds_mps": {
+    "slow": 0.003,
+    "nominal": 0.02
+  },
+  "repeats_per_cell": 5,
+  "matched_captures": [
+    "tissue_only",
+    "flow_off",
+    "flow_on"
+  ],
+  "metrics": {
+    "doppler_band_cycles_per_frame": {
+      "slow": [
+        0.005,
+        0.05
+      ],
+      "nominal": [
+        0.02,
+        0.25
+      ]
+    },
+    "minimum_input_pump_excess_over_off": 0.5,
+    "minimum_band_bins": 6
+  },
+  "reference_quality": {
+    "maximum_sigma_pixels": 0.1,
+    "static_maximum_rms_pixels": 0.1,
+    "moving_minimum_rms_pixels": 0.2,
+    "maximum_displacement_pixels": 1.25,
+    "nonrigid_minimum_spatial_std_pixels": 0.05
+  },
+  "roi_quality": {
+    "minimum_registration_pixels": 25,
+    "minimum_tissue_score_pixels": 8,
+    "minimum_flow_pixels": 8,
+    "flow_guard_pixels": 1
+  },
+  "release_gate": {
+    "candidate_id": "axis1_smooth_h64_k1",
+    "maximum_tissue_leakage_ratio": 0.1,
+    "minimum_pump_response_retention": 0.8,
+    "maximum_motion_rmse_pixels": 0.25,
+    "maximum_static_acceptance_fraction": 0.01,
+    "minimum_geometry_improvement_fraction": 0.2,
+    "confidence_percentiles": [
+      2.5,
+      97.5
+    ],
+    "bootstrap_replicates": 2000
+  },
+  "motion_options": {
+    "max_translation": 1.25,
+    "max_shape_coefficient": 0.35,
+    "max_displacement": 1.5,
+    "minimum_motion_rms": 0.03,
+    "identity_residual": 0.01,
+    "minimum_relative_improvement": 0.15,
+    "minimum_absolute_improvement": 0.002,
+    "maximum_validation_error": 0.12,
+    "maximum_condition": 10000.0,
+    "minimum_singular": 0.005,
+    "minimum_fit_pixels": 6,
+    "minimum_validation_pixels": 4,
+    "minimum_valid_fraction": 0.95,
+    "minimum_jacobian": 0.45,
+    "maximum_jacobian": 1.8,
+    "maximum_inverse_error": 0.05,
+    "smooth_relative_improvement": 0.1,
+    "smooth_absolute_improvement": 0.003,
+    "shape_ridge": 0.01,
+    "robust_scale": 0.03,
+    "max_evaluations": 30
+  },
+  "methods": [
+    {
+      "id": "svd_none_h64_k1",
+      "family": "svd",
+      "method": "svd",
+      "motion": "none",
+      "horizon": 64,
+      "evaluation_only": false,
+      "discard": 1,
+      "diagnostic_only": false
+    },
+    {
+      "id": "weighted_svd_none_h64_k1",
+      "family": "weighted_svd",
+      "method": "weighted_svd",
+      "motion": "none",
+      "horizon": 64,
+      "evaluation_only": false,
+      "discard": 1,
+      "rho": 0.75,
+      "diagnostic_only": false
+    },
+    {
+      "id": "axis1_none_h64_k1",
+      "family": "axis1",
+      "method": "axis1",
+      "motion": "none",
+      "horizon": 64,
+      "evaluation_only": false,
+      "discard": 1,
+      "rho": 0.75,
+      "diagnostic_only": false
+    },
+    {
+      "id": "baranger_none_h64",
+      "family": "baranger",
+      "method": "baranger",
+      "motion": "none",
+      "horizon": 64,
+      "evaluation_only": false,
+      "diagnostic_only": false
+    },
+    {
+      "id": "lee_aer_none_h64_temporal_abs26",
+      "family": "lee_temporal_raw",
+      "method": "lee_aer",
+      "motion": "none",
+      "horizon": 64,
+      "evaluation_only": false,
+      "domain": "temporal",
+      "epsilon_abs": 26.0,
+      "diagnostic_only": false
+    },
+    {
+      "id": "lee_aer_none_h64_spatial_abs26",
+      "family": "lee_spatial_raw",
+      "method": "lee_aer",
+      "motion": "none",
+      "horizon": 64,
+      "evaluation_only": false,
+      "domain": "spatial",
+      "epsilon_abs": 26.0,
+      "diagnostic_only": false
+    },
+    {
+      "id": "axis2_none_h64_r4_p0.1",
+      "family": "axis2",
+      "method": "axis2",
+      "motion": "none",
+      "horizon": 64,
+      "evaluation_only": false,
+      "rank": 4,
+      "phase_width": 0.1,
+      "rho": 0.75,
+      "ridge_rel": 0.001,
+      "epsilon_rel": 1e-06,
+      "lags": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "gain_cap": 1.0,
+      "diagnostic_only": false
+    },
+    {
+      "id": "stap_none_h64_loaded0.01",
+      "family": "stap_loaded",
+      "method": "stap",
+      "motion": "none",
+      "horizon": 64,
+      "evaluation_only": false,
+      "adaptive": true,
+      "loading_rel": 0.01,
+      "diagnostic_only": false
+    },
+    {
+      "id": "svd_rigid_h64_k1",
+      "family": "svd",
+      "method": "svd",
+      "motion": "rigid",
+      "horizon": 64,
+      "evaluation_only": false,
+      "discard": 1,
+      "diagnostic_only": false
+    },
+    {
+      "id": "weighted_svd_rigid_h64_k1",
+      "family": "weighted_svd",
+      "method": "weighted_svd",
+      "motion": "rigid",
+      "horizon": 64,
+      "evaluation_only": false,
+      "discard": 1,
+      "rho": 0.75,
+      "diagnostic_only": false
+    },
+    {
+      "id": "axis1_rigid_h64_k1",
+      "family": "axis1",
+      "method": "axis1",
+      "motion": "rigid",
+      "horizon": 64,
+      "evaluation_only": false,
+      "discard": 1,
+      "rho": 0.75,
+      "diagnostic_only": false
+    },
+    {
+      "id": "baranger_rigid_h64",
+      "family": "baranger",
+      "method": "baranger",
+      "motion": "rigid",
+      "horizon": 64,
+      "evaluation_only": false,
+      "diagnostic_only": false
+    },
+    {
+      "id": "lee_aer_rigid_h64_temporal_abs26",
+      "family": "lee_temporal_raw",
+      "method": "lee_aer",
+      "motion": "rigid",
+      "horizon": 64,
+      "evaluation_only": false,
+      "domain": "temporal",
+      "epsilon_abs": 26.0,
+      "diagnostic_only": false
+    },
+    {
+      "id": "lee_aer_rigid_h64_spatial_abs26",
+      "family": "lee_spatial_raw",
+      "method": "lee_aer",
+      "motion": "rigid",
+      "horizon": 64,
+      "evaluation_only": false,
+      "domain": "spatial",
+      "epsilon_abs": 26.0,
+      "diagnostic_only": false
+    },
+    {
+      "id": "axis2_rigid_h64_r4_p0.1",
+      "family": "axis2",
+      "method": "axis2",
+      "motion": "rigid",
+      "horizon": 64,
+      "evaluation_only": false,
+      "rank": 4,
+      "phase_width": 0.1,
+      "rho": 0.75,
+      "ridge_rel": 0.001,
+      "epsilon_rel": 1e-06,
+      "lags": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "gain_cap": 1.0,
+      "diagnostic_only": false
+    },
+    {
+      "id": "stap_rigid_h64_loaded0.01",
+      "family": "stap_loaded",
+      "method": "stap",
+      "motion": "rigid",
+      "horizon": 64,
+      "evaluation_only": false,
+      "adaptive": true,
+      "loading_rel": 0.01,
+      "diagnostic_only": false
+    },
+    {
+      "id": "svd_smooth_h64_k1",
+      "family": "svd",
+      "method": "svd",
+      "motion": "smooth",
+      "horizon": 64,
+      "evaluation_only": false,
+      "discard": 1,
+      "diagnostic_only": false
+    },
+    {
+      "id": "weighted_svd_smooth_h64_k1",
+      "family": "weighted_svd",
+      "method": "weighted_svd",
+      "motion": "smooth",
+      "horizon": 64,
+      "evaluation_only": false,
+      "discard": 1,
+      "rho": 0.75,
+      "diagnostic_only": false
+    },
+    {
+      "id": "axis1_smooth_h64_k1",
+      "family": "axis1",
+      "method": "axis1",
+      "motion": "smooth",
+      "horizon": 64,
+      "evaluation_only": false,
+      "discard": 1,
+      "rho": 0.75,
+      "diagnostic_only": false
+    },
+    {
+      "id": "baranger_smooth_h64",
+      "family": "baranger",
+      "method": "baranger",
+      "motion": "smooth",
+      "horizon": 64,
+      "evaluation_only": false,
+      "diagnostic_only": false
+    },
+    {
+      "id": "lee_aer_smooth_h64_temporal_abs26",
+      "family": "lee_temporal_raw",
+      "method": "lee_aer",
+      "motion": "smooth",
+      "horizon": 64,
+      "evaluation_only": false,
+      "domain": "temporal",
+      "epsilon_abs": 26.0,
+      "diagnostic_only": false
+    },
+    {
+      "id": "lee_aer_smooth_h64_spatial_abs26",
+      "family": "lee_spatial_raw",
+      "method": "lee_aer",
+      "motion": "smooth",
+      "horizon": 64,
+      "evaluation_only": false,
+      "domain": "spatial",
+      "epsilon_abs": 26.0,
+      "diagnostic_only": false
+    },
+    {
+      "id": "axis2_smooth_h64_r4_p0.1",
+      "family": "axis2",
+      "method": "axis2",
+      "motion": "smooth",
+      "horizon": 64,
+      "evaluation_only": false,
+      "rank": 4,
+      "phase_width": 0.1,
+      "rho": 0.75,
+      "ridge_rel": 0.001,
+      "epsilon_rel": 1e-06,
+      "lags": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "gain_cap": 1.0,
+      "diagnostic_only": false
+    },
+    {
+      "id": "stap_smooth_h64_loaded0.01",
+      "family": "stap_loaded",
+      "method": "stap",
+      "motion": "smooth",
+      "horizon": 64,
+      "evaluation_only": false,
+      "adaptive": true,
+      "loading_rel": 0.01,
+      "diagnostic_only": false
+    },
+    {
+      "id": "roundtrip_rigid_h16",
+      "family": "roundtrip",
+      "method": "roundtrip",
+      "motion": "rigid",
+      "horizon": 16,
+      "evaluation_only": false,
+      "diagnostic_only": false
+    },
+    {
+      "id": "roundtrip_smooth_h16",
+      "family": "roundtrip",
+      "method": "roundtrip",
+      "motion": "smooth",
+      "horizon": 16,
+      "evaluation_only": false,
+      "diagnostic_only": false
+    },
+    {
+      "id": "identity_none_h16",
+      "family": "identity",
+      "method": "identity",
+      "motion": "none",
+      "horizon": 16,
+      "evaluation_only": false,
+      "diagnostic_only": false
+    }
+  ],
+  "limitations": "Pump-associated Doppler excess is a paired physical proxy, not independent blood IQ. Optical stage/DIC evaluates motion only."
+}

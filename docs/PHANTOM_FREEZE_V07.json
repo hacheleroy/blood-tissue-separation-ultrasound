@@ -1,0 +1,12 @@
+{
+  "study": "phantom_v07",
+  "date": "2026-10-23",
+  "status": "preregistered_analysis_no_phantom_data",
+  "numerical_source_sha256": "8587a156b3283238920777e96cd059d72203d5a9638a61f5cc43876324cd4e13",
+  "files": {
+    "configs/phantom_v07.json": "db95f7d60bdb77a58b0e0be8143803c99e481b0bae33fd3e87505e279e93473b",
+    "docs/PHANTOM_PROTOCOL_V07.md": "e42d01e1d226efa4c5d0f2bfffe52d823f55596feeb3e1596efdc51abab0d1a4",
+    "scripts/phantom_v07.py": "990e9f77fc1813b5e925d40fd9473250563a5a642baaaa8cdee7497f29b8519e"
+  },
+  "next_required_input": "Acquisition card and the complete independently referenced physical control matrix, fixed before collection."
+}

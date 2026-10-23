@@ -28,7 +28,10 @@ def verify(directory):
                 "tests/test_attribution_equivalence.py","configs/fidelity_followup_v04.json",
                 "tests/test_shared_benchmark.py","configs/shared_axes_v05.json",
                 "tests/test_registration.py","configs/motion_repair_v06.json",
-                "scripts/verify_motion_results.py","docs/MOTION_REPAIR_PROTOCOL_V06.md"]]
+                "scripts/verify_motion_results.py","docs/MOTION_REPAIR_PROTOCOL_V06.md",
+                "tests/test_phantom_v07.py","configs/phantom_v07.json",
+                "scripts/phantom_v07.py","docs/PHANTOM_PROTOCOL_V07.md",
+                "docs/PHANTOM_FREEZE_V07.json"]]
         for name in names:
             p=PurePosixPath(name)
             if p.is_absolute() or ".." in p.parts:raise ValueError("Unsafe archive path: "+name)

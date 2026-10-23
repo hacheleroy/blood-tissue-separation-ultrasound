@@ -20,6 +20,8 @@ def main(argv=None):
     p=sub.add_parser("separation-study");p.add_argument("--config");p.add_argument("--output",required=True)
     p=sub.add_parser("stap-study");p.add_argument("--config");p.add_argument("--output",required=True)
     p=sub.add_parser("literature-study");p.add_argument("--config");p.add_argument("--output",required=True)
+    p=sub.add_parser("fidelity-followup");p.add_argument("--config");p.add_argument("--output",required=True)
+    p=sub.add_parser("openhrf-followup");p.add_argument("datasets",nargs='+');p.add_argument("--config",required=True);p.add_argument("--output",required=True)
     args=parser.parse_args(argv)
     if args.cmd=="simulate":
         save_acquisition(args.output,poiseuille(seed=args.seed))
@@ -67,6 +69,15 @@ def main(argv=None):
         config=json.loads(Path(args.config).read_text()) if args.config else default_literature_config()
         result=run_literature_study(config,args.output)
         print(json.dumps({"cases":len(result["records"]),"output":args.output}))
+    elif args.cmd=="fidelity-followup":
+        from .followup_experiment import default_followup_config,run_followup_study
+        config=json.loads(Path(args.config).read_text()) if args.config else default_followup_config()
+        result=run_followup_study(config,args.output)
+        print(json.dumps({"cases":len(result['records']),"output":args.output}))
+    elif args.cmd=="openhrf-followup":
+        from .followup_experiment import run_openhrf_followup
+        result=run_openhrf_followup([load_acquisition(p) for p in args.datasets],json.loads(Path(args.config).read_text()),args.output)
+        print(json.dumps({"acquisitions":len(result['records']),"output":args.output}))
 
 
 if __name__=="__main__":

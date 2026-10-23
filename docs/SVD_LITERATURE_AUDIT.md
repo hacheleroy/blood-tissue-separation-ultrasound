@@ -1,5 +1,14 @@
 # SVD/EVD literature audit
 
+23 October 2026: the user-supplied Song, Maresca and two Baranger full PDFs
+have now been audited. The current implementations and remaining numerical
+choices are documented in [the full-PDF audit](PDF_METHOD_AUDIT.md), including
+Lee's centered AER algorithms. The Song/Maresca full-text access limitations
+below describe the historical v0.2.0 state; they are resolved for the new arms.
+The earlier Song reconstruction remains available under its historical name.
+
+## Historical audit, 22 October 2026
+
 Audit date: 22 October 2026. Matrix convention: **X = U diag(sigma) V^H**,
 with complex IQ, spatial rows and slow-time columns. `H` is conjugate transpose.
 Every retained band uses zero-based half-open indices `[k,h)`. The default is

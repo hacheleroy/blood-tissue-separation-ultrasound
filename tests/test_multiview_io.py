@@ -52,6 +52,18 @@ def test_rf_npz_standard_stap_runner_and_phase(tmp_path):
     assert not report["results"][0]["metrics"]["frozen_component_metrics_available"]
 
 
+def test_batched_rf_export_preserves_exact_samples_and_absolute_timing(tmp_path):
+    source=tmp_path/'rf.h5';g=point_rf_file(source)
+    g['frames_start_stop']=[3,16]
+    direct=export_openhrf_rf_window(source,g,tmp_path/'direct.npz')
+    g['frame_batch_size']=4;g['max_raw_bytes']=4*2*1024*8
+    batched=export_openhrf_rf_window(source,g,tmp_path/'batched.npz')
+    assert_allclose(batched.iq_views,direct.iq_views,atol=0,rtol=0)
+    assert_allclose(batched.timestamps_s,direct.timestamps_s,atol=0,rtol=0)
+    assert batched.metadata['maximum_decoded_batch_bytes']<=g['max_raw_bytes']
+    assert batched.metadata['decoded_raw_bytes']>g['max_raw_bytes']
+
+
 def test_timing_gaps_and_declared_wrong_prf_rejected(tmp_path):
     dt=np.full((12,2),1/6000);dt[5,1]=.1
     with pytest.raises(ValueError,match="Gapped"):

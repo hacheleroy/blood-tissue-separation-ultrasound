@@ -127,8 +127,13 @@ def export_openhrf_rf_window(source,geometry,output):
         if stop>len(ds) or np.any(tx<0) or np.any(tx>=ds.shape[1]):raise ValueError("RF selection exceeds stored dimensions")
         # Waterloo chunks contain all transmits; read/decompress each frame once.
         raw_bytes=(stop-start)*np.prod(ds.shape[1:])*ds.dtype.itemsize
-        if raw_bytes>g.get("max_raw_bytes",512*1024**2):
-            raise MemoryError("Decoded RF window exceeds memory budget")
+        batch_size=g.get("frame_batch_size",stop-start)
+        if int(batch_size)!=batch_size or batch_size<1:
+            raise ValueError("frame_batch_size must be a positive integer")
+        batch_size=min(int(batch_size),stop-start)
+        batch_bytes=batch_size*np.prod(ds.shape[1:])*ds.dtype.itemsize
+        if batch_bytes>g.get("max_raw_bytes",512*1024**2):
+            raise MemoryError("Decoded RF batch exceeds memory budget")
         dt=f[key("scan/time_to_next_transmit")][:stop]
         times,offsets,prf=selected_view_timing(dt,tx,start,stop)
         if "revisit_prf_hz" in g and not np.isclose(prf,g["revisit_prf_hz"],rtol=1e-4):
@@ -148,16 +153,24 @@ def export_openhrf_rf_window(source,geometry,output):
             raise ValueError("Declared A/D start time disagrees with stored metadata")
         elements=np.asarray(f["probe/probe_geometry"][()])[:,[2,0]]
         if elements.shape!=(ds.shape[3],2):raise ValueError("Receive geometry does not match channels")
-        raw=np.asarray(ds[start:stop])[...,0][:,tx]
         attrs={k:str(v) for k,v in f.attrs.items()}
-    z,x=np.asarray(g["z_m"]),np.asarray(g["x_m"])
-    views=plane_wave_das(raw,elements,z,x,angles,g["fs_hz"],g["f0_hz"],initial,
-        g["tx_reference_times_s"],g.get("tx_origins_zx_m"),g["sound_speed_mps"],g.get("f_number",1.5))
+        z,x=np.asarray(g["z_m"]),np.asarray(g["x_m"])
+        views=np.empty((stop-start,len(tx),len(z),len(x)),complex)
+        for first in range(start,stop,batch_size):
+            last=min(first+batch_size,stop)
+            raw=np.asarray(ds[first:last])[...,0][:,tx]
+            views[first-start:last-start]=plane_wave_das(raw,elements,z,x,angles,g["fs_hz"],g["f0_hz"],initial,
+                g["tx_reference_times_s"],g.get("tx_origins_zx_m"),g["sound_speed_mps"],g.get("f_number",1.5))
+            if g.get("report_progress",False):
+                print(json.dumps({"beamformed_frames":last-start,"total_frames":stop-start}),flush=True)
     acquisition=Acquisition(iq=views.mean(axis=1),iq_views=views,prf_hz=prf,f0_hz=g["f0_hz"],
         sound_speed_mps=g["sound_speed_mps"],phase_sign=g["phase_sign"],timestamps_s=times,
         tx_angles_rad=angles,rx_angles_rad=np.zeros(len(tx)),view_offsets_s=offsets,z_m=z,x_m=x,
         metadata={"source":str(source),"source_attributes":attrs,"unfiltered_iq":True,
+            "subject_id":g.get("source_metadata",{}).get("subject_id"),
+            "verified_source_metadata":g.get("source_metadata"),
             "frames_start_stop":[start,stop],"transmit_indices":tx.tolist(),"decoded_raw_bytes":int(raw_bytes),
+            "frame_batch_size":batch_size,"maximum_decoded_batch_bytes":int(batch_bytes),
             "contrast_status":g.get("contrast_status","unconfirmed"),"independent_truth_available":False,
             "time_reference_evidence":g.get("time_reference_evidence"),
             "receive_aperture_evidence":g.get("receive_aperture_evidence"),
@@ -166,3 +179,50 @@ def export_openhrf_rf_window(source,geometry,output):
             "beamformer":"CPU far-field plane-wave DAS, normal receive; experimental phase validation pending"})
     save_acquisition(output,acquisition)
     return acquisition
+
+
+def verify_waterloo_geometry(source,template,frames_start_stop=(0,1024),grid_stride=2,frame_batch_size=16):
+    """Verify each selected nonmultiplexed Waterloo file before RF export.
+
+    Fits the stored per-element transmit-delay reference; does not calibrate
+    experimental Doppler phase. The template supplies the declared grid and
+    IQ sign convention already checked with a moving-point simulation.
+    """
+    g=dict(template);root=g.get('root','tracks/track_0').strip('/')
+    with _open_h5(source) as f:
+        description=str(f.attrs.get('description','')).lower()
+        if 'us4r' not in description or 'lite' in description:
+            raise ValueError('This adapter requires explicitly identified non-lite us4r acquisition')
+        scan=f[root+'/scan'];raw=f[root+'/data/raw_data']
+        elements=np.asarray(f['probe/probe_geometry'][()])[:,[2,0]]
+        tx=np.asarray(g['transmit_indices'],int)
+        angles=np.asarray(scan['polar_angles'][()])[tx]
+        delays=np.asarray(scan['t0_delays'][()])[tx]
+        apod=np.asarray(scan['tx_apodizations'][()])[tx]
+        origins=np.asarray(scan['transmit_origins'][()])[tx][:,[2,0]]
+        fs=float(scan['sampling_frequency'][()]);c=float(scan['sound_speed'][()])
+        if raw.shape[3]!=len(elements) or delays.shape!=(len(tx),len(elements)) or not np.all(apod!=0):
+            raise ValueError('Unverified element mapping, transmit delay shape or aperture')
+        direction=np.column_stack((np.cos(angles),np.sin(angles)))
+        relative=np.einsum('aep,ap->ae',elements[None,:,:]-origins[:,None,:],direction)/c
+        reference=np.mean(delays-relative,axis=1)
+        residual=float(np.max(abs(delays-relative-reference[:,None]))*fs)
+        if residual>.1:raise ValueError('Stored delays do not fit the declared plane-wave time reference')
+        def text(key):
+            v=f['metadata/'+key][()]
+            return v.decode() if isinstance(v,bytes) else str(v)
+        metadata={'subject_id':text('subject/id'),'anatomy':text('annotations/anatomy'),
+                  'view':text('annotations/view'),'condition':text('annotations/label'),
+                  'raw_shape':list(raw.shape),'source_description':description,
+                  'delay_fit_max_residual_adc_samples':residual}
+        g.update(fs_hz=fs,f0_hz=float(scan['center_frequency'][()]),sound_speed_mps=c,
+                 tx_angles_rad=angles.tolist(),initial_times_s=np.asarray(scan['initial_times'][()])[tx].tolist(),
+                 tx_reference_times_s=reference.tolist(),tx_origins_zx_m=origins.tolist())
+    if int(grid_stride)!=grid_stride or grid_stride<1:raise ValueError('grid_stride must be a positive integer')
+    g.update(frames_start_stop=list(frames_start_stop),frame_batch_size=frame_batch_size,
+             z_m=template['z_m'][::grid_stride],x_m=template['x_m'][::grid_stride],
+             max_raw_bytes=64*1024**2,time_reference_verified=True,full_receive_aperture_verified=True,
+             source_metadata=metadata,report_progress=True,
+             time_reference_evidence=f'Per-file stored delay fit: maximum residual {residual:.6g} ADC samples; experimental phase calibration pending',
+             receive_aperture_evidence='Per-file non-lite us4r description, 128 channels matched to probe, full transmit apodization')
+    return g

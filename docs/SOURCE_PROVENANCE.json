@@ -21,7 +21,8 @@
     }
   ],
   "author_note_sha256": "7def82665dd017f6d31b8da714f933bd9a7403c3411c5d6dfefc38c6c306f710",
-  "identified_pending_full_text": [
+  "author_note_path": "docs/notes/Research_Directions_Beyond_SVD.pdf",
+  "historical_pending_full_text_on_2026_10_22": [
     {
       "title": "Adaptive Spatiotemporal Filtering for Coronary Ultrafast Doppler Angiography",
       "doi": "10.1109/TUFFC.2018.2870083",
@@ -34,5 +35,12 @@
       "algorithm_verified": false
     }
   ],
-  "author_note_path": "docs/notes/Research_Directions_Beyond_SVD.pdf"
+  "full_text_followup_2026_10_23": {
+    "audit": "docs/PDF_METHOD_AUDIT.md",
+    "source_hashes": "docs/PDF_SOURCE_PROVENANCE_V04.json",
+    "song_full_pdf_read": true,
+    "maresca_full_pdf_read": true,
+    "both_baranger_full_pdfs_read": true,
+    "author_matlab_execution_parity": false
+  }
 }

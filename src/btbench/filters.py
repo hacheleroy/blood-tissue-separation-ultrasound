@@ -55,8 +55,11 @@ def choose_rank(u, s, selector="fixed", discard=1, energy_fraction=0.95, **kwarg
 
 
 def svd_filter(iq, centered=False, selector="fixed", discard=1, upper=None,
-               window=None, energy_fraction=0.95, selector_options=None, backend="svd"):
+               window=None, energy_fraction=0.95, selector_options=None, backend="svd",
+               projection_side="temporal"):
     """Retain zero-based singular indices [discard, upper); no mean add-back."""
+    if projection_side not in ("temporal","spatial"):
+        raise ValueError("projection_side must be temporal or spatial")
     y = np.empty_like(iq, dtype=np.complex128)
     info = []
     operators = []
@@ -77,6 +80,12 @@ def svd_filter(iq, centered=False, selector="fixed", discard=1, upper=None,
         elif selector == "song":
             from .svd_literature import song_band
             k, auto_hi, d = song_band(s,vh,**options)
+        elif selector == "song_pdf":
+            from .paper_filters import song_pdf_band
+            k, auto_hi, d = song_pdf_band(s,vh,**options)
+        elif selector == "maresca":
+            from .paper_filters import maresca_cutoff
+            k, d = maresca_cutoff(s,**options)
         elif selector == "temporal_frequency":
             from .svd_literature import temporal_statistics
             freq = temporal_statistics(vh,options["prf_hz"])
@@ -88,18 +97,22 @@ def svd_filter(iq, centered=False, selector="fixed", discard=1, upper=None,
         hi = auto_hi if upper is None else int(upper)
         if not k <= hi <= len(s):
             raise ValueError("Require 0 <= discard <= upper <= min(P,T)")
-        v = vh[k:hi].conj().T
-        y[sl] = frames((x@v)@v.conj().T, iq[sl].shape)
-        info.append({"start":sl.start,"stop":sl.stop,"discard":k,"upper":hi,**d})
-        operators.append((sl,vh[k:hi].conj().T))
+        v = vh[k:hi].conj().T if projection_side=="temporal" else u[:,k:hi]
+        filtered=(x@v)@v.conj().T if projection_side=="temporal" else v@(v.conj().T@x)
+        y[sl] = frames(filtered, iq[sl].shape)
+        info.append({"start":sl.start,"stop":sl.stop,"discard":k,"upper":hi,
+                     "retained_sigma_sum":float(s[k:hi].sum()),**d})
+        operators.append((sl,v))
     def frozen(other):
         if other.shape!=iq.shape:raise ValueError("Frozen-operator shape mismatch")
         out=np.empty_like(other,dtype=complex)
         for sl,v in operators:
             x,_=prepare(casorati(other[sl]),centered)
-            out[sl]=frames((x@v)@v.conj().T,other[sl].shape)
+            filtered=(x@v)@v.conj().T if projection_side=="temporal" else v@(v.conj().T@x)
+            out[sl]=frames(filtered,other[sl].shape)
         return out
-    return FilterResult(y,{"centered":centered,"backend":backend,"windows":info},frozen)
+    return FilterResult(y,{"centered":centered,"backend":backend,"windows":info,
+        "projection_side":projection_side,"frozen_attribution_depends_on_projection_side":True},frozen)
 
 
 class SpatialMoments:
@@ -123,18 +136,21 @@ class SpatialMoments:
         self.mean += delta*(n/total)
         self.n = total
 
-    def covariance(self, centered=False):
+    def covariance(self, centered=False, ddof=0):
         if not self.n:
             raise ValueError("No frames accumulated")
-        c = self.m2/self.n
+        if int(ddof)!=ddof or not 0<=ddof<self.n:
+            raise ValueError("Need integer 0<=ddof<number of samples")
+        c = self.m2/(self.n-ddof)
         if not centered:
-            c = c+self.mean@self.mean.conj().T
+            c = c+self.n/(self.n-ddof)*(self.mean@self.mean.conj().T)
         return (c+c.conj().T)/2
 
 
 def aer_filter(iq, centered=False, domain="temporal", epsilon_rel=1e-3,
                alpha=0.5, epsilon_abs=None, normalization="samples",
-               stream_chunk=64, max_cov_bytes=512*1024**2,epsilon_rule="relative",window=None):
+               stream_chunk=64, max_cov_bytes=512*1024**2,epsilon_rule="relative",window=None,
+               covariance_ddof=0,gain_normalization="raw"):
     """Exact regularized spectral remapping. For C=X^H X/P or XX^H/T.
 
     normalization='samples' matches conventional covariance normalization.
@@ -143,14 +159,17 @@ def aer_filter(iq, centered=False, domain="temporal", epsilon_rel=1e-3,
     an explicit scale-invariant benchmark choice, not Lee's absolute sweep.
     Streaming spatial mode estimates global moments first, applies second pass.
     """
-    if alpha < 0 or alpha > 0.5 or epsilon_rel < 0:
+    if (alpha < 0 or alpha > 0.5 or epsilon_rel < 0 or
+            int(covariance_ddof)!=covariance_ddof or covariance_ddof<0 or
+            gain_normalization not in ("raw","unit_operator")):
         raise ValueError("Require 0<=alpha<=0.5 and nonnegative epsilon_rel")
     if window is not None and window<len(iq):
         out=np.empty_like(iq,dtype=complex)
         ops=[]
         for sl in chunks(len(iq),window):
             r=aer_filter(iq[sl],centered,domain,epsilon_rel,alpha,epsilon_abs,
-                         normalization,stream_chunk,max_cov_bytes,epsilon_rule)
+                         normalization,stream_chunk,max_cov_bytes,epsilon_rule,
+                         covariance_ddof=covariance_ddof,gain_normalization=gain_normalization)
             out[sl]=r.iq
             ops.append((sl,r))
         def apply(other):
@@ -166,12 +185,13 @@ def aer_filter(iq, centered=False, domain="temporal", epsilon_rel=1e-3,
         acc = SpatialMoments(p,max_cov_bytes)
         for sl in chunks(t,stream_chunk):
             acc.update(x[:,sl])
-        c = acc.covariance(centered)
+        c = acc.covariance(centered,covariance_ddof)
         x = x-acc.mean if centered else x
-        den = t
+        den = t-covariance_ddof
     elif domain == "temporal":
         x, _ = prepare(x,centered)
-        den = p if normalization == "samples" else t
+        den = (p if normalization == "samples" else t)-covariance_ddof
+        if den<=0:raise ValueError("Covariance denominator must be positive")
         if t*t*16 > max_cov_bytes:
             raise MemoryError("Temporal covariance exceeds cap; reduce ensemble or use local spatial AER")
         c = x.conj().T@x/den
@@ -199,6 +219,9 @@ def aer_filter(iq, centered=False, domain="temporal", epsilon_rel=1e-3,
         g[valid] = ev[valid]**(-alpha)
     if alpha == 0:
         g[:] = 1
+    raw_gain=float(g.max(initial=0.))
+    scale=1./raw_gain if gain_normalization=="unit_operator" and raw_gain>0 else 1.
+    g*=scale
     if domain == "spatial":
         y = q@(g[:,None]*(q.conj().T@x))
     else:
@@ -212,6 +235,9 @@ def aer_filter(iq, centered=False, domain="temporal", epsilon_rel=1e-3,
     return FilterResult(frames(y,iq.shape),{"centered":centered,"domain":domain,
         "epsilon_absolute":eps,"epsilon_rel":epsilon_rel,"epsilon_rule":epsilon_rule,"alpha":alpha,
         "covariance_denominator":den,"numerical_rank":int(valid.sum()),
+        "covariance_ddof":int(covariance_ddof),"gain_normalization":gain_normalization,
+        "data_only_gain_scale":scale,"raw_operator_gain_max":raw_gain,
+        "operator_gain_max":float(g.max(initial=0.)),
         "amplitude_calibration":"changed; no truth-based gain normalization"},frozen)
 
 

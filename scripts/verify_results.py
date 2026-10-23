@@ -3,6 +3,8 @@ import argparse
 import gzip
 import hashlib
 import json
+import lzma
+import math
 from pathlib import Path
 
 
@@ -18,13 +20,15 @@ def archive_bytes(root,item):
     return b"".join(parts)
 
 
-def verify(root,require_current_code=False,restore=False):
+def verify(root,require_current_code=False,restore=False,manifest_path="runs/fidelity_v03_manifest.json"):
     root=Path(root)
-    manifest=json.loads((root/"runs/fidelity_v03_manifest.json").read_text())
+    manifest=json.loads((root/manifest_path).read_text())
     for item in manifest["archives"]:
         data=archive_bytes(root,item)
         if hashlib.sha256(data).hexdigest()!=item["sha256"]:raise ValueError("Archive hash mismatch: "+item["path"])
-        raw=gzip.decompress(data)
+        codec=item.get("codec","gzip")
+        if codec not in ("gzip","xz"):raise ValueError("Unsupported archive codec: "+codec)
+        raw=(lzma.decompress if codec=="xz" else gzip.decompress)(data)
         if hashlib.sha256(raw).hexdigest()!=item["decoded_sha256"]:raise ValueError("Decoded hash mismatch")
         report=json.loads(raw)
         records=report.get("records")
@@ -37,6 +41,12 @@ def verify(root,require_current_code=False,restore=False):
             if hashlib.sha256(cfg).hexdigest()!=item["config_sha256"]:raise ValueError("Frozen config hash mismatch")
         for row in rows:
             m=row.get("metrics",{})
+            for key in item.get("required_metrics",[]):
+                if row.get("status")!="ok" or m.get(key) is None or not math.isfinite(m[key]):
+                    raise ValueError("Missing/invalid primary metric: "+key)
+            if item.get("independent_source_truth_available") is False:
+                if m.get("frozen_component_metrics_available") or "blood_iq_nrmse" in m:
+                    raise ValueError("Experimental source truth was incorrectly promoted")
             closure=m.get("frozen_component_closure_nrmse",m.get("frozen_mixture_linearity_error"))
             if closure is not None and closure>1e-9:raise ValueError("Component closure failed")
         if restore and item.get("parts"):
@@ -56,5 +66,6 @@ if __name__=="__main__":
     p=argparse.ArgumentParser();p.add_argument("root",nargs="?",default=".")
     p.add_argument("--require-current-code",action="store_true")
     p.add_argument("--restore",action="store_true",help="Restore split archives after checking their hashes")
+    p.add_argument("--manifest",default="runs/fidelity_v03_manifest.json")
     args=p.parse_args()
-    print(json.dumps(verify(args.root,args.require_current_code,args.restore),indent=2))
+    print(json.dumps(verify(args.root,args.require_current_code,args.restore,args.manifest),indent=2))

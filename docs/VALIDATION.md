@@ -1,5 +1,27 @@
 # Numerical verification
 
+## PDF-audited implementation, v0.3.0 draft
+
+23 October 2026: **134 tests pass** on Python 3.12. Numerical package hash:
+`b249dda5158ec26f472e4ba36e09b5c7cadd79fc755751646a7b300ea0af160b`.
+
+New tests cover PDF-derived threshold equations, coherent Song normalization,
+Lee temporal/spatial covariance denominators, left/right mixture equivalence
+and unequal frozen attribution, refitted injection responses, calibration-only
+operating-point selection, Axis 2 ridge/gain controls and batched RF identity.
+Experimental source-truth metrics are excluded. These implementation checks
+are not validation of experimental blood/tissue separation.
+
+The [PDF audit](PDF_METHOD_AUDIT.md) records unspecified numerical choices and
+source limits. The [protocol](FOLLOWUP_PROTOCOL_V04.md) fixes the simulation grids
+and public-data calibration/evaluation split. Publication of generated follow-up
+figures and result archives remains pending explicit approval; those outputs
+are excluded from this draft.
+
+CI checks Python 3.10/3.12. Local package-content, installed-wheel and source
+checks are recorded in [the package record](PACKAGING_V03.json). Direct tested
+dependency versions are pinned; no full transitive-environment lock is claimed.
+
 ## Separation-fidelity milestone, v0.2.0
 
 22 October 2026: **114 tests pass** locally on Python 3.12. Numerical package
@@ -28,7 +50,7 @@ decoded SHA256 values, counts, frozen configuration hashes and numerical source
 identity. Verify with:
 
 ```bash
-python scripts/verify_results.py --require-current-code
+python scripts/verify_results.py
 ```
 
 The separation-fidelity archive is stored in six numbered parts to keep upload

@@ -1,8 +1,11 @@
 # Blood/tissue separation benchmark — CPU reference pipeline
 
-Development benchmark v0.2.0 · 22 October 2026 · prepared for Henri Leroy
+Development benchmark v0.3.0 · 23 October 2026 · prepared for Henri Leroy
 
-New: [separation fidelity and Axes 1–2 study](docs/SEPARATION_FIDELITY.md),
+New: [full-PDF method audit](docs/PDF_METHOD_AUDIT.md) and
+[frozen follow-up protocol](docs/FOLLOWUP_PROTOCOL_V04.md), including Lee AER,
+matched operating points, Axis 2 conditioning and a longer two-subject RF pilot.
+The [previous separation-fidelity study](docs/SEPARATION_FIDELITY.md),
 [first experimental RF pilot](docs/EXPERIMENTAL_PILOT.md), and
 [executed verification records](docs/VALIDATION.md).
 The [SVD/EVD source audit](docs/SVD_LITERATURE_AUDIT.md) records paper-level limits.
@@ -34,9 +37,12 @@ tissue. Neither model is a validated RF/channel or RBC simulation. The common
 objective is tissue rejection with blood-information preservation. Doppler, fUSi,
 ULM and WSS are downstream endpoints.
 
-The primary report compares isolated blood complex-IQ distortion, tissue power
-retention, spectral fidelity and noise gain. Parameters fitted on the mixture
-are frozen for component diagnostics. No gain or phase is fitted to blood truth.
+The new primary comparison uses actual output-to-blood IQ error, separately
+refitted background-only output power, and refitted blood injection responses.
+Frozen component diagnostics depend on the fitted operator representation:
+equivalent spatial/temporal SVD or AER implementations can produce the SAME
+mixture output and DIFFERENT frozen blood scores. They are secondary conditional
+diagnostics, not an intrinsic ranking of adaptive filters. No gain or phase is fitted to blood truth.
 Preservation-constrained oracles and per-case Pareto sets accompany IQ-MSE oracles;
 an empty output is not accepted by a blood-preservation constraint.
 
@@ -45,15 +51,16 @@ an empty output is not accepted by a blood-preservation constraint.
 | Family | Implementation | Status |
 |---|---|---|
 | Global SVD | Fixed cutoff, cumulative-energy cutoff, full-rank Baranger SSM two-boundary square fit; explicit upper bound | SVD algebra and published SSM objective checked independently |
-| Local SVD | Generic Gaussian patches; rectangular adaptive Song-style blocks | Song threshold reconstruction remains provisional; source audit records exact limits |
+| Local SVD | Generic Gaussian patches; full-PDF Song block thresholds and Eq.1 normalization | Unspecified numerical tolerances logged; older sigmoid reconstruction retained as historical |
+| Cardiac sliding SVD | Maresca normalized-spectrum curvature plus fixed operator offset | Original manual calibration is explicit; offset is not universally transferable |
 | Randomized SVD | Seeded leading-clutter range finding and optional spatial subsampling | Known-source rejection/preservation checked; sampling variant documented |
 | Adaptive EVD | Median-eigenvalue, image-NCC and sigmoid rules; Gaussian covariance localization | Huang equations; paper PD combination is separate from the IQ extension |
 | Oracle SVD | Declared bands; IQ, preservation-constrained tissue rejection, velocity or WSS objectives | Evaluation-only; every candidate and infeasible search retained |
 | Long ensemble | Same SVD on a longer contiguous window | Ensemble length explicit; no joining across gaps |
-| ZCA-AER | Temporal and spatial Gram/covariance formulations; exact streamed spatial moments | Equation-level implementation of regularized AER |
+| ZCA-AER | Lee centered temporal covariance /P and streamed spatial covariance /(T-1) | Published algorithms checked; absolute and relative regularizers distinguished |
 | AER ablations | Centering on/off; full/partial whitening; relative, absolute, or noise-floor regularization; oracle grid | Parameter rules and gain changes recorded |
 | Axis 1 | Bulk phase correction, optional rigid integer registration, Gaussian patches, q-normalized covariance memory, event reset/fallback | Research prototype |
-| Axis 2 | Motion demodulation, complex lag covariances, rank-reduced whitening, complex Hermitian-pair AJD, soft reconstruction | Research prototype; component score heuristic |
+| Axis 2 | Complex lag AJD, rank/whitening controls, optional spectral-norm cap, lag-signature diagnostics | Conditioning controls do not guarantee source identification |
 | Other baselines | Centered complex kurtosis FastICA with explicit convergence fallback, complex PCP/RPCA; Butterworth controls | ICA stopping/conditioning diagnostics; nonlinear RPCA injection responses |
 | Axis 3 | Physical angle-time steering, tissue projector, loaded covariance adaptation, LCMV, guarded training | 42-case statistical-IQ study; uncompounded views and independent tissue calibration |
 | Downstream fUS | Faure-style whitening/common-mode CCA regression | Separate power-Doppler denoising API; outside IQ benchmark |
@@ -82,7 +89,15 @@ An executable 16-case Cartesian sweep is also provided:
 python examples/run_phase_diagram.py configs/phase_diagram_small.json runs/my_grid
 ```
 
-The new studies have frozen configurations and preserve per-condition results:
+The new follow-ups have frozen configurations and preserve per-condition results:
+
+```bash
+btbench fidelity-followup --config configs/fidelity_followup_v04.json --output runs/my_followup
+python examples/prepare_openhrf_followup.py configs/openhrf_followup_v04.json configs/openhrf_waterloo_acq0_geometry.json data/my_followup
+btbench openhrf-followup data/my_followup/waterloo_acq0.npz data/my_followup/waterloo_acq12.npz --config configs/openhrf_followup_v04.json --output runs/my_real_followup
+```
+
+Earlier studies, with their historical source fingerprints and interpretation limits:
 
 ```bash
 btbench separation-study --config configs/separation_fidelity.json --output runs/my_separation
@@ -119,6 +134,9 @@ A bounded 64-frame Waterloo CCA RF window has now been reconstructed and passed
 through a 58-setting engineering pilot: 32 calibration frames and 32 evaluation
 frames. Both views and their offsets are preserved. The short pilot supplies
 no independent blood/tissue truth and does not rank experimental separation accuracy.
+The [follow-up protocol](docs/FOLLOWUP_PROTOCOL_V04.md) fixes 1,024 frames
+from each of two public-data subjects, with 256 calibration and 768 evaluation
+frames per subject. The same limits on experimental source/phase truth apply.
 
 For large raw files, start with metadata and a bounded window:
 
@@ -138,9 +156,9 @@ provider/zea pipeline, before envelope detection and clutter filtering.
 Axis 1 currently has global phase and integer rigid 2-D registration; affine
 and nonrigid tissue warps are not implemented. Axis 2 and ICA have an explicit,
 untrained component score; its thresholds must be frozen or calibrated on
-training cases. Original Song threshold parity and Maresca et al. 2018
-(IEEE document 8466597, now identified) remain open full-text algorithm checks,
-detailed in the literature audit.
+training cases. Supplied full texts now support the Song/Maresca/Baranger audit.
+Song's unspecified detector tolerances and author-software execution parity
+remain qualifications; see the [PDF audit](docs/PDF_METHOD_AUDIT.md).
 STAP is a far-field angle-time prototype, with full receive-aperture
 and near-field manifold validation still needed. WSS is a known-direction,
 fluid-side 2-D comparator with supplied wall geometry; the package does not
@@ -157,11 +175,10 @@ arrays, acquisition files, and package build products are excluded from Git.
 Run the demo commands above to regenerate the synthetic arrays.
 
 
-Full new result records are stored losslessly as `results.json.gz`; the runners
-write ordinary JSON when rerun. Read an archive with `gzip.open(path, 'rt')`.
-`examples/plot_fidelity.py` accepts either representation. Archive/configuration
-integrity is checked with `python scripts/verify_results.py`; add
-`--require-current-code` to check the source fingerprint of this milestone.
-The largest archive is stored in six numbered parts to keep upload requests
-small. Verification reads and checks these parts directly. Add `--restore` to
-reassemble the exact original `results.json.gz` before reading or plotting it.
+The follow-up runners and frozen configuration grids are included in this draft.
+Publication of the generated follow-up figures and result archives is pending
+explicit approval; this draft contains the implementation and method audit.
+Locally generated reports can be packaged with
+`python scripts/prepare_followup_archives.py`, then checked using the manifest
+it creates. Historical v0.2.0 GZIP records remain available:
+`python scripts/verify_results.py --restore` checks those earlier source hashes.

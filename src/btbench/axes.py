@@ -143,7 +143,9 @@ def joint_diagonalize(matrices,max_sweeps=60,tol=1e-8):
             break
     off = mats.copy()
     off[:,np.arange(r),np.arange(r)] = 0
-    return q,{"sweeps":sweep+1,"ajd_relative_offdiag":float(np.linalg.norm(off)/max(np.linalg.norm(mats),1e-30))}
+    return q,{"sweeps":sweep+1,"ajd_converged":bool(largest<tol),
+              "ajd_largest_rotation":float(largest),
+              "ajd_relative_offdiag":float(np.linalg.norm(off)/max(np.linalg.norm(mats),1e-30))}
 
 
 def component_weights(sources,mixing,lags,phase_width=0.10,coherence_floor=0.1):

@@ -58,6 +58,10 @@ def verify(root,require_current_code=False,restore=False,manifest_path="runs/fid
         h=hashlib.sha256()
         for p in sorted((root/"src/btbench").glob("*.py")):h.update(p.name.encode());h.update(p.read_bytes())
         if h.hexdigest()!=manifest["code_sha256"]:raise ValueError("Current numerical source differs from archived milestone")
+    for item in manifest.get('artifacts',[]):
+        data=(root/item['path']).read_bytes()
+        if len(data)!=item['bytes'] or hashlib.sha256(data).hexdigest()!=item['sha256']:
+            raise ValueError('Derived artifact mismatch: '+item['path'])
     return {"archives":len(manifest["archives"]),"outputs":sum(x["outputs"] for x in manifest["archives"]),
             "code_sha256":manifest["code_sha256"]}
 

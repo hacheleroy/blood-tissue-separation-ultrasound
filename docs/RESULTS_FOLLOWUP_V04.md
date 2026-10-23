@@ -133,13 +133,15 @@ The [protocol](FOLLOWUP_PROTOCOL_V04.md), [synthetic summary](../runs/fidelity_f
 figures and lossless hashed result parts are versioned. Restore with:
 
 ```bash
-python scripts/verify_results.py --manifest runs/followup_v04_manifest.json --require-current-code --restore
+python scripts/verify_results.py --manifest runs/followup_v04_manifest.json --restore
 ```
 
 Restored `results.json.xz` files contain the exact frozen JSON bytes; use
 `lzma.open(path, 'rt')`. Runners produce ordinary JSON; analysis scripts accept
 restored XZ or local GZIP. Numerical source hash:
 `b249dda5158ec26f472e4ba36e09b5c7cadd79fc755751646a7b300ea0af160b`.
+This fingerprint is historical after the shared v05 implementation. The current
+source identity is checked against `runs/shared_v05_manifest.json`.
 
 ## Next scientific steps
 

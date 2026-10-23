@@ -1,0 +1,65 @@
+{
+  "study": "motion_repair_v06",
+  "version": "0.5.0",
+  "code_sha256": "8587a156b3283238920777e96cd059d72203d5a9638a61f5cc43876324cd4e13",
+  "archives": [
+    {
+      "path": "runs/motion_repair_v06/results.json.xz",
+      "codec": "xz",
+      "sha256": "3487a025bbcfd7e63e6bf447f7d91c83e95a568f6260ae7089e1b892d47b5851",
+      "decoded_sha256": "225133809fa05f3c6039830c0e832170278c6f67e35c975521d01229641297aa",
+      "cases": 64,
+      "outputs": 2304,
+      "config_path": "runs/motion_repair_v06/frozen_config.json",
+      "config_sha256": "3e7fd775e1daab0b0555d93e879e6669520f428439332972e17b7abe6331b456",
+      "independent_source_truth_available": true,
+      "parts": [
+        {
+          "path": "runs/motion_repair_v06/results.json.xz.part000",
+          "bytes": 450000,
+          "sha256": "1d586c768086107a6ff0fe159d3afbe3768de7a812ed1619a93df2930c7998b2"
+        },
+        {
+          "path": "runs/motion_repair_v06/results.json.xz.part001",
+          "bytes": 340280,
+          "sha256": "e4bb0d0063b4b8572a2dee9ca3cd5986bf7e8283eeb02975ef260924c943062e"
+        }
+      ],
+      "required_metrics": [
+        "blood_iq_nrmse",
+        "refitted_background_to_tissue_power",
+        "refitted_blood_response_nrmse_alpha1",
+        "refitted_blood_response_nrmse_alpha0_1"
+      ]
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "runs/motion_repair_v06/metrics.csv",
+      "bytes": 104480,
+      "sha256": "67e801149cc3f9e3849e7c10a134aed917803cf01de035cbf4f1753115ee2c1f"
+    },
+    {
+      "path": "runs/motion_repair_v06/summary.json",
+      "bytes": 5996,
+      "sha256": "7bc9ba852dea635ef63bbfcbb341bf2dbd591ef7fcc236e2c981cbe363d1be52"
+    },
+    {
+      "path": "docs/RESULTS_MOTION_REPAIR_V06.md",
+      "bytes": 5250,
+      "sha256": "f182053ca34fa99f5aad88be79572f34d20e3d2fcac62fe9e8965d0e4b4f1c55"
+    },
+    {
+      "path": "docs/figures/motion_repair_v06.png",
+      "bytes": 234610,
+      "sha256": "ee1122391fe214682c79491cec55f11ede980ae468f6c2e022efe31d1cce202b"
+    },
+    {
+      "path": "docs/figures/motion_repair_v06.svg",
+      "bytes": 93680,
+      "sha256": "108080faec7e44ee741140cbb00284c876a437f91ff218312b7395d720873725"
+    }
+  ],
+  "provenance": "Synthetic angular IQ only; no empirical RF or phantom data.",
+  "interpretation": "New reserved held-out bank; truth and known warp are evaluation-only. Gate fixed before any held-out draw."
+}

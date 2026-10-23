@@ -16,7 +16,7 @@ def verify(directory):
             with zipfile.ZipFile(path) as f:names=f.namelist()
             required=["btbench/measurements.py","btbench/axes.py","btbench/experimental.py","btbench/separation_experiment.py",
                       "btbench/paper_filters.py","btbench/followup_experiment.py",
-                      "btbench/shared.py","btbench/shared_experiment.py"]
+                      "btbench/shared.py","btbench/shared_experiment.py","btbench/registration.py"]
         else:
             with tarfile.open(path) as f:
                 members=f.getmembers()
@@ -26,7 +26,9 @@ def verify(directory):
             required=[root+p for p in ["src/btbench/core.py","tests/test_frozen.py","tests/test_multiview_io.py",
                 "tests/test_separation_study.py","configs/separation_fidelity.json","scripts/verify_artifacts.py",
                 "tests/test_attribution_equivalence.py","configs/fidelity_followup_v04.json",
-                "tests/test_shared_benchmark.py","configs/shared_axes_v05.json"]]
+                "tests/test_shared_benchmark.py","configs/shared_axes_v05.json",
+                "tests/test_registration.py","configs/motion_repair_v06.json",
+                "scripts/verify_motion_results.py","docs/MOTION_REPAIR_PROTOCOL_V06.md"]]
         for name in names:
             p=PurePosixPath(name)
             if p.is_absolute() or ".." in p.parts:raise ValueError("Unsafe archive path: "+name)

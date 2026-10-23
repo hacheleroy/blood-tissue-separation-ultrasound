@@ -82,7 +82,9 @@ def test_truth_is_separate_and_calibration_is_identical_for_counterfactual_refit
     assert_allclose(calibrate(a.public)[0],calibrate(background)[0])
     c=SharedContext(a.public,16,32,'smooth');other=SharedContext(background,16,32,'smooth')
     assert c.calibration==other.calibration
-    assert not np.array_equal(c.displacement,other.displacement)
+    # Independent fits may both correctly reject motion and return exact zero.
+    assert c.motion_diagnostics['input_sha256']!=other.motion_diagnostics['input_sha256']
+    assert c.displacement is not other.displacement
     with pytest.raises(ValueError):SharedContext(a.public,16,32,'smooth',a.known_displacement)
     with pytest.raises(ValueError):SharedContext(a.public,16,32,'known')
     with pytest.raises(ValueError):fit_shared(c,dict(method='identity',horizon=16))

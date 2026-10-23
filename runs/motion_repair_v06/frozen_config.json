@@ -1,0 +1,525 @@
+{
+  "study": "motion_repair_v06",
+  "version": "0.5.0",
+  "blas_threads": 1,
+  "case_workers": 4,
+  "packet_frames": 16,
+  "score_start": 64,
+  "generator": {
+    "n_frames": 128,
+    "calibration_frames": 64,
+    "shape": [
+      8,
+      16
+    ],
+    "prf_hz": 1000.0,
+    "f0_hz": 5000000.0,
+    "clutter_db": 30.0,
+    "snr_db": 20.0,
+    "decorrelation": 0.985
+  },
+  "training_seeds": [
+    601,
+    787,
+    919
+  ],
+  "evaluation_seeds": [
+    1601,
+    1907,
+    2203,
+    2503,
+    2801
+  ],
+  "background_targets": [
+    0.01,
+    0.0001
+  ],
+  "selection": "global pooled training means, grouped by family/motion/support",
+  "conditions": [
+    {
+      "id": "slow_overlap",
+      "flow_mps": 0.003,
+      "clutter_db": 40.0
+    },
+    {
+      "id": "separated_low_rank",
+      "flow_mps": 0.02,
+      "low_rank": true
+    },
+    {
+      "id": "subpixel_translation",
+      "flow_mps": 0.006,
+      "motion": "translation",
+      "amplitude_pixels": 0.8
+    },
+    {
+      "id": "smooth_deformation",
+      "flow_mps": 0.006,
+      "motion": "smooth",
+      "amplitude_pixels": 0.8
+    },
+    {
+      "id": "unmodeled_deformation",
+      "flow_mps": 0.006,
+      "motion": "unmodeled",
+      "amplitude_pixels": 0.8
+    },
+    {
+      "id": "calibration_drift",
+      "flow_mps": 0.006,
+      "acceleration_mps2": 0.02,
+      "view_phase_drift_rad": 0.3
+    },
+    {
+      "id": "opposed_flow",
+      "flow_mps": -0.008,
+      "phase_sign": -1
+    },
+    {
+      "id": "identical_statistics",
+      "flow_mps": 0.0,
+      "identical_statistics": true
+    }
+  ],
+  "methods": [
+    {
+      "id": "svd_none_h64_k1",
+      "family": "svd",
+      "method": "svd",
+      "motion": "none",
+      "horizon": 64,
+      "evaluation_only": false,
+      "discard": 1,
+      "diagnostic_only": false
+    },
+    {
+      "id": "weighted_svd_none_h64_k1",
+      "family": "weighted_svd",
+      "method": "weighted_svd",
+      "motion": "none",
+      "horizon": 64,
+      "evaluation_only": false,
+      "discard": 1,
+      "rho": 0.75,
+      "diagnostic_only": false
+    },
+    {
+      "id": "axis1_none_h64_k1",
+      "family": "axis1",
+      "method": "axis1",
+      "motion": "none",
+      "horizon": 64,
+      "evaluation_only": false,
+      "discard": 1,
+      "rho": 0.75,
+      "diagnostic_only": false
+    },
+    {
+      "id": "baranger_none_h64",
+      "family": "baranger",
+      "method": "baranger",
+      "motion": "none",
+      "horizon": 64,
+      "evaluation_only": false,
+      "diagnostic_only": false
+    },
+    {
+      "id": "lee_aer_none_h64_temporal_abs26",
+      "family": "lee_temporal_raw",
+      "method": "lee_aer",
+      "motion": "none",
+      "horizon": 64,
+      "evaluation_only": false,
+      "domain": "temporal",
+      "epsilon_abs": 26.0,
+      "diagnostic_only": false
+    },
+    {
+      "id": "lee_aer_none_h64_spatial_abs26",
+      "family": "lee_spatial_raw",
+      "method": "lee_aer",
+      "motion": "none",
+      "horizon": 64,
+      "evaluation_only": false,
+      "domain": "spatial",
+      "epsilon_abs": 26.0,
+      "diagnostic_only": false
+    },
+    {
+      "id": "axis2_none_h64_r4_p0.1",
+      "family": "axis2",
+      "method": "axis2",
+      "motion": "none",
+      "horizon": 64,
+      "evaluation_only": false,
+      "rank": 4,
+      "phase_width": 0.1,
+      "rho": 0.75,
+      "ridge_rel": 0.001,
+      "epsilon_rel": 1e-06,
+      "lags": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "gain_cap": 1.0,
+      "diagnostic_only": false
+    },
+    {
+      "id": "stap_none_h64_loaded0.01",
+      "family": "stap_loaded",
+      "method": "stap",
+      "motion": "none",
+      "horizon": 64,
+      "evaluation_only": false,
+      "adaptive": true,
+      "loading_rel": 0.01,
+      "diagnostic_only": false
+    },
+    {
+      "id": "svd_rigid_h64_k1",
+      "family": "svd",
+      "method": "svd",
+      "motion": "rigid",
+      "horizon": 64,
+      "evaluation_only": false,
+      "discard": 1,
+      "diagnostic_only": false
+    },
+    {
+      "id": "weighted_svd_rigid_h64_k1",
+      "family": "weighted_svd",
+      "method": "weighted_svd",
+      "motion": "rigid",
+      "horizon": 64,
+      "evaluation_only": false,
+      "discard": 1,
+      "rho": 0.75,
+      "diagnostic_only": false
+    },
+    {
+      "id": "axis1_rigid_h64_k1",
+      "family": "axis1",
+      "method": "axis1",
+      "motion": "rigid",
+      "horizon": 64,
+      "evaluation_only": false,
+      "discard": 1,
+      "rho": 0.75,
+      "diagnostic_only": false
+    },
+    {
+      "id": "baranger_rigid_h64",
+      "family": "baranger",
+      "method": "baranger",
+      "motion": "rigid",
+      "horizon": 64,
+      "evaluation_only": false,
+      "diagnostic_only": false
+    },
+    {
+      "id": "lee_aer_rigid_h64_temporal_abs26",
+      "family": "lee_temporal_raw",
+      "method": "lee_aer",
+      "motion": "rigid",
+      "horizon": 64,
+      "evaluation_only": false,
+      "domain": "temporal",
+      "epsilon_abs": 26.0,
+      "diagnostic_only": false
+    },
+    {
+      "id": "lee_aer_rigid_h64_spatial_abs26",
+      "family": "lee_spatial_raw",
+      "method": "lee_aer",
+      "motion": "rigid",
+      "horizon": 64,
+      "evaluation_only": false,
+      "domain": "spatial",
+      "epsilon_abs": 26.0,
+      "diagnostic_only": false
+    },
+    {
+      "id": "axis2_rigid_h64_r4_p0.1",
+      "family": "axis2",
+      "method": "axis2",
+      "motion": "rigid",
+      "horizon": 64,
+      "evaluation_only": false,
+      "rank": 4,
+      "phase_width": 0.1,
+      "rho": 0.75,
+      "ridge_rel": 0.001,
+      "epsilon_rel": 1e-06,
+      "lags": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "gain_cap": 1.0,
+      "diagnostic_only": false
+    },
+    {
+      "id": "stap_rigid_h64_loaded0.01",
+      "family": "stap_loaded",
+      "method": "stap",
+      "motion": "rigid",
+      "horizon": 64,
+      "evaluation_only": false,
+      "adaptive": true,
+      "loading_rel": 0.01,
+      "diagnostic_only": false
+    },
+    {
+      "id": "svd_smooth_h64_k1",
+      "family": "svd",
+      "method": "svd",
+      "motion": "smooth",
+      "horizon": 64,
+      "evaluation_only": false,
+      "discard": 1,
+      "diagnostic_only": false
+    },
+    {
+      "id": "weighted_svd_smooth_h64_k1",
+      "family": "weighted_svd",
+      "method": "weighted_svd",
+      "motion": "smooth",
+      "horizon": 64,
+      "evaluation_only": false,
+      "discard": 1,
+      "rho": 0.75,
+      "diagnostic_only": false
+    },
+    {
+      "id": "axis1_smooth_h64_k1",
+      "family": "axis1",
+      "method": "axis1",
+      "motion": "smooth",
+      "horizon": 64,
+      "evaluation_only": false,
+      "discard": 1,
+      "rho": 0.75,
+      "diagnostic_only": false
+    },
+    {
+      "id": "baranger_smooth_h64",
+      "family": "baranger",
+      "method": "baranger",
+      "motion": "smooth",
+      "horizon": 64,
+      "evaluation_only": false,
+      "diagnostic_only": false
+    },
+    {
+      "id": "lee_aer_smooth_h64_temporal_abs26",
+      "family": "lee_temporal_raw",
+      "method": "lee_aer",
+      "motion": "smooth",
+      "horizon": 64,
+      "evaluation_only": false,
+      "domain": "temporal",
+      "epsilon_abs": 26.0,
+      "diagnostic_only": false
+    },
+    {
+      "id": "lee_aer_smooth_h64_spatial_abs26",
+      "family": "lee_spatial_raw",
+      "method": "lee_aer",
+      "motion": "smooth",
+      "horizon": 64,
+      "evaluation_only": false,
+      "domain": "spatial",
+      "epsilon_abs": 26.0,
+      "diagnostic_only": false
+    },
+    {
+      "id": "axis2_smooth_h64_r4_p0.1",
+      "family": "axis2",
+      "method": "axis2",
+      "motion": "smooth",
+      "horizon": 64,
+      "evaluation_only": false,
+      "rank": 4,
+      "phase_width": 0.1,
+      "rho": 0.75,
+      "ridge_rel": 0.001,
+      "epsilon_rel": 1e-06,
+      "lags": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "gain_cap": 1.0,
+      "diagnostic_only": false
+    },
+    {
+      "id": "stap_smooth_h64_loaded0.01",
+      "family": "stap_loaded",
+      "method": "stap",
+      "motion": "smooth",
+      "horizon": 64,
+      "evaluation_only": false,
+      "adaptive": true,
+      "loading_rel": 0.01,
+      "diagnostic_only": false
+    },
+    {
+      "id": "svd_known_h64_k1",
+      "family": "svd",
+      "method": "svd",
+      "motion": "known",
+      "horizon": 64,
+      "evaluation_only": true,
+      "discard": 1,
+      "diagnostic_only": false
+    },
+    {
+      "id": "weighted_svd_known_h64_k1",
+      "family": "weighted_svd",
+      "method": "weighted_svd",
+      "motion": "known",
+      "horizon": 64,
+      "evaluation_only": true,
+      "discard": 1,
+      "rho": 0.75,
+      "diagnostic_only": false
+    },
+    {
+      "id": "axis1_known_h64_k1",
+      "family": "axis1",
+      "method": "axis1",
+      "motion": "known",
+      "horizon": 64,
+      "evaluation_only": true,
+      "discard": 1,
+      "rho": 0.75,
+      "diagnostic_only": false
+    },
+    {
+      "id": "baranger_known_h64",
+      "family": "baranger",
+      "method": "baranger",
+      "motion": "known",
+      "horizon": 64,
+      "evaluation_only": true,
+      "diagnostic_only": false
+    },
+    {
+      "id": "lee_aer_known_h64_temporal_abs26",
+      "family": "lee_temporal_raw",
+      "method": "lee_aer",
+      "motion": "known",
+      "horizon": 64,
+      "evaluation_only": true,
+      "domain": "temporal",
+      "epsilon_abs": 26.0,
+      "diagnostic_only": false
+    },
+    {
+      "id": "lee_aer_known_h64_spatial_abs26",
+      "family": "lee_spatial_raw",
+      "method": "lee_aer",
+      "motion": "known",
+      "horizon": 64,
+      "evaluation_only": true,
+      "domain": "spatial",
+      "epsilon_abs": 26.0,
+      "diagnostic_only": false
+    },
+    {
+      "id": "axis2_known_h64_r4_p0.1",
+      "family": "axis2",
+      "method": "axis2",
+      "motion": "known",
+      "horizon": 64,
+      "evaluation_only": true,
+      "rank": 4,
+      "phase_width": 0.1,
+      "rho": 0.75,
+      "ridge_rel": 0.001,
+      "epsilon_rel": 1e-06,
+      "lags": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "gain_cap": 1.0,
+      "diagnostic_only": false
+    },
+    {
+      "id": "stap_known_h64_loaded0.01",
+      "family": "stap_loaded",
+      "method": "stap",
+      "motion": "known",
+      "horizon": 64,
+      "evaluation_only": true,
+      "adaptive": true,
+      "loading_rel": 0.01,
+      "diagnostic_only": false
+    },
+    {
+      "id": "roundtrip_none_h16",
+      "family": "roundtrip",
+      "method": "roundtrip",
+      "motion": "none",
+      "horizon": 16,
+      "evaluation_only": false,
+      "diagnostic_only": false
+    },
+    {
+      "id": "roundtrip_rigid_h16",
+      "family": "roundtrip",
+      "method": "roundtrip",
+      "motion": "rigid",
+      "horizon": 16,
+      "evaluation_only": false,
+      "diagnostic_only": false
+    },
+    {
+      "id": "roundtrip_smooth_h16",
+      "family": "roundtrip",
+      "method": "roundtrip",
+      "motion": "smooth",
+      "horizon": 16,
+      "evaluation_only": false,
+      "diagnostic_only": false
+    },
+    {
+      "id": "roundtrip_known_h16",
+      "family": "roundtrip",
+      "method": "roundtrip",
+      "motion": "known",
+      "horizon": 16,
+      "evaluation_only": true,
+      "diagnostic_only": false
+    }
+  ],
+  "motion_options": {
+    "max_translation": 1.25,
+    "max_shape_coefficient": 0.35,
+    "max_displacement": 1.5,
+    "minimum_motion_rms": 0.03,
+    "identity_residual": 0.01,
+    "minimum_relative_improvement": 0.15,
+    "minimum_absolute_improvement": 0.002,
+    "maximum_validation_error": 0.12,
+    "maximum_condition": 10000.0,
+    "minimum_singular": 0.005,
+    "minimum_fit_pixels": 6,
+    "minimum_validation_pixels": 4,
+    "minimum_valid_fraction": 0.95,
+    "minimum_jacobian": 0.45,
+    "maximum_jacobian": 1.8,
+    "maximum_inverse_error": 0.05,
+    "smooth_relative_improvement": 0.1,
+    "smooth_absolute_improvement": 0.003,
+    "shape_ridge": 0.01,
+    "robust_scale": 0.03,
+    "max_evaluations": 30
+  }
+}

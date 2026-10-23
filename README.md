@@ -1,8 +1,13 @@
 # Blood/tissue separation benchmark — CPU reference pipeline
 
-Development benchmark v0.4.0 · 23 October 2026 · prepared for Henri Leroy
+Development benchmark v0.5.0 · 23 October 2026 · prepared for Henri Leroy
 
-New: the [shared three-axis benchmark](docs/RESULTS_SHARED_V05.md) uses the same
+The [motion-repair held-out study](docs/RESULTS_MOTION_REPAIR_V06.md) fixes
+registration and gates each displacement on independent spatial pixels. Its
+predeclared software gate passes on five reserved seeds, permitting a phantom
+experiment while leaving significant reconstruction and blood-response losses.
+
+The [shared three-axis benchmark](docs/RESULTS_SHARED_V05.md) uses the same
 three-view input, disjoint-time calibration, spatial tile and score interval for
 all families, including Stephen Lee AER. Its [frozen protocol](docs/SHARED_BENCHMARK_PROTOCOL_V05.md)
 separates training-only operating points, matched weighted-history controls,
@@ -115,8 +120,21 @@ Install the plot extra to regenerate figures:
 python -m pip install -e '.[plot]'
 btbench shared-study --config configs/shared_axes_v05.json --output runs/my_shared_study
 python scripts/plot_shared_benchmark.py runs/my_shared_study
-python scripts/verify_results.py --manifest runs/shared_v05_manifest.json --require-current-code
+python scripts/verify_results.py --manifest runs/shared_v05_manifest.json
 python scripts/verify_shared_results.py
+```
+
+The motion-repair study fixes a new split of three development and five
+reserved held-out seeds across the same eight conditions. Its 36 matched
+settings cover no compensation, gated rigid, gated smooth and the
+evaluation-only prescribed warp. See
+[the protocol](docs/MOTION_REPAIR_PROTOCOL_V06.md) for the data-only acceptance
+gate and exact release criteria. After the archived run is installed, verify it:
+
+```bash
+btbench motion-study --config configs/motion_repair_v06.json --output runs/my_motion_study
+python scripts/verify_results.py --manifest runs/motion_v06_manifest.json --require-current-code
+python scripts/verify_motion_results.py
 ```
 
 The score uses all three complex views on frames [64,128), with 16-frame packet

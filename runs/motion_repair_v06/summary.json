@@ -1,0 +1,189 @@
+{
+  "study": "motion_repair_v06",
+  "code_sha256": "8587a156b3283238920777e96cd059d72203d5a9638a61f5cc43876324cd4e13",
+  "config_sha256": "3e7fd775e1daab0b0555d93e879e6669520f428439332972e17b7abe6331b456",
+  "training_cases": 24,
+  "heldout_cases": 40,
+  "settings_per_case": 36,
+  "heldout_seeds": [
+    1601,
+    1907,
+    2203,
+    2503,
+    2801
+  ],
+  "old_smooth_displacement_rmse": {
+    "subpixel_translation": 1.2617601210117932,
+    "smooth_deformation": 1.2380680515797136
+  },
+  "displacement_rmse": {
+    "slow_overlap": {
+      "none": 0.0,
+      "rigid": 0.0,
+      "smooth": 0.0,
+      "known": 0.0
+    },
+    "separated_low_rank": {
+      "none": 0.0,
+      "rigid": 0.0,
+      "smooth": 0.0,
+      "known": 0.0
+    },
+    "subpixel_translation": {
+      "none": 0.4882622246293481,
+      "rigid": 0.014668279298350356,
+      "smooth": 0.010755295878703256,
+      "known": 0.0
+    },
+    "smooth_deformation": {
+      "none": 0.496694318002244,
+      "rigid": 0.3941764790666462,
+      "smooth": 0.10725330456278459,
+      "known": 0.0
+    },
+    "unmodeled_deformation": {
+      "none": 0.5003184253909847,
+      "rigid": 0.4321508748941699,
+      "smooth": 0.2025005178322786,
+      "known": 0.0
+    },
+    "calibration_drift": {
+      "none": 0.0,
+      "rigid": 0.0,
+      "smooth": 0.0,
+      "known": 0.0
+    },
+    "opposed_flow": {
+      "none": 0.0,
+      "rigid": 0.0,
+      "smooth": 0.0,
+      "known": 0.0
+    },
+    "identical_statistics": {
+      "none": 0.0,
+      "rigid": 0.0,
+      "smooth": 0.0,
+      "known": 0.0
+    }
+  },
+  "paired_heldout_means": {
+    "svd": {
+      "none": {
+        "blood_iq_nrmse": 9.201739649687998,
+        "background_to_tissue_power": 0.15027170124603978,
+        "incremental_blood_nrmse_alpha1": 0.387226407315053
+      },
+      "rigid": {
+        "blood_iq_nrmse": 5.894311158647744,
+        "background_to_tissue_power": 0.06622240288950478,
+        "incremental_blood_nrmse_alpha1": 0.4300681948129572
+      },
+      "smooth": {
+        "blood_iq_nrmse": 3.8061825395266866,
+        "background_to_tissue_power": 0.024376377705148205,
+        "incremental_blood_nrmse_alpha1": 0.44717359351679314
+      },
+      "known": {
+        "blood_iq_nrmse": 3.1122732639829542,
+        "background_to_tissue_power": 0.014869929419443364,
+        "incremental_blood_nrmse_alpha1": 0.45122549297175835
+      }
+    },
+    "axis1": {
+      "none": {
+        "blood_iq_nrmse": 7.575939604069743,
+        "background_to_tissue_power": 0.10047730659987338,
+        "incremental_blood_nrmse_alpha1": 0.41742466612418083
+      },
+      "rigid": {
+        "blood_iq_nrmse": 5.141179884540603,
+        "background_to_tissue_power": 0.0482999800446887,
+        "incremental_blood_nrmse_alpha1": 0.45416183780048025
+      },
+      "smooth": {
+        "blood_iq_nrmse": 3.646461298717994,
+        "background_to_tissue_power": 0.022081927800772415,
+        "incremental_blood_nrmse_alpha1": 0.46774029303831066
+      },
+      "known": {
+        "blood_iq_nrmse": 3.0027848861549855,
+        "background_to_tissue_power": 0.013740270182138165,
+        "incremental_blood_nrmse_alpha1": 0.47197673424064046
+      }
+    },
+    "axis2": {
+      "none": {
+        "blood_iq_nrmse": 24.540310393980953,
+        "background_to_tissue_power": 0.30734885410548063,
+        "incremental_blood_nrmse_alpha1": 0.48542836206164547
+      },
+      "rigid": {
+        "blood_iq_nrmse": 22.66892950364709,
+        "background_to_tissue_power": 0.25444033687804757,
+        "incremental_blood_nrmse_alpha1": 0.5133584684917365
+      },
+      "smooth": {
+        "blood_iq_nrmse": 21.482298318589947,
+        "background_to_tissue_power": 0.22554661427453254,
+        "incremental_blood_nrmse_alpha1": 0.5302860471687332
+      },
+      "known": {
+        "blood_iq_nrmse": 21.40885712556946,
+        "background_to_tissue_power": 0.22370690255736073,
+        "incremental_blood_nrmse_alpha1": 0.5272612505618532
+      }
+    },
+    "stap": {
+      "none": {
+        "blood_iq_nrmse": 9.756357462932746,
+        "background_to_tissue_power": 0.17495761899714188,
+        "incremental_blood_nrmse_alpha1": 0.7313542665522978
+      },
+      "rigid": {
+        "blood_iq_nrmse": 10.199282168074566,
+        "background_to_tissue_power": 0.18349507184038955,
+        "incremental_blood_nrmse_alpha1": 0.8839417120998657
+      },
+      "smooth": {
+        "blood_iq_nrmse": 9.813262666661313,
+        "background_to_tissue_power": 0.17587970087043053,
+        "incremental_blood_nrmse_alpha1": 0.884295252569611
+      },
+      "known": {
+        "blood_iq_nrmse": 9.410212042420977,
+        "background_to_tissue_power": 0.1682332224861924,
+        "incremental_blood_nrmse_alpha1": 0.9034179346384903
+      }
+    },
+    "lee_aer": {
+      "none": {
+        "blood_iq_nrmse": 1.0261547479210886,
+        "background_to_tissue_power": 0.00018431514641799895,
+        "incremental_blood_nrmse_alpha1": 0.9102197984300127
+      },
+      "rigid": {
+        "blood_iq_nrmse": 1.0013154843120473,
+        "background_to_tissue_power": 0.00014225743316509414,
+        "incremental_blood_nrmse_alpha1": 0.908750347280197
+      },
+      "smooth": {
+        "blood_iq_nrmse": 0.9762553402893811,
+        "background_to_tissue_power": 0.0001027493071039917,
+        "incremental_blood_nrmse_alpha1": 0.9064422932618799
+      },
+      "known": {
+        "blood_iq_nrmse": 0.9641702005989954,
+        "background_to_tissue_power": 8.297924666059286e-05,
+        "incremental_blood_nrmse_alpha1": 0.9062921891205555
+      }
+    }
+  },
+  "criteria": {
+    "translation_geometry_better_than_v05_smooth": true,
+    "smooth_geometry_better_than_v05_smooth": true,
+    "svd_blood_error_no_more_than_5_percent_above_none": true,
+    "axis1_blood_error_no_more_than_5_percent_above_none": true
+  },
+  "software_gate_passed": true,
+  "interpretation": "Prescribed warp evaluates geometry only; selection/gating never receives it. Synthetic angular IQ, not measured RF or phantom validation."
+}

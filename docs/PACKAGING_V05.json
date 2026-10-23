@@ -1,0 +1,26 @@
+{
+  "version": "0.5.0",
+  "date": "2026-10-23",
+  "python": "3.12.14",
+  "code_sha256": "8587a156b3283238920777e96cd059d72203d5a9638a61f5cc43876324cd4e13",
+  "artifacts": [
+    {
+      "file": "blood_tissue_benchmark-0.5.0-py3-none-any.whl",
+      "bytes": 95039,
+      "sha256": "f1b30526e568400295b825f9631bf608c8128dec9555635f00e9f1e8ab08a75a",
+      "entries": 27
+    },
+    {
+      "file": "blood_tissue_benchmark-0.5.0.tar.gz",
+      "bytes": 3254827,
+      "sha256": "09038979536b1eced8b96132620530c87373c5caa3f7e322d91ed38e82f78056",
+      "entries": 143
+    }
+  ],
+  "installed_wheel_outside_source": true,
+  "installed_wheel_source_hash_matches": true,
+  "source_distribution_tests": 175,
+  "source_distribution_test_status": "passed",
+  "archive_and_package_content_checks": "passed",
+  "note": "Local package bytes at validation time; CI rebuilds independently. Record is excluded from the source distribution to avoid self-reference."
+}

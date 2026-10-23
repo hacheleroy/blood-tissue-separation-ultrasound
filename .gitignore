@@ -50,3 +50,6 @@ runs/openhrf_followup_v04/*/results.json
 runs/shared_axes_v05/checkpoints/
 runs/shared_axes_v05/results.json.gz
 runs/shared_axes_v05/results.json.xz
+runs/motion_repair_v06/checkpoints/
+runs/motion_repair_v06/results.json.gz
+runs/motion_repair_v06/results.json.xz

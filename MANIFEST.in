@@ -6,4 +6,5 @@ recursive-include scripts *.py
 recursive-include docs *.md *.json *.pdf *.png *.svg
 # This repository-side record is written after hashing the package artifacts.
 exclude docs/PACKAGING_V04.json
+exclude docs/PACKAGING_V05.json
 global-exclude *.py[cod] __pycache__

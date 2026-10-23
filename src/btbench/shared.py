@@ -6,11 +6,13 @@ this is an IQ software experiment, not an acoustic or experimental validation.
 """
 from dataclasses import dataclass, field
 import hashlib
+import json
 import numpy as np
 from scipy import linalg, ndimage, optimize
 from .axes import joint_diagonalize, component_weights
 from .stap import estimate_tissue_velocity, null_projector
 from .svd_literature import baranger_band
+from .registration import MotionGate, register_displacement
 
 
 AXIS_NAMES = {
@@ -73,11 +75,12 @@ def inverse_coordinates(displacement, iterations=40):
     return q
 
 
-def sample_frame(frame, coordinates):
+def sample_frame(frame, coordinates, zero_extension=False):
     out = np.empty_like(frame, dtype=complex)
+    mode='grid-constant' if zero_extension else 'constant'
     for j in range(len(frame)):
-        out[j] = (ndimage.map_coordinates(frame[j].real, coordinates, order=1, mode='constant', cval=0.)
-                  + 1j*ndimage.map_coordinates(frame[j].imag, coordinates, order=1, mode='constant', cval=0.))
+        out[j] = (ndimage.map_coordinates(frame[j].real, coordinates, order=1, mode=mode, cval=0.)
+                  + 1j*ndimage.map_coordinates(frame[j].imag, coordinates, order=1, mode=mode, cval=0.))
     return out
 
 
@@ -174,7 +177,7 @@ def shared_scene(seed=0, n_frames=128, calibration_frames=64, shape=(8, 16),
          'known_motion_is_evaluation_only':True, 'contrast_agent':False})
 
 
-def calibrate(public):
+def calibrate(public, return_complex_reference=False):
     """One common, data-only phase/gain calibration for every arm."""
     g = public.geometry; cal = public.calibration_views; roi = public.training_roi
     v = estimate_tissue_velocity(cal, roi, g['tx_rad'], g['rx_rad'], g['prf_hz'],
@@ -192,46 +195,22 @@ def calibrate(public):
     times = np.arange(len(public.views))[:,None]/g['prf_hz'] + np.asarray(g['view_offsets_s'])[None]
     modulation = gains[None]*np.exp(1j*times*rate[None])
     reference = np.mean(abs(aligned/gains[None,:,None,None]), axis=(0,1))
-    return modulation[:,:,None,None], reference, {'estimated_velocity_zx_mps':v.tolist(),
+    diagnostics={'estimated_velocity_zx_mps':v.tolist(),
         'relative_gains_real':gains.real.tolist(), 'relative_gains_imag':gains.imag.tolist(),
         'calibration_sha256':array_hash(cal), 'training_roi_sha256':array_hash(roi)}
+    result=(modulation[:,:,None,None],reference,diagnostics)
+    if return_complex_reference:return (*result,np.mean(aligned/gains[None,:,None,None],axis=0))
+    return result
 
 
-def estimate_displacement(views, reference, roi, mode, iterations=8):
-    """Fixed small deformation model, robust Gauss-Newton envelope registration.
+def estimate_displacement(views, reference, roi, mode, iterations=30, reference_views=None, options=None):
+    """Forward registration with independent spatial validation and zero fallback.
 
-    Each frame is fitted independently to the calibration reference. The smooth
-    model has eight fixed coefficients; unmodeled deformation is a stress case.
-    No source truth or fitted trajectory from another counterfactual is reused.
+    See registration.py for the complex-reference model and explicit ungated
+    diagnostic arms. The envelope-only call remains available for simple inputs.
     """
-    if mode not in ('none','rigid','smooth'):
-        raise ValueError('Data-only registration must be none, rigid or smooth')
-    n, _, z, x = views.shape
-    if mode == 'none':return np.zeros((n,2,z,x)), {'registration':'none'}
-    basis = motion_basis((z,x))[:1 if mode=='rigid' else 4]
-    grid = np.indices((z,x), dtype=float); scale = max(np.quantile(reference,.9),1e-12)
-    ref = reference/scale; out = []; residuals = []; parameters = []
-    for frame in views:
-        image = np.mean(abs(frame),axis=0)/scale
-        gradients = np.gradient(image); theta = np.zeros((2,len(basis)))
-        for _ in range(iterations):
-            coords = grid + np.einsum('dk,kzx->dzx',theta,basis)
-            sampled = ndimage.map_coordinates(image,coords,order=1,mode='constant',cval=0.)
-            residual = (sampled-ref)[roi]
-            grads = [ndimage.map_coordinates(q,coords,order=1,mode='nearest')[roi] for q in gradients]
-            jac = np.column_stack([grads[d]*a[roi] for d in range(2) for a in basis])
-            robust = 1/np.sqrt(1+(residual/.2)**2)
-            ridge = np.tile([1e-4]+[2e-3]*(len(basis)-1),2)
-            normal = jac.T@(robust[:,None]*jac)+np.diag(ridge)
-            delta = linalg.solve(normal, jac.T@(robust*residual)+ridge*theta.ravel(), assume_a='pos')
-            theta = np.clip(theta-np.clip(delta.reshape(theta.shape),-.4,.4),-1.5,1.5)
-        displacement = np.einsum('dk,kzx->dzx',theta,basis)
-        out.append(displacement); residuals.append(float(np.sqrt(np.mean(residual**2))));parameters.append(theta)
-    parameters = np.asarray(parameters);out = np.asarray(out)
-    return out, {'registration':mode, 'fixed_iterations':iterations,
-        'model_coefficients':int(parameters.shape[1]*parameters.shape[2]),
-        'parameters_sha256':array_hash(parameters), 'median_envelope_residual':float(np.median(residuals)),
-        'largest_displacement_pixels':float(np.max(abs(out)))}
+    options=options or MotionGate(max_evaluations=iterations)
+    return register_displacement(views,reference,roi,mode,options,reference_views)
 
 
 def bounded_moments(x, packet, horizon, rho=1., lags=(0,)):
@@ -268,7 +247,7 @@ class SharedResult:
 
 class SharedContext:
     """Cached data-only fits. Known-motion controls use an explicit separate path."""
-    def __init__(self, public, packet=16, score_start=64, motion='none', known_motion=None):
+    def __init__(self, public, packet=16, score_start=64, motion='none', known_motion=None, motion_options=None):
         n=public.views.shape[0]
         if packet < 1 or n%packet or score_start%packet or not 0<=score_start<n:
             raise ValueError('Whole packets and a nonempty scoring interval are required')
@@ -278,11 +257,15 @@ class SharedContext:
         elif known_motion is not None:
             raise ValueError('Known motion cannot enter a data-only arm')
         self.public=public;self.packet=packet;self.score_start=score_start
-        self.modulation,reference,cal=calibrate(public)
+        self.modulation,reference,cal,reference_views=calibrate(public,return_complex_reference=True)
         if motion=='known':
             self.displacement=np.asarray(known_motion);md={'registration':'known evaluation-only warp'}
-        else:self.displacement,md=estimate_displacement(public.views/self.modulation,reference,public.training_roi,motion)
+        else:self.displacement,md=estimate_displacement(public.views/self.modulation,reference,public.training_roi,motion,
+            reference_views=reference_views,options=MotionGate(**motion_options) if motion_options else None)
         self.motion=motion;self.calibration=cal;self.motion_diagnostics=md
+        if 'audit_rows' in md:
+            md['audit_sha256']=hashlib.sha256(json.dumps(md['audit_rows'],separators=(',',':'),allow_nan=False).encode()).hexdigest()
+        self.motion_summary={k:v for k,v in md.items() if k!='audit_rows'}
         self.has_displacement=bool(np.any(self.displacement))
         grid=np.indices(public.views.shape[2:],dtype=float)
         self.alignment_coordinates=grid[None]+self.displacement
@@ -293,12 +276,12 @@ class SharedContext:
 
     def align(self, other):
         value=other/self.modulation
-        return (np.stack([sample_frame(f,q) for f,q in zip(value,self.alignment_coordinates)])
+        return (np.stack([sample_frame(f,q,zero_extension=True) for f,q in zip(value,self.alignment_coordinates)])
                 if self.has_displacement else value)
 
     def restore_block(self, aligned, start):
         stop=start+len(aligned)
-        value=(np.stack([sample_frame(f,q) for f,q in zip(aligned,self.restoration_coordinates[start:stop])])
+        value=(np.stack([sample_frame(f,q,zero_extension=True) for f,q in zip(aligned,self.restoration_coordinates[start:stop])])
                if self.has_displacement else aligned)
         return value*self.modulation[start:stop]
 
@@ -477,5 +460,6 @@ def fit_shared(context, spec):
                 'interpretation':'truth-fitted real weights in [0,1] in the fixed uncapped basis; diagnostic only, not an upper bound on every capped operator'}
     return SharedResult(result,{'method':method,'motion':context.motion,'horizon_frames':horizon,
         'packet_frames':packet,'latency_max_frames':packet,'spatial_tile':list(shape[2:]),'input_views':shape[1],
-        'calibration':context.calibration,'motion_fit':context.motion_diagnostics,'blocks':records,
+        'calibration':context.calibration,'motion_fit':context.motion_summary,'blocks':records,
+        'resampling':'continuous complex bilinear zero extension; generator retains its historical boundary rule',
         'frozen_attribution':'conditional on this operator representation'},frozen,source_diagnostic)

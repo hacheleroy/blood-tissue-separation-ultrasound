@@ -22,6 +22,7 @@ def main(argv=None):
     p=sub.add_parser("literature-study");p.add_argument("--config");p.add_argument("--output",required=True)
     p=sub.add_parser("fidelity-followup");p.add_argument("--config");p.add_argument("--output",required=True)
     p=sub.add_parser("shared-study");p.add_argument("--config");p.add_argument("--output",required=True)
+    p=sub.add_parser("motion-study");p.add_argument("--config");p.add_argument("--output",required=True)
     p=sub.add_parser("openhrf-followup");p.add_argument("datasets",nargs='+');p.add_argument("--config",required=True);p.add_argument("--output",required=True)
     args=parser.parse_args(argv)
     if args.cmd=="simulate":
@@ -75,9 +76,9 @@ def main(argv=None):
         config=json.loads(Path(args.config).read_text()) if args.config else default_followup_config()
         result=run_followup_study(config,args.output)
         print(json.dumps({"cases":len(result['records']),"output":args.output}))
-    elif args.cmd=="shared-study":
-        from .shared_experiment import default_shared_config,run_shared_study
-        config=json.loads(Path(args.config).read_text()) if args.config else default_shared_config()
+    elif args.cmd in ("shared-study","motion-study"):
+        from .shared_experiment import default_shared_config,default_motion_repair_config,run_shared_study
+        config=json.loads(Path(args.config).read_text()) if args.config else (default_motion_repair_config() if args.cmd=='motion-study' else default_shared_config())
         result=run_shared_study(config,args.output)
         print(json.dumps({"cases":len(result['records']),"output":args.output}))
     elif args.cmd=="openhrf-followup":

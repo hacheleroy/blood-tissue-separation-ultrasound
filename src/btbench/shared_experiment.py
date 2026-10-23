@@ -1,5 +1,5 @@
 """Frozen common-input study and global training-only operating-point selection."""
-from dataclasses import replace
+from dataclasses import replace, asdict
 from concurrent.futures import ProcessPoolExecutor, as_completed
 import multiprocessing
 from pathlib import Path
@@ -12,6 +12,7 @@ import numpy as np
 import scipy
 from threadpoolctl import threadpool_limits
 from .shared import AXIS_NAMES, SharedContext, fit_shared, shared_scene, array_hash
+from .registration import MotionGate
 from .measurements import relative_norm, blood_fidelity
 from .followup_experiment import numerical_source_hash
 from .stap_experiment import _clean
@@ -77,6 +78,29 @@ def default_shared_config():
             dict(id='identical_statistics',flow_mps=0.,identical_statistics=True)],methods=methods)
 
 
+def default_motion_repair_config():
+    """Predeclared matched-arm repair study; no evaluation-seed tuning."""
+    base=default_shared_config()
+    base.update(study='motion_repair_v06',version='0.5.0',
+                training_seeds=[601,787,919],evaluation_seeds=[1601,1907,2203,2503,2801],
+                motion_options=asdict(MotionGate()))
+    templates=[m for m in base['methods'] if m['motion']=='none' and m['horizon']==64 and m['id'] in {
+        'svd_none_h64_k1','weighted_svd_none_h64_k1','axis1_none_h64_k1',
+        'axis2_none_h64_r4_p0.1','stap_none_h64_loaded0.01',
+        'lee_aer_none_h64_temporal_abs26','lee_aer_none_h64_spatial_abs26','baranger_none_h64'}]
+    methods=[]
+    for mode in ('none','rigid','smooth','known'):
+        for template in templates:
+            m=dict(template);m['motion']=mode;m['id']=template['id'].replace('_none_',f'_{mode}_')
+            m['evaluation_only']=mode=='known';m['diagnostic_only']=False
+            methods.append(m)
+    for mode in ('none','rigid','smooth','known'):
+        methods.append(dict(id=f'roundtrip_{mode}_h16',family='roundtrip',method='roundtrip',motion=mode,horizon=16,
+                            evaluation_only=mode=='known',diagnostic_only=False))
+    base['methods']=methods
+    return base
+
+
 def validate_shared_config(config):
     if set(config['training_seeds'])&set(config['evaluation_seeds']):raise ValueError('Seed splits overlap')
     if not config['training_seeds'] or not config['evaluation_seeds']:raise ValueError('Both seed splits are required')
@@ -88,6 +112,8 @@ def validate_shared_config(config):
     for spec in config['methods']:
         if spec.get('evaluation_only',False)!=(spec['motion']=='known'):
             raise ValueError('Only the explicit known-motion path is evaluation-only')
+        if spec.get('diagnostic_only',False) and not spec['motion'].endswith('_ungated'):
+            raise ValueError('Only ungated ablations may be diagnostic-only')
         if spec['horizon']>start or spec['horizon']<packet or spec['horizon']%packet:
             raise ValueError('The warm-up must cover every finite history')
         if spec['method']=='axis2' and max(spec.get('lags',[1,2,4,8]))>=packet:
@@ -99,7 +125,7 @@ def select_global_operating_points(records, methods, targets):
     """One setting per family, motion and support; no condition-specific tuning."""
     groups={};by_id={m['id']:m for m in methods}
     for m in methods:
-        if not m.get('evaluation_only') and m['method'] not in ('identity','roundtrip'):
+        if not m.get('evaluation_only') and not m.get('diagnostic_only') and m['method'] not in ('identity','roundtrip'):
             key=(m['family'],m['motion'],m['horizon'])
             groups.setdefault(key,[]).append(m['id'])
     training=[r for r in records if r['split']=='training'];evaluation=[r for r in records if r['split']=='evaluation']
@@ -172,7 +198,7 @@ def run_shared_case(config, condition, seed, split):
         known={'known_motion':scene.known_displacement} if motion=='known' else {}
         background=scene.tissue+scene.noise
         publics=[scene.public,replace(scene.public,views=background),replace(scene.public,views=background+.1*scene.blood)]
-        fits=[SharedContext(p,packet,start,motion,**known) for p in publics]
+        fits=[SharedContext(p,packet,start,motion,motion_options=config.get('motion_options'),**known) for p in publics]
         contexts[motion]={name:_diagnostics(ctx,scene) for name,ctx in zip(('actual','background','weak_injection'),fits)}
         for spec in [m for m in config['methods'] if m['motion']==motion]:
             t0=time.perf_counter()

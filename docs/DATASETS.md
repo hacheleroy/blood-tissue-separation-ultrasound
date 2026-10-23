@@ -1,77 +1,91 @@
-# Open H-RF suitability screening
+# Open H-RF acquisition screening
 
-Screened on 22 October 2026. Evidence: consortium data cards plus the public
-per-file metadata inventories; no experimental benchmark has yet been run.
-GitHub tree inspected: `5eae31257f55391129c5aadb178659948448da5d`.
-Catalog snapshot reports revision `88730aa47007553da09ffea61b499002e8b552b1`.
-The live HDF5 range-header request timed out; inventory-derived timing still
-needs confirmation against the actual file before quantitative reconstruction.
+Reviewed on 22 October 2026: all 46 dataset/subdataset cards in the official
+GitHub catalog, followed by the acquisition inventories of the flow candidates.
+GitHub snapshot: `5eae31257f55391129c5aadb178659948448da5d`.
+Direct HDF5 reads below use Hugging Face revision
+`05234aa084b27c8e4d0096c3a9adc33fbbc123d8`.
 
-## Recommended starting point
+The target is tissue rejection with preservation of the blood signal. In-vitro
+flow with an independent reference is preferred, followed by in-vivo recordings
+with tissue motion; absence of bubbles is preferred. A geometry mask, prescribed
+pump voltage or an ultrasound-derived velocity map supplies a different level
+of evidence from an independent flow measurement or source-separated IQ truth.
 
-**Waterloo carotid, `waterloo-carotid/data/Acq0.hdf5`.** The card describes human
-carotid plane-wave RF with processed vector velocities. There are 93 acquisitions
-from eight subjects. Acq0 is a longitudinal common-carotid baseline recording:
-30,000 frames, two transmit angles spanning 20 degrees, 128 receive elements,
-5 MHz Tx center frequency, 32.5 MHz sampling. The inventory reports 3 kHz frame
-rate and 6 kHz pulse rate, giving about 10 seconds. Its decoded RF is about
-62.9 GB; use windowed access. Two angles support an initial angle-aware study.
-Known issues include receive multiplexing in some US4R-lite files, noise and
-occasional aliasing. The card describes no contrast injection; native-blood
-status is a strong inference that needs explicit confirmation. Stored velocities
-follow a wall-filtered processing chain and cannot be used as oracle truth.
+## In-vitro candidates first
 
-Sources: [data card](https://huggingface.co/datasets/nvidia/Open-H-RF/blob/main/waterloo-carotid/README.md),
-[consortium file inventory](https://github.com/open-h/Open-H-RF/blob/main/stats/data/files/waterloo-carotid.jsonl).
+| Candidate | Acquisition and contrast | Reference status | Use |
+|---|---|---|---|
+| [Twente vortex-flow phantom](https://github.com/open-h/Open-H-RF/blob/main/datasets/twente-vortexflow/README.md) | Six acquisitions; short-pulse and chirp tracks; 750 frames/track at about 500 Hz. Explicit microbubbles and optical glass beads. | The card describes synchronized camera recordings. The pinned folder contains six HDF5 files and illustration assets; the representative HDF5 contains RF and ultrasound images, with no raw camera sequence or velocity field found. Optical registration/PIV are not provided. | Separate contrast arm only. Raw optical-reference access is still a gap. The curved array emits a diverging wave and needs its own verified beamforming model. |
+| [ResolveStroke flow phantom](https://github.com/open-h/Open-H-RF/blob/main/datasets/resolvestroke/phantom_flow/README.md) | Explicit microbubble bolus; five 1-s clips at 4 kHz, including pre-bolus baseline. Matrix-array DDC channel IQ. | Tube masks provide geometry. Device-computed velocity/MVI maps are processed references, not independent physical truth. The released clips do not reproduce the full-bolus proprietary processing. | Separate contrast/flow-on/off study. Pre-bolus frames may provide a negative control; native-blood or blood-mimicking scattering there is unconfirmed. |
+| [Oslo SWE/ARFI phantoms](https://github.com/open-h/Open-H-RF/blob/main/datasets/oslo/F_motion/README.md) | Four 200-frame high-rate tissue push/tracking acquisitions. | Moving tissue with no blood-flow target; no independent blood component. | Tissue-motion negative control. Respect push/track boundaries. A future semi-synthetic blood-injection test must be labeled separately from physical flow truth. |
 
-## Secondary and excluded candidates
+No documented bubble-free in-vitro Doppler acquisition with an independent flow
+reference was identified. The Twente card's optical-reference description should
+not be treated as an already usable released velocity ground truth. A display
+GIF is insufficient for calibrated velocimetry.
 
-| Dataset | Evidence and role | Decision |
-|---|---|---|
-| Waterloo femoral vein | 15 acquisitions/subjects; 12,000 frames each; two plane waves, 192 elements; slow venous flow under contraction/tilt. Native-blood imaging is inferred from the description; explicit injection status unconfirmed. | Strong slow-flow/motion stress-test candidate; changing geometry complicates WSS. |
-| TU/e carotid 2023 | 150 frames with 128 focused events interleaved with 21 plane waves. | A secondary imaging/motion source. Do not assume the plane-wave events are a uniform high-PRF Doppler ensemble. |
-| Oslo carotid | Focused imaging with single/few frames. | Insufficient temporal ensembles for this comparison. |
-| Resolve Stroke flow phantom | Matrix-array flow-on/off acquisition explicitly using microbubbles. | Exclude from the native-blood benchmark. |
-| Twente vortex-flow phantom | Optical reference is attractive, but the card explicitly states acoustical scattering is enhanced with microbubbles. | Exclude from the non-contrast core; possible separate contrast/control experiment. |
-| ULMShare | Microbubble transcranial ULM. | Exclude from the non-contrast core. |
+## In-vivo shortlist
 
-Femoral Acq0 inventory: 12,000 frames at approximately 2,850 Hz, about 4.2 s;
-other acquisitions have different frame rates/sample counts. Revisit timing must
-be obtained per file. Stored dealiased vector fields are algorithm-derived and
-can be noise-sensitive. Split all Waterloo data by subject across contributions
-because participants can overlap.
+| Candidate | Acquisition | Contrast and reference status | Priority |
+|---|---|---|---|
+| [Waterloo carotid](https://github.com/open-h/Open-H-RF/blob/main/datasets/waterloo-carotid/README.md) | 93 acquisitions, eight subjects; 30,000–36,000 frames each. Longitudinal CCA and cross-sectional ICA, baseline and maneuvers. | Native-blood imaging is inferred; injection status is not explicitly stated. Supplied VFI maps use a wall-filtered pipeline. | First pilot: nonmultiplexed baseline CCA, then maneuvers. |
+| [Waterloo femoral vein](https://github.com/open-h/Open-H-RF/blob/main/datasets/waterloo-femoralvein/README.md) | 15 participants/acquisitions, 12,000 frames each, two transmits and 192 elements; muscular contraction with 40-degree head-up tilt. | Injection status unspecified. Derived/dealiased VFI maps can be noise-sensitive. | Slow-flow and tissue-motion challenge after CCA. |
+| [TU/e carotid](https://github.com/open-h/Open-H-RF/blob/main/datasets/tue-carotid/README.md) | 150 frames at 30 Hz; 128 focused events interleaved with 21 plane waves. | No independent source/flow reference identified. | Secondary motion/imaging source. Pulse rate must not be confused with same-view revisit rate. |
 
-Sources: [femoral card](https://github.com/open-h/Open-H-RF/blob/main/datasets/waterloo-femoralvein/README.md),
-[femoral inventory](https://github.com/open-h/Open-H-RF/blob/main/stats/data/files/waterloo-femoralvein.jsonl),
-[TU/e](https://huggingface.co/datasets/nvidia/Open-H-RF/blob/main/tue-carotid/README.md),
-[Oslo](https://github.com/open-h/Open-H-RF/blob/main/datasets/oslo/B_carotid/README.md),
-[Resolve Stroke](https://github.com/open-h/Open-H-RF/blob/main/datasets/resolvestroke/phantom_flow/README.md),
-[Twente](https://github.com/open-h/Open-H-RF/blob/main/datasets/twente-vortexflow/README.md),
-[ULMShare](https://github.com/open-h/Open-H-RF/blob/main/datasets/ulmshare/README.md).
+Waterloo femoral Acq0 has about 2,850-Hz revisit timing and 4.2 seconds of RF;
+other files differ. Some Waterloo US4R-lite acquisitions use receive
+multiplexing; avoid them until their event mapping is verified. Split by subject
+across Waterloo contributions because participants can overlap.
 
-## What these data can establish
+[ULMShare](https://github.com/open-h/Open-H-RF/blob/main/datasets/ulmshare/README.md)
+is an in-vivo contrast arm for later ULM transfer. Twente microbubble simulations
+and passive cavitation recordings do not provide a native-blood Doppler core.
+Single/few-frame B-mode phantoms, CT geometry references and static Field II
+examples do not establish a Doppler flow reference.
 
-They can support native-blood feasibility, motion robustness, measurement
-repeatability, near-wall signal visibility and consistency across methods.
-The inspected cards do not establish independent ground-truth blood/tissue IQ,
-wall velocity, wall position, viscosity or WSS. Agreement with supplied VFI
-maps is a processed-reference comparison, and depends partly on their upstream
-wall filter. It cannot certify the recovered near-wall gradient.
+## Directly verified Waterloo Acq0 and completed pilot
 
-I did not identify a non-contrast Poiseuille phantom with independent near-wall
-velocity/WSS truth among the screened catalog entries. This is a screening
-result, not proof that no such data exist elsewhere or in undocumented files.
+[Pinned acquisition](https://huggingface.co/datasets/nvidia/Open-H-RF/blob/05234aa084b27c8e4d0096c3a9adc33fbbc123d8/waterloo-carotid/data/Acq0.hdf5).
+The actual HDF5 header confirms baseline longitudinal CCA, US4R, 30,000 frames,
+two plane-wave transmits at -10/+10 degrees and 128 receive channels. The file
+uses 5-MHz center frequency, 32.5-MHz sampling and 100-ns A/D start time. Event
+intervals are 166.667 microseconds; same-view revisit rate is approximately
+3 kHz. Stored element delays fit the supplied plane-wave time origin with a
+maximum residual of 7.76e-6 samples.
 
-Recommended study order:
+Only frames 0:64 were decoded: 128 MiB of real RF, followed by complex DAS on a
+96-by-128 grid. Both views, their 166.667-microsecond offset and coherent-mean
+baseline are embedded in NPZ. The [experimental pilot](EXPERIMENTAL_PILOT.md)
+uses 32 calibration frames and 32 disjoint evaluation frames. It establishes
+executable processing, not native-blood confirmation or separation accuracy.
+No supplied velocity/PD field is promoted to truth.
 
-1. Statistical IQ algebra/implementation tests (provided), then realistic
-   non-contrast RBC/scatterer simulations or a controlled blood-mimicking phantom.
-2. Freeze the method/measurement configurations and independently verify flow,
-   wall geometry, viscosity, phase sign and sample timing in that controlled test.
-3. Beamform a small unfiltered Waterloo CCA window with preserved view data;
-   compare B-mode and phase against the provider's reconstruction.
-4. Run the shared filter grid on held-out subjects. Use in-vivo observations
-   as feasibility/consistency evidence, with oracle arms disabled.
+The measured B-mode log-amplitude spatial correlation with the provider image
+is about 0.700, after interpolation to the exported grid. Receive steering and
+apodization differ. Structural agreement does not establish experimental Doppler
+phase accuracy. The known moving-point numerical phase test is a separate check.
+
+## Next experimental requirements
+
+1. Obtain a bubble-free blood/blood-mimicking flow phantom with independently
+   controlled flow and repeatable tissue-motion/background conditions.
+2. Verify receive event mapping, timing, beamforming phase and amplitude from
+   calibration acquisitions before quantitative experimental comparisons.
+3. Freeze acquisition/subject splits and operating points; include slow flow,
+   motion and weak-signal regions. Keep processed flow maps as comparators.
+4. Retain disjoint in-vivo acquisitions for robustness and downstream Doppler,
+   fUSi, ULM or WSS tests appropriate to the available data.
+
+Independent velocity truth supports a downstream test. It does not by itself
+prove preservation of every blood-IQ component. Controlled source/injection
+experiments and complementary spatial/spectral diagnostics remain useful.
+
+Inventory sources: [Waterloo carotid](https://github.com/open-h/Open-H-RF/blob/main/stats/data/files/waterloo-carotid.jsonl),
+[Waterloo femoral vein](https://github.com/open-h/Open-H-RF/blob/main/stats/data/files/waterloo-femoralvein.jsonl),
+[Twente](https://github.com/open-h/Open-H-RF/blob/main/stats/data/files/twente-vortexflow.jsonl),
+[ResolveStroke](https://github.com/open-h/Open-H-RF/blob/main/stats/data/files/resolvestroke.jsonl).
+The upstream data are CC BY 4.0; retain contributor attribution for derived figures.
 
 ## Interpretation of the two contrast references
 

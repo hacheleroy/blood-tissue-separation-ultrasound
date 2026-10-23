@@ -1,0 +1,21 @@
+{
+  "python": "3.12.14",
+  "wheel_import_outside_source_tree": true,
+  "numerical_code_sha256": "b4f4d2323ac7c35a6b9c2001982ac1e5e9bdf56b9039e96cbe1fd847c00bdb8e",
+  "installed_wheel_smoke_status": "ok",
+  "source_distribution_tests_passed": 114,
+  "artifact_manifest": [
+    {
+      "file": "blood_tissue_benchmark-0.2.0-py3-none-any.whl",
+      "bytes": 62783,
+      "sha256": "5dd71b7b96a434c306a488cf83259b665e0005700424541f2ce571b0ca11baea",
+      "entries": 22
+    },
+    {
+      "file": "blood_tissue_benchmark-0.2.0.tar.gz",
+      "bytes": 1156635,
+      "sha256": "21b6f8d5f4d5d2e20335a6ef1aea5032ad64f31a37771aeb657f78caffb7fae3",
+      "entries": 88
+    }
+  ]
+}

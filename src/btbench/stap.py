@@ -162,7 +162,8 @@ def local_stap_views(iq_views,prf_hz,f0_hz,tx_rad,rx_rad,tissue_velocities_zx_mp
 def local_stap(iq_views,*args,**kwargs):
     """Legacy compounded-IQ API. View-level truth diagnostics use local_stap_views."""
     r=local_stap_views(iq_views,*args,**kwargs)
-    return FilterResult(r.views.mean(axis=1),r.diagnostics)
+    return FilterResult(r.views.mean(axis=1),r.diagnostics,
+        apply_frozen_views=lambda other:r.apply_frozen(other).mean(axis=1))
 
 
 def estimate_tissue_velocity(calibration_views,roi,tx_rad,rx_rad,prf_hz,f0_hz,

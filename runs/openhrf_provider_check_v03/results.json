@@ -1,0 +1,7 @@
+{
+  "source": "https://huggingface.co/datasets/nvidia/Open-H-RF/resolve/05234aa084b27c8e4d0096c3a9adc33fbbc123d8/waterloo-carotid/data/Acq0.hdf5",
+  "frame": 0,
+  "log_amplitude_spatial_correlation": 0.7003191563183748,
+  "interpolation": "provider dB image to exported Cartesian grid",
+  "interpretation": "structure check; different receive steering/apodization; no phase/velocity validation"
+}

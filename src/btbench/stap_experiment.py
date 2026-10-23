@@ -17,7 +17,7 @@ from threadpoolctl import threadpool_limits
 from .core import Acquisition
 from .filters import sliding_filter,temporal_highpass
 from .stap import ViewFilterResult,local_stap_views,estimate_tissue_velocity,lcmv_velocity_spectrum,steering
-from .measurements import vector_doppler,relative_error,wall_shear_scalar
+from .measurements import vector_doppler,relative_error,wall_shear_scalar,blood_fidelity,relative_norm
 
 
 @dataclass
@@ -106,7 +106,8 @@ def angle_scene(seed=0,n_frames=96,shape=(8,25),prf_hz=1000.,f0_hz=5e6,
         "gains_real":gains.real.tolist(),"gains_imag":gains.imag.tolist(),
         "actual_tx_rad":actual.tolist()}
     a=Acquisition((blood+tissue+noise).mean(1),prf_hz,f0_hz,phase_sign=phase_sign,
-        iq_views=blood+tissue+noise,z_m=z,x_m=x,tissue_roi=~flow,flow_mask=flow,
+        iq_views=blood+tissue+noise,tx_angles_rad=tx,rx_angles_rad=rx,view_offsets_s=offsets,
+        blood_views_true=blood,tissue_views_true=tissue,z_m=z,x_m=x,tissue_roi=~flow,flow_mask=flow,
         near_wall_mask=flow&(rr>.65e-3),blood_true=blood.mean(1),tissue_true=tissue.mean(1),
         velocity_true_mps=velocity[...,0],wall=wall,
         metadata={"generator":"angle_time_statistical_IQ_surrogate","seed":seed,"contrast_agent":False,
@@ -119,7 +120,7 @@ def angle_scene(seed=0,n_frames=96,shape=(8,25),prf_hz=1000.,f0_hz=5e6,
     return AngleScene(a,blood,tissue,noise,calibration,training,geometry,velocity)
 
 
-def view_svd(views,window=64,hop=32,selector="fixed",discard=1,upper=None,per_view=False,modulation=None):
+def view_svd(views,window=64,hop=32,selector="fixed",discard=1,upper=None,per_view=False,modulation=None,centered=False):
     """All angular samples retained. Optional calibrated phase demodulation.
 
     Joint SVD folds views into the spatial dimension, not into slow time.
@@ -129,14 +130,14 @@ def view_svd(views,window=64,hop=32,selector="fixed",discard=1,upper=None,per_vi
     mod=np.ones((t,a,1,1),complex) if modulation is None else modulation[:,:,None,None]
     aligned=views*mod.conj()
     if per_view:
-        fits=[sliding_filter(aligned[:,j],window=window,hop=hop,selector=selector,discard=discard,upper=upper) for j in range(a)]
+        fits=[sliding_filter(aligned[:,j],window=window,hop=hop,selector=selector,discard=discard,upper=upper,centered=centered) for j in range(a)]
         out=np.stack([r.iq for r in fits],axis=1)*mod
         def apply(other):
             b=other*mod.conj()
             return np.stack([r.apply_frozen(b[:,j]) for j,r in enumerate(fits)],axis=1)*mod
         diag={"per_view":True,"fits":[r.diagnostics for r in fits]}
     else:
-        fit=sliding_filter(aligned.reshape(t,a*z,x),window=window,hop=hop,selector=selector,discard=discard,upper=upper)
+        fit=sliding_filter(aligned.reshape(t,a*z,x),window=window,hop=hop,selector=selector,discard=discard,upper=upper,centered=centered)
         out=fit.iq.reshape(views.shape)*mod
         def apply(other):
             b=(other*mod.conj()).reshape(t,a*z,x)
@@ -179,6 +180,11 @@ def view_metrics(result,scene):
         "frozen_noise_to_blood_power_ratio":float(np.sum(abs(n)**2)/pb),
         "frozen_mixture_linearity_error":float(np.linalg.norm(v-b-t-n)/max(np.linalg.norm(v),1e-30)),
         "power_doppler_auc":_auc(power,flow),"geometry_condition_number":vd["geometry_condition_number"]}
+    m.update(blood_fidelity(b,scene.blood_views,np.broadcast_to(flow,b.shape[1:])))
+    m["frozen_blood_iq_nrmse"]=relative_norm(b-scene.blood_views,scene.blood_views)
+    m["frozen_blood_amplitude_nrmse"]=relative_norm(abs(b)-abs(scene.blood_views),abs(scene.blood_views))
+    m["frozen_noise_power_gain"]=float(np.sum(abs(n)**2)/max(np.sum(abs(scene.noise_views)**2),1e-30))
+    m["frozen_blood_output_zero"]=bool(np.sum(abs(b)**2)<=1e-28*original_b)
     return m
 
 
@@ -315,7 +321,7 @@ def run_stap_study(config,output):
     lines=["# First angle-time STAP study","",
         "Frozen statistical-IQ study. All methods retain the same views. Calibration is independently acquired.",
         "Oracle SVD uses same-case blood truth and is evaluation-only. LCMV is a separate single-target detector.","",
-        "| Method | Completed | Median blood retention | Median tissue retention | Median axial NRMSE | Median WSS NRMSE |","|---|---:|---:|---:|---:|---:|"]
+        "| Method | Completed | Median blood IQ distortion | Median tissue retention | Median spectral TV | Median noise gain |","|---|---:|---:|---:|---:|---:|"]
     ids=list(dict.fromkeys(r["method"] for c in records for r in c["results"]))
     for name in ids:
         rows=[r for c in records for r in c["results"] if r["method"]==name and r["status"]=="ok"]
@@ -323,7 +329,7 @@ def run_stap_study(config,output):
             vals=[r["metrics"].get(key) for r in rows]
             vals=[v for v in vals if v is not None]
             return "n/a" if not vals else f"{np.median(vals):.4g}"
-        lines.append(f"| {name} | {len(rows)}/{len(records)} | {median('frozen_blood_power_retention')} | {median('frozen_tissue_power_retention')} | {median('axial_velocity_nrmse')} | {median('directional_wss_nrmse')} |")
+        lines.append(f"| {name} | {len(rows)}/{len(records)} | {median('frozen_blood_iq_nrmse')} | {median('frozen_tissue_power_retention')} | {median('frozen_blood_spectral_tv')} | {median('frozen_noise_power_gain')} |")
     lines.extend(["","Medians pool deliberately different conditions, including failure controls. Use the condition records for interpretation.",
         "Velocity spread, acceleration, calibration error, equal blood/tissue velocity and insufficient training are explicit stress cases."])
     (out/"SUMMARY.md").write_text("\n".join(lines)+"\n")

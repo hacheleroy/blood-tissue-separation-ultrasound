@@ -19,6 +19,9 @@ class Acquisition:
     phase_sign: int = 1
     timestamps_s: np.ndarray | None = None
     iq_views: np.ndarray | None = None
+    tx_angles_rad: np.ndarray | None = None
+    rx_angles_rad: np.ndarray | None = None
+    view_offsets_s: np.ndarray | None = None
     z_m: np.ndarray | None = None
     x_m: np.ndarray | None = None
     tissue_roi: np.ndarray | None = None
@@ -26,6 +29,8 @@ class Acquisition:
     near_wall_mask: np.ndarray | None = None
     blood_true: np.ndarray | None = None
     tissue_true: np.ndarray | None = None
+    blood_views_true: np.ndarray | None = None
+    tissue_views_true: np.ndarray | None = None
     velocity_true_mps: np.ndarray | None = None
     wall: dict | None = None
     metadata: dict = field(default_factory=dict)
@@ -36,7 +41,7 @@ class Acquisition:
             raise ValueError("iq must be complex with shape (time,z,x); B-mode/PD is invalid")
         if self.iq.shape[0] < 3 or not np.isfinite(self.iq).all():
             raise ValueError("Need >=3 finite IQ frames")
-        if min(self.prf_hz, self.f0_hz, self.sound_speed_mps) <= 0:
+        if not np.isfinite([self.prf_hz,self.f0_hz,self.sound_speed_mps]).all() or min(self.prf_hz, self.f0_hz, self.sound_speed_mps) <= 0:
             raise ValueError("PRF, frequency, and sound speed must be positive")
         if self.phase_sign not in (-1, 1):
             raise ValueError("phase_sign must be explicitly +1 or -1")
@@ -46,8 +51,23 @@ class Acquisition:
                 raise ValueError("Nonuniform/gapped slow time: split contiguous segments before filtering")
         if self.iq_views is not None:
             a=np.asarray(self.iq_views)
-            if a.ndim!=4 or (a.shape[0],*a.shape[2:])!=self.iq.shape or not np.iscomplexobj(a):
+            if (a.ndim!=4 or not a.shape[1] or (a.shape[0],*a.shape[2:])!=self.iq.shape
+                    or not np.iscomplexobj(a) or not np.isfinite(a).all()):
                 raise ValueError("iq_views must be complex (time,view,z,x), matched to iq")
+        for name in ("tx_angles_rad", "rx_angles_rad", "view_offsets_s"):
+            value=getattr(self,name)
+            if value is not None and (self.iq_views is None or
+                    np.shape(value)!=(self.iq_views.shape[1],) or not np.isfinite(value).all()):
+                raise ValueError(f"{name} requires one finite value per IQ view")
+        for name,mean_name in (("blood_views_true","blood_true"),("tissue_views_true","tissue_true")):
+            value=getattr(self,name)
+            if value is not None:
+                if (self.iq_views is None or np.shape(value)!=self.iq_views.shape or
+                        not np.iscomplexobj(value) or not np.isfinite(value).all()):
+                    raise ValueError(f"{name} must match finite iq_views")
+                mean=getattr(self,mean_name)
+                if mean is None or not np.allclose(np.mean(value,axis=1),mean):
+                    raise ValueError(f"{mean_name} must be the coherent mean of {name}")
         for name in ("tissue_roi", "flow_mask", "near_wall_mask"):
             a = getattr(self, name)
             if a is not None and np.shape(a) != self.iq.shape[1:]:
@@ -68,6 +88,7 @@ class FilterResult:
     iq: np.ndarray
     diagnostics: dict[str, Any] = field(default_factory=dict)
     apply_frozen: Callable | None = field(default=None,repr=False)
+    apply_frozen_views: Callable | None = field(default=None,repr=False)
 
 
 def casorati(iq):

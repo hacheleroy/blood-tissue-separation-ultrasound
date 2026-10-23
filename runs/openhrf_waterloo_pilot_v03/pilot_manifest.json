@@ -1,0 +1,41 @@
+{
+  "config_sha256": "d6d7bcf19d569bf86511e7045f117abfb819ce78b30e32ee160280e1d78637cd",
+  "code_sha256": "b4f4d2323ac7c35a6b9c2001982ac1e5e9bdf56b9039e96cbe1fd847c00bdb8e",
+  "input_sha256": "7248e4ae5b7541ac5b91b06ca9310ae9f66252ad5aea6f24f9c68ac803ab801f",
+  "acquisition": {
+    "source": "https://huggingface.co/datasets/nvidia/Open-H-RF/resolve/05234aa084b27c8e4d0096c3a9adc33fbbc123d8/waterloo-carotid/data/Acq0.hdf5",
+    "source_attributes": {
+      "description": "UW-LITMUS-CarotidRF High frame rate in vivo carotid artery acquisition made using us4r. See annotations for details on anatomy, view, and condition.",
+      "zea_version": "0.1.4"
+    },
+    "unfiltered_iq": true,
+    "frames_start_stop": [
+      0,
+      64
+    ],
+    "transmit_indices": [
+      0,
+      1
+    ],
+    "decoded_raw_bytes": 134217728,
+    "contrast_status": "not_explicitly_documented; native_blood_inferred_from_provider_description",
+    "independent_truth_available": false,
+    "time_reference_evidence": "Recorded t0_delays equal t_ref + element_position.dot(n_tx)/c; maximum residual 7.76e-6 samples. Initial A/D time is recorded separately. Known moving-point test verifies the DAS phase convention.",
+    "receive_aperture_evidence": "Pinned Acq0 attributes identify us4r; raw has 128 simultaneous channels, full apodization and 2 logical transmits. Provider documents receive multiplexing for us4r-lite acquisitions.",
+    "amplitude_processing": "hardware gain retained; no frame normalization",
+    "baseline": "coherent mean of embedded uncompounded views",
+    "beamformer": "CPU far-field plane-wave DAS, normal receive; experimental phase validation pending",
+    "pilot": "disjoint calibration and evaluation packets",
+    "calibration_frames": 32,
+    "evaluation_frames": 32,
+    "calibration_roi": "brightest quartile, unverified tissue-only assumption",
+    "evaluation_time_origin_s": 0.01066666655242443,
+    "estimated_tissue_velocity_zx_mps": [
+      -5.100137580516535e-05,
+      -0.00048646953923304283
+    ],
+    "spatial_stride": 2,
+    "calibration_sha256": "c0627e02fc595659ca24f16671571157ef3bcbb8fd99a5cdd35e5d53a30b67fb"
+  },
+  "output_claim": "processing path and numerical diagnostics; no separation accuracy claim"
+}

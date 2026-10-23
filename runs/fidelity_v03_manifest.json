@@ -1,0 +1,98 @@
+{
+  "version": "0.2.0",
+  "date": "2026-10-22",
+  "code_sha256": "b4f4d2323ac7c35a6b9c2001982ac1e5e9bdf56b9039e96cbe1fd847c00bdb8e",
+  "archives": [
+    {
+      "path": "runs/separation_fidelity_v03/results.json.gz",
+      "sha256": "b8468a987bf2dd41b95d9a0a3cb89899e76ec0def26bec2539e424aad7035fe1",
+      "decoded_sha256": "343c1aff8020fdc5f783be28de5c544c3da24cbbe31056a77dd7d8fecb466f04",
+      "outputs": 1170,
+      "cases": 30,
+      "status_counts": {
+        "ok": 1170
+      },
+      "config_path": "runs/separation_fidelity_v03/frozen_config.json",
+      "config_sha256": "437b0ff727ecad90ff6da166cf57da6bdbeaa8bf7cb6cff6552cbfe459608ccf",
+      "parts": [
+        {
+          "path": "runs/separation_fidelity_v03/results.json.gz.part000",
+          "bytes": 500000,
+          "sha256": "eb99882e8fcacb81bce061351b6c3ea953c5b63b5825c75da00df3dbda0bd38a"
+        },
+        {
+          "path": "runs/separation_fidelity_v03/results.json.gz.part001",
+          "bytes": 500000,
+          "sha256": "867ab5e5ac000f7c4530a7a922fd981bfac677bbf772093c3a537b2cb675f039"
+        },
+        {
+          "path": "runs/separation_fidelity_v03/results.json.gz.part002",
+          "bytes": 500000,
+          "sha256": "33ead00b52157ae2069822dd60661e3ca9825589c23d058339964d4dafc42141"
+        },
+        {
+          "path": "runs/separation_fidelity_v03/results.json.gz.part003",
+          "bytes": 500000,
+          "sha256": "3f50933e51dbb160c53e65799545bbaeabafe45656c7846dc6b635c5cc56503f"
+        },
+        {
+          "path": "runs/separation_fidelity_v03/results.json.gz.part004",
+          "bytes": 500000,
+          "sha256": "da1dde628b8cd4e030dcdd7147a446e44e6bef9c54b7a498604d18f937796e12"
+        },
+        {
+          "path": "runs/separation_fidelity_v03/results.json.gz.part005",
+          "bytes": 111514,
+          "sha256": "baf6a06f9cecb6d6938d3d52fd37311ac7ae23622ad0941eee70db8def52a6f0"
+        }
+      ]
+    },
+    {
+      "path": "runs/stap_fidelity_v03/results.json.gz",
+      "sha256": "d02322c317420510cccca484d2143e6bbfb3a79525b1e4546509c7da2fa62f5f",
+      "decoded_sha256": "b2ef370928856235b7c5653b290ead3512f144c82e2ec1ec8c0242207c86bbdf",
+      "outputs": 504,
+      "cases": 42,
+      "status_counts": {
+        "ok": 504
+      },
+      "config_path": "runs/stap_fidelity_v03/frozen_config.json",
+      "config_sha256": "a524b02564f599517c37dabe2f05433209e5a1de212df031e7933050c9f29d8d"
+    },
+    {
+      "path": "runs/svd_fidelity_v03/results.json.gz",
+      "sha256": "8881302587042618342e833e35cb321aa19b7e1f522838386939e7b8649cd237",
+      "decoded_sha256": "ec071e653ee68d17f0c043a6f2d08b63555b4e0145d9c3a0b7ab9c2a351d5950",
+      "outputs": 480,
+      "cases": 24,
+      "status_counts": {
+        "ok": 480
+      },
+      "config_path": "runs/svd_fidelity_v03/frozen_config.json",
+      "config_sha256": "2f49486b4f97c2a9131e4ff717aab2487b19b1a5d4effd18e78dd6e5f30370b9"
+    },
+    {
+      "path": "runs/openhrf_waterloo_pilot_v03/results.json.gz",
+      "sha256": "76b1212bf19da79fb6566396bf6f66136c52312bd8d5e33092f140f031e541d5",
+      "decoded_sha256": "305c04ea92c0f079a894c8b00d1c2a4263665d48010ed32ea74103cb51897948",
+      "outputs": 58,
+      "cases": 1,
+      "status_counts": {
+        "ok": 58
+      },
+      "config_path": "runs/openhrf_waterloo_pilot_v03/frozen_config.json",
+      "config_sha256": "d6d7bcf19d569bf86511e7045f117abfb819ce78b30e32ee160280e1d78637cd"
+    },
+    {
+      "path": "runs/integration_fidelity_v03/results.json.gz",
+      "sha256": "71184ebaa083ce6ce5422669ec3f3a63545afc92b409aa5647d9d75ad62a605a",
+      "decoded_sha256": "c87eeff64a3a0d4fe409c05a13f170f9c76a3436e998fbeefece2f44d7a42fba",
+      "outputs": 55,
+      "cases": 1,
+      "status_counts": {
+        "ok": 55
+      }
+    }
+  ],
+  "interpretation": "Returned outputs count software execution; solver/source/model validity is recorded separately."
+}

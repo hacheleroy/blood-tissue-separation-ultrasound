@@ -1,5 +1,12 @@
 # Mathematical conventions and benchmark protocol
 
+## Common separation objective
+
+For X=B+T+N, estimate a tissue-rejecting filter that preserves blood waveform,
+spatial support, spectrum and temporal/phase information. Primary scores measure
+source fidelity with the mixture-fitted operator frozen. Conventional Doppler,
+fUSi, ULM and WSS are downstream endpoints. See [the full fidelity protocol](SEPARATION_FIDELITY.md).
+
 ## Matrix and centering
 
 The public IQ shape is `(time,z,x)`. Internally X has shape `(pixels,time)`.
@@ -123,7 +130,16 @@ basis; a validated multi-feature component-identification model remains needed.
 Blood with the same spatial mixture and lag signature as tissue stays
 unidentifiable. Complex kurtosis FastICA uses the same soft classifier as a
 separate baseline, allowing the representation and identification steps to be
-distinguished. The ICA baseline assumes circular complex, non-Gaussian sources.
+distinguished. The ICA baseline assumes circular complex, non-Gaussian sources. It centers by
+default and records whitening, circularity, cumulant and stopping diagnostics.
+The default nonconvergence policy explicitly falls back to local SVD; retained
+unconverged outputs remain available as a labeled diagnostic ablation.
+
+The reduced-space reconstruction A=pinv(D) diag(w) D can be oblique. The largest
+singular value of A and the retained whitening-eigenvalue condition are logged.
+Poorly conditioned mixed modes can amplify blood/noise even when scalar source
+weights lie in [0,1]. The current classifier and reconstruction are research
+prototypes; large distortion must remain visible in benchmark conclusions.
 
 ## Other baselines and Axis 3
 
@@ -171,17 +187,25 @@ The comparator is 2-D and directional. It makes no 3D tensor-WSS claim.
 Oracle search uses true blood IQ, true velocity, or true WSS on the same case.
 It is an optimistic bound over the declared grid, not a deployable method or a
 universal bound on every possible SVD estimator. `discard="all"` in an oracle
-grid expands all lower cutoffs; upper bounds are optional. The demo searches
+grid expands all lower cutoffs including the empty-output endpoint; upper bounds are optional. The demo searches
 only cutoffs 0..8 for speed. Distinct velocity, IQ and WSS oracles can choose
 different settings. Real in-vivo processed flow maps must never enter truth slots.
 
-Metrics: raw IQ error, velocity NRMSE and bias, near-wall NRMSE, directional WSS
-error and invalid fraction, tissue-ROI residual-power proxy, and timing. For
-SVD/AER/local linear maps, frozen-operator component power is also measured:
-apply the SAME transform fitted to the mixture to known blood and tissue.
-Independently refitting on isolated sources would be a misleading leakage test.
-Other methods explicitly report these component diagnostics as unavailable.
-AER changes amplitude calibration; no truth-based gain correction is hidden.
+Primary metrics are frozen blood-IQ distortion, tissue power retention, blood
+retention, spectral total variation, spatial/weak-flow distortion and noise gain.
+The SAME transform fitted to the mixture is applied to each known component.
+Axes 1–2 replay their motion, confidence/reset schedule and component-wise pooled
+mean; STAP/view-SVD use actual view-level truth. Independently refitting on
+isolated sources does not provide this decomposition. RPCA instead reports
+end-to-end error and labeled, refitted counterfactual injection responses.
+
+Preservation-constrained oracles minimize tissue retention under explicit
+blood-distortion limits. Infeasible searches keep their candidate curves.
+Per-case Pareto sets exclude oracle arms. Strict IQ error has no truth-fitted
+gain or phase correction; AER amplitude changes remain explicit. Undefined
+spectral shape or output-blood ratios for empty outputs are not assigned zero.
+Velocity bias/NRMSE, near-wall estimates and directional WSS remain downstream
+readouts, with invalid-estimate fractions retained.
 
 The output also includes a shared 64-frame measurement-window series for every
 method. Filtering ensemble length and velocity-readout support are independent

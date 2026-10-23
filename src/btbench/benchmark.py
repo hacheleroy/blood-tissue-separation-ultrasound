@@ -12,11 +12,12 @@ from threadpoolctl import threadpool_limits
 
 from .filters import svd_filter,aer_filter,local_filter,rpca_filter,temporal_highpass,sliding_filter
 from .axes import motion_packet_filter,multilag_filter,ica_filter
-from .measurements import evaluate,frozen_component_metrics,evaluate_windows
+from .measurements import evaluate,frozen_component_metrics,evaluate_windows,injection_response
 from .svd_literature import randomized_svd_filter,huang_evd_filter,gaussian_local_evd,song_local_filter
+from .core import FilterResult
 
 
-def run_filter(iq,spec,tissue_roi=None,views=None,prf_hz=None):
+def run_filter(iq,spec,tissue_roi=None,views=None,prf_hz=None,view_geometry=None):
     p=dict(spec.get("params",{}))
     method=spec["method"]
     if prf_hz is not None:
@@ -36,7 +37,30 @@ def run_filter(iq,spec,tissue_roi=None,views=None,prf_hz=None):
             raise ValueError("STAP requires uncompounded IQ views")
         if not np.allclose(iq,np.mean(views,axis=1)):
             raise ValueError("STAP comparison needs iq to be the same coherent view mean")
+        for key,value in (view_geometry or {}).items():
+            if key in p and not np.allclose(p[key],value,rtol=1e-5,atol=1e-10):
+                raise ValueError("STAP geometry differs from acquisition: "+key)
+            p.setdefault(key,value)
         return local_stap(views,**p)
+    if method=="view_svd":
+        from .stap_experiment import view_svd
+        from .stap import steering
+        if views is None or not np.allclose(iq,np.mean(views,axis=1)):
+            raise ValueError("View SVD requires views and their coherent-mean baseline")
+        calibration=p.pop("calibration_velocity_zx_mps",None)
+        modulation=None
+        if calibration is not None:
+            g=dict(view_geometry or {})
+            required=("tx_rad","rx_rad","prf_hz","f0_hz")
+            if any(k not in g for k in required):raise ValueError("Calibrated view SVD needs acquisition geometry")
+            modulation=steering(calibration,g["tx_rad"],g["rx_rad"],
+                g.get("start_time_s",0.)+np.arange(len(views))/g["prf_hz"],g["f0_hz"],
+                g.get("sound_speed_mps",1540.),g.get("phase_sign",1),g.get("view_offsets_s")).reshape(len(views),views.shape[1])
+        r=view_svd(views,modulation=modulation,**p)
+        return FilterResult(r.views.mean(axis=1),r.diagnostics,
+            apply_frozen_views=lambda x:r.apply_frozen(x).mean(axis=1))
+    if method=="identity":
+        return FilterResult(np.array(iq,copy=True),{"control":"unfiltered mixture"},lambda x:np.array(x,copy=True))
     registry={"svd":svd_filter,"aer":aer_filter,"local":local_filter,"rpca":rpca_filter,
               "axis1":motion_packet_filter,"axis2":multilag_filter,"ica":ica_filter,
               "highpass":temporal_highpass,"sliding":sliding_filter,
@@ -49,6 +73,15 @@ def run_filter(iq,spec,tissue_roi=None,views=None,prf_hz=None):
     return registry[method](iq,**p)
 
 
+def _run_acquisition(a,spec):
+    geometry={"prf_hz":a.prf_hz,"f0_hz":a.f0_hz,"sound_speed_mps":a.sound_speed_mps,
+              "phase_sign":a.phase_sign,"start_time_s":0. if a.timestamps_s is None else float(a.timestamps_s[0])}
+    for name,key in (("tx_angles_rad","tx_rad"),("rx_angles_rad","rx_rad"),("view_offsets_s","view_offsets_s")):
+        value=getattr(a,name)
+        if value is not None:geometry[key]=value
+    return run_filter(a.iq,spec,a.tissue_roi,a.iq_views,a.prf_hz,geometry)
+
+
 def grid_specs(base,grid):
     keys=list(grid)
     for values in itertools.product(*(grid[k] for k in keys)):
@@ -56,13 +89,34 @@ def grid_specs(base,grid):
         yield spec
 
 
-def oracle(acquisition,base,grid,objective="velocity_nrmse",geometry_factor=2.):
+class OracleInfeasible(ValueError):
+    def __init__(self,diagnostics):
+        super().__init__("No finite oracle candidate satisfies the declared preservation constraints")
+        self.diagnostics=diagnostics
+
+
+def pareto_front(rows,x="frozen_blood_iq_nrmse",y="frozen_tissue_power_retention"):
+    """Indices of nondominated finite points (both losses minimized)."""
+    points=[]
+    for i,row in enumerate(rows):
+        m=row.get("metrics",{})
+        v=[m.get(x),m.get(y)]
+        if all(a is not None and np.isfinite(a) for a in v):
+            points.append((i,np.asarray(v)))
+    return [i for i,p in points if not any(
+        np.all(q<=p+1e-12) and np.any(q<p-1e-12) for j,q in points if i!=j)]
+
+
+def oracle(acquisition,base,grid,objective="blood_iq_nrmse",geometry_factor=2.,constraints=None):
     """Same-case truth-assisted bound over the DECLARED candidate grid only.
 
     Never used as a deployable setting. Every candidate is logged. Separate
     objectives are needed for velocity, IQ, and WSS; no implicit equivalence.
     """
-    if acquisition.velocity_true_mps is None and objective!="blood_iq_nrmse":
+    frozen=objective.startswith("frozen_") or bool(constraints)
+    if frozen and (acquisition.blood_true is None or acquisition.tissue_true is None):
+        raise ValueError("Separation oracle requires independent blood and tissue components")
+    if not frozen and acquisition.velocity_true_mps is None and objective!="blood_iq_nrmse":
         raise ValueError("Oracle requires independent velocity/WSS truth")
     if objective=="blood_iq_nrmse" and acquisition.blood_true is None:
         raise ValueError("IQ oracle requires independent blood-IQ truth")
@@ -70,25 +124,40 @@ def oracle(acquisition,base,grid,objective="velocity_nrmse",geometry_factor=2.):
     if grid.get("discard")=="all":
         p=int(np.prod(acquisition.iq.shape[1:]))
         t=min(base.get("params",{}).get("window") or len(acquisition.iq),len(acquisition.iq))
-        grid["discard"]=list(range(min(p,t)))
+        grid["discard"]=list(range(min(p,t)+1))
+    constraints=constraints or {}
+    for limits in constraints.values():
+        if not isinstance(limits,dict) or not limits or set(limits)-{"min","max"} or not all(np.isfinite(v) for v in limits.values()):
+            raise ValueError("Constraints must contain finite min/max metric bounds")
     best=None;curve=[]
     for spec in grid_specs(base,grid):
         try:
-            result=run_filter(acquisition.iq,spec,acquisition.tissue_roi,acquisition.iq_views,acquisition.prf_hz)
+            result=_run_acquisition(acquisition,spec)
         except (ValueError,MemoryError,np.linalg.LinAlgError) as exc:
             curve.append({"params":spec["params"],"loss":None,"status":"invalid","reason":str(exc)})
             continue
         metrics=evaluate(result.iq,acquisition,geometry_factor)
+        if acquisition.blood_true is not None and acquisition.tissue_true is not None:
+            metrics.update(frozen_component_metrics(result,acquisition))
         loss=metrics.get(objective)
         if loss is None:
             raise ValueError("Oracle objective unavailable: "+objective)
-        curve.append({"params":spec["params"],"loss":float(loss)})
-        if best is None or loss<best[0]:
+        feasible=bool(np.isfinite(loss))
+        for key,limits in constraints.items():
+            v=metrics.get(key)
+            feasible=feasible and v is not None and np.isfinite(v)
+            if feasible:
+                feasible=(v>=limits.get("min",-np.inf) and v<=limits.get("max",np.inf))
+        curve.append({"params":spec["params"],"loss":float(loss),"feasible":bool(feasible),"metrics":metrics})
+        if feasible and (best is None or loss<best[0]):
             best=(loss,result,spec,metrics)
+    diag={"oracle":True,"selection_uses_test_truth":True,"objective":objective,
+          "constraints":constraints,"selected":None if best is None else best[2],"curve":curve,
+          "feasible_candidates":sum(c.get("feasible",False) for c in curve),
+          "pareto_candidate_indices":pareto_front(curve)}
     if best is None:
-        raise ValueError("Oracle grid has no valid candidates")
-    return best[1],{"oracle":True,"selection_uses_test_truth":True,
-                    "objective":objective,"selected":best[2],"curve":curve}
+        raise OracleInfeasible(diag)
+    return best[1],diag
 
 
 def standard_methods(packet=64,long_window=256,prf_hz=1000.):
@@ -137,7 +206,8 @@ def standard_methods(packet=64,long_window=256,prf_hz=1000.):
             "packet":packet,"centered":centered,"patch_shape":[6,6],"stride":[3,3],
             "rank":6,"lags":[1,2,4,8,16],"use_memory":True}})
     methods += [
-        {"id":"ica_circular_complex","method":"ica","params":{"packet":packet,"patch_shape":[6,6],"stride":[3,3],"rank":6}},
+        {"id":"ica_circular_complex","method":"ica","params":{"packet":packet,"patch_shape":[6,6],"stride":[3,3],
+            "rank":6,"centered":True,"ica_nonconvergence":"svd_fallback"}},
         {"id":"rpca_pcp","method":"rpca","params":{}},
     ]
     for fraction in (.01,.03,.08):
@@ -163,10 +233,11 @@ def run_benchmark(acquisition,config,output):
             row={"id":spec["id"],"method":spec["method"],"oracle":False,"spec":spec}
             try:
                 if "oracle_grid" in spec:
-                    result,diag=oracle(a,spec,spec["oracle_grid"],spec.get("objective","velocity_nrmse"),config.get("geometry_factor",2.))
+                    result,diag=oracle(a,spec,spec["oracle_grid"],spec.get("objective","blood_iq_nrmse"),
+                        config.get("geometry_factor",2.),spec.get("constraints"))
                     row.update(diag)
                 else:
-                    result=run_filter(a.iq,spec,a.tissue_roi,a.iq_views,a.prf_hz)
+                    result=_run_acquisition(a,spec)
                 metrics=evaluate(result.iq,a,config.get("geometry_factor",2.))
                 if getattr(result,"power_doppler",None) is not None:
                     pd=result.power_doppler
@@ -176,6 +247,9 @@ def run_benchmark(acquisition,config,output):
                         "tissue_mean":float(pd[a.tissue_roi].mean()) if a.tissue_roi is not None else None}
                 metrics.update(frozen_component_metrics(result,a))
                 row.update(status="ok",metrics=metrics,diagnostics=result.diagnostics)
+                if spec["method"]=="rpca" and a.blood_true is not None and config.get("injection_amplitudes"):
+                    fn=lambda x:run_filter(x,spec,a.tissue_roi,prf_hz=a.prf_hz)
+                    row["counterfactual_injection"]=injection_response(fn,a.iq,a.blood_true,config["injection_amplitudes"])
                 row["readout"]=evaluate_windows(result.iq,a,config.get("measurement_window",64),
                     config.get("measurement_hop",64),config.get("geometry_factor",2.))
                 if config.get("save_iq",False):
@@ -183,7 +257,8 @@ def run_benchmark(acquisition,config,output):
                     name=hashlib.sha256(spec["id"].encode()).hexdigest()[:16]
                     np.save(out/f"filtered_{name}.npy",result.iq)
             except (ValueError,MemoryError,np.linalg.LinAlgError) as exc:
-                row.update(status="skipped",reason=str(exc))
+                row.update(status="infeasible" if isinstance(exc,OracleInfeasible) else "skipped",reason=str(exc))
+                if isinstance(exc,OracleInfeasible):row.update(exc.diagnostics)
             row["wall_time_s"]=time.perf_counter()-t0
             try:
                 import resource,sys
@@ -199,7 +274,11 @@ def run_benchmark(acquisition,config,output):
             "iq_shape":list(a.iq.shape),"input_sha256":hashlib.sha256(a.iq.tobytes()).hexdigest(),
             "runtime":{"python":platform.python_version(),"numpy":np.__version__,"scipy":scipy.__version__,
             "platform":platform.platform(),"blas_threads":threads,"elapsed_s":time.perf_counter()-start_all},
-            "interpretation":"synthetic smoke test unless independent experimental truth is provided"}
+            "primary_metrics":["frozen_blood_iq_nrmse","frozen_tissue_power_retention",
+                "frozen_blood_spectral_tv","frozen_noise_power_gain"],
+            "data_only_pareto_ids":[results[i]["id"] for i in pareto_front([
+                r if not r.get("oracle") else {} for r in results])],
+            "interpretation":"Component fidelity requires independent source truth; downstream readouts are separate endpoints"}
     # Strict JSON: invalid numerical estimates become null with explicit fractions
     # and candidate selection records, not nonstandard Infinity tokens.
     def clean(v):
@@ -209,14 +288,23 @@ def run_benchmark(acquisition,config,output):
         if isinstance(v,np.generic): return v.item()
         return v
     (out/"results.json").write_text(json.dumps(clean(report),indent=2,allow_nan=False))
-    lines=["# Benchmark run", "", "This run is a software check; it does not establish clinical or acoustic performance.","",
-           "| Method | Status | Velocity NRMSE | Near-wall NRMSE | WSS NRMSE | Time (s) |",
-           "|---|---|---:|---:|---:|---:|"]
+    lines=["# Benchmark run", "", "Component metrics use the mixture-fitted operator, with no fitted gain or phase correction.",
+           "Experimental anatomy and processed velocity maps do not supply independent component truth.","",
+           "| Method | Status | Blood IQ distortion | Tissue power retention | Blood power retention | Spectral TV | Noise gain | Time (s) |",
+           "|---|---|---:|---:|---:|---:|---:|---:|"]
     for row in results:
         m=row.get("metrics",{})
         def fmt(key):
             v=m.get(key)
             return "—" if v is None else f"{v:.3g}"
-        lines.append(f"| {row['id']} | {row['status']} | {fmt('velocity_nrmse')} | {fmt('near_wall_velocity_nrmse')} | {fmt('wss_nrmse')} | {row['wall_time_s']:.3g} |")
+        lines.append(f"| {row['id']} | {row['status']} | {fmt('frozen_blood_iq_nrmse')} | {fmt('frozen_tissue_power_retention')} | {fmt('frozen_blood_power_retention')} | {fmt('frozen_blood_spectral_tv')} | {fmt('frozen_noise_power_gain')} | {row['wall_time_s']:.3g} |")
+    lines.extend(["","Data-only Pareto set (this case and declared settings only): "+", ".join(report["data_only_pareto_ids"]),
+        "","## Downstream Doppler and directional WSS","",
+        "| Method | Velocity NRMSE | Near-wall NRMSE | WSS NRMSE |","|---|---:|---:|---:|"])
+    for row in results:
+        m=row.get("metrics",{})
+        values=[m.get(k) for k in ("velocity_nrmse","near_wall_velocity_nrmse","wss_nrmse")]
+        if any(v is not None for v in values):
+            lines.append("| "+row["id"]+" | "+" | ".join("—" if v is None else f"{v:.3g}" for v in values)+" |")
     (out/"SUMMARY.md").write_text("\n".join(lines)+"\n")
     return report

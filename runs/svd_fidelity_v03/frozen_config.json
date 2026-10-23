@@ -1,0 +1,264 @@
+{
+  "blas_threads": 1,
+  "factorial": {
+    "clutter_db": [
+      20.0,
+      40.0
+    ],
+    "tissue_acceleration_mps2": [
+      0.0,
+      0.03
+    ],
+    "umax_mps": [
+      0.003,
+      0.025
+    ]
+  },
+  "generator": {
+    "f0_hz": 5000000.0,
+    "n_frames": 96,
+    "prf_hz": 1000.0,
+    "shape": [
+      8,
+      13
+    ]
+  },
+  "measurement_hop": 32,
+  "measurement_window": 32,
+  "methods": [
+    {
+      "id": "svd_fixed_uncentered",
+      "method": "svd",
+      "params": {
+        "centered": false,
+        "discard": 1,
+        "selector": "fixed",
+        "window": 32
+      }
+    },
+    {
+      "id": "svd_fixed_centered",
+      "method": "svd",
+      "params": {
+        "centered": true,
+        "discard": 1,
+        "selector": "fixed",
+        "window": 32
+      }
+    },
+    {
+      "id": "svd_energy_uncentered",
+      "method": "svd",
+      "params": {
+        "centered": false,
+        "discard": 1,
+        "selector": "energy",
+        "window": 32
+      }
+    },
+    {
+      "id": "svd_baranger_uncentered",
+      "method": "svd",
+      "params": {
+        "centered": false,
+        "discard": 1,
+        "selector": "baranger",
+        "window": 32
+      }
+    },
+    {
+      "id": "svd_baranger_centered",
+      "method": "svd",
+      "params": {
+        "centered": true,
+        "discard": 1,
+        "selector": "baranger",
+        "window": 32
+      }
+    },
+    {
+      "id": "svd_local_uncentered",
+      "method": "local",
+      "params": {
+        "centered": false,
+        "discard": 1,
+        "method": "svd",
+        "patch_shape": [
+          6,
+          6
+        ],
+        "stride": [
+          3,
+          3
+        ],
+        "window": 32
+      }
+    },
+    {
+      "id": "svd_long_uncentered",
+      "method": "sliding",
+      "params": {
+        "centered": false,
+        "discard": 1,
+        "hop": 32,
+        "method": "svd",
+        "window": 96
+      }
+    },
+    {
+      "id": "song_local_reconstruction_uncentered",
+      "method": "song_local",
+      "params": {
+        "centered": false,
+        "patch_shape": [
+          6,
+          6
+        ],
+        "selector_options": {
+          "prf_hz": 1000.0,
+          "slope_threshold": 0.1,
+          "tail_tolerance": 0.1
+        },
+        "stride": [
+          3,
+          3
+        ],
+        "window": 32
+      }
+    },
+    {
+      "id": "svd_temporal_frequency_uncentered",
+      "method": "svd",
+      "params": {
+        "centered": false,
+        "selector": "temporal_frequency",
+        "selector_options": {
+          "cutoff_hz": 30.0,
+          "prf_hz": 1000.0
+        },
+        "window": 32
+      }
+    },
+    {
+      "id": "evd_fixed_uncentered",
+      "method": "svd",
+      "params": {
+        "backend": "gram",
+        "centered": false,
+        "discard": 1,
+        "window": 32
+      }
+    },
+    {
+      "id": "song_rsvd_uncentered",
+      "method": "rsvd",
+      "params": {
+        "centered": false,
+        "discard": 1,
+        "seed": 0,
+        "window": 32
+      }
+    },
+    {
+      "id": "song_rsvd_downsampled_uncentered",
+      "method": "rsvd",
+      "params": {
+        "centered": false,
+        "discard": 1,
+        "seed": 0,
+        "spatial_fraction": 0.5,
+        "window": 32
+      }
+    },
+    {
+      "id": "huang_evd_median_uncentered",
+      "method": "huang_evd",
+      "params": {
+        "beta": 1.43,
+        "centered": false,
+        "rule": "median",
+        "window": 32
+      }
+    },
+    {
+      "id": "huang_evd_ncc_uncentered",
+      "method": "huang_evd",
+      "params": {
+        "beta": 1.43,
+        "centered": false,
+        "rule": "ncc",
+        "window": 32
+      }
+    },
+    {
+      "id": "huang_evd_sigmoid_uncentered",
+      "method": "huang_evd",
+      "params": {
+        "beta": 2.0,
+        "centered": false,
+        "rule": "sigmoid",
+        "window": 32
+      }
+    },
+    {
+      "id": "huang_gaussian_iq_extension_uncentered",
+      "method": "gaussian_evd",
+      "params": {
+        "centered": false,
+        "grid_shape": [
+          2,
+          2
+        ],
+        "rule": "ncc",
+        "window": 32
+      }
+    },
+    {
+      "id": "butterworth_hp_0.01_prf",
+      "method": "highpass",
+      "params": {
+        "cutoff_hz": 10.0,
+        "order": 3,
+        "phase_mode": "zero_phase",
+        "prf_hz": 1000.0
+      }
+    },
+    {
+      "id": "butterworth_hp_0.03_prf",
+      "method": "highpass",
+      "params": {
+        "cutoff_hz": 30.0,
+        "order": 3,
+        "phase_mode": "zero_phase",
+        "prf_hz": 1000.0
+      }
+    },
+    {
+      "id": "butterworth_hp_0.08_prf",
+      "method": "highpass",
+      "params": {
+        "cutoff_hz": 80.0,
+        "order": 3,
+        "phase_mode": "zero_phase",
+        "prf_hz": 1000.0
+      }
+    },
+    {
+      "id": "butterworth_hp_causal_0.03_prf",
+      "method": "highpass",
+      "params": {
+        "cutoff_hz": 30.0,
+        "order": 3,
+        "phase_mode": "causal",
+        "prf_hz": 1000.0
+      }
+    }
+  ],
+  "scope": "Statistical IQ, explicit uncentered default, independently frozen parameters; no test-based tuning",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "version": 1
+}

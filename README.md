@@ -134,9 +134,9 @@ A bounded 64-frame Waterloo CCA RF window has now been reconstructed and passed
 through a 58-setting engineering pilot: 32 calibration frames and 32 evaluation
 frames. Both views and their offsets are preserved. The short pilot supplies
 no independent blood/tissue truth and does not rank experimental separation accuracy.
-The [follow-up protocol](docs/FOLLOWUP_PROTOCOL_V04.md) fixes 1,024 frames
-from each of two public-data subjects, with 256 calibration and 768 evaluation
-frames per subject. The same limits on experimental source/phase truth apply.
+The [v0.3.0 follow-up](docs/RESULTS_FOLLOWUP_V04.md) now reconstructs 1,024 frames
+from each of two subjects, with 256 calibration and 768 evaluation frames per
+subject. It retains the same limits on experimental source/phase truth.
 
 For large raw files, start with metadata and a bounded window:
 
@@ -175,10 +175,15 @@ arrays, acquisition files, and package build products are excluded from Git.
 Run the demo commands above to regenerate the synthetic arrays.
 
 
-The follow-up runners and frozen configuration grids are included in this draft.
-Publication of the generated follow-up figures and result archives is pending
-explicit approval; this draft contains the implementation and method audit.
-Locally generated reports can be packaged with
-`python scripts/prepare_followup_archives.py`, then checked using the manifest
-it creates. Historical v0.2.0 GZIP records remain available:
-`python scripts/verify_results.py --restore` checks those earlier source hashes.
+The [v0.3.0 results and figures](docs/RESULTS_FOLLOWUP_V04.md) include 3,850
+synthetic and 58 experimental outputs. Lossless XZ archives preserve the exact
+frozen JSON bytes in small transfer parts. Verify and restore them with:
+
+```bash
+python scripts/verify_results.py --manifest runs/followup_v04_manifest.json --require-current-code --restore
+```
+
+Read restored `results.json.xz` with `lzma.open(path, 'rt')`. Runners write
+ordinary JSON when rerun. Historical v0.2.0 GZIP records remain available:
+`python scripts/verify_results.py --restore` verifies those earlier source hashes
+without requiring them to match the current implementation.

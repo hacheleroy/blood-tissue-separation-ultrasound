@@ -33,6 +33,7 @@ jobs:
       - run: python -m pip install -e '.[test,io]'
       - run: python -m pytest -q -ra
       - run: python scripts/verify_results.py
+      - run: python scripts/verify_results.py --manifest runs/followup_v04_manifest.json --require-current-code
 
   packages:
     runs-on: ubuntu-latest

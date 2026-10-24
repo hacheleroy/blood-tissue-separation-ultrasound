@@ -41,6 +41,13 @@ source-resolved controls and a fresh development check. The slow-flow-specific
 Axis 2 setting meets its development bounds, but the phase correction misses
 its moving-tissue leakage gate on the fresh cloud; the new held-out reserve
 remains closed.
+The [phase-5 broad-support local-phase study](docs/RESULTS_ESDIVA_PHASE5_DEVELOPMENT.md)
+reconstructs a wider tissue region from verified RF and applies a reversible
+phase field on the original eight-row score tile. Its paired blood-response
+and moving-tissue leakage gates pass on three development clouds and an
+independent new cloud under settings fixed beforehand. Slow-flow SVD and Axis 1
+still have high absolute blood error. The source/results freeze is published;
+reserved seeds 2081 and 2093 remain unopened.
 The [ULMShare follow-on](docs/ULMSHARE_FOLLOWON.md) is an in vivo microbubble
 benchmark design for after the acoustic-simulation study.
 

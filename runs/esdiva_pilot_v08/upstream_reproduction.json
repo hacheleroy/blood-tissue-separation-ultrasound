@@ -1,0 +1,125 @@
+{
+  "arms": {
+    "A": {
+      "event_sha256_root": "8f8a409d756850d29c3a23bb6fb29eae44b35033bf6a99dfe32976012408ec81",
+      "events": 576,
+      "manifest_sha256": "bb9bd8d26b90ca3638896ba2b80b87abb3023120445c7dc4b7143569b10f4f5d",
+      "rf_sample_period_s": 3.3333333333333334e-08,
+      "rf_shape_range": [
+        976,
+        1083
+      ],
+      "t0_max_s": 7.3112076486214005e-06,
+      "t0_min_s": 3.7766614820185606e-06
+    },
+    "B": {
+      "event_sha256_root": "3896d477eebe957cfc2ec671dec4f3e9fbb6d28dd35a8db4d4b46f36e380bbcb",
+      "events": 72,
+      "manifest_sha256": "0858ce2da1c27fbdf9484ffc83538f93ccb1a2d188b54d4a359d00d9a1775f44",
+      "rf_sample_period_s": 3.3333333333333334e-08,
+      "rf_shape_range": [
+        939,
+        1046
+      ],
+      "t0_max_s": 8.397626997282318e-06,
+      "t0_min_s": 5.0308155674912524e-06
+    },
+    "C": {
+      "event_sha256_root": "ba14898180ca585d954d97a162c5c63ad6dfec636eb23ef6fc0e92040e4ebb95",
+      "events": 288,
+      "manifest_sha256": "80f15ed5c995c0536c035b26e19f223e76a7ca36deb9c8143fbedfa618ca468f",
+      "rf_sample_period_s": 3.3333333333333334e-08,
+      "rf_shape_range": [
+        938,
+        1046
+      ],
+      "t0_max_s": 8.425085289605592e-06,
+      "t0_min_s": 5.0308155674912524e-06
+    }
+  },
+  "boundary": "Upstream nine-angle compound Doppler validates its own flow example, not our three-view separation filters",
+  "environment": {
+    "packages": {
+      "esdiva": "0.3.0",
+      "h5py": "3.16.0",
+      "numba": "0.68.0",
+      "numpy": "2.3.5",
+      "pyvista": "0.49.1",
+      "scipy": "1.17.0"
+    },
+    "python": "3.12.14"
+  },
+  "figure_sha256": {
+    "ex22_bercoff_arms.png": "3b0b6312fc427e3aaa78ed64f199e3388df731ad75ac35de7eb206dfc300e6b8",
+    "ex22_bercoff_tradeoff.png": "c701698769e0bc153ae76bf1cc87919a538c3b12369e99b8822b6c3e14bef1d2"
+  },
+  "iq_npz_sha256": "f1935efeac9b217c4b8cbe47d5262cad603519a556255338f097ed8723bd8805",
+  "metrics": {
+    "arms": {
+      "A": {
+        "detected_frac": 0.7024519549370444,
+        "ensemble": 8,
+        "f_echo_Hz": 2600482.485416769,
+        "flow_voxels": 909,
+        "label": "conventional focused",
+        "n_emissions": 576,
+        "psf_core_ratio": 0.875918437507437,
+        "psf_flattening": "core reads slow, wall reads fast \u2014 see the profile",
+        "psf_wall_ratio": 2.2835783167899413,
+        "v_edge_m_s": 0.40655766754012934,
+        "v_gate_m_s": 0.17386091830096861,
+        "v_roi_mean_m_s": 0.15028992286019038,
+        "v_roi_true_m_s": 0.154405378062602,
+        "v_std_m_s": 0.08053188227532204,
+        "wall_filter_tissue_dB": -16.074417792114986
+      },
+      "B": {
+        "detected_frac": 0.6375082836315441,
+        "ensemble": 8,
+        "f_echo_Hz": 2471432.4893977945,
+        "flow_voxels": 997,
+        "label": "ultrafast compound",
+        "n_emissions": 72,
+        "psf_core_ratio": 0.9335899565306047,
+        "psf_flattening": "core reads slow, wall reads fast \u2014 see the profile",
+        "psf_wall_ratio": 1.7831099361552678,
+        "v_edge_m_s": 0.342229406883816,
+        "v_gate_m_s": 0.21984116068753837,
+        "v_roi_mean_m_s": 0.15479671197069195,
+        "v_roi_true_m_s": 0.154405378062602,
+        "v_std_m_s": 0.11114315960705512,
+        "wall_filter_tissue_dB": -15.100722290973108
+      },
+      "C": {
+        "detected_frac": 0.747846255798542,
+        "ensemble": 32,
+        "f_echo_Hz": 2469833.3265126385,
+        "flow_voxels": 1977,
+        "label": "ultrafast, long ensemble",
+        "n_emissions": 288,
+        "psf_core_ratio": 0.9090492960584919,
+        "psf_flattening": "core reads slow, wall reads fast \u2014 see the profile",
+        "psf_wall_ratio": 1.3562433153074223,
+        "v_edge_m_s": 0.3064035199770099,
+        "v_gate_m_s": 0.21494020835465058,
+        "v_roi_mean_m_s": 0.14287019933801376,
+        "v_roi_true_m_s": 0.154405378062602,
+        "v_std_m_s": 0.0649722220095373,
+        "wall_filter_tissue_dB": -15.521406029086647
+      }
+    },
+    "speedup": 8.0,
+    "truth_m_s": 0.22500000000000006,
+    "v_nyquist_m_s": 0.5763863694885322
+  },
+  "metrics_sha256": "0c55cac4e011073804b59680e7287c4036144dab055794b7bdf6ccfde058c740",
+  "source_file_sha256": {
+    "step1_define_flow_phantom.py": "71743a0df5f2bbb84bce443a0c3cfc555926110f022f13691567193e1548dd2a",
+    "step2_acquire_RF.py": "0ace33f108148c1e4875c4431d2b7d91ec93b6c98dc47546f8bba66edd1f4812",
+    "step3_doppler_processing.py": "aac6c73b7f762f14f426f70ab15d775106b75577722a3a770a7187958f4e8a2b",
+    "step4_visualize.py": "c6018493793dd09007670ad04d11f63e15892665bc8c1bcec25d90e0300980bc"
+  },
+  "status": "upstream Example 22 steps 2-4 completed; all RF event checksums verified",
+  "upstream_commit": "ab7eaef6d23428762ab5b9079ab03a5aa99af085",
+  "upstream_seed": 2026
+}

@@ -11,7 +11,10 @@ physical controls, independent motion references, data eligibility and the
 paired flow-response/tissue-leakage gate. It has **no experimental results yet**.
 An [eSDIva RF benchmark proposal and Axis 3 literature update](docs/ESDIVA_RF_BENCHMARK_PROPOSAL.md)
 lays out an acoustic-simulation tier and its separate source-truth controls;
-no eSDIva results have been run or added.
+the [Example 22 reproduction and three-view pilot](docs/RESULTS_ESDIVA_PILOT_V08.md)
+record upstream Doppler checks and a short, reduced-density RF-to-IQ bridge.
+These diagnostics do not establish filter accuracy under tissue motion or in a
+physical phantom.
 
 The [shared three-axis benchmark](docs/RESULTS_SHARED_V05.md) uses the same
 three-view input, disjoint-time calibration, spatial tile and score interval for

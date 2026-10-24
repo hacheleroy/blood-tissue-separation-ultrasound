@@ -1,0 +1,138 @@
+{
+  "status": "calibration gate failed; do not score",
+  "upstream_commit": "ab7eaef6d23428762ab5b9079ab03a5aa99af085",
+  "seed": 2053,
+  "view_indices": [
+    4,
+    3,
+    5
+  ],
+  "scatterer_fraction": 0.1,
+  "calibration_frames": 16,
+  "evaluation_frames": 80,
+  "motion": "smooth",
+  "flow_scale": 1.0,
+  "n_tissue": 456,
+  "n_blood": 618,
+  "script_sha256": "378f3cb1b40f640ced32fefc57441feb9da2373305dd4ef8f7d9ad188ebf9667",
+  "pilot_adapter_sha256": "00ab4f9f34a8fb138ada2b46fc4fed80f4797edcd0dc23ec2dda9ef3b754d503",
+  "benchmark_source_sha256": "8587a156b3283238920777e96cd059d72203d5a9638a61f5cc43876324cd4e13",
+  "environment": {
+    "python": "3.12.14",
+    "esdiva": "0.3.0"
+  },
+  "grid_mm": {
+    "x_extent": [
+      -8.0,
+      8.0
+    ],
+    "y_extent": [
+      -0.05,
+      0.05
+    ],
+    "z_extent": [
+      13.0,
+      19.0
+    ],
+    "dx": 1.0,
+    "dy": 0.1,
+    "dz": 0.1
+  },
+  "geometry": {
+    "prf_hz": 3700.0,
+    "f0_hz": 2614650.047174143,
+    "sound_speed_mps": 1540.0,
+    "phase_sign": -1,
+    "tx_rad": [
+      0.0,
+      -0.08726646259971647,
+      0.08726646259971647
+    ],
+    "rx_rad": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "view_offsets_s": [
+      0.0,
+      9.009009009009009e-05,
+      0.00018018018018018018
+    ]
+  },
+  "carrier_hz": 2614650.047174143,
+  "rf_shape": [
+    288,
+    64,
+    958
+  ],
+  "rf_tissue_sha256": "7ff5b3c997b23da420579da259a1e8a41cb7959d5212e01bb0589be8387c6d8d",
+  "rf_blood_sha256": "11c379d73a71be9b1144297c5f84ae420c17a72c2468422a786f2601bb29e753",
+  "rf_t0_sha256": "c312bcad2dd27441a3f3ad598c98501183def5eb4d1ae734d072c27a556bef81",
+  "rf_noise_sha256": "a26bf047113b398fda650c493590ab87699b948f39f437c4972ba279f8bc7282",
+  "rf_source_additivity_relative_error": 1.4402323245121806e-07,
+  "beam_source_additivity_relative_error": 3.911047485871677e-08,
+  "iq_source_additivity_relative_error": 1.7449614783479526e-07,
+  "iq_shape": [
+    80,
+    3,
+    8,
+    16
+  ],
+  "mixture_sha256": "af34c761a023d9350fb00ce575e438e92e01d2bdf2c55fa26f9b814804d034dc",
+  "calibration_sha256": "73180b9e858020c9edbc60d8762263edfea0bd4b1dc0a0e6125e8b197c3dfc29",
+  "blood_sha256": "4bc26bf29121f88b67feaa59874f6bf9124658089c5329d0250fc1555c1422a6",
+  "tissue_sha256": "11a6699d350ed422f75b12d37d9fafce66be5b536459c869a8bb91d84b2a231f",
+  "noise_sha256": "bc16f4db03d64c4ea86afca11cba00ec4bfc09b4a90ee160430d34fa8e863412",
+  "known_motion_sha256": "ebf607c4c8efa964692f9bfe17d8a3acd72d717b8d5998ee4d1da2133ca08049",
+  "training_roi_sha256": "5e6de4f2f4328f3b839097d608d33bca8817400a11d1734a675e8d8750017cf0",
+  "training_blood_to_tissue_power_ratio": 0.07710311629283,
+  "calibration_angle_diagnostics": [
+    {
+      "angle_deg": 0.0,
+      "gain_regression_magnitude": 1.0,
+      "gain_rms_magnitude": 1.0,
+      "coherence_train": 1.0,
+      "coherence_validation": 1.0,
+      "relative_phase_train_rad": 0.0,
+      "relative_phase_validation_rad": 0.0,
+      "regression_input_noise_power_gain": 1.0,
+      "bounded_input_noise_power_gain": 1.0,
+      "regression_residual_validation": 0.0,
+      "bounded_residual_validation": 0.0
+    },
+    {
+      "angle_deg": -5.0,
+      "gain_regression_magnitude": 0.5838983858533565,
+      "gain_rms_magnitude": 0.9271843500145013,
+      "coherence_train": 0.6297543588221958,
+      "coherence_validation": 0.5647953459316467,
+      "relative_phase_train_rad": -0.17449185517264143,
+      "relative_phase_validation_rad": -0.19331562615635361,
+      "regression_input_noise_power_gain": 2.9330904147666392,
+      "bounded_input_noise_power_gain": 1.163235947994394,
+      "regression_residual_validation": 0.6944037042332519,
+      "bounded_residual_validation": 0.9463618138213836
+    },
+    {
+      "angle_deg": 5.0,
+      "gain_regression_magnitude": 0.8475133881976424,
+      "gain_rms_magnitude": 1.2048159976509705,
+      "coherence_train": 0.7034380269269658,
+      "coherence_validation": 0.7159753935306291,
+      "relative_phase_train_rad": -0.2759829076710276,
+      "relative_phase_validation_rad": -0.42266248173907456,
+      "regression_input_noise_power_gain": 1.3922167836088288,
+      "bounded_input_noise_power_gain": 0.6889037503176015,
+      "regression_residual_validation": 0.49918548053762807,
+      "bounded_residual_validation": 0.6140664757199114
+    }
+  ],
+  "calibration_gate": {
+    "coherence_min": 0.7,
+    "max_input_noise_power_gain": 4.0,
+    "reference_view_must_be_zero_deg": true
+  },
+  "calibration_gate_pass": false,
+  "source_and_known_motion_are_evaluator_only": true,
+  "limitation": "Particle subset and one scatterer seed; analytic scatterer motion is not exact beamformed-IQ warp"
+}

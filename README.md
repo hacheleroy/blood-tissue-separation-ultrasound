@@ -23,7 +23,10 @@ add rigid/smooth tissue motion and fast/slow/zero flow at 10% particle density.
 Guarded loaded STAP now passes nominal support and gain bounds without a
 separation benefit over orthogonal STAP; the conservative motion gate falls
 back on moving tissue. The [frozen protocol](docs/ESDIVA_PHASE2_PROTOCOL.md)
-reserves two fresh scatterer seeds for unchanged held-out evaluation.
+was applied unchanged to two fresh scatterer seeds. The
+[held-out input-gate result](docs/RESULTS_ESDIVA_PHASE2_HELDOUT.md) finds
+**0/2 eligible seeds**: cross-angle tissue coherence fails at +5° on one
+seed and −5° on the other. No held-out filter ranking is claimed.
 The [ULMShare follow-on](docs/ULMSHARE_FOLLOWON.md) is an in vivo microbubble
 benchmark design for after the acoustic-simulation study.
 

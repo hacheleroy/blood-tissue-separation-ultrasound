@@ -1,0 +1,132 @@
+{
+  "status": "held-out input gate failed; no filter scores",
+  "freeze_commit": "0075beb22d89a4965312af831bb4f04f78cd94ab",
+  "freeze_manifest_sha256": "eda3bdaed54604f1996b76ad85f1104a3b7c9392071d7febb9759f084b617d63",
+  "independent_eligible_seeds": 0,
+  "independent_seed_count": 2,
+  "scene_count_per_seed": 5,
+  "all_rf_iq_arrays_and_provenance_verified": true,
+  "rows": [
+    {
+      "seed": 2031,
+      "scene": "stationary_fast",
+      "report_sha256": "2f718e174c18131efd25d1ae3c90782bf35cc408b7ce224f31aef5ec36e6c14f",
+      "angle_min_coherence": {
+        "-5": 0.7567107324787701,
+        "5": 0.652937402318597
+      },
+      "max_input_noise_power_gain": 2.18188069170564,
+      "calibration_gate_pass": false,
+      "score_present": false
+    },
+    {
+      "seed": 2031,
+      "scene": "rigid_fast",
+      "report_sha256": "4ebfe0c53639caa28322ad613329a71f04d48c060bd9a4163a7cd672d6e7234e",
+      "angle_min_coherence": {
+        "-5": 0.7513474792517518,
+        "5": 0.6546646418493132
+      },
+      "max_input_noise_power_gain": 2.1197432695875,
+      "calibration_gate_pass": false,
+      "score_present": false
+    },
+    {
+      "seed": 2031,
+      "scene": "smooth_fast",
+      "report_sha256": "958db9e814bb53a52e590a85554954a8a73d154d174d95271641d82c37fd626a",
+      "angle_min_coherence": {
+        "-5": 0.7566534499868823,
+        "5": 0.6528726846033192
+      },
+      "max_input_noise_power_gain": 2.182370018211709,
+      "calibration_gate_pass": false,
+      "score_present": false
+    },
+    {
+      "seed": 2031,
+      "scene": "smooth_slow",
+      "report_sha256": "9ed5d88e5045fa0cf6ca740a689168ea6373e490a52d7e2f867349a7ae7d4568",
+      "angle_min_coherence": {
+        "-5": 0.7622665334328865,
+        "5": 0.6491989442961938
+      },
+      "max_input_noise_power_gain": 2.153161491331635,
+      "calibration_gate_pass": false,
+      "score_present": false
+    },
+    {
+      "seed": 2031,
+      "scene": "smooth_zero",
+      "report_sha256": "22b5be7cfab894367933272e2ba315bf9eff93d69213e70b0c06c2803f2c3343",
+      "angle_min_coherence": {
+        "-5": 0.7579145892051,
+        "5": 0.6545002012869292
+      },
+      "max_input_noise_power_gain": 2.331745867016609,
+      "calibration_gate_pass": false,
+      "score_present": false
+    },
+    {
+      "seed": 2053,
+      "scene": "stationary_fast",
+      "report_sha256": "6952c82036065ef235422537cea6a6e54c89faa9ef5b4ed89cd9ceeabb7ddaac",
+      "angle_min_coherence": {
+        "-5": 0.5650995397561841,
+        "5": 0.7036952713694714
+      },
+      "max_input_noise_power_gain": 2.93178696456931,
+      "calibration_gate_pass": false,
+      "score_present": false
+    },
+    {
+      "seed": 2053,
+      "scene": "rigid_fast",
+      "report_sha256": "48fcc795e938232008eb10c36a913c2f7f0deb64ddb3140307e3b3f52e669a20",
+      "angle_min_coherence": {
+        "-5": 0.5648350343890745,
+        "5": 0.70347161180976
+      },
+      "max_input_noise_power_gain": 2.932920642663238,
+      "calibration_gate_pass": false,
+      "score_present": false
+    },
+    {
+      "seed": 2053,
+      "scene": "smooth_fast",
+      "report_sha256": "6846e90cd7b3d07ec5126e1ddddb0ca5e8b71d253f8894467c163550e3782760",
+      "angle_min_coherence": {
+        "-5": 0.5647953459316467,
+        "5": 0.7034380269269658
+      },
+      "max_input_noise_power_gain": 2.9330904147666392,
+      "calibration_gate_pass": false,
+      "score_present": false
+    },
+    {
+      "seed": 2053,
+      "scene": "smooth_slow",
+      "report_sha256": "17a3a256e4e7f333e388c058f70b15a57acb4f78d0e5741609222686fcc5d128",
+      "angle_min_coherence": {
+        "-5": 0.5904079787851167,
+        "5": 0.7033527330016681
+      },
+      "max_input_noise_power_gain": 4.240892388456418,
+      "calibration_gate_pass": false,
+      "score_present": false
+    },
+    {
+      "seed": 2053,
+      "scene": "smooth_zero",
+      "report_sha256": "7f8e7e794953124ea922ed9a358dff47c1dc8c3eb4072abb70a31f8df6a8b061",
+      "angle_min_coherence": {
+        "-5": 0.5927028699737058,
+        "5": 0.7091698650156504
+      },
+      "max_input_noise_power_gain": 3.2802487508373184,
+      "calibration_gate_pass": false,
+      "score_present": false
+    }
+  ],
+  "interpretation": "The five scenes share calibration texture within each seed. Do not tune angle selection or thresholds from reserved seeds."
+}

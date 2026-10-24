@@ -9,6 +9,9 @@ experiment while leaving significant reconstruction and blood-response losses.
 The [preregistered phantom protocol](docs/PHANTOM_PROTOCOL_V07.md) fixes
 physical controls, independent motion references, data eligibility and the
 paired flow-response/tissue-leakage gate. It has **no experimental results yet**.
+An [eSDIva RF benchmark proposal and Axis 3 literature update](docs/ESDIVA_RF_BENCHMARK_PROPOSAL.md)
+lays out an acoustic-simulation tier and its separate source-truth controls;
+no eSDIva results have been run or added.
 
 The [shared three-axis benchmark](docs/RESULTS_SHARED_V05.md) uses the same
 three-view input, disjoint-time calibration, spatial tile and score interval for

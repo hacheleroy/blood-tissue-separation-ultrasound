@@ -1,0 +1,52 @@
+{
+  "status": "phase-4 revised development candidate fixed before full seed-2101 scoring; v1 failure retained",
+  "upstream_commit": "ab7eaef6d23428762ab5b9079ab03a5aa99af085",
+  "design_seeds": [2083, 2097],
+  "fresh_development_seed": 2101,
+  "reserved_heldout_seeds": [2081, 2093],
+  "scatterer_fraction": 0.1,
+  "calibration_frames": 16,
+  "evaluation_frames": 80,
+  "packet": 16,
+  "score_start": 64,
+  "scenes": {
+    "stationary_fast": {"motion": "none", "flow_scale": 1.0},
+    "rigid_fast": {"motion": "rigid", "flow_scale": 1.0},
+    "smooth_slow": {"motion": "smooth", "flow_scale": 0.02},
+    "smooth_zero": {"motion": "smooth", "flow_scale": 0.0}
+  },
+  "minimum_roi_pixels": 40,
+  "input_coherence_min": 0.7,
+  "input_noise_power_gain_max": 4.0,
+  "evaluator_only_blood_to_tissue_roi_power_max": 0.1,
+  "phase_gate": {
+    "phase_deadband_rad": 0.02,
+    "phase_ramp_rad": 0.25,
+    "validation_coherence_low": 0.65,
+    "validation_coherence_ramp": 0.15,
+    "phase_disagreement_low_rad": 0.1,
+    "phase_disagreement_ramp_rad": 0.1,
+    "max_phase_fraction": 0.5
+  },
+  "methods": {
+    "roundtrip": {"method": "roundtrip", "horizon": 64},
+    "svd_cut1": {"method": "svd", "horizon": 64, "discard": 1},
+    "baranger_ssm": {"method": "baranger", "horizon": 64},
+    "axis1_cut1": {"method": "axis1", "horizon": 64, "discard": 1, "rho": 0.75},
+    "axis2_default": {"method": "axis2", "horizon": 64, "rank": 4, "gain_cap": 1.0},
+    "axis2_slow_r4_cap040": {"method": "axis2", "horizon": 64, "rank": 4, "gain_cap": 0.4},
+    "axis3_orthogonal": {"method": "stap", "horizon": 64, "adaptive": false},
+    "lee_aer": {"method": "lee_aer", "horizon": 64, "domain": "temporal", "epsilon_abs": 26.0}
+  },
+  "comparison": {
+    "motion": "differential phase versus no motion on SVD and Axis 1 for stationary_fast, rigid_fast, smooth_slow, smooth_zero",
+    "slow_flow": "Axis 2 rank 4 gain cap 0.40 versus default rank 4 gain cap 1.0, SVD, SSM and Lee AER on smooth_slow; retain fast-flow controls",
+    "primary_scores": ["paired_added_blood_iq_nrmse", "refitted_background_output_to_input_tissue_power"],
+    "roundtrip_nrmse_max": 1e-10,
+    "blood_nrmse_increase_max_motion": 0.02,
+    "moving_tissue_leakage_ratio_max": 0.9,
+    "slow_axis2_blood_nrmse_max": 0.7,
+    "slow_axis2_tissue_leakage_max": 0.18,
+    "decision": "On both design seeds and independent seed 2101: every scene must pass the input/source/roundtrip gates; SVD and Axis 1 blood increase <=0.02 in all four scenes, leakage <=0.9 of no-motion for rigid_fast and smooth_slow; slow-specific Axis 2 must meet both absolute scores. If any criterion fails, report failure and keep held-out reserve unopened. Zero-flow and fast-flow metrics are reported without an improvement claim. A pass permits a complete source/config/runner/results freeze to main before opening reserved seeds."
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "status": "development criteria fail; reserved seeds remain unopened",
+  "all_pass": false,
+  "config_sha256": "7208ef0df778c6f7fd4890ace1a057ee6cffe714c7553e22984a11d5926c5f2f",
+  "decision_script_sha256": "f79defdf79474e4d708ca80988f87d02cbd83277747aebf88b08d93e169727fe",
+  "checks": {
+    "2083/rigid_fast": {
+      "checks": {
+        "input_gate": true,
+        "roundtrip_none": true,
+        "roundtrip_differential_phase": true,
+        "blood_svd_cut1": true,
+        "leakage_svd_cut1": true,
+        "blood_axis1_cut1": true,
+        "leakage_axis1_cut1": true
+      },
+      "passed": true,
+      "score_sha256": "9bd8a31b35e5549b75849c9dde7e7a276e30ed52eefeb6bf8cb4f4ed71384c21",
+      "acquisition_sha256": "32f50958e6e8798fc50c8c9603f2cfaa0974ada270e83a12823931f8c45be9a7"
+    },
+    "2083/smooth_slow": {
+      "checks": {
+        "input_gate": true,
+        "roundtrip_none": true,
+        "roundtrip_differential_phase": true,
+        "blood_svd_cut1": true,
+        "leakage_svd_cut1": true,
+        "blood_axis1_cut1": true,
+        "leakage_axis1_cut1": true,
+        "slow_blood": true,
+        "slow_leakage": true
+      },
+      "passed": true,
+      "score_sha256": "7862ae035c62506e8b99279a486d736e1f6fe6ddbc1900b7ef99f38185a4337b",
+      "acquisition_sha256": "a4fe0bd092dae81d2facb1633aad8ce2f6455d08ff1f6f44486a768b4e60a597"
+    },
+    "2083/smooth_zero": {
+      "checks": {
+        "input_gate": true,
+        "roundtrip_none": true,
+        "roundtrip_differential_phase": true,
+        "blood_svd_cut1": true,
+        "blood_axis1_cut1": true
+      },
+      "passed": true,
+      "score_sha256": "c26d6b434714b165a6c3803e2e980c7756efad2fd399f8c49e47edaa94eb9e9b",
+      "acquisition_sha256": "c1dceeb12f2a3ea7a75f5bcff660974731a40f970e131404fc8cf9a234554c55"
+    },
+    "2083/stationary_fast": {
+      "checks": {
+        "input_gate": true,
+        "roundtrip_none": true,
+        "roundtrip_differential_phase": true,
+        "blood_svd_cut1": true,
+        "blood_axis1_cut1": true
+      },
+      "passed": true,
+      "score_sha256": "bb97c94d311131cdfb9ea21dc3ee4820cfcb78b87e75735fdf0390689aab37eb",
+      "acquisition_sha256": "5477f1c94de73baabc693f0f28a506a46733ac7c47d12da036287683753f1bd6"
+    },
+    "2097/rigid_fast": {
+      "checks": {
+        "input_gate": true,
+        "roundtrip_none": true,
+        "roundtrip_differential_phase": true,
+        "blood_svd_cut1": false,
+        "leakage_svd_cut1": true,
+        "blood_axis1_cut1": false,
+        "leakage_axis1_cut1": true
+      },
+      "passed": false,
+      "score_sha256": "a628683a1de8e1dce81e136a508a42420e2f10c5e4c93dd10875e7c1cc7610b2",
+      "acquisition_sha256": "c11642628f97f3614d83d594f6e1c19c18a797bb4ad0b801cd778a1a9e388ef8"
+    },
+    "2097/smooth_slow": {
+      "checks": {
+        "input_gate": true,
+        "roundtrip_none": true,
+        "roundtrip_differential_phase": true,
+        "blood_svd_cut1": true,
+        "leakage_svd_cut1": true,
+        "blood_axis1_cut1": true,
+        "leakage_axis1_cut1": true,
+        "slow_blood": true,
+        "slow_leakage": false
+      },
+      "passed": false,
+      "score_sha256": "7053f98281322ad4e0a6961cd760d80da4a4969281639eeea546e6976bff3f4d",
+      "acquisition_sha256": "f90f812b305bc84645e3499e954035fa1ef8bc1684189cbdcc542ce5625be7ac"
+    },
+    "2097/smooth_zero": {
+      "checks": {
+        "input_gate": true,
+        "roundtrip_none": true,
+        "roundtrip_differential_phase": true,
+        "blood_svd_cut1": true,
+        "blood_axis1_cut1": true
+      },
+      "passed": true,
+      "score_sha256": "dfe473f1387f1b0f79d76334c8f6530e140b401a7a1113796735e9917102cf29",
+      "acquisition_sha256": "8d23de290d722321946880561b449ab70459543d5dc28adc81991d576af5802d"
+    },
+    "2097/stationary_fast": {
+      "checks": {
+        "input_gate": true,
+        "roundtrip_none": true,
+        "roundtrip_differential_phase": true,
+        "blood_svd_cut1": true,
+        "blood_axis1_cut1": true
+      },
+      "passed": true,
+      "score_sha256": "adb5f92152f936d7c1f2017e19650666093c3a0acf47e7ec2b0f397e9648bbb0",
+      "acquisition_sha256": "eabee87b585ff03fa4a38220b4b723c0fbdae91873d421472e55df737c021e77"
+    }
+  },
+  "reserved_seeds_unopened_at_decision": [
+    2081,
+    2093
+  ]
+}

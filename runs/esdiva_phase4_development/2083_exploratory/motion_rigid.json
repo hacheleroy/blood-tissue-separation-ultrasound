@@ -1,0 +1,606 @@
+{
+  "status": "development motion candidate; no held-out scores",
+  "seed": 2083,
+  "motion": "rigid",
+  "flow_scale": 1.0,
+  "particle_fraction": 0.1,
+  "acquisition_sha256": "32f50958e6e8798fc50c8c9603f2cfaa0974ada270e83a12823931f8c45be9a7",
+  "script_sha256": "8245a67cf54f807c5e738f61abf93f035f123e54f7f61524e8b296f35fce204e",
+  "motion_context_sha256": "e5093d920834914ad6b0ceab134d6c67cdf852d1830dd97728523b11a8551292",
+  "training_roi_sha256": "5e6de4f2f4328f3b839097d608d33bca8817400a11d1734a675e8d8750017cf0",
+  "input_gate": {
+    "selected_roi": "outer_both",
+    "input_gate_pass": true,
+    "selection_uses_train_only": true,
+    "validation_shares_stationary_tissue_scatterers": true,
+    "coherence_min": 0.7,
+    "max_bounded_input_noise_power_gain": 4.0,
+    "min_roi_pixels": 40,
+    "candidates": {
+      "outer_both": {
+        "roi_pixels": 40,
+        "min_coherence_train": 0.7856382394569604,
+        "min_coherence_validation": 0.7816674896223206,
+        "max_bounded_noise_power_gain_train": 1.9385301724541204,
+        "bounded_residual_validation_max": 0.4447673158189656,
+        "regression_residual_validation_max": 0.38951813955075854
+      },
+      "outer_left": {
+        "roi_pixels": 24,
+        "min_coherence_train": 0.8089497876801526,
+        "min_coherence_validation": 0.8066689297765768,
+        "max_bounded_noise_power_gain_train": 3.4526542998252,
+        "bounded_residual_validation_max": 0.39591129674338715,
+        "regression_residual_validation_max": 0.3497615133241606
+      },
+      "outer_right": {
+        "roi_pixels": 16,
+        "min_coherence_train": 0.9340909569270245,
+        "min_coherence_validation": 0.9350545505285008,
+        "max_bounded_noise_power_gain_train": 3.7509459110991563,
+        "bounded_residual_validation_max": 0.13856747915381346,
+        "regression_residual_validation_max": 0.12782830212498608
+      },
+      "wide_both": {
+        "roi_pixels": 56,
+        "min_coherence_train": 0.7728970497932988,
+        "min_coherence_validation": 0.771511084397592,
+        "max_bounded_noise_power_gain_train": 1.7732139289944913,
+        "bounded_residual_validation_max": 0.45959102148666436,
+        "regression_residual_validation_max": 0.40509081869333025
+      }
+    }
+  },
+  "blood_to_tissue_roi_power_evaluator_only": 0.0017673396048248798,
+  "source_and_motion_truth_are_evaluator_only": true,
+  "variants": {
+    "none": {
+      "mixture_motion": {
+        "registration": "none",
+        "gate_enabled": false
+      },
+      "background_motion": {
+        "registration": "none",
+        "gate_enabled": false
+      },
+      "motion_rmse_pixels_evaluation_only": 0.33541019662496846,
+      "zero_map_rmse_pixels_evaluation_only": 0.33541019662496846,
+      "methods": {
+        "roundtrip": {
+          "added_blood_iq_nrmse": 4.673807547815862e-16,
+          "background_to_input_tissue_power": 1.0191512742326116,
+          "mixture_to_blood_iq_nrmse": 3.3497397570912075
+        },
+        "svd_cut1": {
+          "added_blood_iq_nrmse": 0.11552601405018247,
+          "background_to_input_tissue_power": 0.12170435751899783,
+          "mixture_to_blood_iq_nrmse": 1.163079569711327
+        },
+        "axis1_cut1": {
+          "added_blood_iq_nrmse": 0.12016764726252747,
+          "background_to_input_tissue_power": 0.1092646428214705,
+          "mixture_to_blood_iq_nrmse": 1.105728234312523
+        }
+      }
+    },
+    "complex_smooth": {
+      "mixture_motion": {
+        "registration": "smooth",
+        "representation": "complex calibrated views",
+        "gate_enabled": true,
+        "model_coordinates": "native to calibration reference; inverted for filtering",
+        "fit_pixels": 12,
+        "validation_pixels": 6,
+        "fit_pixels_sha256": "c86b29185740bc52f7507c55c66302df6d4fc4e39dd83b08f88cebdc8590ed17",
+        "validation_pixels_sha256": "02dafaec9eb488d2b5ff65127f03eeb3cf5a94f1dff40727ea4e0bd35324c580",
+        "input_sha256": "e13a8e28cc4ed9b4e6246194fb6a36d2e5a2e1e9c09c6b14f0e7bba2911d2873",
+        "parameters_sha256": "0906fb8f1d841d09be05e7dfb45dc26d986e6f65b288a9442be651943756da24",
+        "displacement_sha256": "c6d14b87e6fbcd70fea6360f3a6028e9740bdb3d1450734d1f8c4df53251b6fa",
+        "accepted_frames": 1,
+        "frames": 80,
+        "reason_counts": {
+          "reference_consistent": 0,
+          "small_motion": 2,
+          "accepted": 1,
+          "validation": 57,
+          "unobservable": 0,
+          "solver_limit": 16,
+          "support": 4,
+          "invalid_map": 0,
+          "insufficient_support": 0,
+          "ungated": 0
+        },
+        "options": {
+          "max_translation": 1.25,
+          "max_shape_coefficient": 0.35,
+          "max_displacement": 1.5,
+          "minimum_motion_rms": 0.03,
+          "identity_residual": 0.01,
+          "minimum_relative_improvement": 0.15,
+          "minimum_absolute_improvement": 0.002,
+          "maximum_validation_error": 0.12,
+          "maximum_condition": 10000.0,
+          "minimum_singular": 0.005,
+          "minimum_fit_pixels": 6,
+          "minimum_validation_pixels": 4,
+          "minimum_valid_fraction": 0.95,
+          "minimum_jacobian": 0.45,
+          "maximum_jacobian": 1.8,
+          "maximum_inverse_error": 0.05,
+          "smooth_relative_improvement": 0.1,
+          "smooth_absolute_improvement": 0.003,
+          "shape_ridge": 0.01,
+          "robust_scale": 0.03,
+          "max_evaluations": 30
+        },
+        "audit_columns": [
+          "model",
+          "reason",
+          "baseline_validation_nrmse",
+          "rigid_validation_nrmse",
+          "smooth_validation_nrmse",
+          "applied_displacement_rms",
+          "raw_displacement_rms",
+          "condition",
+          "minimum_jacobian",
+          "native_valid_fraction",
+          "solver_evaluations"
+        ],
+        "audit_reason_labels": [
+          "reference_consistent",
+          "small_motion",
+          "accepted",
+          "validation",
+          "unobservable",
+          "solver_limit",
+          "support",
+          "invalid_map",
+          "insufficient_support",
+          "ungated"
+        ],
+        "audit_sha256": "2e07aaeff247843e6a6fe1826f7151a2ce3da913d5044f1945ecedf65f56c72b"
+      },
+      "background_motion": {
+        "registration": "smooth",
+        "representation": "complex calibrated views",
+        "gate_enabled": true,
+        "model_coordinates": "native to calibration reference; inverted for filtering",
+        "fit_pixels": 12,
+        "validation_pixels": 6,
+        "fit_pixels_sha256": "c86b29185740bc52f7507c55c66302df6d4fc4e39dd83b08f88cebdc8590ed17",
+        "validation_pixels_sha256": "02dafaec9eb488d2b5ff65127f03eeb3cf5a94f1dff40727ea4e0bd35324c580",
+        "input_sha256": "d3170b9d33fa91fe24bc7c213ec0fbbc0b5f2b98443ef24090e087ab3fc44919",
+        "parameters_sha256": "45d1f165c69819ee98151adad26c50bef7baee84ab337387aab2bd43af98220c",
+        "displacement_sha256": "04e9302e392eaeb12a0f4b4eae4a08d9d6cd857f11a1eb4e871752759d7f4dfb",
+        "accepted_frames": 1,
+        "frames": 80,
+        "reason_counts": {
+          "reference_consistent": 0,
+          "small_motion": 4,
+          "accepted": 1,
+          "validation": 54,
+          "unobservable": 0,
+          "solver_limit": 15,
+          "support": 6,
+          "invalid_map": 0,
+          "insufficient_support": 0,
+          "ungated": 0
+        },
+        "options": {
+          "max_translation": 1.25,
+          "max_shape_coefficient": 0.35,
+          "max_displacement": 1.5,
+          "minimum_motion_rms": 0.03,
+          "identity_residual": 0.01,
+          "minimum_relative_improvement": 0.15,
+          "minimum_absolute_improvement": 0.002,
+          "maximum_validation_error": 0.12,
+          "maximum_condition": 10000.0,
+          "minimum_singular": 0.005,
+          "minimum_fit_pixels": 6,
+          "minimum_validation_pixels": 4,
+          "minimum_valid_fraction": 0.95,
+          "minimum_jacobian": 0.45,
+          "maximum_jacobian": 1.8,
+          "maximum_inverse_error": 0.05,
+          "smooth_relative_improvement": 0.1,
+          "smooth_absolute_improvement": 0.003,
+          "shape_ridge": 0.01,
+          "robust_scale": 0.03,
+          "max_evaluations": 30
+        },
+        "audit_columns": [
+          "model",
+          "reason",
+          "baseline_validation_nrmse",
+          "rigid_validation_nrmse",
+          "smooth_validation_nrmse",
+          "applied_displacement_rms",
+          "raw_displacement_rms",
+          "condition",
+          "minimum_jacobian",
+          "native_valid_fraction",
+          "solver_evaluations"
+        ],
+        "audit_reason_labels": [
+          "reference_consistent",
+          "small_motion",
+          "accepted",
+          "validation",
+          "unobservable",
+          "solver_limit",
+          "support",
+          "invalid_map",
+          "insufficient_support",
+          "ungated"
+        ],
+        "audit_sha256": "823561893c34ce52165c1b4fb4d98368483d02eccc9dcdaa91d9a6552f1c27b7"
+      },
+      "motion_rmse_pixels_evaluation_only": 0.3354546274331106,
+      "zero_map_rmse_pixels_evaluation_only": 0.33541019662496846,
+      "methods": {
+        "roundtrip": {
+          "added_blood_iq_nrmse": 4.673807547815862e-16,
+          "background_to_input_tissue_power": 1.0191512742326116,
+          "mixture_to_blood_iq_nrmse": 3.3497397570912075
+        },
+        "svd_cut1": {
+          "added_blood_iq_nrmse": 0.11650285305102832,
+          "background_to_input_tissue_power": 0.12233418578500212,
+          "mixture_to_blood_iq_nrmse": 1.166116792193108
+        },
+        "axis1_cut1": {
+          "added_blood_iq_nrmse": 0.12102556779560505,
+          "background_to_input_tissue_power": 0.1098028885236256,
+          "mixture_to_blood_iq_nrmse": 1.108407295588965
+        }
+      }
+    },
+    "envelope_rigid": {
+      "mixture_motion": {
+        "registration": "rigid",
+        "representation": "envelope fallback",
+        "gate_enabled": true,
+        "model_coordinates": "native to calibration reference; inverted for filtering",
+        "fit_pixels": 12,
+        "validation_pixels": 6,
+        "fit_pixels_sha256": "c86b29185740bc52f7507c55c66302df6d4fc4e39dd83b08f88cebdc8590ed17",
+        "validation_pixels_sha256": "02dafaec9eb488d2b5ff65127f03eeb3cf5a94f1dff40727ea4e0bd35324c580",
+        "input_sha256": "e13a8e28cc4ed9b4e6246194fb6a36d2e5a2e1e9c09c6b14f0e7bba2911d2873",
+        "parameters_sha256": "5dab023b06d542fd3a1e2cd04a746b0c731d974982773237912e392861c9791b",
+        "displacement_sha256": "f264603ab8f07dc275c844be71db3747263e4b32d83b92015f1b9d2cbbb93219",
+        "accepted_frames": 35,
+        "frames": 80,
+        "reason_counts": {
+          "reference_consistent": 0,
+          "small_motion": 5,
+          "accepted": 35,
+          "validation": 36,
+          "unobservable": 0,
+          "solver_limit": 4,
+          "support": 0,
+          "invalid_map": 0,
+          "insufficient_support": 0,
+          "ungated": 0
+        },
+        "options": {
+          "max_translation": 1.25,
+          "max_shape_coefficient": 0.35,
+          "max_displacement": 1.5,
+          "minimum_motion_rms": 0.03,
+          "identity_residual": 0.01,
+          "minimum_relative_improvement": 0.15,
+          "minimum_absolute_improvement": 0.002,
+          "maximum_validation_error": 0.12,
+          "maximum_condition": 10000.0,
+          "minimum_singular": 0.005,
+          "minimum_fit_pixels": 6,
+          "minimum_validation_pixels": 4,
+          "minimum_valid_fraction": 0.95,
+          "minimum_jacobian": 0.45,
+          "maximum_jacobian": 1.8,
+          "maximum_inverse_error": 0.05,
+          "smooth_relative_improvement": 0.1,
+          "smooth_absolute_improvement": 0.003,
+          "shape_ridge": 0.01,
+          "robust_scale": 0.03,
+          "max_evaluations": 30
+        },
+        "audit_columns": [
+          "model",
+          "reason",
+          "baseline_validation_nrmse",
+          "rigid_validation_nrmse",
+          "smooth_validation_nrmse",
+          "applied_displacement_rms",
+          "raw_displacement_rms",
+          "condition",
+          "minimum_jacobian",
+          "native_valid_fraction",
+          "solver_evaluations"
+        ],
+        "audit_reason_labels": [
+          "reference_consistent",
+          "small_motion",
+          "accepted",
+          "validation",
+          "unobservable",
+          "solver_limit",
+          "support",
+          "invalid_map",
+          "insufficient_support",
+          "ungated"
+        ],
+        "audit_sha256": "49831e0e918128d0fa54acd04fb266d0343142787f80e05a1fabb65ce4941b7b"
+      },
+      "background_motion": {
+        "registration": "rigid",
+        "representation": "envelope fallback",
+        "gate_enabled": true,
+        "model_coordinates": "native to calibration reference; inverted for filtering",
+        "fit_pixels": 12,
+        "validation_pixels": 6,
+        "fit_pixels_sha256": "c86b29185740bc52f7507c55c66302df6d4fc4e39dd83b08f88cebdc8590ed17",
+        "validation_pixels_sha256": "02dafaec9eb488d2b5ff65127f03eeb3cf5a94f1dff40727ea4e0bd35324c580",
+        "input_sha256": "d3170b9d33fa91fe24bc7c213ec0fbbc0b5f2b98443ef24090e087ab3fc44919",
+        "parameters_sha256": "d5ae30c5fda001198ebcbfe985dd3ed225f683db77a979ed360551be577b5a12",
+        "displacement_sha256": "2e923a08e70967b6395f73c489b78ce17c2b5642593e5774fad02df9da6c090d",
+        "accepted_frames": 34,
+        "frames": 80,
+        "reason_counts": {
+          "reference_consistent": 0,
+          "small_motion": 4,
+          "accepted": 34,
+          "validation": 36,
+          "unobservable": 0,
+          "solver_limit": 6,
+          "support": 0,
+          "invalid_map": 0,
+          "insufficient_support": 0,
+          "ungated": 0
+        },
+        "options": {
+          "max_translation": 1.25,
+          "max_shape_coefficient": 0.35,
+          "max_displacement": 1.5,
+          "minimum_motion_rms": 0.03,
+          "identity_residual": 0.01,
+          "minimum_relative_improvement": 0.15,
+          "minimum_absolute_improvement": 0.002,
+          "maximum_validation_error": 0.12,
+          "maximum_condition": 10000.0,
+          "minimum_singular": 0.005,
+          "minimum_fit_pixels": 6,
+          "minimum_validation_pixels": 4,
+          "minimum_valid_fraction": 0.95,
+          "minimum_jacobian": 0.45,
+          "maximum_jacobian": 1.8,
+          "maximum_inverse_error": 0.05,
+          "smooth_relative_improvement": 0.1,
+          "smooth_absolute_improvement": 0.003,
+          "shape_ridge": 0.01,
+          "robust_scale": 0.03,
+          "max_evaluations": 30
+        },
+        "audit_columns": [
+          "model",
+          "reason",
+          "baseline_validation_nrmse",
+          "rigid_validation_nrmse",
+          "smooth_validation_nrmse",
+          "applied_displacement_rms",
+          "raw_displacement_rms",
+          "condition",
+          "minimum_jacobian",
+          "native_valid_fraction",
+          "solver_evaluations"
+        ],
+        "audit_reason_labels": [
+          "reference_consistent",
+          "small_motion",
+          "accepted",
+          "validation",
+          "unobservable",
+          "solver_limit",
+          "support",
+          "invalid_map",
+          "insufficient_support",
+          "ungated"
+        ],
+        "audit_sha256": "83d92f191bd0a7cdad08670db7ba74ea53746347f9a6d3237ff0f617b85e293c"
+      },
+      "motion_rmse_pixels_evaluation_only": 0.27054893355866416,
+      "zero_map_rmse_pixels_evaluation_only": 0.33541019662496846,
+      "methods": {
+        "roundtrip": {
+          "added_blood_iq_nrmse": 0.46871330820176377,
+          "background_to_input_tissue_power": 0.49181315415110427,
+          "mixture_to_blood_iq_nrmse": 2.414541882056129
+        },
+        "svd_cut1": {
+          "added_blood_iq_nrmse": 0.4709408223955791,
+          "background_to_input_tissue_power": 0.046567554743567025,
+          "mixture_to_blood_iq_nrmse": 0.8833166814887714
+        },
+        "axis1_cut1": {
+          "added_blood_iq_nrmse": 0.4709687595242204,
+          "background_to_input_tissue_power": 0.04504085821435333,
+          "mixture_to_blood_iq_nrmse": 0.8746620329517382
+        }
+      }
+    },
+    "envelope_smooth": {
+      "mixture_motion": {
+        "registration": "smooth",
+        "representation": "envelope fallback",
+        "gate_enabled": true,
+        "model_coordinates": "native to calibration reference; inverted for filtering",
+        "fit_pixels": 12,
+        "validation_pixels": 6,
+        "fit_pixels_sha256": "c86b29185740bc52f7507c55c66302df6d4fc4e39dd83b08f88cebdc8590ed17",
+        "validation_pixels_sha256": "02dafaec9eb488d2b5ff65127f03eeb3cf5a94f1dff40727ea4e0bd35324c580",
+        "input_sha256": "e13a8e28cc4ed9b4e6246194fb6a36d2e5a2e1e9c09c6b14f0e7bba2911d2873",
+        "parameters_sha256": "5cb3ce04eb8782d69bb3294b9f4472e544fa029b683cf2d256844963af08ff23",
+        "displacement_sha256": "e5225a02026bc11294f531c27a7dea2ff70bf8dc81507b51a608273b0b5e486b",
+        "accepted_frames": 41,
+        "frames": 80,
+        "reason_counts": {
+          "reference_consistent": 0,
+          "small_motion": 6,
+          "accepted": 41,
+          "validation": 8,
+          "unobservable": 0,
+          "solver_limit": 25,
+          "support": 0,
+          "invalid_map": 0,
+          "insufficient_support": 0,
+          "ungated": 0
+        },
+        "options": {
+          "max_translation": 1.25,
+          "max_shape_coefficient": 0.35,
+          "max_displacement": 1.5,
+          "minimum_motion_rms": 0.03,
+          "identity_residual": 0.01,
+          "minimum_relative_improvement": 0.15,
+          "minimum_absolute_improvement": 0.002,
+          "maximum_validation_error": 0.12,
+          "maximum_condition": 10000.0,
+          "minimum_singular": 0.005,
+          "minimum_fit_pixels": 6,
+          "minimum_validation_pixels": 4,
+          "minimum_valid_fraction": 0.95,
+          "minimum_jacobian": 0.45,
+          "maximum_jacobian": 1.8,
+          "maximum_inverse_error": 0.05,
+          "smooth_relative_improvement": 0.1,
+          "smooth_absolute_improvement": 0.003,
+          "shape_ridge": 0.01,
+          "robust_scale": 0.03,
+          "max_evaluations": 30
+        },
+        "audit_columns": [
+          "model",
+          "reason",
+          "baseline_validation_nrmse",
+          "rigid_validation_nrmse",
+          "smooth_validation_nrmse",
+          "applied_displacement_rms",
+          "raw_displacement_rms",
+          "condition",
+          "minimum_jacobian",
+          "native_valid_fraction",
+          "solver_evaluations"
+        ],
+        "audit_reason_labels": [
+          "reference_consistent",
+          "small_motion",
+          "accepted",
+          "validation",
+          "unobservable",
+          "solver_limit",
+          "support",
+          "invalid_map",
+          "insufficient_support",
+          "ungated"
+        ],
+        "audit_sha256": "ddb6ec1a40439a9fa8c34431bb246b27ebc254a79049a8e003370f703a6cb038"
+      },
+      "background_motion": {
+        "registration": "smooth",
+        "representation": "envelope fallback",
+        "gate_enabled": true,
+        "model_coordinates": "native to calibration reference; inverted for filtering",
+        "fit_pixels": 12,
+        "validation_pixels": 6,
+        "fit_pixels_sha256": "c86b29185740bc52f7507c55c66302df6d4fc4e39dd83b08f88cebdc8590ed17",
+        "validation_pixels_sha256": "02dafaec9eb488d2b5ff65127f03eeb3cf5a94f1dff40727ea4e0bd35324c580",
+        "input_sha256": "d3170b9d33fa91fe24bc7c213ec0fbbc0b5f2b98443ef24090e087ab3fc44919",
+        "parameters_sha256": "d23e38ea50b14055b87949771b3582d027f770040ab71f6462303e76aef2db22",
+        "displacement_sha256": "f4d2c4788a3ecbafe98608bb825f74bcd336ec538c355ea2060a492d7946fbbf",
+        "accepted_frames": 43,
+        "frames": 80,
+        "reason_counts": {
+          "reference_consistent": 0,
+          "small_motion": 3,
+          "accepted": 43,
+          "validation": 7,
+          "unobservable": 0,
+          "solver_limit": 27,
+          "support": 0,
+          "invalid_map": 0,
+          "insufficient_support": 0,
+          "ungated": 0
+        },
+        "options": {
+          "max_translation": 1.25,
+          "max_shape_coefficient": 0.35,
+          "max_displacement": 1.5,
+          "minimum_motion_rms": 0.03,
+          "identity_residual": 0.01,
+          "minimum_relative_improvement": 0.15,
+          "minimum_absolute_improvement": 0.002,
+          "maximum_validation_error": 0.12,
+          "maximum_condition": 10000.0,
+          "minimum_singular": 0.005,
+          "minimum_fit_pixels": 6,
+          "minimum_validation_pixels": 4,
+          "minimum_valid_fraction": 0.95,
+          "minimum_jacobian": 0.45,
+          "maximum_jacobian": 1.8,
+          "maximum_inverse_error": 0.05,
+          "smooth_relative_improvement": 0.1,
+          "smooth_absolute_improvement": 0.003,
+          "shape_ridge": 0.01,
+          "robust_scale": 0.03,
+          "max_evaluations": 30
+        },
+        "audit_columns": [
+          "model",
+          "reason",
+          "baseline_validation_nrmse",
+          "rigid_validation_nrmse",
+          "smooth_validation_nrmse",
+          "applied_displacement_rms",
+          "raw_displacement_rms",
+          "condition",
+          "minimum_jacobian",
+          "native_valid_fraction",
+          "solver_evaluations"
+        ],
+        "audit_reason_labels": [
+          "reference_consistent",
+          "small_motion",
+          "accepted",
+          "validation",
+          "unobservable",
+          "solver_limit",
+          "support",
+          "invalid_map",
+          "insufficient_support",
+          "ungated"
+        ],
+        "audit_sha256": "f7ff79414ae0f2556dff7f5331453a096d728cb9ad178e06597e7d9d89cb90f8"
+      },
+      "motion_rmse_pixels_evaluation_only": 0.266290751018244,
+      "zero_map_rmse_pixels_evaluation_only": 0.33541019662496846,
+      "methods": {
+        "roundtrip": {
+          "added_blood_iq_nrmse": 0.45428040382863605,
+          "background_to_input_tissue_power": 0.5018051431425746,
+          "mixture_to_blood_iq_nrmse": 2.436717628209985
+        },
+        "svd_cut1": {
+          "added_blood_iq_nrmse": 0.4490107308979503,
+          "background_to_input_tissue_power": 0.04835998932852601,
+          "mixture_to_blood_iq_nrmse": 0.8773876700706047
+        },
+        "axis1_cut1": {
+          "added_blood_iq_nrmse": 0.44950026727694764,
+          "background_to_input_tissue_power": 0.046196243021351904,
+          "mixture_to_blood_iq_nrmse": 0.8650839567373915
+        }
+      }
+    }
+  }
+}

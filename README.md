@@ -34,6 +34,13 @@ development checks. A minimum-support symmetric selector passes new sparse
 input checks and two full-density controls; paired source-resolved scenes still
 show unrepaired RF motion tracking and no separation benefit for loaded STAP.
 The new reserve remains unopened.
+The [phase-4 RF phase and slow-flow development study](docs/RESULTS_ESDIVA_PHASE4_DEVELOPMENT.md)
+tests a paired blood-response gate on a unit-modulus tissue phase correction
+and a separate Axis 2 operating point. It retains the failed first candidate,
+source-resolved controls and a fresh development check. The slow-flow-specific
+Axis 2 setting meets its development bounds, but the phase correction misses
+its moving-tissue leakage gate on the fresh cloud; the new held-out reserve
+remains closed.
 The [ULMShare follow-on](docs/ULMSHARE_FOLLOWON.md) is an in vivo microbubble
 benchmark design for after the acoustic-simulation study.
 

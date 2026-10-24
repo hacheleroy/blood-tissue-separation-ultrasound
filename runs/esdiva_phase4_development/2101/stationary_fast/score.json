@@ -1,0 +1,185 @@
+{
+  "status": "phase-4 paired source-resolved comparison",
+  "seed": 2101,
+  "scene": "stationary_fast",
+  "motion": "none",
+  "flow_scale": 1.0,
+  "scatterer_fraction": 0.1,
+  "acquisition_sha256": "93ad0efc1bda9ec218ba75bcd03a3a535040f23cee294ef4b2e1b3179044b27a",
+  "config_sha256": "57da9924c060240731ea83fca7083406694240510370742a86176d9a658d9506",
+  "script_sha256": "038cc54e08e00ec4acc03bb85dec477447bbc347ae7cba1b5a45df2a4ac52c35",
+  "phase_context_sha256": "33acc4351b1e4bff08b6b4a0bbb00775f18b47c19f2777bcd4170c08065b3e32",
+  "bounded_context_sha256": "ad62f9461c29c114b8d3c04604dd5dd63d10679a684901119793447d116098b2",
+  "input_gate_sha256": "a697833d513ab912b338052bed75f2a0278af800a25b785ca530ae1c612a6f53",
+  "numerical_source_sha256": "8587a156b3283238920777e96cd059d72203d5a9638a61f5cc43876324cd4e13",
+  "selected_roi_sha256": "5e6de4f2f4328f3b839097d608d33bca8817400a11d1734a675e8d8750017cf0",
+  "input_gate": {
+    "selected_roi": "outer_both",
+    "input_gate_pass": true,
+    "selection_uses_train_only": true,
+    "validation_shares_stationary_tissue_scatterers": true,
+    "coherence_min": 0.7,
+    "max_bounded_input_noise_power_gain": 4.0,
+    "min_roi_pixels": 40,
+    "candidates": {
+      "outer_both": {
+        "roi_pixels": 40,
+        "min_coherence_train": 0.7154391632300191,
+        "min_coherence_validation": 0.7468821339993021,
+        "max_bounded_noise_power_gain_train": 1.3658754109607887,
+        "bounded_residual_validation_max": 0.5141984700123945,
+        "regression_residual_validation_max": 0.44287399726416005
+      },
+      "outer_left": {
+        "roi_pixels": 24,
+        "min_coherence_train": 0.6509533514494636,
+        "min_coherence_validation": 0.6452883990908074,
+        "max_bounded_noise_power_gain_train": 2.4532483137178653,
+        "bounded_residual_validation_max": 0.7957591949190443,
+        "regression_residual_validation_max": 0.5903743673412595
+      },
+      "outer_right": {
+        "roi_pixels": 16,
+        "min_coherence_train": 0.8917312432915837,
+        "min_coherence_validation": 0.9083754730288482,
+        "max_bounded_noise_power_gain_train": 3.0282305222781063,
+        "bounded_residual_validation_max": 0.1837534313531784,
+        "regression_residual_validation_max": 0.17701204836793447
+      },
+      "wide_both": {
+        "roi_pixels": 56,
+        "min_coherence_train": 0.6881136983747093,
+        "min_coherence_validation": 0.7187528026719022,
+        "max_bounded_noise_power_gain_train": 1.3828478198530971,
+        "bounded_residual_validation_max": 0.5675060550532299,
+        "regression_residual_validation_max": 0.48418777444568883
+      }
+    }
+  },
+  "blood_to_tissue_roi_power_evaluator_only": 0.012935336768489392,
+  "source_truth_evaluator_only": true,
+  "score_frames": 16,
+  "variants": {
+    "none": {
+      "motion_fit": {
+        "registration": "none",
+        "gate_enabled": false
+      },
+      "background_motion_fit": {
+        "registration": "none",
+        "gate_enabled": false
+      },
+      "methods": {
+        "roundtrip": {
+          "paired_added_blood_iq_nrmse": 1.9905760309051094e-16,
+          "refitted_background_output_to_input_tissue_power": 1.0894042679060334,
+          "frozen_blood_power_ratio": 1.0
+        },
+        "svd_cut1": {
+          "paired_added_blood_iq_nrmse": 0.10327020789167408,
+          "refitted_background_output_to_input_tissue_power": 0.0850488186992669,
+          "frozen_blood_power_ratio": 0.999004969705682
+        },
+        "baranger_ssm": {
+          "paired_added_blood_iq_nrmse": 0.2627531535150225,
+          "refitted_background_output_to_input_tissue_power": 0.0655186164735361,
+          "frozen_blood_power_ratio": 0.9505424908116596
+        },
+        "axis1_cut1": {
+          "paired_added_blood_iq_nrmse": 0.07225257592577862,
+          "refitted_background_output_to_input_tissue_power": 0.08401427248865524,
+          "frozen_blood_power_ratio": 0.999227427219259
+        },
+        "axis2_default": {
+          "paired_added_blood_iq_nrmse": 0.6118751438581137,
+          "refitted_background_output_to_input_tissue_power": 0.5431302350432248,
+          "frozen_blood_power_ratio": 0.5411229895043748
+        },
+        "axis2_slow_r4_cap040": {
+          "paired_added_blood_iq_nrmse": 0.7722856822975679,
+          "refitted_background_output_to_input_tissue_power": 0.1309847854523778,
+          "frozen_blood_power_ratio": 0.10090685194377641
+        },
+        "axis3_orthogonal": {
+          "paired_added_blood_iq_nrmse": 0.1349751770512385,
+          "refitted_background_output_to_input_tissue_power": 0.2834524215450977,
+          "frozen_blood_power_ratio": 0.9905627479628595
+        },
+        "lee_aer": {
+          "paired_added_blood_iq_nrmse": 0.8046294831320099,
+          "refitted_background_output_to_input_tissue_power": 0.003324445342576804,
+          "frozen_blood_power_ratio": 0.03833106074009859
+        }
+      }
+    },
+    "differential_phase": {
+      "motion_fit": {
+        "model": "differential view phase; no spatial displacement or resampling",
+        "options": {
+          "phase_deadband_rad": 0.02,
+          "phase_ramp_rad": 0.25,
+          "validation_coherence_low": 0.65,
+          "validation_coherence_ramp": 0.15,
+          "phase_disagreement_low_rad": 0.1,
+          "phase_disagreement_ramp_rad": 0.1,
+          "max_phase_fraction": 0.5
+        },
+        "fit_pixels": 27,
+        "validation_pixels": 13,
+        "fit_mask_sha256": "63a72ecea93060cf01b3f511b6781332d67a4fc69a3b07b0df9b778ddfe201b1",
+        "validation_mask_sha256": "d575791e15f6460e7048520bca98151a910685903ef1feb9a544ddad56dace0d",
+        "fitted_phase_sha256": "83c05b35b9f9030b8885e36d3afeed43a6b9351faf71d009d96a144544eff9cc",
+        "applied_phase_sha256": "3f3666e65b9ee3f0bd20de23e43baceac3eccf551d3f45397a4bfda80509366a",
+        "mean_applied_phase_abs_rad": 0.0016233205777135289,
+        "median_validation_coherence": 0.9819620449219582,
+        "median_phase_disagreement_rad": 0.014334084273523034,
+        "view_frames_nonzero": 132,
+        "view_frames_full_weight": 0,
+        "total_view_frames": 240,
+        "uses_current_frame_and_prior_calibration_only": true
+      },
+      "background_motion_fit": {
+        "model": "differential view phase; no spatial displacement or resampling",
+        "options": {
+          "phase_deadband_rad": 0.02,
+          "phase_ramp_rad": 0.25,
+          "validation_coherence_low": 0.65,
+          "validation_coherence_ramp": 0.15,
+          "phase_disagreement_low_rad": 0.1,
+          "phase_disagreement_ramp_rad": 0.1,
+          "max_phase_fraction": 0.5
+        },
+        "fit_pixels": 27,
+        "validation_pixels": 13,
+        "fit_mask_sha256": "63a72ecea93060cf01b3f511b6781332d67a4fc69a3b07b0df9b778ddfe201b1",
+        "validation_mask_sha256": "d575791e15f6460e7048520bca98151a910685903ef1feb9a544ddad56dace0d",
+        "fitted_phase_sha256": "9c66956d9aaa320ca7c62168d7eae0f93a4cd7a4bd7f79ae9090430ed8fb3b36",
+        "applied_phase_sha256": "e3537cf76ea787bc01cfab6c879561c095361f890e9e748509dfc3236b59e676",
+        "mean_applied_phase_abs_rad": 0.001139996889393497,
+        "median_validation_coherence": 0.9873948625790749,
+        "median_phase_disagreement_rad": 0.01399623570216374,
+        "view_frames_nonzero": 141,
+        "view_frames_full_weight": 0,
+        "total_view_frames": 240,
+        "uses_current_frame_and_prior_calibration_only": true
+      },
+      "methods": {
+        "roundtrip": {
+          "paired_added_blood_iq_nrmse": 2.240628116227705e-16,
+          "refitted_background_output_to_input_tissue_power": 1.0894042679060334,
+          "frozen_blood_power_ratio": 1.0
+        },
+        "svd_cut1": {
+          "paired_added_blood_iq_nrmse": 0.10293403878158862,
+          "refitted_background_output_to_input_tissue_power": 0.08500330266825781,
+          "frozen_blood_power_ratio": 0.9990024409257631
+        },
+        "axis1_cut1": {
+          "paired_added_blood_iq_nrmse": 0.0720909059217423,
+          "refitted_background_output_to_input_tissue_power": 0.0839686536400679,
+          "frozen_blood_power_ratio": 0.9992249886088254
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "upstream_commit": "ab7eaef6d23428762ab5b9079ab03a5aa99af085",
+  "view_indices": [4, 3, 5],
+  "particle_fraction": 0.1,
+  "calibration_frames": 16,
+  "evaluation_frames": 80,
+  "development_seeds": [2026],
+  "reserved_heldout_seeds": [2031, 2053],
+  "scenes": [
+    {"id": "stationary_fast", "motion": "none", "flow_scale": 1.0},
+    {"id": "rigid_fast", "motion": "rigid", "flow_scale": 1.0},
+    {"id": "smooth_fast", "motion": "smooth", "flow_scale": 1.0},
+    {"id": "smooth_slow", "motion": "smooth", "flow_scale": 0.02},
+    {"id": "smooth_zero", "motion": "smooth", "flow_scale": 0.0}
+  ],
+  "annotation": "The zero-flow scene retains stationary blood scatterers; the tissue-plus-noise refit is the no-blood control. Particle density is intentionally reduced for development and must remain explicit in any held-out claim."
+}

@@ -1,0 +1,21 @@
+{
+  "phase": "development",
+  "packet": 16,
+  "score_start": 64,
+  "horizon": 64,
+  "motion_modes": ["none", "smooth"],
+  "motion_options": {"maximum_validation_error": 0.30},
+  "stap_min_snapshots_per_dimension": 2.0,
+  "stap_max_operator_gain": 1.5,
+  "methods": [
+    {"id": "identity", "method": "identity", "horizon": 64},
+    {"id": "roundtrip", "method": "roundtrip", "horizon": 64},
+    {"id": "svd_cut1", "method": "svd", "horizon": 64, "discard": 1},
+    {"id": "baranger_ssm", "method": "baranger", "horizon": 64},
+    {"id": "axis1_cut1", "method": "axis1", "horizon": 64, "discard": 1, "rho": 0.75},
+    {"id": "axis2", "method": "axis2", "horizon": 64, "rank": 4, "gain_cap": 1.0},
+    {"id": "axis3_orthogonal", "method": "stap", "horizon": 64, "adaptive": false},
+    {"id": "axis3_loaded_gated", "method": "stap", "horizon": 64, "adaptive": true, "loading_rel": 3.0},
+    {"id": "lee_aer", "method": "lee_aer", "horizon": 64, "domain": "temporal", "epsilon_abs": 26.0}
+  ]
+}

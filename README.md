@@ -18,6 +18,12 @@ admit the central `0°, -5°, +5°` reference geometry, expose an unsupported
 loaded STAP fit, and compare matched paired blood-addition/background outputs
 for SVD, SSM, AER and the three axes. They do not establish filter accuracy
 under tissue motion, independent scatterer seeds, or in a physical phantom.
+The [longer-ensemble eSDIva development controls](docs/RESULTS_ESDIVA_PHASE2_DEVELOPMENT.md)
+add rigid/smooth tissue motion and fast/slow/zero flow at 10% particle density.
+Guarded loaded STAP now passes nominal support and gain bounds without a
+separation benefit over orthogonal STAP; the conservative motion gate falls
+back on moving tissue. The [frozen protocol](docs/ESDIVA_PHASE2_PROTOCOL.md)
+reserves two fresh scatterer seeds for unchanged held-out evaluation.
 The [ULMShare follow-on](docs/ULMSHARE_FOLLOWON.md) is an in vivo microbubble
 benchmark design for after the acoustic-simulation study.
 

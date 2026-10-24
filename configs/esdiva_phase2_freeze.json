@@ -1,0 +1,33 @@
+{
+  "decision": "The loaded STAP and motion-correction arms remain diagnostics; all baselines and negative controls are retained. No tuning or promotion after reserved seeds are opened.",
+  "files_sha256": {
+    "configs/esdiva_phase2_development.json": "f574be8ae6b233cd8f74bb22caaaef8c50cc2c82e9cf559931565c82d24ba361",
+    "configs/esdiva_phase2_motion_relaxation_dev.json": "64879e6d3141077008c33bf9715eb104566e92964274dba2880333b25cd7d053",
+    "configs/esdiva_phase2_scenarios.json": "2144d957b30d46f274509240e66eeb2e38945a279d14982fd806e8fedd6e5ffb",
+    "examples/esdiva_angle_calibration.py": "f8a468e2e71b6fe5a745ac2b383884db46176476be04a09ff83f624f433e6b2a",
+    "examples/esdiva_example22_pilot.py": "00ab4f9f34a8fb138ada2b46fc4fed80f4797edcd0dc23ec2dda9ef3b754d503",
+    "examples/esdiva_gated_stap.py": "a8fafe349ea03d106c87370653739ffbbb9b099dac83ee550796a4228f59cb87",
+    "examples/esdiva_phase2_acquire.py": "378f3cb1b40f640ced32fefc57441feb9da2373305dd4ef8f7d9ad188ebf9667",
+    "examples/esdiva_phase2_freeze.py": "707eb8df46c28a57d5d78b5e7f23a5c23e696a993ea5109a6c897dbc16c1b200",
+    "examples/esdiva_phase2_make_freeze.py": "fbf1efb047f6dcee7efbed555e0fe06b4482263498f87dca916ddd0a06d8d5f3",
+    "examples/esdiva_phase2_plot.py": "c9bf92b3084b94291acec230ecd62383b9b96e4053dd45ca19fb771c6c05aa34",
+    "examples/esdiva_phase2_run_heldout.py": "8f39b313b628bdbbc04ab4d4d67bf308e560a64f4da21ed77bc690e132000d1d",
+    "examples/esdiva_phase2_score.py": "8f5d91a7bb38a593f6d25ee234eded4f6a7aa1bb7787f52faaf94600ae622192",
+    "runs/esdiva_phase2_development/rigid_fast/motion_relaxation_score.json": "91b26cc9ff7151d25fad5f7e911d1cdb4983b6f5c90f45a5c29f0e827c3f5023",
+    "runs/esdiva_phase2_development/rigid_fast/report.json": "a66a7394ede71931c2b997fe2f17159ca91c5a6b0e58929fd32409d76af1de18",
+    "runs/esdiva_phase2_development/rigid_fast/score.json": "223745861539e99aa4b790db1b5308426b9f3c0394ee80d6f4cdda0c4104e090",
+    "runs/esdiva_phase2_development/smooth_fast/report.json": "d3a857142f81fb67db30aedce68d3f853f9ee51e73a80b83d63d2d1678612480",
+    "runs/esdiva_phase2_development/smooth_fast/score.json": "0cf6d3f474c7a56566e92b4ffc454e3a8035096cd441f90ab5f614e6a2a5996d",
+    "runs/esdiva_phase2_development/smooth_slow/report.json": "5a410f11a08385b9dda97fa2e8a46ac40db50c44be7b6e6e4b82391118d16dd3",
+    "runs/esdiva_phase2_development/smooth_slow/score.json": "62ce4e5a32ba4c3fccc3c574d38f5bb9de0708f1884dfb656fb627efdccb3309",
+    "runs/esdiva_phase2_development/smooth_zero/report.json": "1c5aa242a0f55ffb499092819e2073f0eb17daf161d4b90c915accf33f825e4b",
+    "runs/esdiva_phase2_development/smooth_zero/score.json": "ec01959d7bf7ff764e8369090b722f590565203507e70daa925242a3dc8126d9",
+    "runs/esdiva_phase2_development/stationary_fast/motion_relaxation_score.json": "10975d03313e9e8077f3b03bd6039b66ab3a791b16f211e8424c0475f00ea1a8",
+    "runs/esdiva_phase2_development/stationary_fast/report.json": "415793ef08f39922e3246b8ff7655385957402ab128a986e07cf703704205eee",
+    "runs/esdiva_phase2_development/stationary_fast/score.json": "597e01f98485ce402066bc02e87e433515ceda32ae608bf0f6a19067fae3a367"
+  },
+  "limitation": "Nominal guarded samples are correlated; five reduced-density development scenes share one scatterer seed and score 16 frames each.",
+  "numerical_source_sha256": "8587a156b3283238920777e96cd059d72203d5a9638a61f5cc43876324cd4e13",
+  "status": "pre-held-out freeze; no reserved seed opened",
+  "upstream_commit": "ab7eaef6d23428762ab5b9079ab03a5aa99af085"
+}

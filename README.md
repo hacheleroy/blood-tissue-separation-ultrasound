@@ -13,8 +13,13 @@ An [eSDIva RF benchmark proposal and Axis 3 literature update](docs/ESDIVA_RF_BE
 lays out an acoustic-simulation tier and its separate source-truth controls;
 the [Example 22 reproduction and three-view pilot](docs/RESULTS_ESDIVA_PILOT_V08.md)
 record upstream Doppler checks and a short, reduced-density RF-to-IQ bridge.
-These diagnostics do not establish filter accuracy under tissue motion or in a
-physical phantom.
+The [angular calibration and full-density short control](docs/RESULTS_ESDIVA_CALIBRATION_V09.md)
+admit the central `0°, -5°, +5°` reference geometry, expose an unsupported
+loaded STAP fit, and compare matched paired blood-addition/background outputs
+for SVD, SSM, AER and the three axes. They do not establish filter accuracy
+under tissue motion, independent scatterer seeds, or in a physical phantom.
+The [ULMShare follow-on](docs/ULMSHARE_FOLLOWON.md) is an in vivo microbubble
+benchmark design for after the acoustic-simulation study.
 
 The [shared three-axis benchmark](docs/RESULTS_SHARED_V05.md) uses the same
 three-view input, disjoint-time calibration, spatial tile and score interval for

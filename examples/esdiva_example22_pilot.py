@@ -74,7 +74,8 @@ def view_rf(rf, coords, frame_events, probe, grid, c):
 
 
 def make_pilot(upstream_root, output, calibration_frames=16, evaluation_frames=32,
-               scatterer_fraction=.1):
+               scatterer_fraction=.1, view_indices=VIEW_INDICES,
+               require_calibration_gate=False):
     upstream_root = Path(upstream_root).resolve()
     output = Path(output).resolve()
     script = upstream_root / "examples/example22_flow_doppler/step1_define_flow_phantom.py"
@@ -87,6 +88,12 @@ def make_pilot(upstream_root, output, calibration_frames=16, evaluation_frames=3
         raise ValueError("Pilot requires >=8 calibration and >=32 whole evaluation frames")
     if not 0 < scatterer_fraction <= 1:
         raise ValueError("scatterer_fraction must be in (0,1]")
+    view_indices = tuple(view_indices)
+    if (len(view_indices) != 3 or len(set(view_indices)) != 3 or
+            4 not in view_indices or any(i < 0 or i > 8 for i in view_indices)):
+        raise ValueError("Exactly three distinct Example 22 angles including 0 degrees are required")
+    if require_calibration_gate and view_indices[0] != 4:
+        raise ValueError("The gated pilot uses the central 0-degree view as reference")
     if (output / "report.json").exists():
         raise FileExistsError(f"Refusing to replace completed pilot in {output}")
     output.mkdir(parents=True, exist_ok=True)
@@ -95,13 +102,13 @@ def make_pilot(upstream_root, output, calibration_frames=16, evaluation_frames=3
     from doppler_tools import echo_center_frequency, rf2iq
     from esdiva.utilities import add_noise, rf_rms
 
-    n_views = len(VIEW_INDICES)
+    n_views = len(view_indices)
     n_frames = calibration_frames + evaluation_frames
     n_events = n_frames * n_views
     emission_prf = example.PRF_DOPPLER * n_views
     sim, tx, _ = example.build_simulator()
     _, nine_events = example.compound_events(tx, 1)
-    frame_events = [nine_events[i] for i in VIEW_INDICES]
+    frame_events = [nine_events[i] for i in view_indices]
     events = frame_events * n_frames
     positions, amps, truth = example.build_phantom(n_events, emission_prf)
     n_tissue = truth["n_tissue"]
@@ -191,15 +198,21 @@ def make_pilot(upstream_root, output, calibration_frames=16, evaluation_frames=3
                                  max(np.mean(abs(tissue[:, :, flow_roi])**2), 1e-30))
     tissue_lag_phase = np.angle(np.sum(tissue[1:] * tissue[:-1].conj(), axis=(0, 2, 3)))
     blood_lag_phase = np.angle(np.sum(blood[1:] * blood[:-1].conj(), axis=(0, 2, 3)))
-    angles = np.deg2rad([example.ANGLES_DEG[i] for i in VIEW_INDICES])
+    angles = np.deg2rad([example.ANGLES_DEG[i] for i in view_indices])
     offsets = np.arange(n_views) / emission_prf
     geometry = {"prf_hz": example.PRF_DOPPLER, "f0_hz": float(f_echo),
                 "sound_speed_mps": example.C, "phase_sign": -1,
                 "tx_rad": angles.tolist(), "rx_rad": np.zeros(n_views).tolist(),
                 "view_offsets_s": offsets.tolist()}
     from btbench.shared import PublicInput, SharedContext, fit_shared
+    from esdiva_angle_calibration import angular_diagnostics, calibration_gate
 
     public = PublicInput(mixture, cal, training_roi, geometry)
+    split = calibration_frames//2
+    angle_control = angular_diagnostics(cal[:split], cal[split:], training_roi, view_indices)
+    gate, gate_pass = calibration_gate(angle_control, view_indices)
+    if require_calibration_gate and not gate_pass:
+        raise ValueError("Angular calibration gate failed; see tissue-only angle control")
     context = SharedContext(public, packet=16, score_start=16, motion="none")
     specs = {
         "identity": {"method": "identity", "horizon": 16},
@@ -216,12 +229,25 @@ def make_pilot(upstream_root, output, calibration_frames=16, evaluation_frames=3
             result = fit_shared(context, spec)
             b = result.apply_frozen(blood)
             t = result.apply_frozen(tissue)
+            n = result.apply_frozen(noise)
             score = slice(context.score_start, None)
+            blocks = result.diagnostics["blocks"]
+            stap_gate = None
+            if name == "axis3_loaded":
+                dimension = blocks[0]["snapshot_dimension"]
+                stap_gate = {"required_training_snapshots": 2*dimension,
+                             "max_operator_gain": 1.5,
+                             "passed": bool(all(
+                                 row["training_snapshots_min"] >= 2*dimension and
+                                 row["operator_gain_max"] <= 1.5 for row in blocks))}
             records[name] = {
                 "blood_iq_nrmse": relative_error(result.views, blood[score]),
                 "blood_frozen_power_ratio": float(np.mean(abs(b)**2) / max(np.mean(abs(blood[score])**2), 1e-30)),
                 "tissue_frozen_power_ratio": float(np.mean(abs(t)**2) / max(np.mean(abs(tissue[score])**2), 1e-30)),
+                "noise_frozen_power_ratio": float(np.mean(abs(n)**2) / max(np.mean(abs(noise[score])**2), 1e-30)),
+                "component_recomposition_relative_error": relative_error(b+t+n, result.views),
                 "fitted_result_finite": bool(np.isfinite(result.views).all()),
+                "adaptive_stap_support_gate": stap_gate,
                 "diagnostics": result.diagnostics,
             }
         except (ValueError, np.linalg.LinAlgError) as exc:
@@ -239,6 +265,8 @@ def make_pilot(upstream_root, output, calibration_frames=16, evaluation_frames=3
                         "packages": {name: importlib.metadata.version(name) for name in
                                      ("esdiva", "numpy", "scipy", "numba", "h5py", "pyvista")}},
         "selected_angles_deg": np.rad2deg(angles).tolist(), "grid_mm": GRID_MM,
+        "view_indices": view_indices, "calibration_angle_diagnostics": angle_control,
+        "calibration_gate": gate, "calibration_gate_pass": gate_pass,
         "scatterer_fraction": scatterer_fraction,
         "n_tissue": n_tissue, "n_blood": len(amps)-n_tissue,
         "calibration_frames": calibration_frames, "evaluation_frames": evaluation_frames,
@@ -273,9 +301,12 @@ def main():
     parser.add_argument("--calibration-frames", type=int, default=16)
     parser.add_argument("--evaluation-frames", type=int, default=32)
     parser.add_argument("--scatterer-fraction", type=float, default=.1)
+    parser.add_argument("--view-indices", nargs=3, type=int, default=VIEW_INDICES)
+    parser.add_argument("--require-calibration-gate", action="store_true")
     args = parser.parse_args()
     result = make_pilot(args.upstream_root, args.output, args.calibration_frames,
-                        args.evaluation_frames, args.scatterer_fraction)
+                        args.evaluation_frames, args.scatterer_fraction, args.view_indices,
+                        args.require_calibration_gate)
     print(json.dumps({k: result[k] for k in ("status", "rf_shape", "view_shape",
                                                "rf_source_additivity_relative_error",
                                                "iq_carrier_hz_from_calibration")}, indent=2))

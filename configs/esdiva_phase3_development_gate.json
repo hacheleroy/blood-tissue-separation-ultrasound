@@ -1,0 +1,23 @@
+{
+  "status": "development decision rule; no new held-out bank opened",
+  "upstream_commit": "ab7eaef6d23428762ab5b9079ab03a5aa99af085",
+  "exploratory_seeds": [2061, 2063, 2067],
+  "prospective_development_seeds": [2071, 2077],
+  "reserved_unseen_seeds": [2081, 2093],
+  "view_indices": [4, 3, 5],
+  "angles_deg": [0, -5, 5],
+  "training_roi": "x_mm <= -6, 8 depth samples near 15.6 mm",
+  "calibration_frames": 16,
+  "train_frames": 8,
+  "validation_frames": 8,
+  "noise_snr_db": 6,
+  "max_blood_to_tissue_power_in_roi": 0.1,
+  "min_coherence_per_angle_and_half": 0.7,
+  "max_regression_input_noise_power_gain_per_angle": 4.0,
+  "required_development_conditions": [
+    "three-view 10% survey for seeds 2071 and 2077",
+    "three-view full-density survey for seed 2063"
+  ],
+  "decision": "If any required condition fails, do not freeze or score a new held-out seed. Passing this input-only rule permits a subsequent full evaluation development study, not a filter ranking or phantom claim.",
+  "spent_heldout_seeds_excluded": [2031, 2053]
+}

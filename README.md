@@ -27,6 +27,13 @@ was applied unchanged to two fresh scatterer seeds. The
 [held-out input-gate result](docs/RESULTS_ESDIVA_PHASE2_HELDOUT.md) finds
 **0/2 eligible seeds**: cross-angle tissue coherence fails at +5° on one
 seed and −5° on the other. No held-out filter ranking is claimed.
+The [phase-3 development study](docs/RESULTS_ESDIVA_PHASE3_DEVELOPMENT.md)
+tests new scatterer seeds, three-view angular calibration and a data-only
+tissue-ROI selector with an RMS-bounded gain. A fixed left ROI fails fresh
+development checks. A minimum-support symmetric selector passes new sparse
+input checks and two full-density controls; paired source-resolved scenes still
+show unrepaired RF motion tracking and no separation benefit for loaded STAP.
+The new reserve remains unopened.
 The [ULMShare follow-on](docs/ULMSHARE_FOLLOWON.md) is an in vivo microbubble
 benchmark design for after the acoustic-simulation study.
 

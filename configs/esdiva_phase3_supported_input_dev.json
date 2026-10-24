@@ -1,0 +1,25 @@
+{
+  "status": "development candidate with spatial STAP training support; not held out",
+  "upstream_commit": "ab7eaef6d23428762ab5b9079ab03a5aa99af085",
+  "design_seeds": [2061, 2063, 2067, 2071, 2077, 2083, 2087],
+  "prospective_development_seeds": [2097, 2101],
+  "reserved_unseen_seeds": [2081, 2093],
+  "view_indices": [4, 3, 5],
+  "angles_deg": [0, -5, 5],
+  "train_frames": 8,
+  "validation_frames": 8,
+  "candidate_rois": ["abs(x_mm) >= 6", "x_mm <= -6", "x_mm >= 6", "abs(x_mm) >= 5"],
+  "minimum_roi_pixels": 40,
+  "selection": "From first-eight-frame tissue-plus-noise statistics, among geometric regions with at least 40 pixels, two-view coherence >= 0.7 and bounded gain <= 4, choose highest minimum coherence with fixed candidate-order ties. Do not reselect from validation.",
+  "normalization_candidate": "relative phase times per-view RMS amplitude from first eight frames",
+  "max_blood_to_tissue_power_selected_roi_evaluator_only": 0.1,
+  "validation_coherence_min_each_nonreference_view": 0.7,
+  "max_bounded_input_noise_power_gain": 4.0,
+  "required_conditions": [
+    "three-view 10% survey on unseen development seeds 2097 and 2101",
+    "three-view full-density survey on development seed 2063",
+    "full 80-frame source-resolved development scenes before filter freeze"
+  ],
+  "decision": "Passing input eligibility does not promote adaptive STAP or bounded normalization. Evaluate paired blood response and tissue leakage in moving tissue and slow/zero flow before any held-out freeze. Do not open 2081 or 2093 before full numerical code and settings are committed.",
+  "spent_heldout_seeds_excluded": [2031, 2053]
+}

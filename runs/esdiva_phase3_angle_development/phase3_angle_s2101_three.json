@@ -1,0 +1,226 @@
+{
+  "status": "new-seed development angle survey; no filter ranking",
+  "seed": 2101,
+  "upstream_commit": "ab7eaef6d23428762ab5b9079ab03a5aa99af085",
+  "script_sha256": "0766effdddbb54c1031cbfedaa6ad0e7f5219b7af97797c9f2bcb7686587e350",
+  "esdiva_version": "0.3.0",
+  "view_indices": [
+    4,
+    3,
+    5
+  ],
+  "angles_deg": [
+    0.0,
+    -5.0,
+    5.0
+  ],
+  "scatterer_fraction": 0.1,
+  "n_tissue": 462,
+  "n_blood": 618,
+  "frames": 16,
+  "calibration_train_frames": 8,
+  "calibration_validation_frames": 8,
+  "carrier_hz": 2420186.494151488,
+  "rf_shape": [
+    48,
+    64,
+    957
+  ],
+  "rf_tissue_sha256": "8209c7f385dcc721b931d4ab9b2b06146f1baa9b5cc179732ae965a05442440a",
+  "rf_blood_sha256": "10fd2779b9edd7e09a9543d279679b0e6ded31230f4f81f1d9f9724934362989",
+  "rf_t0_sha256": "57e095a72446f30cab1b7c8888659261e51e433a373cb8f39726fe0fb92fe419",
+  "calibration_iq_sha256": "943cf4a9f588daf3de71de90f582a4e3871fb6bfd7d82fce8daf423d965ede80",
+  "tissue_iq_sha256": "72c42d7c0a4d0813322cdc4d969d90b773ef6d30a63f20c700f9d5e722aaca5e",
+  "blood_iq_sha256": "92841e3dc3dc70153c9dee2d272153b3085778d9fe867e53e6f12e25e17233d0",
+  "calibration_iq_shape": [
+    16,
+    3,
+    8,
+    16
+  ],
+  "roi_diagnostics": {
+    "outer_both": {
+      "pixels": 40,
+      "blood_to_tissue_power": 0.014224927798884924,
+      "angles": [
+        {
+          "angle_deg": 0.0,
+          "gain_regression_magnitude": 1.0,
+          "gain_rms_magnitude": 1.0,
+          "coherence_train": 1.0,
+          "coherence_validation": 1.0,
+          "relative_phase_train_rad": 0.0,
+          "relative_phase_validation_rad": 0.0,
+          "regression_input_noise_power_gain": 1.0,
+          "bounded_input_noise_power_gain": 1.0,
+          "regression_residual_validation": 0.0,
+          "bounded_residual_validation": 0.0
+        },
+        {
+          "angle_deg": -5.0,
+          "gain_regression_magnitude": 0.609025562505095,
+          "gain_rms_magnitude": 0.8290372041727516,
+          "coherence_train": 0.7346178910183004,
+          "coherence_validation": 0.7185499263904535,
+          "relative_phase_train_rad": -0.3505974494672858,
+          "relative_phase_validation_rad": -0.3390599948447063,
+          "regression_input_noise_power_gain": 2.696056298844325,
+          "bounded_input_noise_power_gain": 1.4549630323163805,
+          "regression_residual_validation": 0.4842042167593193,
+          "bounded_residual_validation": 0.5669410248014237
+        },
+        {
+          "angle_deg": 5.0,
+          "gain_regression_magnitude": 1.4187779842677173,
+          "gain_rms_magnitude": 1.586561093872997,
+          "coherence_train": 0.8942473061685258,
+          "coherence_validation": 0.8991335373842516,
+          "relative_phase_train_rad": -0.31271189297112645,
+          "relative_phase_validation_rad": -0.3135187749988085,
+          "regression_input_noise_power_gain": 0.4967880248145107,
+          "bounded_input_noise_power_gain": 0.397270575616835,
+          "regression_residual_validation": 0.1915898697910429,
+          "bounded_residual_validation": 0.20159115589432955
+        }
+      ]
+    },
+    "outer_left": {
+      "pixels": 24,
+      "blood_to_tissue_power": 0.0644558312407736,
+      "angles": [
+        {
+          "angle_deg": 0.0,
+          "gain_regression_magnitude": 1.0,
+          "gain_rms_magnitude": 1.0,
+          "coherence_train": 1.0,
+          "coherence_validation": 1.0,
+          "relative_phase_train_rad": 0.0,
+          "relative_phase_validation_rad": 0.0,
+          "regression_input_noise_power_gain": 1.0,
+          "bounded_input_noise_power_gain": 1.0,
+          "regression_residual_validation": 0.0,
+          "bounded_residual_validation": 0.0
+        },
+        {
+          "angle_deg": -5.0,
+          "gain_regression_magnitude": 1.4941781101208595,
+          "gain_rms_magnitude": 1.764634809848221,
+          "coherence_train": 0.8467350308301897,
+          "coherence_validation": 0.8123973281680034,
+          "relative_phase_train_rad": 0.10312557416601074,
+          "relative_phase_validation_rad": 0.16817428575193433,
+          "regression_input_noise_power_gain": 0.4479146432828739,
+          "bounded_input_noise_power_gain": 0.32113697780083766,
+          "regression_residual_validation": 0.3428340425728334,
+          "bounded_residual_validation": 0.36233646920342605
+        },
+        {
+          "angle_deg": 5.0,
+          "gain_regression_magnitude": 0.4087238540513276,
+          "gain_rms_magnitude": 0.6142126927284827,
+          "coherence_train": 0.665443516374884,
+          "coherence_validation": 0.6867533964227742,
+          "relative_phase_train_rad": -1.0499688370241915,
+          "relative_phase_validation_rad": -1.0916734197689597,
+          "regression_input_noise_power_gain": 5.986045729922034,
+          "bounded_input_noise_power_gain": 2.6507112797822128,
+          "regression_residual_validation": 0.5304616230794007,
+          "bounded_residual_validation": 0.6140879764732691
+        }
+      ]
+    },
+    "outer_right": {
+      "pixels": 16,
+      "blood_to_tissue_power": 0.006613646633196373,
+      "angles": [
+        {
+          "angle_deg": 0.0,
+          "gain_regression_magnitude": 1.0,
+          "gain_rms_magnitude": 1.0,
+          "coherence_train": 1.0,
+          "coherence_validation": 1.0,
+          "relative_phase_train_rad": 0.0,
+          "relative_phase_validation_rad": 0.0,
+          "regression_input_noise_power_gain": 1.0,
+          "bounded_input_noise_power_gain": 1.0,
+          "regression_residual_validation": 0.0,
+          "bounded_residual_validation": 0.0
+        },
+        {
+          "angle_deg": -5.0,
+          "gain_regression_magnitude": 0.5093072405768875,
+          "gain_rms_magnitude": 0.5714599670186462,
+          "coherence_train": 0.8912387043207686,
+          "coherence_validation": 0.9048376522727951,
+          "relative_phase_train_rad": -0.5429400378228393,
+          "relative_phase_validation_rad": -0.5324513699531731,
+          "regression_input_noise_power_gain": 3.855141288048078,
+          "bounded_input_noise_power_gain": 3.0621635062507417,
+          "regression_residual_validation": 0.1814254091489698,
+          "bounded_residual_validation": 0.19565491203428448
+        },
+        {
+          "angle_deg": 5.0,
+          "gain_regression_magnitude": 1.585234349587494,
+          "gain_rms_magnitude": 1.683831988938554,
+          "coherence_train": 0.941444490900061,
+          "coherence_validation": 0.9416897568774538,
+          "relative_phase_train_rad": -0.2869423197737555,
+          "relative_phase_validation_rad": -0.2880733120840292,
+          "regression_input_noise_power_gain": 0.39793583628511775,
+          "bounded_input_noise_power_gain": 0.3526975868814506,
+          "regression_residual_validation": 0.11324953032103958,
+          "bounded_residual_validation": 0.11734199060805472
+        }
+      ]
+    },
+    "wide_both": {
+      "pixels": 56,
+      "blood_to_tissue_power": 0.02462633568776729,
+      "angles": [
+        {
+          "angle_deg": 0.0,
+          "gain_regression_magnitude": 1.0,
+          "gain_rms_magnitude": 1.0,
+          "coherence_train": 1.0,
+          "coherence_validation": 1.0,
+          "relative_phase_train_rad": 0.0,
+          "relative_phase_validation_rad": 0.0,
+          "regression_input_noise_power_gain": 1.0,
+          "bounded_input_noise_power_gain": 1.0,
+          "regression_residual_validation": 0.0,
+          "bounded_residual_validation": 0.0
+        },
+        {
+          "angle_deg": -5.0,
+          "gain_regression_magnitude": 0.5861989505803126,
+          "gain_rms_magnitude": 0.8270247030203615,
+          "coherence_train": 0.7088046444555602,
+          "coherence_validation": 0.6912496698738261,
+          "relative_phase_train_rad": -0.34502149242003094,
+          "relative_phase_validation_rad": -0.3310165178462707,
+          "regression_input_noise_power_gain": 2.910113494092049,
+          "bounded_input_noise_power_gain": 1.4620527297337058,
+          "regression_residual_validation": 0.522707376063117,
+          "bounded_residual_validation": 0.6205758128140478
+        },
+        {
+          "angle_deg": 5.0,
+          "gain_regression_magnitude": 1.3669174398019552,
+          "gain_rms_magnitude": 1.5767458801700835,
+          "coherence_train": 0.8669231085319253,
+          "coherence_validation": 0.8731209021382008,
+          "relative_phase_train_rad": -0.3365986055171685,
+          "relative_phase_validation_rad": -0.3345463358066622,
+          "regression_input_noise_power_gain": 0.5351991697305272,
+          "bounded_input_noise_power_gain": 0.40223197385854736,
+          "regression_residual_validation": 0.2376946691176237,
+          "bounded_residual_validation": 0.2539313338120155
+        }
+      ]
+    }
+  },
+  "validation_shares_stationary_tissue_scatterers": true,
+  "note": "Nine-angle survey uses nine emissions per frame; three-angle timing and noise change slightly and require a separate confirmation.",
+  "elapsed_s": 78.3168410420003
+}

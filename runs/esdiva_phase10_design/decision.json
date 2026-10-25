@@ -1,0 +1,143 @@
+{
+  "status": "qualified to freeze prospective development 2333",
+  "candidate_config_sha256": "4319f11b59dd92d1c2bc32379eb02072f4a889e5a3ead7bb6b7c9b943156b5e2",
+  "phase10_split_sha256": "57052f3f4d0f8e703d4c42cf77b266ff93a55a4f650bb63a7f8bf4a3fcfa21f3",
+  "retrospective_screen_sha256": "f79a3bfb8143938314fb151249c834231d081a381204a13ae1918f20f58e900a",
+  "review_script_sha256": "690eff974e5a3956ef36fa69748a30df4f5c3b6cd0a3237ed91aea282e91edde",
+  "phase5_source_freeze_sha256": "84410951ce053aaa59f57945598e364fd06acd13c22d22071d447b80059caf34",
+  "seen_design_seeds": [
+    2309,
+    2311,
+    2503,
+    2521,
+    2707,
+    2729,
+    3001,
+    3019
+  ],
+  "new_development_seeds": [
+    3307,
+    3323
+  ],
+  "prospective_seed_unopened": 2333,
+  "reserved_seeds_unopened": [
+    2401,
+    2411
+  ],
+  "missing": [],
+  "failures": [],
+  "rows": [
+    {
+      "seed": 3307,
+      "scene": "stationary_fast",
+      "method": "svd_cut1",
+      "blood_nrmse_increase": 0.0021305029607527615,
+      "tissue_leakage_ratio": 1.0225187651042158
+    },
+    {
+      "seed": 3307,
+      "scene": "stationary_fast",
+      "method": "axis1_cut1",
+      "blood_nrmse_increase": 0.001552139568801042,
+      "tissue_leakage_ratio": 1.0129160886801114
+    },
+    {
+      "seed": 3307,
+      "scene": "rigid_fast",
+      "method": "svd_cut1",
+      "blood_nrmse_increase": -0.0022396077722980356,
+      "tissue_leakage_ratio": 0.6760530057678181
+    },
+    {
+      "seed": 3307,
+      "scene": "rigid_fast",
+      "method": "axis1_cut1",
+      "blood_nrmse_increase": -0.0003369801010608964,
+      "tissue_leakage_ratio": 0.7264634007924069
+    },
+    {
+      "seed": 3307,
+      "scene": "smooth_slow",
+      "method": "svd_cut1",
+      "blood_nrmse_increase": 0.011772773989811136,
+      "tissue_leakage_ratio": 0.6907155238909001
+    },
+    {
+      "seed": 3307,
+      "scene": "smooth_slow",
+      "method": "axis1_cut1",
+      "blood_nrmse_increase": -0.01431933084856718,
+      "tissue_leakage_ratio": 0.7337955895550432
+    },
+    {
+      "seed": 3307,
+      "scene": "smooth_zero",
+      "method": "svd_cut1",
+      "blood_nrmse_increase": 0.01654430846882382,
+      "tissue_leakage_ratio": 0.609883318942658
+    },
+    {
+      "seed": 3307,
+      "scene": "smooth_zero",
+      "method": "axis1_cut1",
+      "blood_nrmse_increase": 0.0008315600543903345,
+      "tissue_leakage_ratio": 0.6530065141642954
+    },
+    {
+      "seed": 3323,
+      "scene": "stationary_fast",
+      "method": "svd_cut1",
+      "blood_nrmse_increase": 0.0018238033354776306,
+      "tissue_leakage_ratio": 1.0055904932542046
+    },
+    {
+      "seed": 3323,
+      "scene": "stationary_fast",
+      "method": "axis1_cut1",
+      "blood_nrmse_increase": 0.0017643311124901362,
+      "tissue_leakage_ratio": 1.0049987981638597
+    },
+    {
+      "seed": 3323,
+      "scene": "rigid_fast",
+      "method": "svd_cut1",
+      "blood_nrmse_increase": 0.012927377150146357,
+      "tissue_leakage_ratio": 0.6691168176153981
+    },
+    {
+      "seed": 3323,
+      "scene": "rigid_fast",
+      "method": "axis1_cut1",
+      "blood_nrmse_increase": 0.011920171644361405,
+      "tissue_leakage_ratio": 0.6884818965033384
+    },
+    {
+      "seed": 3323,
+      "scene": "smooth_slow",
+      "method": "svd_cut1",
+      "blood_nrmse_increase": -0.1046269818767992,
+      "tissue_leakage_ratio": 0.7076578493583819
+    },
+    {
+      "seed": 3323,
+      "scene": "smooth_slow",
+      "method": "axis1_cut1",
+      "blood_nrmse_increase": -0.07383390957082991,
+      "tissue_leakage_ratio": 0.7342674572153842
+    },
+    {
+      "seed": 3323,
+      "scene": "smooth_zero",
+      "method": "svd_cut1",
+      "blood_nrmse_increase": -0.0828712001666384,
+      "tissue_leakage_ratio": 0.7090360209702337
+    },
+    {
+      "seed": 3323,
+      "scene": "smooth_zero",
+      "method": "axis1_cut1",
+      "blood_nrmse_increase": -0.06980818675593647,
+      "tissue_leakage_ratio": 0.7348918783949527
+    }
+  ]
+}

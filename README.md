@@ -63,6 +63,9 @@ passed all four new development scenes; seed 3001 failed source purity in
 both fast-flow scenes and paired tissue suppression in smooth slow. The
 candidate remains **unqualified**; prospective 2333 and reserves 2401/2411
 remain unopened.
+The [phase-10 core-support and reference-mode revision](docs/ESDIVA_PHASE10_FROZEN_CANDIDATE.md)
+is frozen after a 32-scene retrospective design screen, before RF generation
+for development seeds 3307 and 3323. Its new-cloud decision is pending.
 The [ULMShare follow-on](docs/ULMSHARE_FOLLOWON.md) is an in vivo microbubble
 benchmark design for after the acoustic-simulation study.
 

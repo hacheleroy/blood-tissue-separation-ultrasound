@@ -1,0 +1,60 @@
+{
+  "status": "phase-10 core support and reference-mode revision declared before new RF",
+  "date_utc": "2026-10-25",
+  "upstream_commit": "ab7eaef6d23428762ab5b9079ab03a5aa99af085",
+  "phase5_source_freeze_sha256": "84410951ce053aaa59f57945598e364fd06acd13c22d22071d447b80059caf34",
+  "previously_seen_development_seeds": [
+    2309,
+    2311,
+    2503,
+    2521,
+    2707,
+    2729,
+    3001,
+    3019
+  ],
+  "new_development_confirmation_seeds": [
+    3307,
+    3323
+  ],
+  "prospective_development_seed": 2333,
+  "reserved_heldout_seeds": [
+    2401,
+    2411
+  ],
+  "scenes": {
+    "stationary_fast": {
+      "motion": "none",
+      "flow_scale": 1.0
+    },
+    "rigid_fast": {
+      "motion": "rigid",
+      "flow_scale": 1.0
+    },
+    "smooth_slow": {
+      "motion": "smooth",
+      "flow_scale": 0.02
+    },
+    "smooth_zero": {
+      "motion": "smooth",
+      "flow_scale": 0.0
+    }
+  },
+  "acquisition": {
+    "scatterer_fraction": 0.1,
+    "calibration_frames": 16,
+    "evaluation_frames": 80,
+    "view_indices": [
+      4,
+      3,
+      5
+    ],
+    "wide_depth_rows": 32,
+    "scored_depth_rows": 8
+  },
+  "source_contract": "Fixed known-vessel 5.5 mm scored core guard: 40 of 8x16 tissue pixels, 5 mm wide motion guard: 192 of 32x16. No isolated component is an input. Evaluator-only blood/tissue power <=.1 on both; archive IQ for a failure without filter scores.",
+  "calibration_contract": "Train-only prior tissue angular phase map as in phase 9, 0.4-pixel masked smoothing on the wide 5 mm guard. Last 8 of 16 stationary frames validate wide coherence >=.7 and core-5.5 >=.5 and >=.85 times core train; train minima and bounded noise gain <=4. Map is gate only, regular IQ stays unmodified.",
+  "reference_selection": "Retain phase-8 mixture-only pre-score loss rule on the new core. Permit its reference choice only if every view has >=.9 fraction of the 5.5 mm core above 0.2 times the median reference amplitude in the wide 5 mm tissue guard. Reference amplitudes derive only from prior calibration. Otherwise use hybrid.",
+  "hybrid": "Accepted local phase fraction .75 at sigma 4 with minimum validation gain .01, half-strength open nonperiodic unitary IQ transport; the wide fit remains at 5 mm, central scoring core at 5.5 mm.",
+  "decision": "All eight new scenes must pass source/calibration and unchanged paired blood, moving tissue and slow Axis 2 gates. No missing or failed scene. No retuning after 3307/3323 RF. Success is still development evidence and allows a separate prospective freeze for 2333."
+}

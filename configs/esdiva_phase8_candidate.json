@@ -1,0 +1,149 @@
+{
+  "admitted_development_seeds": [
+    2309,
+    2311,
+    2503,
+    2521,
+    2707,
+    2729
+  ],
+  "calibration_frames": 16,
+  "comparison": {
+    "blood_nrmse_increase_max_motion": 0.02,
+    "decision": "All 24 old and newly declared development scenes. Fixed input/source gates, paired roundtrip <=1e-10, blood NRMSE increase <=.020 on every scene for SVD and Axis 1, leakage ratio <=.900 on rigid_fast and smooth_slow for both, slow Axis 2 <=.700 blood and <=.180 leakage on all clouds. Any missing/failed scene blocks 2333 and reserves. Confirmation is development, not physical phantom validation.",
+    "moving_tissue_leakage_ratio_max": 0.9,
+    "primary_scores": [
+      "paired_added_blood_iq_nrmse",
+      "refitted_background_output_to_input_tissue_power"
+    ],
+    "roundtrip_nrmse_max": 1e-10,
+    "slow_axis2_blood_nrmse_max": 0.7,
+    "slow_axis2_tissue_leakage_max": 0.18
+  },
+  "core_gate_model": "wide_supported_core_diagnostic",
+  "core_validation_absolute_min": 0.5,
+  "core_validation_to_train_min": 0.85,
+  "design_seeds": [
+    2309,
+    2311,
+    2503,
+    2521
+  ],
+  "evaluation_frames": 80,
+  "evaluator_only_blood_to_tissue_roi_power_max": 0.1,
+  "hybrid": {
+    "boundary": "nonperiodic unitary skew derivative",
+    "phase_fraction": 0.5,
+    "shift_scale": 0.5,
+    "spatial_sigma_pixels": 4.0
+  },
+  "input_coherence_min": 0.7,
+  "input_noise_power_gain_max": 4.0,
+  "magnitude_shift_fit_sha256": "37cc1bffde5accd9725b6381a4f39ee221b72f707a4b3fbd4773e3e283f19859",
+  "methods": {
+    "axis1_cut1": {
+      "discard": 1,
+      "horizon": 64,
+      "method": "axis1",
+      "rho": 0.75
+    },
+    "axis2_default": {
+      "gain_cap": 1.0,
+      "horizon": 64,
+      "method": "axis2",
+      "rank": 4
+    },
+    "axis2_slow_r4_cap040": {
+      "gain_cap": 0.4,
+      "horizon": 64,
+      "method": "axis2",
+      "rank": 4
+    },
+    "axis3_orthogonal": {
+      "adaptive": false,
+      "horizon": 64,
+      "method": "stap"
+    },
+    "baranger_ssm": {
+      "horizon": 64,
+      "method": "baranger"
+    },
+    "lee_aer": {
+      "domain": "temporal",
+      "epsilon_abs": 26.0,
+      "horizon": 64,
+      "method": "lee_aer"
+    },
+    "roundtrip": {
+      "horizon": 64,
+      "method": "roundtrip"
+    },
+    "svd_cut1": {
+      "discard": 1,
+      "horizon": 64,
+      "method": "svd"
+    }
+  },
+  "minimum_core_roi_pixels": 40,
+  "minimum_wide_roi_pixels": 128,
+  "motion_variant": "measured_phase_selector",
+  "new_development_seeds": [
+    2707,
+    2729
+  ],
+  "numerical_source_sha256": "8587a156b3283238920777e96cd059d72203d5a9638a61f5cc43876324cd4e13",
+  "packet": 16,
+  "phase8_split_sha256": "49172a193b10ddcfd881dd6ce1cbe81cb2a5d08c5e99e7f3fe8f17d027c3a165",
+  "phase_selection": {
+    "frames": "first 64, before scored packet 64:80",
+    "guard4": "local phase",
+    "guard5": "reference if local phase loss >0.28 and reference phase excess <0.18; else hybrid",
+    "reference_phase_loss_risk": "reference need not minimize measured phase loss; paired source-resolved gate is definitive"
+  },
+  "prospective_development_seed": 2333,
+  "reference_transport": {
+    "minimum_valid_check_pixels": 30,
+    "minimum_validation_phase_gain": 0.01,
+    "reference_amplitude_fraction": 0.2,
+    "transport_strength": 1.1
+  },
+  "reserved_heldout_seeds": [
+    2401,
+    2411
+  ],
+  "review_script_sha256": "c352cea3c9d6b6f4a1b90662a0ffd04900147b1972559cc390ecde3732502c03",
+  "scatterer_fraction": 0.1,
+  "scenes": {
+    "rigid_fast": {
+      "flow_scale": 1.0,
+      "motion": "rigid"
+    },
+    "smooth_slow": {
+      "flow_scale": 0.02,
+      "motion": "smooth"
+    },
+    "smooth_zero": {
+      "flow_scale": 0.0,
+      "motion": "smooth"
+    },
+    "stationary_fast": {
+      "flow_scale": 1.0,
+      "motion": "none"
+    }
+  },
+  "score_script_sha256": "a6b7d47dadef60721be56b12f084fbf75c6068ccc76bd8454c68a2af1d21aa2e",
+  "score_start": 64,
+  "selector_source_sha256": "ef29828abef95aa9a59172d11dac5142b3b8592a003afa95138dba521fbf8561",
+  "status": "phase-8 single frozen selector; no release from seen development",
+  "transport_source_sha256": "301602c9a925f2b2b9eb1b581f1fdc037f207c80d1fb25d78f4c7c909e3dcc2b",
+  "upstream_commit": "ab7eaef6d23428762ab5b9079ab03a5aa99af085",
+  "wide_guard_selection": {
+    "criterion": "maximum minimum train angular coherence",
+    "maximum_bounded_noise_power_gain_train": 4.0,
+    "minimum_validation_coherence": 0.7,
+    "options_mm": [
+      4.0,
+      5.0
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "status": "input gate failed; no filter scores",
+  "seed": 3001,
+  "scene": "stationary_fast",
+  "acquisition_sha256": "c69b01452e37f83f619359115cb1e510351bf42a4020077a05b54506135f6fc7",
+  "broad_audit_sha256": "b3e5c63f9d26b7239039ffe84b61cdabae6a1862913c4e2423e205475110cd1f",
+  "config_sha256": "b63858ab8ea42579886786c5d7c092ab4c532e09c48e568ee1032b94e31f1fec",
+  "script_sha256": "0b3173c3c7093afe27b77c0bc06888349a75dc8d9f5fd97fd236319c741e61ad",
+  "local_phase_context_sha256": "1fde0c56b3c8329e2b962b7acf16afbcb69d9d885b5924222cdd2feac8d35c5c",
+  "selector_context_sha256": "ef29828abef95aa9a59172d11dac5142b3b8592a003afa95138dba521fbf8561",
+  "support_context_sha256": "d6995f6f211e290f5f41f99624a84b108beefb3191a63f5f28de5e8b3322e84a",
+  "acquisition_script_sha256": "1730a4f30785a62256b8232f788dab9bfd50366d18114fe6e1fff39b134e78e1",
+  "transport_context_sha256": "301602c9a925f2b2b9eb1b581f1fdc037f207c80d1fb25d78f4c7c909e3dcc2b",
+  "magnitude_shift_fit_sha256": "37cc1bffde5accd9725b6381a4f39ee221b72f707a4b3fbd4773e3e283f19859",
+  "rebeam_sha256": "a421905beb87607274c83174e44741bbca7d0457734a9a197325a51e977f0991",
+  "bounded_context_sha256": "ad62f9461c29c114b8d3c04604dd5dd63d10679a684901119793447d116098b2",
+  "numerical_source_sha256": "8587a156b3283238920777e96cd059d72203d5a9638a61f5cc43876324cd4e13",
+  "calibration_support": {
+    "model": "train-only 0.4-pixel angular phase map; gate only",
+    "wide_pixels": 192,
+    "core_pixels": 48,
+    "phase_sha256": "f9f168d130816b47bd282ac452fa3722110c27e8355cba5ae3880e35a3bf15a1",
+    "calibration_sha256": "aefb9ce73bceb0c8df84636afcd1e655354f0d669ba2e8afe2fe0b8c70d725f5",
+    "fit_frames": 8,
+    "validation_frames": 8,
+    "uses_source_truth_or_evaluation_IQ": false,
+    "wide": {
+      "minimum_coherence_train": 0.8611212733257105,
+      "minimum_coherence_validation": 0.8618686292728588,
+      "maximum_bounded_noise_power_gain_train": 1.2880722514755816,
+      "pass": true
+    },
+    "core": {
+      "minimum_coherence_train": 0.6371256240615126,
+      "minimum_coherence_validation": 0.6144654030189782,
+      "maximum_bounded_noise_power_gain_train": 1.0586732895417155,
+      "pass": true
+    },
+    "pass": true
+  },
+  "source_eligibility_pass": false,
+  "blood_to_tissue_core_roi_power_evaluator_only": 0.11391738997330493,
+  "blood_to_tissue_wide_roi_power_evaluator_only": 0.009420183801399033,
+  "source_truth_evaluator_only": true,
+  "score_frames": 16
+}

@@ -56,6 +56,13 @@ froze a measured phase selector before two new RF clouds. Seed 2707 passed
 all four revised development scenes, while seed 2729 failed source and
 calibration eligibility. The candidate is **not qualified** for prospective
 2333, reserve 2401/2411, or a physical phantom claim.
+The [phase-9 source-independent support revision](docs/ESDIVA_PHASE9_DESIGN_RESULT.md)
+froze a 5 mm anatomical tissue guard, prior-calibration phase-consistency
+eligibility and revised hybrid motion before two more RF clouds. Seed 3019
+passed all four new development scenes; seed 3001 failed source purity in
+both fast-flow scenes and paired tissue suppression in smooth slow. The
+candidate remains **unqualified**; prospective 2333 and reserves 2401/2411
+remain unopened.
 The [ULMShare follow-on](docs/ULMSHARE_FOLLOWON.md) is an in vivo microbubble
 benchmark design for after the acoustic-simulation study.
 

@@ -1,0 +1,118 @@
+{
+  "status": "no qualified candidate; prospective and reserve unopened",
+  "candidate_config_sha256": "b63858ab8ea42579886786c5d7c092ab4c532e09c48e568ee1032b94e31f1fec",
+  "phase9_split_sha256": "d7d61318be63b2d6c84709cc3790efd2b6b37f0f90748354d7daf962a09b427b",
+  "retrospective_screen_sha256": "4c60c53e0a27d6acf913dd342abd6f14971b1dc165ef345aef72edfaaccf643e",
+  "review_script_sha256": "9c073d76f29d1a0b154e1411ce340d67821d2d5cd5a65c7504c0e92d0b73df05",
+  "phase5_source_freeze_sha256": "84410951ce053aaa59f57945598e364fd06acd13c22d22071d447b80059caf34",
+  "seen_design_seeds": [
+    2309,
+    2311,
+    2503,
+    2521,
+    2707,
+    2729
+  ],
+  "new_development_seeds": [
+    3001,
+    3019
+  ],
+  "prospective_seed_unopened": 2333,
+  "reserved_seeds_unopened": [
+    2401,
+    2411
+  ],
+  "missing": [],
+  "failures": [
+    "input/source 3001/stationary_fast",
+    "input/source 3001/rigid_fast",
+    "leakage svd_cut1 3001/smooth_slow",
+    "leakage axis1_cut1 3001/smooth_slow"
+  ],
+  "rows": [
+    {
+      "seed": 3001,
+      "scene": "smooth_slow",
+      "method": "svd_cut1",
+      "blood_nrmse_increase": -0.009732365579386393,
+      "tissue_leakage_ratio": 0.9957368037914973
+    },
+    {
+      "seed": 3001,
+      "scene": "smooth_slow",
+      "method": "axis1_cut1",
+      "blood_nrmse_increase": -0.009283188049043156,
+      "tissue_leakage_ratio": 1.0011583514665254
+    },
+    {
+      "seed": 3001,
+      "scene": "smooth_zero",
+      "method": "svd_cut1",
+      "blood_nrmse_increase": -0.014585067638912763,
+      "tissue_leakage_ratio": 0.9955950871387926
+    },
+    {
+      "seed": 3001,
+      "scene": "smooth_zero",
+      "method": "axis1_cut1",
+      "blood_nrmse_increase": -0.012247919304346544,
+      "tissue_leakage_ratio": 1.0007920151767185
+    },
+    {
+      "seed": 3019,
+      "scene": "stationary_fast",
+      "method": "svd_cut1",
+      "blood_nrmse_increase": 0.006098732162640064,
+      "tissue_leakage_ratio": 0.9878096123208997
+    },
+    {
+      "seed": 3019,
+      "scene": "stationary_fast",
+      "method": "axis1_cut1",
+      "blood_nrmse_increase": 0.006686125081633881,
+      "tissue_leakage_ratio": 1.0018857448812013
+    },
+    {
+      "seed": 3019,
+      "scene": "rigid_fast",
+      "method": "svd_cut1",
+      "blood_nrmse_increase": -0.03677295037319844,
+      "tissue_leakage_ratio": 0.678966250005445
+    },
+    {
+      "seed": 3019,
+      "scene": "rigid_fast",
+      "method": "axis1_cut1",
+      "blood_nrmse_increase": -0.03875999424645818,
+      "tissue_leakage_ratio": 0.7050922084946257
+    },
+    {
+      "seed": 3019,
+      "scene": "smooth_slow",
+      "method": "svd_cut1",
+      "blood_nrmse_increase": -0.051920567750035396,
+      "tissue_leakage_ratio": 0.7235027412049123
+    },
+    {
+      "seed": 3019,
+      "scene": "smooth_slow",
+      "method": "axis1_cut1",
+      "blood_nrmse_increase": -0.04583639692123531,
+      "tissue_leakage_ratio": 0.7304817345670761
+    },
+    {
+      "seed": 3019,
+      "scene": "smooth_zero",
+      "method": "svd_cut1",
+      "blood_nrmse_increase": -0.044189222462110656,
+      "tissue_leakage_ratio": 0.7271127896968885
+    },
+    {
+      "seed": 3019,
+      "scene": "smooth_zero",
+      "method": "axis1_cut1",
+      "blood_nrmse_increase": -0.041250168587688596,
+      "tissue_leakage_ratio": 0.7340783549897857
+    }
+  ]
+}

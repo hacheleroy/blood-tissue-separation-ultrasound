@@ -16,6 +16,12 @@ def review(root, acquisitions, configurations, scores, output):
     if output.exists():raise FileExistsError(output)
     split=json.loads((root/'configs/esdiva_phase6_split.json').read_text())
     assert split['design_development_seeds']==[2309,2311]
+    rules=json.loads((root/'configs/esdiva_phase6_trial_rules.json').read_text())
+    expected={f"{trial['gate']}_{trial['motion']}_f{round(trial['fraction']*100):03d}_s{round(trial['sigma'])}.json"
+              for trial in rules['trials']}
+    actual={path.name for path in configurations.glob('*.json')}
+    if len(expected)!=len(rules['trials']) or actual!=expected:
+        raise ValueError('Incomplete or changed phase-6 trial set')
     freeze=json.loads((root/'configs/esdiva_phase5_freeze.json').read_text())
     records=[]
     for path in sorted(configurations.glob('*.json')):
@@ -48,7 +54,11 @@ def review(root, acquisitions, configurations, scores, output):
                         item['broad_audit_sha256']!=sha(audit_path) or
                         item['config_sha256']!=sha(path) or
                         item['script_sha256']!=sha(root/'examples/esdiva_phase6_score.py') or
+                        item['local_phase_context_sha256']!=sha(root/'examples/esdiva_phase5_local_phase.py') or
                         item['unit_shift_context_sha256']!=sha(root/'examples/esdiva_phase6_unit_shift.py') or
+                        item['rebeam_sha256']!=sha(root/'examples/esdiva_phase5_rebeam.py') or
+                        item['bounded_context_sha256']!=sha(root/'examples/esdiva_phase3_bounded_context.py') or
+                        item['input_gate_sha256']!=sha(root/'examples/esdiva_phase3_input_gate.py') or
                         item['numerical_source_sha256']!=freeze['numerical_source_sha256']):
                     raise ValueError(f'Changed source or score: {path.name} {seed}/{scene}')
                 if (item['status']!='phase-6 paired source-resolved development comparison' or

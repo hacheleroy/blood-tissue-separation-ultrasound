@@ -1,0 +1,119 @@
+{
+  "admitted_development_seeds": [
+    2309,
+    2311
+  ],
+  "calibration_frames": 16,
+  "comparison": {
+    "blood_nrmse_increase_max_motion": 0.02,
+    "decision": "On all three design clouds and the new full-scene development cloud 2111, every scene must pass original and broad input, source and paired roundtrip gates. For SVD and Axis 1, local phase minus no-motion blood NRMSE must be <=0.02 in every scene, and refitted tissue leakage must be <=0.9 of no-motion in rigid_fast and smooth_slow. The separate slow Axis 2 rank-4 cap-0.4 setting must meet both absolute bounds. One failure keeps the reserved seeds closed. A pass permits source/config/runner/results freeze to main before any use of reserved seeds. No candidate selection or threshold change after opening cloud 2111.",
+    "moving_tissue_leakage_ratio_max": 0.9,
+    "primary_scores": [
+      "paired_added_blood_iq_nrmse",
+      "refitted_background_output_to_input_tissue_power"
+    ],
+    "roundtrip_nrmse_max": 1e-10,
+    "slow_axis2_blood_nrmse_max": 0.7,
+    "slow_axis2_tissue_leakage_max": 0.18
+  },
+  "core_gate_model": "wide_supported_core_diagnostic",
+  "core_validation_absolute_min": 0.5,
+  "core_validation_to_train_min": 0.85,
+  "design_seeds": [
+    2309,
+    2311
+  ],
+  "evaluation_frames": 80,
+  "evaluator_only_blood_to_tissue_roi_power_max": 0.1,
+  "input_coherence_min": 0.7,
+  "input_noise_power_gain_max": 4.0,
+  "local_phase": {
+    "minimum_validation_phase_gain": 0.01,
+    "phase_fraction": 0.5,
+    "spatial_sigma_pixels": 2.0,
+    "vessel_guard_mm": 5.0
+  },
+  "methods": {
+    "axis1_cut1": {
+      "discard": 1,
+      "horizon": 64,
+      "method": "axis1",
+      "rho": 0.75
+    },
+    "axis2_default": {
+      "gain_cap": 1.0,
+      "horizon": 64,
+      "method": "axis2",
+      "rank": 4
+    },
+    "axis2_slow_r4_cap040": {
+      "gain_cap": 0.4,
+      "horizon": 64,
+      "method": "axis2",
+      "rank": 4
+    },
+    "axis3_orthogonal": {
+      "adaptive": false,
+      "horizon": 64,
+      "method": "stap"
+    },
+    "baranger_ssm": {
+      "horizon": 64,
+      "method": "baranger"
+    },
+    "lee_aer": {
+      "domain": "temporal",
+      "epsilon_abs": 26.0,
+      "horizon": 64,
+      "method": "lee_aer"
+    },
+    "roundtrip": {
+      "horizon": 64,
+      "method": "roundtrip"
+    },
+    "svd_cut1": {
+      "discard": 1,
+      "horizon": 64,
+      "method": "svd"
+    }
+  },
+  "minimum_core_roi_pixels": 40,
+  "minimum_wide_roi_pixels": 128,
+  "motion_variant": "local_phase",
+  "new_development_seed": 2333,
+  "numerical_source_sha256": "8587a156b3283238920777e96cd059d72203d5a9638a61f5cc43876324cd4e13",
+  "packet": 16,
+  "phase6_split_sha256": "0c2237d63f54a46a4e67b0f621e0dc2c28db9fa5241d9fd8e29b6fb042545e8d",
+  "phase6_trial_rules_sha256": "756a60c4e42b62fc09d155c07420fc137a03b9334d85a1fbb08bed48f1fdacda",
+  "reserved_heldout_seeds": [
+    2401,
+    2411
+  ],
+  "scatterer_fraction": 0.1,
+  "scenes": {
+    "rigid_fast": {
+      "flow_scale": 1.0,
+      "motion": "rigid"
+    },
+    "smooth_slow": {
+      "flow_scale": 0.02,
+      "motion": "smooth"
+    },
+    "smooth_zero": {
+      "flow_scale": 0.0,
+      "motion": "smooth"
+    },
+    "stationary_fast": {
+      "flow_scale": 1.0,
+      "motion": "none"
+    }
+  },
+  "score_start": 64,
+  "status": "phase-6 design development only; no prospective or reserved seed",
+  "unit_shift": {
+    "maximum_axial_pixels": 1.25,
+    "maximum_lateral_pixels": 0.75,
+    "minimum_validation_gain": 0.01
+  },
+  "upstream_commit": "ab7eaef6d23428762ab5b9079ab03a5aa99af085"
+}

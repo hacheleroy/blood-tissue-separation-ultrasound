@@ -1,0 +1,126 @@
+{
+  "admitted_development_seeds": [
+    2309,
+    2311,
+    2503,
+    2521
+  ],
+  "calibration_frames": 16,
+  "comparison": {
+    "blood_nrmse_increase_max_motion": 0.02,
+    "decision": "Frozen diagnostic on seen 2309/2311 and newly declared 2503/2521. Require source/input gates, paired roundtrip <=1e-10, blood NRMSE increment <=.020 for SVD and Axis 1 in every scene, moving tissue leakage ratio <=.900 on rigid_fast and smooth_slow, and fixed slow Axis 2 blood <=.700/leakage <=.180 on all four clouds. Any old or new failure disqualifies the candidate. Never open 2333 or 2401/2411 without a full development pass and separate prospective freeze.",
+    "moving_tissue_leakage_ratio_max": 0.9,
+    "primary_scores": [
+      "paired_added_blood_iq_nrmse",
+      "refitted_background_output_to_input_tissue_power"
+    ],
+    "roundtrip_nrmse_max": 1e-10,
+    "slow_axis2_blood_nrmse_max": 0.7,
+    "slow_axis2_tissue_leakage_max": 0.18
+  },
+  "core_gate_model": "wide_supported_core_diagnostic",
+  "core_validation_absolute_min": 0.5,
+  "core_validation_to_train_min": 0.85,
+  "design_seeds": [
+    2309,
+    2311
+  ],
+  "evaluation_frames": 80,
+  "evaluator_only_blood_to_tissue_roi_power_max": 0.1,
+  "input_coherence_min": 0.7,
+  "input_noise_power_gain_max": 4.0,
+  "local_phase": {
+    "vessel_guard_mm": 5.0
+  },
+  "magnitude_shift_fit_sha256": "37cc1bffde5accd9725b6381a4f39ee221b72f707a4b3fbd4773e3e283f19859",
+  "methods": {
+    "axis1_cut1": {
+      "discard": 1,
+      "horizon": 64,
+      "method": "axis1",
+      "rho": 0.75
+    },
+    "axis2_default": {
+      "gain_cap": 1.0,
+      "horizon": 64,
+      "method": "axis2",
+      "rank": 4
+    },
+    "axis2_slow_r4_cap040": {
+      "gain_cap": 0.4,
+      "horizon": 64,
+      "method": "axis2",
+      "rank": 4
+    },
+    "axis3_orthogonal": {
+      "adaptive": false,
+      "horizon": 64,
+      "method": "stap"
+    },
+    "baranger_ssm": {
+      "horizon": 64,
+      "method": "baranger"
+    },
+    "lee_aer": {
+      "domain": "temporal",
+      "epsilon_abs": 26.0,
+      "horizon": 64,
+      "method": "lee_aer"
+    },
+    "roundtrip": {
+      "horizon": 64,
+      "method": "roundtrip"
+    },
+    "svd_cut1": {
+      "discard": 1,
+      "horizon": 64,
+      "method": "svd"
+    }
+  },
+  "minimum_core_roi_pixels": 40,
+  "minimum_wide_roi_pixels": 128,
+  "motion_variant": "reference_transport",
+  "new_development_seeds": [
+    2503,
+    2521
+  ],
+  "numerical_source_sha256": "8587a156b3283238920777e96cd059d72203d5a9638a61f5cc43876324cd4e13",
+  "packet": 16,
+  "phase7_split_sha256": "29357d1f405b577b709b6e737aba0232b8b4f9d833c269def80416594a285418",
+  "prospective_development_seed": 2333,
+  "reference_transport": {
+    "minimum_valid_check_pixels": 30,
+    "minimum_validation_phase_gain": 0.01,
+    "reference_amplitude_fraction": 0.2,
+    "transport_strength": 1.1
+  },
+  "reserved_heldout_seeds": [
+    2401,
+    2411
+  ],
+  "review_script_sha256": "f140056740d1b032c0014367e4dcfe87f9621d06d87b09bc02c7da37ee3cfaf7",
+  "scatterer_fraction": 0.1,
+  "scenes": {
+    "rigid_fast": {
+      "flow_scale": 1.0,
+      "motion": "rigid"
+    },
+    "smooth_slow": {
+      "flow_scale": 0.02,
+      "motion": "smooth"
+    },
+    "smooth_zero": {
+      "flow_scale": 0.0,
+      "motion": "smooth"
+    },
+    "stationary_fast": {
+      "flow_scale": 1.0,
+      "motion": "none"
+    }
+  },
+  "score_script_sha256": "c89ca25ee6eafec046fe13ac5f288d9a7adfc47d64ff2ff884a5c8575b37e03f",
+  "score_start": 64,
+  "status": "phase-7 single frozen boundary-reference diagnostic; no release qualification from seen development",
+  "transport_source_sha256": "301602c9a925f2b2b9eb1b581f1fdc037f207c80d1fb25d78f4c7c909e3dcc2b",
+  "upstream_commit": "ab7eaef6d23428762ab5b9079ab03a5aa99af085"
+}

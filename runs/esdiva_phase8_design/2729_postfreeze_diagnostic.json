@@ -1,0 +1,145 @@
+{
+  "status": "post-freeze RF diagnosis only; no scoring or retuning",
+  "seed": 2729,
+  "upstream_commit": "ab7eaef6d23428762ab5b9079ab03a5aa99af085",
+  "acquisition_script_sha256": "378f3cb1b40f640ced32fefc57441feb9da2373305dd4ef8f7d9ad188ebf9667",
+  "diagnostic_script_sha256": "a1f528f972f521b6b8983a97a15f512cf9216657e49911e8423c5de00021b3a8",
+  "rows": [
+    {
+      "scene": "stationary_fast",
+      "report_exists": false,
+      "core_training_blood_to_tissue_power": 0.10550970683643705,
+      "frozen_acquisition_limit": 0.1,
+      "postfreeze_wide_calibration": {
+        "candidates": [
+          {
+            "guard_mm": 4.0,
+            "pixels": 256,
+            "minimum_coherence_train": 0.6504372615064943,
+            "minimum_coherence_validation": 0.6489183648069129,
+            "maximum_bounded_noise_power_gain_train": 1.3320596585582134
+          },
+          {
+            "guard_mm": 5.0,
+            "pixels": 192,
+            "minimum_coherence_train": 0.6253674721384008,
+            "minimum_coherence_validation": 0.6428513466240692,
+            "maximum_bounded_noise_power_gain_train": 1.328647803827531
+          }
+        ],
+        "selected": {
+          "guard_mm": 4.0,
+          "pixels": 256,
+          "minimum_coherence_train": 0.6504372615064943,
+          "minimum_coherence_validation": 0.6489183648069129,
+          "maximum_bounded_noise_power_gain_train": 1.3320596585582134
+        },
+        "pass": false,
+        "selection_uses_train_only": true
+      },
+      "carrier_hz": 2517834.392492246
+    },
+    {
+      "scene": "rigid_fast",
+      "report_exists": false,
+      "core_training_blood_to_tissue_power": 0.1030170045118318,
+      "frozen_acquisition_limit": 0.1,
+      "postfreeze_wide_calibration": {
+        "candidates": [
+          {
+            "guard_mm": 4.0,
+            "pixels": 256,
+            "minimum_coherence_train": 0.6427153446165444,
+            "minimum_coherence_validation": 0.6503217015610532,
+            "maximum_bounded_noise_power_gain_train": 1.3745594185784817
+          },
+          {
+            "guard_mm": 5.0,
+            "pixels": 192,
+            "minimum_coherence_train": 0.6211505779021618,
+            "minimum_coherence_validation": 0.6203719162888718,
+            "maximum_bounded_noise_power_gain_train": 1.370026911141333
+          }
+        ],
+        "selected": {
+          "guard_mm": 4.0,
+          "pixels": 256,
+          "minimum_coherence_train": 0.6427153446165444,
+          "minimum_coherence_validation": 0.6503217015610532,
+          "maximum_bounded_noise_power_gain_train": 1.3745594185784817
+        },
+        "pass": false,
+        "selection_uses_train_only": true
+      },
+      "carrier_hz": 2515461.7555944636
+    },
+    {
+      "scene": "smooth_slow",
+      "report_exists": false,
+      "core_training_blood_to_tissue_power": 0.1006197055854665,
+      "frozen_acquisition_limit": 0.1,
+      "postfreeze_wide_calibration": {
+        "candidates": [
+          {
+            "guard_mm": 4.0,
+            "pixels": 256,
+            "minimum_coherence_train": 0.6518571509932133,
+            "minimum_coherence_validation": 0.6361786084924339,
+            "maximum_bounded_noise_power_gain_train": 1.3148055097473648
+          },
+          {
+            "guard_mm": 5.0,
+            "pixels": 192,
+            "minimum_coherence_train": 0.6203947035146751,
+            "minimum_coherence_validation": 0.6327026329794024,
+            "maximum_bounded_noise_power_gain_train": 1.326486257760942
+          }
+        ],
+        "selected": {
+          "guard_mm": 4.0,
+          "pixels": 256,
+          "minimum_coherence_train": 0.6518571509932133,
+          "minimum_coherence_validation": 0.6361786084924339,
+          "maximum_bounded_noise_power_gain_train": 1.3148055097473648
+        },
+        "pass": false,
+        "selection_uses_train_only": true
+      },
+      "carrier_hz": 2517498.874541558
+    },
+    {
+      "scene": "smooth_zero",
+      "report_exists": true,
+      "core_training_blood_to_tissue_power": 0.0833505845353641,
+      "frozen_acquisition_limit": 0.1,
+      "postfreeze_wide_calibration": {
+        "candidates": [
+          {
+            "guard_mm": 4.0,
+            "pixels": 256,
+            "minimum_coherence_train": 0.6570229129490939,
+            "minimum_coherence_validation": 0.6449490111512599,
+            "maximum_bounded_noise_power_gain_train": 1.3111469423067996
+          },
+          {
+            "guard_mm": 5.0,
+            "pixels": 192,
+            "minimum_coherence_train": 0.6361218532407128,
+            "minimum_coherence_validation": 0.6145598160279816,
+            "maximum_bounded_noise_power_gain_train": 1.2965795894572634
+          }
+        ],
+        "selected": {
+          "guard_mm": 4.0,
+          "pixels": 256,
+          "minimum_coherence_train": 0.6570229129490939,
+          "minimum_coherence_validation": 0.6449490111512599,
+          "maximum_bounded_noise_power_gain_train": 1.3111469423067996
+        },
+        "pass": false,
+        "selection_uses_train_only": true
+      },
+      "carrier_hz": 2515162.088120694
+    }
+  ]
+}

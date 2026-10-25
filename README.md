@@ -46,8 +46,16 @@ reconstructs a wider tissue region from verified RF and applies a reversible
 phase field on the original eight-row score tile. Its paired blood-response
 and moving-tissue leakage gates pass on three development clouds and an
 independent new cloud under settings fixed beforehand. Slow-flow SVD and Axis 1
-still have high absolute blood error. The source/results freeze is published;
-reserved seeds 2081 and 2093 remain unopened.
+still have high absolute blood error. Its [held-out comparison](docs/RESULTS_ESDIVA_PHASE5_HELDOUT.md)
+then failed the paired motion gate on reserved seeds 2081/2093.
+The [phase-6](docs/ESDIVA_PHASE6_DESIGN_RESULT.md) and
+[phase-7](docs/ESDIVA_PHASE7_DESIGN_RESULT.md) development studies found
+further calibration and complex-transport failures.
+The [phase-8 guarded calibration study](docs/ESDIVA_PHASE8_DESIGN_RESULT.md)
+froze a measured phase selector before two new RF clouds. Seed 2707 passed
+all four revised development scenes, while seed 2729 failed source and
+calibration eligibility. The candidate is **not qualified** for prospective
+2333, reserve 2401/2411, or a physical phantom claim.
 The [ULMShare follow-on](docs/ULMSHARE_FOLLOWON.md) is an in vivo microbubble
 benchmark design for after the acoustic-simulation study.
 

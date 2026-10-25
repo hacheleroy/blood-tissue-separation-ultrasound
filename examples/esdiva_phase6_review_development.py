@@ -104,7 +104,10 @@ def review(root, acquisitions, configurations, scores, output):
     passing.sort(key=lambda r:(r['worst_moving_leakage_ratio'],
         json.loads((configurations/r['trial']).read_text())['local_phase']['phase_fraction'],
         -json.loads((configurations/r['trial']).read_text())['local_phase']['spatial_sigma_pixels']))
-    result={'status':'design candidate found' if passing else 'no design candidate passes',
+    missing=any(failure.startswith('missing ') for record in records
+                for failure in record['failures'])
+    result={'status':('incomplete design comparison' if missing else
+                      'design candidate found' if passing else 'no design candidate passes'),
             'phase6_split_sha256':sha(root/'configs/esdiva_phase6_split.json'),
             'source_freeze_sha256':sha(root/'configs/esdiva_phase5_freeze.json'),
             'selected_trial':passing[0]['trial'] if passing else None,

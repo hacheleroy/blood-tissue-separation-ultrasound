@@ -36,7 +36,9 @@ remain the same reported controls. No adjustment follows any reserved result.
 
 A pass supports moving to the already specified physical phantom protocol.
 A failure remains an explicit negative held-out result and is preserved in
-full. Neither outcome by itself demonstrates preservation of all slow blood,
+full. An acquisition that cannot produce a score is counted as a missing-scene
+failure while the remaining scenes are still acquired. Neither outcome by
+itself demonstrates preservation of all slow blood,
 an exact geometric displacement field, or physical phantom validity. Actual
 phantom validation requires an acquired phantom RF dataset and independent
 motion/flow references.

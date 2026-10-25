@@ -25,6 +25,14 @@ def review(root, output_root):
                 folder=output_root/str(seed)/scene
                 report_path,wide_path,score_path=(folder/name for name in
                     ('report.json','broad_iq.json','score.json'))
+                # An acquisition or input failure is an explicit missing-scene
+                # failure in the frozen decision. Preserve any partial RF and
+                # continue reviewing the other reserved scenes.
+                if not score_path.is_file():
+                    if report_path.is_file():
+                        verify_freeze(root,root/'configs/esdiva_phase5_freeze.json',
+                                      seed,scene,json.loads(report_path.read_text()))
+                    continue
                 report=json.loads(report_path.read_text())
                 score=json.loads(score_path.read_text())
                 audit=json.loads(wide_path.read_text())

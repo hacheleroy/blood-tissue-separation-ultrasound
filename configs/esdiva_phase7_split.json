@@ -1,0 +1,26 @@
+{
+  "status": "phase-7 boundary-aware complex tissue transport split declared before new RF",
+  "date_utc": "2026-10-25",
+  "upstream_commit": "ab7eaef6d23428762ab5b9079ab03a5aa99af085",
+  "phase6_negative_decision_sha256": "166b19eb19c7db50a91814cfeb34fd44c9b95b7e0a906fbb7803ec7f631def10",
+  "phase5_source_freeze_sha256": "84410951ce053aaa59f57945598e364fd06acd13c22d22071d447b80059caf34",
+  "previously_seen_development_seeds": [2309, 2311],
+  "new_development_confirmation_seeds": [2503, 2521],
+  "prospective_development_seed": 2333,
+  "reserved_heldout_seeds": [2401, 2411],
+  "scenes": {
+    "stationary_fast": {"motion": "none", "flow_scale": 1.0},
+    "rigid_fast": {"motion": "rigid", "flow_scale": 1.0},
+    "smooth_slow": {"motion": "smooth", "flow_scale": 0.02},
+    "smooth_zero": {"motion": "smooth", "flow_scale": 0.0}
+  },
+  "acquisition": {
+    "scatterer_fraction": 0.1,
+    "calibration_frames": 16,
+    "evaluation_frames": 80,
+    "view_indices": [4, 3, 5],
+    "wide_depth_rows": 32,
+    "scored_depth_rows": 8
+  },
+  "selection": "Develop the boundary-aware IQ phase transport on previously seen development data only. Before opening either 2503 or 2521, publish one numerical source, one configuration and the unchanged all-scene paired gates. Apply the single candidate to all four source-resolved scenes on both new seeds without retuning. A missing, ineligible or failed scene closes the path to 2333 and 2401/2411. If both new seeds pass, freeze their complete results and source hashes on main before opening 2333. A further full pass on 2333 is required before any fresh reserve."
+}

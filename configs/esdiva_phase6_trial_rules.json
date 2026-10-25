@@ -1,0 +1,35 @@
+{
+  "status": "phase-6 design development only; no prospective or reserved seed",
+  "admitted_development_seeds": [2309, 2311],
+  "prospective_development_seed": 2333,
+  "reserved_heldout_seeds": [2401, 2411],
+  "core_gate_models": ["phase5_original", "wide_supported_core_diagnostic"],
+  "core_validation_absolute_min": 0.5,
+  "core_validation_to_train_min": 0.85,
+  "wide_coherence_min": 0.7,
+  "bounded_input_noise_power_gain_max": 4.0,
+  "minimum_core_pixels": 40,
+  "minimum_wide_pixels": 128,
+  "phase_fractions": [0.5, 0.65, 0.8, 1.0],
+  "phase_sigmas_pixels": [2.0, 4.0],
+  "shift_options": {
+    "maximum_axial_pixels": 1.25,
+    "maximum_lateral_pixels": 0.75,
+    "minimum_validation_gain": 0.01
+  },
+  "trials": [
+    {"gate": "phase5_original", "motion": "local_phase", "fraction": 0.5, "sigma": 4.0},
+    {"gate": "wide_supported_core_diagnostic", "motion": "local_phase", "fraction": 0.5, "sigma": 2.0},
+    {"gate": "wide_supported_core_diagnostic", "motion": "local_phase", "fraction": 0.5, "sigma": 4.0},
+    {"gate": "wide_supported_core_diagnostic", "motion": "local_phase", "fraction": 0.65, "sigma": 2.0},
+    {"gate": "wide_supported_core_diagnostic", "motion": "local_phase", "fraction": 0.65, "sigma": 4.0},
+    {"gate": "wide_supported_core_diagnostic", "motion": "local_phase", "fraction": 0.8, "sigma": 2.0},
+    {"gate": "wide_supported_core_diagnostic", "motion": "local_phase", "fraction": 0.8, "sigma": 4.0},
+    {"gate": "wide_supported_core_diagnostic", "motion": "local_phase", "fraction": 1.0, "sigma": 2.0},
+    {"gate": "wide_supported_core_diagnostic", "motion": "local_phase", "fraction": 1.0, "sigma": 4.0},
+    {"gate": "wide_supported_core_diagnostic", "motion": "unit_shift", "fraction": 0.5, "sigma": 2.0},
+    {"gate": "wide_supported_core_diagnostic", "motion": "phase_plus_shift", "fraction": 0.5, "sigma": 2.0},
+    {"gate": "wide_supported_core_diagnostic", "motion": "phase_plus_shift", "fraction": 0.8, "sigma": 2.0}
+  ],
+  "release_policy": "Rank and all-scene blood/leakage/roundtrip thresholds from phase 5 unchanged. Choose only on both design seeds. Freeze one complete candidate before seed 2333, then require prospective pass before opening 2401 or 2411."
+}

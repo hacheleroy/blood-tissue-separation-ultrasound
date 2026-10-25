@@ -28,7 +28,12 @@ def evaluate(acquisition, broad_path, config_path, output):
     if output.exists():raise FileExistsError(output)
     config=json.loads(config_path.read_text());report=json.loads((acquisition/"report.json").read_text())
     audit=json.loads(broad_path.with_suffix(".json").read_text())
-    if (report["upstream_commit"]!=config["upstream_commit"] or
+    if (config["phase6_split_sha256"]!=sha(Path(__file__).resolve().parents[1]/
+                                           "configs/esdiva_phase6_split.json") or
+            config["phase6_trial_rules_sha256"]!=sha(Path(__file__).resolve().parents[1]/
+                                           "configs/esdiva_phase6_trial_rules.json") or
+            config["admitted_development_seeds"]!=[2309,2311] or
+            report["upstream_commit"]!=config["upstream_commit"] or
             report["seed"] not in config["admitted_development_seeds"] or
             report["scatterer_fraction"]!=config["scatterer_fraction"] or
             report["calibration_frames"]!=config["calibration_frames"] or

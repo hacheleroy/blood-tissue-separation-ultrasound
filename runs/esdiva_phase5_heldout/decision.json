@@ -1,0 +1,118 @@
+{
+  "status": "fail",
+  "decision": "Frozen reserved-seed gate failed; preserve all records without retuning",
+  "config_sha256": "58598072e7a48b4e89e9ee9322a6a2a3cbe774397397e89649dc6ce84412b54e",
+  "decision_script_sha256": "0d5c6bf5f510be7a1200bb1b9913b8e4d677212a6b4cda4132ff730f066a5420",
+  "input_scores": [
+    {
+      "scene": "stationary_fast",
+      "seed": 2081,
+      "sha256": "7d6792a7fe4860dd2afe137600e0148ad8ade5a099a0aef2490889c2f69226cc"
+    },
+    {
+      "scene": "rigid_fast",
+      "seed": 2081,
+      "sha256": "27ac7032bec545a65df2cd8736ab1a2ff33e6653e8977afef0426829fbf80723"
+    },
+    {
+      "scene": "smooth_slow",
+      "seed": 2081,
+      "sha256": "95d0dd8bb49cbfc533c0ffb87fa2481b4df49aef8b1d6520a1f173c723be3f8c"
+    },
+    {
+      "scene": "smooth_zero",
+      "seed": 2081,
+      "sha256": "9765dcf93dd75ec370ccd535c0ebc3e698e509310bb71cfe5c7fb3d19f9be5a5"
+    },
+    {
+      "scene": "stationary_fast",
+      "seed": 2093,
+      "sha256": "c8a80b501901dc0e7eb1de553a2f8d0cced26d04df2f83043c2f7955200d4162"
+    },
+    {
+      "scene": "rigid_fast",
+      "seed": 2093,
+      "sha256": "42b526b2ad8b2ef28c2de3e43170944fe891a7314520b02083f01d73012e4bf0"
+    },
+    {
+      "scene": "smooth_slow",
+      "seed": 2093,
+      "sha256": "30683f93579890f2bbc372b920bd734bba12d8d488c3c41d524cacebaef23ead"
+    },
+    {
+      "scene": "smooth_zero",
+      "seed": 2093,
+      "sha256": "b5e8d2a864589078eec82facd9106437c435f9d568f7d880e18ae8529dc5079c"
+    }
+  ],
+  "rows": [
+    {
+      "seed": 2093,
+      "scene": "stationary_fast",
+      "method": "svd_cut1",
+      "blood_nrmse_increase": -0.00010715066502633985,
+      "tissue_leakage_ratio": 0.9552768081919863
+    },
+    {
+      "seed": 2093,
+      "scene": "stationary_fast",
+      "method": "axis1_cut1",
+      "blood_nrmse_increase": -3.924576011965497e-05,
+      "tissue_leakage_ratio": 0.9713564297368474
+    },
+    {
+      "seed": 2093,
+      "scene": "rigid_fast",
+      "method": "svd_cut1",
+      "blood_nrmse_increase": -0.002797161203919263,
+      "tissue_leakage_ratio": 0.92461958469901
+    },
+    {
+      "seed": 2093,
+      "scene": "rigid_fast",
+      "method": "axis1_cut1",
+      "blood_nrmse_increase": -0.0035550046815320258,
+      "tissue_leakage_ratio": 0.9182084243410972
+    },
+    {
+      "seed": 2093,
+      "scene": "smooth_slow",
+      "method": "svd_cut1",
+      "blood_nrmse_increase": -0.04859056340166246,
+      "tissue_leakage_ratio": 0.8355850590415751
+    },
+    {
+      "seed": 2093,
+      "scene": "smooth_slow",
+      "method": "axis1_cut1",
+      "blood_nrmse_increase": -0.03304272103109074,
+      "tissue_leakage_ratio": 0.8452577972458134
+    },
+    {
+      "seed": 2093,
+      "scene": "smooth_zero",
+      "method": "svd_cut1",
+      "blood_nrmse_increase": -0.028310265225675146,
+      "tissue_leakage_ratio": 0.8360594236860027
+    },
+    {
+      "seed": 2093,
+      "scene": "smooth_zero",
+      "method": "axis1_cut1",
+      "blood_nrmse_increase": -0.024305957142304213,
+      "tissue_leakage_ratio": 0.8456500380162679
+    }
+  ],
+  "failures": [
+    "input/source/score: stationary_fast seed 2081",
+    "input/source/score: rigid_fast seed 2081",
+    "input/source/score: smooth_slow seed 2081",
+    "input/source/score: smooth_zero seed 2081",
+    "moving tissue svd_cut1: rigid_fast seed 2093",
+    "moving tissue axis1_cut1: rigid_fast seed 2093"
+  ],
+  "reserved_heldout_seeds": [
+    2081,
+    2093
+  ]
+}

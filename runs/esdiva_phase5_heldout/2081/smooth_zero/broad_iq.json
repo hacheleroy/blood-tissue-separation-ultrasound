@@ -1,0 +1,38 @@
+{
+  "seed": 2081,
+  "motion": "smooth",
+  "flow_scale": 0.0,
+  "source_report_sha256": "b076c85aa43df34b7f29e95dbca9b741a76d6551e743e87a46de1a024377a293",
+  "script_sha256": "a421905beb87607274c83174e44741bbca7d0457734a9a197325a51e977f0991",
+  "broad_shape": [
+    80,
+    3,
+    32,
+    16
+  ],
+  "core_rows": [
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "core_replay_relative_errors": {
+    "calibration_views": 0.0,
+    "views": 0.0,
+    "tissue": 0.0,
+    "blood": 0.0
+  },
+  "rf_sources_and_noise_verified": true,
+  "source_truth_evaluator_only": true,
+  "broad_iq_sha256": {
+    "calibration_views": "55fc8c5a0f1f74e3869d6e8c94ab1606bf31cd3e2c0e3068d7079cb916980a87",
+    "views": "8d06c1558a43b3448f5e3fcb05973100314abf66dde92669ae08d019ab9f33b7",
+    "tissue": "13a07bc3083958ee794b49ad483ee8fe16b06e3092973c7a69100401cb24f6f6",
+    "blood": "c862b84fffe56fb892947a1c264cd56b95ae7fedf5e9e9966b607c3cdf4b34f3",
+    "noise": "540706bc3b23e566ce26ee111212466cc4df3f7f15e2fdff1c964cfbbd3af928"
+  }
+}

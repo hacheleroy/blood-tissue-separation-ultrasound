@@ -1,0 +1,62 @@
+{
+  "status": "phase-10 numerical candidate sealed for prospective development 2333 before RF",
+  "date_utc": "2026-10-25",
+  "upstream_commit": "ab7eaef6d23428762ab5b9079ab03a5aa99af085",
+  "phase10_development_freeze_commit": "b38fb9709119962473da447fceee755fc5df2735",
+  "phase10_development_result_commit": "5f3f361b3753588b3ba017464ff40a453a1e81c9",
+  "phase10_development_decision_sha256": "3a10486fe224374e2d497a7ae20383f3f9a33aa2df5e58c3c47898a4d841485f",
+  "previously_seen_development_seeds": [
+    2309,
+    2311,
+    2503,
+    2521,
+    2707,
+    2729,
+    3001,
+    3019,
+    3307,
+    3323
+  ],
+  "new_development_confirmation_seeds": [
+    2333
+  ],
+  "reserved_heldout_seeds": [
+    2401,
+    2411
+  ],
+  "scenes": {
+    "stationary_fast": {
+      "motion": "none",
+      "flow_scale": 1.0
+    },
+    "rigid_fast": {
+      "motion": "rigid",
+      "flow_scale": 1.0
+    },
+    "smooth_slow": {
+      "motion": "smooth",
+      "flow_scale": 0.02
+    },
+    "smooth_zero": {
+      "motion": "smooth",
+      "flow_scale": 0.0
+    }
+  },
+  "acquisition": {
+    "scatterer_fraction": 0.1,
+    "calibration_frames": 16,
+    "evaluation_frames": 80,
+    "view_indices": [
+      4,
+      3,
+      5
+    ],
+    "wide_depth_rows": 32,
+    "scored_depth_rows": 8
+  },
+  "source_contract": "Fixed known-vessel 5.5 mm scored core guard: 40 of 8x16 tissue pixels, 5 mm wide motion guard: 192 of 32x16. No isolated component is an input. Evaluator-only blood/tissue power <=.1 on both; archive IQ for a failure without filter scores.",
+  "calibration_contract": "Train-only prior tissue angular phase map as in phase 9, 0.4-pixel masked smoothing on the wide 5 mm guard. Last 8 of 16 stationary frames validate wide coherence >=.7 and core-5.5 >=.5 and >=.85 times core train; train minima and bounded noise gain <=4. Map is gate only, regular IQ stays unmodified.",
+  "reference_selection": "Retain phase-8 mixture-only pre-score loss rule on the new core. Permit its reference choice only if every view has >=.9 fraction of the 5.5 mm core above 0.2 times the median reference amplitude in the wide 5 mm tissue guard. Reference amplitudes derive only from prior calibration. Otherwise use hybrid.",
+  "hybrid": "Accepted local phase fraction .75 at sigma 4 with minimum validation gain .01, half-strength open nonperiodic unitary IQ transport; the wide fit remains at 5 mm, central scoring core at 5.5 mm.",
+  "decision": "All four 2333 scenes must pass the same source/calibration and paired SVD, Axis 1, roundtrip, and slow Axis 2 thresholds as phase 10 development. No retuning or reselection after 2333 RF. A failure blocks reserves; a pass remains software simulation evidence, not phantom validation."
+}

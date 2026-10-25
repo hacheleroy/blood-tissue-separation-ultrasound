@@ -67,8 +67,9 @@ The [phase-10 core-support and reference-mode revision](docs/ESDIVA_PHASE10_DESI
 froze a 5.5 mm core guard and a calibration-amplitude safeguard before RF
 generation for development seeds 3307 and 3323. Both clouds passed all four
 fixed source, calibration and paired gates. The comparison is qualified for
-a separate prospective freeze before opening 2333; reserve 2401/2411 and
-physical phantom validation remain pending.
+a [separate prospective freeze](docs/ESDIVA_PHASE10_PROSPECTIVE_FREEZE.md)
+for seed 2333, whose result is pending. Reserve 2401/2411 and physical
+phantom validation remain unopened.
 The [ULMShare follow-on](docs/ULMSHARE_FOLLOWON.md) is an in vivo microbubble
 benchmark design for after the acoustic-simulation study.
 

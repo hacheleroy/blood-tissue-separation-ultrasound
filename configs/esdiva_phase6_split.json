@@ -1,0 +1,27 @@
+{
+  "status": "phase-6 seed and analysis split declared before new RF acquisition",
+  "date_utc": "2026-10-25",
+  "upstream_commit": "ab7eaef6d23428762ab5b9079ab03a5aa99af085",
+  "prior_development_freeze_sha256": "84410951ce053aaa59f57945598e364fd06acd13c22d22071d447b80059caf34",
+  "prior_reserved_protocol_sha256": "b5b94c1513c01be084e9f190c23a0935a61affc4a089cf417ca25fbfa39b1619",
+  "prior_reserved_decision_sha256": "ab196d5d70f8eea9370c7427ed9458907d07e93eeaa8d680704f72dd53ace470",
+  "design_development_seeds": [2309, 2311],
+  "prospective_development_seed": 2333,
+  "reserved_heldout_seeds": [2401, 2411],
+  "scenes": ["stationary_fast", "rigid_fast", "smooth_slow", "smooth_zero"],
+  "acquisition": {
+    "scatterer_fraction": 0.1,
+    "calibration_frames": 16,
+    "evaluation_frames": 80,
+    "view_indices": [4, 3, 5],
+    "wider_depth_rows": 32,
+    "scored_depth_rows": 8
+  },
+  "development_options": {
+    "core_gate": ["phase5_original", "wide_supported_core_diagnostic"],
+    "local_phase_fraction": [0.5, 0.65, 0.8, 1.0],
+    "spatial_sigma_pixels": [2.0, 4.0],
+    "minimum_validation_phase_gain": 0.01
+  },
+  "decision": "Use only the two design development clouds for model/setting choice. Freeze one complete candidate and fixed all-scene paired gates before opening prospective development seed 2333. If that cloud fails, do not open 2401/2411 or call the candidate frozen for a reserve. If it passes, publish numerical code, configuration, source hashes and prospective result before opening either reserved seed. Previously opened 2081/2093 are descriptive failures only and never used as validation for a revised model."
+}

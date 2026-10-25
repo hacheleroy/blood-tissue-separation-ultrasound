@@ -70,8 +70,9 @@ fixed source, calibration and paired gates. The comparison is qualified for
 a [separate prospective freeze](docs/ESDIVA_PHASE10_PROSPECTIVE_FREEZE.md)
 for seed 2333. The [fixed prospective comparison](docs/ESDIVA_PHASE10_PROSPECTIVE_RESULT.md)
 passed all four scenes, including paired blood preservation and moving-tissue
-leakage gates. Reserve 2401/2411 and physical phantom validation remain
-unopened.
+leakage gates. A [separate frozen reserve-bank comparison](docs/ESDIVA_PHASE10_RESERVE_FREEZE.md)
+declares seeds 2401/2411 before RF generation. Physical phantom validation
+has not been performed.
 The [ULMShare follow-on](docs/ULMSHARE_FOLLOWON.md) is an in vivo microbubble
 benchmark design for after the acoustic-simulation study.
 

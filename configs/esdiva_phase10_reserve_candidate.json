@@ -1,0 +1,163 @@
+{
+  "calibration_frames": 16,
+  "comparison": {
+    "blood_nrmse_increase_max_motion": 0.02,
+    "decision": "Both reserved clouds and all eight scenes must pass unchanged phase-10 source/calibration and paired SVD, Axis 1, roundtrip and slow Axis 2 thresholds; no retuning after RF. This remains software simulation evidence.",
+    "moving_tissue_leakage_ratio_max": 0.9,
+    "primary_scores": [
+      "paired_added_blood_iq_nrmse",
+      "refitted_background_output_to_input_tissue_power"
+    ],
+    "roundtrip_nrmse_max": 1e-10,
+    "slow_axis2_blood_nrmse_max": 0.7,
+    "slow_axis2_tissue_leakage_max": 0.18
+  },
+  "core_gate_model": "fixed anatomical guard 5.5 mm and held-half angular phase gate",
+  "core_validation_absolute_min": 0.5,
+  "core_validation_to_train_min": 0.85,
+  "design_seeds": [
+    2309,
+    2311,
+    2503,
+    2521,
+    2707,
+    2729,
+    3001,
+    3019,
+    3307,
+    3323,
+    2333
+  ],
+  "evaluation_frames": 80,
+  "evaluator_only_blood_to_tissue_roi_power_max": 0.1,
+  "hybrid": {
+    "boundary": "nonperiodic unitary skew derivative",
+    "phase_fraction": 0.75,
+    "shift_scale": 0.5,
+    "spatial_sigma_pixels": 4.0,
+    "minimum_validation_phase_gain": 0.01
+  },
+  "input_coherence_min": 0.7,
+  "input_noise_power_gain_max": 4.0,
+  "magnitude_shift_fit_sha256": "37cc1bffde5accd9725b6381a4f39ee221b72f707a4b3fbd4773e3e283f19859",
+  "methods": {
+    "axis1_cut1": {
+      "discard": 1,
+      "horizon": 64,
+      "method": "axis1",
+      "rho": 0.75
+    },
+    "axis2_default": {
+      "gain_cap": 1.0,
+      "horizon": 64,
+      "method": "axis2",
+      "rank": 4
+    },
+    "axis2_slow_r4_cap040": {
+      "gain_cap": 0.4,
+      "horizon": 64,
+      "method": "axis2",
+      "rank": 4
+    },
+    "axis3_orthogonal": {
+      "adaptive": false,
+      "horizon": 64,
+      "method": "stap"
+    },
+    "baranger_ssm": {
+      "horizon": 64,
+      "method": "baranger"
+    },
+    "lee_aer": {
+      "domain": "temporal",
+      "epsilon_abs": 26.0,
+      "horizon": 64,
+      "method": "lee_aer"
+    },
+    "roundtrip": {
+      "horizon": 64,
+      "method": "roundtrip"
+    },
+    "svd_cut1": {
+      "discard": 1,
+      "horizon": 64,
+      "method": "svd"
+    }
+  },
+  "minimum_core_roi_pixels": 40,
+  "minimum_wide_roi_pixels": 192,
+  "motion_variant": "phase8_mixture_loss_plus_prior_reference_support",
+  "numerical_source_sha256": "8587a156b3283238920777e96cd059d72203d5a9638a61f5cc43876324cd4e13",
+  "packet": 16,
+  "phase8_split_sha256": "49172a193b10ddcfd881dd6ce1cbe81cb2a5d08c5e99e7f3fe8f17d027c3a165",
+  "phase_selection": {
+    "frames": "first 64, before scored packet 64:80",
+    "reference": "phase-8 local loss >.28, reference excess <.18 AND minimum core calibration reference support >=.9",
+    "otherwise": "hybrid"
+  },
+  "prospective_development_seed": 2333,
+  "reference_transport": {
+    "minimum_valid_check_pixels": 30,
+    "minimum_validation_phase_gain": 0.01,
+    "reference_amplitude_fraction": 0.2,
+    "transport_strength": 1.1
+  },
+  "reserved_heldout_seeds": [
+    2401,
+    2411
+  ],
+  "review_script_sha256": "003b54b27693d40f64141a7dba9a0c8b1c501e4572ebdd4b5d7a371f258a5d0b",
+  "scatterer_fraction": 0.1,
+  "scenes": {
+    "rigid_fast": {
+      "flow_scale": 1.0,
+      "motion": "rigid"
+    },
+    "smooth_slow": {
+      "flow_scale": 0.02,
+      "motion": "smooth"
+    },
+    "smooth_zero": {
+      "flow_scale": 0.0,
+      "motion": "smooth"
+    },
+    "stationary_fast": {
+      "flow_scale": 1.0,
+      "motion": "none"
+    }
+  },
+  "score_script_sha256": "86acf1b58ce806874d7201da73a7f30f89b53eb5c5d7273cf01660bedb0467fb",
+  "score_start": 64,
+  "selector_source_sha256": "ef29828abef95aa9a59172d11dac5142b3b8592a003afa95138dba521fbf8561",
+  "status": "phase-10 numerical candidate sealed for reserved bank 2401/2411 before RF",
+  "transport_source_sha256": "301602c9a925f2b2b9eb1b581f1fdc037f207c80d1fb25d78f4c7c909e3dcc2b",
+  "upstream_commit": "ab7eaef6d23428762ab5b9079ab03a5aa99af085",
+  "wide_guard_selection": {
+    "options_mm": [
+      5.0
+    ],
+    "criterion": "fixed anatomical guard"
+  },
+  "retrospective_screen_sha256": "f79a3bfb8143938314fb151249c834231d081a381204a13ae1918f20f58e900a",
+  "input_mask_guard_mm": {
+    "core": 5.5,
+    "wide": 5.0
+  },
+  "input_coherence_model": "first-eight train-only masked spatial angular phase map; last-eight validation; eligibility only",
+  "support_source_sha256": "fddb9d0b49364df3a3fc90fe1a7fc79fd5190f5ce679c4b5466daa6d5f3ec5ff",
+  "acquisition_source_sha256": "8074cada0be19a4cd59e2f6dd3c1ed14f566d5b14b9314d20ecc017096091f14",
+  "screen_script_sha256": "f699e5e84e7a4e910d27d87a135b2662944c4653d799889b48a42f1279346e28",
+  "replay_source_sha256": "b810cd2a87337a8bfc831f91b7e86ee81d1dec6e943c67769151e7aaed790886",
+  "reference_support_minimum_fraction": 0.9,
+  "reference_amplitude_fraction_of_wide_median": 0.2,
+  "phase10_prospective_split_sha256": "18697283dcec5966d7f882198b758935e5bbe39a6370d91c9a8346834b69ec3d",
+  "development_decision_sha256": "3a10486fe224374e2d497a7ae20383f3f9a33aa2df5e58c3c47898a4d841485f",
+  "development_manifest_sha256": "9857f426b74dffa8b66acae876a9f196cf224eabf540f75d26141d65acb01639",
+  "admitted_reserved_seeds": [
+    2401,
+    2411
+  ],
+  "phase10_reserve_split_sha256": "1049da475b0bdbca38154be65f9346c3826645f67505ecbd83ebb0ac33c5417f",
+  "prospective_decision_sha256": "a869548c8a3547bc746abdd3e6cda0b4574c919c916ddd609963194aba548588",
+  "prospective_manifest_sha256": "3c870bb063a60c82fa2f2bde23fda40546fd0f80952c9649263e58530aedeffc"
+}

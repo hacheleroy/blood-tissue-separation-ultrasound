@@ -1,0 +1,70 @@
+{
+  "status": "rejected/eligible only as development diagnostic, no candidate selection",
+  "seed": 2309,
+  "motion": "rigid",
+  "flow_scale": 1.0,
+  "report_sha256": "76fcb52bdb939f3b318e3bca76c881c9f286476e33f60271d45ef65f34a47013",
+  "wide_audit_sha256": "ed66f1cbe9eb305f283223247005aeea431cfc24ee1f6890d747eb5677e3ca72",
+  "script_sha256": "c53f68818af14a70dd80faa36240aa73f986e8ddc1953bdfb7f519c3a71e326d",
+  "unit_shift_context_sha256": "37cc1bffde5accd9725b6381a4f39ee221b72f707a4b3fbd4773e3e283f19859",
+  "variants": {
+    "none": {
+      "roundtrip": {
+        "paired_added_blood_iq_nrmse": 2.6437813264564e-16,
+        "refitted_background_output_to_input_tissue_power": 1.1408208566183824
+      },
+      "svd_cut1": {
+        "paired_added_blood_iq_nrmse": 0.08627682347065764,
+        "refitted_background_output_to_input_tissue_power": 0.3474375702890775
+      },
+      "axis1_cut1": {
+        "paired_added_blood_iq_nrmse": 0.10918960012546883,
+        "refitted_background_output_to_input_tissue_power": 0.29825687274092083
+      }
+    },
+    "wide_unit_shift": {
+      "roundtrip": {
+        "paired_added_blood_iq_nrmse": 1.9184569583613097e-15,
+        "refitted_background_output_to_input_tissue_power": 1.1408208566183826
+      },
+      "svd_cut1": {
+        "paired_added_blood_iq_nrmse": 0.0858744592044087,
+        "refitted_background_output_to_input_tissue_power": 0.3528770243728565
+      },
+      "axis1_cut1": {
+        "paired_added_blood_iq_nrmse": 0.09599114497865369,
+        "refitted_background_output_to_input_tissue_power": 0.3342650745233714
+      }
+    }
+  },
+  "known_scatterer_motion_evaluator_only": {
+    "axial": {
+      "correlation": 0.9913196684046248,
+      "rmse_pixels": 0.059744048507787494
+    },
+    "lateral": {
+      "correlation": 0.9969625073470646,
+      "rmse_pixels": 0.0209833769877035
+    }
+  },
+  "shift_fit_audit": {
+    "model": "disjoint-pixel magnitude translation; cyclic unitary IQ shift",
+    "options": {
+      "maximum_axial_pixels": 1.25,
+      "maximum_lateral_pixels": 0.75,
+      "minimum_validation_gain": 0.01
+    },
+    "fit_pixels": 127,
+    "validation_pixels": 65,
+    "wide_calibration_sha256": "c32f66a78d26dcbe6d77f3d593ae05d08d8bb98e9976a680016fcc5928aec381",
+    "shift_sha256": "0566fa2ed144ffaa69172735dbf3081bc7f7c394c4d2ab680587eb3d42fb5896",
+    "candidate_sha256": "59076f9317ac2b94c79cd9e187915be321ec20638ee5fb1aeaf7b968ed953564",
+    "accepted_view_frames": 233,
+    "view_frames": 240,
+    "median_validation_gain": 0.49272135955539476,
+    "mean_applied_shift_pixels": 0.4212781390574231,
+    "uses_observed_IQ_and_prior_calibration_only": true,
+    "edge_assumption": "periodic core, not an anatomical boundary condition"
+  },
+  "limitation": "cyclic Fourier translation on 32 rows; independent physical motion unavailable"
+}

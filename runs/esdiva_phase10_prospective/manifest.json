@@ -1,0 +1,23 @@
+{
+  "status": "phase-10 prospective 2333 source, replay and paired score archive",
+  "prospective_freeze_commit": "86ce030925d1e427c44d67badec28836ff763bbe",
+  "development_result_commit": "5f3f361b3753588b3ba017464ff40a453a1e81c9",
+  "files_sha256": {
+    "configs/esdiva_phase10_prospective_candidate.json": "11f4985b71d9d08a6d350a44508e1f3c000995ce8f4fe9038254c132d8648c99",
+    "configs/esdiva_phase10_prospective_split.json": "18697283dcec5966d7f882198b758935e5bbe39a6370d91c9a8346834b69ec3d",
+    "runs/esdiva_phase10_design/decision.json": "3a10486fe224374e2d497a7ae20383f3f9a33aa2df5e58c3c47898a4d841485f",
+    "runs/esdiva_phase10_prospective/decision.json": "a869548c8a3547bc746abdd3e6cda0b4574c919c916ddd609963194aba548588",
+    "runs/esdiva_phase10_prospective/fresh/2333/rigid_fast/report.json": "b08bd693a2b55d83363f26f0c102ba9dffb25c7b76f17506eeffbfb9e9e194e7",
+    "runs/esdiva_phase10_prospective/fresh/2333/rigid_fast/score.json": "fe8ccc706953a55d6bb418360329264d783911aae0e306534962018c8e102307",
+    "runs/esdiva_phase10_prospective/fresh/2333/rigid_fast/wide_audit.json": "f2209d3259336ada8e058ea4af35f2305c3f59ad4e839221e74a6fd2c9b671b6",
+    "runs/esdiva_phase10_prospective/fresh/2333/smooth_slow/report.json": "006925e8817ca5d6f5e2c3476533e735c86f954bca718a1d290155605df6ab91",
+    "runs/esdiva_phase10_prospective/fresh/2333/smooth_slow/score.json": "deb1f08063cfcd88541d748fe57f1a911575c8e1dd2066940d6c654d187a5555",
+    "runs/esdiva_phase10_prospective/fresh/2333/smooth_slow/wide_audit.json": "f8953c5d7d83480132a4ac0f088958727fcc4aca2a8a196c6f4dfcd906cb94f0",
+    "runs/esdiva_phase10_prospective/fresh/2333/smooth_zero/report.json": "fea5e64975a677bd4af48f060752fa3e52dd826bcdee27027548db22d65be581",
+    "runs/esdiva_phase10_prospective/fresh/2333/smooth_zero/score.json": "7ed2eb59034ee6580b09375df3ae8a5debb20003b94e9ec3425f4cbcbad392d5",
+    "runs/esdiva_phase10_prospective/fresh/2333/smooth_zero/wide_audit.json": "bceef094b30aa1b28e34d91824090d80194705f2fb61b91071d153b5386b4d59",
+    "runs/esdiva_phase10_prospective/fresh/2333/stationary_fast/report.json": "9dae3be61384d614f439d052a8edcbb622ed50c33bb5e16dd7a3c4102f6a7630",
+    "runs/esdiva_phase10_prospective/fresh/2333/stationary_fast/score.json": "b34d18ed2a3d463f32408c4eb23069954518336be1fe60c88694ccfb3c7fbe21",
+    "runs/esdiva_phase10_prospective/fresh/2333/stationary_fast/wide_audit.json": "7f2ca915ea6b19d40360d046b8ad727a0512ec63fc51f89be75dcdee9ec72b61"
+  }
+}

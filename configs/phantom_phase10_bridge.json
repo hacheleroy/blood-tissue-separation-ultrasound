@@ -1,0 +1,195 @@
+{
+  "study": "phantom_phase10_bridge",
+  "status": "physical acquisition pending; numerical source port tested on simulation only",
+  "date_utc": "2026-10-25",
+  "reserve_decision_sha256": "242b3eace38cc76b7b38104f48137b2c9e11d2fed792c39327ed5cd248198354",
+  "reserve_manifest_sha256": "b88fd6976f60d08cdb81400bacb08aa0b4400421f622bf887622aa00fafeb69c",
+  "reserve_candidate_sha256": "6bed5c75286b82d1cb694223f2c642c11185009eb3a3c5060a4d200f4259e7c6",
+  "phantom_v07_freeze_sha256": "a6c320f7f366a5f968fd62ce7b103b0290d3abd20dda565bce52ced55a14ae53",
+  "physical_port_source_sha256": "b8bab0811a4da3a5bc323da32ab33f09b7cc42d744632555fdcc8682832a9ecf",
+  "equivalence_script_sha256": "2aa195c173c052d10e2aaac9546076d1edde960529efbb4749ce58f422f496ae",
+  "equivalence_report_sha256": "cd8b8b0c557fdd94049d704328f051cf0eefe21f876e7024580e64c0b5e420a9",
+  "nominal_tx_angles_deg": [
+    0.0,
+    -5.0,
+    5.0
+  ],
+  "maximum_angle_deviation_deg": 0.5,
+  "wide_shape_zx": [
+    32,
+    16
+  ],
+  "core_rows_zero_based": [
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "wide_axis_guard_mm": 5.0,
+  "core_axis_guard_mm": 5.5,
+  "minimum_wide_tissue_pixels": 192,
+  "minimum_core_tissue_pixels": 40,
+  "minimum_fit_tissue_pixels": 80,
+  "minimum_check_tissue_pixels": 40,
+  "minimum_tissue_score_pixels": 8,
+  "minimum_flow_pixels": 8,
+  "minimum_flow_guard_pixels": 1,
+  "calibration_acquired_frames": 64,
+  "calibration_used_frames_zero_based": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "calibration_fit_frames_zero_based": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "calibration_validate_frames_zero_based": [
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "evaluation_frames": 256,
+  "window_start_frames_zero_based": [
+    0,
+    16,
+    32,
+    48,
+    64,
+    80,
+    96,
+    112,
+    128,
+    144,
+    160,
+    176
+  ],
+  "window_frames": 80,
+  "history_frames": 64,
+  "scored_packet_frames": 16,
+  "sessions": [
+    "development",
+    "heldout"
+  ],
+  "motions": [
+    "static",
+    "rigid",
+    "nonrigid"
+  ],
+  "flow_speeds_mps": {
+    "slow": 0.003,
+    "nominal": 0.02
+  },
+  "repeats_per_cell": 5,
+  "matched_captures": [
+    "tissue_only",
+    "flow_off",
+    "flow_on"
+  ],
+  "reference_quality": {
+    "maximum_sigma_pixels": 0.1,
+    "static_maximum_rms_pixels": 0.1,
+    "moving_minimum_rms_pixels": 0.2,
+    "maximum_displacement_pixels": 1.25,
+    "nonrigid_minimum_spatial_std_pixels": 0.05
+  },
+  "fixed_methods": {
+    "axis1_cut1": {
+      "discard": 1,
+      "horizon": 64,
+      "method": "axis1",
+      "rho": 0.75
+    },
+    "axis2_default": {
+      "gain_cap": 1.0,
+      "horizon": 64,
+      "method": "axis2",
+      "rank": 4
+    },
+    "axis2_slow_r4_cap040": {
+      "gain_cap": 0.4,
+      "horizon": 64,
+      "method": "axis2",
+      "rank": 4
+    },
+    "axis3_orthogonal": {
+      "adaptive": false,
+      "horizon": 64,
+      "method": "stap"
+    },
+    "baranger_ssm": {
+      "horizon": 64,
+      "method": "baranger"
+    },
+    "lee_aer": {
+      "domain": "temporal",
+      "epsilon_abs": 26.0,
+      "horizon": 64,
+      "method": "lee_aer"
+    },
+    "roundtrip": {
+      "horizon": 64,
+      "method": "roundtrip"
+    },
+    "svd_cut1": {
+      "discard": 1,
+      "horizon": 64,
+      "method": "svd"
+    }
+  },
+  "mode_selection": "frozen phase-10 mixture-only 64-frame phase-loss selector with prior-calibration reference support; independent per capture and 80-frame window",
+  "physical_metrics": {
+    "doppler_band_cycles_per_frame": {
+      "slow": [
+        0.005,
+        0.05
+      ],
+      "nominal": [
+        0.02,
+        0.25
+      ]
+    },
+    "minimum_input_pump_excess_over_off": 0.5,
+    "minimum_band_bins": 6
+  },
+  "physical_release_gate": {
+    "candidate": "phase-10 selected-mode Axis 1 cut 1",
+    "bootstrap_whole_triplets": 2000,
+    "mean_pump_response_retention_lower_95_min": 0.8,
+    "mean_tissue_leakage_upper_95_max": 0.1,
+    "moving_selected_over_none_leakage_upper_95_max": 0.9,
+    "moving_selected_minus_none_pump_retention_lower_95_min": -0.02,
+    "all_six_cells_required": true,
+    "ineligible_or_inconclusive_blocks_claim": true
+  },
+  "known_source_and_optical_reference_policy": "Source components and optical displacement/flow are evaluation-only; structural vessel axis and prior tissue calibration enter the data-only port.",
+  "interpretation": "Operational pump-associated Doppler excess, not source-resolved blood IQ truth. No phantom data currently exist."
+}

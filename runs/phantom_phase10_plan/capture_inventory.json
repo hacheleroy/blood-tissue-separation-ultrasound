@@ -1,0 +1,2639 @@
+{
+  "status": "INCOMPLETE: no measured capture is represented by a filled placeholder",
+  "reserve_decision_sha256": "242b3eace38cc76b7b38104f48137b2c9e11d2fed792c39327ed5cd248198354",
+  "reserve_manifest_sha256": "b88fd6976f60d08cdb81400bacb08aa0b4400421f622bf887622aa00fafeb69c",
+  "phase10_reserve_split_sha256": "1049da475b0bdbca38154be65f9346c3826645f67505ecbd83ebb0ac33c5417f",
+  "phase10_reserve_candidate_sha256": "6bed5c75286b82d1cb694223f2c642c11185009eb3a3c5060a4d200f4259e7c6",
+  "phantom_v07_freeze_sha256": "a6c320f7f366a5f968fd62ce7b103b0290d3abd20dda565bce52ced55a14ae53",
+  "phase10_bridge_sha256": "1169833158a5d4db542aa23903cea284e3046881b016ab3fe884c2fa90af147f",
+  "phase10_bridge_config_sha256": "747216e609a9c62154ce1d721339631012b6055a0d60fd0c92ceb86a87ab5e9d",
+  "phase10_port_source_sha256": "b8bab0811a4da3a5bc323da32ab33f09b7cc42d744632555fdcc8682832a9ecf",
+  "phase10_equivalence_script_sha256": "2aa195c173c052d10e2aaac9546076d1edde960529efbb4749ce58f422f496ae",
+  "phase10_equivalence_report_sha256": "cd8b8b0c557fdd94049d704328f051cf0eefe21f876e7024580e64c0b5e420a9",
+  "acquisition_card_path": "acquisition_card.json",
+  "acquisition_card_sha256": null,
+  "required_wide_iq_shape": [
+    256,
+    3,
+    32,
+    16
+  ],
+  "required_calibration_iq_shape": [
+    64,
+    3,
+    32,
+    16
+  ],
+  "required_scored_windows_start": [
+    0,
+    16,
+    32,
+    48,
+    64,
+    80,
+    96,
+    112,
+    128,
+    144,
+    160,
+    176
+  ],
+  "sessions": [
+    {
+      "split": "development",
+      "session_id": null,
+      "geometry_matches_card": null,
+      "structural_masks_sha256": null,
+      "triplets": [
+        {
+          "motion": "static",
+          "speed": "slow",
+          "repeat": 1,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/development_static_slow_01_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_static_slow_01_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_static_slow_01_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/development_static_slow_01_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_static_slow_01_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_static_slow_01_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/development_static_slow_01_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_static_slow_01_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_static_slow_01_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        },
+        {
+          "motion": "static",
+          "speed": "slow",
+          "repeat": 2,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/development_static_slow_02_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_static_slow_02_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_static_slow_02_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/development_static_slow_02_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_static_slow_02_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_static_slow_02_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/development_static_slow_02_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_static_slow_02_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_static_slow_02_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        },
+        {
+          "motion": "static",
+          "speed": "slow",
+          "repeat": 3,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/development_static_slow_03_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_static_slow_03_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_static_slow_03_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/development_static_slow_03_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_static_slow_03_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_static_slow_03_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/development_static_slow_03_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_static_slow_03_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_static_slow_03_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        },
+        {
+          "motion": "static",
+          "speed": "slow",
+          "repeat": 4,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/development_static_slow_04_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_static_slow_04_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_static_slow_04_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/development_static_slow_04_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_static_slow_04_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_static_slow_04_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/development_static_slow_04_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_static_slow_04_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_static_slow_04_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        },
+        {
+          "motion": "static",
+          "speed": "slow",
+          "repeat": 5,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/development_static_slow_05_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_static_slow_05_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_static_slow_05_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/development_static_slow_05_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_static_slow_05_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_static_slow_05_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/development_static_slow_05_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_static_slow_05_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_static_slow_05_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        },
+        {
+          "motion": "static",
+          "speed": "nominal",
+          "repeat": 1,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/development_static_nominal_01_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_static_nominal_01_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_static_nominal_01_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/development_static_nominal_01_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_static_nominal_01_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_static_nominal_01_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/development_static_nominal_01_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_static_nominal_01_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_static_nominal_01_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        },
+        {
+          "motion": "static",
+          "speed": "nominal",
+          "repeat": 2,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/development_static_nominal_02_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_static_nominal_02_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_static_nominal_02_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/development_static_nominal_02_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_static_nominal_02_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_static_nominal_02_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/development_static_nominal_02_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_static_nominal_02_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_static_nominal_02_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        },
+        {
+          "motion": "static",
+          "speed": "nominal",
+          "repeat": 3,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/development_static_nominal_03_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_static_nominal_03_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_static_nominal_03_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/development_static_nominal_03_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_static_nominal_03_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_static_nominal_03_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/development_static_nominal_03_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_static_nominal_03_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_static_nominal_03_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        },
+        {
+          "motion": "static",
+          "speed": "nominal",
+          "repeat": 4,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/development_static_nominal_04_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_static_nominal_04_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_static_nominal_04_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/development_static_nominal_04_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_static_nominal_04_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_static_nominal_04_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/development_static_nominal_04_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_static_nominal_04_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_static_nominal_04_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        },
+        {
+          "motion": "static",
+          "speed": "nominal",
+          "repeat": 5,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/development_static_nominal_05_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_static_nominal_05_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_static_nominal_05_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/development_static_nominal_05_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_static_nominal_05_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_static_nominal_05_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/development_static_nominal_05_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_static_nominal_05_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_static_nominal_05_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        },
+        {
+          "motion": "rigid",
+          "speed": "slow",
+          "repeat": 1,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/development_rigid_slow_01_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_rigid_slow_01_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_rigid_slow_01_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/development_rigid_slow_01_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_rigid_slow_01_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_rigid_slow_01_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/development_rigid_slow_01_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_rigid_slow_01_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_rigid_slow_01_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        },
+        {
+          "motion": "rigid",
+          "speed": "slow",
+          "repeat": 2,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/development_rigid_slow_02_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_rigid_slow_02_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_rigid_slow_02_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/development_rigid_slow_02_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_rigid_slow_02_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_rigid_slow_02_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/development_rigid_slow_02_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_rigid_slow_02_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_rigid_slow_02_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        },
+        {
+          "motion": "rigid",
+          "speed": "slow",
+          "repeat": 3,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/development_rigid_slow_03_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_rigid_slow_03_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_rigid_slow_03_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/development_rigid_slow_03_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_rigid_slow_03_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_rigid_slow_03_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/development_rigid_slow_03_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_rigid_slow_03_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_rigid_slow_03_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        },
+        {
+          "motion": "rigid",
+          "speed": "slow",
+          "repeat": 4,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/development_rigid_slow_04_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_rigid_slow_04_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_rigid_slow_04_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/development_rigid_slow_04_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_rigid_slow_04_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_rigid_slow_04_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/development_rigid_slow_04_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_rigid_slow_04_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_rigid_slow_04_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        },
+        {
+          "motion": "rigid",
+          "speed": "slow",
+          "repeat": 5,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/development_rigid_slow_05_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_rigid_slow_05_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_rigid_slow_05_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/development_rigid_slow_05_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_rigid_slow_05_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_rigid_slow_05_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/development_rigid_slow_05_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_rigid_slow_05_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_rigid_slow_05_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        },
+        {
+          "motion": "rigid",
+          "speed": "nominal",
+          "repeat": 1,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/development_rigid_nominal_01_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_rigid_nominal_01_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_rigid_nominal_01_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/development_rigid_nominal_01_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_rigid_nominal_01_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_rigid_nominal_01_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/development_rigid_nominal_01_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_rigid_nominal_01_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_rigid_nominal_01_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        },
+        {
+          "motion": "rigid",
+          "speed": "nominal",
+          "repeat": 2,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/development_rigid_nominal_02_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_rigid_nominal_02_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_rigid_nominal_02_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/development_rigid_nominal_02_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_rigid_nominal_02_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_rigid_nominal_02_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/development_rigid_nominal_02_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_rigid_nominal_02_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_rigid_nominal_02_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        },
+        {
+          "motion": "rigid",
+          "speed": "nominal",
+          "repeat": 3,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/development_rigid_nominal_03_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_rigid_nominal_03_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_rigid_nominal_03_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/development_rigid_nominal_03_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_rigid_nominal_03_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_rigid_nominal_03_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/development_rigid_nominal_03_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_rigid_nominal_03_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_rigid_nominal_03_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        },
+        {
+          "motion": "rigid",
+          "speed": "nominal",
+          "repeat": 4,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/development_rigid_nominal_04_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_rigid_nominal_04_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_rigid_nominal_04_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/development_rigid_nominal_04_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_rigid_nominal_04_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_rigid_nominal_04_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/development_rigid_nominal_04_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_rigid_nominal_04_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_rigid_nominal_04_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        },
+        {
+          "motion": "rigid",
+          "speed": "nominal",
+          "repeat": 5,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/development_rigid_nominal_05_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_rigid_nominal_05_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_rigid_nominal_05_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/development_rigid_nominal_05_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_rigid_nominal_05_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_rigid_nominal_05_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/development_rigid_nominal_05_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_rigid_nominal_05_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_rigid_nominal_05_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        },
+        {
+          "motion": "nonrigid",
+          "speed": "slow",
+          "repeat": 1,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/development_nonrigid_slow_01_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_nonrigid_slow_01_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_nonrigid_slow_01_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/development_nonrigid_slow_01_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_nonrigid_slow_01_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_nonrigid_slow_01_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/development_nonrigid_slow_01_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_nonrigid_slow_01_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_nonrigid_slow_01_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        },
+        {
+          "motion": "nonrigid",
+          "speed": "slow",
+          "repeat": 2,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/development_nonrigid_slow_02_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_nonrigid_slow_02_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_nonrigid_slow_02_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/development_nonrigid_slow_02_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_nonrigid_slow_02_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_nonrigid_slow_02_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/development_nonrigid_slow_02_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_nonrigid_slow_02_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_nonrigid_slow_02_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        },
+        {
+          "motion": "nonrigid",
+          "speed": "slow",
+          "repeat": 3,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/development_nonrigid_slow_03_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_nonrigid_slow_03_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_nonrigid_slow_03_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/development_nonrigid_slow_03_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_nonrigid_slow_03_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_nonrigid_slow_03_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/development_nonrigid_slow_03_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_nonrigid_slow_03_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_nonrigid_slow_03_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        },
+        {
+          "motion": "nonrigid",
+          "speed": "slow",
+          "repeat": 4,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/development_nonrigid_slow_04_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_nonrigid_slow_04_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_nonrigid_slow_04_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/development_nonrigid_slow_04_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_nonrigid_slow_04_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_nonrigid_slow_04_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/development_nonrigid_slow_04_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_nonrigid_slow_04_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_nonrigid_slow_04_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        },
+        {
+          "motion": "nonrigid",
+          "speed": "slow",
+          "repeat": 5,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/development_nonrigid_slow_05_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_nonrigid_slow_05_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_nonrigid_slow_05_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/development_nonrigid_slow_05_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_nonrigid_slow_05_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_nonrigid_slow_05_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/development_nonrigid_slow_05_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_nonrigid_slow_05_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_nonrigid_slow_05_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        },
+        {
+          "motion": "nonrigid",
+          "speed": "nominal",
+          "repeat": 1,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/development_nonrigid_nominal_01_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_nonrigid_nominal_01_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_nonrigid_nominal_01_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/development_nonrigid_nominal_01_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_nonrigid_nominal_01_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_nonrigid_nominal_01_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/development_nonrigid_nominal_01_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_nonrigid_nominal_01_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_nonrigid_nominal_01_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        },
+        {
+          "motion": "nonrigid",
+          "speed": "nominal",
+          "repeat": 2,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/development_nonrigid_nominal_02_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_nonrigid_nominal_02_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_nonrigid_nominal_02_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/development_nonrigid_nominal_02_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_nonrigid_nominal_02_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_nonrigid_nominal_02_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/development_nonrigid_nominal_02_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_nonrigid_nominal_02_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_nonrigid_nominal_02_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        },
+        {
+          "motion": "nonrigid",
+          "speed": "nominal",
+          "repeat": 3,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/development_nonrigid_nominal_03_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_nonrigid_nominal_03_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_nonrigid_nominal_03_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/development_nonrigid_nominal_03_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_nonrigid_nominal_03_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_nonrigid_nominal_03_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/development_nonrigid_nominal_03_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_nonrigid_nominal_03_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_nonrigid_nominal_03_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        },
+        {
+          "motion": "nonrigid",
+          "speed": "nominal",
+          "repeat": 4,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/development_nonrigid_nominal_04_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_nonrigid_nominal_04_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_nonrigid_nominal_04_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/development_nonrigid_nominal_04_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_nonrigid_nominal_04_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_nonrigid_nominal_04_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/development_nonrigid_nominal_04_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_nonrigid_nominal_04_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_nonrigid_nominal_04_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        },
+        {
+          "motion": "nonrigid",
+          "speed": "nominal",
+          "repeat": 5,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/development_nonrigid_nominal_05_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_nonrigid_nominal_05_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_nonrigid_nominal_05_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/development_nonrigid_nominal_05_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_nonrigid_nominal_05_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_nonrigid_nominal_05_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/development_nonrigid_nominal_05_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/development_nonrigid_nominal_05_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/development_nonrigid_nominal_05_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "split": "heldout",
+      "session_id": null,
+      "geometry_matches_card": null,
+      "structural_masks_sha256": null,
+      "triplets": [
+        {
+          "motion": "static",
+          "speed": "slow",
+          "repeat": 1,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/heldout_static_slow_01_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_static_slow_01_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_static_slow_01_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/heldout_static_slow_01_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_static_slow_01_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_static_slow_01_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/heldout_static_slow_01_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_static_slow_01_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_static_slow_01_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        },
+        {
+          "motion": "static",
+          "speed": "slow",
+          "repeat": 2,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/heldout_static_slow_02_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_static_slow_02_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_static_slow_02_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/heldout_static_slow_02_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_static_slow_02_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_static_slow_02_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/heldout_static_slow_02_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_static_slow_02_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_static_slow_02_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        },
+        {
+          "motion": "static",
+          "speed": "slow",
+          "repeat": 3,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/heldout_static_slow_03_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_static_slow_03_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_static_slow_03_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/heldout_static_slow_03_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_static_slow_03_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_static_slow_03_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/heldout_static_slow_03_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_static_slow_03_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_static_slow_03_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        },
+        {
+          "motion": "static",
+          "speed": "slow",
+          "repeat": 4,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/heldout_static_slow_04_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_static_slow_04_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_static_slow_04_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/heldout_static_slow_04_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_static_slow_04_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_static_slow_04_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/heldout_static_slow_04_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_static_slow_04_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_static_slow_04_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        },
+        {
+          "motion": "static",
+          "speed": "slow",
+          "repeat": 5,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/heldout_static_slow_05_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_static_slow_05_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_static_slow_05_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/heldout_static_slow_05_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_static_slow_05_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_static_slow_05_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/heldout_static_slow_05_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_static_slow_05_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_static_slow_05_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        },
+        {
+          "motion": "static",
+          "speed": "nominal",
+          "repeat": 1,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/heldout_static_nominal_01_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_static_nominal_01_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_static_nominal_01_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/heldout_static_nominal_01_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_static_nominal_01_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_static_nominal_01_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/heldout_static_nominal_01_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_static_nominal_01_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_static_nominal_01_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        },
+        {
+          "motion": "static",
+          "speed": "nominal",
+          "repeat": 2,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/heldout_static_nominal_02_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_static_nominal_02_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_static_nominal_02_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/heldout_static_nominal_02_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_static_nominal_02_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_static_nominal_02_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/heldout_static_nominal_02_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_static_nominal_02_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_static_nominal_02_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        },
+        {
+          "motion": "static",
+          "speed": "nominal",
+          "repeat": 3,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/heldout_static_nominal_03_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_static_nominal_03_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_static_nominal_03_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/heldout_static_nominal_03_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_static_nominal_03_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_static_nominal_03_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/heldout_static_nominal_03_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_static_nominal_03_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_static_nominal_03_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        },
+        {
+          "motion": "static",
+          "speed": "nominal",
+          "repeat": 4,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/heldout_static_nominal_04_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_static_nominal_04_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_static_nominal_04_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/heldout_static_nominal_04_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_static_nominal_04_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_static_nominal_04_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/heldout_static_nominal_04_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_static_nominal_04_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_static_nominal_04_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        },
+        {
+          "motion": "static",
+          "speed": "nominal",
+          "repeat": 5,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/heldout_static_nominal_05_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_static_nominal_05_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_static_nominal_05_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/heldout_static_nominal_05_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_static_nominal_05_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_static_nominal_05_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/heldout_static_nominal_05_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_static_nominal_05_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_static_nominal_05_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        },
+        {
+          "motion": "rigid",
+          "speed": "slow",
+          "repeat": 1,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/heldout_rigid_slow_01_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_rigid_slow_01_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_rigid_slow_01_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/heldout_rigid_slow_01_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_rigid_slow_01_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_rigid_slow_01_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/heldout_rigid_slow_01_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_rigid_slow_01_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_rigid_slow_01_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        },
+        {
+          "motion": "rigid",
+          "speed": "slow",
+          "repeat": 2,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/heldout_rigid_slow_02_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_rigid_slow_02_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_rigid_slow_02_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/heldout_rigid_slow_02_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_rigid_slow_02_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_rigid_slow_02_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/heldout_rigid_slow_02_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_rigid_slow_02_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_rigid_slow_02_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        },
+        {
+          "motion": "rigid",
+          "speed": "slow",
+          "repeat": 3,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/heldout_rigid_slow_03_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_rigid_slow_03_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_rigid_slow_03_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/heldout_rigid_slow_03_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_rigid_slow_03_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_rigid_slow_03_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/heldout_rigid_slow_03_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_rigid_slow_03_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_rigid_slow_03_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        },
+        {
+          "motion": "rigid",
+          "speed": "slow",
+          "repeat": 4,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/heldout_rigid_slow_04_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_rigid_slow_04_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_rigid_slow_04_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/heldout_rigid_slow_04_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_rigid_slow_04_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_rigid_slow_04_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/heldout_rigid_slow_04_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_rigid_slow_04_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_rigid_slow_04_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        },
+        {
+          "motion": "rigid",
+          "speed": "slow",
+          "repeat": 5,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/heldout_rigid_slow_05_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_rigid_slow_05_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_rigid_slow_05_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/heldout_rigid_slow_05_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_rigid_slow_05_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_rigid_slow_05_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/heldout_rigid_slow_05_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_rigid_slow_05_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_rigid_slow_05_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        },
+        {
+          "motion": "rigid",
+          "speed": "nominal",
+          "repeat": 1,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/heldout_rigid_nominal_01_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_rigid_nominal_01_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_rigid_nominal_01_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/heldout_rigid_nominal_01_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_rigid_nominal_01_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_rigid_nominal_01_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/heldout_rigid_nominal_01_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_rigid_nominal_01_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_rigid_nominal_01_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        },
+        {
+          "motion": "rigid",
+          "speed": "nominal",
+          "repeat": 2,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/heldout_rigid_nominal_02_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_rigid_nominal_02_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_rigid_nominal_02_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/heldout_rigid_nominal_02_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_rigid_nominal_02_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_rigid_nominal_02_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/heldout_rigid_nominal_02_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_rigid_nominal_02_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_rigid_nominal_02_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        },
+        {
+          "motion": "rigid",
+          "speed": "nominal",
+          "repeat": 3,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/heldout_rigid_nominal_03_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_rigid_nominal_03_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_rigid_nominal_03_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/heldout_rigid_nominal_03_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_rigid_nominal_03_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_rigid_nominal_03_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/heldout_rigid_nominal_03_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_rigid_nominal_03_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_rigid_nominal_03_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        },
+        {
+          "motion": "rigid",
+          "speed": "nominal",
+          "repeat": 4,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/heldout_rigid_nominal_04_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_rigid_nominal_04_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_rigid_nominal_04_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/heldout_rigid_nominal_04_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_rigid_nominal_04_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_rigid_nominal_04_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/heldout_rigid_nominal_04_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_rigid_nominal_04_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_rigid_nominal_04_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        },
+        {
+          "motion": "rigid",
+          "speed": "nominal",
+          "repeat": 5,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/heldout_rigid_nominal_05_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_rigid_nominal_05_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_rigid_nominal_05_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/heldout_rigid_nominal_05_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_rigid_nominal_05_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_rigid_nominal_05_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/heldout_rigid_nominal_05_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_rigid_nominal_05_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_rigid_nominal_05_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        },
+        {
+          "motion": "nonrigid",
+          "speed": "slow",
+          "repeat": 1,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/heldout_nonrigid_slow_01_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_nonrigid_slow_01_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_nonrigid_slow_01_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/heldout_nonrigid_slow_01_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_nonrigid_slow_01_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_nonrigid_slow_01_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/heldout_nonrigid_slow_01_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_nonrigid_slow_01_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_nonrigid_slow_01_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        },
+        {
+          "motion": "nonrigid",
+          "speed": "slow",
+          "repeat": 2,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/heldout_nonrigid_slow_02_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_nonrigid_slow_02_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_nonrigid_slow_02_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/heldout_nonrigid_slow_02_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_nonrigid_slow_02_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_nonrigid_slow_02_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/heldout_nonrigid_slow_02_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_nonrigid_slow_02_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_nonrigid_slow_02_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        },
+        {
+          "motion": "nonrigid",
+          "speed": "slow",
+          "repeat": 3,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/heldout_nonrigid_slow_03_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_nonrigid_slow_03_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_nonrigid_slow_03_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/heldout_nonrigid_slow_03_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_nonrigid_slow_03_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_nonrigid_slow_03_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/heldout_nonrigid_slow_03_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_nonrigid_slow_03_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_nonrigid_slow_03_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        },
+        {
+          "motion": "nonrigid",
+          "speed": "slow",
+          "repeat": 4,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/heldout_nonrigid_slow_04_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_nonrigid_slow_04_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_nonrigid_slow_04_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/heldout_nonrigid_slow_04_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_nonrigid_slow_04_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_nonrigid_slow_04_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/heldout_nonrigid_slow_04_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_nonrigid_slow_04_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_nonrigid_slow_04_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        },
+        {
+          "motion": "nonrigid",
+          "speed": "slow",
+          "repeat": 5,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/heldout_nonrigid_slow_05_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_nonrigid_slow_05_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_nonrigid_slow_05_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/heldout_nonrigid_slow_05_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_nonrigid_slow_05_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_nonrigid_slow_05_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/heldout_nonrigid_slow_05_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_nonrigid_slow_05_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_nonrigid_slow_05_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        },
+        {
+          "motion": "nonrigid",
+          "speed": "nominal",
+          "repeat": 1,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/heldout_nonrigid_nominal_01_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_nonrigid_nominal_01_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_nonrigid_nominal_01_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/heldout_nonrigid_nominal_01_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_nonrigid_nominal_01_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_nonrigid_nominal_01_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/heldout_nonrigid_nominal_01_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_nonrigid_nominal_01_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_nonrigid_nominal_01_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        },
+        {
+          "motion": "nonrigid",
+          "speed": "nominal",
+          "repeat": 2,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/heldout_nonrigid_nominal_02_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_nonrigid_nominal_02_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_nonrigid_nominal_02_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/heldout_nonrigid_nominal_02_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_nonrigid_nominal_02_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_nonrigid_nominal_02_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/heldout_nonrigid_nominal_02_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_nonrigid_nominal_02_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_nonrigid_nominal_02_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        },
+        {
+          "motion": "nonrigid",
+          "speed": "nominal",
+          "repeat": 3,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/heldout_nonrigid_nominal_03_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_nonrigid_nominal_03_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_nonrigid_nominal_03_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/heldout_nonrigid_nominal_03_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_nonrigid_nominal_03_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_nonrigid_nominal_03_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/heldout_nonrigid_nominal_03_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_nonrigid_nominal_03_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_nonrigid_nominal_03_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        },
+        {
+          "motion": "nonrigid",
+          "speed": "nominal",
+          "repeat": 4,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/heldout_nonrigid_nominal_04_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_nonrigid_nominal_04_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_nonrigid_nominal_04_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/heldout_nonrigid_nominal_04_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_nonrigid_nominal_04_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_nonrigid_nominal_04_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/heldout_nonrigid_nominal_04_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_nonrigid_nominal_04_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_nonrigid_nominal_04_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        },
+        {
+          "motion": "nonrigid",
+          "speed": "nominal",
+          "repeat": 5,
+          "captures": {
+            "tissue_only": {
+              "raw_rf_path": "raw/heldout_nonrigid_nominal_05_tissue_only.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_nonrigid_nominal_05_tissue_only.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_nonrigid_nominal_05_tissue_only.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_off": {
+              "raw_rf_path": "raw/heldout_nonrigid_nominal_05_flow_off.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_nonrigid_nominal_05_flow_off.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_nonrigid_nominal_05_flow_off.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": "not_applicable"
+            },
+            "flow_on": {
+              "raw_rf_path": "raw/heldout_nonrigid_nominal_05_flow_on.bin",
+              "raw_rf_sha256": null,
+              "wide_iq_path": "iq/heldout_nonrigid_nominal_05_flow_on.npz",
+              "wide_iq_sha256": null,
+              "independent_reference_path": "reference/heldout_nonrigid_nominal_05_flow_on.npz",
+              "independent_reference_sha256": null,
+              "reference_source": null,
+              "calibration_pump_off": null,
+              "calibration_motion_rest": null,
+              "flowmeter_mps": null
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

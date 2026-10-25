@@ -71,8 +71,11 @@ a [separate prospective freeze](docs/ESDIVA_PHASE10_PROSPECTIVE_FREEZE.md)
 for seed 2333. The [fixed prospective comparison](docs/ESDIVA_PHASE10_PROSPECTIVE_RESULT.md)
 passed all four scenes, including paired blood preservation and moving-tissue
 leakage gates. A [separate frozen reserve-bank comparison](docs/ESDIVA_PHASE10_RESERVE_FREEZE.md)
-declares seeds 2401/2411 before RF generation. Physical phantom validation
-has not been performed.
+declared seeds 2401/2411 before RF generation. The [eight-scene reserve
+result](docs/ESDIVA_PHASE10_RESERVE_RESULT.md) passes its source, calibration,
+paired blood and moving-tissue gates. The [phase-10 physical bridge](docs/PHANTOM_PHASE10_BRIDGE.md)
+and incomplete acquisition card prepare independent phantom captures;
+physical phantom validation has not been performed.
 The [ULMShare follow-on](docs/ULMSHARE_FOLLOWON.md) is an in vivo microbubble
 benchmark design for after the acoustic-simulation study.
 

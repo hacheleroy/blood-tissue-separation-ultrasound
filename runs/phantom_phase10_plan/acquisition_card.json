@@ -1,0 +1,72 @@
+{
+  "status": "INCOMPLETE: measured card and geometry-aware port required before acquisition",
+  "reserve_decision_sha256": "242b3eace38cc76b7b38104f48137b2c9e11d2fed792c39327ed5cd248198354",
+  "reserve_manifest_sha256": "b88fd6976f60d08cdb81400bacb08aa0b4400421f622bf887622aa00fafeb69c",
+  "phase10_reserve_split_sha256": "1049da475b0bdbca38154be65f9346c3826645f67505ecbd83ebb0ac33c5417f",
+  "phase10_reserve_candidate_sha256": "6bed5c75286b82d1cb694223f2c642c11185009eb3a3c5060a4d200f4259e7c6",
+  "phantom_v07_freeze_sha256": "a6c320f7f366a5f968fd62ce7b103b0290d3abd20dda565bce52ced55a14ae53",
+  "phase10_bridge_sha256": "1169833158a5d4db542aa23903cea284e3046881b016ab3fe884c2fa90af147f",
+  "phase10_bridge_config_sha256": "747216e609a9c62154ce1d721339631012b6055a0d60fd0c92ceb86a87ab5e9d",
+  "phase10_port_source_sha256": "b8bab0811a4da3a5bc323da32ab33f09b7cc42d744632555fdcc8682832a9ecf",
+  "phase10_equivalence_script_sha256": "2aa195c173c052d10e2aaac9546076d1edde960529efbb4749ce58f422f496ae",
+  "phase10_equivalence_report_sha256": "cd8b8b0c557fdd94049d704328f051cf0eefe21f876e7024580e64c0b5e420a9",
+  "preregistered_utc": null,
+  "first_capture_utc": null,
+  "scanner": null,
+  "probe": null,
+  "transmit_waveform": null,
+  "receive_aperture": null,
+  "measured_geometry": {
+    "tx_rad": [
+      null,
+      null,
+      null
+    ],
+    "rx_rad": [
+      null,
+      null,
+      null
+    ],
+    "view_offsets_s": [
+      null,
+      null,
+      null
+    ],
+    "same_view_prf_hz": null,
+    "f0_hz": null,
+    "sound_speed_mps": null,
+    "phase_sign": null,
+    "z_mm": null,
+    "x_mm": null
+  },
+  "beamformer_sha256": null,
+  "structural_centerline_and_wall_source_sha256": null,
+  "structural_masks_sha256": null,
+  "wide_crop_and_core_rows": {
+    "wide_shape_zx": [
+      32,
+      16
+    ],
+    "core_rows_zero_based": [
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "crop_origin_mm": null
+  },
+  "measured_psf": null,
+  "optical_registration": null,
+  "stage_program": null,
+  "phantom_medium_and_temperature": null,
+  "channel_area_m2": null,
+  "pump_and_flowmeter_calibration": null,
+  "piv_calibration": null,
+  "clock_synchronization": null,
+  "capture_order_randomization": null,
+  "fresh_remount_plan": null
+}

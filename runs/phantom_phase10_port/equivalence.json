@@ -1,0 +1,566 @@
+{
+  "status": "physical port matches frozen phase-10 numerical source on supplied IQ",
+  "script_sha256": "2aa195c173c052d10e2aaac9546076d1edde960529efbb4749ce58f422f496ae",
+  "port_sha256": "b8bab0811a4da3a5bc323da32ab33f09b7cc42d744632555fdcc8682832a9ecf",
+  "frozen_support_sha256": "fddb9d0b49364df3a3fc90fe1a7fc79fd5190f5ce679c4b5466daa6d5f3ec5ff",
+  "frozen_selector_sha256": "ef29828abef95aa9a59172d11dac5142b3b8592a003afa95138dba521fbf8561",
+  "frozen_transport_sha256": "301602c9a925f2b2b9eb1b581f1fdc037f207c80d1fb25d78f4c7c909e3dcc2b",
+  "cases": [
+    {
+      "case": "2333_stationary",
+      "seed": 2333,
+      "motion": "none",
+      "flow_scale": 1.0,
+      "source_report_sha256": "9dae3be61384d614f439d052a8edcbb622ed50c33bb5e16dd7a3c4102f6a7630",
+      "core_iq_sha256": "ad0d6fc04ca7ee5efcff12fcd112bef85da3c0d412a9348682f414752264954a",
+      "wide_iq_sha256": "216ac64620cc2e8136f661d4df7951e3fcbe8d1a02764ff145d3f9ae762c3472",
+      "selected_mode": "hybrid",
+      "wide_pixels": 192,
+      "core_pixels": 40,
+      "calibration_gate_pass": true,
+      "rows": [
+        {
+          "input": "mixture",
+          "mode": "none",
+          "method": "roundtrip",
+          "relative_output_error": 0.0,
+          "output_sha256": "adfc57f9d0c7be9c2ada0b5bf7b567939bde6c3b18b8e886e924c2f291158b3d"
+        },
+        {
+          "input": "mixture",
+          "mode": "none",
+          "method": "svd_cut1",
+          "relative_output_error": 0.0,
+          "output_sha256": "8d7650365989b2b49b96705ad9a01200e45ab4ae044dd09271faea119f017b13"
+        },
+        {
+          "input": "mixture",
+          "mode": "none",
+          "method": "axis1_cut1",
+          "relative_output_error": 0.0,
+          "output_sha256": "6549e662ddd3b81988633f2ecb000d0ccd11ae4a7a9fdea793903bc4bd01521b"
+        },
+        {
+          "input": "mixture",
+          "mode": "hybrid",
+          "method": "roundtrip",
+          "relative_output_error": 0.0,
+          "output_sha256": "1cb7d7faed0c16882b31dca6fbff480cd221bd449e3baf62fbaeb4a9cc92b89d"
+        },
+        {
+          "input": "mixture",
+          "mode": "hybrid",
+          "method": "svd_cut1",
+          "relative_output_error": 0.0,
+          "output_sha256": "f1e2127276af437b29068cbf66c15d482ebedf372e87d43a5b9c8feb57d17360"
+        },
+        {
+          "input": "mixture",
+          "mode": "hybrid",
+          "method": "axis1_cut1",
+          "relative_output_error": 0.0,
+          "output_sha256": "bd156c53ee640e5844906d98ed87f6ed6d0d741ea1b7726705bb4d5d3355d565"
+        },
+        {
+          "input": "mixture",
+          "mode": "reference",
+          "method": "roundtrip",
+          "relative_output_error": 0.0,
+          "output_sha256": "adfc57f9d0c7be9c2ada0b5bf7b567939bde6c3b18b8e886e924c2f291158b3d"
+        },
+        {
+          "input": "mixture",
+          "mode": "reference",
+          "method": "svd_cut1",
+          "relative_output_error": 0.0,
+          "output_sha256": "8d7650365989b2b49b96705ad9a01200e45ab4ae044dd09271faea119f017b13"
+        },
+        {
+          "input": "mixture",
+          "mode": "reference",
+          "method": "axis1_cut1",
+          "relative_output_error": 0.0,
+          "output_sha256": "6549e662ddd3b81988633f2ecb000d0ccd11ae4a7a9fdea793903bc4bd01521b"
+        },
+        {
+          "input": "background",
+          "mode": "none",
+          "method": "roundtrip",
+          "relative_output_error": 0.0,
+          "output_sha256": "eb70eea7e024cf56792b84030383dc2a56f7adda70329270958b19a4c2ca0418"
+        },
+        {
+          "input": "background",
+          "mode": "none",
+          "method": "svd_cut1",
+          "relative_output_error": 0.0,
+          "output_sha256": "b8f82386733d32e3ce861f6c881f057c8940f2058785381ca6633ea7baae9e04"
+        },
+        {
+          "input": "background",
+          "mode": "none",
+          "method": "axis1_cut1",
+          "relative_output_error": 0.0,
+          "output_sha256": "9109a5e860d81a8f4e30c667a9500e91a5ccd3baf73381bda49991e46206da94"
+        },
+        {
+          "input": "background",
+          "mode": "hybrid",
+          "method": "roundtrip",
+          "relative_output_error": 0.0,
+          "output_sha256": "0acb4472a9d0b87223b80fccab6713faa5f40b9bcb68565329e2d5e89a666180"
+        },
+        {
+          "input": "background",
+          "mode": "hybrid",
+          "method": "svd_cut1",
+          "relative_output_error": 0.0,
+          "output_sha256": "28cc40a35d463166e6b51664514d1d46df9e98f8e9b35243c8c45e0e31e6a13c"
+        },
+        {
+          "input": "background",
+          "mode": "hybrid",
+          "method": "axis1_cut1",
+          "relative_output_error": 0.0,
+          "output_sha256": "4e3f2e44ef435a0d1d1bfe9e731e56c95176bd05d087650c87548f35ba31cc71"
+        },
+        {
+          "input": "background",
+          "mode": "reference",
+          "method": "roundtrip",
+          "relative_output_error": 0.0,
+          "output_sha256": "eb70eea7e024cf56792b84030383dc2a56f7adda70329270958b19a4c2ca0418"
+        },
+        {
+          "input": "background",
+          "mode": "reference",
+          "method": "svd_cut1",
+          "relative_output_error": 0.0,
+          "output_sha256": "b8f82386733d32e3ce861f6c881f057c8940f2058785381ca6633ea7baae9e04"
+        },
+        {
+          "input": "background",
+          "mode": "reference",
+          "method": "axis1_cut1",
+          "relative_output_error": 0.0,
+          "output_sha256": "9109a5e860d81a8f4e30c667a9500e91a5ccd3baf73381bda49991e46206da94"
+        }
+      ],
+      "paired_rows": [
+        {
+          "mode": "none",
+          "method": "svd_cut1",
+          "paired_added_blood_nrmse_original": 0.5455873845764737,
+          "paired_added_blood_nrmse_port": 0.5455873845764737,
+          "absolute_difference": 0.0
+        },
+        {
+          "mode": "none",
+          "method": "axis1_cut1",
+          "paired_added_blood_nrmse_original": 0.3938020158032182,
+          "paired_added_blood_nrmse_port": 0.3938020158032182,
+          "absolute_difference": 0.0
+        },
+        {
+          "mode": "hybrid",
+          "method": "svd_cut1",
+          "paired_added_blood_nrmse_original": 0.5459156929335457,
+          "paired_added_blood_nrmse_port": 0.5459156929335457,
+          "absolute_difference": 0.0
+        },
+        {
+          "mode": "hybrid",
+          "method": "axis1_cut1",
+          "paired_added_blood_nrmse_original": 0.3957866468478141,
+          "paired_added_blood_nrmse_port": 0.3957866468478141,
+          "absolute_difference": 0.0
+        },
+        {
+          "mode": "reference",
+          "method": "svd_cut1",
+          "paired_added_blood_nrmse_original": 0.5455873845764737,
+          "paired_added_blood_nrmse_port": 0.5455873845764737,
+          "absolute_difference": 0.0
+        },
+        {
+          "mode": "reference",
+          "method": "axis1_cut1",
+          "paired_added_blood_nrmse_original": 0.3938020158032182,
+          "paired_added_blood_nrmse_port": 0.3938020158032182,
+          "absolute_difference": 0.0
+        }
+      ]
+    },
+    {
+      "case": "2333_rigid",
+      "seed": 2333,
+      "motion": "rigid",
+      "flow_scale": 1.0,
+      "source_report_sha256": "b08bd693a2b55d83363f26f0c102ba9dffb25c7b76f17506eeffbfb9e9e194e7",
+      "core_iq_sha256": "bbe77bc4659c39e4ddf5492753c20da4db66b1633555ce084eac70cf669a46ee",
+      "wide_iq_sha256": "a7b2ba1d904899bb003803b8620654e9a0c33fdef36c5c650455585e6e269806",
+      "selected_mode": "hybrid",
+      "wide_pixels": 192,
+      "core_pixels": 40,
+      "calibration_gate_pass": true,
+      "rows": [
+        {
+          "input": "mixture",
+          "mode": "none",
+          "method": "roundtrip",
+          "relative_output_error": 0.0,
+          "output_sha256": "bfd6839d5e974381f2dcb2683177b6eb43260a54be22936125d145a2e6e1a052"
+        },
+        {
+          "input": "mixture",
+          "mode": "none",
+          "method": "svd_cut1",
+          "relative_output_error": 0.0,
+          "output_sha256": "3fa3f99fd0c018094bf24a4d62ac68189b8d677db20789327310b0ff483cd9e5"
+        },
+        {
+          "input": "mixture",
+          "mode": "none",
+          "method": "axis1_cut1",
+          "relative_output_error": 0.0,
+          "output_sha256": "d4bf1e507b5d620d48e581226beba0a603b95662cdd7ee96251943d1ea7d7f3b"
+        },
+        {
+          "input": "mixture",
+          "mode": "hybrid",
+          "method": "roundtrip",
+          "relative_output_error": 0.0,
+          "output_sha256": "45a66cce529c1a7ec4bbb7def983c52d70bcf58eae4cce0fec8eec292c882e3f"
+        },
+        {
+          "input": "mixture",
+          "mode": "hybrid",
+          "method": "svd_cut1",
+          "relative_output_error": 0.0,
+          "output_sha256": "4c05d3511450a1076064963a934048ff34416f72d2e387ef22a608f365cc1ecf"
+        },
+        {
+          "input": "mixture",
+          "mode": "hybrid",
+          "method": "axis1_cut1",
+          "relative_output_error": 0.0,
+          "output_sha256": "5cf663d2274e9e4748ebea25836d5d78e719729fa57c7f0012244a0bd7aab55a"
+        },
+        {
+          "input": "mixture",
+          "mode": "reference",
+          "method": "roundtrip",
+          "relative_output_error": 0.0,
+          "output_sha256": "de5f05b9103ee919613544df8740252623b110a66be875ede05588220df28cc4"
+        },
+        {
+          "input": "mixture",
+          "mode": "reference",
+          "method": "svd_cut1",
+          "relative_output_error": 0.0,
+          "output_sha256": "982ea39c325a0bd58e0e465fd96e55c0168bb473f5d97c811286ee2f2a96c4df"
+        },
+        {
+          "input": "mixture",
+          "mode": "reference",
+          "method": "axis1_cut1",
+          "relative_output_error": 0.0,
+          "output_sha256": "e3734e24808fd5d7a71c54cb348e73bcdc93510d6cdfb269444538d9dc00fb1b"
+        },
+        {
+          "input": "background",
+          "mode": "none",
+          "method": "roundtrip",
+          "relative_output_error": 0.0,
+          "output_sha256": "5fc1e5bb0a6829926fe3d217a9fb2fb483fb4cf7d4db26aa33e1fdcfadef02e0"
+        },
+        {
+          "input": "background",
+          "mode": "none",
+          "method": "svd_cut1",
+          "relative_output_error": 0.0,
+          "output_sha256": "7d9ad915a642da76b9d7eb6d68965dd27a0f73db073c5b7df50a5e288363e004"
+        },
+        {
+          "input": "background",
+          "mode": "none",
+          "method": "axis1_cut1",
+          "relative_output_error": 0.0,
+          "output_sha256": "6c324be9e1afe727d07235e88c528ea2e9b7e47452c097216fde78a86150ccb6"
+        },
+        {
+          "input": "background",
+          "mode": "hybrid",
+          "method": "roundtrip",
+          "relative_output_error": 0.0,
+          "output_sha256": "c92364095f65199933be575b65ac319a7a5e924087b1c2ba2fe208f68358959d"
+        },
+        {
+          "input": "background",
+          "mode": "hybrid",
+          "method": "svd_cut1",
+          "relative_output_error": 0.0,
+          "output_sha256": "d063b92bf7b63a7569cf50379f2a2d2477e6d689be0c8a29ba0586c6f39bf8ad"
+        },
+        {
+          "input": "background",
+          "mode": "hybrid",
+          "method": "axis1_cut1",
+          "relative_output_error": 0.0,
+          "output_sha256": "af976da4365f2e79324fa5a6ad33db37d15903c1f13f112db6b0595876f8751c"
+        },
+        {
+          "input": "background",
+          "mode": "reference",
+          "method": "roundtrip",
+          "relative_output_error": 0.0,
+          "output_sha256": "c0d21ae94ce2d5a9a1b03adda9be74a3e087e399c92a8ce714007b6e0ac4dab3"
+        },
+        {
+          "input": "background",
+          "mode": "reference",
+          "method": "svd_cut1",
+          "relative_output_error": 0.0,
+          "output_sha256": "391aebdc6450200a4d3f721d380f2bfd48c049f208842d2b776b62a826eb5853"
+        },
+        {
+          "input": "background",
+          "mode": "reference",
+          "method": "axis1_cut1",
+          "relative_output_error": 0.0,
+          "output_sha256": "4e6130b59e5dbd605b4d128d5976b2b18e29949716a01d7ec1d18728a5542323"
+        }
+      ],
+      "paired_rows": [
+        {
+          "mode": "none",
+          "method": "svd_cut1",
+          "paired_added_blood_nrmse_original": 0.557198077932286,
+          "paired_added_blood_nrmse_port": 0.557198077932286,
+          "absolute_difference": 0.0
+        },
+        {
+          "mode": "none",
+          "method": "axis1_cut1",
+          "paired_added_blood_nrmse_original": 0.5045536557041547,
+          "paired_added_blood_nrmse_port": 0.5045536557041547,
+          "absolute_difference": 0.0
+        },
+        {
+          "mode": "hybrid",
+          "method": "svd_cut1",
+          "paired_added_blood_nrmse_original": 0.5695421531053632,
+          "paired_added_blood_nrmse_port": 0.5695421531053632,
+          "absolute_difference": 0.0
+        },
+        {
+          "mode": "hybrid",
+          "method": "axis1_cut1",
+          "paired_added_blood_nrmse_original": 0.44313984696753067,
+          "paired_added_blood_nrmse_port": 0.44313984696753067,
+          "absolute_difference": 0.0
+        },
+        {
+          "mode": "reference",
+          "method": "svd_cut1",
+          "paired_added_blood_nrmse_original": 0.5458671187864816,
+          "paired_added_blood_nrmse_port": 0.5458671187864816,
+          "absolute_difference": 0.0
+        },
+        {
+          "mode": "reference",
+          "method": "axis1_cut1",
+          "paired_added_blood_nrmse_original": 0.5054514738261372,
+          "paired_added_blood_nrmse_port": 0.5054514738261372,
+          "absolute_difference": 0.0
+        }
+      ]
+    },
+    {
+      "case": "2309_reference",
+      "seed": 2309,
+      "motion": "rigid",
+      "flow_scale": 1.0,
+      "source_report_sha256": "76fcb52bdb939f3b318e3bca76c881c9f286476e33f60271d45ef65f34a47013",
+      "core_iq_sha256": "7fd228e7dd201b6fe3e7f10da188ed4dd9b0b6ba680516c2dccd2ccd3c53e006",
+      "wide_iq_sha256": "faa5ac7c0148b9e1e7e693002f733bf17d0e23d6b053dc10c69871dc31befd2e",
+      "selected_mode": "reference",
+      "wide_pixels": 192,
+      "core_pixels": 40,
+      "calibration_gate_pass": true,
+      "rows": [
+        {
+          "input": "mixture",
+          "mode": "none",
+          "method": "roundtrip",
+          "relative_output_error": 0.0,
+          "output_sha256": "8c5a2b87c336803b057cc3300c5a30d14c01597ffa9e320752d0c6df9c46cb3c"
+        },
+        {
+          "input": "mixture",
+          "mode": "none",
+          "method": "svd_cut1",
+          "relative_output_error": 0.0,
+          "output_sha256": "3b73e4518020a672923f9093e32d17dcb000b621efe7be11897e54a195affd90"
+        },
+        {
+          "input": "mixture",
+          "mode": "none",
+          "method": "axis1_cut1",
+          "relative_output_error": 0.0,
+          "output_sha256": "8d3cce360eb816f2406eaa157514a643712bf7ea3127a71f5f0fc44b4b2a0d0c"
+        },
+        {
+          "input": "mixture",
+          "mode": "hybrid",
+          "method": "roundtrip",
+          "relative_output_error": 0.0,
+          "output_sha256": "ed0c614e242a76486f5062f31d1f8072503053e5a4b1f13bb6b2811e1809ddc7"
+        },
+        {
+          "input": "mixture",
+          "mode": "hybrid",
+          "method": "svd_cut1",
+          "relative_output_error": 0.0,
+          "output_sha256": "19ae69dc6d4a455e9efc93ee1014dfc7fb3ac74f4a9b81a28d4ed5a433b62752"
+        },
+        {
+          "input": "mixture",
+          "mode": "hybrid",
+          "method": "axis1_cut1",
+          "relative_output_error": 0.0,
+          "output_sha256": "fd2615afcf56075b29e7f7cf49e29153f7bb055991f0d1e5e86b22338a390813"
+        },
+        {
+          "input": "mixture",
+          "mode": "reference",
+          "method": "roundtrip",
+          "relative_output_error": 0.0,
+          "output_sha256": "250bb95064cbfb377a74f4399a049d19aefa7a5367e1ef7012d940a950f88190"
+        },
+        {
+          "input": "mixture",
+          "mode": "reference",
+          "method": "svd_cut1",
+          "relative_output_error": 0.0,
+          "output_sha256": "ecdb1c542a077ff8e9bb99d8e1abf9f047caad3f4a73bef1820e2154dcdf21f9"
+        },
+        {
+          "input": "mixture",
+          "mode": "reference",
+          "method": "axis1_cut1",
+          "relative_output_error": 0.0,
+          "output_sha256": "0f8e6acf6e8547913a2ff5329cf55a5ca591d86aff13c97d2d7fb687037f5a91"
+        },
+        {
+          "input": "background",
+          "mode": "none",
+          "method": "roundtrip",
+          "relative_output_error": 0.0,
+          "output_sha256": "4d37b2f946e6b2755e32d62fe8fa98f7828355d5b1cba4e3e3200e96803c18ba"
+        },
+        {
+          "input": "background",
+          "mode": "none",
+          "method": "svd_cut1",
+          "relative_output_error": 0.0,
+          "output_sha256": "318b7dc12b641ef7e8c205f8a1579eb3cc7213b35f8e2b515789a8af098742bd"
+        },
+        {
+          "input": "background",
+          "mode": "none",
+          "method": "axis1_cut1",
+          "relative_output_error": 0.0,
+          "output_sha256": "f61acb2d657a118af5967fc80b1b128554c4ba564cb656e6fccd923c53dda071"
+        },
+        {
+          "input": "background",
+          "mode": "hybrid",
+          "method": "roundtrip",
+          "relative_output_error": 0.0,
+          "output_sha256": "a81b9696e755ccf1b985aea3e3171dde3d317cae3aa2581dff5899344160650f"
+        },
+        {
+          "input": "background",
+          "mode": "hybrid",
+          "method": "svd_cut1",
+          "relative_output_error": 0.0,
+          "output_sha256": "a8b8fd3f63116ecc3ceb0598f0744050dea5b676c30a1de40a18a6596b15c099"
+        },
+        {
+          "input": "background",
+          "mode": "hybrid",
+          "method": "axis1_cut1",
+          "relative_output_error": 0.0,
+          "output_sha256": "d566d86f19a7eca399b19e2c622843fd0541206690370319cacd3ea70f2e8419"
+        },
+        {
+          "input": "background",
+          "mode": "reference",
+          "method": "roundtrip",
+          "relative_output_error": 0.0,
+          "output_sha256": "509e6f025cd2c26f53a2a054f1b14c3e6e7243abc6799ddc49efc942c01ba1dd"
+        },
+        {
+          "input": "background",
+          "mode": "reference",
+          "method": "svd_cut1",
+          "relative_output_error": 0.0,
+          "output_sha256": "39ff541c45ff568bc6c0eae6c51422b67eb9376e29846b64e54f2258d3b84a73"
+        },
+        {
+          "input": "background",
+          "mode": "reference",
+          "method": "axis1_cut1",
+          "relative_output_error": 0.0,
+          "output_sha256": "7d703ceb306bfc86a9d494366bbef53ae7215378c0db757244e92358883a258e"
+        }
+      ],
+      "paired_rows": [
+        {
+          "mode": "none",
+          "method": "svd_cut1",
+          "paired_added_blood_nrmse_original": 0.06328853898146239,
+          "paired_added_blood_nrmse_port": 0.06328853898146239,
+          "absolute_difference": 0.0
+        },
+        {
+          "mode": "none",
+          "method": "axis1_cut1",
+          "paired_added_blood_nrmse_original": 0.08723096210755561,
+          "paired_added_blood_nrmse_port": 0.08723096210755561,
+          "absolute_difference": 0.0
+        },
+        {
+          "mode": "hybrid",
+          "method": "svd_cut1",
+          "paired_added_blood_nrmse_original": 0.07596786962703647,
+          "paired_added_blood_nrmse_port": 0.07596786962703647,
+          "absolute_difference": 0.0
+        },
+        {
+          "mode": "hybrid",
+          "method": "axis1_cut1",
+          "paired_added_blood_nrmse_original": 0.09260781720026719,
+          "paired_added_blood_nrmse_port": 0.09260781720026719,
+          "absolute_difference": 0.0
+        },
+        {
+          "mode": "reference",
+          "method": "svd_cut1",
+          "paired_added_blood_nrmse_original": 0.0810617160992636,
+          "paired_added_blood_nrmse_port": 0.0810617160992636,
+          "absolute_difference": 0.0
+        },
+        {
+          "mode": "reference",
+          "method": "axis1_cut1",
+          "paired_added_blood_nrmse_original": 0.10306966265861559,
+          "paired_added_blood_nrmse_port": 0.10306966265861559,
+          "absolute_difference": 0.0
+        }
+      ]
+    }
+  ],
+  "limitation": "Engineering equivalence on Example 22 IQ, not physical phantom validation."
+}

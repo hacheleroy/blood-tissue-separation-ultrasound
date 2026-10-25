@@ -109,6 +109,8 @@ def review(root, acquisitions, configurations, scores, output):
     result={'status':('incomplete design comparison' if missing else
                       'design candidate found' if passing else 'no design candidate passes'),
             'phase6_split_sha256':sha(root/'configs/esdiva_phase6_split.json'),
+            'phase6_trial_rules_sha256':sha(root/'configs/esdiva_phase6_trial_rules.json'),
+            'review_script_sha256':sha(__file__),
             'source_freeze_sha256':sha(root/'configs/esdiva_phase5_freeze.json'),
             'selected_trial':passing[0]['trial'] if passing else None,
             'prospective_seed_unopened':2333,'reserved_seeds_unopened':[2401,2411],

@@ -6,6 +6,18 @@ source audits and scores, [locked decision](runs/esdiva_phase5_heldout/decision.
 and [diagnostic figure](docs/figures/esdiva_phase5_heldout_gates.png) are published.
 The reserved seeds are now opened and must not be used for retuning.
 
+The subsequent [phase-6 design study](docs/ESDIVA_PHASE6_DESIGN_RESULT.md)
+ran twelve declared calibration and motion trials on fresh development seeds
+2309 and 2311, with eight source-resolved scenes and an auditable
+[decision](runs/esdiva_phase6_design/decision.json). **No candidate passed**
+the unchanged paired blood and moving-tissue gate. The small core calibration
+failed on seed 2309 but passed on seed 2311; wider tissue support allowed
+scoring on both, yet rigid-motion benefit was not robust across seeds.
+Prospective development seed 2333 and fresh reserve 2401/2411 remain unopened.
+The [phase-5-to-phantom geometry bridge](docs/PHANTOM_PHASE5_BRIDGE.md) is
+preregistered conditionally; its pre-capture card requires a future successful
+simulation reserve decision and actual measured hardware geometry.
+
 The root README is included in the earlier 66-file development freeze and
 retains its pre-held-out wording as a historical record. This file records the
 later outcome without changing that freeze. Physical phantom validation remains

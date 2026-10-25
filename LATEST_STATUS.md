@@ -18,6 +18,16 @@ The [phase-5-to-phantom geometry bridge](docs/PHANTOM_PHASE5_BRIDGE.md) is
 preregistered conditionally; its pre-capture card requires a future successful
 simulation reserve decision and actual measured hardware geometry.
 
+The subsequent [phase-7 boundary-aware complex reference transport
+study](docs/ESDIVA_PHASE7_DESIGN_RESULT.md) froze its source and decision
+before generating new RF on development seeds 2503 and 2521. Its
+[complete decision](runs/esdiva_phase7_design/decision.json) is **no qualified
+candidate**: all four 2503 scenes miss the frozen wide-coherence input gate;
+2521 is eligible but rigid motion raises paired blood error and more than
+doubles tissue leakage, while slow motion more than doubles leakage. The
+source-resolved audits and all sixteen old/new score records are retained.
+No phase-7 candidate is released to prospective 2333 or the 2401/2411 reserve.
+
 The root README is included in the earlier 66-file development freeze and
 retains its pre-held-out wording as a historical record. This file records the
 later outcome without changing that freeze. Physical phantom validation remains

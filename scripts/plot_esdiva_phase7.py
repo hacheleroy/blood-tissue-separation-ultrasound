@@ -1,0 +1,60 @@
+"""Render the fixed phase-7 paired motion gates from the archived decision."""
+
+import argparse
+import json
+from pathlib import Path
+
+import matplotlib.pyplot as plt
+
+plt.rcParams['svg.fonttype'] = 'none'
+
+
+def plot(decision_path, output_path):
+    decision = json.loads(Path(decision_path).read_text())
+    if decision['missing']:
+        raise ValueError('The phase-7 development decision is incomplete')
+    seeds = (2309, 2311, 2503, 2521)
+    scenes = ('rigid_fast', 'smooth_slow')
+    colors = dict(zip(seeds, ('#4c78a8', '#f58518', '#54a24b', '#b279a2')))
+    methods = {'svd_cut1': 'o', 'axis1_cut1': 's'}
+    fig, axes = plt.subplots(1, 2, figsize=(10.2, 4.3), sharey=True, constrained_layout=True)
+    for ax, scene in zip(axes, scenes):
+        for row in decision['rows']:
+            if row['scene'] != scene:
+                continue
+            ax.scatter(row['tissue_leakage_ratio'], row['blood_nrmse_increase'],
+                       c=colors[row['seed']], marker=methods[row['method']],
+                       edgecolors='black', linewidths=.45, s=58, zorder=3)
+        ax.axvline(.9, color='#555555', linestyle='--', linewidth=1)
+        ax.axhline(.02, color='#555555', linestyle='--', linewidth=1)
+        ax.set_title('Rigid fast flow' if scene == 'rigid_fast' else 'Smooth tissue, slow flow')
+        ax.set_xlabel('Tissue leakage ratio to no correction (≤ 0.900)')
+        ax.grid(alpha=.2, zorder=0)
+        ax.margins(.12)
+    axes[0].set_ylabel('Paired blood NRMSE increase (≤ 0.020)')
+    from matplotlib.lines import Line2D
+    scored_seeds = {row['seed'] for row in decision['rows']}
+    legend = [Line2D([0], [0], marker='o', color='none', markerfacecolor=colors[s],
+                     markeredgecolor='black', markersize=7, label=str(s))
+              for s in seeds if s in scored_seeds]
+    legend += [Line2D([0], [0], marker=m, color='none', markerfacecolor='white',
+                      markeredgecolor='black', markersize=7, label=n)
+               for n, m in [('SVD cutoff 1', 'o'), ('Axis 1 cutoff 1', 's')]]
+    fig.legend(handles=legend, ncol=6, loc='lower center', bbox_to_anchor=(.5, -.075), frameon=False)
+    fig.suptitle('Phase 7 · boundary-aware complex reference transport', fontsize=13)
+    omitted = sorted(set(seeds) - scored_seeds)
+    if omitted:
+        fig.text(.5, -.08, 'Unscored seeds: ' + ', '.join(map(str, omitted)) +
+                 ' (input gate failed)', ha='center', fontsize=9)
+    output_path = Path(output_path)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    fig.savefig(output_path, bbox_inches='tight', metadata={'Creator':'btbench phase-7 decision'})
+    plt.close(fig)
+
+
+if __name__ == '__main__':
+    p = argparse.ArgumentParser(description=__doc__)
+    p.add_argument('--decision', type=Path, required=True)
+    p.add_argument('--output', type=Path, required=True)
+    a = p.parse_args()
+    plot(a.decision, a.output)

@@ -25,7 +25,10 @@ support. This diagnostic does not claim a physical edge model.
 
 The fixed candidate was scored on all four scenes of the already seen 2309
 and 2311 clouds before new RF. Its paired response relative to the unchanged
-no-motion filter is:
+no-motion filter is archived in [eight compact scores](../runs/esdiva_phase7_design/).
+The [partial review](../runs/esdiva_phase7_design/partial_decision.json)
+records the expected eight missing new-development scenes
+and the old-development failures. The principal moving-scene responses are:
 
 | Seed / scene | SVD blood NRMSE increase | SVD tissue ratio | Axis 1 blood increase | Axis 1 tissue ratio |
 |:--|--:|--:|--:|--:|

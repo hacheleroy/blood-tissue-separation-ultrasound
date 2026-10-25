@@ -18,13 +18,13 @@ wide-tile magnitude and disjoint fit/validation tissue pixels. Predict the
 *complex* calibration reference at translated coordinates inside its measured
 32×16 support, with an explicit validity mask at the axial/lateral boundary.
 The phase between the transported and resting references supplies a
-speckle-transport term; a spatially smoothed residual phase is estimated only
-from tissue pixels. Apply a validated unit-magnitude phase factor to the
+speckle-transport term. Apply a validated unit-magnitude phase factor to the
 original eight-row IQ core and invert it exactly after filtering. No cyclic
 wrap, IQ interpolation of blood, isolated source, or known displacement enters
 the fit. The calibration reference may be interpolated only at in-bounds
-coordinates; invalid/low-reference support falls back to the validated
-residual term or zero correction. Report how often this fallback is used.
+coordinates; invalid/low-reference support receives zero correction. Report
+how often this fallback is used. A residual-phase alternative was explored
+on seen development data and rejected before the fixed diagnostic was chosen.
 
 Use the same paired source-resolved SVD cutoff-1 and **Axis 1:
 Motion-compensated virtual long ensemble** cutoff-1 responses, exact
@@ -46,3 +46,6 @@ permits a separate freeze before the still-unopened prospective 2333; only a
 later 2333 pass permits using the fresh 2401/2411 reserve. The conditional
 [phantom geometry bridge](PHANTOM_PHASE5_BRIDGE.md) remains a preacquisition
 contract and does not authorize physical validation in this phase.
+
+The selected diagnostic and its already observed old-development failures are
+recorded in [the frozen diagnostic](ESDIVA_PHASE7_FROZEN_DIAGNOSTIC.md).

@@ -57,7 +57,7 @@ def verify_protocol(root):
     return protocol
 
 
-def run(root, upstream_root, output_root, seed, scene):
+def run(root, upstream_root, output_root, seed, scene, resume=False):
     root,upstream_root,output_root=map(lambda p:Path(p).resolve(),
                                        (root,upstream_root,output_root))
     freeze=root/'configs/esdiva_phase5_freeze.json'
@@ -72,17 +72,25 @@ def run(root, upstream_root, output_root, seed, scene):
         raise ValueError('Upstream simulator is not the pinned commit')
     spec=config['scenes'][scene]
     folder=output_root/str(seed)/scene
-    if folder.exists():raise FileExistsError(f'Will not reuse an output folder: {folder}')
-    folder.parent.mkdir(parents=True,exist_ok=True)
-    report=acquire(upstream_root,folder,seed=seed,
-                   scatterer_fraction=config['scatterer_fraction'],
-                   calibration_frames=config['calibration_frames'],
-                   evaluation_frames=config['evaluation_frames'],
-                   motion=spec['motion'],flow_scale=spec['flow_scale'])
-    verify_freeze(root,freeze,seed,scene,report)
+    if resume:
+        if not (folder/'report.json').is_file() or not (folder/'iq_sources.npz').is_file():
+            raise FileNotFoundError('A complete, saved RF acquisition is required for replay')
+    else:
+        if folder.exists():raise FileExistsError(f'Will not reuse an output folder: {folder}')
+        folder.parent.mkdir(parents=True,exist_ok=True)
+        acquire(upstream_root,folder,seed=seed,
+                scatterer_fraction=config['scatterer_fraction'],
+                calibration_frames=config['calibration_frames'],
+                evaluation_frames=config['evaluation_frames'],
+                motion=spec['motion'],flow_scale=spec['flow_scale'])
+    # Acquisition serializes the view tuple as a JSON list. Verify the saved
+    # source record that all later replay and scoring stages consume.
+    verify_freeze(root,freeze,seed,scene,json.loads((folder/'report.json').read_text()))
     broad=folder/'broad_iq.npz'
-    rebeam(folder,upstream_root,broad)
-    score=evaluate(folder,broad,config_path,folder/'score.json')
+    if not broad.exists():rebeam(folder,upstream_root,broad)
+    score_path=folder/'score.json'
+    if score_path.exists():raise FileExistsError(score_path)
+    score=evaluate(folder,broad,config_path,score_path)
     if score['seed']!=seed or score['scene']!=scene:
         raise AssertionError('Reserved score label mismatch')
     return {"seed":seed,"scene":scene,"status":score['status'],
@@ -97,4 +105,5 @@ if __name__=='__main__':
     p.add_argument('--output-root',type=Path,required=True)
     p.add_argument('--seed',type=int,required=True)
     p.add_argument('--scene',required=True)
-    a=p.parse_args();print(json.dumps(run(a.root,a.upstream_root,a.output_root,a.seed,a.scene)))
+    p.add_argument('--resume',action='store_true',help='Score a saved complete acquisition without regenerating RF')
+    a=p.parse_args();print(json.dumps(run(a.root,a.upstream_root,a.output_root,a.seed,a.scene,a.resume)))

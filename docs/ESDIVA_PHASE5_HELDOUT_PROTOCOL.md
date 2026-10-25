@@ -42,3 +42,14 @@ itself demonstrates preservation of all slow blood,
 an exact geometric displacement field, or physical phantom validity. Actual
 phantom validation requires an acquired phantom RF dataset and independent
 motion/flow references.
+
+## Execution amendment after first RF capture
+
+The first seed 2081 stationary RF capture completed before an orchestration
+error stopped scoring: the in-memory transmit-view tuple was compared against
+the equivalent JSON list. The saved `report.json` already contains the frozen
+list. The runner now verifies that saved report and can resume a complete
+acquisition without simulating RF again. This amendment changes only the
+runner and its manifest hashes; the published source, scene schedule, score
+code, decision code, and thresholds remain fixed. Each resumed run verifies
+the full RF source hashes, noise replay, and original IQ tile before scoring.

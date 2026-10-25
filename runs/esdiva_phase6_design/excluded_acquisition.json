@@ -1,0 +1,16 @@
+{
+  "status": "excluded before scoring; not a declared design scene",
+  "seed": 2311,
+  "attempted_scene": "smooth_slow",
+  "acquired_motion": "smooth",
+  "acquired_flow_scale": 0.18,
+  "declared_flow_scale": 0.02,
+  "acquisition_report_sha256": "f785c2e78277b58394bc02a40a627be733f9e897a4ab540052a91e33d4c74d9b",
+  "wide_replay_audit_sha256": "58fe5c6aa27173942592c3fbabf636fe0d788c9438ba086998c27a5adaf25340",
+  "phase6_split_sha256": "0c2237d63f54a46a4e67b0f621e0dc2c28db9fa5241d9fd8e29b6fb042545e8d",
+  "trial_rules_sha256": "756a60c4e42b62fc09d155c07420fc137a03b9334d85a1fbb08bed48f1fdacda",
+  "scorer_rejection": "ValueError: Unknown scene",
+  "scores_created": 0,
+  "candidate_selection_use": false,
+  "resolution": "The declared 0.02 scene was independently reacquired under seed 2311 and scored with the unchanged trial configurations."
+}

@@ -1,0 +1,42 @@
+{
+  "study": "phantom_phase5_bridge",
+  "status": "conditional preregistration; no physical data, card or confirmed phase-6 candidate",
+  "date_utc": "2026-10-25",
+  "phase6_split_sha256": "0c2237d63f54a46a4e67b0f621e0dc2c28db9fa5241d9fd8e29b6fb042545e8d",
+  "phantom_v07_freeze_sha256": "a6c320f7f366a5f968fd62ce7b103b0290d3abd20dda565bce52ced55a14ae53",
+  "source_commit": "ab7eaef6d23428762ab5b9079ab03a5aa99af085",
+  "n_views": 3,
+  "target_tx_angles_deg": [0.0, -5.0, 5.0],
+  "maximum_tx_angle_error_deg": 0.5,
+  "wide_shape_zx": [32, 16],
+  "core_rows_zero_based": [12, 13, 14, 15, 16, 17, 18, 19],
+  "calibration_acquired_frames": 64,
+  "calibration_used_frames_zero_based": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+  "evaluation_frames": 256,
+  "history_frames": 64,
+  "score_start_frame": 64,
+  "packet_frames": 16,
+  "minimum_wide_tissue_pixels": 128,
+  "minimum_core_tissue_pixels": 40,
+  "minimum_tissue_score_pixels": 8,
+  "minimum_flow_pixels": 8,
+  "minimum_flow_guard_pixels": 1,
+  "minimum_fit_tissue_pixels": 80,
+  "minimum_check_tissue_pixels": 40,
+  "reference_and_filter_separation": "Optical/DIC motion and flowmeter/PIV are evaluation-only; phase fit uses current ultrasound IQ, prior stationary tissue calibration, measured geometry and preacquisition structural masks",
+  "physical_endpoints": {
+    "mean_pump_response_retention_lower_95_min": 0.8,
+    "mean_tissue_leakage_upper_95_max": 0.1,
+    "moving_phase_to_none_leakage_ratio_upper_95_max": 0.9,
+    "moving_phase_minus_none_pump_retention_lower_95_min": -0.02,
+    "bootstrap_triplets": 2000,
+    "repeats_per_motion_speed_cell": 5,
+    "minimum_input_pump_excess_over_off": 0.5,
+    "minimum_band_bins": 6,
+    "doppler_band_cycles_per_same_view_frame": {
+      "slow": [0.005, 0.05],
+      "nominal": [0.02, 0.25]
+    }
+  },
+  "gate_policy": "All six motion-by-speed cells must be eligible and pass whole-triplet bootstrap bounds; a missing or inconclusive cell blocks a physical validation claim. This is conditional on a fresh phase-6 simulation reserve pass and a hash-locked candidate/physical acquisition card before the first physical capture."
+}

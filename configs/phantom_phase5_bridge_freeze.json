@@ -1,0 +1,16 @@
+{
+  "date_utc": "2026-10-25",
+  "files_sha256": {
+    "configs/phantom_phase5_bridge.json": "c2a7f0203f91a7595e44cd5a62b1d1a825f90086483cdaaeba5f180eb626bed2",
+    "docs/PHANTOM_PHASE5_BRIDGE.md": "4d82fec617297b08e0e3209d711d30e300d79aaf531dbd5a3b32b1d7178ac50a",
+    "scripts/phantom_phase5_bridge.py": "9d9b96f34053835b22673004d8da7e9619e66e2f2392b25c2d67f10ae55ba46e"
+  },
+  "required_before_capture": [
+    "successful fresh phase-6 reserved decision",
+    "hash-locked phase-6 candidate and physical port",
+    "measured and hash-locked hardware acquisition card",
+    "structural masks and independent reference calibration"
+  ],
+  "status": "conditional preregistration; no phantom capture",
+  "study": "phantom_phase5_bridge"
+}

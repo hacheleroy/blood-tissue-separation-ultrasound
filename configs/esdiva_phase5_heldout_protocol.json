@@ -1,0 +1,43 @@
+{
+  "decision": "Run all four fixed scenes on each of 2081 and 2093 once. Apply identical phase-5 paired thresholds to all eight records. No retuning or reclassification after opening.",
+  "development_freeze_sha256": "84410951ce053aaa59f57945598e364fd06acd13c22d22071d447b80059caf34",
+  "files_sha256": {
+    "configs/esdiva_phase5_candidate.json": "58598072e7a48b4e89e9ee9322a6a2a3cbe774397397e89649dc6ce84412b54e",
+    "configs/esdiva_phase5_freeze.json": "84410951ce053aaa59f57945598e364fd06acd13c22d22071d447b80059caf34",
+    "docs/ESDIVA_PHASE5_HELDOUT_PROTOCOL.md": "46be9213bd2bc44d9081f80ef883dc703f98922fc898834c8e91996c0e238a7c",
+    "examples/esdiva_phase2_acquire.py": "378f3cb1b40f640ced32fefc57441feb9da2373305dd4ef8f7d9ad188ebf9667",
+    "examples/esdiva_phase5_decide.py": "f613e07201127fb099212aa8cf75b84170e5d83efd267d8d9ce23f345e5f7716",
+    "examples/esdiva_phase5_heldout_decide.py": "0d5c6bf5f510be7a1200bb1b9913b8e4d677212a6b4cda4132ff730f066a5420",
+    "examples/esdiva_phase5_heldout_score.py": "bdd69ad6e436378a282cbe8d48c90b3740b4e421c07da2e3558f85392bd897b5",
+    "examples/esdiva_phase5_local_phase.py": "1fde0c56b3c8329e2b962b7acf16afbcb69d9d885b5924222cdd2feac8d35c5c",
+    "examples/esdiva_phase5_rebeam.py": "a421905beb87607274c83174e44741bbca7d0457734a9a197325a51e977f0991",
+    "examples/esdiva_phase5_review_heldout.py": "0130bb1ba5187a7a29b82c2399d564a0d21cfb64252d622cf98541a44af725b3",
+    "examples/esdiva_phase5_run_heldout.py": "978060ef35cc301317cfdb561c313c061c7f245eab2dd35c7e3f198a8ce11b15",
+    "examples/esdiva_phase5_score.py": "7c663b6ff07faf02c83381d6cdfed91991ad08b37107cbe14f39244ddf202533"
+  },
+  "numerical_source_sha256": "8587a156b3283238920777e96cd059d72203d5a9638a61f5cc43876324cd4e13",
+  "reserved_heldout_seeds": [
+    2081,
+    2093
+  ],
+  "scenes": {
+    "rigid_fast": {
+      "flow_scale": 1.0,
+      "motion": "rigid"
+    },
+    "smooth_slow": {
+      "flow_scale": 0.02,
+      "motion": "smooth"
+    },
+    "smooth_zero": {
+      "flow_scale": 0.0,
+      "motion": "smooth"
+    },
+    "stationary_fast": {
+      "flow_scale": 1.0,
+      "motion": "none"
+    }
+  },
+  "status": "phase-5 reserved-bank execution frozen before opening",
+  "upstream_commit": "ab7eaef6d23428762ab5b9079ab03a5aa99af085"
+}

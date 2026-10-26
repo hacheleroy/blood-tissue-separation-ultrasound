@@ -1,0 +1,86 @@
+{
+  "source_dataset": "nvidia/Open-H-RF/resolvestroke/phantom_flow/phantom_flow.hdf5",
+  "source_hf_revision": "05234aa084b27c8e4d0096c3a9adc33fbbc123d8",
+  "source_sha256": "40908ca699f3b88d9cdcdc4cabf9f1e07d481baec901b7044132e42c41f768f5",
+  "source_size_bytes": 5250744320,
+  "source_readme_blob": "cd025e6e60357b84591b622e20f1bb6188752962",
+  "zea_version": "0.1.6",
+  "source_frames_per_clip": 4000,
+  "clips": [
+    "baseline_minus1s",
+    "baseline_plus5s",
+    "baseline_plus10s",
+    "baseline_plus15s",
+    "baseline_plus20s"
+  ],
+  "frame_rate_hz": 4000.0,
+  "window_frames": 256,
+  "window_starts_relative": [
+    80,
+    336,
+    592,
+    848,
+    1104,
+    1360,
+    1616,
+    1872,
+    2128,
+    2384,
+    2640,
+    2896,
+    3152,
+    3408,
+    3664
+  ],
+  "beamform_block_frames": 32,
+  "grid": {
+    "x_target_m": -0.005,
+    "y_absolute_max_m": 0.023,
+    "z_min_m": 0.062,
+    "z_max_m": 0.096,
+    "coordinate_source": "custom/computed_references/coordinates, nearest x plane; no IQ-driven positioning"
+  },
+  "mask": {
+    "source": "custom/computed_references/tube_mask",
+    "labels": {
+      "four_mm_tube": 1,
+      "two_mm_tube": 2
+    },
+    "outside_guard_pixels": 2,
+    "depth_match_margin_m": 0.002,
+    "policy": "ground-truth geometry used only for evaluation and fixed anatomical crop, never filter fitting or threshold choice"
+  },
+  "study": "resolvestroke_spatial_geometry_exploratory",
+  "status": "fixed before cross-plane filter scoring; separate from phase-10 physical gate",
+  "x_indices": [
+    25,
+    52,
+    77,
+    105,
+    132
+  ],
+  "window_indices": [
+    0,
+    7,
+    14
+  ],
+  "methods": {
+    "raw": "complex DAS IQ with hardware TGC reversed",
+    "svd_cut1": "global spatial Casorati SVD, discard first singular mode on each 256-frame window",
+    "highpass_100hz": "third-order zero-phase Butterworth high-pass at 100 Hz on each 256-frame window"
+  },
+  "variants": [
+    "original",
+    "dilate_cross_1px",
+    "shift_z_minus_1px",
+    "shift_z_plus_1px",
+    "shift_y_minus_1px",
+    "shift_y_plus_1px"
+  ],
+  "outside_policy": "Original, per-tube depth-matched outside mask with >2-pixel guard remains fixed for all anatomical perturbations.",
+  "prior_report_sha256": "7908716a6d8b06a045a5006e62879057337ee44b4b6e311ef6ed5dd69b2fadb3",
+  "prior_script_sha256": "b0066afeadc0b858b90d77899928373afdd87c2d0470dca8d4bc9c1be7547a0a",
+  "pipeline_sha256": "1c2ac58fa23899d3bf44456131d56fc38664d4572d6ba02335dd7d77515f38bb",
+  "script_sha256": "df21e4796d61fac8345a332eab591648e8ffa1a2089d3b3a121367efabb8e339",
+  "limitations": "One contrast-bolus acquisition, single transmit, five structurally selected planes, three correlated windows per clip; geometry is not source-resolved blood or independent flow truth."
+}

@@ -12,6 +12,16 @@ coverage; they are **not** independent replications. The
 make the calculation inspectable. No previous frozen score or filter source
 was edited.
 
+The summary records SHA-256 hashes for all 51 analysis inputs. Twenty-three
+historical inputs were available in the analysis workspace but are not in the
+published repository. Their exact paths are listed in
+`unpublished_source_paths` in the summary. All 51 source hashes were checked
+locally; the CI verifier checks the available source hashes and explicitly
+reports those 23 omissions in a clean checkout. It always checks the complete
+compressed result archive, its row arithmetic, and the replay artifact hashes.
+The omitted inputs mean that a clean checkout cannot regenerate every row
+from the historical source files alone.
+
 ## Definition and what can be calculated
 
 For the same pixels, frames, and IQ representation, define

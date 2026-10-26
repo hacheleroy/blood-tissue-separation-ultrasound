@@ -5,6 +5,7 @@ import io
 import json
 import lzma
 import math
+import argparse
 from collections import Counter
 from pathlib import Path
 
@@ -24,11 +25,22 @@ def source_bytes(relative):
     return b''.join(p.read_bytes() for p in parts)
 
 
-def check():
+def check(require_all_sources=False):
     overview=json.loads((OUT/'summary.json').read_text())
     assert sha((ROOT/'scripts/flow_background_audit.py').read_bytes())==overview['analysis_script_sha256']
+    unpublished=set(overview['unpublished_source_paths'])
+    assert unpublished <= set(overview['sources'])
+    matched=0;unavailable=[]
     for path,digest in overview['sources'].items():
-        assert sha(source_bytes(path))==digest,path
+        try: content=source_bytes(path)
+        except FileNotFoundError:
+            if path not in unpublished:raise
+            unavailable.append(path)
+            continue
+        assert sha(content)==digest,path
+        matched+=1
+    if require_all_sources and unavailable:
+        raise FileNotFoundError('Source archives unavailable: '+', '.join(unavailable))
     compressed=(OUT/'rows.csv.xz').read_bytes()
     assert sha(compressed)==overview['rows_xz_sha256']
     plain=lzma.decompress(compressed)
@@ -57,7 +69,12 @@ def check():
         data=json.loads((OUT/artifact).read_text())
         assert sha((ROOT/'scripts'/script).read_bytes())==data['audit_script_sha256']
     return {'rows':len(rows),'exact_checked':exact,'bounded_checked':bounded,
+            'source_archives_verified':matched,'source_archives_unavailable':len(unavailable),
             'physical_proxy_rows':overview['physical_tube_proxy_rows']}
 
 
-if __name__=='__main__':print(json.dumps(check(),indent=2))
+if __name__=='__main__':
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--require-all-sources',action='store_true')
+    args=parser.parse_args()
+    print(json.dumps(check(require_all_sources=args.require_all_sources),indent=2))

@@ -178,5 +178,30 @@
   "rows_csv_sha256": "e20fea2aca63119f24882d0c984b4921e5919a9361bdb4fe7d9dd140f057100b",
   "rows_xz_sha256": "f507bcb676a9e939b8cf64dd478b71c34c695c34e8406677e755cee1f58b4f4c",
   "physical_tube_proxy_sha256": "d94312fed0515e5d097c64de9cbe4ef2bf2293263c7283dd7767f6c6872e77ae",
-  "physical_tube_proxy_rows": 50
+  "physical_tube_proxy_rows": 50,
+  "unpublished_source_paths": [
+    "runs/axis1_motion_order_v1/development.json",
+    "runs/axis1_motion_order_v1/heldout.json",
+    "runs/axis1_native_subtraction_v1/development.json",
+    "runs/axis1_native_subtraction_v1/heldout.json",
+    "runs/axis1_native_subtraction_v1/seen_diagnostic.json",
+    "runs/axis1_oracle_limit_v1/development.json",
+    "runs/axis1_oracle_limit_v1/heldout.json",
+    "runs/axis1_oracle_limit_v1/seen_diagnostic.json",
+    "runs/axis1_stable_tissue_v1/development.json",
+    "runs/axis1_stable_tissue_v1/heldout.json",
+    "runs/axis1_stable_tissue_v1/seen_diagnostic.json",
+    "runs/esdiva_phase10_reserve/fresh/2401/rigid_fast/score.json",
+    "runs/esdiva_phase10_reserve/fresh/2401/smooth_slow/score.json",
+    "runs/esdiva_phase10_reserve/fresh/2401/smooth_zero/score.json",
+    "runs/esdiva_phase10_reserve/fresh/2401/stationary_fast/score.json",
+    "runs/esdiva_phase10_reserve/fresh/2411/rigid_fast/score.json",
+    "runs/esdiva_phase10_reserve/fresh/2411/smooth_slow/score.json",
+    "runs/esdiva_phase10_reserve/fresh/2411/smooth_zero/score.json",
+    "runs/esdiva_phase10_reserve/fresh/2411/stationary_fast/score.json",
+    "runs/fidelity_followup_v04/results.json.xz",
+    "runs/motion_repair_v06/results.json.gz",
+    "runs/separation_fidelity_v03/results.json.gz",
+    "runs/shared_axes_v05/results.json.gz"
+  ]
 }

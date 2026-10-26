@@ -29,6 +29,13 @@ leakage exceeds the frozen bound on two scenes; none naturally selects
 reference. A separate forced-reference diagnostic also fails the tissue
 bound. This does not change the earlier reserve result or establish physical
 flow preservation.
+The [phase-11 adaptive prospective RF test](docs/ESDIVA_PHASE11_PROSPECTIVE_RESULT.md)
+passes its frozen numerical gates on all ten scenes from two new simulator
+clouds. The margin for moving-tissue suppression is narrow, slow-flow absolute
+blood error remains high, and the reference branch is unselected in 10/10.
+The pre-RF freeze is a local Git checkpoint; the protocol was published to
+GitHub after RF generation following explicit authorization. This result does
+not establish physical flow preservation.
 An [eSDIva RF benchmark proposal and Axis 3 literature update](docs/ESDIVA_RF_BENCHMARK_PROPOSAL.md)
 lays out an acoustic-simulation tier and its separate source-truth controls;
 the [Example 22 reproduction and three-view pilot](docs/RESULTS_ESDIVA_PILOT_V08.md)
@@ -245,6 +252,8 @@ python scripts/verify_resolvestroke_single_view.py
 python scripts/verify_resolvestroke_spatial_audit.py
 python scripts/verify_phantom_phase10_dryrun.py
 python scripts/verify_esdiva_phase10_stress.py
+python scripts/verify_esdiva_phase11_development.py
+python scripts/verify_esdiva_phase11_prospective.py
 ```
 
 Earlier studies, with their historical source fingerprints and interpretation limits:

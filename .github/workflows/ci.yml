@@ -43,6 +43,8 @@ jobs:
       - run: python scripts/verify_resolvestroke_spatial_audit.py
       - run: python scripts/verify_phantom_phase10_dryrun.py
       - run: python scripts/verify_esdiva_phase10_stress.py
+      - run: python scripts/verify_esdiva_phase11_development.py
+      - run: python scripts/verify_esdiva_phase11_prospective.py
       - run: python scripts/phantom_phase10_preflight.py plan --card runs/phantom_phase10_plan/acquisition_card.json --inventory runs/phantom_phase10_plan/capture_inventory.json
       - run: python scripts/phantom_phase10_dryrun.py --plan-directory runs/phantom_phase10_plan --fixture-directory ${{ runner.temp }}/phase10_fixture --output ${{ runner.temp }}/phase10_fixture_report.json
 

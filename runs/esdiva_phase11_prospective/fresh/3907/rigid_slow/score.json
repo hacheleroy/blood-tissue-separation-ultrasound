@@ -1,0 +1,267 @@
+{
+  "status": "phase-11 paired source-resolved prospective diagnostic",
+  "seed": 3907,
+  "scene": "rigid_slow",
+  "acquisition_sha256": "e091deebab8b287b7c93ab3aa10d4c38ff5324bdad40ed15a6dd6b87d4545c61",
+  "broad_audit_sha256": "e70f8d31dc4a0fa9c5b7f8a435589f87f584ec0dbb467bccf2fcc3a32e61c0c1",
+  "config_sha256": "45b66b267f77daabb2d1b2edba7a54eaad872a6a092419c1e5425917e71e29df",
+  "script_sha256": "f8367b15909ed8404834464921db417feaeed34176100858393654335e2eff61",
+  "local_phase_context_sha256": "1fde0c56b3c8329e2b962b7acf16afbcb69d9d885b5924222cdd2feac8d35c5c",
+  "selector_context_sha256": "ef29828abef95aa9a59172d11dac5142b3b8592a003afa95138dba521fbf8561",
+  "support_context_sha256": "fddb9d0b49364df3a3fc90fe1a7fc79fd5190f5ce679c4b5466daa6d5f3ec5ff",
+  "adaptive_context_sha256": "7ab147dd880bfdbee651579a31d62145874a50ad8da5ede691272018679eaa81",
+  "acquisition_script_sha256": "8074cada0be19a4cd59e2f6dd3c1ed14f566d5b14b9314d20ecc017096091f14",
+  "transport_context_sha256": "301602c9a925f2b2b9eb1b581f1fdc037f207c80d1fb25d78f4c7c909e3dcc2b",
+  "magnitude_shift_fit_sha256": "37cc1bffde5accd9725b6381a4f39ee221b72f707a4b3fbd4773e3e283f19859",
+  "rebeam_sha256": "a421905beb87607274c83174e44741bbca7d0457734a9a197325a51e977f0991",
+  "bounded_context_sha256": "ad62f9461c29c114b8d3c04604dd5dd63d10679a684901119793447d116098b2",
+  "numerical_source_sha256": "8587a156b3283238920777e96cd059d72203d5a9638a61f5cc43876324cd4e13",
+  "calibration_support": {
+    "model": "train-only angular phase map; gate only",
+    "wide_guard_mm": 5.0,
+    "core_guard_mm": 5.5,
+    "wide_pixels": 192,
+    "core_pixels": 40,
+    "phase_sha256": "27f2af0fc16265b660d128022083a05714f91670f9fce074e9e2a5b8667e9fd0",
+    "calibration_sha256": "9a5cc8988a8301ca5662f95b593f0a9983d37ec5d8af8d7cfb29dc2db470a728",
+    "fit_frames": 8,
+    "validation_frames": 8,
+    "uses_source_truth_or_evaluation_IQ": false,
+    "wide": {
+      "minimum_coherence_train": 0.9315940549861311,
+      "minimum_coherence_validation": 0.925739682365861,
+      "maximum_bounded_noise_power_gain_train": 1.0174040194488239,
+      "pass": true
+    },
+    "core": {
+      "minimum_coherence_train": 0.9514200176302411,
+      "minimum_coherence_validation": 0.9272135655034173,
+      "maximum_bounded_noise_power_gain_train": 3.0488934128978946,
+      "pass": true
+    },
+    "pass": true
+  },
+  "source_eligibility_pass": true,
+  "blood_to_tissue_core_roi_power_evaluator_only": 0.0024855566467269588,
+  "blood_to_tissue_wide_roi_power_evaluator_only": 0.0034656544316459393,
+  "source_truth_evaluator_only": true,
+  "score_frames": 16,
+  "selection": {
+    "guard_mm": 5.0,
+    "rule": "reference if local_loss > 0.28 and reference excess < 0.18; otherwise hybrid",
+    "pre_score_frames": 64,
+    "local_phase_loss": 0.135811655949811,
+    "reference_phase_loss": 0.36767631728143196,
+    "reference_excess_loss": 0.23186466133162095,
+    "check_pixels": 16,
+    "source_truth_used": false,
+    "requested_mode": "hybrid",
+    "minimum_core_reference_amplitude_support": 0.925,
+    "reference_support_by_view": [
+      0.975,
+      0.925,
+      1.0
+    ],
+    "minimum_reference_support_for_reference_mode": 0.9,
+    "selection_uses_prior_calibration_and_pre_score_mixture_only": true,
+    "selected_mode": "hybrid"
+  },
+  "selected_mode": "hybrid",
+  "strength_selection": {
+    "pre_score_frames": 64,
+    "pre_score_shift_median_validation_gain": 0.5589935317359009,
+    "pre_score_shift_audit": {
+      "model": "disjoint-pixel magnitude translation; cyclic unitary IQ shift",
+      "options": {
+        "maximum_axial_pixels": 1.25,
+        "maximum_lateral_pixels": 0.75,
+        "minimum_validation_gain": 0.01
+      },
+      "fit_pixels": 127,
+      "validation_pixels": 65,
+      "wide_calibration_sha256": "9a5cc8988a8301ca5662f95b593f0a9983d37ec5d8af8d7cfb29dc2db470a728",
+      "shift_sha256": "d9bbb19a084c94422a90e880a63c8c887a57b5cd772a4c0dea3ee0f948341cf9",
+      "candidate_sha256": "42c5bb0472c7149fd6fdbc5088f4511b3c776d57fc62ba121349b27c3d96a775",
+      "accepted_view_frames": 185,
+      "view_frames": 192,
+      "median_validation_gain": 0.5589935317359009,
+      "mean_applied_shift_pixels": 0.4190300378960518,
+      "uses_observed_IQ_and_prior_calibration_only": true,
+      "edge_assumption": "periodic core, not an anatomical boundary condition"
+    },
+    "weight": 1.0,
+    "phase_fraction": 0.5,
+    "shift_scale": 0.75,
+    "rule": "clip((median first-64 magnitude validation gain - 0.25)/0.20,0,1); phase=1-0.5w, shift=0.25+0.5w",
+    "uses_source_truth_or_scored_frames": false
+  },
+  "variants": {
+    "none": {
+      "motion_fit": {
+        "registration": "none",
+        "gate_enabled": false
+      },
+      "background_motion_fit": {
+        "registration": "none",
+        "gate_enabled": false
+      },
+      "methods": {
+        "axis1_cut1": {
+          "paired_added_blood_iq_nrmse": 0.8518722986806764,
+          "refitted_background_output_to_input_tissue_power": 0.1336589727514661,
+          "frozen_blood_power_ratio": 0.8678078170032166
+        },
+        "axis2_default": {
+          "paired_added_blood_iq_nrmse": 0.4505882101433964,
+          "refitted_background_output_to_input_tissue_power": 0.4016631541506108,
+          "frozen_blood_power_ratio": 0.29568557295336495
+        },
+        "axis2_slow_r4_cap040": {
+          "paired_added_blood_iq_nrmse": 0.5878934839039146,
+          "refitted_background_output_to_input_tissue_power": 0.1384660761688699,
+          "frozen_blood_power_ratio": 0.14080897771600304
+        },
+        "axis3_orthogonal": {
+          "paired_added_blood_iq_nrmse": 1.0896573458470271,
+          "refitted_background_output_to_input_tissue_power": 0.33609215254345004,
+          "frozen_blood_power_ratio": 0.44722513980884526
+        },
+        "baranger_ssm": {
+          "paired_added_blood_iq_nrmse": 1.0092265503484474,
+          "refitted_background_output_to_input_tissue_power": 0.036759108045353664,
+          "frozen_blood_power_ratio": 0.06455815516622812
+        },
+        "lee_aer": {
+          "paired_added_blood_iq_nrmse": 0.9784308773403145,
+          "refitted_background_output_to_input_tissue_power": 0.013495870155422855,
+          "frozen_blood_power_ratio": 0.006671201259722329
+        },
+        "roundtrip": {
+          "paired_added_blood_iq_nrmse": 2.8418375452577215e-16,
+          "refitted_background_output_to_input_tissue_power": 1.0644187579668647,
+          "frozen_blood_power_ratio": 1.0
+        },
+        "svd_cut1": {
+          "paired_added_blood_iq_nrmse": 0.778641786679237,
+          "refitted_background_output_to_input_tissue_power": 0.1476490672782367,
+          "frozen_blood_power_ratio": 0.8931302324941222
+        }
+      }
+    },
+    "selected": {
+      "motion_fit": {
+        "model": "accepted local phase plus nonperiodic unitary IQ shift",
+        "phase_fraction": 0.5,
+        "shift_scale": 0.75,
+        "shift_fit": {
+          "model": "disjoint-pixel magnitude translation; cyclic unitary IQ shift",
+          "options": {
+            "maximum_axial_pixels": 1.25,
+            "maximum_lateral_pixels": 0.75,
+            "minimum_validation_gain": 0.01
+          },
+          "fit_pixels": 127,
+          "validation_pixels": 65,
+          "wide_calibration_sha256": "9a5cc8988a8301ca5662f95b593f0a9983d37ec5d8af8d7cfb29dc2db470a728",
+          "shift_sha256": "aff69c8afc02a543de124445c91cf6a888a9d2563fbfab8dac052ad073112968",
+          "candidate_sha256": "db14698d6c46b3e0b23a60a9eefc3f42bf13934d241761d993be4d98c9810285",
+          "accepted_view_frames": 232,
+          "view_frames": 240,
+          "median_validation_gain": 0.5151370393534456,
+          "mean_applied_shift_pixels": 0.42217507129482973,
+          "uses_observed_IQ_and_prior_calibration_only": true,
+          "edge_assumption": "periodic core, not an anatomical boundary condition",
+          "application": "nonperiodic skew derivative",
+          "inherited_periodic_application_not_used": true
+        },
+        "shift_sha256": "b830e220a8869aea66af0cfac70049d40b5ac978717937473217615413a4e27a",
+        "phase_fit": {
+          "model": "masked, spatially smoothed local tissue phase; no IQ resampling",
+          "options": {
+            "vessel_guard_mm": 5.0,
+            "spatial_sigma_pixels": 4.0,
+            "phase_fraction": 0.5,
+            "minimum_validation_phase_gain": 0.01
+          },
+          "fit_pixels": 127,
+          "validation_pixels": 65,
+          "fit_mask_sha256": "54d8576c25c9b7f9059dfb51f6a5bc6610f053d7ecd369df817be8c6e3c605f8",
+          "validation_mask_sha256": "e1bcb5f54bc4c406d6c8c51ebeef426fb8852b84a2096091109f3513a2c97916",
+          "wide_calibration_sha256": "9a5cc8988a8301ca5662f95b593f0a9983d37ec5d8af8d7cfb29dc2db470a728",
+          "phase_sha256": "bd19ab3d4e7570dc94a94ffaae7bcef67d492e4c7dae27ad9b47bf6699ea2b95",
+          "accepted_view_frames": 211,
+          "view_frames": 240,
+          "median_validation_phase_gain": 0.2136586042886544,
+          "minimum_validation_phase_gain_observed": -6.297208372086789e-05,
+          "mean_applied_phase_abs_rad": 0.3473762401915464,
+          "uses_current_frame_and_prior_calibration_only": true
+        }
+      },
+      "background_motion_fit": {
+        "model": "accepted local phase plus nonperiodic unitary IQ shift",
+        "phase_fraction": 0.5,
+        "shift_scale": 0.75,
+        "shift_fit": {
+          "model": "disjoint-pixel magnitude translation; cyclic unitary IQ shift",
+          "options": {
+            "maximum_axial_pixels": 1.25,
+            "maximum_lateral_pixels": 0.75,
+            "minimum_validation_gain": 0.01
+          },
+          "fit_pixels": 127,
+          "validation_pixels": 65,
+          "wide_calibration_sha256": "9a5cc8988a8301ca5662f95b593f0a9983d37ec5d8af8d7cfb29dc2db470a728",
+          "shift_sha256": "e4dca21ceab8c65b7dbdcd1cf925fbb430542d618fa01303256b60dda93cbfc1",
+          "candidate_sha256": "cbaf90ec6faba89bba0c733179eeebce7a9caf09c0ce68ee29386794e581637d",
+          "accepted_view_frames": 236,
+          "view_frames": 240,
+          "median_validation_gain": 0.5316649937874174,
+          "mean_applied_shift_pixels": 0.43752253931686774,
+          "uses_observed_IQ_and_prior_calibration_only": true,
+          "edge_assumption": "periodic core, not an anatomical boundary condition",
+          "application": "nonperiodic skew derivative",
+          "inherited_periodic_application_not_used": true
+        },
+        "shift_sha256": "3f68a8955e7f0c2f6df55fc9f88918e29c0af1bf98848eb49970ed4af1c2927e",
+        "phase_fit": {
+          "model": "masked, spatially smoothed local tissue phase; no IQ resampling",
+          "options": {
+            "vessel_guard_mm": 5.0,
+            "spatial_sigma_pixels": 4.0,
+            "phase_fraction": 0.5,
+            "minimum_validation_phase_gain": 0.01
+          },
+          "fit_pixels": 127,
+          "validation_pixels": 65,
+          "fit_mask_sha256": "54d8576c25c9b7f9059dfb51f6a5bc6610f053d7ecd369df817be8c6e3c605f8",
+          "validation_mask_sha256": "e1bcb5f54bc4c406d6c8c51ebeef426fb8852b84a2096091109f3513a2c97916",
+          "wide_calibration_sha256": "9a5cc8988a8301ca5662f95b593f0a9983d37ec5d8af8d7cfb29dc2db470a728",
+          "phase_sha256": "a8a71201a426b43c2f5316e1c653b20e76e74e3bab455c7a11a7bc89bda7b2c1",
+          "accepted_view_frames": 211,
+          "view_frames": 240,
+          "median_validation_phase_gain": 0.21355255315025057,
+          "minimum_validation_phase_gain_observed": -2.813140756168139e-05,
+          "mean_applied_phase_abs_rad": 0.3500720842567925,
+          "uses_current_frame_and_prior_calibration_only": true
+        }
+      },
+      "methods": {
+        "roundtrip": {
+          "paired_added_blood_iq_nrmse": 7.845169605041662e-16,
+          "refitted_background_output_to_input_tissue_power": 1.0644187579668647,
+          "frozen_blood_power_ratio": 1.0
+        },
+        "svd_cut1": {
+          "paired_added_blood_iq_nrmse": 0.7304598847048224,
+          "refitted_background_output_to_input_tissue_power": 0.11315339532603431,
+          "frozen_blood_power_ratio": 0.9227469097904439
+        },
+        "axis1_cut1": {
+          "paired_added_blood_iq_nrmse": 0.8078008764788834,
+          "refitted_background_output_to_input_tissue_power": 0.10510077981836966,
+          "frozen_blood_power_ratio": 0.8947492064115284
+        }
+      }
+    }
+  }
+}

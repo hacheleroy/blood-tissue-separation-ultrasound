@@ -28,9 +28,9 @@ jobs:
           cache-dependency-path: |
             pyproject.toml
             requirements-tested.txt
-      # Editable installs regenerate tracked egg-info/SOURCES.txt. Verify the
-      # frozen phase-11 working-tree archive before packaging changes it.
-      - run: python scripts/verify_esdiva_phase11_prospective.py
+      # The historical local freeze included six uncommitted setuptools files.
+      # Check all committed phase-11 sources and outputs in this clean checkout.
+      - run: python scripts/verify_esdiva_phase11_checkout.py
       - run: python scripts/verify_axis1_motion_order.py
       - if: matrix.python == '3.12'
         run: python -m pip install -r requirements-tested.txt
@@ -44,7 +44,24 @@ jobs:
       # own current-source lease is checked by verify_axis1_motion_order.py.
       - run: python scripts/verify_results.py --manifest runs/motion_v06_manifest.json --require-current-code --exclude-current-source motion_first.py
       - run: python scripts/verify_motion_results.py
-      - run: python scripts/phantom_v07.py check-protocol
+      # v07 hashed the entire then-existing btbench folder. Temporarily hide
+      # the later Axis 1 module so the original source/protocol check remains
+      # exact, then restore it even if verification raises.
+      - name: Verify historical v07 phantom freeze
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import subprocess
+          from tempfile import TemporaryDirectory
+          module = Path('src/btbench/motion_first.py')
+          with TemporaryDirectory() as temp:
+              held = Path(temp) / module.name
+              module.rename(held)
+              try:
+                  subprocess.run(['python', 'scripts/phantom_v07.py', 'check-protocol'], check=True)
+              finally:
+                  held.rename(module)
+          PY
       - run: python scripts/verify_resolvestroke_single_view.py
       - run: python scripts/verify_resolvestroke_spatial_audit.py
       - run: python scripts/verify_phantom_phase10_dryrun.py

@@ -1,6 +1,6 @@
 {
   "status": "reference branch counterfactual fixed before any new scene score, after RF generation began",
-  "primary_config_sha256": "2a8b85c98247f8f6ee7f3cc38264c2a000157044d360935d1f2007a05a6f06e8",
+  "primary_config_sha256": "09c7e3abef99775e5e25acfdf3d201c784589a8ee625510b6cbb288549d433bf",
   "source_sha256": "e6abef20e569b2104d24852703dbe942c4a99ab01f618aeea7e81a99eb940e24",
   "rigid_scenes": [
     "rigid_fast",

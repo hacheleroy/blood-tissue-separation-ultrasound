@@ -110,6 +110,7 @@
     "slow_axis2_blood_nrmse_max": 0.7,
     "slow_axis2_tissue_leakage_max": 0.18
   },
+  "evaluator_only_blood_to_tissue_roi_power_max": 0.1,
   "source_eligibility": {
     "core_blood_to_tissue_power_max": 0.1,
     "wide_blood_to_tissue_power_max": 0.1,

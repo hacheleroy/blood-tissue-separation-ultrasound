@@ -1,0 +1,17 @@
+parameters:
+  grid_type: polar
+  polar_limits: [-0.45, 0.45]
+  zlims: [0.01, 0.11]
+  distance_to_apex: 0.022
+  grid_size_z: 420
+  grid_size_x: 220
+  grid_size_y: 1
+
+pipeline:
+  operations:
+    - name: keras.ops.cast
+      params:
+        dtype: float32
+    - name: beamform
+      params:
+        beamformer: delay_and_sum

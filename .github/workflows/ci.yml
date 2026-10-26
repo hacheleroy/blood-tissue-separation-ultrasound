@@ -32,6 +32,7 @@ jobs:
       # Check all committed phase-11 sources and outputs in this clean checkout.
       - run: python scripts/verify_esdiva_phase11_checkout.py
       - run: python scripts/verify_axis1_motion_order.py
+      - run: python scripts/verify_axis1_native_subtraction.py
       - if: matrix.python == '3.12'
         run: python -m pip install -r requirements-tested.txt
       - run: python -m pip install -e '.[test,io]'
@@ -40,12 +41,11 @@ jobs:
       - run: python scripts/verify_results.py --manifest runs/followup_v04_manifest.json
       - run: python scripts/verify_results.py --manifest runs/shared_v05_manifest.json
       - run: python scripts/verify_shared_results.py
-      # motion_first.py was added after the v06 source hash was sealed; its
-      # own current-source lease is checked by verify_axis1_motion_order.py.
-      - run: python scripts/verify_results.py --manifest runs/motion_v06_manifest.json --require-current-code --exclude-current-source motion_first.py
+      # Later Axis 1 modules have separate frozen source leases.
+      - run: python scripts/verify_results.py --manifest runs/motion_v06_manifest.json --require-current-code --exclude-current-source motion_first.py --exclude-current-source native_subtraction.py
       - run: python scripts/verify_motion_results.py
       # v07 hashed the entire then-existing btbench folder. Temporarily hide
-      # the later Axis 1 module so the original source/protocol check remains
+      # the later Axis 1 modules so the original source/protocol check remains
       # exact, then restore it even if verification raises.
       - name: Verify historical v07 phantom freeze
         run: |
@@ -53,14 +53,19 @@ jobs:
           from pathlib import Path
           import subprocess
           from tempfile import TemporaryDirectory
-          module = Path('src/btbench/motion_first.py')
+          modules = [Path('src/btbench/motion_first.py'),
+                     Path('src/btbench/native_subtraction.py')]
           with TemporaryDirectory() as temp:
-              held = Path(temp) / module.name
-              module.rename(held)
+              held = []
               try:
+                  for module in modules:
+                      destination = Path(temp) / module.name
+                      module.rename(destination)
+                      held.append((module, destination))
                   subprocess.run(['python', 'scripts/phantom_v07.py', 'check-protocol'], check=True)
               finally:
-                  held.rename(module)
+                  for module, destination in reversed(held):
+                      destination.rename(module)
           PY
       - run: python scripts/verify_resolvestroke_single_view.py
       - run: python scripts/verify_resolvestroke_spatial_audit.py

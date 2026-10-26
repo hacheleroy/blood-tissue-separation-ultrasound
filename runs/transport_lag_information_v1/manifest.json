@@ -1,0 +1,41 @@
+{
+  "status": "transport-lag information archive published sources",
+  "paths": [
+    "README.md",
+    ".github/workflows/ci.yml",
+    "configs/transport_lag_information_v1.json",
+    "examples/transport_lag_acquire.py",
+    "scripts/transport_lag_information.py",
+    "scripts/plot_transport_lag_information.py",
+    "scripts/verify_transport_lag_information.py",
+    "docs/TRANSPORT_LAG_INFORMATION_V1.md",
+    "docs/figures/transport_lag_information_v1.png",
+    "runs/transport_lag_information_v1/freeze_pre_noise_amendment.json",
+    "runs/transport_lag_information_v1/freeze.json",
+    "runs/transport_lag_information_v1/retrospective.json",
+    "runs/transport_lag_information_v1/development.json",
+    "runs/transport_lag_information_v1/evaluation.json"
+  ],
+  "sha256": {
+    "README.md": "27eb78db73ce0af03e4607f11069e54bf4db45b06ddadc7120efad9de2e37f14",
+    ".github/workflows/ci.yml": "8daf0268d81d16452eb39f67d5db413164d23ad0809e68b4738ede254e4b5323",
+    "configs/transport_lag_information_v1.json": "c01ee12807a93e0f26de15ff19760f18eab7810adceb06d83167be80b1660289",
+    "examples/transport_lag_acquire.py": "382918b2fe34fcfb327a0d7a3a7f892ba849e5b4540fd922f2c0f8a4f84412a6",
+    "scripts/transport_lag_information.py": "fc84eeb380e68fa1f5994a7e7dc1cc085c3926c93110c21e5e2d8b8037fd5853",
+    "scripts/plot_transport_lag_information.py": "2984be062d1324af0b6f30e71cfee66b662dc30b3e8423cb8375d0bf37a7603f",
+    "scripts/verify_transport_lag_information.py": "d2f8c9dd7ae01a255f2d148f005be06d31a90244a5998e679e18056375155454",
+    "docs/TRANSPORT_LAG_INFORMATION_V1.md": "fc200c0adbe7e4e0270660f731b4a67d0d6142117cbb0174d0cf4db394190d60",
+    "docs/figures/transport_lag_information_v1.png": "d5aea6359a3a94776b995652a7b82476f030dd56907ae3a968558019ed4e91d8",
+    "runs/transport_lag_information_v1/freeze_pre_noise_amendment.json": "a731f449f88cacf67f26c2581897a6ac15624cf98589cbf1c3f5885f89b27b52",
+    "runs/transport_lag_information_v1/freeze.json": "31b5c8cd9f09c86175ad07e750a7274cd1fdd2098f0017355a0e7063b9a1cd57",
+    "runs/transport_lag_information_v1/retrospective.json": "072d6fabf233e57a521e467790d148518ed2161d3a38f76b0d037bd6eb7b664b",
+    "runs/transport_lag_information_v1/development.json": "2ceb1ddf9ed6fac6be40cf5ce7a65e3dd48b15ffbc3f464080ea173094e8c555",
+    "runs/transport_lag_information_v1/evaluation.json": "6e6ea8d9a56997ea0259bd370d3bdd960b4243aece8779737b282f521c78fb9d"
+  },
+  "records": {
+    "retrospective": 4,
+    "development": 4,
+    "evaluation": 4
+  },
+  "raw_rf": "checkpoint files stored outside Git; source report and IQ hashes in each archive row"
+}

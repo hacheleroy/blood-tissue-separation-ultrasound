@@ -2,6 +2,13 @@
 
 Development benchmark v0.5.0 · 23 October 2026 · prepared for Henri Leroy
 
+The [tissue-frame transport-lag information test](docs/TRANSPORT_LAG_INFORMATION_V1.md)
+compares 80 dense cycles with ten spaced bursts at the same 240-emission
+budget on source-resolved acoustic RF. A longer observation reveals blood
+motion in one new scatterer cloud but yields much weaker mixture evidence
+and worse velocity error in another. This is a feature diagnostic, not a
+validated clutter filter or a noncontrast physical measurement.
+
 The [motion-repair held-out study](docs/RESULTS_MOTION_REPAIR_V06.md) fixes
 registration and gates each displacement on independent spatial pixels. Its
 predeclared software gate passes on five reserved seeds, permitting a phantom

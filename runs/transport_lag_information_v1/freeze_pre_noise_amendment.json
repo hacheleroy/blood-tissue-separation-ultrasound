@@ -1,0 +1,18 @@
+{
+  "status": "numerical feature and acquisition frozen before seed 5017 RF",
+  "frozen_at_utc": "2026-10-26T20:56:01.905264+00:00",
+  "independent_evaluation_seed": 5017,
+  "development_seed": 5003,
+  "retrospective_seeds": [
+    3907,
+    3919
+  ],
+  "selection_rule": "fixed lag-1 within-burst magnitude minus lag-48 real covariance after mixture-estimated B-mode translation and global IQ phase; eight weakest wall pixels selected evaluator-only from first eight source blood/tissue powers",
+  "no_truth_for_preprocessing": true,
+  "independent_RF_not_generated_yet_at_freeze": true,
+  "config_sha256": "c01ee12807a93e0f26de15ff19760f18eab7810adceb06d83167be80b1660289",
+  "analysis_sha256": "c1e7f5e6c46a4e50c09e08d9fe9f164c4c855b0a57dec16076cc8878008b1c23",
+  "acquisition_sha256": "5d9b9d6492d8dcbdf53805aa4ec5f3ca0489c10a9e48e1e40baa3adf4346caef",
+  "development_sha256": "69bd76f48738a8c5212e3bc8176e8a8c1f45922800d094670d9ccf296e029754",
+  "retrospective_sha256": "daba360085f862e19f216728809dd13a042a5f8a695a00d2668fbbd2693accf2"
+}

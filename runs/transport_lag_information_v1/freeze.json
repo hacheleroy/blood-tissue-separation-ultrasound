@@ -1,0 +1,21 @@
+{
+  "independent_evaluation_seed": 5017,
+  "development_seed": 5003,
+  "retrospective_seeds": [
+    3907,
+    3919
+  ],
+  "selection_rule": "fixed lag-1 within-burst magnitude minus lag-48 real covariance after mixture-estimated B-mode translation and global IQ phase; eight weakest wall pixels selected evaluator-only from first eight source blood/tissue powers",
+  "no_truth_for_preprocessing": true,
+  "status": "amended numerical freeze before inspecting or scoring seed 5017 RF",
+  "frozen_at_utc": "2026-10-26T20:59:44.133423+00:00",
+  "amendment_reason": "Use one fixed receiver-noise amplitude from the first 24 identical RF events and first 900 samples in each matched schedule; previous replay used a separate full-record RMS for each schedule.",
+  "initial_freeze_sha256": "a731f449f88cacf67f26c2581897a6ac15624cf98589cbf1c3f5885f89b27b52",
+  "independent_RF_generation_in_progress_at_amendment": true,
+  "independent_RF_results_not_inspected": true,
+  "config_sha256": "c01ee12807a93e0f26de15ff19760f18eab7810adceb06d83167be80b1660289",
+  "analysis_sha256": "fc84eeb380e68fa1f5994a7e7dc1cc085c3926c93110c21e5e2d8b8037fd5853",
+  "acquisition_sha256": "382918b2fe34fcfb327a0d7a3a7f892ba849e5b4540fd922f2c0f8a4f84412a6",
+  "development_sha256": "2ceb1ddf9ed6fac6be40cf5ce7a65e3dd48b15ffbc3f464080ea173094e8c555",
+  "retrospective_sha256": "072d6fabf233e57a521e467790d148518ed2161d3a38f76b0d037bd6eb7b664b"
+}

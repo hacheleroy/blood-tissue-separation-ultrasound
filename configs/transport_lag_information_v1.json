@@ -1,0 +1,15 @@
+{
+  "study": "Source-resolved tissue-frame displacement-lag information test with fixed emission count",
+  "seeds": {"development": [5003], "evaluation": [5017]},
+  "motions": ["rigid", "smooth"],
+  "schedules": ["dense", "burst"],
+  "n_angles": 3,
+  "n_cycles": 80,
+  "transmissions": 240,
+  "lags": [1, 8, 24, 48],
+  "feature_lags": [1, 48],
+  "weak_wall_selection": "Evaluator only: eight of 16 fixed near-wall pixels with lowest source blood/tissue power in the matched first eight cycles; noise is excluded to pair the identical pixel set across schedules; fixed before scoring new RF",
+  "feature": "absolute normalized complex covariance at lag 1 within a burst minus real normalized covariance at lag 48, evaluated after observed-mixture B-mode translation and global IQ phase registration",
+  "oracle_transport_speeds_mm_s": [0, 0.5, 1, 2, 4, 8],
+  "interpretation": "Source AUC, known-direction velocity search, and first-cycle-repeated static-blood IQ counterfactual are evaluator-only information diagnostics; no truth enters the fixed score or B-mode/IQ alignment. The burst schedule changes observation duration and timing, not emission count. Near-wall source separability alone cannot certify mixture-domain filtering. The acoustic model excludes reverberation and wall reflectors."
+}

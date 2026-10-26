@@ -1,0 +1,238 @@
+{
+  "status": "SIMULATED SOFTWARE FIXTURE PASSED; NO PHYSICAL VALIDATION",
+  "physical_eligible": false,
+  "plan": {
+    "sessions": 2,
+    "triplets": 60,
+    "capture_slots": 180,
+    "status": "scaffold structure verified; physical inputs missing",
+    "physical_eligible": false
+  },
+  "fixture_label": "SIMULATED_FIXTURE_NOT_PHYSICAL",
+  "triplet": {
+    "motion": "static",
+    "speed": "slow",
+    "captures": [
+      "tissue_only",
+      "flow_off",
+      "flow_on"
+    ]
+  },
+  "source_sha256": {
+    "examples/phantom_phase10_port.py": "b8bab0811a4da3a5bc323da32ab33f09b7cc42d744632555fdcc8682832a9ecf",
+    "scripts/phantom_phase10_preflight.py": "b11cbefd685e63c44d07d0ae8b8cb2bdd8df0e5af820b189df752f787c9928d1",
+    "scripts/phantom_phase10_dryrun.py": "2c7e4b9f63d9bafaf905b1cb253c5a03a56ae8e736f59f9e52aa135df307ba55",
+    "configs/phantom_phase10_bridge.json": "747216e609a9c62154ce1d721339631012b6055a0d60fd0c92ceb86a87ab5e9d"
+  },
+  "support_counts": {
+    "wide": 193,
+    "core": 40,
+    "fit": 128,
+    "check": 65,
+    "flow": 12,
+    "tissue_score": 8
+  },
+  "window_starts": [
+    0,
+    16,
+    32,
+    48,
+    64,
+    80,
+    96,
+    112,
+    128,
+    144,
+    160,
+    176
+  ],
+  "assembled_score_frames": [
+    64,
+    256
+  ],
+  "window_results": {
+    "tissue_only": {
+      "selected_modes": [
+        "hybrid",
+        "hybrid",
+        "hybrid",
+        "hybrid",
+        "hybrid",
+        "hybrid",
+        "hybrid",
+        "hybrid",
+        "hybrid",
+        "hybrid",
+        "hybrid",
+        "hybrid"
+      ],
+      "mode_choice_first_packet": {
+        "guard_mm": 5.0,
+        "rule": "reference if local_loss > 0.28 and reference excess < 0.18; otherwise hybrid",
+        "pre_score_frames": 64,
+        "local_phase_loss": 2.3580051722038915e-05,
+        "reference_phase_loss": 2.3580051722038915e-05,
+        "reference_excess_loss": 0.0,
+        "check_pixels": 16,
+        "source_truth_used": false,
+        "requested_mode": "hybrid",
+        "minimum_core_reference_amplitude_support": 0.975,
+        "reference_support_by_view": [
+          0.975,
+          0.975,
+          0.975
+        ],
+        "minimum_reference_support_for_reference_mode": 0.9,
+        "selection_uses_prior_calibration_and_pre_score_mixture_only": true,
+        "selected_mode": "hybrid"
+      },
+      "maximum_roundtrip_relative_error": 1.4286830299138568e-16,
+      "axis1_output_sha256": "df2b28c389d370a7b6cc22128eb93c31aa28bcfdf73e20e1a0acaf452d942872",
+      "axis1_none_output_sha256": "efdd440880f7a768e440f5947957e64be92257ffca9d7eaafd2821fd918f92ff",
+      "calibration_min_wide_validation": 0.9999809265136719,
+      "calibration_min_core_validation": 0.9999825954437256
+    },
+    "flow_off": {
+      "selected_modes": [
+        "hybrid",
+        "hybrid",
+        "hybrid",
+        "hybrid",
+        "hybrid",
+        "hybrid",
+        "hybrid",
+        "hybrid",
+        "hybrid",
+        "hybrid",
+        "hybrid",
+        "hybrid"
+      ],
+      "mode_choice_first_packet": {
+        "guard_mm": 5.0,
+        "rule": "reference if local_loss > 0.28 and reference excess < 0.18; otherwise hybrid",
+        "pre_score_frames": 64,
+        "local_phase_loss": 1.5639530300086382e-05,
+        "reference_phase_loss": 1.5639530300086382e-05,
+        "reference_excess_loss": 0.0,
+        "check_pixels": 16,
+        "source_truth_used": false,
+        "requested_mode": "hybrid",
+        "minimum_core_reference_amplitude_support": 0.975,
+        "reference_support_by_view": [
+          0.975,
+          0.975,
+          0.975
+        ],
+        "minimum_reference_support_for_reference_mode": 0.9,
+        "selection_uses_prior_calibration_and_pre_score_mixture_only": true,
+        "selected_mode": "hybrid"
+      },
+      "maximum_roundtrip_relative_error": 1.3341999466161842e-16,
+      "axis1_output_sha256": "6857663088dec5639724c08062225dded225b82e5ca92f68f1c517725a080667",
+      "axis1_none_output_sha256": "782e05316f3c9c4e249dc9d29fb63ea39cd0aeea4088541d4a4035647b83d8e1",
+      "calibration_min_wide_validation": 0.9999818205833435,
+      "calibration_min_core_validation": 0.9999848008155823
+    },
+    "flow_on": {
+      "selected_modes": [
+        "hybrid",
+        "hybrid",
+        "hybrid",
+        "hybrid",
+        "hybrid",
+        "hybrid",
+        "hybrid",
+        "hybrid",
+        "hybrid",
+        "hybrid",
+        "hybrid",
+        "hybrid"
+      ],
+      "mode_choice_first_packet": {
+        "guard_mm": 5.0,
+        "rule": "reference if local_loss > 0.28 and reference excess < 0.18; otherwise hybrid",
+        "pre_score_frames": 64,
+        "local_phase_loss": 2.3004143641947212e-05,
+        "reference_phase_loss": 2.3004143641947212e-05,
+        "reference_excess_loss": 0.0,
+        "check_pixels": 16,
+        "source_truth_used": false,
+        "requested_mode": "hybrid",
+        "minimum_core_reference_amplitude_support": 0.975,
+        "reference_support_by_view": [
+          0.975,
+          0.975,
+          0.975
+        ],
+        "minimum_reference_support_for_reference_mode": 0.9,
+        "selection_uses_prior_calibration_and_pre_score_mixture_only": true,
+        "selected_mode": "hybrid"
+      },
+      "maximum_roundtrip_relative_error": 1.3296727424885223e-16,
+      "axis1_output_sha256": "34d6bf3b698f3ca59fa633c78bc07eaac2312b7a623100b14316e5d7d36138fa",
+      "axis1_none_output_sha256": "1260da7075d5986f17df545d16c2da92b09fed6ec561e2d66c5c215e9eff7c25",
+      "calibration_min_wide_validation": 0.9999808073043823,
+      "calibration_min_core_validation": 0.9999822378158569
+    }
+  },
+  "slow_band_cycles_per_same_view_frame": [
+    0.005,
+    0.05
+  ],
+  "slow_band_fft_bins": 18,
+  "input_pump_excess_over_off": 95637.02492924816,
+  "pump_response_identifiable_on_fixture": true,
+  "paired_metric_plumbing": {
+    "selected": {
+      "pump_response_retention": 0.610971035325837,
+      "tissue_only_leakage": 4.43476532498778e-05
+    },
+    "none": {
+      "pump_response_retention": 0.6109822767324232,
+      "tissue_only_leakage": 4.420150704814335e-05
+    }
+  },
+  "negative_checks": [
+    {
+      "case": "missing matched control",
+      "rejected": true,
+      "reason": "Duplicate cell or missing matched control"
+    },
+    {
+      "case": "transmit angle > 0.5 degree",
+      "rejected": true,
+      "reason": "Measured angles/order or transmit offsets violate the bridge"
+    },
+    {
+      "case": "missing independent optical reference",
+      "rejected": true,
+      "reason": "Missing or escaping file: absent.npz"
+    },
+    {
+      "case": "unverified prior calibration state",
+      "rejected": true,
+      "reason": "Independent motion source or prior calibration state missing"
+    },
+    {
+      "case": "missing independent flowmeter",
+      "rejected": true,
+      "reason": "Independent flowmeter outside target"
+    },
+    {
+      "case": "calibration occurs after evaluation",
+      "rejected": true,
+      "reason": "Invalid same-view clocks or prior calibration"
+    },
+    {
+      "case": "tissue score overlaps the flow lumen",
+      "rejected": true,
+      "reason": "Lumen/tissue anatomy, independent score pixels or flow guard invalid"
+    },
+    {
+      "case": "simulated card cannot pass physical preflight",
+      "rejected": true,
+      "reason": "Incomplete or simulated card is ineligible for physical preflight"
+    }
+  ],
+  "limitations": "One synthetic static/slow triplet over twelve windows. The physical 180-capture card remains incomplete; fixture metrics cannot validate flow preservation or moving-tissue rejection."
+}

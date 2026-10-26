@@ -18,6 +18,10 @@ The [five-plane robustness audit](docs/RESOLVESTROKE_SPATIAL_AUDIT_RESULT.md)
 reproduces the center section exactly but finds missed 2 mm tube pixels at
 one sampled end and missed 4 mm pixels for the high-pass filter at the other.
 Tube geometry alone cannot establish preservation of all flow.
+The [phase-10 physical handoff dry-run](docs/PHANTOM_PHASE10_DRYRUN_RESULT.md)
+checks the incomplete 180-slot acquisition plan and runs one explicitly
+simulated matched triplet through all twelve windows of the geometry-aware
+port. It exercises input and negative controls but is not physical evidence.
 An [eSDIva RF benchmark proposal and Axis 3 literature update](docs/ESDIVA_RF_BENCHMARK_PROPOSAL.md)
 lays out an acoustic-simulation tier and its separate source-truth controls;
 the [Example 22 reproduction and three-view pilot](docs/RESULTS_ESDIVA_PILOT_V08.md)
@@ -232,6 +236,7 @@ all 75 recorded window scores without the 5.25 GB source download:
 ```bash
 python scripts/verify_resolvestroke_single_view.py
 python scripts/verify_resolvestroke_spatial_audit.py
+python scripts/verify_phantom_phase10_dryrun.py
 ```
 
 Earlier studies, with their historical source fingerprints and interpretation limits:

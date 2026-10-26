@@ -1,0 +1,18 @@
+{
+  "study": "Phase-10 physical handoff synthetic software dry-run",
+  "physical_eligible": false,
+  "artifact_sha256": {
+    "runs/phantom_phase10_dryrun/report.json": "41f8be5e7522191210abca4ddd1e39d6f030a109462315ce1ffaeda6d03cb4b5",
+    "scripts/phantom_phase10_preflight.py": "b11cbefd685e63c44d07d0ae8b8cb2bdd8df0e5af820b189df752f787c9928d1",
+    "scripts/phantom_phase10_dryrun.py": "2c7e4b9f63d9bafaf905b1cb253c5a03a56ae8e736f59f9e52aa135df307ba55",
+    "scripts/verify_phantom_phase10_dryrun.py": "69877b342aa45af104efb20b5ef327e0a5ee695acf36a05d77246970a264bfa9",
+    "docs/PHANTOM_PHASE10_DRYRUN_RESULT.md": "b71712e2b48a7480933c8e8cf778354ff98ab092646adfc9cf2955172a97897a",
+    "runs/phantom_phase10_plan/acquisition_card.json": "a904e9307902afa1daf086b203d60a3b1fe4cbc6d380ba4af81f1a622b374bda",
+    "runs/phantom_phase10_plan/capture_inventory.json": "c7f99745d89c64efe2969ff778819adc97f13feed855528111f1f5732183c087",
+    "configs/phantom_phase10_bridge.json": "747216e609a9c62154ce1d721339631012b6055a0d60fd0c92ceb86a87ab5e9d",
+    "examples/phantom_phase10_port.py": "b8bab0811a4da3a5bc323da32ab33f09b7cc42d744632555fdcc8682832a9ecf",
+    "runs/esdiva_phase10_reserve/decision.json": "242b3eace38cc76b7b38104f48137b2c9e11d2fed792c39327ed5cd248198354",
+    "runs/esdiva_phase10_reserve/manifest.json": "b88fd6976f60d08cdb81400bacb08aa0b4400421f622bf887622aa00fafeb69c"
+  },
+  "interpretation": "One synthetic static/slow triplet; 36 selected windows across three captures, eight negative checks; no physical acquisition or six-cell filter gate."
+}

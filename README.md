@@ -9,75 +9,11 @@ experiment while leaving significant reconstruction and blood-response losses.
 The [preregistered phantom protocol](docs/PHANTOM_PROTOCOL_V07.md) fixes
 physical controls, independent motion references, data eligibility and the
 paired flow-response/tissue-leakage gate. It has **no experimental results yet**.
-An [eSDIva RF benchmark proposal and Axis 3 literature update](docs/ESDIVA_RF_BENCHMARK_PROPOSAL.md)
-lays out an acoustic-simulation tier and its separate source-truth controls;
-the [Example 22 reproduction and three-view pilot](docs/RESULTS_ESDIVA_PILOT_V08.md)
-record upstream Doppler checks and a short, reduced-density RF-to-IQ bridge.
-The [angular calibration and full-density short control](docs/RESULTS_ESDIVA_CALIBRATION_V09.md)
-admit the central `0°, -5°, +5°` reference geometry, expose an unsupported
-loaded STAP fit, and compare matched paired blood-addition/background outputs
-for SVD, SSM, AER and the three axes. They do not establish filter accuracy
-under tissue motion, independent scatterer seeds, or in a physical phantom.
-The [longer-ensemble eSDIva development controls](docs/RESULTS_ESDIVA_PHASE2_DEVELOPMENT.md)
-add rigid/smooth tissue motion and fast/slow/zero flow at 10% particle density.
-Guarded loaded STAP now passes nominal support and gain bounds without a
-separation benefit over orthogonal STAP; the conservative motion gate falls
-back on moving tissue. The [frozen protocol](docs/ESDIVA_PHASE2_PROTOCOL.md)
-was applied unchanged to two fresh scatterer seeds. The
-[held-out input-gate result](docs/RESULTS_ESDIVA_PHASE2_HELDOUT.md) finds
-**0/2 eligible seeds**: cross-angle tissue coherence fails at +5° on one
-seed and −5° on the other. No held-out filter ranking is claimed.
-The [phase-3 development study](docs/RESULTS_ESDIVA_PHASE3_DEVELOPMENT.md)
-tests new scatterer seeds, three-view angular calibration and a data-only
-tissue-ROI selector with an RMS-bounded gain. A fixed left ROI fails fresh
-development checks. A minimum-support symmetric selector passes new sparse
-input checks and two full-density controls; paired source-resolved scenes still
-show unrepaired RF motion tracking and no separation benefit for loaded STAP.
-The new reserve remains unopened.
-The [phase-4 RF phase and slow-flow development study](docs/RESULTS_ESDIVA_PHASE4_DEVELOPMENT.md)
-tests a paired blood-response gate on a unit-modulus tissue phase correction
-and a separate Axis 2 operating point. It retains the failed first candidate,
-source-resolved controls and a fresh development check. The slow-flow-specific
-Axis 2 setting meets its development bounds, but the phase correction misses
-its moving-tissue leakage gate on the fresh cloud; the new held-out reserve
-remains closed.
-The [phase-5 broad-support local-phase study](docs/RESULTS_ESDIVA_PHASE5_DEVELOPMENT.md)
-reconstructs a wider tissue region from verified RF and applies a reversible
-phase field on the original eight-row score tile. Its paired blood-response
-and moving-tissue leakage gates pass on three development clouds and an
-independent new cloud under settings fixed beforehand. Slow-flow SVD and Axis 1
-still have high absolute blood error. Its [held-out comparison](docs/RESULTS_ESDIVA_PHASE5_HELDOUT.md)
-then failed the paired motion gate on reserved seeds 2081/2093.
-The [phase-6](docs/ESDIVA_PHASE6_DESIGN_RESULT.md) and
-[phase-7](docs/ESDIVA_PHASE7_DESIGN_RESULT.md) development studies found
-further calibration and complex-transport failures.
-The [phase-8 guarded calibration study](docs/ESDIVA_PHASE8_DESIGN_RESULT.md)
-froze a measured phase selector before two new RF clouds. Seed 2707 passed
-all four revised development scenes, while seed 2729 failed source and
-calibration eligibility. The candidate is **not qualified** for prospective
-2333, reserve 2401/2411, or a physical phantom claim.
-The [phase-9 source-independent support revision](docs/ESDIVA_PHASE9_DESIGN_RESULT.md)
-froze a 5 mm anatomical tissue guard, prior-calibration phase-consistency
-eligibility and revised hybrid motion before two more RF clouds. Seed 3019
-passed all four new development scenes; seed 3001 failed source purity in
-both fast-flow scenes and paired tissue suppression in smooth slow. The
-candidate remains **unqualified**; prospective 2333 and reserves 2401/2411
-remain unopened.
-The [phase-10 core-support and reference-mode revision](docs/ESDIVA_PHASE10_DESIGN_RESULT.md)
-froze a 5.5 mm core guard and a calibration-amplitude safeguard before RF
-generation for development seeds 3307 and 3323. Both clouds passed all four
-fixed source, calibration and paired gates. The comparison is qualified for
-a [separate prospective freeze](docs/ESDIVA_PHASE10_PROSPECTIVE_FREEZE.md)
-for seed 2333. The [fixed prospective comparison](docs/ESDIVA_PHASE10_PROSPECTIVE_RESULT.md)
-passed all four scenes, including paired blood preservation and moving-tissue
-leakage gates. A [separate frozen reserve-bank comparison](docs/ESDIVA_PHASE10_RESERVE_FREEZE.md)
-declared seeds 2401/2411 before RF generation. The [eight-scene reserve
-result](docs/ESDIVA_PHASE10_RESERVE_RESULT.md) passes its source, calibration,
-paired blood and moving-tissue gates. The [phase-10 physical bridge](docs/PHANTOM_PHASE10_BRIDGE.md)
-and incomplete acquisition card prepare independent phantom captures;
-physical phantom validation has not been performed.
-The [ULMShare follow-on](docs/ULMSHARE_FOLLOWON.md) is an in vivo microbubble
-benchmark design for after the acoustic-simulation study.
+The separate [Resolve Stroke flow-phantom diagnostic](docs/RESOLVESTROKE_SINGLE_VIEW_RESULT.md)
+has now processed all five released clips against the known 4 mm and 2 mm
+tube mask. SVD cut 1 and a 100 Hz high-pass both localize post-injection
+CEUS signal strongly. This single-transmit, static-phantom dataset does not
+test the frozen three-view motion selector or source-resolved blood retention.
 
 The [shared three-axis benchmark](docs/RESULTS_SHARED_V05.md) uses the same
 three-view input, disjoint-time calibration, spatial tile and score interval for
@@ -216,6 +152,13 @@ change that choice. The scene specifies angular IQ and an image warp, with a
 shared calibration tissue texture. It does not provide acoustic/experimental
 validation. Portable results, selection candidates, CSV tables and four PNG/SVG
 figures are included; source and artifact hashes are checked by CI.
+
+Verify the independent Resolve Stroke aggregate, its geometric masks and
+all 75 recorded window scores without the 5.25 GB source download:
+
+```bash
+python scripts/verify_resolvestroke_single_view.py
+```
 
 Earlier studies, with their historical source fingerprints and interpretation limits:
 

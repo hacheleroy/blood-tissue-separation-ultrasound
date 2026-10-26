@@ -39,6 +39,7 @@ jobs:
       - run: python scripts/verify_results.py --manifest runs/motion_v06_manifest.json --require-current-code
       - run: python scripts/verify_motion_results.py
       - run: python scripts/phantom_v07.py check-protocol
+      - run: python scripts/verify_resolvestroke_single_view.py
 
   packages:
     runs-on: ubuntu-latest

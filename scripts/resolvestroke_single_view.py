@@ -138,7 +138,7 @@ def process(source, output, cfg_path, pipeline_path):
         raise ValueError('Analysis or beamformer source changed after the protocol freeze')
     config = Config.from_path(str(pipeline_path))
     zea.init_device()
-    with h5py.File(source, 'r') as h5, File(str(source)) as zf:
+    with h5py.File(source, 'r', locking=False) as h5, File(str(source)) as zf:
         raw = check_source(h5, cfg)
         grid, mask, grid_audit = geometry(h5, cfg)
         parameters = zf.load_parameters(**config.parameters)

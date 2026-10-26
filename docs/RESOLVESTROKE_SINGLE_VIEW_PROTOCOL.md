@@ -11,6 +11,11 @@ script](../scripts/resolvestroke_single_view.py) are hash-bound. The data are
 not copied into this repository. Retain Resolve Stroke/Open-H-RF attribution
 when reusing results.
 
+An initial preflight opened the file with incompatible h5py/Zea locking
+flags and stopped before beamforming or scoring any window. The subsequent
+source-only correction sets h5py's reader to `locking=False`, matching Zea.
+The corrected script hash in the protocol is the analysis freeze.
+
 ## Relationship to phase 10
 
 The released 20,000 frames are five 1-second intervals from **one**

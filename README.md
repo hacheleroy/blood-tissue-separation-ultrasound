@@ -22,6 +22,13 @@ The [phase-10 physical handoff dry-run](docs/PHANTOM_PHASE10_DRYRUN_RESULT.md)
 checks the incomplete 180-slot acquisition plan and runs one explicitly
 simulated matched triplet through all twelve windows of the geometry-aware
 port. It exercises input and negative controls but is not physical evidence.
+The [independent phase-10 RF stress test](docs/ESDIVA_PHASE10_STRESS_RESULT.md)
+retains two new source-resolved clouds and six fixed moving scenes. Paired
+blood-error and slow Axis 2 limits pass, but rigid-slow or rigid-fast tissue
+leakage exceeds the frozen bound on two scenes; none naturally selects
+reference. A separate forced-reference diagnostic also fails the tissue
+bound. This does not change the earlier reserve result or establish physical
+flow preservation.
 An [eSDIva RF benchmark proposal and Axis 3 literature update](docs/ESDIVA_RF_BENCHMARK_PROPOSAL.md)
 lays out an acoustic-simulation tier and its separate source-truth controls;
 the [Example 22 reproduction and three-view pilot](docs/RESULTS_ESDIVA_PILOT_V08.md)
@@ -237,6 +244,7 @@ all 75 recorded window scores without the 5.25 GB source download:
 python scripts/verify_resolvestroke_single_view.py
 python scripts/verify_resolvestroke_spatial_audit.py
 python scripts/verify_phantom_phase10_dryrun.py
+python scripts/verify_esdiva_phase10_stress.py
 ```
 
 Earlier studies, with their historical source fingerprints and interpretation limits:

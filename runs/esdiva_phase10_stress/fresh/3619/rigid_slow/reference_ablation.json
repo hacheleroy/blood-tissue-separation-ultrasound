@@ -1,0 +1,110 @@
+{
+  "status": "reference counterfactual; not the selected-mode decision",
+  "seed": 3619,
+  "scene": "rigid_slow",
+  "naturally_selected_reference": false,
+  "requested_mode": "hybrid",
+  "minimum_core_reference_amplitude_support": 0.725,
+  "primary_score_sha256": "069115134f8870a8697c234f312fb0d93bd36ecd4ead86c409bb9a6d26da98ed",
+  "broad_audit_sha256": "d4133d1bccc26dadb8f54a2755eced2087c709c7296873724b6e29ed0dc5f618",
+  "config_sha256": "04adbf736f5f730d10b7676210297bc70e3122b118824bb0dc1e0565ad22d9c5",
+  "source_sha256": "e6abef20e569b2104d24852703dbe942c4a99ab01f618aeea7e81a99eb940e24",
+  "fit": {
+    "model": "in-bounds complex calibration-reference transport; phase-only core",
+    "options": {
+      "transport_strength": 1.1,
+      "reference_amplitude_fraction": 0.2,
+      "minimum_validation_phase_gain": 0.01,
+      "minimum_valid_check_pixels": 30
+    },
+    "fit_pixels": 127,
+    "validation_pixels": 65,
+    "wide_calibration_sha256": "ff38efb391c2485ad61181333b258cafe13387f09950c6a922caa450201a5880",
+    "magnitude_translation_audit": {
+      "options": {
+        "maximum_axial_pixels": 1.25,
+        "maximum_lateral_pixels": 0.75,
+        "minimum_validation_gain": 0.01
+      },
+      "fit_pixels": 127,
+      "validation_pixels": 65,
+      "wide_calibration_sha256": "ff38efb391c2485ad61181333b258cafe13387f09950c6a922caa450201a5880",
+      "shift_sha256": "cc6714ef94656a8ba264c0e6e684fe4ec9138e4e0c12abe90b67b9c6f85f5feb",
+      "candidate_sha256": "13e2fd1621fc3b3ca1396f9a3bf1424a33a347e4f059ae1a4fb6227bc7af2ac8",
+      "accepted_view_frames": 222,
+      "view_frames": 240,
+      "median_validation_gain": 0.270416014354776,
+      "mean_applied_shift_pixels": 0.4086526976518616,
+      "uses_observed_IQ_and_prior_calibration_only": true,
+      "model": "disjoint-pixel observed-magnitude translation only"
+    },
+    "phase_sha256": "8e8cf920b2dce48e62460e1cf96783b5f42f08135d3a0901cefa1dc32c6c7dfc",
+    "accepted_view_frames": 127,
+    "view_frames": 240,
+    "median_validation_gain": 0.014034739562488175,
+    "mean_core_inbounds_fraction": 0.9421875,
+    "mean_core_reliable_reference_fraction": 0.53232421875,
+    "boundary_rule": "no cyclic wrap; interpolate reference only; zero phase on invalid or weak support",
+    "uses_observed_IQ_and_prior_calibration_only": true
+  },
+  "background_fit": {
+    "model": "in-bounds complex calibration-reference transport; phase-only core",
+    "options": {
+      "transport_strength": 1.1,
+      "reference_amplitude_fraction": 0.2,
+      "minimum_validation_phase_gain": 0.01,
+      "minimum_valid_check_pixels": 30
+    },
+    "fit_pixels": 127,
+    "validation_pixels": 65,
+    "wide_calibration_sha256": "ff38efb391c2485ad61181333b258cafe13387f09950c6a922caa450201a5880",
+    "magnitude_translation_audit": {
+      "options": {
+        "maximum_axial_pixels": 1.25,
+        "maximum_lateral_pixels": 0.75,
+        "minimum_validation_gain": 0.01
+      },
+      "fit_pixels": 127,
+      "validation_pixels": 65,
+      "wide_calibration_sha256": "ff38efb391c2485ad61181333b258cafe13387f09950c6a922caa450201a5880",
+      "shift_sha256": "4f94308eb2b09bbe7cda625f8e5de5e0e50abe9f16b6c6726a099b513dde5229",
+      "candidate_sha256": "9ecb72a61314f53f28dfc9b843965ae6d627121443c7169c7429ca8b34d2ca16",
+      "accepted_view_frames": 230,
+      "view_frames": 240,
+      "median_validation_gain": 0.3044467823266774,
+      "mean_applied_shift_pixels": 0.41358913204684405,
+      "uses_observed_IQ_and_prior_calibration_only": true,
+      "model": "disjoint-pixel observed-magnitude translation only"
+    },
+    "phase_sha256": "aa922f992df0791b6d213beb8fdb7f0d3280e1ebe4c6f8e7904cb085163a17e1",
+    "accepted_view_frames": 126,
+    "view_frames": 240,
+    "median_validation_gain": 0.012158721939050342,
+    "mean_core_inbounds_fraction": 0.9401041666666666,
+    "mean_core_reliable_reference_fraction": 0.5273763020833333,
+    "boundary_rule": "no cyclic wrap; interpolate reference only; zero phase on invalid or weak support",
+    "uses_observed_IQ_and_prior_calibration_only": true
+  },
+  "methods": {
+    "roundtrip": {
+      "paired_added_blood_iq_nrmse": 1.6075948637625474e-16,
+      "refitted_background_output_to_input_tissue_power": 1.3009982046040443,
+      "blood_nrmse_increase_over_none": 2.644699926385543e-18,
+      "tissue_leakage_ratio_to_none": 1.0
+    },
+    "svd_cut1": {
+      "paired_added_blood_iq_nrmse": 1.0105893725550228,
+      "refitted_background_output_to_input_tissue_power": 0.6073966388234989,
+      "blood_nrmse_increase_over_none": -0.012768289195145499,
+      "tissue_leakage_ratio_to_none": 1.0509543501840635
+    },
+    "axis1_cut1": {
+      "paired_added_blood_iq_nrmse": 1.0102482775080677,
+      "refitted_background_output_to_input_tissue_power": 0.5532892933175423,
+      "blood_nrmse_increase_over_none": -0.008083110989918207,
+      "tissue_leakage_ratio_to_none": 1.0423256070582445
+    }
+  },
+  "uses_source_truth_for_fit_or_selection": false,
+  "interpretation": "Forced reference is a branch sensitivity diagnostic; it cannot repair missing natural coverage."
+}

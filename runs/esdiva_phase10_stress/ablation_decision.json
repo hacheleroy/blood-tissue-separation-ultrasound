@@ -1,0 +1,124 @@
+{
+  "status": "four-scene reference branch eligibility and diagnostics recorded",
+  "config_sha256": "04adbf736f5f730d10b7676210297bc70e3122b118824bb0dc1e0565ad22d9c5",
+  "missing": [],
+  "rows": [
+    {
+      "seed": 3607,
+      "scene": "rigid_fast",
+      "naturally_selected_reference": false,
+      "minimum_core_reference_amplitude_support": 0.825,
+      "accepted_view_frames": 119,
+      "view_frames": 240,
+      "mean_core_reliable_reference_fraction": 0.6726888020833334,
+      "methods": {
+        "roundtrip": {
+          "paired_added_blood_iq_nrmse": 2.8573682097802055e-16,
+          "refitted_background_output_to_input_tissue_power": 1.0598087984067415,
+          "blood_nrmse_increase_over_none": 2.835552346855257e-17,
+          "tissue_leakage_ratio_to_none": 0.9999999999999998
+        },
+        "svd_cut1": {
+          "paired_added_blood_iq_nrmse": 0.10552589133848388,
+          "refitted_background_output_to_input_tissue_power": 0.1485809441909477,
+          "blood_nrmse_increase_over_none": 0.011219674095758275,
+          "tissue_leakage_ratio_to_none": 0.9246291929244184
+        },
+        "axis1_cut1": {
+          "paired_added_blood_iq_nrmse": 0.11360425674279905,
+          "refitted_background_output_to_input_tissue_power": 0.1292581444079842,
+          "blood_nrmse_increase_over_none": 0.0002863187580779969,
+          "tissue_leakage_ratio_to_none": 0.9394775257913544
+        }
+      }
+    },
+    {
+      "seed": 3607,
+      "scene": "rigid_slow",
+      "naturally_selected_reference": false,
+      "minimum_core_reference_amplitude_support": 0.775,
+      "accepted_view_frames": 115,
+      "view_frames": 240,
+      "mean_core_reliable_reference_fraction": 0.6605794270833333,
+      "methods": {
+        "roundtrip": {
+          "paired_added_blood_iq_nrmse": 2.458063073584243e-16,
+          "refitted_background_output_to_input_tissue_power": 1.0466608787203304,
+          "blood_nrmse_increase_over_none": 2.30624807253911e-17,
+          "tissue_leakage_ratio_to_none": 1.0
+        },
+        "svd_cut1": {
+          "paired_added_blood_iq_nrmse": 0.8718621733730354,
+          "refitted_background_output_to_input_tissue_power": 0.13862788371146798,
+          "blood_nrmse_increase_over_none": -0.017027784382202316,
+          "tissue_leakage_ratio_to_none": 0.9736357794933792
+        },
+        "axis1_cut1": {
+          "paired_added_blood_iq_nrmse": 0.9088751467846172,
+          "refitted_background_output_to_input_tissue_power": 0.11980101077522642,
+          "blood_nrmse_increase_over_none": -0.013578717590938538,
+          "tissue_leakage_ratio_to_none": 0.9755427100802898
+        }
+      }
+    },
+    {
+      "seed": 3619,
+      "scene": "rigid_fast",
+      "naturally_selected_reference": false,
+      "minimum_core_reference_amplitude_support": 0.8,
+      "accepted_view_frames": 118,
+      "view_frames": 240,
+      "mean_core_reliable_reference_fraction": 0.5528645833333333,
+      "methods": {
+        "roundtrip": {
+          "paired_added_blood_iq_nrmse": 1.372380321029174e-16,
+          "refitted_background_output_to_input_tissue_power": 1.3204135964107495,
+          "blood_nrmse_increase_over_none": 6.361434479095134e-19,
+          "tissue_leakage_ratio_to_none": 1.0
+        },
+        "svd_cut1": {
+          "paired_added_blood_iq_nrmse": 0.6914651522069334,
+          "refitted_background_output_to_input_tissue_power": 0.5856051271179148,
+          "blood_nrmse_increase_over_none": -0.00832702949014319,
+          "tissue_leakage_ratio_to_none": 1.0306414543117686
+        },
+        "axis1_cut1": {
+          "paired_added_blood_iq_nrmse": 0.7638376412225077,
+          "refitted_background_output_to_input_tissue_power": 0.5414739248053889,
+          "blood_nrmse_increase_over_none": -0.001996793831412935,
+          "tissue_leakage_ratio_to_none": 1.0240885666315083
+        }
+      }
+    },
+    {
+      "seed": 3619,
+      "scene": "rigid_slow",
+      "naturally_selected_reference": false,
+      "minimum_core_reference_amplitude_support": 0.725,
+      "accepted_view_frames": 127,
+      "view_frames": 240,
+      "mean_core_reliable_reference_fraction": 0.53232421875,
+      "methods": {
+        "roundtrip": {
+          "paired_added_blood_iq_nrmse": 1.6075948637625474e-16,
+          "refitted_background_output_to_input_tissue_power": 1.3009982046040443,
+          "blood_nrmse_increase_over_none": 2.644699926385543e-18,
+          "tissue_leakage_ratio_to_none": 1.0
+        },
+        "svd_cut1": {
+          "paired_added_blood_iq_nrmse": 1.0105893725550228,
+          "refitted_background_output_to_input_tissue_power": 0.6073966388234989,
+          "blood_nrmse_increase_over_none": -0.012768289195145499,
+          "tissue_leakage_ratio_to_none": 1.0509543501840635
+        },
+        "axis1_cut1": {
+          "paired_added_blood_iq_nrmse": 1.0102482775080677,
+          "refitted_background_output_to_input_tissue_power": 0.5532892933175423,
+          "blood_nrmse_increase_over_none": -0.008083110989918207,
+          "tissue_leakage_ratio_to_none": 1.0423256070582445
+        }
+      }
+    }
+  ],
+  "interpretation": "Forced reference rows are engineering sensitivity only; natural selection is assessed by the separate primary decision."
+}

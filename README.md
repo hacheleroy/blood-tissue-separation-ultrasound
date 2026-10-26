@@ -14,6 +14,10 @@ has now processed all five released clips against the known 4 mm and 2 mm
 tube mask. SVD cut 1 and a 100 Hz high-pass both localize post-injection
 CEUS signal strongly. This single-transmit, static-phantom dataset does not
 test the frozen three-view motion selector or source-resolved blood retention.
+The [five-plane robustness audit](docs/RESOLVESTROKE_SPATIAL_AUDIT_RESULT.md)
+reproduces the center section exactly but finds missed 2 mm tube pixels at
+one sampled end and missed 4 mm pixels for the high-pass filter at the other.
+Tube geometry alone cannot establish preservation of all flow.
 An [eSDIva RF benchmark proposal and Axis 3 literature update](docs/ESDIVA_RF_BENCHMARK_PROPOSAL.md)
 lays out an acoustic-simulation tier and its separate source-truth controls;
 the [Example 22 reproduction and three-view pilot](docs/RESULTS_ESDIVA_PILOT_V08.md)
@@ -227,6 +231,7 @@ all 75 recorded window scores without the 5.25 GB source download:
 
 ```bash
 python scripts/verify_resolvestroke_single_view.py
+python scripts/verify_resolvestroke_spatial_audit.py
 ```
 
 Earlier studies, with their historical source fingerprints and interpretation limits:

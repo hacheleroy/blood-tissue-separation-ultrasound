@@ -1,0 +1,112 @@
+{
+  "prior_report_sha256": "7908716a6d8b06a045a5006e62879057337ee44b4b6e311ef6ed5dd69b2fadb3",
+  "new_report_sha256": "d9ef06eb98080e79a6486603679a949258a07bb8d65e670168587591f88c46f6",
+  "description": "The x=-4.8 mm plane in each of 15 multi-plane reconstructions is compared to its original single-plane window; all three methods and every power pixel.",
+  "comparisons": [
+    {
+      "stem": "00_00",
+      "previous_power_sha256": "fe048bfc1985f8bbf50f668df67e7813cd9e264907947e6c5dffc4156f5251e7",
+      "new_five_plane_checkpoint_sha256": "8820ba1ff6cd4d9178eb1e140b1da5943064811cc3faa475efb5102aa93e7353",
+      "relative_l2_error": 0.0,
+      "maximum_absolute_power_difference": 0.0
+    },
+    {
+      "stem": "00_07",
+      "previous_power_sha256": "becd0120ebe6d33f4f5011dff87afe528584afe5a635095bef3d0e17ec2d1b36",
+      "new_five_plane_checkpoint_sha256": "4f97efae0d185be465d3f23eb15173a9e4f724948f61b39c1d5ece0dab73b38a",
+      "relative_l2_error": 0.0,
+      "maximum_absolute_power_difference": 0.0
+    },
+    {
+      "stem": "00_14",
+      "previous_power_sha256": "4b950d8c91bcd6a1d050d0a3f1a9c1a19602699b2a2ae480c9817ae9768c1472",
+      "new_five_plane_checkpoint_sha256": "41229db29f65dabe465238c533aac015c11349be138bfd6b0a6c6d1fb51bd029",
+      "relative_l2_error": 0.0,
+      "maximum_absolute_power_difference": 0.0
+    },
+    {
+      "stem": "01_00",
+      "previous_power_sha256": "d919d5825a4d7a083f30f264650b6580f7b4cb7b12ee8ca8bf489d2aab92d012",
+      "new_five_plane_checkpoint_sha256": "43bb115d05a31e4c2c97fa0f9909b1029301395744895e80b1c1247e880fc67f",
+      "relative_l2_error": 0.0,
+      "maximum_absolute_power_difference": 0.0
+    },
+    {
+      "stem": "01_07",
+      "previous_power_sha256": "1a1baf598f6a26a6748403ffd398cc7c4b8bd40aef1f56539c9d5615f3d9762a",
+      "new_five_plane_checkpoint_sha256": "bdc475c9c45d6f7174e05b4d6659727e669947102c61d349f80bcb7bb573722c",
+      "relative_l2_error": 0.0,
+      "maximum_absolute_power_difference": 0.0
+    },
+    {
+      "stem": "01_14",
+      "previous_power_sha256": "6b0b3cbd749981a30ad04b2b8c18d353ef463591194e120f75f3b267ca5709ec",
+      "new_five_plane_checkpoint_sha256": "799c26b7758b1cea37596c192219fc83b4b0ed060ebacc9e91ec9fc134e21b4a",
+      "relative_l2_error": 0.0,
+      "maximum_absolute_power_difference": 0.0
+    },
+    {
+      "stem": "02_00",
+      "previous_power_sha256": "8f09e4022f49251ec1c922d6af677e3f09f4b3ff198f82f34d017a8a0a6084e6",
+      "new_five_plane_checkpoint_sha256": "c2c12f14fe2d811ca5467067a2f01ae8bdb6e64c1541bebdc4a160cc00c41551",
+      "relative_l2_error": 0.0,
+      "maximum_absolute_power_difference": 0.0
+    },
+    {
+      "stem": "02_07",
+      "previous_power_sha256": "a2e9b72cab2df1ddf1fcc3df1e0ff8e4e8afaac2541b9b817ea261de063c34c2",
+      "new_five_plane_checkpoint_sha256": "c53c132861f6f9565d6ff9d40a3192e471fb8109ada964cb116ba8de1bd2c139",
+      "relative_l2_error": 0.0,
+      "maximum_absolute_power_difference": 0.0
+    },
+    {
+      "stem": "02_14",
+      "previous_power_sha256": "beddc20361ecfa135b8ee210a6460c1fdb1d17b9f169a4ccfc93e20a3d05fed0",
+      "new_five_plane_checkpoint_sha256": "9c2e1e8033ca4e899691d8398b2e1e09df0b2414bf5029c35421dfa3ae24d306",
+      "relative_l2_error": 0.0,
+      "maximum_absolute_power_difference": 0.0
+    },
+    {
+      "stem": "03_00",
+      "previous_power_sha256": "2fa35a5bf13a667ca8bf4f03a90058c885e445142ae100ad59f2518df4ce96a7",
+      "new_five_plane_checkpoint_sha256": "8595026371d06e36ef6728c472611cb972948cb506361d931a487acb024c2029",
+      "relative_l2_error": 0.0,
+      "maximum_absolute_power_difference": 0.0
+    },
+    {
+      "stem": "03_07",
+      "previous_power_sha256": "1f101a3a043950f0749ee2e8b0922a124ef331e1b1159cf1d77f60938b0c6d75",
+      "new_five_plane_checkpoint_sha256": "6c6bd845111313896c204c460ccb6ad340318b9e4df552011ff6d9c29789ea44",
+      "relative_l2_error": 0.0,
+      "maximum_absolute_power_difference": 0.0
+    },
+    {
+      "stem": "03_14",
+      "previous_power_sha256": "a04a808244a5370b5afb74ac1edf4db79ac948fdc8b8dd2805e801ec10b23a23",
+      "new_five_plane_checkpoint_sha256": "383f7f01bc8a3b86c56e7bef1f3a7ee82b1ed2616d72572a0f2ed8373488b406",
+      "relative_l2_error": 0.0,
+      "maximum_absolute_power_difference": 0.0
+    },
+    {
+      "stem": "04_00",
+      "previous_power_sha256": "7a0ca9e15b0988497f2f3850dd0e608df4296ee85ef1b9620144953855fcfc84",
+      "new_five_plane_checkpoint_sha256": "5f216a42254bebb5a45d7d391b2d850ae518ddd6f92e08a93d68f12cdd9834cc",
+      "relative_l2_error": 0.0,
+      "maximum_absolute_power_difference": 0.0
+    },
+    {
+      "stem": "04_07",
+      "previous_power_sha256": "ec76dd9e740a0c2ffd885facce025eff887ad09a5f5575272899f9ff971ba8cc",
+      "new_five_plane_checkpoint_sha256": "9d3a80b0aa7cd4390878f95b6f8f55c324475e4e326ea828046909d4711c05a7",
+      "relative_l2_error": 0.0,
+      "maximum_absolute_power_difference": 0.0
+    },
+    {
+      "stem": "04_14",
+      "previous_power_sha256": "c8bd76b7ff9b2b811e750d29c2aca3e83c29eb3b2ee8b6be13b1316e04e9fb52",
+      "new_five_plane_checkpoint_sha256": "09cab027f98729e8d0bec97a298a4efc54e566a6a9eaad33de3917d9906f4d22",
+      "relative_l2_error": 0.0,
+      "maximum_absolute_power_difference": 0.0
+    }
+  ]
+}

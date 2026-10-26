@@ -1,0 +1,87 @@
+{
+  "study": "Exploratory five-plane Resolve Stroke CEUS geometry audit",
+  "freeze_commit": "558113d447d29918483a1232f48fe461bb1ef486",
+  "source_hdf5_sha256": "40908ca699f3b88d9cdcdc4cabf9f1e07d481baec901b7044132e42c41f768f5",
+  "artifact_sha256": {
+    "configs/resolvestroke_spatial_audit.json": "3307bcf49cc47fd6b72e652bc0deb1033c7812c8b6c764333694fb818987fb71",
+    "configs/resolvestroke_complex.yaml": "1c2ac58fa23899d3bf44456131d56fc38664d4572d6ba02335dd7d77515f38bb",
+    "scripts/resolvestroke_spatial_audit.py": "df21e4796d61fac8345a332eab591648e8ffa1a2089d3b3a121367efabb8e339",
+    "scripts/plot_resolvestroke_spatial_audit.py": "4cd1a054f734dfd14a776b5eaef6e51cb34d18490b23d857f2f9c9c0b83b3738",
+    "docs/RESOLVESTROKE_SPATIAL_AUDIT_PROTOCOL.md": "a44599091f4028341a058cbf2a4ae9b7f3a53b06cd531021f114797168a8ec8c",
+    "runs/resolvestroke_spatial_audit/report.json": "d9ef06eb98080e79a6486603679a949258a07bb8d65e670168587591f88c46f6",
+    "runs/resolvestroke_spatial_audit/clip_plane_power_maps.npz": "43550b2190f10950e82ed22a46dd8bc9468fc75f2f89f6022f6eca59ba86b79d",
+    "runs/resolvestroke_spatial_audit/central_plane_replay.json": "8b00c72957c6cbf61de8a4d6846060b4005acf0dcd8284f869288857e8639ed3",
+    "docs/figures/resolvestroke_spatial_scores.png": "3ea17e8809cd8abf0a5d7914816d9d987413fe37fb54f643fbda6acb49c494ff",
+    "docs/figures/resolvestroke_spatial_temporal.png": "ffeb8868572219a0bbf8c3eff0a360f980ec1f5befc5114f28e2febce48c3af2",
+    "docs/figures/resolvestroke_spatial_maps.png": "187410a4202d6f5595bf182f38021b0f0f01b00223118173c95682138691c2a6",
+    "docs/RESOLVESTROKE_SPATIAL_AUDIT_RESULT.md": "c8275773c7d15cdecaec25df26d1e92f7f87892d9a6af4e6eeb66764055b59ce",
+    "scripts/verify_resolvestroke_spatial_audit.py": "97cb305a0433ebb5a3dc12ce7357f4e1616b7b355b0b09fcde85d8fef884909d"
+  },
+  "local_checkpoint_sha256": {
+    "00_00": {
+      "json": "50c20560f805d107d2959ba9ae39392edf0fc6a516c0147092fd6ebd4aad3b45",
+      "npz": "8820ba1ff6cd4d9178eb1e140b1da5943064811cc3faa475efb5102aa93e7353"
+    },
+    "00_07": {
+      "json": "0eb8bddc1d9badd43fe535b2dcfd1fc95f4962b6a2bb47346b81d3239b7311c9",
+      "npz": "4f97efae0d185be465d3f23eb15173a9e4f724948f61b39c1d5ece0dab73b38a"
+    },
+    "00_14": {
+      "json": "d25cd2e7e74965931f0e9d827a1ac96e94dfeccd5a6a42efa9b173f252a004ca",
+      "npz": "41229db29f65dabe465238c533aac015c11349be138bfd6b0a6c6d1fb51bd029"
+    },
+    "01_00": {
+      "json": "5fde0eda6f246bc12ac2955b2b78762ab076163cc4d4d84474c9e897d354efcd",
+      "npz": "43bb115d05a31e4c2c97fa0f9909b1029301395744895e80b1c1247e880fc67f"
+    },
+    "01_07": {
+      "json": "d1dd0042d97396302b5706d04ac9025300ac875d9c495ad55976f098cf59faec",
+      "npz": "bdc475c9c45d6f7174e05b4d6659727e669947102c61d349f80bcb7bb573722c"
+    },
+    "01_14": {
+      "json": "71ac62972a2073518890b64997acbf38370066580b48a4599948a2e08d33ce3f",
+      "npz": "799c26b7758b1cea37596c192219fc83b4b0ed060ebacc9e91ec9fc134e21b4a"
+    },
+    "02_00": {
+      "json": "ec60b75b761d7d68aa8cb6fa7f732b35d9ffc01f052fd4b342a01acd5bef1150",
+      "npz": "c2c12f14fe2d811ca5467067a2f01ae8bdb6e64c1541bebdc4a160cc00c41551"
+    },
+    "02_07": {
+      "json": "cf37f61e8cd55da0452e816807b7213a378cea65e2b2fa2abb85d3fdc4e1b2cc",
+      "npz": "c53c132861f6f9565d6ff9d40a3192e471fb8109ada964cb116ba8de1bd2c139"
+    },
+    "02_14": {
+      "json": "6a567c113456925aed959dac407d08a821f53580d8514698e8d1cdbfd076b1d6",
+      "npz": "9c2e1e8033ca4e899691d8398b2e1e09df0b2414bf5029c35421dfa3ae24d306"
+    },
+    "03_00": {
+      "json": "bf75235d2943bbcab597006b003b1141443247e6ee71812823a60f737ec6827e",
+      "npz": "8595026371d06e36ef6728c472611cb972948cb506361d931a487acb024c2029"
+    },
+    "03_07": {
+      "json": "d2fac1662db0960d9844e946c0b06dd1d6529f7582b4854b4e325cba816865b5",
+      "npz": "6c6bd845111313896c204c460ccb6ad340318b9e4df552011ff6d9c29789ea44"
+    },
+    "03_14": {
+      "json": "52f9ccc122fdb70167ea28a44f1d4b7537c55fd7e4aa29f4652bd00f53d72e51",
+      "npz": "383f7f01bc8a3b86c56e7bef1f3a7ee82b1ed2616d72572a0f2ed8373488b406"
+    },
+    "04_00": {
+      "json": "1356581dc6bcf36e1d1470e4a22f67c5d4ead5723fc89197ca73ee40e85a7f77",
+      "npz": "5f216a42254bebb5a45d7d391b2d850ae518ddd6f92e08a93d68f12cdd9834cc"
+    },
+    "04_07": {
+      "json": "2c4eb2f5820ab0f09649546246ecbf92b5a565c884d6a3b9ce32e7cd12e4ad3e",
+      "npz": "9d3a80b0aa7cd4390878f95b6f8f55c324475e4e326ea828046909d4711c05a7"
+    },
+    "04_14": {
+      "json": "4d532643aea40291209377c457edef62da74237b0f7b35d90c3f46d838820ee0",
+      "npz": "09cab027f98729e8d0bec97a298a4efc54e566a6a9eaad33de3917d9906f4d22"
+    }
+  },
+  "local_auxiliary_sha256": {
+    "source_audit.json": "d174d74401463977f96c86c4def182923264dedc9a1184ec3ea05702829bbb3a",
+    "structural_planes.npz": "76c4746ae612f8239a731961c5d79b7aa83bd55fdc1f1e9e7c138d8d7c954c36"
+  },
+  "note": "Source HDF5 and 15 intermediate five-plane power checkpoints are local; the complete scored aggregate maps and temporal reports are archived. All 15 center-plane power checkpoints replayed exactly."
+}

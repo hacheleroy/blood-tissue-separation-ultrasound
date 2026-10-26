@@ -40,6 +40,7 @@ jobs:
       - run: python scripts/verify_motion_results.py
       - run: python scripts/phantom_v07.py check-protocol
       - run: python scripts/verify_resolvestroke_single_view.py
+      - run: python scripts/verify_resolvestroke_spatial_audit.py
 
   packages:
     runs-on: ubuntu-latest

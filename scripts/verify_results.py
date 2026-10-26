@@ -20,7 +20,8 @@ def archive_bytes(root,item):
     return b"".join(parts)
 
 
-def verify(root,require_current_code=False,restore=False,manifest_path="runs/fidelity_v03_manifest.json"):
+def verify(root,require_current_code=False,restore=False,manifest_path="runs/fidelity_v03_manifest.json",
+           exclude_current_source=()):
     root=Path(root)
     manifest=json.loads((root/manifest_path).read_text())
     for item in manifest["archives"]:
@@ -56,7 +57,11 @@ def verify(root,require_current_code=False,restore=False,manifest_path="runs/fid
             if not path.exists():path.write_bytes(data)
     if require_current_code:
         h=hashlib.sha256()
-        for p in sorted((root/"src/btbench").glob("*.py")):h.update(p.name.encode());h.update(p.read_bytes())
+        excluded=set(exclude_current_source)
+        current={p.name:p for p in (root/"src/btbench").glob("*.py")}
+        if excluded-current.keys():raise ValueError("Excluded source does not exist")
+        for name,p in sorted(current.items()):
+            if name not in excluded:h.update(name.encode());h.update(p.read_bytes())
         if h.hexdigest()!=manifest["code_sha256"]:raise ValueError("Current numerical source differs from archived milestone")
     for item in manifest.get('artifacts',[]):
         data=(root/item['path']).read_bytes()
@@ -69,7 +74,10 @@ def verify(root,require_current_code=False,restore=False,manifest_path="runs/fid
 if __name__=="__main__":
     p=argparse.ArgumentParser();p.add_argument("root",nargs="?",default=".")
     p.add_argument("--require-current-code",action="store_true")
+    p.add_argument("--exclude-current-source",action="append",default=[],
+                   help="New module absent from an old source hash; verify it under its own frozen archive")
     p.add_argument("--restore",action="store_true",help="Restore split archives after checking their hashes")
     p.add_argument("--manifest",default="runs/fidelity_v03_manifest.json")
     args=p.parse_args()
-    print(json.dumps(verify(args.root,args.require_current_code,args.restore,args.manifest),indent=2))
+    print(json.dumps(verify(args.root,args.require_current_code,args.restore,args.manifest,
+                            args.exclude_current_source),indent=2))

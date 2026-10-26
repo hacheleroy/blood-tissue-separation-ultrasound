@@ -1,0 +1,6 @@
+{
+  "study": "Retrospective receive-core residual source and velocity-profile diagnostic",
+  "results_sha256": "37b6662533a44902b69cd586ef9718918beb04f88617c306bf7aec75aae088cf",
+  "figure_sha256": "b8577d591907863375cce3c2b6d523a4f5c72f7dcc8557d2ce985c645e9e430b",
+  "rf_checkpoint_status": "Workspace-only; clean CI checks component hashes against the frozen multidimensional archive"
+}

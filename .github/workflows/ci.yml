@@ -79,6 +79,7 @@ jobs:
       - run: python scripts/verify_esdiva_phase11_development.py
       - run: python scripts/verify_multidim_aperture.py --measured runs/resolvestroke_aperture_pilot_v1/report.json
       - run: python scripts/verify_flow_background_audit.py
+      - run: python scripts/verify_receive_core_source_profile.py
       - run: python scripts/phantom_phase10_preflight.py plan --card runs/phantom_phase10_plan/acquisition_card.json --inventory runs/phantom_phase10_plan/capture_inventory.json
       - run: python scripts/phantom_phase10_dryrun.py --plan-directory runs/phantom_phase10_plan --fixture-directory ${{ runner.temp }}/phase10_fixture --output ${{ runner.temp }}/phase10_fixture_report.json
 

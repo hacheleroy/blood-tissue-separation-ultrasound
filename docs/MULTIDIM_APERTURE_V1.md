@@ -22,8 +22,10 @@ has already been seen in the earlier Axis-1/2 research. We used all five
 predeclared scenes on each of its two scatterer clouds (3907 as development,
 3919 evaluated once for **this** new method, although previously seen for the
 phase-11 project). Its transmit sequence repeats **0°, −5°, +5°** for 80
-evaluation cycles at 1 kHz per angle: 240 emissions over 80 ms. We use each
+evaluation cycles at 3.7 kHz per angle: 240 emissions over about 21.6 ms. We use each
 same RF event and the same final 16 cycles for every main method. The
+earlier 80 ms label was a duration error; the saved acquisition geometry
+records a 3,700 Hz per-angle revisit rate. The
 compounded single-image control uses **all 240 emissions**; it is not a new
 240-emission, single-angle acquisition. There is no five-angle acquisition
 in this source bank. The STAP arm additionally uses the 16 earlier calibration

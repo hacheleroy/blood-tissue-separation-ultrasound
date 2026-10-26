@@ -1,0 +1,13 @@
+{
+  "study": "Retrospective source and velocity profile diagnostic for receive-core filtering",
+  "source_status": "Both scatterer clouds and all cases were previously seen; no held-out claim or method selection",
+  "seeds": [3907, 3919],
+  "scenes": ["rigid_slow", "smooth_slow"],
+  "phase_error": false,
+  "score_windows": [16, 80],
+  "receive_groups": 8,
+  "radial_bins": [[0.0, 0.5, "center"], [0.5, 0.75, "middle"], [0.75, 1.0, "near_wall"], [1.0, 1.25, "outside_wall"]],
+  "svd_mode_bins": [[0, 20], [20, 40], [40, 60], [60, 80]],
+  "methods": ["unfiltered", "compounded_svd_rank1", "receive_svd_a_rank1", "receive_core_intersection", "receive_hosvd_adaptation", "baranger_lower_only", "baranger_double"],
+  "decision": "Report separate tissue, noise, and their coherent cross term; a noise-only remedy is not pursued if tissue dominates residual background. All spatial masks and physical velocity truth are evaluator-only."
+}

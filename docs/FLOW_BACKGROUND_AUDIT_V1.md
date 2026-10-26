@@ -75,7 +75,7 @@ views or on compounded IQ; those domains must not be numerically pooled.
 
 ## Matched acoustic RF comparison: four slow-flow scenes
 
-All methods below use the **same 240 transmissions over 80 ms**, the same
+All methods below use the **same 240 transmissions over about 21.6 ms**, the same
 source-separated eSDIva RF, and the same final 16 compounded frames. Numbers
 are medians of the *four per-case dB ratios*, rather than a dB conversion of
 median powers. The two scatterer seeds were previously seen during phase 11;

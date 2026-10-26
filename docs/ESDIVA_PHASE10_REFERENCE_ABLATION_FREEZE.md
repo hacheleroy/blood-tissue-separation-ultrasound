@@ -1,0 +1,7 @@
+# Reference-context sensitivity on the independent RF clouds
+
+26 October 2026. This counterfactual was fixed after the primary six-scene [stress protocol](ESDIVA_PHASE10_STRESS_FREEZE.md) had already been committed and RF generation had begun, but before any of its IQ scores or selector outputs were inspected. It is an **engineering branch test**, not a new pre-RF held-out qualification. The [separate configuration](../configs/esdiva_phase10_reference_ablation.json) pins the primary protocol and [runner](../examples/esdiva_phase10_reference_stress.py) by SHA-256.
+
+On both declared scatterer clouds, run the unchanged phase-10 reference-transport context on **rigid fast and rigid slow**, regardless of the primary natural mode. Fit mixture and background separately using only regular IQ and prior tissue calibration. For each of roundtrip, SVD cut 1 and Axis 1 cut 1, report the paired added-blood IQ error and refitted-background tissue leakage against the no-motion control. Retain the context's validation support, accepted frame count and reference phase diagnostics. Run all four scenes, including any unfavorable result, and archive source and input hashes.
+
+The primary selector and its decision remain untouched. A forced reference result cannot fulfill the primary requirement for **natural** reference selection and cannot turn a failed or ineligible scene into a pass. The source-separated blood and tissue signals are evaluator-only. This branch sensitivity test also cannot establish physical phantom performance.

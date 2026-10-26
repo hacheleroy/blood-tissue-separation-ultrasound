@@ -1,0 +1,24 @@
+{
+  "study": "axis1_oracle_limit_v1",
+  "seen_diagnostic_seeds": [9401],
+  "development_seeds": [10601, 10602],
+  "heldout_seeds": [12701, 12702],
+  "conditions": {
+    "stationary": {"motion": "none", "amplitude_pixels": 1.4, "tissue_turnover": 0.0},
+    "translation": {"motion": "translation", "amplitude_pixels": 1.4, "tissue_turnover": 0.0},
+    "unmodeled_turnover": {"motion": "unmodeled", "amplitude_pixels": 1.4, "tissue_turnover": 0.25}
+  },
+  "flow_mps": [0.0004, 0.0007, 0.0012, 0.0024],
+  "ensemble_frames": [64, 128, 256],
+  "total_frames": 256,
+  "score_last_frames": 64,
+  "calibration_frames_unused": 32,
+  "shape_zx": [16, 24],
+  "prf_hz": 1000.0,
+  "flow_decorrelation": 0.99,
+  "common_crop_pixels": 4,
+  "oracle_tissue_ranks": [1, 2],
+  "tissue_power_limit": 0.10,
+  "ambitious_blood_iq_error_limit": 0.25,
+  "raw_svd_blood_error_margin": 0.05
+}

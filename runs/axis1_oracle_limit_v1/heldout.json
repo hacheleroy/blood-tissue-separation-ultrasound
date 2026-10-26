@@ -1,0 +1,3483 @@
+{
+  "study": "axis1_oracle_limit_v1",
+  "split": "heldout",
+  "source_sha256": {
+    "configs/axis1_oracle_limit_v1.json": "1a38d31b465cf8d2c3192ea3402bf86a0fe281beef7e406a6484cc305aae8902",
+    "examples/axis1_oracle_limit_study.py": "44bded9cd0246d176f8ea9a00b07a841f762003fe3411098e3bc494f191fc10a",
+    "examples/axis1_native_subtraction_study.py": "2bd5ea22b7e1ad28b2e81c838a7bb658b30208c90cefe5968048ba346c874984",
+    "src/btbench/shared.py": "e50a1670bc1eb290ddd8b4c24cb58e56dc42e8f36cfb497b9f479d440d706247",
+    "src/btbench/core.py": "0a74f5c8a335921f52eade374170fdd8c0f44cf8b06bb00356a4cda5932b8752",
+    "src/btbench/filters.py": "df2067a1c602500b09416510650789a9a153378dbbe8c1dac70d7dcecaf8d96a",
+    "src/btbench/motion_first.py": "539073495dd872f6b80c2adf86aa78b357da46dde5e46c462505ad98600201a3",
+    "src/btbench/native_subtraction.py": "6ce5bad869d6121ac34e07cf6b37587d2679b29267a5625d6423e99e6da55b16",
+    "src/btbench/registration.py": "9fac8bac07dcb8bfa45c90ef5c3f5ae1168abd9ff127fb92991a3703d82e2493",
+    "src/btbench/svd_literature.py": "af10fc23cab012689b42bf1e82ad2446b63d46f59faaab9a10570d71c5204098",
+    "src/btbench/paper_filters.py": "581cfe8025568d2ec91769180757cebf98270da1371c7190733396d4651f5abf",
+    "src/btbench/stap.py": "54f17721fdd132264a5d52986f6dde8398f9f71377ad524d39620c199d6d269f",
+    "src/btbench/axes.py": "3c10dc68eb60cd6cf7f0a332bee16d1e704d59c59ea81b484bf6991a625108e5"
+  },
+  "cases": [
+    {
+      "seed": 12701,
+      "condition": "stationary",
+      "flow_mps": 0.0004,
+      "motion": "none",
+      "tissue_turnover": 0.0,
+      "blood_input_power": 4365.169793224956,
+      "tissue_input_power": 544518.2967328423,
+      "lengths": [
+        {
+          "ensemble_frames": 64,
+          "duration_ms": 64.0,
+          "target_sha256": {
+            "blood": "6a436fff2bea61cc05818ed8e8bb4d044a803b935e129e016d3e9e664ddf6b1e",
+            "tissue": "5ee52b28a53e1da0e63051e74a0c4ac9b24b3ecfe3a8dbf3ace3b514e123eafd",
+            "noise": "5d30a9629c3adefd454961189ed9c816f23df096bfb2e4ba9984ce71ee5c4caf"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.9013548692935308,
+              "background_power_remaining": 0.0012074451919656917
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.9013548692935308,
+              "background_power_remaining": 0.0012074451919656913
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.9013061647814262,
+              "background_power_at_full_subtraction": 0.0012060703336261656,
+              "aligned_blood_projection_norm_fraction": 0.8810702431140178,
+              "tissue_training_energy_fraction": 0.9974729785331324,
+              "minimum_gain_for_tissue_limit": 0.6855037052808768,
+              "minimum_blood_error_at_tissue_limit": 0.6178487155501642,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 7.246838603646083e-17
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.9570543566602833,
+              "background_power_at_full_subtraction": 4.903363930014023e-05,
+              "aligned_blood_projection_norm_fraction": 0.955933622139355,
+              "tissue_training_energy_fraction": 0.9999997335361019,
+              "minimum_gain_for_tissue_limit": 0.6838504922557062,
+              "minimum_blood_error_at_tissue_limit": 0.6544820929176028,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 1.9954085212509793e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.0
+        },
+        {
+          "ensemble_frames": 128,
+          "duration_ms": 128.0,
+          "target_sha256": {
+            "blood": "6a436fff2bea61cc05818ed8e8bb4d044a803b935e129e016d3e9e664ddf6b1e",
+            "tissue": "5ee52b28a53e1da0e63051e74a0c4ac9b24b3ecfe3a8dbf3ace3b514e123eafd",
+            "noise": "5d30a9629c3adefd454961189ed9c816f23df096bfb2e4ba9984ce71ee5c4caf"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.8302675305033613,
+              "background_power_remaining": 0.003570072359945491
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.8302675305033613,
+              "background_power_remaining": 0.003570072359945491
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.8300837657139655,
+              "background_power_at_full_subtraction": 0.0035681062190250044,
+              "aligned_blood_projection_norm_fraction": 0.7727784250029228,
+              "tissue_training_energy_fraction": 0.9899511514792095,
+              "minimum_gain_for_tissue_limit": 0.6520224677938389,
+              "minimum_blood_error_at_tissue_limit": 0.5412332653964226,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 9.910541977139535e-17
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.9068822249797521,
+              "background_power_at_full_subtraction": 4.988551524981442e-05,
+              "aligned_blood_projection_norm_fraction": 0.898008133119922,
+              "tissue_training_energy_fraction": 0.9999957211491477,
+              "minimum_gain_for_tissue_limit": 0.6838547338045147,
+              "minimum_blood_error_at_tissue_limit": 0.6201757025555744,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 2.8143375221874923e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.0
+        },
+        {
+          "ensemble_frames": 256,
+          "duration_ms": 256.0,
+          "target_sha256": {
+            "blood": "6a436fff2bea61cc05818ed8e8bb4d044a803b935e129e016d3e9e664ddf6b1e",
+            "tissue": "5ee52b28a53e1da0e63051e74a0c4ac9b24b3ecfe3a8dbf3ace3b514e123eafd",
+            "noise": "5d30a9629c3adefd454961189ed9c816f23df096bfb2e4ba9984ce71ee5c4caf"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.7677926470799366,
+              "background_power_remaining": 0.011385090381246882
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.7677926470799366,
+              "background_power_remaining": 0.011385090381246885
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.7672232533967362,
+              "background_power_at_full_subtraction": 0.011381403909753134,
+              "aligned_blood_projection_norm_fraction": 0.6346210966721019,
+              "tissue_training_energy_fraction": 0.9607686063738188,
+              "minimum_gain_for_tissue_limit": 0.6200438197594256,
+              "minimum_blood_error_at_tissue_limit": 0.475712036644366,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 1.2152039047939107e-16
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.9204898703521405,
+              "background_power_at_full_subtraction": 5.1270119551290046e-05,
+              "aligned_blood_projection_norm_fraction": 0.785915557168576,
+              "tissue_training_energy_fraction": 0.9999307977995749,
+              "minimum_gain_for_tissue_limit": 0.6843034194289339,
+              "minimum_blood_error_at_tissue_limit": 0.6298943658316658,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 2.7540478463605663e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.0
+        }
+      ]
+    },
+    {
+      "seed": 12701,
+      "condition": "stationary",
+      "flow_mps": 0.0007,
+      "motion": "none",
+      "tissue_turnover": 0.0,
+      "blood_input_power": 4316.787386469519,
+      "tissue_input_power": 544518.2967328423,
+      "lengths": [
+        {
+          "ensemble_frames": 64,
+          "duration_ms": 64.0,
+          "target_sha256": {
+            "blood": "fcdaf5b452e854edda55dc60a3aee774242d69289a5d096eeb3f4a45c7da2c38",
+            "tissue": "5ee52b28a53e1da0e63051e74a0c4ac9b24b3ecfe3a8dbf3ace3b514e123eafd",
+            "noise": "5d30a9629c3adefd454961189ed9c816f23df096bfb2e4ba9984ce71ee5c4caf"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.8820256787258365,
+              "background_power_remaining": 0.0012074451919656917
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.8820256787258366,
+              "background_power_remaining": 0.0012074451919656913
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.8819877680703999,
+              "background_power_at_full_subtraction": 0.0012060703336261656,
+              "aligned_blood_projection_norm_fraction": 0.852112086250087,
+              "tissue_training_energy_fraction": 0.9974729785331324,
+              "minimum_gain_for_tissue_limit": 0.6855037052808768,
+              "minimum_blood_error_at_tissue_limit": 0.6046058830246698,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 7.859677985871026e-17
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.9536587081410981,
+              "background_power_at_full_subtraction": 4.903363930014023e-05,
+              "aligned_blood_projection_norm_fraction": 0.9502052613988745,
+              "tissue_training_energy_fraction": 0.9999997335361019,
+              "minimum_gain_for_tissue_limit": 0.6838504922557062,
+              "minimum_blood_error_at_tissue_limit": 0.6521599770062307,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 2.0079399752202275e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.0
+        },
+        {
+          "ensemble_frames": 128,
+          "duration_ms": 128.0,
+          "target_sha256": {
+            "blood": "fcdaf5b452e854edda55dc60a3aee774242d69289a5d096eeb3f4a45c7da2c38",
+            "tissue": "5ee52b28a53e1da0e63051e74a0c4ac9b24b3ecfe3a8dbf3ace3b514e123eafd",
+            "noise": "5d30a9629c3adefd454961189ed9c816f23df096bfb2e4ba9984ce71ee5c4caf"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.7626625822719986,
+              "background_power_remaining": 0.003570072359945491
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.7626625822719986,
+              "background_power_remaining": 0.003570072359945491
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.7626452416344663,
+              "background_power_at_full_subtraction": 0.0035681062190250044,
+              "aligned_blood_projection_norm_fraction": 0.6999719415089656,
+              "tissue_training_energy_fraction": 0.9899511514792095,
+              "minimum_gain_for_tissue_limit": 0.6520224677938389,
+              "minimum_blood_error_at_tissue_limit": 0.4972618325017333,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 1.0539805447506103e-16
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.893070293667873,
+              "background_power_at_full_subtraction": 4.988551524981442e-05,
+              "aligned_blood_projection_norm_fraction": 0.8658741945632674,
+              "tissue_training_energy_fraction": 0.9999957211491477,
+              "minimum_gain_for_tissue_limit": 0.6838547338045147,
+              "minimum_blood_error_at_tissue_limit": 0.6107303479449631,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 2.8684216637581094e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.0
+        },
+        {
+          "ensemble_frames": 256,
+          "duration_ms": 256.0,
+          "target_sha256": {
+            "blood": "fcdaf5b452e854edda55dc60a3aee774242d69289a5d096eeb3f4a45c7da2c38",
+            "tissue": "5ee52b28a53e1da0e63051e74a0c4ac9b24b3ecfe3a8dbf3ace3b514e123eafd",
+            "noise": "5d30a9629c3adefd454961189ed9c816f23df096bfb2e4ba9984ce71ee5c4caf"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.6493066652507372,
+              "background_power_remaining": 0.011385090381246882
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.6493066652507372,
+              "background_power_remaining": 0.011385090381246885
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.6492110135960076,
+              "background_power_at_full_subtraction": 0.011381403909753134,
+              "aligned_blood_projection_norm_fraction": 0.5354643582835388,
+              "tissue_training_energy_fraction": 0.9607686063738188,
+              "minimum_gain_for_tissue_limit": 0.6200438197594256,
+              "minimum_blood_error_at_tissue_limit": 0.4025392766999569,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 1.1667363710110086e-16
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.8798621272263693,
+              "background_power_at_full_subtraction": 5.1270119551290046e-05,
+              "aligned_blood_projection_norm_fraction": 0.7043934286152589,
+              "tissue_training_energy_fraction": 0.9999307977995749,
+              "minimum_gain_for_tissue_limit": 0.6843034194289339,
+              "minimum_blood_error_at_tissue_limit": 0.6020926622870202,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 3.222550025140143e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.0
+        }
+      ]
+    },
+    {
+      "seed": 12701,
+      "condition": "stationary",
+      "flow_mps": 0.0012,
+      "motion": "none",
+      "tissue_turnover": 0.0,
+      "blood_input_power": 4229.631346841138,
+      "tissue_input_power": 544518.2967328423,
+      "lengths": [
+        {
+          "ensemble_frames": 64,
+          "duration_ms": 64.0,
+          "target_sha256": {
+            "blood": "ebec4fc40c9d54b6396d2bbf58d0fb60a012333875a0ef73389b32fb4bd7f01a",
+            "tissue": "5ee52b28a53e1da0e63051e74a0c4ac9b24b3ecfe3a8dbf3ace3b514e123eafd",
+            "noise": "5d30a9629c3adefd454961189ed9c816f23df096bfb2e4ba9984ce71ee5c4caf"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.8275457214688124,
+              "background_power_remaining": 0.0012074451919656917
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.8275457214688126,
+              "background_power_remaining": 0.0012074451919656913
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.8273851199972593,
+              "background_power_at_full_subtraction": 0.0012060703336261656,
+              "aligned_blood_projection_norm_fraction": 0.7813480497274546,
+              "tissue_training_energy_fraction": 0.9974729785331324,
+              "minimum_gain_for_tissue_limit": 0.6855037052808768,
+              "minimum_blood_error_at_tissue_limit": 0.5671755654523841,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 8.12815406141397e-17
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.9410041149941097,
+              "background_power_at_full_subtraction": 4.903363930014023e-05,
+              "aligned_blood_projection_norm_fraction": 0.9299089956994077,
+              "tissue_training_energy_fraction": 0.9999997335361019,
+              "minimum_gain_for_tissue_limit": 0.6838504922557062,
+              "minimum_blood_error_at_tissue_limit": 0.6435061272533671,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 2.015792588452914e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.0
+        },
+        {
+          "ensemble_frames": 128,
+          "duration_ms": 128.0,
+          "target_sha256": {
+            "blood": "ebec4fc40c9d54b6396d2bbf58d0fb60a012333875a0ef73389b32fb4bd7f01a",
+            "tissue": "5ee52b28a53e1da0e63051e74a0c4ac9b24b3ecfe3a8dbf3ace3b514e123eafd",
+            "noise": "5d30a9629c3adefd454961189ed9c816f23df096bfb2e4ba9984ce71ee5c4caf"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.6305158910328243,
+              "background_power_remaining": 0.003570072359945491
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.6305158910328243,
+              "background_power_remaining": 0.003570072359945491
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.630394509441143,
+              "background_power_at_full_subtraction": 0.0035681062190250044,
+              "aligned_blood_projection_norm_fraction": 0.5846824023754369,
+              "tissue_training_energy_fraction": 0.9899511514792095,
+              "minimum_gain_for_tissue_limit": 0.6520224677938389,
+              "minimum_blood_error_at_tissue_limit": 0.4110313837295005,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 9.369111064875005e-17
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.837975235246292,
+              "background_power_at_full_subtraction": 4.988551524981442e-05,
+              "aligned_blood_projection_norm_fraction": 0.7741990663453151,
+              "tissue_training_energy_fraction": 0.9999957211491477,
+              "minimum_gain_for_tissue_limit": 0.6838547338045147,
+              "minimum_blood_error_at_tissue_limit": 0.5730533314341286,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 3.109067518676443e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.0
+        },
+        {
+          "ensemble_frames": 256,
+          "duration_ms": 256.0,
+          "target_sha256": {
+            "blood": "ebec4fc40c9d54b6396d2bbf58d0fb60a012333875a0ef73389b32fb4bd7f01a",
+            "tissue": "5ee52b28a53e1da0e63051e74a0c4ac9b24b3ecfe3a8dbf3ace3b514e123eafd",
+            "noise": "5d30a9629c3adefd454961189ed9c816f23df096bfb2e4ba9984ce71ee5c4caf"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.4866173928483289,
+              "background_power_remaining": 0.011385090381246882
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.4866173928483289,
+              "background_power_remaining": 0.011385090381246885
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.4865334707361433,
+              "background_power_at_full_subtraction": 0.011381403909753134,
+              "aligned_blood_projection_norm_fraction": 0.42619052357864895,
+              "tissue_training_energy_fraction": 0.9607686063738188,
+              "minimum_gain_for_tissue_limit": 0.6200438197594256,
+              "minimum_blood_error_at_tissue_limit": 0.301672071636049,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 1.3263733348211347e-16
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.7286653192478124,
+              "background_power_at_full_subtraction": 5.1270119551290046e-05,
+              "aligned_blood_projection_norm_fraction": 0.5779769366069546,
+              "tissue_training_energy_fraction": 0.9999307977995749,
+              "minimum_gain_for_tissue_limit": 0.6843034194289339,
+              "minimum_blood_error_at_tissue_limit": 0.49862816958055384,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 3.1537102153188465e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.0
+        }
+      ]
+    },
+    {
+      "seed": 12701,
+      "condition": "stationary",
+      "flow_mps": 0.0024,
+      "motion": "none",
+      "tissue_turnover": 0.0,
+      "blood_input_power": 3990.9504503902626,
+      "tissue_input_power": 544518.2967328423,
+      "lengths": [
+        {
+          "ensemble_frames": 64,
+          "duration_ms": 64.0,
+          "target_sha256": {
+            "blood": "eeb7fb47169823496da401ebf583a3f1473f68e33314dc391b01032018ec9e35",
+            "tissue": "5ee52b28a53e1da0e63051e74a0c4ac9b24b3ecfe3a8dbf3ace3b514e123eafd",
+            "noise": "5d30a9629c3adefd454961189ed9c816f23df096bfb2e4ba9984ce71ee5c4caf"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.658695925135993,
+              "background_power_remaining": 0.0012074451919656917
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.658695925135993,
+              "background_power_remaining": 0.0012074451919656913
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.6588112612872931,
+              "background_power_at_full_subtraction": 0.0012060703336261656,
+              "aligned_blood_projection_norm_fraction": 0.6057592618574825,
+              "tissue_training_energy_fraction": 0.9974729785331324,
+              "minimum_gain_for_tissue_limit": 0.6855037052808768,
+              "minimum_blood_error_at_tissue_limit": 0.45161756069320724,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 8.077514933764423e-17
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.8614861449254396,
+              "background_power_at_full_subtraction": 4.903363930014023e-05,
+              "aligned_blood_projection_norm_fraction": 0.8132859483490165,
+              "tissue_training_energy_fraction": 0.9999997335361019,
+              "minimum_gain_for_tissue_limit": 0.6838504922557062,
+              "minimum_blood_error_at_tissue_limit": 0.5891277242787325,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 1.9066471572506766e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.0
+        },
+        {
+          "ensemble_frames": 128,
+          "duration_ms": 128.0,
+          "target_sha256": {
+            "blood": "eeb7fb47169823496da401ebf583a3f1473f68e33314dc391b01032018ec9e35",
+            "tissue": "5ee52b28a53e1da0e63051e74a0c4ac9b24b3ecfe3a8dbf3ace3b514e123eafd",
+            "noise": "5d30a9629c3adefd454961189ed9c816f23df096bfb2e4ba9984ce71ee5c4caf"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.4312400876442168,
+              "background_power_remaining": 0.003570072359945491
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.4312400876442168,
+              "background_power_remaining": 0.003570072359945491
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.4313121614072745,
+              "background_power_at_full_subtraction": 0.0035681062190250044,
+              "aligned_blood_projection_norm_fraction": 0.42718715764327353,
+              "tissue_training_energy_fraction": 0.9899511514792095,
+              "minimum_gain_for_tissue_limit": 0.6520224677938389,
+              "minimum_blood_error_at_tissue_limit": 0.28122521987026566,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 1.072369541586532e-16
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.6241823865382956,
+              "background_power_at_full_subtraction": 4.988551524981442e-05,
+              "aligned_blood_projection_norm_fraction": 0.590098922152718,
+              "tissue_training_energy_fraction": 0.9999957211491477,
+              "minimum_gain_for_tissue_limit": 0.6838547338045147,
+              "minimum_blood_error_at_tissue_limit": 0.4268500797916128,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 3.3173562024791575e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.0
+        },
+        {
+          "ensemble_frames": 256,
+          "duration_ms": 256.0,
+          "target_sha256": {
+            "blood": "eeb7fb47169823496da401ebf583a3f1473f68e33314dc391b01032018ec9e35",
+            "tissue": "5ee52b28a53e1da0e63051e74a0c4ac9b24b3ecfe3a8dbf3ace3b514e123eafd",
+            "noise": "5d30a9629c3adefd454961189ed9c816f23df096bfb2e4ba9984ce71ee5c4caf"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.35760539261618507,
+              "background_power_remaining": 0.011385090381246882
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.35760539261618507,
+              "background_power_remaining": 0.011385090381246885
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.35751183198838177,
+              "background_power_at_full_subtraction": 0.011381403909753134,
+              "aligned_blood_projection_norm_fraction": 0.32697005511396593,
+              "tissue_training_energy_fraction": 0.9607686063738188,
+              "minimum_gain_for_tissue_limit": 0.6200438197594256,
+              "minimum_blood_error_at_tissue_limit": 0.22167300191526623,
+              "joint_ambitious_goal_feasible": true,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 1.3303077717615e-16
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.46997659679432213,
+              "background_power_at_full_subtraction": 5.1270119551290046e-05,
+              "aligned_blood_projection_norm_fraction": 0.4228769440101806,
+              "tissue_training_energy_fraction": 0.9999307977995749,
+              "minimum_gain_for_tissue_limit": 0.6843034194289339,
+              "minimum_blood_error_at_tissue_limit": 0.321606592237928,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 2.938357007315689e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.0
+        }
+      ]
+    },
+    {
+      "seed": 12701,
+      "condition": "translation",
+      "flow_mps": 0.0004,
+      "motion": "translation",
+      "tissue_turnover": 0.0,
+      "blood_input_power": 2930.1863323269235,
+      "tissue_input_power": 485969.6214883345,
+      "lengths": [
+        {
+          "ensemble_frames": 64,
+          "duration_ms": 64.0,
+          "target_sha256": {
+            "blood": "ae303ad8d21d2a1cce7b4bf1e5d24a00f2117dc4395ea3c30effbb610bf45d53",
+            "tissue": "44d8c5340177bbfa081dbec161807bb5864e075db525431491eaf3ef1fde5fd1",
+            "noise": "5d30a9629c3adefd454961189ed9c816f23df096bfb2e4ba9984ce71ee5c4caf"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.7882069873558218,
+              "background_power_remaining": 0.19143419090432431
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.6839978717749281,
+              "background_power_remaining": 0.09099275875607603
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.6840048521221403,
+              "background_power_at_full_subtraction": 0.09099322678242122,
+              "aligned_blood_projection_norm_fraction": 0.8591861207043514,
+              "tissue_training_energy_fraction": 0.9347199012804933,
+              "minimum_gain_for_tissue_limit": 0.9646223124938533,
+              "minimum_blood_error_at_tissue_limit": 0.6598063422110753,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 9.561588055395011e-17
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.7142002535161797,
+              "background_power_at_full_subtraction": 0.08031551899051202,
+              "aligned_blood_projection_norm_fraction": 0.8899512975013253,
+              "tissue_training_energy_fraction": 0.9642507367776294,
+              "minimum_gain_for_tissue_limit": 0.9315573236385943,
+              "minimum_blood_error_at_tissue_limit": 0.6653184767075379,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 1.7032228119901354e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.3060431106230192
+        },
+        {
+          "ensemble_frames": 128,
+          "duration_ms": 128.0,
+          "target_sha256": {
+            "blood": "ae303ad8d21d2a1cce7b4bf1e5d24a00f2117dc4395ea3c30effbb610bf45d53",
+            "tissue": "44d8c5340177bbfa081dbec161807bb5864e075db525431491eaf3ef1fde5fd1",
+            "noise": "5d30a9629c3adefd454961189ed9c816f23df096bfb2e4ba9984ce71ee5c4caf"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.677657096802108,
+              "background_power_remaining": 0.41361262343402727
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.6400873286488965,
+              "background_power_remaining": 0.07646698651530844
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.6400130818524901,
+              "background_power_at_full_subtraction": 0.07646690872374778,
+              "aligned_blood_projection_norm_fraction": 0.7290011007254882,
+              "tissue_training_energy_fraction": 0.8912058016424307,
+              "minimum_gain_for_tissue_limit": 0.900363535498614,
+              "minimum_blood_error_at_tissue_limit": 0.5762444411420719,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 1.0783924548332109e-16
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.6935953908630641,
+              "background_power_at_full_subtraction": 0.08122612683298609,
+              "aligned_blood_projection_norm_fraction": 0.852586768452469,
+              "tissue_training_energy_fraction": 0.9403864825183502,
+              "minimum_gain_for_tissue_limit": 0.9352364569146739,
+              "minimum_blood_error_at_tissue_limit": 0.6486756958831205,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 2.558284963907531e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.3060431106230192
+        },
+        {
+          "ensemble_frames": 256,
+          "duration_ms": 256.0,
+          "target_sha256": {
+            "blood": "ae303ad8d21d2a1cce7b4bf1e5d24a00f2117dc4395ea3c30effbb610bf45d53",
+            "tissue": "44d8c5340177bbfa081dbec161807bb5864e075db525431491eaf3ef1fde5fd1",
+            "noise": "5d30a9629c3adefd454961189ed9c816f23df096bfb2e4ba9984ce71ee5c4caf"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.5760398428944811,
+              "background_power_remaining": 0.7068239073119137
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.612022005810018,
+              "background_power_remaining": 0.06930058933945062
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.6112805970984467,
+              "background_power_at_full_subtraction": 0.06930314031688363,
+              "aligned_blood_projection_norm_fraction": 0.6242132020117119,
+              "tissue_training_energy_fraction": 0.8522612859024565,
+              "minimum_gain_for_tissue_limit": 0.8494028454139363,
+              "minimum_blood_error_at_tissue_limit": 0.5192234785217507,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 1.2322350768082922e-16
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.7026261110464528,
+              "background_power_at_full_subtraction": 0.08255394659649311,
+              "aligned_blood_projection_norm_fraction": 0.7383495281779286,
+              "tissue_training_energy_fraction": 0.905771494294581,
+              "minimum_gain_for_tissue_limit": 0.940012419004958,
+              "minimum_blood_error_at_tissue_limit": 0.6604772703008224,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": false,
+              "frozen_source_closure_nrmse": 2.3581212277542836e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.3060431106230192
+        }
+      ]
+    },
+    {
+      "seed": 12701,
+      "condition": "translation",
+      "flow_mps": 0.0007,
+      "motion": "translation",
+      "tissue_turnover": 0.0,
+      "blood_input_power": 2676.926421647075,
+      "tissue_input_power": 485969.6214883345,
+      "lengths": [
+        {
+          "ensemble_frames": 64,
+          "duration_ms": 64.0,
+          "target_sha256": {
+            "blood": "1b55f3062f2e949fdd82c46d91f0bdbac135027c29eebdf180c433f54a8c8c1e",
+            "tissue": "44d8c5340177bbfa081dbec161807bb5864e075db525431491eaf3ef1fde5fd1",
+            "noise": "5d30a9629c3adefd454961189ed9c816f23df096bfb2e4ba9984ce71ee5c4caf"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.7519425051632983,
+              "background_power_remaining": 0.19143419090432431
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.6300095955565357,
+              "background_power_remaining": 0.09099275875607603
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.6299383304252832,
+              "background_power_at_full_subtraction": 0.09099322678242122,
+              "aligned_blood_projection_norm_fraction": 0.827957810039732,
+              "tissue_training_energy_fraction": 0.9347199012804933,
+              "minimum_gain_for_tissue_limit": 0.9646223124938533,
+              "minimum_blood_error_at_tissue_limit": 0.6076525690233539,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 9.6926293033256e-17
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.6758633663772395,
+              "background_power_at_full_subtraction": 0.08031551899051202,
+              "aligned_blood_projection_norm_fraction": 0.8691684569839889,
+              "tissue_training_energy_fraction": 0.9642507367776294,
+              "minimum_gain_for_tissue_limit": 0.9315573236385943,
+              "minimum_blood_error_at_tissue_limit": 0.629605468727752,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 1.6716657437322601e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.335884021925171
+        },
+        {
+          "ensemble_frames": 128,
+          "duration_ms": 128.0,
+          "target_sha256": {
+            "blood": "1b55f3062f2e949fdd82c46d91f0bdbac135027c29eebdf180c433f54a8c8c1e",
+            "tissue": "44d8c5340177bbfa081dbec161807bb5864e075db525431491eaf3ef1fde5fd1",
+            "noise": "5d30a9629c3adefd454961189ed9c816f23df096bfb2e4ba9984ce71ee5c4caf"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.6417005828019683,
+              "background_power_remaining": 0.41361262343402727
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.5633164188031858,
+              "background_power_remaining": 0.07646698651530844
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.5629520386248704,
+              "background_power_at_full_subtraction": 0.07646690872374778,
+              "aligned_blood_projection_norm_fraction": 0.6539653145522079,
+              "tissue_training_energy_fraction": 0.8912058016424307,
+              "minimum_gain_for_tissue_limit": 0.900363535498614,
+              "minimum_blood_error_at_tissue_limit": 0.5068614878124407,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 1.1001370540752366e-16
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.6447957391637352,
+              "background_power_at_full_subtraction": 0.08122612683298609,
+              "aligned_blood_projection_norm_fraction": 0.8212364467714212,
+              "tissue_training_energy_fraction": 0.9403864825183502,
+              "minimum_gain_for_tissue_limit": 0.9352364569146739,
+              "minimum_blood_error_at_tissue_limit": 0.60303648252917,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 2.5959023448907594e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.335884021925171
+        },
+        {
+          "ensemble_frames": 256,
+          "duration_ms": 256.0,
+          "target_sha256": {
+            "blood": "1b55f3062f2e949fdd82c46d91f0bdbac135027c29eebdf180c433f54a8c8c1e",
+            "tissue": "44d8c5340177bbfa081dbec161807bb5864e075db525431491eaf3ef1fde5fd1",
+            "noise": "5d30a9629c3adefd454961189ed9c816f23df096bfb2e4ba9984ce71ee5c4caf"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.49702588115836527,
+              "background_power_remaining": 0.7068239073119137
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.5095025437008557,
+              "background_power_remaining": 0.06930058933945062
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.508996672036254,
+              "background_power_at_full_subtraction": 0.06930314031688363,
+              "aligned_blood_projection_norm_fraction": 0.509462735043044,
+              "tissue_training_energy_fraction": 0.8522612859024565,
+              "minimum_gain_for_tissue_limit": 0.8494028454139363,
+              "minimum_blood_error_at_tissue_limit": 0.43234322153381827,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 1.1797997651082424e-16
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.6518262820322498,
+              "background_power_at_full_subtraction": 0.08255394659649311,
+              "aligned_blood_projection_norm_fraction": 0.6578255318254782,
+              "tissue_training_energy_fraction": 0.905771494294581,
+              "minimum_gain_for_tissue_limit": 0.940012419004958,
+              "minimum_blood_error_at_tissue_limit": 0.6127248001441431,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": false,
+              "frozen_source_closure_nrmse": 2.438775134003391e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.335884021925171
+        }
+      ]
+    },
+    {
+      "seed": 12701,
+      "condition": "translation",
+      "flow_mps": 0.0012,
+      "motion": "translation",
+      "tissue_turnover": 0.0,
+      "blood_input_power": 2386.3840351405847,
+      "tissue_input_power": 485969.6214883345,
+      "lengths": [
+        {
+          "ensemble_frames": 64,
+          "duration_ms": 64.0,
+          "target_sha256": {
+            "blood": "3ef7e8e6bb4c60f2957a05a1dba348ad230535e0cb4a6152e3f04d6280f8e467",
+            "tissue": "44d8c5340177bbfa081dbec161807bb5864e075db525431491eaf3ef1fde5fd1",
+            "noise": "5d30a9629c3adefd454961189ed9c816f23df096bfb2e4ba9984ce71ee5c4caf"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.715391855016127,
+              "background_power_remaining": 0.19143419090432431
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.552263564539861,
+              "background_power_remaining": 0.09099275875607603
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.55219426394784,
+              "background_power_at_full_subtraction": 0.09099322678242122,
+              "aligned_blood_projection_norm_fraction": 0.760278702015832,
+              "tissue_training_energy_fraction": 0.9347199012804933,
+              "minimum_gain_for_tissue_limit": 0.9646223124938533,
+              "minimum_blood_error_at_tissue_limit": 0.5326589078352066,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 1.0155956510089072e-16
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.6315807727120905,
+              "background_power_at_full_subtraction": 0.08031551899051202,
+              "aligned_blood_projection_norm_fraction": 0.8321270397781961,
+              "tissue_training_energy_fraction": 0.9642507367776294,
+              "minimum_gain_for_tissue_limit": 0.9315573236385943,
+              "minimum_blood_error_at_tissue_limit": 0.5883536942892703,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 1.5560589947291677e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.3651406379152688
+        },
+        {
+          "ensemble_frames": 128,
+          "duration_ms": 128.0,
+          "target_sha256": {
+            "blood": "3ef7e8e6bb4c60f2957a05a1dba348ad230535e0cb4a6152e3f04d6280f8e467",
+            "tissue": "44d8c5340177bbfa081dbec161807bb5864e075db525431491eaf3ef1fde5fd1",
+            "noise": "5d30a9629c3adefd454961189ed9c816f23df096bfb2e4ba9984ce71ee5c4caf"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.5713524572511112,
+              "background_power_remaining": 0.41361262343402727
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.44708229635904295,
+              "background_power_remaining": 0.07646698651530844
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.4471130232776944,
+              "background_power_at_full_subtraction": 0.07646690872374778,
+              "aligned_blood_projection_norm_fraction": 0.5463889117176431,
+              "tissue_training_energy_fraction": 0.8912058016424307,
+              "minimum_gain_for_tissue_limit": 0.900363535498614,
+              "minimum_blood_error_at_tissue_limit": 0.4025642624057791,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 1.05309668345419e-16
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.5764886419397603,
+              "background_power_at_full_subtraction": 0.08122612683298609,
+              "aligned_blood_projection_norm_fraction": 0.7611126463489919,
+              "tissue_training_energy_fraction": 0.9403864825183502,
+              "minimum_gain_for_tissue_limit": 0.9352364569146739,
+              "minimum_blood_error_at_tissue_limit": 0.5391531949392936,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 2.322234808172558e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.3651406379152688
+        },
+        {
+          "ensemble_frames": 256,
+          "duration_ms": 256.0,
+          "target_sha256": {
+            "blood": "3ef7e8e6bb4c60f2957a05a1dba348ad230535e0cb4a6152e3f04d6280f8e467",
+            "tissue": "44d8c5340177bbfa081dbec161807bb5864e075db525431491eaf3ef1fde5fd1",
+            "noise": "5d30a9629c3adefd454961189ed9c816f23df096bfb2e4ba9984ce71ee5c4caf"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.39326447090206934,
+              "background_power_remaining": 0.7068239073119137
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.36940337972072623,
+              "background_power_remaining": 0.06930058933945062
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.3695017113611685,
+              "background_power_at_full_subtraction": 0.06930314031688363,
+              "aligned_blood_projection_norm_fraction": 0.38342184402207113,
+              "tissue_training_energy_fraction": 0.8522612859024565,
+              "minimum_gain_for_tissue_limit": 0.8494028454139363,
+              "minimum_blood_error_at_tissue_limit": 0.31385580501549554,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 1.3829988000429939e-16
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.5488274418145566,
+              "background_power_at_full_subtraction": 0.08255394659649311,
+              "aligned_blood_projection_norm_fraction": 0.5471012657501744,
+              "tissue_training_energy_fraction": 0.905771494294581,
+              "minimum_gain_for_tissue_limit": 0.940012419004958,
+              "minimum_blood_error_at_tissue_limit": 0.5159046111964042,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": false,
+              "frozen_source_closure_nrmse": 2.3246418664479877e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.3651406379152688
+        }
+      ]
+    },
+    {
+      "seed": 12701,
+      "condition": "translation",
+      "flow_mps": 0.0024,
+      "motion": "translation",
+      "tissue_turnover": 0.0,
+      "blood_input_power": 2595.5584743257796,
+      "tissue_input_power": 485969.6214883345,
+      "lengths": [
+        {
+          "ensemble_frames": 64,
+          "duration_ms": 64.0,
+          "target_sha256": {
+            "blood": "863e17409182ec01ac05618672152e9a8032089d7d0fbac13c2413d65ed66d75",
+            "tissue": "44d8c5340177bbfa081dbec161807bb5864e075db525431491eaf3ef1fde5fd1",
+            "noise": "5d30a9629c3adefd454961189ed9c816f23df096bfb2e4ba9984ce71ee5c4caf"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.6699213216396646,
+              "background_power_remaining": 0.19143419090432431
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.5492466867649504,
+              "background_power_remaining": 0.09099275875607603
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.5493278667700511,
+              "background_power_at_full_subtraction": 0.09099322678242122,
+              "aligned_blood_projection_norm_fraction": 0.6665047868619384,
+              "tissue_training_energy_fraction": 0.9347199012804933,
+              "minimum_gain_for_tissue_limit": 0.9646223124938533,
+              "minimum_blood_error_at_tissue_limit": 0.5298939171610421,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 1.0343567607398646e-16
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.6415796102086224,
+              "background_power_at_full_subtraction": 0.08031551899051202,
+              "aligned_blood_projection_norm_fraction": 0.7878852990345213,
+              "tissue_training_energy_fraction": 0.9642507367776294,
+              "minimum_gain_for_tissue_limit": 0.9315573236385943,
+              "minimum_blood_error_at_tissue_limit": 0.5976681845870369,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 1.724206384259629e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.3121294625450332
+        },
+        {
+          "ensemble_frames": 128,
+          "duration_ms": 128.0,
+          "target_sha256": {
+            "blood": "863e17409182ec01ac05618672152e9a8032089d7d0fbac13c2413d65ed66d75",
+            "tissue": "44d8c5340177bbfa081dbec161807bb5864e075db525431491eaf3ef1fde5fd1",
+            "noise": "5d30a9629c3adefd454961189ed9c816f23df096bfb2e4ba9984ce71ee5c4caf"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.4443293511638018,
+              "background_power_remaining": 0.41361262343402727
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.34491267241293466,
+              "background_power_remaining": 0.07646698651530844
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.3447065848597542,
+              "background_power_at_full_subtraction": 0.07646690872374778,
+              "aligned_blood_projection_norm_fraction": 0.4481712293365609,
+              "tissue_training_energy_fraction": 0.8912058016424307,
+              "minimum_gain_for_tissue_limit": 0.900363535498614,
+              "minimum_blood_error_at_tissue_limit": 0.3103612394539813,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 1.0545778829029336e-16
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.5701507492670685,
+              "background_power_at_full_subtraction": 0.08122612683298609,
+              "aligned_blood_projection_norm_fraction": 0.6439186308686138,
+              "tissue_training_energy_fraction": 0.9403864825183502,
+              "minimum_gain_for_tissue_limit": 0.9352364569146739,
+              "minimum_blood_error_at_tissue_limit": 0.5332257666517798,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": false,
+              "frozen_source_closure_nrmse": 2.384417401554099e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.3121294625450332
+        },
+        {
+          "ensemble_frames": 256,
+          "duration_ms": 256.0,
+          "target_sha256": {
+            "blood": "863e17409182ec01ac05618672152e9a8032089d7d0fbac13c2413d65ed66d75",
+            "tissue": "44d8c5340177bbfa081dbec161807bb5864e075db525431491eaf3ef1fde5fd1",
+            "noise": "5d30a9629c3adefd454961189ed9c816f23df096bfb2e4ba9984ce71ee5c4caf"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.3017899640179109,
+              "background_power_remaining": 0.7068239073119137
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.2658567925473149,
+              "background_power_remaining": 0.06930058933945062
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.2655925530679818,
+              "background_power_at_full_subtraction": 0.06930314031688363,
+              "aligned_blood_projection_norm_fraction": 0.3058568029090116,
+              "tissue_training_energy_fraction": 0.8522612859024565,
+              "minimum_gain_for_tissue_limit": 0.8494028454139363,
+              "minimum_blood_error_at_tissue_limit": 0.22559507029669562,
+              "joint_ambitious_goal_feasible": true,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 1.3292405058462342e-16
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.4328855879461085,
+              "background_power_at_full_subtraction": 0.08255394659649311,
+              "aligned_blood_projection_norm_fraction": 0.433170532231461,
+              "tissue_training_energy_fraction": 0.905771494294581,
+              "minimum_gain_for_tissue_limit": 0.940012419004958,
+              "minimum_blood_error_at_tissue_limit": 0.40691782867760495,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": false,
+              "frozen_source_closure_nrmse": 2.338297799038561e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.3121294625450332
+        }
+      ]
+    },
+    {
+      "seed": 12701,
+      "condition": "unmodeled_turnover",
+      "flow_mps": 0.0004,
+      "motion": "unmodeled",
+      "tissue_turnover": 0.25,
+      "blood_input_power": 2958.515387177503,
+      "tissue_input_power": 612845.2146879436,
+      "lengths": [
+        {
+          "ensemble_frames": 64,
+          "duration_ms": 64.0,
+          "target_sha256": {
+            "blood": "6178b8e182105cb271d5d38fd5d8eb9d2a587361b795912e4d1400ab61986dbd",
+            "tissue": "851aa0f9579fcf49262abda02ed37323d55261803fed405429cf3c7d3db93262",
+            "noise": "5d30a9629c3adefd454961189ed9c816f23df096bfb2e4ba9984ce71ee5c4caf"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.7795879313191938,
+              "background_power_remaining": 0.3172544456337562
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.6697010070103092,
+              "background_power_remaining": 0.2094436597269857
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.669066125942325,
+              "background_power_at_full_subtraction": 0.20944562687589305,
+              "aligned_blood_projection_norm_fraction": 0.8495515164228475,
+              "tissue_training_energy_fraction": 0.8875930539225771,
+              "minimum_gain_for_tissue_limit": null,
+              "minimum_blood_error_at_tissue_limit": null,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": false,
+              "frozen_source_closure_nrmse": 1.0797552573267786e-16
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.6935942611611624,
+              "background_power_at_full_subtraction": 0.17068805673092383,
+              "aligned_blood_projection_norm_fraction": 0.877742191554508,
+              "tissue_training_energy_fraction": 0.9258282893663916,
+              "minimum_gain_for_tissue_limit": null,
+              "minimum_blood_error_at_tissue_limit": null,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": false,
+              "frozen_source_closure_nrmse": 1.7157395599354595e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.3039735757662189
+        },
+        {
+          "ensemble_frames": 128,
+          "duration_ms": 128.0,
+          "target_sha256": {
+            "blood": "6178b8e182105cb271d5d38fd5d8eb9d2a587361b795912e4d1400ab61986dbd",
+            "tissue": "851aa0f9579fcf49262abda02ed37323d55261803fed405429cf3c7d3db93262",
+            "noise": "5d30a9629c3adefd454961189ed9c816f23df096bfb2e4ba9984ce71ee5c4caf"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.6561406957105368,
+              "background_power_remaining": 0.5562065668925704
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.6264650913243288,
+              "background_power_remaining": 0.22729235854831983
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.6260887155509074,
+              "background_power_at_full_subtraction": 0.22729440558354552,
+              "aligned_blood_projection_norm_fraction": 0.7290784300683066,
+              "tissue_training_energy_fraction": 0.8610048215652234,
+              "minimum_gain_for_tissue_limit": null,
+              "minimum_blood_error_at_tissue_limit": null,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": false,
+              "frozen_source_closure_nrmse": 1.1621076806150797e-16
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.6784102041346548,
+              "background_power_at_full_subtraction": 0.19875962030182812,
+              "aligned_blood_projection_norm_fraction": 0.8423748835581244,
+              "tissue_training_energy_fraction": 0.8993592853279165,
+              "minimum_gain_for_tissue_limit": null,
+              "minimum_blood_error_at_tissue_limit": null,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": false,
+              "frozen_source_closure_nrmse": 2.7324511840210287e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.3039735757662189
+        },
+        {
+          "ensemble_frames": 256,
+          "duration_ms": 256.0,
+          "target_sha256": {
+            "blood": "6178b8e182105cb271d5d38fd5d8eb9d2a587361b795912e4d1400ab61986dbd",
+            "tissue": "851aa0f9579fcf49262abda02ed37323d55261803fed405429cf3c7d3db93262",
+            "noise": "5d30a9629c3adefd454961189ed9c816f23df096bfb2e4ba9984ce71ee5c4caf"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.5446465830008649,
+              "background_power_remaining": 0.7494771288559287
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.6072014992907503,
+              "background_power_remaining": 0.22950309805369723
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.6059473142174635,
+              "background_power_at_full_subtraction": 0.22950754841516938,
+              "aligned_blood_projection_norm_fraction": 0.6224479308488576,
+              "tissue_training_energy_fraction": 0.8158472403785985,
+              "minimum_gain_for_tissue_limit": null,
+              "minimum_blood_error_at_tissue_limit": null,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": false,
+              "frozen_source_closure_nrmse": 1.2615562981225967e-16
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.6910920774710664,
+              "background_power_at_full_subtraction": 0.23071054534427884,
+              "aligned_blood_projection_norm_fraction": 0.7640732072883449,
+              "tissue_training_energy_fraction": 0.8640273011763311,
+              "minimum_gain_for_tissue_limit": null,
+              "minimum_blood_error_at_tissue_limit": null,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": false,
+              "frozen_source_closure_nrmse": 2.1491989298147974e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.3039735757662189
+        }
+      ]
+    },
+    {
+      "seed": 12701,
+      "condition": "unmodeled_turnover",
+      "flow_mps": 0.0007,
+      "motion": "unmodeled",
+      "tissue_turnover": 0.25,
+      "blood_input_power": 2683.267101627484,
+      "tissue_input_power": 612845.2146879436,
+      "lengths": [
+        {
+          "ensemble_frames": 64,
+          "duration_ms": 64.0,
+          "target_sha256": {
+            "blood": "abf6775116a4a80f628a10129371b8af4494ec877a555930df08fc2754bf4621",
+            "tissue": "851aa0f9579fcf49262abda02ed37323d55261803fed405429cf3c7d3db93262",
+            "noise": "5d30a9629c3adefd454961189ed9c816f23df096bfb2e4ba9984ce71ee5c4caf"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.7432960466640294,
+              "background_power_remaining": 0.3172544456337562
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.6089809448650716,
+              "background_power_remaining": 0.2094436597269857
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.6084496685672117,
+              "background_power_at_full_subtraction": 0.20944562687589305,
+              "aligned_blood_projection_norm_fraction": 0.8142349069213287,
+              "tissue_training_energy_fraction": 0.8875930539225771,
+              "minimum_gain_for_tissue_limit": null,
+              "minimum_blood_error_at_tissue_limit": null,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": false,
+              "frozen_source_closure_nrmse": 1.0448540840515939e-16
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.6380031937308405,
+              "background_power_at_full_subtraction": 0.17068805673092383,
+              "aligned_blood_projection_norm_fraction": 0.8461249577652558,
+              "tissue_training_energy_fraction": 0.9258282893663916,
+              "minimum_gain_for_tissue_limit": null,
+              "minimum_blood_error_at_tissue_limit": null,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": false,
+              "frozen_source_closure_nrmse": 1.7263194516491884e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.33875715217230346
+        },
+        {
+          "ensemble_frames": 128,
+          "duration_ms": 128.0,
+          "target_sha256": {
+            "blood": "abf6775116a4a80f628a10129371b8af4494ec877a555930df08fc2754bf4621",
+            "tissue": "851aa0f9579fcf49262abda02ed37323d55261803fed405429cf3c7d3db93262",
+            "noise": "5d30a9629c3adefd454961189ed9c816f23df096bfb2e4ba9984ce71ee5c4caf"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.6154836317046408,
+              "background_power_remaining": 0.5562065668925704
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.548615892694138,
+              "background_power_remaining": 0.22729235854831983
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.5482767561946963,
+              "background_power_at_full_subtraction": 0.22729440558354552,
+              "aligned_blood_projection_norm_fraction": 0.6545690786385654,
+              "tissue_training_energy_fraction": 0.8610048215652234,
+              "minimum_gain_for_tissue_limit": null,
+              "minimum_blood_error_at_tissue_limit": null,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": false,
+              "frozen_source_closure_nrmse": 1.3339125925166458e-16
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.6114867483244177,
+              "background_power_at_full_subtraction": 0.19875962030182812,
+              "aligned_blood_projection_norm_fraction": 0.7999662167532433,
+              "tissue_training_energy_fraction": 0.8993592853279165,
+              "minimum_gain_for_tissue_limit": null,
+              "minimum_blood_error_at_tissue_limit": null,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": false,
+              "frozen_source_closure_nrmse": 2.9109956353641667e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.33875715217230346
+        },
+        {
+          "ensemble_frames": 256,
+          "duration_ms": 256.0,
+          "target_sha256": {
+            "blood": "abf6775116a4a80f628a10129371b8af4494ec877a555930df08fc2754bf4621",
+            "tissue": "851aa0f9579fcf49262abda02ed37323d55261803fed405429cf3c7d3db93262",
+            "noise": "5d30a9629c3adefd454961189ed9c816f23df096bfb2e4ba9984ce71ee5c4caf"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.46392206459407703,
+              "background_power_remaining": 0.7494771288559287
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.5056193336150427,
+              "background_power_remaining": 0.22950309805369723
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.5049485179769333,
+              "background_power_at_full_subtraction": 0.22950754841516938,
+              "aligned_blood_projection_norm_fraction": 0.5080371891809989,
+              "tissue_training_energy_fraction": 0.8158472403785985,
+              "minimum_gain_for_tissue_limit": null,
+              "minimum_blood_error_at_tissue_limit": null,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": false,
+              "frozen_source_closure_nrmse": 1.2996196762844082e-16
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.6448446747805382,
+              "background_power_at_full_subtraction": 0.23071054534427884,
+              "aligned_blood_projection_norm_fraction": 0.6859075781901263,
+              "tissue_training_energy_fraction": 0.8640273011763311,
+              "minimum_gain_for_tissue_limit": null,
+              "minimum_blood_error_at_tissue_limit": null,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": false,
+              "frozen_source_closure_nrmse": 2.320149469351129e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.33875715217230346
+        }
+      ]
+    },
+    {
+      "seed": 12701,
+      "condition": "unmodeled_turnover",
+      "flow_mps": 0.0012,
+      "motion": "unmodeled",
+      "tissue_turnover": 0.25,
+      "blood_input_power": 2363.213924417149,
+      "tissue_input_power": 612845.2146879436,
+      "lengths": [
+        {
+          "ensemble_frames": 64,
+          "duration_ms": 64.0,
+          "target_sha256": {
+            "blood": "459521fb290423ddbbb809aa37e3d62f9f5a89c9a7f61b4681dc6f100310903c",
+            "tissue": "851aa0f9579fcf49262abda02ed37323d55261803fed405429cf3c7d3db93262",
+            "noise": "5d30a9629c3adefd454961189ed9c816f23df096bfb2e4ba9984ce71ee5c4caf"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.7073602122518226,
+              "background_power_remaining": 0.3172544456337562
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.5242425760478814,
+              "background_power_remaining": 0.2094436597269857
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.5240859187390576,
+              "background_power_at_full_subtraction": 0.20944562687589305,
+              "aligned_blood_projection_norm_fraction": 0.7392926097265456,
+              "tissue_training_energy_fraction": 0.8875930539225771,
+              "minimum_gain_for_tissue_limit": null,
+              "minimum_blood_error_at_tissue_limit": null,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": false,
+              "frozen_source_closure_nrmse": 1.0681019171836086e-16
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.5643771701353074,
+              "background_power_at_full_subtraction": 0.17068805673092383,
+              "aligned_blood_projection_norm_fraction": 0.7800935858809025,
+              "tissue_training_energy_fraction": 0.9258282893663916,
+              "minimum_gain_for_tissue_limit": null,
+              "minimum_blood_error_at_tissue_limit": null,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": false,
+              "frozen_source_closure_nrmse": 1.8286752380472577e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.37615730514566637
+        },
+        {
+          "ensemble_frames": 128,
+          "duration_ms": 128.0,
+          "target_sha256": {
+            "blood": "459521fb290423ddbbb809aa37e3d62f9f5a89c9a7f61b4681dc6f100310903c",
+            "tissue": "851aa0f9579fcf49262abda02ed37323d55261803fed405429cf3c7d3db93262",
+            "noise": "5d30a9629c3adefd454961189ed9c816f23df096bfb2e4ba9984ce71ee5c4caf"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.5425957592080181,
+              "background_power_remaining": 0.5562065668925704
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.431843677839298,
+              "background_power_remaining": 0.22729235854831983
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.4317861840106308,
+              "background_power_at_full_subtraction": 0.22729440558354552,
+              "aligned_blood_projection_norm_fraction": 0.5446161744462371,
+              "tissue_training_energy_fraction": 0.8610048215652234,
+              "minimum_gain_for_tissue_limit": null,
+              "minimum_blood_error_at_tissue_limit": null,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": false,
+              "frozen_source_closure_nrmse": 1.1330246696688246e-16
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.5166729171298257,
+              "background_power_at_full_subtraction": 0.19875962030182812,
+              "aligned_blood_projection_norm_fraction": 0.7173313834761241,
+              "tissue_training_energy_fraction": 0.8993592853279165,
+              "minimum_gain_for_tissue_limit": null,
+              "minimum_blood_error_at_tissue_limit": null,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": false,
+              "frozen_source_closure_nrmse": 2.411884378469499e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.37615730514566637
+        },
+        {
+          "ensemble_frames": 256,
+          "duration_ms": 256.0,
+          "target_sha256": {
+            "blood": "459521fb290423ddbbb809aa37e3d62f9f5a89c9a7f61b4681dc6f100310903c",
+            "tissue": "851aa0f9579fcf49262abda02ed37323d55261803fed405429cf3c7d3db93262",
+            "noise": "5d30a9629c3adefd454961189ed9c816f23df096bfb2e4ba9984ce71ee5c4caf"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.35471711249221066,
+              "background_power_remaining": 0.7494771288559287
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.3678034749255513,
+              "background_power_remaining": 0.22950309805369723
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.36763507371217075,
+              "background_power_at_full_subtraction": 0.22950754841516938,
+              "aligned_blood_projection_norm_fraction": 0.3817729809211304,
+              "tissue_training_energy_fraction": 0.8158472403785985,
+              "minimum_gain_for_tissue_limit": null,
+              "minimum_blood_error_at_tissue_limit": null,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": false,
+              "frozen_source_closure_nrmse": 1.3465153901790436e-16
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.5209319239991167,
+              "background_power_at_full_subtraction": 0.23071054534427884,
+              "aligned_blood_projection_norm_fraction": 0.5437927078195597,
+              "tissue_training_energy_fraction": 0.8640273011763311,
+              "minimum_gain_for_tissue_limit": null,
+              "minimum_blood_error_at_tissue_limit": null,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": false,
+              "frozen_source_closure_nrmse": 2.409153374508117e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.37615730514566637
+        }
+      ]
+    },
+    {
+      "seed": 12701,
+      "condition": "unmodeled_turnover",
+      "flow_mps": 0.0024,
+      "motion": "unmodeled",
+      "tissue_turnover": 0.25,
+      "blood_input_power": 2615.842328364165,
+      "tissue_input_power": 612845.2146879436,
+      "lengths": [
+        {
+          "ensemble_frames": 64,
+          "duration_ms": 64.0,
+          "target_sha256": {
+            "blood": "68ccca741f3dee086bfefc1694030d966a3293cae28a91f8216cee07fff56102",
+            "tissue": "851aa0f9579fcf49262abda02ed37323d55261803fed405429cf3c7d3db93262",
+            "noise": "5d30a9629c3adefd454961189ed9c816f23df096bfb2e4ba9984ce71ee5c4caf"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.6568091317233937,
+              "background_power_remaining": 0.3172544456337562
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.535610823977783,
+              "background_power_remaining": 0.2094436597269857
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.5350937530947438,
+              "background_power_at_full_subtraction": 0.20944562687589305,
+              "aligned_blood_projection_norm_fraction": 0.6530586913763415,
+              "tissue_training_energy_fraction": 0.8875930539225771,
+              "minimum_gain_for_tissue_limit": null,
+              "minimum_blood_error_at_tissue_limit": null,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": false,
+              "frozen_source_closure_nrmse": 1.0911697991993206e-16
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.5785966514827322,
+              "background_power_at_full_subtraction": 0.17068805673092383,
+              "aligned_blood_projection_norm_fraction": 0.7088751123159029,
+              "tissue_training_energy_fraction": 0.9258282893663916,
+              "minimum_gain_for_tissue_limit": null,
+              "minimum_blood_error_at_tissue_limit": null,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": false,
+              "frozen_source_closure_nrmse": 1.8858479855328636e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.31218076428612185
+        },
+        {
+          "ensemble_frames": 128,
+          "duration_ms": 128.0,
+          "target_sha256": {
+            "blood": "68ccca741f3dee086bfefc1694030d966a3293cae28a91f8216cee07fff56102",
+            "tissue": "851aa0f9579fcf49262abda02ed37323d55261803fed405429cf3c7d3db93262",
+            "noise": "5d30a9629c3adefd454961189ed9c816f23df096bfb2e4ba9984ce71ee5c4caf"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.4263029389878936,
+              "background_power_remaining": 0.5562065668925704
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.3392114118145301,
+              "background_power_remaining": 0.22729235854831983
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.3385683356663841,
+              "background_power_at_full_subtraction": 0.22729440558354552,
+              "aligned_blood_projection_norm_fraction": 0.4406742409877375,
+              "tissue_training_energy_fraction": 0.8610048215652234,
+              "minimum_gain_for_tissue_limit": null,
+              "minimum_blood_error_at_tissue_limit": null,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": false,
+              "frozen_source_closure_nrmse": 1.1578466055689283e-16
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.5103567662174044,
+              "background_power_at_full_subtraction": 0.19875962030182812,
+              "aligned_blood_projection_norm_fraction": 0.5980053675945529,
+              "tissue_training_energy_fraction": 0.8993592853279165,
+              "minimum_gain_for_tissue_limit": null,
+              "minimum_blood_error_at_tissue_limit": null,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": false,
+              "frozen_source_closure_nrmse": 2.6730976230135826e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.31218076428612185
+        },
+        {
+          "ensemble_frames": 256,
+          "duration_ms": 256.0,
+          "target_sha256": {
+            "blood": "68ccca741f3dee086bfefc1694030d966a3293cae28a91f8216cee07fff56102",
+            "tissue": "851aa0f9579fcf49262abda02ed37323d55261803fed405429cf3c7d3db93262",
+            "noise": "5d30a9629c3adefd454961189ed9c816f23df096bfb2e4ba9984ce71ee5c4caf"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.28283131262609823,
+              "background_power_remaining": 0.7494771288559287
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.25795316458227757,
+              "background_power_remaining": 0.22950309805369723
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.25701901647966313,
+              "background_power_at_full_subtraction": 0.22950754841516938,
+              "aligned_blood_projection_norm_fraction": 0.296573766832249,
+              "tissue_training_energy_fraction": 0.8158472403785985,
+              "minimum_gain_for_tissue_limit": null,
+              "minimum_blood_error_at_tissue_limit": null,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": false,
+              "frozen_source_closure_nrmse": 1.3188188515056208e-16
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.3947603729854594,
+              "background_power_at_full_subtraction": 0.23071054534427884,
+              "aligned_blood_projection_norm_fraction": 0.4145964059294901,
+              "tissue_training_energy_fraction": 0.8640273011763311,
+              "minimum_gain_for_tissue_limit": null,
+              "minimum_blood_error_at_tissue_limit": null,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": false,
+              "frozen_source_closure_nrmse": 2.2171345805152355e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.31218076428612185
+        }
+      ]
+    },
+    {
+      "seed": 12702,
+      "condition": "stationary",
+      "flow_mps": 0.0004,
+      "motion": "none",
+      "tissue_turnover": 0.0,
+      "blood_input_power": 4069.85529523843,
+      "tissue_input_power": 1092477.9204197463,
+      "lengths": [
+        {
+          "ensemble_frames": 64,
+          "duration_ms": 64.0,
+          "target_sha256": {
+            "blood": "0c4a88f0f53189ba54c6ccf7d8c99c45366d0a22776425a107472c103f9cd6cf",
+            "tissue": "b62f56014c698469f4545005bd7e968d3fa57e76c9497d9a57c1aa272a20d538",
+            "noise": "4d34e9e603806fcb636cf16e56a682fd6d6b4f49d083a1cb9e34f1685b4c93eb"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.9069067558402039,
+              "background_power_remaining": 0.001181394034652252
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.9069067558402039,
+              "background_power_remaining": 0.001181394034652252
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.9069162425105587,
+              "background_power_at_full_subtraction": 0.0011824320375048072,
+              "aligned_blood_projection_norm_fraction": 0.9056011610438669,
+              "tissue_training_energy_fraction": 0.9974729785331324,
+              "minimum_gain_for_tissue_limit": 0.6854265056185329,
+              "minimum_blood_error_at_tissue_limit": 0.6216244309927023,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 5.4843780988506894e-17
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.957332177724506,
+              "background_power_at_full_subtraction": 2.4115707158212747e-05,
+              "aligned_blood_projection_norm_fraction": 0.9605739554664323,
+              "tissue_training_energy_fraction": 0.9999997335361019,
+              "minimum_gain_for_tissue_limit": 0.683771549251598,
+              "minimum_blood_error_at_tissue_limit": 0.6545965063110916,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 1.2713039291842305e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.0
+        },
+        {
+          "ensemble_frames": 128,
+          "duration_ms": 128.0,
+          "target_sha256": {
+            "blood": "0c4a88f0f53189ba54c6ccf7d8c99c45366d0a22776425a107472c103f9cd6cf",
+            "tissue": "b62f56014c698469f4545005bd7e968d3fa57e76c9497d9a57c1aa272a20d538",
+            "noise": "4d34e9e603806fcb636cf16e56a682fd6d6b4f49d083a1cb9e34f1685b4c93eb"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.8337291008481504,
+              "background_power_remaining": 0.003554255491650769
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.8337291008481503,
+              "background_power_remaining": 0.003554255491650769
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.833668845885275,
+              "background_power_at_full_subtraction": 0.0035558450983042183,
+              "aligned_blood_projection_norm_fraction": 0.781472697461247,
+              "tissue_training_energy_fraction": 0.9899511514792096,
+              "minimum_gain_for_tissue_limit": 0.6518806642885699,
+              "minimum_blood_error_at_tissue_limit": 0.5434526010523785,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 6.889381992588288e-17
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.9313624820789616,
+              "background_power_at_full_subtraction": 2.4666631881654775e-05,
+              "aligned_blood_projection_norm_fraction": 0.9084995249527014,
+              "tissue_training_energy_fraction": 0.9999957211491477,
+              "minimum_gain_for_tissue_limit": 0.6837468596978478,
+              "minimum_blood_error_at_tissue_limit": 0.6368161723618829,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 1.6748038770054552e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.0
+        },
+        {
+          "ensemble_frames": 256,
+          "duration_ms": 256.0,
+          "target_sha256": {
+            "blood": "0c4a88f0f53189ba54c6ccf7d8c99c45366d0a22776425a107472c103f9cd6cf",
+            "tissue": "b62f56014c698469f4545005bd7e968d3fa57e76c9497d9a57c1aa272a20d538",
+            "noise": "4d34e9e603806fcb636cf16e56a682fd6d6b4f49d083a1cb9e34f1685b4c93eb"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.6849225477381377,
+              "background_power_remaining": 0.01137825925667505
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.6849225477381378,
+              "background_power_remaining": 0.01137825925667505
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.6849657912385696,
+              "background_power_at_full_subtraction": 0.011382563570579846,
+              "aligned_blood_projection_norm_fraction": 0.599644442533543,
+              "tissue_training_energy_fraction": 0.9607686063738189,
+              "minimum_gain_for_tissue_limit": 0.6198996247449543,
+              "minimum_blood_error_at_tissue_limit": 0.42461003695192,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 8.182090821151732e-17
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.9456951121329509,
+              "background_power_at_full_subtraction": 2.5885023055955196e-05,
+              "aligned_blood_projection_norm_fraction": 0.7777185766192657,
+              "tissue_training_energy_fraction": 0.9999307977995749,
+              "minimum_gain_for_tissue_limit": 0.684169227267195,
+              "minimum_blood_error_at_tissue_limit": 0.6470154940983643,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 1.8150923100243706e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.0
+        }
+      ]
+    },
+    {
+      "seed": 12702,
+      "condition": "stationary",
+      "flow_mps": 0.0007,
+      "motion": "none",
+      "tissue_turnover": 0.0,
+      "blood_input_power": 4016.8230308438224,
+      "tissue_input_power": 1092477.9204197463,
+      "lengths": [
+        {
+          "ensemble_frames": 64,
+          "duration_ms": 64.0,
+          "target_sha256": {
+            "blood": "0802ebe08b9c9b20b6dc06d9c899703b3e7b41ae3b77fe74feb17125001204fe",
+            "tissue": "b62f56014c698469f4545005bd7e968d3fa57e76c9497d9a57c1aa272a20d538",
+            "noise": "4d34e9e603806fcb636cf16e56a682fd6d6b4f49d083a1cb9e34f1685b4c93eb"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.8793829977950238,
+              "background_power_remaining": 0.001181394034652252
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.8793829977950239,
+              "background_power_remaining": 0.001181394034652252
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.8792495162951686,
+              "background_power_at_full_subtraction": 0.0011824320375048072,
+              "aligned_blood_projection_norm_fraction": 0.8734011794196731,
+              "tissue_training_energy_fraction": 0.9974729785331324,
+              "minimum_gain_for_tissue_limit": 0.6854265056185329,
+              "minimum_blood_error_at_tissue_limit": 0.6026609235209827,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 5.480577047222549e-17
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.953954222965026,
+              "background_power_at_full_subtraction": 2.4115707158212747e-05,
+              "aligned_blood_projection_norm_fraction": 0.9562709802962494,
+              "tissue_training_energy_fraction": 0.9999997335361019,
+              "minimum_gain_for_tissue_limit": 0.683771549251598,
+              "minimum_blood_error_at_tissue_limit": 0.6522867569519002,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 1.259877996864125e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.0
+        },
+        {
+          "ensemble_frames": 128,
+          "duration_ms": 128.0,
+          "target_sha256": {
+            "blood": "0802ebe08b9c9b20b6dc06d9c899703b3e7b41ae3b77fe74feb17125001204fe",
+            "tissue": "b62f56014c698469f4545005bd7e968d3fa57e76c9497d9a57c1aa272a20d538",
+            "noise": "4d34e9e603806fcb636cf16e56a682fd6d6b4f49d083a1cb9e34f1685b4c93eb"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.7452732016100994,
+              "background_power_remaining": 0.003554255491650769
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.7452732016100994,
+              "background_power_remaining": 0.003554255491650769
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.7448361219132298,
+              "background_power_at_full_subtraction": 0.0035558450983042183,
+              "aligned_blood_projection_norm_fraction": 0.690359236865101,
+              "tissue_training_energy_fraction": 0.9899511514792096,
+              "minimum_gain_for_tissue_limit": 0.6518806642885699,
+              "minimum_blood_error_at_tissue_limit": 0.48554426593891853,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 6.439606117951114e-17
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.9032185127321145,
+              "background_power_at_full_subtraction": 2.4666631881654775e-05,
+              "aligned_blood_projection_norm_fraction": 0.8730937843959814,
+              "tissue_training_energy_fraction": 0.9999957211491477,
+              "minimum_gain_for_tissue_limit": 0.6837468596978478,
+              "minimum_blood_error_at_tissue_limit": 0.6175728217015438,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 1.7663344252965286e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.0
+        },
+        {
+          "ensemble_frames": 256,
+          "duration_ms": 256.0,
+          "target_sha256": {
+            "blood": "0802ebe08b9c9b20b6dc06d9c899703b3e7b41ae3b77fe74feb17125001204fe",
+            "tissue": "b62f56014c698469f4545005bd7e968d3fa57e76c9497d9a57c1aa272a20d538",
+            "noise": "4d34e9e603806fcb636cf16e56a682fd6d6b4f49d083a1cb9e34f1685b4c93eb"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.5797476475360978,
+              "background_power_remaining": 0.01137825925667505
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.5797476475360978,
+              "background_power_remaining": 0.01137825925667505
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.5793946710088097,
+              "background_power_at_full_subtraction": 0.011382563570579846,
+              "aligned_blood_projection_norm_fraction": 0.49654305461742887,
+              "tissue_training_energy_fraction": 0.9607686063738189,
+              "minimum_gain_for_tissue_limit": 0.6198996247449543,
+              "minimum_blood_error_at_tissue_limit": 0.3591665391375874,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 8.291479979527509e-17
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.8195215484328909,
+              "background_power_at_full_subtraction": 2.5885023055955196e-05,
+              "aligned_blood_projection_norm_fraction": 0.6722637236621664,
+              "tissue_training_energy_fraction": 0.9999307977995749,
+              "minimum_gain_for_tissue_limit": 0.684169227267195,
+              "minimum_blood_error_at_tissue_limit": 0.5606914245201461,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 1.8866088593381324e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.0
+        }
+      ]
+    },
+    {
+      "seed": 12702,
+      "condition": "stationary",
+      "flow_mps": 0.0012,
+      "motion": "none",
+      "tissue_turnover": 0.0,
+      "blood_input_power": 3920.4963362605345,
+      "tissue_input_power": 1092477.9204197463,
+      "lengths": [
+        {
+          "ensemble_frames": 64,
+          "duration_ms": 64.0,
+          "target_sha256": {
+            "blood": "a950e6be2611077b3314c7fb3d60918611d315c5db3660c1f4b4c509bae64775",
+            "tissue": "b62f56014c698469f4545005bd7e968d3fa57e76c9497d9a57c1aa272a20d538",
+            "noise": "4d34e9e603806fcb636cf16e56a682fd6d6b4f49d083a1cb9e34f1685b4c93eb"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.7985921036321327,
+              "background_power_remaining": 0.001181394034652252
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.7985921036321327,
+              "background_power_remaining": 0.001181394034652252
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.7985132851334104,
+              "background_power_at_full_subtraction": 0.0011824320375048072,
+              "aligned_blood_projection_norm_fraction": 0.7817386257731389,
+              "tissue_training_energy_fraction": 0.9974729785331324,
+              "minimum_gain_for_tissue_limit": 0.6854265056185329,
+              "minimum_blood_error_at_tissue_limit": 0.5473221707189687,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 5.3149221013578784e-17
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.938475694562527,
+              "background_power_at_full_subtraction": 2.4115707158212747e-05,
+              "aligned_blood_projection_norm_fraction": 0.936496230064689,
+              "tissue_training_energy_fraction": 0.9999997335361019,
+              "minimum_gain_for_tissue_limit": 0.683771549251598,
+              "minimum_blood_error_at_tissue_limit": 0.6417029796059885,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 1.3839157561343582e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.0
+        },
+        {
+          "ensemble_frames": 128,
+          "duration_ms": 128.0,
+          "target_sha256": {
+            "blood": "a950e6be2611077b3314c7fb3d60918611d315c5db3660c1f4b4c509bae64775",
+            "tissue": "b62f56014c698469f4545005bd7e968d3fa57e76c9497d9a57c1aa272a20d538",
+            "noise": "4d34e9e603806fcb636cf16e56a682fd6d6b4f49d083a1cb9e34f1685b4c93eb"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.5929250897591571,
+              "background_power_remaining": 0.003554255491650769
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.592925089759157,
+              "background_power_remaining": 0.003554255491650769
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.5925999755468254,
+              "background_power_at_full_subtraction": 0.0035558450983042183,
+              "aligned_blood_projection_norm_fraction": 0.5366535055664334,
+              "tissue_training_energy_fraction": 0.9899511514792096,
+              "minimum_gain_for_tissue_limit": 0.6518806642885699,
+              "minimum_blood_error_at_tissue_limit": 0.38630446571685484,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 6.697304896169075e-17
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.7946022775854116,
+              "background_power_at_full_subtraction": 2.4666631881654775e-05,
+              "aligned_blood_projection_norm_fraction": 0.7562361236518159,
+              "tissue_training_energy_fraction": 0.9999957211491477,
+              "minimum_gain_for_tissue_limit": 0.6837468596978478,
+              "minimum_blood_error_at_tissue_limit": 0.5433068120077827,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 1.627838435370838e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.0
+        },
+        {
+          "ensemble_frames": 256,
+          "duration_ms": 256.0,
+          "target_sha256": {
+            "blood": "a950e6be2611077b3314c7fb3d60918611d315c5db3660c1f4b4c509bae64775",
+            "tissue": "b62f56014c698469f4545005bd7e968d3fa57e76c9497d9a57c1aa272a20d538",
+            "noise": "4d34e9e603806fcb636cf16e56a682fd6d6b4f49d083a1cb9e34f1685b4c93eb"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.46585724450823135,
+              "background_power_remaining": 0.01137825925667505
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.46585724450823135,
+              "background_power_remaining": 0.01137825925667505
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.46570178180179356,
+              "background_power_at_full_subtraction": 0.011382563570579846,
+              "aligned_blood_projection_norm_fraction": 0.40681093405745733,
+              "tissue_training_energy_fraction": 0.9607686063738189,
+              "minimum_gain_for_tissue_limit": 0.6198996247449543,
+              "minimum_blood_error_at_tissue_limit": 0.2886883597819884,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 8.184232735114513e-17
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.6904525558349573,
+              "background_power_at_full_subtraction": 2.5885023055955196e-05,
+              "aligned_blood_projection_norm_fraction": 0.5424756904371232,
+              "tissue_training_energy_fraction": 0.9999307977995749,
+              "minimum_gain_for_tissue_limit": 0.684169227267195,
+              "minimum_blood_error_at_tissue_limit": 0.4723863915902626,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 1.548634722324749e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.0
+        }
+      ]
+    },
+    {
+      "seed": 12702,
+      "condition": "stationary",
+      "flow_mps": 0.0024,
+      "motion": "none",
+      "tissue_turnover": 0.0,
+      "blood_input_power": 3653.9009161791155,
+      "tissue_input_power": 1092477.9204197463,
+      "lengths": [
+        {
+          "ensemble_frames": 64,
+          "duration_ms": 64.0,
+          "target_sha256": {
+            "blood": "581612280981327f796f9fa573e416e9487f2fd777803daa2b9bb994f213b33b",
+            "tissue": "b62f56014c698469f4545005bd7e968d3fa57e76c9497d9a57c1aa272a20d538",
+            "noise": "4d34e9e603806fcb636cf16e56a682fd6d6b4f49d083a1cb9e34f1685b4c93eb"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.589904788036579,
+              "background_power_remaining": 0.001181394034652252
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.589904788036579,
+              "background_power_remaining": 0.001181394034652252
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.5897704714783805,
+              "background_power_at_full_subtraction": 0.0011824320375048072,
+              "aligned_blood_projection_norm_fraction": 0.5316059628940636,
+              "tissue_training_energy_fraction": 0.9974729785331324,
+              "minimum_gain_for_tissue_limit": 0.6854265056185329,
+              "minimum_blood_error_at_tissue_limit": 0.40424431338242095,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 5.167268600422479e-17
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.8140649220504297,
+              "background_power_at_full_subtraction": 2.4115707158212747e-05,
+              "aligned_blood_projection_norm_fraction": 0.7856476836482508,
+              "tissue_training_energy_fraction": 0.9999997335361019,
+              "minimum_gain_for_tissue_limit": 0.683771549251598,
+              "minimum_blood_error_at_tissue_limit": 0.5566344329418037,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 1.2452641813510322e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.0
+        },
+        {
+          "ensemble_frames": 128,
+          "duration_ms": 128.0,
+          "target_sha256": {
+            "blood": "581612280981327f796f9fa573e416e9487f2fd777803daa2b9bb994f213b33b",
+            "tissue": "b62f56014c698469f4545005bd7e968d3fa57e76c9497d9a57c1aa272a20d538",
+            "noise": "4d34e9e603806fcb636cf16e56a682fd6d6b4f49d083a1cb9e34f1685b4c93eb"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.48108163251364655,
+              "background_power_remaining": 0.003554255491650769
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.48108163251364655,
+              "background_power_remaining": 0.003554255491650769
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.48106767836261805,
+              "background_power_at_full_subtraction": 0.0035558450983042183,
+              "aligned_blood_projection_norm_fraction": 0.40290431806034344,
+              "tissue_training_energy_fraction": 0.9899511514792096,
+              "minimum_gain_for_tissue_limit": 0.6518806642885699,
+              "minimum_blood_error_at_tissue_limit": 0.31359871773878356,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 6.05578909409801e-17
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.6064526865141626,
+              "background_power_at_full_subtraction": 2.4666631881654775e-05,
+              "aligned_blood_projection_norm_fraction": 0.5415447180327144,
+              "tissue_training_energy_fraction": 0.9999957211491477,
+              "minimum_gain_for_tissue_limit": 0.6837468596978478,
+              "minimum_blood_error_at_tissue_limit": 0.414660119959382,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 1.9870150643029858e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.0
+        },
+        {
+          "ensemble_frames": 256,
+          "duration_ms": 256.0,
+          "target_sha256": {
+            "blood": "581612280981327f796f9fa573e416e9487f2fd777803daa2b9bb994f213b33b",
+            "tissue": "b62f56014c698469f4545005bd7e968d3fa57e76c9497d9a57c1aa272a20d538",
+            "noise": "4d34e9e603806fcb636cf16e56a682fd6d6b4f49d083a1cb9e34f1685b4c93eb"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.402624949316069,
+              "background_power_remaining": 0.01137825925667505
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.402624949316069,
+              "background_power_remaining": 0.01137825925667505
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.4025845001726175,
+              "background_power_at_full_subtraction": 0.011382563570579846,
+              "aligned_blood_projection_norm_fraction": 0.32578840652612173,
+              "tissue_training_energy_fraction": 0.9607686063738189,
+              "minimum_gain_for_tissue_limit": 0.6198996247449543,
+              "minimum_blood_error_at_tissue_limit": 0.24956198058514056,
+              "joint_ambitious_goal_feasible": true,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 8.387101054065405e-17
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.5297717752600153,
+              "background_power_at_full_subtraction": 2.5885023055955196e-05,
+              "aligned_blood_projection_norm_fraction": 0.4134078779853081,
+              "tissue_training_energy_fraction": 0.9999307977995749,
+              "minimum_gain_for_tissue_limit": 0.684169227267195,
+              "minimum_blood_error_at_tissue_limit": 0.36245354610761477,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 1.7478199773048668e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.0
+        }
+      ]
+    },
+    {
+      "seed": 12702,
+      "condition": "translation",
+      "flow_mps": 0.0004,
+      "motion": "translation",
+      "tissue_turnover": 0.0,
+      "blood_input_power": 2816.4483762922478,
+      "tissue_input_power": 783641.2492091772,
+      "lengths": [
+        {
+          "ensemble_frames": 64,
+          "duration_ms": 64.0,
+          "target_sha256": {
+            "blood": "e49973bbcb6062ebc1d2632b759ffad36cfbf4e672380fabecd3aad8c3d152ce",
+            "tissue": "b57a1e0daf39ddd792a28568219d3b3270d176d8f7f3c7329344bdd453d83731",
+            "noise": "4d34e9e603806fcb636cf16e56a682fd6d6b4f49d083a1cb9e34f1685b4c93eb"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.8152227061318493,
+              "background_power_remaining": 0.19171763015903404
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.7258091305077206,
+              "background_power_remaining": 0.07456285880937989
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.7258045687793384,
+              "background_power_at_full_subtraction": 0.0745617734048339,
+              "aligned_blood_projection_norm_fraction": 0.8822704459041768,
+              "tissue_training_energy_fraction": 0.9407965658480586,
+              "minimum_gain_for_tissue_limit": 0.9181177368785396,
+              "minimum_blood_error_at_tissue_limit": 0.6663740481037905,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 9.867764078673878e-17
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.749584079949037,
+              "background_power_at_full_subtraction": 0.06998000584838864,
+              "aligned_blood_projection_norm_fraction": 0.927279458185671,
+              "tissue_training_energy_fraction": 0.9698561752914503,
+              "minimum_gain_for_tissue_limit": 0.9068892730718282,
+              "minimum_blood_error_at_tissue_limit": 0.6797897613711973,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 2.0573986306243068e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.2796586091787315
+        },
+        {
+          "ensemble_frames": 128,
+          "duration_ms": 128.0,
+          "target_sha256": {
+            "blood": "e49973bbcb6062ebc1d2632b759ffad36cfbf4e672380fabecd3aad8c3d152ce",
+            "tissue": "b57a1e0daf39ddd792a28568219d3b3270d176d8f7f3c7329344bdd453d83731",
+            "noise": "4d34e9e603806fcb636cf16e56a682fd6d6b4f49d083a1cb9e34f1685b4c93eb"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.6016435458777882,
+              "background_power_remaining": 0.4316672876281741
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.6227371916220732,
+              "background_power_remaining": 0.06432009625229546
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.6228006042009913,
+              "background_power_at_full_subtraction": 0.06431506764123487,
+              "aligned_blood_projection_norm_fraction": 0.7501294636663992,
+              "tissue_training_energy_fraction": 0.9057240062287657,
+              "minimum_gain_for_tissue_limit": 0.8808973496411521,
+              "minimum_blood_error_at_tissue_limit": 0.5486234015955613,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 1.2436381015631714e-16
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.7032516935221198,
+              "background_power_at_full_subtraction": 0.07320782016383244,
+              "aligned_blood_projection_norm_fraction": 0.8631701022484339,
+              "tissue_training_energy_fraction": 0.9413249510179463,
+              "minimum_gain_for_tissue_limit": 0.9118882719036709,
+              "minimum_blood_error_at_tissue_limit": 0.6412869715192159,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 2.3569957151410145e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.2796586091787315
+        },
+        {
+          "ensemble_frames": 256,
+          "duration_ms": 256.0,
+          "target_sha256": {
+            "blood": "e49973bbcb6062ebc1d2632b759ffad36cfbf4e672380fabecd3aad8c3d152ce",
+            "tissue": "b57a1e0daf39ddd792a28568219d3b3270d176d8f7f3c7329344bdd453d83731",
+            "noise": "4d34e9e603806fcb636cf16e56a682fd6d6b4f49d083a1cb9e34f1685b4c93eb"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.5448748312448431,
+              "background_power_remaining": 0.6296218749018999
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.5326809845662327,
+              "background_power_remaining": 0.05747089478452343
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.5331222147265586,
+              "background_power_at_full_subtraction": 0.05746468781566692,
+              "aligned_blood_projection_norm_fraction": 0.5794339171064714,
+              "tissue_training_energy_fraction": 0.8691508667488886,
+              "minimum_gain_for_tissue_limit": 0.8493675625215813,
+              "minimum_blood_error_at_tissue_limit": 0.4528167160484042,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 1.197654645908415e-16
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.7368740171960761,
+              "background_power_at_full_subtraction": 0.07565989210017501,
+              "aligned_blood_projection_norm_fraction": 0.7542792671355989,
+              "tissue_training_energy_fraction": 0.9213086584658633,
+              "minimum_gain_for_tissue_limit": 0.9201235474133347,
+              "minimum_blood_error_at_tissue_limit": 0.6780151346991682,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": false,
+              "frozen_source_closure_nrmse": 2.927787867354128e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.2796586091787315
+        }
+      ]
+    },
+    {
+      "seed": 12702,
+      "condition": "translation",
+      "flow_mps": 0.0007,
+      "motion": "translation",
+      "tissue_turnover": 0.0,
+      "blood_input_power": 2630.058823338385,
+      "tissue_input_power": 783641.2492091772,
+      "lengths": [
+        {
+          "ensemble_frames": 64,
+          "duration_ms": 64.0,
+          "target_sha256": {
+            "blood": "87cfdbce647f56bab47107bb7ab2e5a123494750e31cbcd2222ed0958ca0b8a0",
+            "tissue": "b57a1e0daf39ddd792a28568219d3b3270d176d8f7f3c7329344bdd453d83731",
+            "noise": "4d34e9e603806fcb636cf16e56a682fd6d6b4f49d083a1cb9e34f1685b4c93eb"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.7657289539133899,
+              "background_power_remaining": 0.19171763015903404
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.6800625822666563,
+              "background_power_remaining": 0.07456285880937989
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.6798492311451093,
+              "background_power_at_full_subtraction": 0.0745617734048339,
+              "aligned_blood_projection_norm_fraction": 0.8487907804892748,
+              "tissue_training_energy_fraction": 0.9407965658480586,
+              "minimum_gain_for_tissue_limit": 0.9181177368785396,
+              "minimum_blood_error_at_tissue_limit": 0.624181637517563,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 1.0043445834670698e-16
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.7154349891117769,
+              "background_power_at_full_subtraction": 0.06998000584838864,
+              "aligned_blood_projection_norm_fraction": 0.9088509354869616,
+              "tissue_training_energy_fraction": 0.9698561752914503,
+              "minimum_gain_for_tissue_limit": 0.9068892730718282,
+              "minimum_blood_error_at_tissue_limit": 0.6488203172057307,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 2.2186024031820884e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.30249594084500625
+        },
+        {
+          "ensemble_frames": 128,
+          "duration_ms": 128.0,
+          "target_sha256": {
+            "blood": "87cfdbce647f56bab47107bb7ab2e5a123494750e31cbcd2222ed0958ca0b8a0",
+            "tissue": "b57a1e0daf39ddd792a28568219d3b3270d176d8f7f3c7329344bdd453d83731",
+            "noise": "4d34e9e603806fcb636cf16e56a682fd6d6b4f49d083a1cb9e34f1685b4c93eb"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.509686775153366,
+              "background_power_remaining": 0.4316672876281741
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.5389517738496018,
+              "background_power_remaining": 0.06432009625229546
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.5380157435044614,
+              "background_power_at_full_subtraction": 0.06431506764123487,
+              "aligned_blood_projection_norm_fraction": 0.6550694083578271,
+              "tissue_training_energy_fraction": 0.9057240062287657,
+              "minimum_gain_for_tissue_limit": 0.8808973496411521,
+              "minimum_blood_error_at_tissue_limit": 0.47393664251829387,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 1.16435496301361e-16
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.6412895163803949,
+              "background_power_at_full_subtraction": 0.07320782016383244,
+              "aligned_blood_projection_norm_fraction": 0.8265898800566602,
+              "tissue_training_energy_fraction": 0.9413249510179463,
+              "minimum_gain_for_tissue_limit": 0.9118882719036709,
+              "minimum_blood_error_at_tissue_limit": 0.5847843888820592,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": false,
+              "frozen_source_closure_nrmse": 2.7864768385504987e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.30249594084500625
+        },
+        {
+          "ensemble_frames": 256,
+          "duration_ms": 256.0,
+          "target_sha256": {
+            "blood": "87cfdbce647f56bab47107bb7ab2e5a123494750e31cbcd2222ed0958ca0b8a0",
+            "tissue": "b57a1e0daf39ddd792a28568219d3b3270d176d8f7f3c7329344bdd453d83731",
+            "noise": "4d34e9e603806fcb636cf16e56a682fd6d6b4f49d083a1cb9e34f1685b4c93eb"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.45957722615687974,
+              "background_power_remaining": 0.6296218749018999
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.441603916660144,
+              "background_power_remaining": 0.05747089478452343
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.44128494423149817,
+              "background_power_at_full_subtraction": 0.05746468781566692,
+              "aligned_blood_projection_norm_fraction": 0.4742279455410243,
+              "tissue_training_energy_fraction": 0.8691508667488886,
+              "minimum_gain_for_tissue_limit": 0.8493675625215813,
+              "minimum_blood_error_at_tissue_limit": 0.3748131174593795,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 1.2092562030980944e-16
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.6022036342036841,
+              "background_power_at_full_subtraction": 0.07565989210017501,
+              "aligned_blood_projection_norm_fraction": 0.6410809302433293,
+              "tissue_training_energy_fraction": 0.9213086584658633,
+              "minimum_gain_for_tissue_limit": 0.9201235474133347,
+              "minimum_blood_error_at_tissue_limit": 0.554101744168696,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": false,
+              "frozen_source_closure_nrmse": 2.2359880965511415e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.30249594084500625
+        }
+      ]
+    },
+    {
+      "seed": 12702,
+      "condition": "translation",
+      "flow_mps": 0.0012,
+      "motion": "translation",
+      "tissue_turnover": 0.0,
+      "blood_input_power": 2350.882326992454,
+      "tissue_input_power": 783641.2492091772,
+      "lengths": [
+        {
+          "ensemble_frames": 64,
+          "duration_ms": 64.0,
+          "target_sha256": {
+            "blood": "721ca9d368623e8683c78909b18947c9075938f838e2af36c208e56deae5a066",
+            "tissue": "b57a1e0daf39ddd792a28568219d3b3270d176d8f7f3c7329344bdd453d83731",
+            "noise": "4d34e9e603806fcb636cf16e56a682fd6d6b4f49d083a1cb9e34f1685b4c93eb"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.6637610836236113,
+              "background_power_remaining": 0.19171763015903404
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.5825063971515453,
+              "background_power_remaining": 0.07456285880937989
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.5824324240125146,
+              "background_power_at_full_subtraction": 0.0745617734048339,
+              "aligned_blood_projection_norm_fraction": 0.7509193784667191,
+              "tissue_training_energy_fraction": 0.9407965658480586,
+              "minimum_gain_for_tissue_limit": 0.9181177368785396,
+              "minimum_blood_error_at_tissue_limit": 0.5347415390190519,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 9.832828259252282e-17
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.6524758833500286,
+              "background_power_at_full_subtraction": 0.06998000584838864,
+              "aligned_blood_projection_norm_fraction": 0.8546609534106105,
+              "tissue_training_energy_fraction": 0.9698561752914503,
+              "minimum_gain_for_tissue_limit": 0.9068892730718282,
+              "minimum_blood_error_at_tissue_limit": 0.5917233795482064,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 1.701946182714338e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.32944203271805955
+        },
+        {
+          "ensemble_frames": 128,
+          "duration_ms": 128.0,
+          "target_sha256": {
+            "blood": "721ca9d368623e8683c78909b18947c9075938f838e2af36c208e56deae5a066",
+            "tissue": "b57a1e0daf39ddd792a28568219d3b3270d176d8f7f3c7329344bdd453d83731",
+            "noise": "4d34e9e603806fcb636cf16e56a682fd6d6b4f49d083a1cb9e34f1685b4c93eb"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.43871267708610484,
+              "background_power_remaining": 0.4316672876281741
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.3888513429509325,
+              "background_power_remaining": 0.06432009625229546
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.3882128965671564,
+              "background_power_at_full_subtraction": 0.06431506764123487,
+              "aligned_blood_projection_norm_fraction": 0.4778537077879942,
+              "tissue_training_energy_fraction": 0.9057240062287657,
+              "minimum_gain_for_tissue_limit": 0.8808973496411521,
+              "minimum_blood_error_at_tissue_limit": 0.3419757116825228,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 1.5585711897703176e-16
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.5502088286251486,
+              "background_power_at_full_subtraction": 0.07320782016383244,
+              "aligned_blood_projection_norm_fraction": 0.7422087068298282,
+              "tissue_training_energy_fraction": 0.9413249510179463,
+              "minimum_gain_for_tissue_limit": 0.9118882719036709,
+              "minimum_blood_error_at_tissue_limit": 0.5017289779211298,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": false,
+              "frozen_source_closure_nrmse": 2.6370845199516583e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.32944203271805955
+        },
+        {
+          "ensemble_frames": 256,
+          "duration_ms": 256.0,
+          "target_sha256": {
+            "blood": "721ca9d368623e8683c78909b18947c9075938f838e2af36c208e56deae5a066",
+            "tissue": "b57a1e0daf39ddd792a28568219d3b3270d176d8f7f3c7329344bdd453d83731",
+            "noise": "4d34e9e603806fcb636cf16e56a682fd6d6b4f49d083a1cb9e34f1685b4c93eb"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.4260055030391812,
+              "background_power_remaining": 0.6296218749018999
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.33492584602973785,
+              "background_power_remaining": 0.05747089478452343
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.3340244404327485,
+              "background_power_at_full_subtraction": 0.05746468781566692,
+              "aligned_blood_projection_norm_fraction": 0.35990736397139783,
+              "tissue_training_energy_fraction": 0.8691508667488886,
+              "minimum_gain_for_tissue_limit": 0.8493675625215813,
+              "minimum_blood_error_at_tissue_limit": 0.2837095247929987,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 1.4663677534787905e-16
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.512942936597935,
+              "background_power_at_full_subtraction": 0.07565989210017501,
+              "aligned_blood_projection_norm_fraction": 0.5089154300695045,
+              "tissue_training_energy_fraction": 0.9213086584658633,
+              "minimum_gain_for_tissue_limit": 0.9201235474133347,
+              "minimum_blood_error_at_tissue_limit": 0.47197087444310515,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 2.959363159203377e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.32944203271805955
+        }
+      ]
+    },
+    {
+      "seed": 12702,
+      "condition": "translation",
+      "flow_mps": 0.0024,
+      "motion": "translation",
+      "tissue_turnover": 0.0,
+      "blood_input_power": 2282.4407101496013,
+      "tissue_input_power": 783641.2492091772,
+      "lengths": [
+        {
+          "ensemble_frames": 64,
+          "duration_ms": 64.0,
+          "target_sha256": {
+            "blood": "5e984fb806296ca00b99971ae335b9aa3408c941799cf2375986e19965b1e372",
+            "tissue": "b57a1e0daf39ddd792a28568219d3b3270d176d8f7f3c7329344bdd453d83731",
+            "noise": "4d34e9e603806fcb636cf16e56a682fd6d6b4f49d083a1cb9e34f1685b4c93eb"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.6078574864516902,
+              "background_power_remaining": 0.19171763015903404
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.48205835891683224,
+              "background_power_remaining": 0.07456285880937989
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.4819292197687871,
+              "background_power_at_full_subtraction": 0.0745617734048339,
+              "aligned_blood_projection_norm_fraction": 0.5710226079499459,
+              "tissue_training_energy_fraction": 0.9407965658480586,
+              "minimum_gain_for_tissue_limit": 0.9181177368785396,
+              "minimum_blood_error_at_tissue_limit": 0.44246776458975917,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 9.917425446020927e-17
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.5827199641775163,
+              "background_power_at_full_subtraction": 0.06998000584838864,
+              "aligned_blood_projection_norm_fraction": 0.7262085289904248,
+              "tissue_training_energy_fraction": 0.9698561752914503,
+              "minimum_gain_for_tissue_limit": 0.9068892730718282,
+              "minimum_blood_error_at_tissue_limit": 0.5284624847173895,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 2.2063702624932514e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.31736554012569024
+        },
+        {
+          "ensemble_frames": 128,
+          "duration_ms": 128.0,
+          "target_sha256": {
+            "blood": "5e984fb806296ca00b99971ae335b9aa3408c941799cf2375986e19965b1e372",
+            "tissue": "b57a1e0daf39ddd792a28568219d3b3270d176d8f7f3c7329344bdd453d83731",
+            "noise": "4d34e9e603806fcb636cf16e56a682fd6d6b4f49d083a1cb9e34f1685b4c93eb"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.43231555238956887,
+              "background_power_remaining": 0.4316672876281741
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.3421099477638085,
+              "background_power_remaining": 0.06432009625229546
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.34194404536895284,
+              "background_power_at_full_subtraction": 0.06431506764123487,
+              "aligned_blood_projection_norm_fraction": 0.4175179279205356,
+              "tissue_training_energy_fraction": 0.9057240062287657,
+              "minimum_gain_for_tissue_limit": 0.8808973496411521,
+              "minimum_blood_error_at_tissue_limit": 0.30121760329108443,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 1.213615153092194e-16
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.46048316036116155,
+              "background_power_at_full_subtraction": 0.07320782016383244,
+              "aligned_blood_projection_norm_fraction": 0.5639151657495449,
+              "tissue_training_energy_fraction": 0.9413249510179463,
+              "minimum_gain_for_tissue_limit": 0.9118882719036709,
+              "minimum_blood_error_at_tissue_limit": 0.4199091933424806,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 2.5239500301827124e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.31736554012569024
+        },
+        {
+          "ensemble_frames": 256,
+          "duration_ms": 256.0,
+          "target_sha256": {
+            "blood": "5e984fb806296ca00b99971ae335b9aa3408c941799cf2375986e19965b1e372",
+            "tissue": "b57a1e0daf39ddd792a28568219d3b3270d176d8f7f3c7329344bdd453d83731",
+            "noise": "4d34e9e603806fcb636cf16e56a682fd6d6b4f49d083a1cb9e34f1685b4c93eb"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.3369308591284854,
+              "background_power_remaining": 0.6296218749018999
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.29369896421314634,
+              "background_power_remaining": 0.05747089478452343
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.2937840437581624,
+              "background_power_at_full_subtraction": 0.05746468781566692,
+              "aligned_blood_projection_norm_fraction": 0.3145546965444723,
+              "tissue_training_energy_fraction": 0.8691508667488886,
+              "minimum_gain_for_tissue_limit": 0.8493675625215813,
+              "minimum_blood_error_at_tissue_limit": 0.249530637154604,
+              "joint_ambitious_goal_feasible": true,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 1.148527319831693e-16
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.37040708660674604,
+              "background_power_at_full_subtraction": 0.07565989210017501,
+              "aligned_blood_projection_norm_fraction": 0.4112126425443287,
+              "tissue_training_energy_fraction": 0.9213086584658633,
+              "minimum_gain_for_tissue_limit": 0.9201235474133347,
+              "minimum_blood_error_at_tissue_limit": 0.34082028251563745,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": true,
+              "frozen_source_closure_nrmse": 2.705795093795215e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.31736554012569024
+        }
+      ]
+    },
+    {
+      "seed": 12702,
+      "condition": "unmodeled_turnover",
+      "flow_mps": 0.0004,
+      "motion": "unmodeled",
+      "tissue_turnover": 0.25,
+      "blood_input_power": 2832.4463344676474,
+      "tissue_input_power": 901416.1605617262,
+      "lengths": [
+        {
+          "ensemble_frames": 64,
+          "duration_ms": 64.0,
+          "target_sha256": {
+            "blood": "fcae77a6fa7e5fb0dea2ba7aaf733bfd0773d8b1aa5350984a2927332e664c47",
+            "tissue": "341ac099927d76a43ec6879e3724e658206c920b7b47e32db2e3bf90393fa12a",
+            "noise": "4d34e9e603806fcb636cf16e56a682fd6d6b4f49d083a1cb9e34f1685b4c93eb"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.8129544388268187,
+              "background_power_remaining": 0.2828352058316693
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.7189662382545019,
+              "background_power_remaining": 0.199881382853616
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.7183656328461756,
+              "background_power_at_full_subtraction": 0.1998820913042895,
+              "aligned_blood_projection_norm_fraction": 0.8802581291088372,
+              "tissue_training_energy_fraction": 0.8925996063578373,
+              "minimum_gain_for_tissue_limit": null,
+              "minimum_blood_error_at_tissue_limit": null,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": false,
+              "frozen_source_closure_nrmse": 1.1222311335505362e-16
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.7435097023744428,
+              "background_power_at_full_subtraction": 0.1437801188434744,
+              "aligned_blood_projection_norm_fraction": 0.9221180171757545,
+              "tissue_training_energy_fraction": 0.9351018799232316,
+              "minimum_gain_for_tissue_limit": null,
+              "minimum_blood_error_at_tissue_limit": null,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": false,
+              "frozen_source_closure_nrmse": 1.9324190159148824e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.27908748728547417
+        },
+        {
+          "ensemble_frames": 128,
+          "duration_ms": 128.0,
+          "target_sha256": {
+            "blood": "fcae77a6fa7e5fb0dea2ba7aaf733bfd0773d8b1aa5350984a2927332e664c47",
+            "tissue": "341ac099927d76a43ec6879e3724e658206c920b7b47e32db2e3bf90393fa12a",
+            "noise": "4d34e9e603806fcb636cf16e56a682fd6d6b4f49d083a1cb9e34f1685b4c93eb"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.5923973451318201,
+              "background_power_remaining": 0.5145361906598754
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.6145264639710204,
+              "background_power_remaining": 0.21587083079630776
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.6139056140588659,
+              "background_power_at_full_subtraction": 0.2158665876987671,
+              "aligned_blood_projection_norm_fraction": 0.7513863967824455,
+              "tissue_training_energy_fraction": 0.8649201194630981,
+              "minimum_gain_for_tissue_limit": null,
+              "minimum_blood_error_at_tissue_limit": null,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": false,
+              "frozen_source_closure_nrmse": 1.2770382954290994e-16
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.6938384322128296,
+              "background_power_at_full_subtraction": 0.18393763087991796,
+              "aligned_blood_projection_norm_fraction": 0.8414515201691145,
+              "tissue_training_energy_fraction": 0.9028819795985786,
+              "minimum_gain_for_tissue_limit": null,
+              "minimum_blood_error_at_tissue_limit": null,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": false,
+              "frozen_source_closure_nrmse": 2.5356027056411815e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.27908748728547417
+        },
+        {
+          "ensemble_frames": 256,
+          "duration_ms": 256.0,
+          "target_sha256": {
+            "blood": "fcae77a6fa7e5fb0dea2ba7aaf733bfd0773d8b1aa5350984a2927332e664c47",
+            "tissue": "341ac099927d76a43ec6879e3724e658206c920b7b47e32db2e3bf90393fa12a",
+            "noise": "4d34e9e603806fcb636cf16e56a682fd6d6b4f49d083a1cb9e34f1685b4c93eb"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.5336750632158762,
+              "background_power_remaining": 0.6820976545151798
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.51926415655861,
+              "background_power_remaining": 0.22060203942455386
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.5193689531172961,
+              "background_power_at_full_subtraction": 0.2205975815743801,
+              "aligned_blood_projection_norm_fraction": 0.5794675546345625,
+              "tissue_training_energy_fraction": 0.8302443930033051,
+              "minimum_gain_for_tissue_limit": null,
+              "minimum_blood_error_at_tissue_limit": null,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": false,
+              "frozen_source_closure_nrmse": 1.597756376408263e-16
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.7300058549665494,
+              "background_power_at_full_subtraction": 0.21248367643006758,
+              "aligned_blood_projection_norm_fraction": 0.760610095450789,
+              "tissue_training_energy_fraction": 0.8818038814518844,
+              "minimum_gain_for_tissue_limit": null,
+              "minimum_blood_error_at_tissue_limit": null,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": false,
+              "frozen_source_closure_nrmse": 2.820108253880536e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.27908748728547417
+        }
+      ]
+    },
+    {
+      "seed": 12702,
+      "condition": "unmodeled_turnover",
+      "flow_mps": 0.0007,
+      "motion": "unmodeled",
+      "tissue_turnover": 0.25,
+      "blood_input_power": 2633.421123055911,
+      "tissue_input_power": 901416.1605617262,
+      "lengths": [
+        {
+          "ensemble_frames": 64,
+          "duration_ms": 64.0,
+          "target_sha256": {
+            "blood": "e45f38fdcb7876210a6e5e1742b6d5709bc03f5bf063d40ee804357e3bb7ae35",
+            "tissue": "341ac099927d76a43ec6879e3724e658206c920b7b47e32db2e3bf90393fa12a",
+            "noise": "4d34e9e603806fcb636cf16e56a682fd6d6b4f49d083a1cb9e34f1685b4c93eb"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.7622752499896017,
+              "background_power_remaining": 0.2828352058316693
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.6722840172310646,
+              "background_power_remaining": 0.199881382853616
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.6711125495115515,
+              "background_power_at_full_subtraction": 0.1998820913042895,
+              "aligned_blood_projection_norm_fraction": 0.846316687221588,
+              "tissue_training_energy_fraction": 0.8925996063578373,
+              "minimum_gain_for_tissue_limit": null,
+              "minimum_blood_error_at_tissue_limit": null,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": false,
+              "frozen_source_closure_nrmse": 1.1096146275402736e-16
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.7046698604697661,
+              "background_power_at_full_subtraction": 0.1437801188434744,
+              "aligned_blood_projection_norm_fraction": 0.8998969246360805,
+              "tissue_training_energy_fraction": 0.9351018799232316,
+              "minimum_gain_for_tissue_limit": null,
+              "minimum_blood_error_at_tissue_limit": null,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": false,
+              "frozen_source_closure_nrmse": 2.2200621487925424e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.30554403565004085
+        },
+        {
+          "ensemble_frames": 128,
+          "duration_ms": 128.0,
+          "target_sha256": {
+            "blood": "e45f38fdcb7876210a6e5e1742b6d5709bc03f5bf063d40ee804357e3bb7ae35",
+            "tissue": "341ac099927d76a43ec6879e3724e658206c920b7b47e32db2e3bf90393fa12a",
+            "noise": "4d34e9e603806fcb636cf16e56a682fd6d6b4f49d083a1cb9e34f1685b4c93eb"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.5069099752882216,
+              "background_power_remaining": 0.5145361906598754
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.5309466314024208,
+              "background_power_remaining": 0.21587083079630776
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.5297321642544113,
+              "background_power_at_full_subtraction": 0.2158665876987671,
+              "aligned_blood_projection_norm_fraction": 0.6586718808280199,
+              "tissue_training_energy_fraction": 0.8649201194630981,
+              "minimum_gain_for_tissue_limit": null,
+              "minimum_blood_error_at_tissue_limit": null,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": false,
+              "frozen_source_closure_nrmse": 1.204548252027942e-16
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.6146564426292704,
+              "background_power_at_full_subtraction": 0.18393763087991796,
+              "aligned_blood_projection_norm_fraction": 0.7777979381148371,
+              "tissue_training_energy_fraction": 0.9028819795985786,
+              "minimum_gain_for_tissue_limit": null,
+              "minimum_blood_error_at_tissue_limit": null,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": false,
+              "frozen_source_closure_nrmse": 2.5636544614136044e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.30554403565004085
+        },
+        {
+          "ensemble_frames": 256,
+          "duration_ms": 256.0,
+          "target_sha256": {
+            "blood": "e45f38fdcb7876210a6e5e1742b6d5709bc03f5bf063d40ee804357e3bb7ae35",
+            "tissue": "341ac099927d76a43ec6879e3724e658206c920b7b47e32db2e3bf90393fa12a",
+            "noise": "4d34e9e603806fcb636cf16e56a682fd6d6b4f49d083a1cb9e34f1685b4c93eb"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.4569065660483859,
+              "background_power_remaining": 0.6820976545151798
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.43048359322504565,
+              "background_power_remaining": 0.22060203942455386
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.4301056188154521,
+              "background_power_at_full_subtraction": 0.2205975815743801,
+              "aligned_blood_projection_norm_fraction": 0.4769137111880426,
+              "tissue_training_energy_fraction": 0.8302443930033051,
+              "minimum_gain_for_tissue_limit": null,
+              "minimum_blood_error_at_tissue_limit": null,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": false,
+              "frozen_source_closure_nrmse": 1.399148022387614e-16
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.6015648052385315,
+              "background_power_at_full_subtraction": 0.21248367643006758,
+              "aligned_blood_projection_norm_fraction": 0.6490991983856635,
+              "tissue_training_energy_fraction": 0.8818038814518844,
+              "minimum_gain_for_tissue_limit": null,
+              "minimum_blood_error_at_tissue_limit": null,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": false,
+              "frozen_source_closure_nrmse": 2.606834841364937e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.30554403565004085
+        }
+      ]
+    },
+    {
+      "seed": 12702,
+      "condition": "unmodeled_turnover",
+      "flow_mps": 0.0012,
+      "motion": "unmodeled",
+      "tissue_turnover": 0.25,
+      "blood_input_power": 2335.448643881402,
+      "tissue_input_power": 901416.1605617262,
+      "lengths": [
+        {
+          "ensemble_frames": 64,
+          "duration_ms": 64.0,
+          "target_sha256": {
+            "blood": "a7e04f88121547e35fa8d072c073620e16a208a4a030b8c1a2d60e6738b152c0",
+            "tissue": "341ac099927d76a43ec6879e3724e658206c920b7b47e32db2e3bf90393fa12a",
+            "noise": "4d34e9e603806fcb636cf16e56a682fd6d6b4f49d083a1cb9e34f1685b4c93eb"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.656539350400087,
+              "background_power_remaining": 0.2828352058316693
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.5689745687925084,
+              "background_power_remaining": 0.199881382853616
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.5684617863467128,
+              "background_power_at_full_subtraction": 0.1998820913042895,
+              "aligned_blood_projection_norm_fraction": 0.7403327723015624,
+              "tissue_training_energy_fraction": 0.8925996063578373,
+              "minimum_gain_for_tissue_limit": null,
+              "minimum_blood_error_at_tissue_limit": null,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": false,
+              "frozen_source_closure_nrmse": 1.1731314224194016e-16
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.6262052188256555,
+              "background_power_at_full_subtraction": 0.1437801188434744,
+              "aligned_blood_projection_norm_fraction": 0.8293068023059089,
+              "tissue_training_energy_fraction": 0.9351018799232316,
+              "minimum_gain_for_tissue_limit": null,
+              "minimum_blood_error_at_tissue_limit": null,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": false,
+              "frozen_source_closure_nrmse": 2.228354276173381e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.33777146367774447
+        },
+        {
+          "ensemble_frames": 128,
+          "duration_ms": 128.0,
+          "target_sha256": {
+            "blood": "a7e04f88121547e35fa8d072c073620e16a208a4a030b8c1a2d60e6738b152c0",
+            "tissue": "341ac099927d76a43ec6879e3724e658206c920b7b47e32db2e3bf90393fa12a",
+            "noise": "4d34e9e603806fcb636cf16e56a682fd6d6b4f49d083a1cb9e34f1685b4c93eb"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.43169279749674044,
+              "background_power_remaining": 0.5145361906598754
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.375140407875969,
+              "background_power_remaining": 0.21587083079630776
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.3743943209429508,
+              "background_power_at_full_subtraction": 0.2158665876987671,
+              "aligned_blood_projection_norm_fraction": 0.47629547329460625,
+              "tissue_training_energy_fraction": 0.8649201194630981,
+              "minimum_gain_for_tissue_limit": null,
+              "minimum_blood_error_at_tissue_limit": null,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": false,
+              "frozen_source_closure_nrmse": 1.1860840479036673e-16
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.4732512696818355,
+              "background_power_at_full_subtraction": 0.18393763087991796,
+              "aligned_blood_projection_norm_fraction": 0.6334030325867237,
+              "tissue_training_energy_fraction": 0.9028819795985786,
+              "minimum_gain_for_tissue_limit": null,
+              "minimum_blood_error_at_tissue_limit": null,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": false,
+              "frozen_source_closure_nrmse": 2.6191963273860867e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.33777146367774447
+        },
+        {
+          "ensemble_frames": 256,
+          "duration_ms": 256.0,
+          "target_sha256": {
+            "blood": "a7e04f88121547e35fa8d072c073620e16a208a4a030b8c1a2d60e6738b152c0",
+            "tissue": "341ac099927d76a43ec6879e3724e658206c920b7b47e32db2e3bf90393fa12a",
+            "noise": "4d34e9e603806fcb636cf16e56a682fd6d6b4f49d083a1cb9e34f1685b4c93eb"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.42564975581038367,
+              "background_power_remaining": 0.6820976545151798
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.33089871067118887,
+              "background_power_remaining": 0.22060203942455386
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.32961586651647046,
+              "background_power_at_full_subtraction": 0.2205975815743801,
+              "aligned_blood_projection_norm_fraction": 0.36032702210399836,
+              "tissue_training_energy_fraction": 0.8302443930033051,
+              "minimum_gain_for_tissue_limit": null,
+              "minimum_blood_error_at_tissue_limit": null,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": false,
+              "frozen_source_closure_nrmse": 1.308025743357641e-16
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.4683907079871501,
+              "background_power_at_full_subtraction": 0.21248367643006758,
+              "aligned_blood_projection_norm_fraction": 0.4951681116736507,
+              "tissue_training_energy_fraction": 0.8818038814518844,
+              "minimum_gain_for_tissue_limit": null,
+              "minimum_blood_error_at_tissue_limit": null,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": false,
+              "frozen_source_closure_nrmse": 2.616361133105742e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.33777146367774447
+        }
+      ]
+    },
+    {
+      "seed": 12702,
+      "condition": "unmodeled_turnover",
+      "flow_mps": 0.0024,
+      "motion": "unmodeled",
+      "tissue_turnover": 0.25,
+      "blood_input_power": 2276.033373510131,
+      "tissue_input_power": 901416.1605617262,
+      "lengths": [
+        {
+          "ensemble_frames": 64,
+          "duration_ms": 64.0,
+          "target_sha256": {
+            "blood": "5e540d63423f3b1e582a8f8eeffedcd2341949bbdc964a4cda15ba941bbd6435",
+            "tissue": "341ac099927d76a43ec6879e3724e658206c920b7b47e32db2e3bf90393fa12a",
+            "noise": "4d34e9e603806fcb636cf16e56a682fd6d6b4f49d083a1cb9e34f1685b4c93eb"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.5902731129081255,
+              "background_power_remaining": 0.2828352058316693
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.45950082389270086,
+              "background_power_remaining": 0.199881382853616
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.4592557149561679,
+              "background_power_at_full_subtraction": 0.1998820913042895,
+              "aligned_blood_projection_norm_fraction": 0.5542390690061804,
+              "tissue_training_energy_fraction": 0.8925996063578373,
+              "minimum_gain_for_tissue_limit": null,
+              "minimum_blood_error_at_tissue_limit": null,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": false,
+              "frozen_source_closure_nrmse": 1.1267163389803132e-16
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.5184414000723422,
+              "background_power_at_full_subtraction": 0.1437801188434744,
+              "aligned_blood_projection_norm_fraction": 0.6521394803764393,
+              "tissue_training_energy_fraction": 0.9351018799232316,
+              "minimum_gain_for_tissue_limit": null,
+              "minimum_blood_error_at_tissue_limit": null,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": false,
+              "frozen_source_closure_nrmse": 2.354120335380855e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.3230024650651781
+        },
+        {
+          "ensemble_frames": 128,
+          "duration_ms": 128.0,
+          "target_sha256": {
+            "blood": "5e540d63423f3b1e582a8f8eeffedcd2341949bbdc964a4cda15ba941bbd6435",
+            "tissue": "341ac099927d76a43ec6879e3724e658206c920b7b47e32db2e3bf90393fa12a",
+            "noise": "4d34e9e603806fcb636cf16e56a682fd6d6b4f49d083a1cb9e34f1685b4c93eb"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.41443414879266743,
+              "background_power_remaining": 0.5145361906598754
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.31918089815345174,
+              "background_power_remaining": 0.21587083079630776
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.31904765902485105,
+              "background_power_at_full_subtraction": 0.2158665876987671,
+              "aligned_blood_projection_norm_fraction": 0.40469372410126314,
+              "tissue_training_energy_fraction": 0.8649201194630981,
+              "minimum_gain_for_tissue_limit": null,
+              "minimum_blood_error_at_tissue_limit": null,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": false,
+              "frozen_source_closure_nrmse": 1.2390301023242416e-16
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.40305308625098296,
+              "background_power_at_full_subtraction": 0.18393763087991796,
+              "aligned_blood_projection_norm_fraction": 0.48917354707074334,
+              "tissue_training_energy_fraction": 0.9028819795985786,
+              "minimum_gain_for_tissue_limit": null,
+              "minimum_blood_error_at_tissue_limit": null,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": false,
+              "frozen_source_closure_nrmse": 2.71079868680531e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.3230024650651781
+        },
+        {
+          "ensemble_frames": 256,
+          "duration_ms": 256.0,
+          "target_sha256": {
+            "blood": "5e540d63423f3b1e582a8f8eeffedcd2341949bbdc964a4cda15ba941bbd6435",
+            "tissue": "341ac099927d76a43ec6879e3724e658206c920b7b47e32db2e3bf90393fa12a",
+            "noise": "4d34e9e603806fcb636cf16e56a682fd6d6b4f49d083a1cb9e34f1685b4c93eb"
+          },
+          "controls": {
+            "raw_svd": {
+              "added_blood_iq_error": 0.32375896253935,
+              "background_power_remaining": 0.6820976545151798
+            },
+            "known_motion_mixture_svd": {
+              "added_blood_iq_error": 0.2762214124013791,
+              "background_power_remaining": 0.22060203942455386
+            }
+          },
+          "oracles": {
+            "1": {
+              "blood_iq_error_at_full_subtraction": 0.27621935130958286,
+              "background_power_at_full_subtraction": 0.2205975815743801,
+              "aligned_blood_projection_norm_fraction": 0.3057100041884836,
+              "tissue_training_energy_fraction": 0.8302443930033051,
+              "minimum_gain_for_tissue_limit": null,
+              "minimum_blood_error_at_tissue_limit": null,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": false,
+              "frozen_source_closure_nrmse": 1.5388928543256823e-16
+            },
+            "2": {
+              "blood_iq_error_at_full_subtraction": 0.3510502232891033,
+              "background_power_at_full_subtraction": 0.21248367643006758,
+              "aligned_blood_projection_norm_fraction": 0.3966328081727359,
+              "tissue_training_energy_fraction": 0.8818038814518844,
+              "minimum_gain_for_tissue_limit": null,
+              "minimum_blood_error_at_tissue_limit": null,
+              "joint_ambitious_goal_feasible": false,
+              "joint_vs_raw_feasible": false,
+              "frozen_source_closure_nrmse": 2.886832378262425e-16
+            }
+          },
+          "blood_roundtrip_iq_error": 0.3230024650651781
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "64": {
+      "moving_cases": 16,
+      "median_oracle_blood_error_full": 0.5954410462898632,
+      "median_oracle_background_power_full": 0.14543765904335537,
+      "rank1_tissue_limit_feasible_cases": 8,
+      "rank1_joint_ambitious_cases": 0,
+      "rank1_joint_vs_raw_cases": 8
+    },
+    "128": {
+      "moving_cases": 16,
+      "median_oracle_blood_error_full": 0.48842259376605285,
+      "median_oracle_background_power_full": 0.14616674821125744,
+      "rank1_tissue_limit_feasible_cases": 8,
+      "rank1_joint_ambitious_cases": 0,
+      "rank1_joint_vs_raw_cases": 8
+    },
+    "256": {
+      "moving_cases": 16,
+      "median_oracle_blood_error_full": 0.39980366508831033,
+      "median_oracle_background_power_full": 0.14495036094563188,
+      "rank1_tissue_limit_feasible_cases": 8,
+      "rank1_joint_ambitious_cases": 2,
+      "rank1_joint_vs_raw_cases": 8
+    }
+  },
+  "elapsed_s": 74.8007548300011,
+  "truth_use": "known motion and true tissue modes are evaluator-only; this is not a proposed filter",
+  "scope": "one fixed matched-tissue temporal projection ray per rank, not a universal separation bound",
+  "physical_status": "specified IQ software simulation only"
+}

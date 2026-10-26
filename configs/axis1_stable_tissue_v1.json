@@ -1,0 +1,31 @@
+{
+  "study": "axis1_stable_tissue_v1",
+  "seen_diagnostic_seeds": [5201, 5202, 8301, 8302],
+  "development_seeds": [6301, 6302],
+  "heldout_seeds": [9401, 9402],
+  "conditions": {
+    "stationary_slow": {"motion": "none", "flow_mps": 0.0012, "amplitude_pixels": 1.1, "decorrelation": 0.99, "tissue_turnover": 0.0},
+    "translation_very_slow": {"motion": "translation", "flow_mps": 0.0007, "amplitude_pixels": 1.4, "decorrelation": 0.985, "tissue_turnover": 0.0},
+    "smooth_very_slow": {"motion": "smooth", "flow_mps": 0.0004, "amplitude_pixels": 1.4, "decorrelation": 0.995, "tissue_turnover": 0.0},
+    "unmodeled_turnover": {"motion": "unmodeled", "flow_mps": 0.0008, "amplitude_pixels": 1.4, "decorrelation": 0.98, "tissue_turnover": 0.25}
+  },
+  "n_frames": 64,
+  "calibration_frames": 32,
+  "shape_zx": [16, 24],
+  "score_start": 32,
+  "common_crop_pixels": 4,
+  "max_shift_px": 2.5,
+  "svd_discard": 1,
+  "phase_alignment": true,
+  "motion_smoothing_sigma_frames": 1.0,
+  "bright_training_fraction": 0.25,
+  "primary_method": "smooth_full_field",
+  "decision": {
+    "moving_added_blood_error_margin_vs_raw": 0.05,
+    "moving_background_power_max": 0.10,
+    "stationary_added_blood_error_margin_vs_raw": 0.05,
+    "required_moving_cases": 6,
+    "required_stationary_cases": 2,
+    "maximum_registration_failures_per_case": 0
+  }
+}

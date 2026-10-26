@@ -1,0 +1,784 @@
+{
+  "study": "axis1_stable_tissue_v1",
+  "split": "heldout",
+  "source_sha256": {
+    "configs/axis1_stable_tissue_v1.json": "2a02648c9a92ba2497e47010153950dd878d30808d8545bed85e8232ceb14079",
+    "examples/axis1_stable_tissue_study.py": "1a994e16bc4a6128423d80dab934213dd8c2594d53d7a541b99ad8d37c62ef45",
+    "examples/axis1_native_subtraction_study.py": "2bd5ea22b7e1ad28b2e81c838a7bb658b30208c90cefe5968048ba346c874984",
+    "src/btbench/stable_tissue.py": "5acc884f7f1aaa06841f9a5bb1e9aacd54fb44d156befac2c60cad64d43a34d7",
+    "src/btbench/native_subtraction.py": "6ce5bad869d6121ac34e07cf6b37587d2679b29267a5625d6423e99e6da55b16",
+    "src/btbench/motion_first.py": "539073495dd872f6b80c2adf86aa78b357da46dde5e46c462505ad98600201a3",
+    "src/btbench/filters.py": "df2067a1c602500b09416510650789a9a153378dbbe8c1dac70d7dcecaf8d96a",
+    "src/btbench/core.py": "0a74f5c8a335921f52eade374170fdd8c0f44cf8b06bb00356a4cda5932b8752",
+    "src/btbench/shared.py": "e50a1670bc1eb290ddd8b4c24cb58e56dc42e8f36cfb497b9f479d440d706247",
+    "src/btbench/registration.py": "9fac8bac07dcb8bfa45c90ef5c3f5ae1168abd9ff127fb92991a3703d82e2493",
+    "src/btbench/svd_literature.py": "af10fc23cab012689b42bf1e82ad2446b63d46f59faaab9a10570d71c5204098",
+    "src/btbench/paper_filters.py": "581cfe8025568d2ec91769180757cebf98270da1371c7190733396d4651f5abf",
+    "src/btbench/stap.py": "54f17721fdd132264a5d52986f6dde8398f9f71377ad524d39620c199d6d269f",
+    "src/btbench/axes.py": "3c10dc68eb60cd6cf7f0a332bee16d1e704d59c59ea81b484bf6991a625108e5"
+  },
+  "cases": [
+    {
+      "seed": 9401,
+      "condition": "stationary_slow",
+      "scene": {
+        "motion": "none",
+        "flow_mps": 0.0012,
+        "amplitude_pixels": 1.1,
+        "decorrelation": 0.99,
+        "tissue_turnover": 0.0
+      },
+      "blood_input_power": 3383.7779374797074,
+      "tissue_input_power": 322896.3564685583,
+      "results": {
+        "raw_svd": {
+          "added_blood_iq_error": 0.81103723906438,
+          "added_blood_power_retention": 0.3096821730936763,
+          "frozen_blood_iq_error": 0.8108622702246596,
+          "frozen_tissue_power_retention": 1.8274815130681816e-05,
+          "refitted_background_power_remaining": 6.33050885307005e-05,
+          "same_motion_background_power_remaining": 6.33050885307005e-05,
+          "same_motion_added_blood_iq_error": 0.81103723906438,
+          "motion_refit_background_change_iq_norm": 0.0,
+          "frozen_source_closure_nrmse": 1.849363645677635e-16,
+          "frozen_mixture_replay_nrmse": 0.0,
+          "elapsed_s": 0.0491984020009113
+        },
+        "registered_return": {
+          "added_blood_iq_error": 0.8072353564848116,
+          "added_blood_power_retention": 0.3078091240414242,
+          "frozen_blood_iq_error": 0.8070521123895352,
+          "frozen_tissue_power_retention": 3.5537982884241874e-07,
+          "refitted_background_power_remaining": 4.184080260367261e-05,
+          "same_motion_background_power_remaining": 4.184001486652249e-05,
+          "same_motion_added_blood_iq_error": 0.8072286266745639,
+          "motion_refit_background_change_iq_norm": 0.0001358607669365083,
+          "frozen_source_closure_nrmse": 1.6517552795330491e-16,
+          "frozen_mixture_replay_nrmse": 0.0,
+          "elapsed_s": 0.26335850000032224
+        },
+        "native_subtraction": {
+          "added_blood_iq_error": 0.8072353564848116,
+          "added_blood_power_retention": 0.3078091240414242,
+          "frozen_blood_iq_error": 0.8070521123895352,
+          "frozen_tissue_power_retention": 3.553798288424225e-07,
+          "refitted_background_power_remaining": 4.184080260367262e-05,
+          "same_motion_background_power_remaining": 4.184001486652249e-05,
+          "same_motion_added_blood_iq_error": 0.8072286266745639,
+          "motion_refit_background_change_iq_norm": 0.0001358607669365074,
+          "frozen_source_closure_nrmse": 1.6723432605699955e-16,
+          "frozen_mixture_replay_nrmse": 0.0,
+          "elapsed_s": 0.26476946199909435
+        },
+        "smooth_full_field": {
+          "added_blood_iq_error": 0.8072353564848104,
+          "added_blood_power_retention": 0.3078091240414235,
+          "frozen_blood_iq_error": 0.8070521123895348,
+          "frozen_tissue_power_retention": 3.553798288428289e-07,
+          "refitted_background_power_remaining": 4.1840802603672595e-05,
+          "same_motion_background_power_remaining": 4.1840014866522577e-05,
+          "same_motion_added_blood_iq_error": 0.8072286266745621,
+          "motion_refit_background_change_iq_norm": 0.00013586076694022172,
+          "frozen_source_closure_nrmse": 1.298361383992626e-16,
+          "frozen_mixture_replay_nrmse": 0.0,
+          "elapsed_s": 0.2630510819981282
+        },
+        "smooth_bright_quartile": {
+          "added_blood_iq_error": 0.8071836573280098,
+          "added_blood_power_retention": 0.30810714021795943,
+          "frozen_blood_iq_error": 0.8071764260025476,
+          "frozen_tissue_power_retention": 2.3943740869959514e-08,
+          "refitted_background_power_remaining": 4.186918561403132e-05,
+          "same_motion_background_power_remaining": 4.186837843081423e-05,
+          "same_motion_added_blood_iq_error": 0.8071764260025476,
+          "motion_refit_background_change_iq_norm": 0.00013586134740293845,
+          "frozen_source_closure_nrmse": 1.1977185864857922e-16,
+          "frozen_mixture_replay_nrmse": 0.0,
+          "elapsed_s": 0.2441886800006614
+        }
+      },
+      "mechanism": {
+        "motion_fit_seconds": 1.3541410899997572,
+        "base_motion_refit_rms_px": 0.0,
+        "stable_motion_refit_rms_px": 0.0,
+        "registration_failure_frames": 0,
+        "background_registration_failure_frames": 0
+      }
+    },
+    {
+      "seed": 9401,
+      "condition": "translation_very_slow",
+      "scene": {
+        "motion": "translation",
+        "flow_mps": 0.0007,
+        "amplitude_pixels": 1.4,
+        "decorrelation": 0.985,
+        "tissue_turnover": 0.0
+      },
+      "blood_input_power": 2618.617462130673,
+      "tissue_input_power": 326948.1460669205,
+      "results": {
+        "raw_svd": {
+          "added_blood_iq_error": 0.581488178021229,
+          "added_blood_power_retention": 0.5951191625411162,
+          "frozen_blood_iq_error": 0.580886188152409,
+          "frozen_tissue_power_retention": 0.5971007799481145,
+          "refitted_background_power_remaining": 0.5983827526958412,
+          "same_motion_background_power_remaining": 0.5983827526958412,
+          "same_motion_added_blood_iq_error": 0.581488178021229,
+          "motion_refit_background_change_iq_norm": 0.0,
+          "frozen_source_closure_nrmse": 3.3939212700558305e-16,
+          "frozen_mixture_replay_nrmse": 0.0,
+          "elapsed_s": 0.05465866300073685
+        },
+        "registered_return": {
+          "added_blood_iq_error": 0.9112530580085435,
+          "added_blood_power_retention": 0.3543610100557935,
+          "frozen_blood_iq_error": 0.8301220438877132,
+          "frozen_tissue_power_retention": 0.03823282780710717,
+          "refitted_background_power_remaining": 0.037263492258340275,
+          "same_motion_background_power_remaining": 0.038294099956269645,
+          "same_motion_added_blood_iq_error": 0.8299808533416867,
+          "motion_refit_background_change_iq_norm": 0.3693807999724435,
+          "frozen_source_closure_nrmse": 1.4802756251734605e-16,
+          "frozen_mixture_replay_nrmse": 0.0,
+          "elapsed_s": 0.28926560599938966
+        },
+        "native_subtraction": {
+          "added_blood_iq_error": 0.856899925338797,
+          "added_blood_power_retention": 0.40694973076032687,
+          "frozen_blood_iq_error": 0.7615746015959435,
+          "frozen_tissue_power_retention": 0.05739921637058889,
+          "refitted_background_power_remaining": 0.05805021918776473,
+          "same_motion_background_power_remaining": 0.05748896586946147,
+          "same_motion_added_blood_iq_error": 0.7614144037891256,
+          "motion_refit_background_change_iq_norm": 0.3726507327952336,
+          "frozen_source_closure_nrmse": 1.5880844623818254e-16,
+          "frozen_mixture_replay_nrmse": 0.0,
+          "elapsed_s": 0.2580980040002032
+        },
+        "smooth_full_field": {
+          "added_blood_iq_error": 0.8055879165832139,
+          "added_blood_power_retention": 0.3693517465185045,
+          "frozen_blood_iq_error": 0.7322375029638573,
+          "frozen_tissue_power_retention": 0.055289812912982385,
+          "refitted_background_power_remaining": 0.05540566826231707,
+          "same_motion_background_power_remaining": 0.05536655676137051,
+          "same_motion_added_blood_iq_error": 0.7321112834618441,
+          "motion_refit_background_change_iq_norm": 0.3146364505837672,
+          "frozen_source_closure_nrmse": 1.1729757294185447e-16,
+          "frozen_mixture_replay_nrmse": 0.0,
+          "elapsed_s": 0.25280431600185693
+        },
+        "smooth_bright_quartile": {
+          "added_blood_iq_error": 0.803027782541896,
+          "added_blood_power_retention": 0.36495068558652816,
+          "frozen_blood_iq_error": 0.7311005819862078,
+          "frozen_tissue_power_retention": 0.05367306264144686,
+          "refitted_background_power_remaining": 0.05373413120746698,
+          "same_motion_background_power_remaining": 0.053728395658939686,
+          "same_motion_added_blood_iq_error": 0.7311814906002343,
+          "motion_refit_background_change_iq_norm": 0.3082870301421222,
+          "frozen_source_closure_nrmse": 1.2947641806599628e-16,
+          "frozen_mixture_replay_nrmse": 0.0,
+          "elapsed_s": 0.20792397699915455
+        }
+      },
+      "mechanism": {
+        "motion_fit_seconds": 1.3671853320010996,
+        "base_motion_refit_rms_px": 0.03130012451182205,
+        "stable_motion_refit_rms_px": 0.025314215456720815,
+        "registration_failure_frames": 0,
+        "background_registration_failure_frames": 0
+      }
+    },
+    {
+      "seed": 9401,
+      "condition": "smooth_very_slow",
+      "scene": {
+        "motion": "smooth",
+        "flow_mps": 0.0004,
+        "amplitude_pixels": 1.4,
+        "decorrelation": 0.995,
+        "tissue_turnover": 0.0
+      },
+      "blood_input_power": 2492.9412492673273,
+      "tissue_input_power": 331050.6167571774,
+      "results": {
+        "raw_svd": {
+          "added_blood_iq_error": 0.6014419215714405,
+          "added_blood_power_retention": 0.5918655367582684,
+          "frozen_blood_iq_error": 0.601873274299807,
+          "frozen_tissue_power_retention": 0.595703891398876,
+          "refitted_background_power_remaining": 0.5964085814324507,
+          "same_motion_background_power_remaining": 0.5964085814324507,
+          "same_motion_added_blood_iq_error": 0.6014419215714405,
+          "motion_refit_background_change_iq_norm": 0.0,
+          "frozen_source_closure_nrmse": 3.1616997060158643e-16,
+          "frozen_mixture_replay_nrmse": 0.0,
+          "elapsed_s": 0.052404750000278
+        },
+        "registered_return": {
+          "added_blood_iq_error": 0.9736811888206133,
+          "added_blood_power_retention": 0.27626514751604464,
+          "frozen_blood_iq_error": 0.8890072736962839,
+          "frozen_tissue_power_retention": 0.041748299906664114,
+          "refitted_background_power_remaining": 0.0404404471935501,
+          "same_motion_background_power_remaining": 0.04178559092740078,
+          "same_motion_added_blood_iq_error": 0.8889661314471604,
+          "motion_refit_background_change_iq_norm": 0.40355976355869166,
+          "frozen_source_closure_nrmse": 1.37054455236888e-16,
+          "frozen_mixture_replay_nrmse": 0.0,
+          "elapsed_s": 0.26618808299826924
+        },
+        "native_subtraction": {
+          "added_blood_iq_error": 0.8802005262201905,
+          "added_blood_power_retention": 0.3346082263674388,
+          "frozen_blood_iq_error": 0.781711341222232,
+          "frozen_tissue_power_retention": 0.08659015414468477,
+          "refitted_background_power_remaining": 0.08723762575222341,
+          "same_motion_background_power_remaining": 0.08664921748343238,
+          "same_motion_added_blood_iq_error": 0.7816761190048876,
+          "motion_refit_background_change_iq_norm": 0.3900633172094726,
+          "frozen_source_closure_nrmse": 1.4511873033475923e-16,
+          "frozen_mixture_replay_nrmse": 0.0,
+          "elapsed_s": 0.2603650169985485
+        },
+        "smooth_full_field": {
+          "added_blood_iq_error": 0.7958456783808147,
+          "added_blood_power_retention": 0.24089361552864885,
+          "frozen_blood_iq_error": 0.7604314811721073,
+          "frozen_tissue_power_retention": 0.08543846575339183,
+          "refitted_background_power_remaining": 0.08596049574624795,
+          "same_motion_background_power_remaining": 0.08548481800141135,
+          "same_motion_added_blood_iq_error": 0.7603405719607045,
+          "motion_refit_background_change_iq_norm": 0.2469325388489118,
+          "frozen_source_closure_nrmse": 1.1670458501192636e-16,
+          "frozen_mixture_replay_nrmse": 0.0,
+          "elapsed_s": 0.2115805459980038
+        },
+        "smooth_bright_quartile": {
+          "added_blood_iq_error": 0.8000951190277442,
+          "added_blood_power_retention": 0.24721795111526643,
+          "frozen_blood_iq_error": 0.7612975871080602,
+          "frozen_tissue_power_retention": 0.0850859007137441,
+          "refitted_background_power_remaining": 0.08549879098520483,
+          "same_motion_background_power_remaining": 0.08516771491204028,
+          "same_motion_added_blood_iq_error": 0.7613293320610184,
+          "motion_refit_background_change_iq_norm": 0.25991642539665094,
+          "frozen_source_closure_nrmse": 1.2356769370485006e-16,
+          "frozen_mixture_replay_nrmse": 0.0,
+          "elapsed_s": 0.173524797999562
+        }
+      },
+      "mechanism": {
+        "motion_fit_seconds": 1.4164314570007264,
+        "base_motion_refit_rms_px": 0.03405075300771684,
+        "stable_motion_refit_rms_px": 0.02746043682727245,
+        "registration_failure_frames": 0,
+        "background_registration_failure_frames": 0
+      }
+    },
+    {
+      "seed": 9401,
+      "condition": "unmodeled_turnover",
+      "scene": {
+        "motion": "unmodeled",
+        "flow_mps": 0.0008,
+        "amplitude_pixels": 1.4,
+        "decorrelation": 0.98,
+        "tissue_turnover": 0.25
+      },
+      "blood_input_power": 2598.5073023088817,
+      "tissue_input_power": 389654.7766206491,
+      "results": {
+        "raw_svd": {
+          "added_blood_iq_error": 0.5982221018309273,
+          "added_blood_power_retention": 0.5886573390215594,
+          "frozen_blood_iq_error": 0.5932922359534533,
+          "frozen_tissue_power_retention": 0.6009265662554516,
+          "refitted_background_power_remaining": 0.6026694392529669,
+          "same_motion_background_power_remaining": 0.6026694392529669,
+          "same_motion_added_blood_iq_error": 0.5982221018309273,
+          "motion_refit_background_change_iq_norm": 0.0,
+          "frozen_source_closure_nrmse": 3.227999121659174e-16,
+          "frozen_mixture_replay_nrmse": 0.0,
+          "elapsed_s": 0.040232744002423715
+        },
+        "registered_return": {
+          "added_blood_iq_error": 1.222317403903705,
+          "added_blood_power_retention": 1.136689261858043,
+          "frozen_blood_iq_error": 0.7751474805029649,
+          "frozen_tissue_power_retention": 0.14583919533110618,
+          "refitted_background_power_remaining": 0.14399508057822585,
+          "same_motion_background_power_remaining": 0.14593744527365032,
+          "same_motion_added_blood_iq_error": 0.7763453513447849,
+          "motion_refit_background_change_iq_norm": 0.9354054637867761,
+          "frozen_source_closure_nrmse": 1.6114553404092873e-16,
+          "frozen_mixture_replay_nrmse": 0.0,
+          "elapsed_s": 0.2552048720026505
+        },
+        "native_subtraction": {
+          "added_blood_iq_error": 1.058166546217602,
+          "added_blood_power_retention": 1.0844362873718278,
+          "frozen_blood_iq_error": 0.6483751655636543,
+          "frozen_tissue_power_retention": 0.25311493457734363,
+          "refitted_background_power_remaining": 0.2585335917930365,
+          "same_motion_background_power_remaining": 0.2533366035524948,
+          "same_motion_added_blood_iq_error": 0.6497382089763983,
+          "motion_refit_background_change_iq_norm": 0.8238732495233958,
+          "frozen_source_closure_nrmse": 1.7163937994433317e-16,
+          "frozen_mixture_replay_nrmse": 0.0,
+          "elapsed_s": 0.21976643800007878
+        },
+        "smooth_full_field": {
+          "added_blood_iq_error": 0.8864650123742908,
+          "added_blood_power_retention": 0.7070235045813907,
+          "frozen_blood_iq_error": 0.6646822799369417,
+          "frozen_tissue_power_retention": 0.22492909191233665,
+          "refitted_background_power_remaining": 0.22707785082788864,
+          "same_motion_background_power_remaining": 0.22514559344720117,
+          "same_motion_added_blood_iq_error": 0.6661864374687878,
+          "motion_refit_background_change_iq_norm": 0.5822063679633146,
+          "frozen_source_closure_nrmse": 1.1412209769820908e-16,
+          "frozen_mixture_replay_nrmse": 0.0,
+          "elapsed_s": 0.17781125400142628
+        },
+        "smooth_bright_quartile": {
+          "added_blood_iq_error": 0.8984510817182393,
+          "added_blood_power_retention": 0.7232477822746175,
+          "frozen_blood_iq_error": 0.6688540624831301,
+          "frozen_tissue_power_retention": 0.22439034955314266,
+          "refitted_background_power_remaining": 0.22653466475218756,
+          "same_motion_background_power_remaining": 0.22448177229801788,
+          "same_motion_added_blood_iq_error": 0.6689934525277405,
+          "motion_refit_background_change_iq_norm": 0.5942924819864773,
+          "frozen_source_closure_nrmse": 1.1397875240667754e-16,
+          "frozen_mixture_replay_nrmse": 0.0,
+          "elapsed_s": 0.198324634002347
+        }
+      },
+      "mechanism": {
+        "motion_fit_seconds": 0.9454192410012183,
+        "base_motion_refit_rms_px": 0.11881523483787332,
+        "stable_motion_refit_rms_px": 0.06544560826689168,
+        "registration_failure_frames": 1,
+        "background_registration_failure_frames": 1
+      }
+    },
+    {
+      "seed": 9402,
+      "condition": "stationary_slow",
+      "scene": {
+        "motion": "none",
+        "flow_mps": 0.0012,
+        "amplitude_pixels": 1.1,
+        "decorrelation": 0.99,
+        "tissue_turnover": 0.0
+      },
+      "blood_input_power": 2048.8926250438617,
+      "tissue_input_power": 600993.7206398863,
+      "results": {
+        "raw_svd": {
+          "added_blood_iq_error": 0.812028271289912,
+          "added_blood_power_retention": 0.42284583398387166,
+          "frozen_blood_iq_error": 0.8120594996778963,
+          "frozen_tissue_power_retention": 2.0914151801079658e-05,
+          "refitted_background_power_remaining": 4.3590145259008985e-05,
+          "same_motion_background_power_remaining": 4.3590145259008985e-05,
+          "same_motion_added_blood_iq_error": 0.812028271289912,
+          "motion_refit_background_change_iq_norm": 0.0,
+          "frozen_source_closure_nrmse": 1.6105737933403305e-16,
+          "frozen_mixture_replay_nrmse": 0.0,
+          "elapsed_s": 0.04902301699985401
+        },
+        "registered_return": {
+          "added_blood_iq_error": 0.8078946278011779,
+          "added_blood_power_retention": 0.4199448521932061,
+          "frozen_blood_iq_error": 0.8079264057535899,
+          "frozen_tissue_power_retention": 7.706244264318222e-08,
+          "refitted_background_power_remaining": 2.195131792501334e-05,
+          "same_motion_background_power_remaining": 2.1950668754977927e-05,
+          "same_motion_added_blood_iq_error": 0.8078963154391242,
+          "motion_refit_background_change_iq_norm": 7.98069067637937e-05,
+          "frozen_source_closure_nrmse": 1.5300566852638486e-16,
+          "frozen_mixture_replay_nrmse": 0.0,
+          "elapsed_s": 0.1915305399998033
+        },
+        "native_subtraction": {
+          "added_blood_iq_error": 0.8078946278011779,
+          "added_blood_power_retention": 0.4199448521932061,
+          "frozen_blood_iq_error": 0.8079264057535899,
+          "frozen_tissue_power_retention": 7.706244264318161e-08,
+          "refitted_background_power_remaining": 2.195131792501332e-05,
+          "same_motion_background_power_remaining": 2.1950668754977907e-05,
+          "same_motion_added_blood_iq_error": 0.8078963154391242,
+          "motion_refit_background_change_iq_norm": 7.980690676385538e-05,
+          "frozen_source_closure_nrmse": 1.561211264380897e-16,
+          "frozen_mixture_replay_nrmse": 0.0,
+          "elapsed_s": 0.19937484599722666
+        },
+        "smooth_full_field": {
+          "added_blood_iq_error": 0.8078946278011787,
+          "added_blood_power_retention": 0.41994485219320665,
+          "frozen_blood_iq_error": 0.8079264057535901,
+          "frozen_tissue_power_retention": 7.706244264313656e-08,
+          "refitted_background_power_remaining": 2.195131792501331e-05,
+          "same_motion_background_power_remaining": 2.1950668754977944e-05,
+          "same_motion_added_blood_iq_error": 0.8078963154391251,
+          "motion_refit_background_change_iq_norm": 7.980690676404041e-05,
+          "frozen_source_closure_nrmse": 1.2681092037811037e-16,
+          "frozen_mixture_replay_nrmse": 0.0,
+          "elapsed_s": 0.2671672040014528
+        },
+        "smooth_bright_quartile": {
+          "added_blood_iq_error": 0.8079642948487895,
+          "added_blood_power_retention": 0.42013155509691397,
+          "frozen_blood_iq_error": 0.8079660616443088,
+          "frozen_tissue_power_retention": 3.167562956547386e-08,
+          "refitted_background_power_remaining": 2.196313693328024e-05,
+          "same_motion_background_power_remaining": 2.1962591392752807e-05,
+          "same_motion_added_blood_iq_error": 0.8079660616443088,
+          "motion_refit_background_change_iq_norm": 7.981050565806293e-05,
+          "frozen_source_closure_nrmse": 1.269261893911547e-16,
+          "frozen_mixture_replay_nrmse": 0.0,
+          "elapsed_s": 0.25573474500197335
+        }
+      },
+      "mechanism": {
+        "motion_fit_seconds": 1.1199181140000292,
+        "base_motion_refit_rms_px": 0.0,
+        "stable_motion_refit_rms_px": 0.0,
+        "registration_failure_frames": 0,
+        "background_registration_failure_frames": 0
+      }
+    },
+    {
+      "seed": 9402,
+      "condition": "translation_very_slow",
+      "scene": {
+        "motion": "translation",
+        "flow_mps": 0.0007,
+        "amplitude_pixels": 1.4,
+        "decorrelation": 0.985,
+        "tissue_turnover": 0.0
+      },
+      "blood_input_power": 1575.5968659024197,
+      "tissue_input_power": 429087.7524312353,
+      "results": {
+        "raw_svd": {
+          "added_blood_iq_error": 0.5491342976328598,
+          "added_blood_power_retention": 0.7468429233884125,
+          "frozen_blood_iq_error": 0.5488389972285324,
+          "frozen_tissue_power_retention": 0.5630359498725223,
+          "refitted_background_power_remaining": 0.563253707114598,
+          "same_motion_background_power_remaining": 0.563253707114598,
+          "same_motion_added_blood_iq_error": 0.5491342976328598,
+          "motion_refit_background_change_iq_norm": 0.0,
+          "frozen_source_closure_nrmse": 3.3397390412772565e-16,
+          "frozen_mixture_replay_nrmse": 0.0,
+          "elapsed_s": 0.037248824002745096
+        },
+        "registered_return": {
+          "added_blood_iq_error": 0.9011049542262997,
+          "added_blood_power_retention": 0.5142311339893368,
+          "frozen_blood_iq_error": 0.7944052188072739,
+          "frozen_tissue_power_retention": 0.02987263414867826,
+          "refitted_background_power_remaining": 0.029048774689833298,
+          "same_motion_background_power_remaining": 0.02993141590703936,
+          "same_motion_added_blood_iq_error": 0.7950119461253408,
+          "motion_refit_background_change_iq_norm": 0.4333672916235205,
+          "frozen_source_closure_nrmse": 1.3673894020396869e-16,
+          "frozen_mixture_replay_nrmse": 0.0,
+          "elapsed_s": 0.16698897100286558
+        },
+        "native_subtraction": {
+          "added_blood_iq_error": 0.8220633717211088,
+          "added_blood_power_retention": 0.6857208922956212,
+          "frozen_blood_iq_error": 0.672459764773633,
+          "frozen_tissue_power_retention": 0.06263232417924214,
+          "refitted_background_power_remaining": 0.06306393292620593,
+          "same_motion_background_power_remaining": 0.06274817893882793,
+          "same_motion_added_blood_iq_error": 0.6730216316427914,
+          "motion_refit_background_change_iq_norm": 0.48255733368746795,
+          "frozen_source_closure_nrmse": 1.4952421069428863e-16,
+          "frozen_mixture_replay_nrmse": 0.0,
+          "elapsed_s": 0.2192946170034702
+        },
+        "smooth_full_field": {
+          "added_blood_iq_error": 0.7260020131421523,
+          "added_blood_power_retention": 0.5619718717935982,
+          "frozen_blood_iq_error": 0.655491045404295,
+          "frozen_tissue_power_retention": 0.05871271800907169,
+          "refitted_background_power_remaining": 0.05985563631478819,
+          "same_motion_background_power_remaining": 0.05879677477119467,
+          "same_motion_added_blood_iq_error": 0.6560884556299008,
+          "motion_refit_background_change_iq_norm": 0.33235986139876383,
+          "frozen_source_closure_nrmse": 1.1234244475718982e-16,
+          "frozen_mixture_replay_nrmse": 0.0,
+          "elapsed_s": 0.2506683069987048
+        },
+        "smooth_bright_quartile": {
+          "added_blood_iq_error": 0.7174154638130187,
+          "added_blood_power_retention": 0.5539424431405023,
+          "frozen_blood_iq_error": 0.6549795637526006,
+          "frozen_tissue_power_retention": 0.057229675425439656,
+          "refitted_background_power_remaining": 0.05827840483459178,
+          "same_motion_background_power_remaining": 0.05728678583908473,
+          "same_motion_added_blood_iq_error": 0.6553627336937423,
+          "motion_refit_background_change_iq_norm": 0.3202910495599196,
+          "frozen_source_closure_nrmse": 1.192769943610083e-16,
+          "frozen_mixture_replay_nrmse": 0.0,
+          "elapsed_s": 0.13334309499987285
+        }
+      },
+      "mechanism": {
+        "motion_fit_seconds": 0.8765337900003942,
+        "base_motion_refit_rms_px": 0.057094663074441956,
+        "stable_motion_refit_rms_px": 0.03805509389329238,
+        "registration_failure_frames": 0,
+        "background_registration_failure_frames": 0
+      }
+    },
+    {
+      "seed": 9402,
+      "condition": "smooth_very_slow",
+      "scene": {
+        "motion": "smooth",
+        "flow_mps": 0.0004,
+        "amplitude_pixels": 1.4,
+        "decorrelation": 0.995,
+        "tissue_turnover": 0.0
+      },
+      "blood_input_power": 1403.4126826408922,
+      "tissue_input_power": 412385.7636568581,
+      "results": {
+        "raw_svd": {
+          "added_blood_iq_error": 0.5967759976591728,
+          "added_blood_power_retention": 0.7267184957165511,
+          "frozen_blood_iq_error": 0.5966832614788696,
+          "frozen_tissue_power_retention": 0.5717932235511529,
+          "refitted_background_power_remaining": 0.5719357905592755,
+          "same_motion_background_power_remaining": 0.5719357905592755,
+          "same_motion_added_blood_iq_error": 0.5967759976591728,
+          "motion_refit_background_change_iq_norm": 0.0,
+          "frozen_source_closure_nrmse": 3.2248817481845715e-16,
+          "frozen_mixture_replay_nrmse": 0.0,
+          "elapsed_s": 0.0380015690025175
+        },
+        "registered_return": {
+          "added_blood_iq_error": 1.0326826022865319,
+          "added_blood_power_retention": 0.33524316418649597,
+          "frozen_blood_iq_error": 0.9473238194969517,
+          "frozen_tissue_power_retention": 0.04284393819087895,
+          "refitted_background_power_remaining": 0.04394315619823934,
+          "same_motion_background_power_remaining": 0.042910708004439725,
+          "same_motion_added_blood_iq_error": 0.9473611356381055,
+          "motion_refit_background_change_iq_norm": 0.4120236971646503,
+          "frozen_source_closure_nrmse": 1.3286869329133338e-16,
+          "frozen_mixture_replay_nrmse": 0.0,
+          "elapsed_s": 0.18083883299914305
+        },
+        "native_subtraction": {
+          "added_blood_iq_error": 0.8699876851862238,
+          "added_blood_power_retention": 0.4221166793765657,
+          "frozen_blood_iq_error": 0.7990807881546598,
+          "frozen_tissue_power_retention": 0.10001854378722629,
+          "refitted_background_power_remaining": 0.10114379054435459,
+          "same_motion_background_power_remaining": 0.10012635832217072,
+          "same_motion_added_blood_iq_error": 0.799060439450995,
+          "motion_refit_background_change_iq_norm": 0.36121705997786024,
+          "frozen_source_closure_nrmse": 1.4066789389935973e-16,
+          "frozen_mixture_replay_nrmse": 0.0,
+          "elapsed_s": 0.18808381300186738
+        },
+        "smooth_full_field": {
+          "added_blood_iq_error": 0.8603775506020874,
+          "added_blood_power_retention": 0.41629702349686953,
+          "frozen_blood_iq_error": 0.7881568280264593,
+          "frozen_tissue_power_retention": 0.09317885841006854,
+          "refitted_background_power_remaining": 0.09473185613075825,
+          "same_motion_background_power_remaining": 0.09325953346279782,
+          "same_motion_added_blood_iq_error": 0.7881605467008646,
+          "motion_refit_background_change_iq_norm": 0.3625666364500341,
+          "frozen_source_closure_nrmse": 1.1645206415957643e-16,
+          "frozen_mixture_replay_nrmse": 0.0,
+          "elapsed_s": 0.1827279319986701
+        },
+        "smooth_bright_quartile": {
+          "added_blood_iq_error": 0.8632062847719193,
+          "added_blood_power_retention": 0.41678232488795436,
+          "frozen_blood_iq_error": 0.7922572625308227,
+          "frozen_tissue_power_retention": 0.09207991647513389,
+          "refitted_background_power_remaining": 0.09330402103698618,
+          "same_motion_background_power_remaining": 0.09213055066459579,
+          "same_motion_added_blood_iq_error": 0.7922856817458497,
+          "motion_refit_background_change_iq_norm": 0.36493555092376767,
+          "frozen_source_closure_nrmse": 1.1975815363059923e-16,
+          "frozen_mixture_replay_nrmse": 0.0,
+          "elapsed_s": 0.13282792000245536
+        }
+      },
+      "mechanism": {
+        "motion_fit_seconds": 1.1019363410014194,
+        "base_motion_refit_rms_px": 0.07660192152166681,
+        "stable_motion_refit_rms_px": 0.04342143535991305,
+        "registration_failure_frames": 0,
+        "background_registration_failure_frames": 0
+      }
+    },
+    {
+      "seed": 9402,
+      "condition": "unmodeled_turnover",
+      "scene": {
+        "motion": "unmodeled",
+        "flow_mps": 0.0008,
+        "amplitude_pixels": 1.4,
+        "decorrelation": 0.98,
+        "tissue_turnover": 0.25
+      },
+      "blood_input_power": 1745.9550821893947,
+      "tissue_input_power": 456574.3881107665,
+      "results": {
+        "raw_svd": {
+          "added_blood_iq_error": 0.501755801895148,
+          "added_blood_power_retention": 0.7521166388966164,
+          "frozen_blood_iq_error": 0.5011655182981881,
+          "frozen_tissue_power_retention": 0.598926548927129,
+          "refitted_background_power_remaining": 0.5990268329658289,
+          "same_motion_background_power_remaining": 0.5990268329658289,
+          "same_motion_added_blood_iq_error": 0.501755801895148,
+          "motion_refit_background_change_iq_norm": 0.0,
+          "frozen_source_closure_nrmse": 3.1451709492277497e-16,
+          "frozen_mixture_replay_nrmse": 0.0,
+          "elapsed_s": 0.04780198699882021
+        },
+        "registered_return": {
+          "added_blood_iq_error": 2.57081843489997,
+          "added_blood_power_retention": 6.442942477400367,
+          "frozen_blood_iq_error": 0.6945153106206522,
+          "frozen_tissue_power_retention": 0.1591782428414057,
+          "refitted_background_power_remaining": 0.17609606732859623,
+          "same_motion_background_power_remaining": 0.15923037123052888,
+          "same_motion_added_blood_iq_error": 0.6953970073514532,
+          "motion_refit_background_change_iq_norm": 2.4561238773685408,
+          "frozen_source_closure_nrmse": 1.8952286450354582e-16,
+          "frozen_mixture_replay_nrmse": 0.0,
+          "elapsed_s": 0.2068205779978598
+        },
+        "native_subtraction": {
+          "added_blood_iq_error": 1.970714870355679,
+          "added_blood_power_retention": 4.0970248762510915,
+          "frozen_blood_iq_error": 0.5649035684881226,
+          "frozen_tissue_power_retention": 0.24717544418208406,
+          "refitted_background_power_remaining": 0.2605581607460412,
+          "same_motion_background_power_remaining": 0.24732570374258162,
+          "same_motion_added_blood_iq_error": 0.5659052442111246,
+          "motion_refit_background_change_iq_norm": 1.8767043158304355,
+          "frozen_source_closure_nrmse": 1.962393552298105e-16,
+          "frozen_mixture_replay_nrmse": 0.0,
+          "elapsed_s": 0.26054956799998763
+        },
+        "smooth_full_field": {
+          "added_blood_iq_error": 1.562443122023545,
+          "added_blood_power_retention": 2.6314187260646595,
+          "frozen_blood_iq_error": 0.5710317428659384,
+          "frozen_tissue_power_retention": 0.21563554836217189,
+          "refitted_background_power_remaining": 0.23019867249511425,
+          "same_motion_background_power_remaining": 0.21573583268117835,
+          "same_motion_added_blood_iq_error": 0.5719912141726711,
+          "motion_refit_background_change_iq_norm": 1.4437517996967915,
+          "frozen_source_closure_nrmse": 1.273691990586442e-16,
+          "frozen_mixture_replay_nrmse": 0.0,
+          "elapsed_s": 0.2568209900018701
+        },
+        "smooth_bright_quartile": {
+          "added_blood_iq_error": 1.6058413094788389,
+          "added_blood_power_retention": 2.7615409503609225,
+          "frozen_blood_iq_error": 0.5758857350038984,
+          "frozen_tissue_power_retention": 0.2145891892555083,
+          "refitted_background_power_remaining": 0.2291844527125021,
+          "same_motion_background_power_remaining": 0.21463674463645824,
+          "same_motion_added_blood_iq_error": 0.5759812349924557,
+          "motion_refit_background_change_iq_norm": 1.4900503049770095,
+          "frozen_source_closure_nrmse": 1.2773334467036429e-16,
+          "frozen_mixture_replay_nrmse": 0.0,
+          "elapsed_s": 0.1942087880015606
+        }
+      },
+      "mechanism": {
+        "motion_fit_seconds": 0.9427123559980828,
+        "base_motion_refit_rms_px": 0.21852926888036597,
+        "stable_motion_refit_rms_px": 0.1271165531870461,
+        "registration_failure_frames": 0,
+        "background_registration_failure_frames": 0
+      }
+    }
+  ],
+  "decision": {
+    "primary_method": "smooth_full_field",
+    "joint_criterion_passed": false,
+    "case_gates": [
+      {
+        "seed": 9401,
+        "condition": "stationary_slow",
+        "blood_noninferior_to_raw": true,
+        "tissue_below_limit": true,
+        "registration_failure_limit": true
+      },
+      {
+        "seed": 9402,
+        "condition": "stationary_slow",
+        "blood_noninferior_to_raw": true,
+        "tissue_below_limit": true,
+        "registration_failure_limit": true
+      },
+      {
+        "seed": 9401,
+        "condition": "translation_very_slow",
+        "blood_noninferior_to_raw": false,
+        "tissue_below_limit": true,
+        "registration_failure_limit": true
+      },
+      {
+        "seed": 9401,
+        "condition": "smooth_very_slow",
+        "blood_noninferior_to_raw": false,
+        "tissue_below_limit": true,
+        "registration_failure_limit": true
+      },
+      {
+        "seed": 9401,
+        "condition": "unmodeled_turnover",
+        "blood_noninferior_to_raw": false,
+        "tissue_below_limit": false,
+        "registration_failure_limit": false
+      },
+      {
+        "seed": 9402,
+        "condition": "translation_very_slow",
+        "blood_noninferior_to_raw": false,
+        "tissue_below_limit": true,
+        "registration_failure_limit": true
+      },
+      {
+        "seed": 9402,
+        "condition": "smooth_very_slow",
+        "blood_noninferior_to_raw": false,
+        "tissue_below_limit": true,
+        "registration_failure_limit": true
+      },
+      {
+        "seed": 9402,
+        "condition": "unmodeled_turnover",
+        "blood_noninferior_to_raw": false,
+        "tissue_below_limit": false,
+        "registration_failure_limit": true
+      }
+    ],
+    "criterion": "all moving: blood error <= raw SVD+0.05, background <=0.10, zero registration failures; stationary blood <= raw+0.05"
+  },
+  "elapsed_s": 18.98953290999998,
+  "truth_use": "source truth is evaluator-only; filter sees observed mixture IQ",
+  "physical_status": "source-labeled simulation; no physical measurements"
+}

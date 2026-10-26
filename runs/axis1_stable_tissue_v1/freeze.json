@@ -1,0 +1,25 @@
+{
+  "sources": {
+    "configs/axis1_stable_tissue_v1.json": "2a02648c9a92ba2497e47010153950dd878d30808d8545bed85e8232ceb14079",
+    "examples/axis1_stable_tissue_study.py": "1a994e16bc4a6128423d80dab934213dd8c2594d53d7a541b99ad8d37c62ef45",
+    "examples/axis1_native_subtraction_study.py": "2bd5ea22b7e1ad28b2e81c838a7bb658b30208c90cefe5968048ba346c874984",
+    "src/btbench/stable_tissue.py": "5acc884f7f1aaa06841f9a5bb1e9aacd54fb44d156befac2c60cad64d43a34d7",
+    "src/btbench/native_subtraction.py": "6ce5bad869d6121ac34e07cf6b37587d2679b29267a5625d6423e99e6da55b16",
+    "src/btbench/motion_first.py": "539073495dd872f6b80c2adf86aa78b357da46dde5e46c462505ad98600201a3",
+    "src/btbench/filters.py": "df2067a1c602500b09416510650789a9a153378dbbe8c1dac70d7dcecaf8d96a",
+    "src/btbench/core.py": "0a74f5c8a335921f52eade374170fdd8c0f44cf8b06bb00356a4cda5932b8752",
+    "src/btbench/shared.py": "e50a1670bc1eb290ddd8b4c24cb58e56dc42e8f36cfb497b9f479d440d706247",
+    "src/btbench/registration.py": "9fac8bac07dcb8bfa45c90ef5c3f5ae1168abd9ff127fb92991a3703d82e2493",
+    "src/btbench/svd_literature.py": "af10fc23cab012689b42bf1e82ad2446b63d46f59faaab9a10570d71c5204098",
+    "src/btbench/paper_filters.py": "581cfe8025568d2ec91769180757cebf98270da1371c7190733396d4651f5abf",
+    "src/btbench/stap.py": "54f17721fdd132264a5d52986f6dde8398f9f71377ad524d39620c199d6d269f",
+    "src/btbench/axes.py": "3c10dc68eb60cd6cf7f0a332bee16d1e704d59c59ea81b484bf6991a625108e5"
+  },
+  "seen_diagnostic_sha256": "0b8d903aded86ba6224506d5c72eb1d97855a1a7ada6467de4efcaaf54c2ad05",
+  "development_sha256": "cf7648e95619db9b192cb1ed4c54d1409199a8edb977cad12ad58865d4f2203c",
+  "heldout_seeds": [
+    9401,
+    9402
+  ],
+  "locked_before_heldout": true
+}

@@ -33,6 +33,7 @@ jobs:
       - run: python scripts/verify_esdiva_phase11_checkout.py
       - run: python scripts/verify_axis1_motion_order.py
       - run: python scripts/verify_axis1_native_subtraction.py
+      - run: python scripts/verify_axis1_stable_tissue.py
       - if: matrix.python == '3.12'
         run: python -m pip install -r requirements-tested.txt
       - run: python -m pip install -e '.[test,io]'
@@ -42,7 +43,7 @@ jobs:
       - run: python scripts/verify_results.py --manifest runs/shared_v05_manifest.json
       - run: python scripts/verify_shared_results.py
       # Later Axis 1 modules have separate frozen source leases.
-      - run: python scripts/verify_results.py --manifest runs/motion_v06_manifest.json --require-current-code --exclude-current-source motion_first.py --exclude-current-source native_subtraction.py
+      - run: python scripts/verify_results.py --manifest runs/motion_v06_manifest.json --require-current-code --exclude-current-source motion_first.py --exclude-current-source native_subtraction.py --exclude-current-source stable_tissue.py
       - run: python scripts/verify_motion_results.py
       # v07 hashed the entire then-existing btbench folder. Temporarily hide
       # the later Axis 1 modules so the original source/protocol check remains
@@ -54,7 +55,8 @@ jobs:
           import subprocess
           from tempfile import TemporaryDirectory
           modules = [Path('src/btbench/motion_first.py'),
-                     Path('src/btbench/native_subtraction.py')]
+                     Path('src/btbench/native_subtraction.py'),
+                     Path('src/btbench/stable_tissue.py')]
           with TemporaryDirectory() as temp:
               held = []
               try:

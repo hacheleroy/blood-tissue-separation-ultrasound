@@ -29,11 +29,31 @@
 
 - Riemer K et al. [*On the use of singular value decomposition as a clutter filter for ultrasound flow imaging.*](https://arxiv.org/abs/2304.12783)
 
+- Zhang N, Nguyen MB, Mertens L, Barron DJ, Villemain O, Baranger J.
+  [*Improving coronary ultrafast Doppler angiography using fractional moving blood volume and motion-adaptive ensemble length.*](https://doi.org/10.1088/1361-6560/ac7430)
+  Phys Med Biol 67(12), 125021 (2022). Motion-dependent sliding SVD
+  windows; a manually selected myocardium region and per-window cutoff adjustment
+  distinguish this published comparator from an automatic registration-first arm.
+
 - Lee SA et al. [*Assessing cerebral capillary function and stalling using single capillary reporters in ultrasound localization microscopy.*](https://doi.org/10.1073/pnas.2509564123) PNAS
   123(2), e2509564123 (2026). Long-ensemble motivation, as cited in the research note.
 
 - Candes EJ et al. [*Robust principal component analysis?*](https://arxiv.org/abs/0912.3599) JACM 58(3), 11 (2011).
   PCP objective; complex extension in this code.
+
+- Bayat M, Fatemi M. [*Concurrent Clutter and Noise Suppression via Low Rank Plus Sparse Optimization for Non-Contrast Ultrasound Flow Doppler Processing in Microvasculature.*](https://doi.org/10.1109/ICASSP.2018.8461638)
+  ICASSP, 1080–1084 (2018). Native-blood low-rank/sparse comparator;
+  the current generic complex PCP is not a verified reproduction.
+
+- Ashikuzzaman M, Belasso C, Kibria MG, Bergdahl A, Gauthier CJ, Rivaz H.
+  [*Low Rank and Sparse Decomposition of Ultrasound Color Flow Images for Suppressing Clutter in Real-Time.*](https://doi.org/10.1109/TMI.2019.2941865)
+  IEEE TMI 39(4), 1073–1084 (2020; online 2019). RAPID uses fast robust
+  matrix completion/in-face Frank–Wolfe; not implemented by the PCP arm.
+
+- Insana MF, Dai B, Babaei S, Abbey CK.
+  [*Combining Spatial Registration With Clutter Filtering for Power-Doppler Imaging in Peripheral Perfusion Applications.*](https://doi.org/10.1109/TUFFC.2022.3211469)
+  IEEE TUFFC 69(12), 3243–3254 (2022). Direct precedent for registering
+  frames before PCA filtering in contrast-free perfusion imaging.
 
 ## CCA, ICA and eigen-based separation
 
@@ -47,6 +67,8 @@ present eigenvalue processing are grouped here by their implementation.
 
 - Huang C, Lok U-W, Zhang J, Liu H, Chen S. [*Real-time Adaptive and Localized Spatiotemporal Clutter Filtering for Ultrasound Small Vessel Imaging.*](https://arxiv.org/abs/2405.11105) arXiv:2405.11105 (2024).
   EVD rules and Gaussian-weighted statistics; paper PD and IQ extension distinguished.
+  See [the additional comparator audit](ADDITIONAL_COMPARATORS.md) for its
+  implemented subset, tuning requirements and the three other supplied papers.
 
 - Belouchrani A, Abed-Meraim K, Cardoso JF, Moulines E. [*A blind source separation technique using second-order statistics.*](https://doi.org/10.1109/78.554307) IEEE TSP 45(2), 434–444 (1997).
   Complex lag-based joint diagonalization principle.

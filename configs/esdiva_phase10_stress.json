@@ -1,0 +1,122 @@
+{
+  "status": "phase-10 independent stress protocol sealed before RF",
+  "independent_test_seeds": [
+    3607,
+    3619
+  ],
+  "previously_seen_seeds": [
+    2309,
+    2311,
+    2503,
+    2521,
+    2707,
+    2729,
+    3001,
+    3019,
+    3307,
+    3323,
+    2333,
+    2401,
+    2411
+  ],
+  "scenes": {
+    "rigid_fast": {
+      "motion": "rigid",
+      "flow_scale": 1.0
+    },
+    "rigid_slow": {
+      "motion": "rigid",
+      "flow_scale": 0.02
+    },
+    "smooth_slow": {
+      "motion": "smooth",
+      "flow_scale": 0.02
+    }
+  },
+  "scatterer_fraction": 0.1,
+  "calibration_frames": 16,
+  "evaluation_frames": 80,
+  "score_start": 64,
+  "view_indices": [
+    4,
+    3,
+    5
+  ],
+  "upstream_commit": "ab7eaef6d23428762ab5b9079ab03a5aa99af085",
+  "parent_candidate_sha256": "6bed5c75286b82d1cb694223f2c642c11185009eb3a3c5060a4d200f4259e7c6",
+  "prior_reserve_decision_sha256": "242b3eace38cc76b7b38104f48137b2c9e11d2fed792c39327ed5cd248198354",
+  "prior_reserve_manifest_sha256": "b88fd6976f60d08cdb81400bacb08aa0b4400421f622bf887622aa00fafeb69c",
+  "numerical_source_sha256": "8587a156b3283238920777e96cd059d72203d5a9638a61f5cc43876324cd4e13",
+  "support_source_sha256": "fddb9d0b49364df3a3fc90fe1a7fc79fd5190f5ce679c4b5466daa6d5f3ec5ff",
+  "acquisition_source_sha256": "8074cada0be19a4cd59e2f6dd3c1ed14f566d5b14b9314d20ecc017096091f14",
+  "rebeam_source_sha256": "a421905beb87607274c83174e44741bbca7d0457734a9a197325a51e977f0991",
+  "selector_source_sha256": "ef29828abef95aa9a59172d11dac5142b3b8592a003afa95138dba521fbf8561",
+  "transport_source_sha256": "301602c9a925f2b2b9eb1b581f1fdc037f207c80d1fb25d78f4c7c909e3dcc2b",
+  "magnitude_shift_fit_sha256": "37cc1bffde5accd9725b6381a4f39ee221b72f707a4b3fbd4773e3e283f19859",
+  "score_script_sha256": "0d0eabc2c2cf9a21e93a3e7574adb0149510dab792f14ce16ffd769af15913ca",
+  "methods": {
+    "axis1_cut1": {
+      "discard": 1,
+      "horizon": 64,
+      "method": "axis1",
+      "rho": 0.75
+    },
+    "axis2_default": {
+      "gain_cap": 1.0,
+      "horizon": 64,
+      "method": "axis2",
+      "rank": 4
+    },
+    "axis2_slow_r4_cap040": {
+      "gain_cap": 0.4,
+      "horizon": 64,
+      "method": "axis2",
+      "rank": 4
+    },
+    "axis3_orthogonal": {
+      "adaptive": false,
+      "horizon": 64,
+      "method": "stap"
+    },
+    "baranger_ssm": {
+      "horizon": 64,
+      "method": "baranger"
+    },
+    "lee_aer": {
+      "domain": "temporal",
+      "epsilon_abs": 26.0,
+      "horizon": 64,
+      "method": "lee_aer"
+    },
+    "roundtrip": {
+      "horizon": 64,
+      "method": "roundtrip"
+    },
+    "svd_cut1": {
+      "discard": 1,
+      "horizon": 64,
+      "method": "svd"
+    }
+  },
+  "comparison": {
+    "blood_nrmse_increase_max_motion": 0.02,
+    "decision": "Both reserved clouds and all eight scenes must pass unchanged phase-10 source/calibration and paired SVD, Axis 1, roundtrip and slow Axis 2 thresholds; no retuning after RF. This remains software simulation evidence.",
+    "moving_tissue_leakage_ratio_max": 0.9,
+    "primary_scores": [
+      "paired_added_blood_iq_nrmse",
+      "refitted_background_output_to_input_tissue_power"
+    ],
+    "roundtrip_nrmse_max": 1e-10,
+    "slow_axis2_blood_nrmse_max": 0.7,
+    "slow_axis2_tissue_leakage_max": 0.18
+  },
+  "source_eligibility": {
+    "core_blood_to_tissue_power_max": 0.1,
+    "wide_blood_to_tissue_power_max": 0.1,
+    "wide_min_pixels": 192,
+    "core_min_pixels": 40
+  },
+  "reference_coverage_rule": "At least one of all six independent scenes must naturally select reference; if none, report unexercised without changing seeds, scenes, or threshold.",
+  "paired_gate_rule": "Both methods and all eligible scenes: delta added-blood IQ NRMSE <=0.02, moving-tissue leakage ratio <=0.9, both roundtrips <=1e-10. Slow Axis 2 rank4 cap0.4 must satisfy blood NRMSE <=0.7 and leakage <=0.18 in both slow scenes. Failed input eligibility stays failed; do not drop a scene.",
+  "interpretation": "Independent simulator stress only; does not supersede reserved decision or establish physical performance. The six scenes share two scatterer clouds, and only last 16 evaluation frames per scene are scored."
+}

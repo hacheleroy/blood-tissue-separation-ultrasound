@@ -1,0 +1,13 @@
+{
+  "status": "phase-11 development on now-seen clouds; no new RF bank opened",
+  "files_sha256": {
+    "examples/esdiva_phase11_adaptive.py": "7ab147dd880bfdbee651579a31d62145874a50ad8da5ede691272018679eaa81",
+    "examples/esdiva_phase11_development_screen.py": "6ad538a22249b28eda75181c954b30c48fd2b8d79aa25dc84105920483d5d4fa",
+    "examples/esdiva_phase10_support.py": "fddb9d0b49364df3a3fc90fe1a7fc79fd5190f5ce679c4b5466daa6d5f3ec5ff",
+    "configs/esdiva_phase10_stress.json": "09c7e3abef99775e5e25acfdf3d201c784589a8ee625510b6cbb288549d433bf",
+    "runs/esdiva_phase10_stress/decision.json": "736d6113fe09161f41fefefee6284d578562726458475556255375a07b53e5e0",
+    "runs/esdiva_phase10_stress/manifest.json": "937f96cb2b22dad9019555da7c97b829121d9d15d2b6bb91a21604c2415e5274",
+    "runs/esdiva_phase11_development/report.json": "8f2690ff78d56ad5b13cb07787c619f4dfc7eef9645b9667820b79fc8d5706fa"
+  },
+  "large_source_rf_and_iq_in_git": false
+}

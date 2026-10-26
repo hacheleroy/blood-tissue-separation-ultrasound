@@ -1,0 +1,139 @@
+{
+  "status": "phase-11 adaptive prospective protocol sealed before new RF",
+  "independent_test_seeds": [
+    3907,
+    3919
+  ],
+  "previously_seen_seeds": [
+    2309,
+    2311,
+    2503,
+    2521,
+    2707,
+    2729,
+    3001,
+    3019,
+    3307,
+    3323,
+    2333,
+    2401,
+    2411,
+    3607,
+    3619
+  ],
+  "scenes": {
+    "stationary_fast": {
+      "motion": "none",
+      "flow_scale": 1.0
+    },
+    "rigid_fast": {
+      "motion": "rigid",
+      "flow_scale": 1.0
+    },
+    "rigid_slow": {
+      "motion": "rigid",
+      "flow_scale": 0.02
+    },
+    "smooth_slow": {
+      "motion": "smooth",
+      "flow_scale": 0.02
+    },
+    "smooth_zero": {
+      "motion": "smooth",
+      "flow_scale": 0.0
+    }
+  },
+  "scatterer_fraction": 0.1,
+  "calibration_frames": 16,
+  "evaluation_frames": 80,
+  "score_start": 64,
+  "view_indices": [
+    4,
+    3,
+    5
+  ],
+  "upstream_commit": "ab7eaef6d23428762ab5b9079ab03a5aa99af085",
+  "parent_candidate_sha256": "6bed5c75286b82d1cb694223f2c642c11185009eb3a3c5060a4d200f4259e7c6",
+  "prior_stress_decision_sha256": "736d6113fe09161f41fefefee6284d578562726458475556255375a07b53e5e0",
+  "prior_stress_manifest_sha256": "937f96cb2b22dad9019555da7c97b829121d9d15d2b6bb91a21604c2415e5274",
+  "development_report_sha256": "8f2690ff78d56ad5b13cb07787c619f4dfc7eef9645b9667820b79fc8d5706fa",
+  "development_screen_sha256": "6ad538a22249b28eda75181c954b30c48fd2b8d79aa25dc84105920483d5d4fa",
+  "adaptive_source_sha256": "7ab147dd880bfdbee651579a31d62145874a50ad8da5ede691272018679eaa81",
+  "numerical_source_sha256": "8587a156b3283238920777e96cd059d72203d5a9638a61f5cc43876324cd4e13",
+  "support_source_sha256": "fddb9d0b49364df3a3fc90fe1a7fc79fd5190f5ce679c4b5466daa6d5f3ec5ff",
+  "acquisition_source_sha256": "8074cada0be19a4cd59e2f6dd3c1ed14f566d5b14b9314d20ecc017096091f14",
+  "pilot_adapter_sha256": "00ab4f9f34a8fb138ada2b46fc4fed80f4797edcd0dc23ec2dda9ef3b754d503",
+  "rebeam_source_sha256": "a421905beb87607274c83174e44741bbca7d0457734a9a197325a51e977f0991",
+  "selector_source_sha256": "ef29828abef95aa9a59172d11dac5142b3b8592a003afa95138dba521fbf8561",
+  "transport_source_sha256": "301602c9a925f2b2b9eb1b581f1fdc037f207c80d1fb25d78f4c7c909e3dcc2b",
+  "magnitude_shift_fit_sha256": "37cc1bffde5accd9725b6381a4f39ee221b72f707a4b3fbd4773e3e283f19859",
+  "score_script_sha256": "f8367b15909ed8404834464921db417feaeed34176100858393654335e2eff61",
+  "review_script_sha256": "677d95578507fca1044486ac0fb1038b6ef02262b7560d8ed86a82b2fa758410",
+  "methods": {
+    "axis1_cut1": {
+      "discard": 1,
+      "horizon": 64,
+      "method": "axis1",
+      "rho": 0.75
+    },
+    "axis2_default": {
+      "gain_cap": 1.0,
+      "horizon": 64,
+      "method": "axis2",
+      "rank": 4
+    },
+    "axis2_slow_r4_cap040": {
+      "gain_cap": 0.4,
+      "horizon": 64,
+      "method": "axis2",
+      "rank": 4
+    },
+    "axis3_orthogonal": {
+      "adaptive": false,
+      "horizon": 64,
+      "method": "stap"
+    },
+    "baranger_ssm": {
+      "horizon": 64,
+      "method": "baranger"
+    },
+    "lee_aer": {
+      "domain": "temporal",
+      "epsilon_abs": 26.0,
+      "horizon": 64,
+      "method": "lee_aer"
+    },
+    "roundtrip": {
+      "horizon": 64,
+      "method": "roundtrip"
+    },
+    "svd_cut1": {
+      "discard": 1,
+      "horizon": 64,
+      "method": "svd"
+    }
+  },
+  "comparison": {
+    "blood_nrmse_increase_max_motion": 0.02,
+    "decision": "Both reserved clouds and all eight scenes must pass unchanged phase-10 source/calibration and paired SVD, Axis 1, roundtrip and slow Axis 2 thresholds; no retuning after RF. This remains software simulation evidence.",
+    "moving_tissue_leakage_ratio_max": 0.9,
+    "primary_scores": [
+      "paired_added_blood_iq_nrmse",
+      "refitted_background_output_to_input_tissue_power"
+    ],
+    "roundtrip_nrmse_max": 1e-10,
+    "slow_axis2_blood_nrmse_max": 0.7,
+    "slow_axis2_tissue_leakage_max": 0.18
+  },
+  "evaluator_only_blood_to_tissue_roi_power_max": 0.1,
+  "source_eligibility": {
+    "core_blood_to_tissue_power_max": 0.1,
+    "wide_blood_to_tissue_power_max": 0.1,
+    "wide_min_pixels": 192,
+    "core_min_pixels": 40
+  },
+  "paired_gate_rule": "All 10 declared source/calibration-eligible scenes and both methods: blood NRMSE increase <=0.02; both roundtrips <=1e-10. Tissue leakage ratio <=0.9 on rigid fast, rigid slow, smooth slow. No tissue suppression requirement on stationary fast or smooth zero. Uncorrected Axis 2 rank4/cap0.4 blood NRMSE <=0.7 and tissue leakage <=0.18 on both slow-flow scenes per seed. No missing or failed scene discarded.",
+  "hybrid_strength_rule": "First 64 mixture frames only: gain is median disjoint-pixel magnitude-translation validation gain; w=clip((gain-.25)/.20,0,1); phase fraction=1-.5w, shift scale=.25+.5w. Same strength for paired mixture/background fits. Frozen reference-mode selector and transport unchanged.",
+  "reference_coverage": "Report natural reference choice; absence is limited coverage, not a numerical failure or a license to force a mode.",
+  "interpretation": "Fresh RF test of a newly developed numerical candidate; independent clouds but correlated scenes and 16 scored frames each. Never a physical phantom claim."
+}

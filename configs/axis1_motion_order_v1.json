@@ -1,0 +1,22 @@
+{
+  "study": "axis1_motion_order_v1",
+  "generator": "shared_scene, 3 coherent IQ views; simulated source components",
+  "development_seeds": [4101, 4102],
+  "heldout_seeds": [7201, 7202],
+  "conditions": ["none", "translation", "smooth", "unmodeled"],
+  "n_frames": 64,
+  "calibration_frames": 32,
+  "score_start": 32,
+  "shape_zx": [16, 24],
+  "flow_mps": 0.0012,
+  "decorrelation": 0.99,
+  "amplitude_pixels": 1.1,
+  "max_shift_px": 2.5,
+  "common_crop_pixels": 4,
+  "fixed_svd_discard": 1,
+  "legacy_axis1": {"method": "axis1", "horizon": 32, "rho": 0.75, "discard": 1},
+  "window_max": 48,
+  "window_min": 32,
+  "window_hop": 8,
+  "maresca_offset": 26
+}

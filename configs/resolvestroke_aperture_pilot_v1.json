@@ -1,0 +1,20 @@
+{
+  "study": "Resolve Stroke measured receive-aperture CEUS pilot",
+  "source_sha256": "40908ca699f3b88d9cdcdc4cabf9f1e07d481baec901b7044132e42c41f768f5",
+  "source_size_bytes": 5250744320,
+  "zea_version": "0.1.6",
+  "clips": [
+    {"name": "baseline_minus1s", "start": 80},
+    {"name": "baseline_plus15s", "start": 12080}
+  ],
+  "frames": 128,
+  "target_x_m": -0.005,
+  "max_abs_y_m": 0.023,
+  "depth_m": [0.062, 0.096],
+  "depth_rows_within_anatomical_grid": [22, 32],
+  "lateral_stride": 2,
+  "receive_groups": 8,
+  "tube_depth_margin_m": 0.002,
+  "outside_guard_pixels": 1,
+  "status": "Measured channel IQ pilot for anatomical localization; microbubble bolus and one transmit angle prevent source-resolved blood preservation or multi-angle inference"
+}

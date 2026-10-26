@@ -1,0 +1,14 @@
+{
+  "sources": {
+    "examples/multidim_aperture_study.py": "9b517f08008cbd89bc3239414f901f2d6eb964194aa07000d5a6cf7dbd786488",
+    "src/btbench/multidim.py": "a21a9ff238b7019c2dc2aeeba45317bb830f58ffa24c566c99adfc5110e6923a",
+    "src/btbench/esdiva_aperture.py": "bb944ad141f494dd789e4757380bedbf273587de0449c768e66e4e77660fe382",
+    "src/btbench/stap.py": "54f17721fdd132264a5d52986f6dde8398f9f71377ad524d39620c199d6d269f",
+    "configs/multidim_aperture_v1.json": "7e214627bf7d5c659aad8c45344cb049c5f911501f1ae9edc109a018d37eb28b"
+  },
+  "development_sha256": "e8f4285a40fa28542d64c5e90dc1321ff013f811e150c00b77b6c7d84abeb683",
+  "evaluation_seeds": [
+    3919
+  ],
+  "note": "Prior phase-11 evaluation seed; new methods not previously scored but RF is not independent"
+}

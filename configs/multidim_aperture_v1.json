@@ -1,0 +1,15 @@
+{
+  "study": "Matched-emission multidimensional information test, retrospective eSDIva RF",
+  "development_seeds": [3907],
+  "evaluation_seeds": [3919],
+  "scenes": ["stationary_fast", "rigid_fast", "rigid_slow", "smooth_slow", "smooth_zero"],
+  "receive_groups": 8,
+  "score_last_frames": 16,
+  "oracle_ranks": [1, 2, 4, 8, 16],
+  "tissue_power_limit": 0.1,
+  "blood_iq_error_limit": 0.25,
+  "stap_taps": 8,
+  "phase_error": "For phase-error arm add angle phase drift of 0, +0.12, -0.12 radians over 80 frames and static receive-subaperture phase from -0.12 to +0.12 radians. Apply identically to blood, tissue, and noise. Prior calibration stays clean.",
+  "comparability": "Every main method uses the same 240 emissions across 80 cycles; the single-image baseline coherently compounds the three angles, while the tensor methods preserve them. No 240-pulse single-transmit-angle or five-angle bank was acquired. The prior 16 calibration cycles for STAP are extra information.",
+  "selection": "No setting selected using evaluation seed 3919; rank 1, 2, 4, 8, 16 tissue-truth projectors are explicit diagnostic bounds within their fixed rays. The broader rank sweep was declared after a seen 3907 pilot and before the 3919 method scores. Paper-factorization cutoff rules are predeclared study adaptations."
+}

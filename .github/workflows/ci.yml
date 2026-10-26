@@ -44,10 +44,10 @@ jobs:
       - run: python scripts/verify_results.py --manifest runs/shared_v05_manifest.json
       - run: python scripts/verify_shared_results.py
       # Later Axis 1 modules have separate frozen source leases.
-      - run: python scripts/verify_results.py --manifest runs/motion_v06_manifest.json --require-current-code --exclude-current-source motion_first.py --exclude-current-source native_subtraction.py --exclude-current-source stable_tissue.py
+      - run: python scripts/verify_results.py --manifest runs/motion_v06_manifest.json --require-current-code --exclude-current-source motion_first.py --exclude-current-source native_subtraction.py --exclude-current-source stable_tissue.py --exclude-current-source multidim.py --exclude-current-source esdiva_aperture.py
       - run: python scripts/verify_motion_results.py
       # v07 hashed the entire then-existing btbench folder. Temporarily hide
-      # the later Axis 1 modules so the original source/protocol check remains
+      # the later modules so the original source/protocol check remains
       # exact, then restore it even if verification raises.
       - name: Verify historical v07 phantom freeze
         run: |
@@ -57,7 +57,9 @@ jobs:
           from tempfile import TemporaryDirectory
           modules = [Path('src/btbench/motion_first.py'),
                      Path('src/btbench/native_subtraction.py'),
-                     Path('src/btbench/stable_tissue.py')]
+                     Path('src/btbench/stable_tissue.py'),
+                     Path('src/btbench/multidim.py'),
+                     Path('src/btbench/esdiva_aperture.py')]
           with TemporaryDirectory() as temp:
               held = []
               try:
@@ -75,6 +77,7 @@ jobs:
       - run: python scripts/verify_phantom_phase10_dryrun.py
       - run: python scripts/verify_esdiva_phase10_stress.py
       - run: python scripts/verify_esdiva_phase11_development.py
+      - run: python scripts/verify_multidim_aperture.py --measured runs/resolvestroke_aperture_pilot_v1/report.json
       - run: python scripts/phantom_phase10_preflight.py plan --card runs/phantom_phase10_plan/acquisition_card.json --inventory runs/phantom_phase10_plan/capture_inventory.json
       - run: python scripts/phantom_phase10_dryrun.py --plan-directory runs/phantom_phase10_plan --fixture-directory ${{ runner.temp }}/phase10_fixture --output ${{ runner.temp }}/phase10_fixture_report.json
 

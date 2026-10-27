@@ -1,0 +1,2740 @@
+{
+  "schema_version": 1,
+  "status": "INCOMPLETE: no physical measurements",
+  "config_sha256": "814e4ed0bfc23e4de6bfad660f459fe19666acc5bf4d6b0e32cdda37f5cee6ab",
+  "analysis_sha256": "59ca4527080b5265426d66be9578ca8c4f3320fcfae25dc1810d262fb5d88bcb",
+  "feature_sha256": "fc84eeb380e68fa1f5994a7e7dc1cc085c3926c93110c21e5e2d8b8037fd5853",
+  "scanner_id": null,
+  "probe_id": null,
+  "beamformer_sha256": null,
+  "native_iq_unfiltered": null,
+  "measured_tx_angles_deg": null,
+  "receive_aperture_id": null,
+  "pulse_id": null,
+  "carrier_hz": null,
+  "sound_speed_m_s": null,
+  "contrast_agent": null,
+  "flow_off_is_pump_off": null,
+  "flow_reference": null,
+  "acquisition_card_utc": null,
+  "first_capture_utc": null,
+  "geometry_from_independent_structural_scan": null,
+  "geometry_path": null,
+  "geometry_sha256": null,
+  "optical_to_iq_transform_sha256": null,
+  "clock_synchronization_record_sha256": null,
+  "sessions": [
+    {
+      "id": "development",
+      "remount_id": null,
+      "blocks": [
+        {
+          "motion": "static",
+          "speed": "slow",
+          "repeat": 1,
+          "capture_order": [
+            "burst_on",
+            "dense_off",
+            "dense_on",
+            "burst_off"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        },
+        {
+          "motion": "static",
+          "speed": "slow",
+          "repeat": 2,
+          "capture_order": [
+            "burst_off",
+            "dense_on",
+            "dense_off",
+            "burst_on"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        },
+        {
+          "motion": "static",
+          "speed": "slow",
+          "repeat": 3,
+          "capture_order": [
+            "dense_off",
+            "burst_on",
+            "burst_off",
+            "dense_on"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        },
+        {
+          "motion": "static",
+          "speed": "slow",
+          "repeat": 4,
+          "capture_order": [
+            "burst_off",
+            "burst_on",
+            "dense_on",
+            "dense_off"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        },
+        {
+          "motion": "static",
+          "speed": "slow",
+          "repeat": 5,
+          "capture_order": [
+            "dense_off",
+            "burst_on",
+            "dense_on",
+            "burst_off"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        },
+        {
+          "motion": "static",
+          "speed": "nominal",
+          "repeat": 1,
+          "capture_order": [
+            "burst_on",
+            "burst_off",
+            "dense_off",
+            "dense_on"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        },
+        {
+          "motion": "static",
+          "speed": "nominal",
+          "repeat": 2,
+          "capture_order": [
+            "dense_on",
+            "burst_on",
+            "burst_off",
+            "dense_off"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        },
+        {
+          "motion": "static",
+          "speed": "nominal",
+          "repeat": 3,
+          "capture_order": [
+            "dense_off",
+            "dense_on",
+            "burst_off",
+            "burst_on"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        },
+        {
+          "motion": "static",
+          "speed": "nominal",
+          "repeat": 4,
+          "capture_order": [
+            "burst_on",
+            "burst_off",
+            "dense_off",
+            "dense_on"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        },
+        {
+          "motion": "static",
+          "speed": "nominal",
+          "repeat": 5,
+          "capture_order": [
+            "dense_on",
+            "dense_off",
+            "burst_off",
+            "burst_on"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        },
+        {
+          "motion": "rigid",
+          "speed": "slow",
+          "repeat": 1,
+          "capture_order": [
+            "burst_off",
+            "dense_off",
+            "dense_on",
+            "burst_on"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        },
+        {
+          "motion": "rigid",
+          "speed": "slow",
+          "repeat": 2,
+          "capture_order": [
+            "dense_on",
+            "burst_off",
+            "dense_off",
+            "burst_on"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        },
+        {
+          "motion": "rigid",
+          "speed": "slow",
+          "repeat": 3,
+          "capture_order": [
+            "dense_off",
+            "dense_on",
+            "burst_on",
+            "burst_off"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        },
+        {
+          "motion": "rigid",
+          "speed": "slow",
+          "repeat": 4,
+          "capture_order": [
+            "dense_off",
+            "dense_on",
+            "burst_off",
+            "burst_on"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        },
+        {
+          "motion": "rigid",
+          "speed": "slow",
+          "repeat": 5,
+          "capture_order": [
+            "dense_off",
+            "dense_on",
+            "burst_off",
+            "burst_on"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        },
+        {
+          "motion": "rigid",
+          "speed": "nominal",
+          "repeat": 1,
+          "capture_order": [
+            "dense_off",
+            "burst_off",
+            "dense_on",
+            "burst_on"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        },
+        {
+          "motion": "rigid",
+          "speed": "nominal",
+          "repeat": 2,
+          "capture_order": [
+            "burst_off",
+            "burst_on",
+            "dense_on",
+            "dense_off"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        },
+        {
+          "motion": "rigid",
+          "speed": "nominal",
+          "repeat": 3,
+          "capture_order": [
+            "dense_on",
+            "burst_off",
+            "dense_off",
+            "burst_on"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        },
+        {
+          "motion": "rigid",
+          "speed": "nominal",
+          "repeat": 4,
+          "capture_order": [
+            "burst_off",
+            "dense_off",
+            "dense_on",
+            "burst_on"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        },
+        {
+          "motion": "rigid",
+          "speed": "nominal",
+          "repeat": 5,
+          "capture_order": [
+            "dense_on",
+            "dense_off",
+            "burst_off",
+            "burst_on"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        },
+        {
+          "motion": "nonrigid",
+          "speed": "slow",
+          "repeat": 1,
+          "capture_order": [
+            "burst_off",
+            "burst_on",
+            "dense_on",
+            "dense_off"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        },
+        {
+          "motion": "nonrigid",
+          "speed": "slow",
+          "repeat": 2,
+          "capture_order": [
+            "burst_off",
+            "burst_on",
+            "dense_off",
+            "dense_on"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        },
+        {
+          "motion": "nonrigid",
+          "speed": "slow",
+          "repeat": 3,
+          "capture_order": [
+            "dense_off",
+            "burst_off",
+            "burst_on",
+            "dense_on"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        },
+        {
+          "motion": "nonrigid",
+          "speed": "slow",
+          "repeat": 4,
+          "capture_order": [
+            "dense_on",
+            "dense_off",
+            "burst_on",
+            "burst_off"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        },
+        {
+          "motion": "nonrigid",
+          "speed": "slow",
+          "repeat": 5,
+          "capture_order": [
+            "dense_on",
+            "burst_on",
+            "burst_off",
+            "dense_off"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        },
+        {
+          "motion": "nonrigid",
+          "speed": "nominal",
+          "repeat": 1,
+          "capture_order": [
+            "burst_on",
+            "dense_on",
+            "dense_off",
+            "burst_off"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        },
+        {
+          "motion": "nonrigid",
+          "speed": "nominal",
+          "repeat": 2,
+          "capture_order": [
+            "dense_on",
+            "burst_on",
+            "dense_off",
+            "burst_off"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        },
+        {
+          "motion": "nonrigid",
+          "speed": "nominal",
+          "repeat": 3,
+          "capture_order": [
+            "dense_off",
+            "burst_off",
+            "dense_on",
+            "burst_on"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        },
+        {
+          "motion": "nonrigid",
+          "speed": "nominal",
+          "repeat": 4,
+          "capture_order": [
+            "burst_off",
+            "dense_off",
+            "burst_on",
+            "dense_on"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        },
+        {
+          "motion": "nonrigid",
+          "speed": "nominal",
+          "repeat": 5,
+          "capture_order": [
+            "burst_on",
+            "burst_off",
+            "dense_on",
+            "dense_off"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "evaluation",
+      "remount_id": null,
+      "blocks": [
+        {
+          "motion": "static",
+          "speed": "slow",
+          "repeat": 1,
+          "capture_order": [
+            "burst_off",
+            "dense_off",
+            "dense_on",
+            "burst_on"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        },
+        {
+          "motion": "static",
+          "speed": "slow",
+          "repeat": 2,
+          "capture_order": [
+            "burst_on",
+            "dense_on",
+            "burst_off",
+            "dense_off"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        },
+        {
+          "motion": "static",
+          "speed": "slow",
+          "repeat": 3,
+          "capture_order": [
+            "dense_on",
+            "burst_on",
+            "burst_off",
+            "dense_off"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        },
+        {
+          "motion": "static",
+          "speed": "slow",
+          "repeat": 4,
+          "capture_order": [
+            "burst_off",
+            "burst_on",
+            "dense_off",
+            "dense_on"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        },
+        {
+          "motion": "static",
+          "speed": "slow",
+          "repeat": 5,
+          "capture_order": [
+            "dense_off",
+            "burst_off",
+            "burst_on",
+            "dense_on"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        },
+        {
+          "motion": "static",
+          "speed": "nominal",
+          "repeat": 1,
+          "capture_order": [
+            "dense_on",
+            "burst_off",
+            "burst_on",
+            "dense_off"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        },
+        {
+          "motion": "static",
+          "speed": "nominal",
+          "repeat": 2,
+          "capture_order": [
+            "dense_on",
+            "burst_on",
+            "burst_off",
+            "dense_off"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        },
+        {
+          "motion": "static",
+          "speed": "nominal",
+          "repeat": 3,
+          "capture_order": [
+            "dense_off",
+            "burst_on",
+            "burst_off",
+            "dense_on"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        },
+        {
+          "motion": "static",
+          "speed": "nominal",
+          "repeat": 4,
+          "capture_order": [
+            "dense_off",
+            "dense_on",
+            "burst_on",
+            "burst_off"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        },
+        {
+          "motion": "static",
+          "speed": "nominal",
+          "repeat": 5,
+          "capture_order": [
+            "dense_off",
+            "burst_on",
+            "burst_off",
+            "dense_on"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        },
+        {
+          "motion": "rigid",
+          "speed": "slow",
+          "repeat": 1,
+          "capture_order": [
+            "burst_on",
+            "dense_on",
+            "dense_off",
+            "burst_off"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        },
+        {
+          "motion": "rigid",
+          "speed": "slow",
+          "repeat": 2,
+          "capture_order": [
+            "burst_on",
+            "dense_on",
+            "dense_off",
+            "burst_off"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        },
+        {
+          "motion": "rigid",
+          "speed": "slow",
+          "repeat": 3,
+          "capture_order": [
+            "burst_off",
+            "dense_on",
+            "dense_off",
+            "burst_on"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        },
+        {
+          "motion": "rigid",
+          "speed": "slow",
+          "repeat": 4,
+          "capture_order": [
+            "dense_on",
+            "burst_off",
+            "burst_on",
+            "dense_off"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        },
+        {
+          "motion": "rigid",
+          "speed": "slow",
+          "repeat": 5,
+          "capture_order": [
+            "burst_on",
+            "dense_off",
+            "burst_off",
+            "dense_on"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        },
+        {
+          "motion": "rigid",
+          "speed": "nominal",
+          "repeat": 1,
+          "capture_order": [
+            "burst_off",
+            "dense_off",
+            "burst_on",
+            "dense_on"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        },
+        {
+          "motion": "rigid",
+          "speed": "nominal",
+          "repeat": 2,
+          "capture_order": [
+            "burst_off",
+            "burst_on",
+            "dense_off",
+            "dense_on"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        },
+        {
+          "motion": "rigid",
+          "speed": "nominal",
+          "repeat": 3,
+          "capture_order": [
+            "dense_on",
+            "dense_off",
+            "burst_off",
+            "burst_on"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        },
+        {
+          "motion": "rigid",
+          "speed": "nominal",
+          "repeat": 4,
+          "capture_order": [
+            "dense_off",
+            "burst_on",
+            "dense_on",
+            "burst_off"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        },
+        {
+          "motion": "rigid",
+          "speed": "nominal",
+          "repeat": 5,
+          "capture_order": [
+            "burst_off",
+            "dense_off",
+            "dense_on",
+            "burst_on"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        },
+        {
+          "motion": "nonrigid",
+          "speed": "slow",
+          "repeat": 1,
+          "capture_order": [
+            "burst_on",
+            "dense_on",
+            "dense_off",
+            "burst_off"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        },
+        {
+          "motion": "nonrigid",
+          "speed": "slow",
+          "repeat": 2,
+          "capture_order": [
+            "dense_off",
+            "burst_off",
+            "burst_on",
+            "dense_on"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        },
+        {
+          "motion": "nonrigid",
+          "speed": "slow",
+          "repeat": 3,
+          "capture_order": [
+            "dense_off",
+            "burst_off",
+            "burst_on",
+            "dense_on"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        },
+        {
+          "motion": "nonrigid",
+          "speed": "slow",
+          "repeat": 4,
+          "capture_order": [
+            "dense_off",
+            "burst_off",
+            "dense_on",
+            "burst_on"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        },
+        {
+          "motion": "nonrigid",
+          "speed": "slow",
+          "repeat": 5,
+          "capture_order": [
+            "burst_on",
+            "dense_on",
+            "burst_off",
+            "dense_off"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        },
+        {
+          "motion": "nonrigid",
+          "speed": "nominal",
+          "repeat": 1,
+          "capture_order": [
+            "burst_off",
+            "burst_on",
+            "dense_on",
+            "dense_off"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        },
+        {
+          "motion": "nonrigid",
+          "speed": "nominal",
+          "repeat": 2,
+          "capture_order": [
+            "burst_on",
+            "dense_off",
+            "dense_on",
+            "burst_off"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        },
+        {
+          "motion": "nonrigid",
+          "speed": "nominal",
+          "repeat": 3,
+          "capture_order": [
+            "burst_on",
+            "dense_off",
+            "burst_off",
+            "dense_on"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        },
+        {
+          "motion": "nonrigid",
+          "speed": "nominal",
+          "repeat": 4,
+          "capture_order": [
+            "burst_on",
+            "dense_on",
+            "burst_off",
+            "dense_off"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        },
+        {
+          "motion": "nonrigid",
+          "speed": "nominal",
+          "repeat": 5,
+          "capture_order": [
+            "burst_on",
+            "dense_off",
+            "burst_off",
+            "dense_on"
+          ],
+          "captures": {
+            "dense_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "dense_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_off": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            },
+            "burst_on": {
+              "iq_path": null,
+              "iq_sha256": null,
+              "motion_path": null,
+              "motion_sha256": null,
+              "flowmeter_mm_s": null,
+              "capture_utc": null
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -8,6 +8,10 @@ budget on source-resolved acoustic RF. A longer observation reveals blood
 motion in one new scatterer cloud but yields much weaker mixture evidence
 and worse velocity error in another. This is a feature diagnostic, not a
 validated clutter filter or a noncontrast physical measurement.
+The [paired physical transport-lag protocol](docs/TRANSPORT_LAG_PHYSICAL_PROTOCOL_V1.md)
+freezes a bubble-free pump-off/pump-on test of those two timings, with native IQ,
+independent tissue-motion records and predeclared near-wall regions. Its
+capture inventory is unfilled; there is no physical outcome yet.
 
 The [motion-repair held-out study](docs/RESULTS_MOTION_REPAIR_V06.md) fixes
 registration and gates each displacement on independent spatial pixels. Its

@@ -1,0 +1,9 @@
+{
+  "status": "PREACQUISITION; no physical data scored",
+  "source_commit": "543734061d7ad048a1dec66908e26355c5375500",
+  "config_sha256": "814e4ed0bfc23e4de6bfad660f459fe19666acc5bf4d6b0e32cdda37f5cee6ab",
+  "analysis_sha256": "59ca4527080b5265426d66be9578ca8c4f3320fcfae25dc1810d262fb5d88bcb",
+  "feature_sha256": "fc84eeb380e68fa1f5994a7e7dc1cc085c3926c93110c21e5e2d8b8037fd5853",
+  "template_sha256": "a88529287ce2b392f751c211fd7f43ad3f1066c33b74ffd6a8464aa730664937",
+  "protocol_sha256": "3ff7dfef26a3d238ee28819ed1f3fc14ef0969c7fdd28a9785e9cb984c1312be"
+}

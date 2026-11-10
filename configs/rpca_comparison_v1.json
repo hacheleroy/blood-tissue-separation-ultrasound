@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "source_config": "configs/separation_fidelity.json",
+  "frames": 96,
+  "shape": [8, 13],
+  "score_last_frames": 16,
+  "development_seed": 17,
+  "development_conditions": [
+    "slow_overlap", "weak_decorrelating", "psf_bulk_motion", "psf_deforming_tissue"
+  ],
+  "evaluation_seeds": [61, 73, 89],
+  "evaluation_conditions": "all ten conditions in source_config",
+  "selection": "lowest mean of log1p(observed near-wall IQ NRMSE) + 0.5 log1p(paired near-wall IQ NRMSE) + 0.2 log1p(100 times tissue-only background power ratio) over four development conditions; ties use candidate order",
+  "methods_in_order": [
+    {
+      "id": "stable_rpca",
+      "candidates": [
+        {"tau": 0.05, "sparse_lambda": 0.02},
+        {"tau": 0.1, "sparse_lambda": 0.03},
+        {"tau": 0.2, "sparse_lambda": 0.03},
+        {"tau": 0.1, "sparse_lambda": 0.05}
+      ]
+    },
+    {
+      "id": "cauchy_rpca_core",
+      "candidates": [
+        {"sparse_lambda": 0.03, "gamma": 0.1},
+        {"sparse_lambda": 0.1, "gamma": 0.1},
+        {"sparse_lambda": 0.3, "gamma": 0.1},
+        {"sparse_lambda": 1.0, "gamma": 0.1}
+      ]
+    },
+    {
+      "id": "batch_irls_reconstruction",
+      "candidates": [
+        {"low_rank_lambda": 0.03, "sparse_mu": 0.003, "rank": 12, "epsilon": 0.02},
+        {"low_rank_lambda": 0.1, "sparse_mu": 0.01, "rank": 12, "epsilon": 0.02},
+        {"low_rank_lambda": 0.3, "sparse_mu": 0.03, "rank": 12, "epsilon": 0.02},
+        {"low_rank_lambda": 1.0, "sparse_mu": 0.1, "rank": 12, "epsilon": 0.02}
+      ]
+    }
+  ],
+  "reference_methods": ["svd_discard_1", "rpca_pcp", "unfiltered"],
+  "max_iterations": 120,
+  "tolerance": 1e-5,
+  "scope": "Source-separated statistical-IQ and 2-D PSF-scatterer transport; no RF/channel, RBC, or fluid-structure evidence. No evaluation labels enter fitting."
+}

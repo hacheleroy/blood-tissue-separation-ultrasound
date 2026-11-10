@@ -1,0 +1,33 @@
+{
+  "config_sha256": "937671298f53a55b2a07b4344c99dc91049b8ddcdaca2d41905550b4f1c0121f",
+  "source_config_sha256": "9404750a9a28506a3a317646f55bfbca2c4e09351ee39acca07af8d59b84cb7d",
+  "solver_sha256": "86c1c0dc191861791a180db323afc7273a42e78d52a754c2c5da1193649ee786",
+  "selected": {
+    "stable_rpca": {
+      "candidate_index": 3,
+      "params": {
+        "tau": 0.1,
+        "sparse_lambda": 0.05
+      },
+      "mean_selection_score": 0.9920180692729426
+    },
+    "cauchy_rpca_core": {
+      "candidate_index": 0,
+      "params": {
+        "sparse_lambda": 0.03,
+        "gamma": 0.1
+      },
+      "mean_selection_score": 0.9374081736050623
+    },
+    "batch_irls_reconstruction": {
+      "candidate_index": 1,
+      "params": {
+        "low_rank_lambda": 0.1,
+        "sparse_mu": 0.01,
+        "rank": 12,
+        "epsilon": 0.02
+      },
+      "mean_selection_score": 0.9155799224286618
+    }
+  }
+}

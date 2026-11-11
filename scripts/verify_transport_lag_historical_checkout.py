@@ -23,11 +23,11 @@ README_ADD = (
     "capture inventory is unfilled; there is no physical outcome yet.\n"
 )
 CI_OLD = "      - run: python scripts/verify_transport_lag_information.py\n"
-CI_RPCA_SOURCE_OLD = "--exclude-current-source esdiva_aperture.py\\n"
-CI_RPCA_SOURCE_NEW = "--exclude-current-source esdiva_aperture.py --exclude-current-source rpca_comparators.py\\n"
-CI_RPCA_V07_OLD = "                     Path('src/btbench/esdiva_aperture.py')]\\n"
-CI_RPCA_V07_NEW = ("                     Path('src/btbench/esdiva_aperture.py'),\\n"
-                   "                     Path('src/btbench/rpca_comparators.py')]\\n")
+CI_RPCA_SOURCE_OLD = "--exclude-current-source esdiva_aperture.py\n"
+CI_RPCA_SOURCE_NEW = "--exclude-current-source esdiva_aperture.py --exclude-current-source rpca_comparators.py\n"
+CI_RPCA_V07_OLD = "                     Path('src/btbench/esdiva_aperture.py')]\n"
+CI_RPCA_V07_NEW = ("                     Path('src/btbench/esdiva_aperture.py'),\n"
+                   "                     Path('src/btbench/rpca_comparators.py')]\n")
 CI_NEW = (
     "      - run: python scripts/verify_transport_lag_historical_checkout.py\n"
     "      - run: python scripts/verify_transport_lag_physical.py\n"

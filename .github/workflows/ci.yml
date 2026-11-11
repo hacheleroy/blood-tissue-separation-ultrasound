@@ -61,7 +61,7 @@ jobs:
                      Path('src/btbench/multidim.py'),
                      Path('src/btbench/esdiva_aperture.py'),
                      Path('src/btbench/rpca_comparators.py')]
-          with TemporaryDirectory() as temp:
+          with TemporaryDirectory(dir=Path('src/btbench')) as temp:
               held = []
               try:
                   for module in modules:

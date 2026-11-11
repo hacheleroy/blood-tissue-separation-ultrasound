@@ -1,0 +1,1887 @@
+{
+  "config_sha256": "937671298f53a55b2a07b4344c99dc91049b8ddcdaca2d41905550b4f1c0121f",
+  "source_config_sha256": "9404750a9a28506a3a317646f55bfbca2c4e09351ee39acca07af8d59b84cb7d",
+  "solver_sha256": "86c1c0dc191861791a180db323afc7273a42e78d52a754c2c5da1193649ee786",
+  "selected": {
+    "stable_rpca": {
+      "candidate_index": 3,
+      "params": {
+        "tau": 0.1,
+        "sparse_lambda": 0.05
+      },
+      "mean_selection_score": 0.9920180692729426
+    },
+    "cauchy_rpca_core": {
+      "candidate_index": 0,
+      "params": {
+        "sparse_lambda": 0.03,
+        "gamma": 0.1
+      },
+      "mean_selection_score": 0.9374081736050623
+    },
+    "batch_irls_reconstruction": {
+      "candidate_index": 1,
+      "params": {
+        "low_rank_lambda": 0.1,
+        "sparse_mu": 0.01,
+        "rank": 12,
+        "epsilon": 0.02
+      },
+      "mean_selection_score": 0.9155799224286618
+    }
+  },
+  "grid": [
+    {
+      "method": "stable_rpca",
+      "candidate_index": 0,
+      "params": {
+        "tau": 0.05,
+        "sparse_lambda": 0.02
+      },
+      "mean_selection_score": 1.0354499478230421,
+      "cases": [
+        {
+          "condition": "slow_overlap",
+          "family": "statistical",
+          "seed": 17,
+          "metrics": {
+            "observed_flow_iq_nrmse": 0.7583732947804046,
+            "observed_near_wall_iq_nrmse": 0.8848454489574593,
+            "paired_flow_iq_nrmse": 0.7547203119636513,
+            "paired_near_wall_iq_nrmse": 0.8826165884359661,
+            "tissue_only_background_power_ratio": 7.963264656080568e-05,
+            "tissue_only_flow_power_to_blood_ratio": 0.00245861514284295,
+            "near_wall_output_power_to_blood_ratio": 0.9838668807874166,
+            "near_wall_velocity_coverage": 1.0,
+            "near_wall_velocity_mae_vs_blood_iq_mps": 0.0006181279804588372,
+            "near_wall_velocity_mae_vs_prescribed_mps": 0.0005988134664751254,
+            "blood_only_near_wall_velocity_mae_vs_prescribed_mps": 0.0005512941179121122,
+            "near_wall_pixel_count": 16,
+            "velocity_gate_power_fraction": 0.01,
+            "mean_valid_near_wall_coherence": 0.965572009661416
+          },
+          "diagnostics": {
+            "method": "stable_rpca",
+            "iterations": 120,
+            "converged": false,
+            "relative_change": 0.00013927462615624892,
+            "relative_residual": 0.0009666637194252229,
+            "normalization_rms": 72.10324051729019,
+            "tau": 0.05,
+            "sparse_lambda": 0.02,
+            "noise_model": "quadratic residual"
+          },
+          "fit_seconds": 0.49808769799710717,
+          "selection_score": 0.9517634784050588
+        },
+        {
+          "condition": "weak_decorrelating",
+          "family": "statistical",
+          "seed": 17,
+          "metrics": {
+            "observed_flow_iq_nrmse": 1.0827950920752594,
+            "observed_near_wall_iq_nrmse": 1.0415438048779069,
+            "paired_flow_iq_nrmse": 0.2601589242272887,
+            "paired_near_wall_iq_nrmse": 0.2909340843539592,
+            "tissue_only_background_power_ratio": 0.0002734791557639734,
+            "tissue_only_flow_power_to_blood_ratio": 1.057274769596054,
+            "near_wall_output_power_to_blood_ratio": 2.0026344304165695,
+            "near_wall_velocity_coverage": 1.0,
+            "near_wall_velocity_mae_vs_blood_iq_mps": 0.01026176730147334,
+            "near_wall_velocity_mae_vs_prescribed_mps": 0.011299577498789844,
+            "blood_only_near_wall_velocity_mae_vs_prescribed_mps": 0.0023336956724989127,
+            "near_wall_pixel_count": 16,
+            "velocity_gate_power_fraction": 0.01,
+            "mean_valid_near_wall_coherence": 0.4121852520001531
+          },
+          "diagnostics": {
+            "method": "stable_rpca",
+            "iterations": 120,
+            "converged": false,
+            "relative_change": 0.00015032144139714266,
+            "relative_residual": 0.0009989269657951468,
+            "normalization_rms": 72.11206842872089,
+            "tau": 0.05,
+            "sparse_lambda": 0.02,
+            "noise_model": "quadratic residual"
+          },
+          "fit_seconds": 0.4430273899997701,
+          "selection_score": 0.8467854435987499
+        },
+        {
+          "condition": "psf_bulk_motion",
+          "family": "psf_scatterer",
+          "seed": 17,
+          "metrics": {
+            "observed_flow_iq_nrmse": 0.7839588538199834,
+            "observed_near_wall_iq_nrmse": 1.0394597768454443,
+            "paired_flow_iq_nrmse": 0.7745947663522372,
+            "paired_near_wall_iq_nrmse": 1.0192860436811368,
+            "tissue_only_background_power_ratio": 0.0070473927805075765,
+            "tissue_only_flow_power_to_blood_ratio": 0.018173742143039847,
+            "near_wall_output_power_to_blood_ratio": 0.08345243817955665,
+            "near_wall_velocity_coverage": 0.9375,
+            "near_wall_velocity_mae_vs_blood_iq_mps": 0.001963726579842878,
+            "near_wall_velocity_mae_vs_prescribed_mps": 0.0018781160047761198,
+            "blood_only_near_wall_velocity_mae_vs_prescribed_mps": 0.0007060648263401603,
+            "near_wall_pixel_count": 16,
+            "velocity_gate_power_fraction": 0.01,
+            "mean_valid_near_wall_coherence": 0.851641463309014
+          },
+          "diagnostics": {
+            "method": "stable_rpca",
+            "iterations": 120,
+            "converged": false,
+            "relative_change": 0.0008070296915388957,
+            "relative_residual": 0.0009962558501611877,
+            "normalization_rms": 20.048328991833362,
+            "tau": 0.05,
+            "sparse_lambda": 0.02,
+            "noise_model": "quadratic residual"
+          },
+          "fit_seconds": 0.44907929400505964,
+          "selection_score": 1.1707393967106752
+        },
+        {
+          "condition": "psf_deforming_tissue",
+          "family": "psf_scatterer",
+          "seed": 17,
+          "metrics": {
+            "observed_flow_iq_nrmse": 0.9667608657859069,
+            "observed_near_wall_iq_nrmse": 1.02651379658872,
+            "paired_flow_iq_nrmse": 0.9535395424335826,
+            "paired_near_wall_iq_nrmse": 0.9846716299316672,
+            "tissue_only_background_power_ratio": 0.008539876397462795,
+            "tissue_only_flow_power_to_blood_ratio": 0.047595335501015884,
+            "near_wall_output_power_to_blood_ratio": 0.1859734774578619,
+            "near_wall_velocity_coverage": 0.6875,
+            "near_wall_velocity_mae_vs_blood_iq_mps": 0.002055161158946351,
+            "near_wall_velocity_mae_vs_prescribed_mps": 0.00197963913348719,
+            "blood_only_near_wall_velocity_mae_vs_prescribed_mps": 0.00036556202098962296,
+            "near_wall_pixel_count": 16,
+            "velocity_gate_power_fraction": 0.01,
+            "mean_valid_near_wall_coherence": 0.8472606199840378
+          },
+          "diagnostics": {
+            "method": "stable_rpca",
+            "iterations": 120,
+            "converged": false,
+            "relative_change": 0.0009487374668146518,
+            "relative_residual": 0.0009937519432873037,
+            "normalization_rms": 20.17806099149195,
+            "tau": 0.05,
+            "sparse_lambda": 0.02,
+            "noise_model": "quadratic residual"
+          },
+          "fit_seconds": 0.45293360999494325,
+          "selection_score": 1.172511472577685
+        }
+      ]
+    },
+    {
+      "method": "stable_rpca",
+      "candidate_index": 1,
+      "params": {
+        "tau": 0.1,
+        "sparse_lambda": 0.03
+      },
+      "mean_selection_score": 1.0413728923957004,
+      "cases": [
+        {
+          "condition": "slow_overlap",
+          "family": "statistical",
+          "seed": 17,
+          "metrics": {
+            "observed_flow_iq_nrmse": 0.8430336521182445,
+            "observed_near_wall_iq_nrmse": 0.9095318420219799,
+            "paired_flow_iq_nrmse": 0.8430713594940774,
+            "paired_near_wall_iq_nrmse": 0.9095879241670342,
+            "tissue_only_background_power_ratio": 7.389698685111048e-08,
+            "tissue_only_flow_power_to_blood_ratio": 2.234945055298464e-06,
+            "near_wall_output_power_to_blood_ratio": 0.3856073722525328,
+            "near_wall_velocity_coverage": 1.0,
+            "near_wall_velocity_mae_vs_blood_iq_mps": 0.0007789198482104347,
+            "near_wall_velocity_mae_vs_prescribed_mps": 0.0008194388748637722,
+            "blood_only_near_wall_velocity_mae_vs_prescribed_mps": 0.0005512941179121122,
+            "near_wall_pixel_count": 16,
+            "velocity_gate_power_fraction": 0.01,
+            "mean_valid_near_wall_coherence": 0.9090539389639756
+          },
+          "diagnostics": {
+            "method": "stable_rpca",
+            "iterations": 33,
+            "converged": true,
+            "relative_change": 9.891068304144886e-06,
+            "relative_residual": 0.002354588986981933,
+            "normalization_rms": 72.10324051729019,
+            "tau": 0.1,
+            "sparse_lambda": 0.03,
+            "noise_model": "quadratic residual"
+          },
+          "fit_seconds": 0.12307388999761315,
+          "selection_score": 0.970303317195959
+        },
+        {
+          "condition": "weak_decorrelating",
+          "family": "statistical",
+          "seed": 17,
+          "metrics": {
+            "observed_flow_iq_nrmse": 0.9903706597068117,
+            "observed_near_wall_iq_nrmse": 0.9511504296240656,
+            "paired_flow_iq_nrmse": 0.30969988597336023,
+            "paired_near_wall_iq_nrmse": 0.329809145889607,
+            "tissue_only_background_power_ratio": 9.542971673094637e-05,
+            "tissue_only_flow_power_to_blood_ratio": 0.7940214124448841,
+            "near_wall_output_power_to_blood_ratio": 1.6347503182774719,
+            "near_wall_velocity_coverage": 1.0,
+            "near_wall_velocity_mae_vs_blood_iq_mps": 0.010107452901655649,
+            "near_wall_velocity_mae_vs_prescribed_mps": 0.011210570340938805,
+            "blood_only_near_wall_velocity_mae_vs_prescribed_mps": 0.0023336956724989127,
+            "near_wall_pixel_count": 16,
+            "velocity_gate_power_fraction": 0.01,
+            "mean_valid_near_wall_coherence": 0.3994750512258143
+          },
+          "diagnostics": {
+            "method": "stable_rpca",
+            "iterations": 120,
+            "converged": true,
+            "relative_change": 9.999797711745904e-06,
+            "relative_residual": 0.0029751913262024768,
+            "normalization_rms": 72.11206842872089,
+            "tau": 0.1,
+            "sparse_lambda": 0.03,
+            "noise_model": "quadratic residual"
+          },
+          "fit_seconds": 0.4978976500060526,
+          "selection_score": 0.8128364238576433
+        },
+        {
+          "condition": "psf_bulk_motion",
+          "family": "psf_scatterer",
+          "seed": 17,
+          "metrics": {
+            "observed_flow_iq_nrmse": 0.85017457457233,
+            "observed_near_wall_iq_nrmse": 1.0175388508293488,
+            "paired_flow_iq_nrmse": 0.8438998279703883,
+            "paired_near_wall_iq_nrmse": 1.001853051034366,
+            "tissue_only_background_power_ratio": 0.009122410263902593,
+            "tissue_only_flow_power_to_blood_ratio": 0.017186997848138902,
+            "near_wall_output_power_to_blood_ratio": 0.061655218477552974,
+            "near_wall_velocity_coverage": 0.9375,
+            "near_wall_velocity_mae_vs_blood_iq_mps": 0.0016755891600626696,
+            "near_wall_velocity_mae_vs_prescribed_mps": 0.001624916219671983,
+            "blood_only_near_wall_velocity_mae_vs_prescribed_mps": 0.0007060648263401603,
+            "near_wall_pixel_count": 16,
+            "velocity_gate_power_fraction": 0.01,
+            "mean_valid_near_wall_coherence": 0.8443862482518998
+          },
+          "diagnostics": {
+            "method": "stable_rpca",
+            "iterations": 120,
+            "converged": false,
+            "relative_change": 0.0007546913567266475,
+            "relative_residual": 0.0029020616563638726,
+            "normalization_rms": 20.048328991833362,
+            "tau": 0.1,
+            "sparse_lambda": 0.03,
+            "noise_model": "quadratic residual"
+          },
+          "fit_seconds": 0.46508118699421175,
+          "selection_score": 1.1785701897542353
+        },
+        {
+          "condition": "psf_deforming_tissue",
+          "family": "psf_scatterer",
+          "seed": 17,
+          "metrics": {
+            "observed_flow_iq_nrmse": 0.9804008358521907,
+            "observed_near_wall_iq_nrmse": 1.0042839201376166,
+            "paired_flow_iq_nrmse": 0.9766212488769677,
+            "paired_near_wall_iq_nrmse": 0.991588901146448,
+            "tissue_only_background_power_ratio": 0.012708223554597399,
+            "tissue_only_flow_power_to_blood_ratio": 0.04472158053781024,
+            "near_wall_output_power_to_blood_ratio": 0.14175179655019793,
+            "near_wall_velocity_coverage": 0.6875,
+            "near_wall_velocity_mae_vs_blood_iq_mps": 0.0017545544254805858,
+            "near_wall_velocity_mae_vs_prescribed_mps": 0.0017692458612209015,
+            "blood_only_near_wall_velocity_mae_vs_prescribed_mps": 0.00036556202098962296,
+            "near_wall_pixel_count": 16,
+            "velocity_gate_power_fraction": 0.01,
+            "mean_valid_near_wall_coherence": 0.8793108004648519
+          },
+          "diagnostics": {
+            "method": "stable_rpca",
+            "iterations": 120,
+            "converged": false,
+            "relative_change": 0.0010709908098301838,
+            "relative_residual": 0.00284727308817545,
+            "normalization_rms": 20.17806099149195,
+            "tau": 0.1,
+            "sparse_lambda": 0.03,
+            "noise_model": "quadratic residual"
+          },
+          "fit_seconds": 0.4356699900017702,
+          "selection_score": 1.2037816387749642
+        }
+      ]
+    },
+    {
+      "method": "stable_rpca",
+      "candidate_index": 2,
+      "params": {
+        "tau": 0.2,
+        "sparse_lambda": 0.03
+      },
+      "mean_selection_score": 1.0958277462489454,
+      "cases": [
+        {
+          "condition": "slow_overlap",
+          "family": "statistical",
+          "seed": 17,
+          "metrics": {
+            "observed_flow_iq_nrmse": 0.8753831739923175,
+            "observed_near_wall_iq_nrmse": 0.8997658189097967,
+            "paired_flow_iq_nrmse": 0.8753831739923175,
+            "paired_near_wall_iq_nrmse": 0.8997658189097967,
+            "tissue_only_background_power_ratio": 2.4392445400805297e-08,
+            "tissue_only_flow_power_to_blood_ratio": 0.0,
+            "near_wall_output_power_to_blood_ratio": 0.2542692259662161,
+            "near_wall_velocity_coverage": 0.875,
+            "near_wall_velocity_mae_vs_blood_iq_mps": 0.0008306735128846268,
+            "near_wall_velocity_mae_vs_prescribed_mps": 0.000874561254179819,
+            "blood_only_near_wall_velocity_mae_vs_prescribed_mps": 0.0005512941179121122,
+            "near_wall_pixel_count": 16,
+            "velocity_gate_power_fraction": 0.01,
+            "mean_valid_near_wall_coherence": 0.8993494604119997
+          },
+          "diagnostics": {
+            "method": "stable_rpca",
+            "iterations": 19,
+            "converged": true,
+            "relative_change": 8.84803978039973e-06,
+            "relative_residual": 0.003996471053161234,
+            "normalization_rms": 72.10324051729019,
+            "tau": 0.2,
+            "sparse_lambda": 0.03,
+            "noise_model": "quadratic residual"
+          },
+          "fit_seconds": 0.06703081500018016,
+          "selection_score": 0.9625964259043993
+        },
+        {
+          "condition": "weak_decorrelating",
+          "family": "statistical",
+          "seed": 17,
+          "metrics": {
+            "observed_flow_iq_nrmse": 0.8893753990331815,
+            "observed_near_wall_iq_nrmse": 0.8612906377341899,
+            "paired_flow_iq_nrmse": 0.4324203309325476,
+            "paired_near_wall_iq_nrmse": 0.4466724928704742,
+            "tissue_only_background_power_ratio": 6.923908288556152e-05,
+            "tissue_only_flow_power_to_blood_ratio": 0.49404366034193264,
+            "near_wall_output_power_to_blood_ratio": 1.1854253272217323,
+            "near_wall_velocity_coverage": 1.0,
+            "near_wall_velocity_mae_vs_blood_iq_mps": 0.010209030458552596,
+            "near_wall_velocity_mae_vs_prescribed_mps": 0.01118860634873765,
+            "blood_only_near_wall_velocity_mae_vs_prescribed_mps": 0.0023336956724989127,
+            "near_wall_pixel_count": 16,
+            "velocity_gate_power_fraction": 0.01,
+            "mean_valid_near_wall_coherence": 0.37771156974112624
+          },
+          "diagnostics": {
+            "method": "stable_rpca",
+            "iterations": 86,
+            "converged": true,
+            "relative_change": 9.941071484132702e-06,
+            "relative_residual": 0.005814230426448507,
+            "normalization_rms": 72.11206842872089,
+            "tau": 0.2,
+            "sparse_lambda": 0.03,
+            "noise_model": "quadratic residual"
+          },
+          "fit_seconds": 0.3037309900028049,
+          "selection_score": 0.8072831913536547
+        },
+        {
+          "condition": "psf_bulk_motion",
+          "family": "psf_scatterer",
+          "seed": 17,
+          "metrics": {
+            "observed_flow_iq_nrmse": 0.8433550829886801,
+            "observed_near_wall_iq_nrmse": 1.0160497211500537,
+            "paired_flow_iq_nrmse": 0.8315157418205664,
+            "paired_near_wall_iq_nrmse": 0.9795287035275188,
+            "tissue_only_background_power_ratio": 0.020804874466892786,
+            "tissue_only_flow_power_to_blood_ratio": 0.034238456374809156,
+            "near_wall_output_power_to_blood_ratio": 0.12279462413209563,
+            "near_wall_velocity_coverage": 0.875,
+            "near_wall_velocity_mae_vs_blood_iq_mps": 0.0008635262976501929,
+            "near_wall_velocity_mae_vs_prescribed_mps": 0.0007011694397920127,
+            "blood_only_near_wall_velocity_mae_vs_prescribed_mps": 0.0007060648263401603,
+            "near_wall_pixel_count": 16,
+            "velocity_gate_power_fraction": 0.01,
+            "mean_valid_near_wall_coherence": 0.9325088574721384
+          },
+          "diagnostics": {
+            "method": "stable_rpca",
+            "iterations": 120,
+            "converged": false,
+            "relative_change": 0.001063504256647712,
+            "relative_residual": 0.0055729943421547945,
+            "normalization_rms": 20.048328991833362,
+            "tau": 0.2,
+            "sparse_lambda": 0.03,
+            "noise_model": "quadratic residual"
+          },
+          "fit_seconds": 0.4232320490045822,
+          "selection_score": 1.2675869763748147
+        },
+        {
+          "condition": "psf_deforming_tissue",
+          "family": "psf_scatterer",
+          "seed": 17,
+          "metrics": {
+            "observed_flow_iq_nrmse": 0.9930541007621763,
+            "observed_near_wall_iq_nrmse": 1.0759016565959776,
+            "paired_flow_iq_nrmse": 0.9625180041717385,
+            "paired_near_wall_iq_nrmse": 0.9646445268519894,
+            "tissue_only_background_power_ratio": 0.030106995494524284,
+            "tissue_only_flow_power_to_blood_ratio": 0.10744239256323476,
+            "near_wall_output_power_to_blood_ratio": 0.3524829469821673,
+            "near_wall_velocity_coverage": 0.8125,
+            "near_wall_velocity_mae_vs_blood_iq_mps": 0.0012500770723959927,
+            "near_wall_velocity_mae_vs_prescribed_mps": 0.0012476482774761895,
+            "blood_only_near_wall_velocity_mae_vs_prescribed_mps": 0.00036556202098962296,
+            "near_wall_pixel_count": 16,
+            "velocity_gate_power_fraction": 0.01,
+            "mean_valid_near_wall_coherence": 0.9528869287269272
+          },
+          "diagnostics": {
+            "method": "stable_rpca",
+            "iterations": 120,
+            "converged": false,
+            "relative_change": 0.0015909231024588302,
+            "relative_residual": 0.005277800316126143,
+            "normalization_rms": 20.17806099149195,
+            "tau": 0.2,
+            "sparse_lambda": 0.03,
+            "noise_model": "quadratic residual"
+          },
+          "fit_seconds": 0.39522471399686765,
+          "selection_score": 1.3458443913629135
+        }
+      ]
+    },
+    {
+      "method": "stable_rpca",
+      "candidate_index": 3,
+      "params": {
+        "tau": 0.1,
+        "sparse_lambda": 0.05
+      },
+      "mean_selection_score": 0.9920180692729426,
+      "cases": [
+        {
+          "condition": "slow_overlap",
+          "family": "statistical",
+          "seed": 17,
+          "metrics": {
+            "observed_flow_iq_nrmse": 0.9785679358349839,
+            "observed_near_wall_iq_nrmse": 0.9718175449491897,
+            "paired_flow_iq_nrmse": 0.9785679358349839,
+            "paired_near_wall_iq_nrmse": 0.9718175449491897,
+            "tissue_only_background_power_ratio": 1.1025102460303832e-10,
+            "tissue_only_flow_power_to_blood_ratio": 0.0,
+            "near_wall_output_power_to_blood_ratio": 0.021835342150659326,
+            "near_wall_velocity_coverage": 0.5625,
+            "near_wall_velocity_mae_vs_blood_iq_mps": 0.0018098832128077514,
+            "near_wall_velocity_mae_vs_prescribed_mps": 0.002333700661179692,
+            "blood_only_near_wall_velocity_mae_vs_prescribed_mps": 0.0005512941179121122,
+            "near_wall_pixel_count": 16,
+            "velocity_gate_power_fraction": 0.01,
+            "mean_valid_near_wall_coherence": 0.7728318762858751
+          },
+          "diagnostics": {
+            "method": "stable_rpca",
+            "iterations": 9,
+            "converged": true,
+            "relative_change": 9.600197321222673e-06,
+            "relative_residual": 0.0027738608389044307,
+            "normalization_rms": 72.10324051729019,
+            "tau": 0.1,
+            "sparse_lambda": 0.05,
+            "noise_model": "quadratic residual"
+          },
+          "fit_seconds": 0.030733309999050107,
+          "selection_score": 1.0184335957870745
+        },
+        {
+          "condition": "weak_decorrelating",
+          "family": "statistical",
+          "seed": 17,
+          "metrics": {
+            "observed_flow_iq_nrmse": 0.9179346216602889,
+            "observed_near_wall_iq_nrmse": 0.8807876617311854,
+            "paired_flow_iq_nrmse": 0.41254247439106634,
+            "paired_near_wall_iq_nrmse": 0.424926908331836,
+            "tissue_only_background_power_ratio": 4.816001384534402e-05,
+            "tissue_only_flow_power_to_blood_ratio": 0.5810852162699042,
+            "near_wall_output_power_to_blood_ratio": 1.234351989456563,
+            "near_wall_velocity_coverage": 1.0,
+            "near_wall_velocity_mae_vs_blood_iq_mps": 0.010923353232652078,
+            "near_wall_velocity_mae_vs_prescribed_mps": 0.011874729973095103,
+            "blood_only_near_wall_velocity_mae_vs_prescribed_mps": 0.0023336956724989127,
+            "near_wall_pixel_count": 16,
+            "velocity_gate_power_fraction": 0.01,
+            "mean_valid_near_wall_coherence": 0.3664252870153142
+          },
+          "diagnostics": {
+            "method": "stable_rpca",
+            "iterations": 27,
+            "converged": true,
+            "relative_change": 8.247944574289998e-06,
+            "relative_residual": 0.004866442267091203,
+            "normalization_rms": 72.11206842872089,
+            "tau": 0.1,
+            "sparse_lambda": 0.05,
+            "noise_model": "quadratic residual"
+          },
+          "fit_seconds": 0.10199330499744974,
+          "selection_score": 0.8097118064179607
+        },
+        {
+          "condition": "psf_bulk_motion",
+          "family": "psf_scatterer",
+          "seed": 17,
+          "metrics": {
+            "observed_flow_iq_nrmse": 0.966172516026908,
+            "observed_near_wall_iq_nrmse": 1.001764664772999,
+            "paired_flow_iq_nrmse": 0.9656131585321008,
+            "paired_near_wall_iq_nrmse": 1.0017641635168943,
+            "tissue_only_background_power_ratio": 0.0010035221782438912,
+            "tissue_only_flow_power_to_blood_ratio": 0.001105506333027324,
+            "near_wall_output_power_to_blood_ratio": 0.0030051016418717077,
+            "near_wall_velocity_coverage": 0.1875,
+            "near_wall_velocity_mae_vs_blood_iq_mps": 0.011589153957067827,
+            "near_wall_velocity_mae_vs_prescribed_mps": 0.01263602721303765,
+            "blood_only_near_wall_velocity_mae_vs_prescribed_mps": 0.0007060648263401603,
+            "near_wall_pixel_count": 16,
+            "velocity_gate_power_fraction": 0.01,
+            "mean_valid_near_wall_coherence": 0.3189863757016423
+          },
+          "diagnostics": {
+            "method": "stable_rpca",
+            "iterations": 120,
+            "converged": false,
+            "relative_change": 0.0002027210113856683,
+            "relative_residual": 0.004268821551103907,
+            "normalization_rms": 20.048328991833362,
+            "tau": 0.1,
+            "sparse_lambda": 0.05,
+            "noise_model": "quadratic residual"
+          },
+          "fit_seconds": 0.4510525400037295,
+          "selection_score": 1.0601696259913016
+        },
+        {
+          "condition": "psf_deforming_tissue",
+          "family": "psf_scatterer",
+          "seed": 17,
+          "metrics": {
+            "observed_flow_iq_nrmse": 0.9948730202783254,
+            "observed_near_wall_iq_nrmse": 0.9932068955806167,
+            "paired_flow_iq_nrmse": 0.9967940279963391,
+            "paired_near_wall_iq_nrmse": 0.9996555694191378,
+            "tissue_only_background_power_ratio": 0.0024312035431951983,
+            "tissue_only_flow_power_to_blood_ratio": 0.0027720431786965407,
+            "near_wall_output_power_to_blood_ratio": 0.005198185780240665,
+            "near_wall_velocity_coverage": 0.375,
+            "near_wall_velocity_mae_vs_blood_iq_mps": 0.005077693731699471,
+            "near_wall_velocity_mae_vs_prescribed_mps": 0.005469664752332452,
+            "blood_only_near_wall_velocity_mae_vs_prescribed_mps": 0.00036556202098962296,
+            "near_wall_pixel_count": 16,
+            "velocity_gate_power_fraction": 0.01,
+            "mean_valid_near_wall_coherence": 0.6480340696509642
+          },
+          "diagnostics": {
+            "method": "stable_rpca",
+            "iterations": 120,
+            "converged": false,
+            "relative_change": 0.00043192315420909083,
+            "relative_residual": 0.00417238703336894,
+            "normalization_rms": 20.17806099149195,
+            "tau": 0.1,
+            "sparse_lambda": 0.05,
+            "noise_model": "quadratic residual"
+          },
+          "fit_seconds": 0.4679518940029084,
+          "selection_score": 1.0797572488954335
+        }
+      ]
+    },
+    {
+      "method": "cauchy_rpca_core",
+      "candidate_index": 0,
+      "params": {
+        "sparse_lambda": 0.03,
+        "gamma": 0.1
+      },
+      "mean_selection_score": 0.9374081736050623,
+      "cases": [
+        {
+          "condition": "slow_overlap",
+          "family": "statistical",
+          "seed": 17,
+          "metrics": {
+            "observed_flow_iq_nrmse": 0.7060246832038224,
+            "observed_near_wall_iq_nrmse": 0.723370188584443,
+            "paired_flow_iq_nrmse": 0.6984853468731053,
+            "paired_near_wall_iq_nrmse": 0.7167315371203085,
+            "tissue_only_background_power_ratio": 8.939437508622943e-07,
+            "tissue_only_flow_power_to_blood_ratio": 0.012716754525496561,
+            "near_wall_output_power_to_blood_ratio": 0.8158504354865884,
+            "near_wall_velocity_coverage": 1.0,
+            "near_wall_velocity_mae_vs_blood_iq_mps": 0.0006068552463196692,
+            "near_wall_velocity_mae_vs_prescribed_mps": 0.0007365032900554045,
+            "blood_only_near_wall_velocity_mae_vs_prescribed_mps": 0.0005512941179121122,
+            "near_wall_pixel_count": 16,
+            "velocity_gate_power_fraction": 0.01,
+            "mean_valid_near_wall_coherence": 0.9625803341726766
+          },
+          "diagnostics": {
+            "method": "cauchy_rpca_core",
+            "iterations": 120,
+            "converged": false,
+            "relative_change": 0.23918441426344833,
+            "relative_residual": 0.00016893130473247855,
+            "normalization_rms": 72.10324051729019,
+            "sparse_lambda": 0.03,
+            "gamma": 0.1,
+            "admm_mu": 0.35511786851712174,
+            "randomized_downsampling": false,
+            "noise_model": "absorbed into low-rank/sparse"
+          },
+          "fit_seconds": 0.5149676629953319,
+          "selection_score": 0.8145107706789364
+        },
+        {
+          "condition": "weak_decorrelating",
+          "family": "statistical",
+          "seed": 17,
+          "metrics": {
+            "observed_flow_iq_nrmse": 1.1150376436882363,
+            "observed_near_wall_iq_nrmse": 1.047027468367117,
+            "paired_flow_iq_nrmse": 0.29242449192986697,
+            "paired_near_wall_iq_nrmse": 0.28803109549359457,
+            "tissue_only_background_power_ratio": 8.818668724953286e-05,
+            "tissue_only_flow_power_to_blood_ratio": 1.2514653820679995,
+            "near_wall_output_power_to_blood_ratio": 1.9522390803174083,
+            "near_wall_velocity_coverage": 1.0,
+            "near_wall_velocity_mae_vs_blood_iq_mps": 0.010964824901215996,
+            "near_wall_velocity_mae_vs_prescribed_mps": 0.0120118055146151,
+            "blood_only_near_wall_velocity_mae_vs_prescribed_mps": 0.0023336956724989127,
+            "near_wall_pixel_count": 16,
+            "velocity_gate_power_fraction": 0.01,
+            "mean_valid_near_wall_coherence": 0.37379603806679773
+          },
+          "diagnostics": {
+            "method": "cauchy_rpca_core",
+            "iterations": 120,
+            "converged": false,
+            "relative_change": 0.1882634100631104,
+            "relative_residual": 0.0004203923800153026,
+            "normalization_rms": 72.11206842872089,
+            "sparse_lambda": 0.03,
+            "gamma": 0.1,
+            "admm_mu": 0.35517499460695573,
+            "randomized_downsampling": false,
+            "noise_model": "absorbed into low-rank/sparse"
+          },
+          "fit_seconds": 0.5294655020043137,
+          "selection_score": 0.8447021126313965
+        },
+        {
+          "condition": "psf_bulk_motion",
+          "family": "psf_scatterer",
+          "seed": 17,
+          "metrics": {
+            "observed_flow_iq_nrmse": 0.9587447285218418,
+            "observed_near_wall_iq_nrmse": 1.0059928759680123,
+            "paired_flow_iq_nrmse": 0.9575801729241873,
+            "paired_near_wall_iq_nrmse": 1.0046435010167887,
+            "tissue_only_background_power_ratio": 8.495619321023606e-05,
+            "tissue_only_flow_power_to_blood_ratio": 0.005354099998426472,
+            "near_wall_output_power_to_blood_ratio": 0.00896573281747589,
+            "near_wall_velocity_coverage": 0.5,
+            "near_wall_velocity_mae_vs_blood_iq_mps": 0.024039753971180064,
+            "near_wall_velocity_mae_vs_prescribed_mps": 0.02394063773252512,
+            "blood_only_near_wall_velocity_mae_vs_prescribed_mps": 0.0007060648263401603,
+            "near_wall_pixel_count": 16,
+            "velocity_gate_power_fraction": 0.01,
+            "mean_valid_near_wall_coherence": 0.3798138411216269
+          },
+          "diagnostics": {
+            "method": "cauchy_rpca_core",
+            "iterations": 120,
+            "converged": false,
+            "relative_change": 0.1446333407698702,
+            "relative_residual": 0.00022204871900678429,
+            "normalization_rms": 20.048328991833362,
+            "sparse_lambda": 0.03,
+            "gamma": 0.1,
+            "admm_mu": 0.3914158340358423,
+            "randomized_downsampling": false,
+            "noise_model": "absorbed into low-rank/sparse"
+          },
+          "fit_seconds": 0.4978996499994537,
+          "selection_score": 1.045564205085758
+        },
+        {
+          "condition": "psf_deforming_tissue",
+          "family": "psf_scatterer",
+          "seed": 17,
+          "metrics": {
+            "observed_flow_iq_nrmse": 1.0075321283301197,
+            "observed_near_wall_iq_nrmse": 1.0073611309956003,
+            "paired_flow_iq_nrmse": 1.004010502856423,
+            "paired_near_wall_iq_nrmse": 1.000240370161534,
+            "tissue_only_background_power_ratio": 7.029277524987705e-05,
+            "tissue_only_flow_power_to_blood_ratio": 0.007613549441362932,
+            "near_wall_output_power_to_blood_ratio": 0.013714561973297838,
+            "near_wall_velocity_coverage": 0.75,
+            "near_wall_velocity_mae_vs_blood_iq_mps": 0.009192734372867007,
+            "near_wall_velocity_mae_vs_prescribed_mps": 0.00936673751667586,
+            "blood_only_near_wall_velocity_mae_vs_prescribed_mps": 0.00036556202098962296,
+            "near_wall_pixel_count": 16,
+            "velocity_gate_power_fraction": 0.01,
+            "mean_valid_near_wall_coherence": 0.4289161558769283
+          },
+          "diagnostics": {
+            "method": "cauchy_rpca_core",
+            "iterations": 120,
+            "converged": false,
+            "relative_change": 0.1370319404939113,
+            "relative_residual": 0.00017519448565056657,
+            "normalization_rms": 20.17806099149195,
+            "sparse_lambda": 0.03,
+            "gamma": 0.1,
+            "admm_mu": 0.4032901913571656,
+            "randomized_downsampling": false,
+            "noise_model": "absorbed into low-rank/sparse"
+          },
+          "fit_seconds": 0.45933745599904796,
+          "selection_score": 1.044855606024158
+        }
+      ]
+    },
+    {
+      "method": "cauchy_rpca_core",
+      "candidate_index": 1,
+      "params": {
+        "sparse_lambda": 0.1,
+        "gamma": 0.1
+      },
+      "mean_selection_score": 0.9771746041588953,
+      "cases": [
+        {
+          "condition": "slow_overlap",
+          "family": "statistical",
+          "seed": 17,
+          "metrics": {
+            "observed_flow_iq_nrmse": 0.7573738493198829,
+            "observed_near_wall_iq_nrmse": 0.8721034618493724,
+            "paired_flow_iq_nrmse": 0.7500011308098158,
+            "paired_near_wall_iq_nrmse": 0.869791979073848,
+            "tissue_only_background_power_ratio": 7.868977681834285e-07,
+            "tissue_only_flow_power_to_blood_ratio": 0.011203460121912973,
+            "near_wall_output_power_to_blood_ratio": 0.6207761113919191,
+            "near_wall_velocity_coverage": 1.0,
+            "near_wall_velocity_mae_vs_blood_iq_mps": 0.00044389456684629995,
+            "near_wall_velocity_mae_vs_prescribed_mps": 0.000610439653939199,
+            "blood_only_near_wall_velocity_mae_vs_prescribed_mps": 0.0005512941179121122,
+            "near_wall_pixel_count": 16,
+            "velocity_gate_power_fraction": 0.01,
+            "mean_valid_near_wall_coherence": 0.9505251315803493
+          },
+          "diagnostics": {
+            "method": "cauchy_rpca_core",
+            "iterations": 120,
+            "converged": false,
+            "relative_change": 0.3385544507402575,
+            "relative_residual": 0.001066125045197255,
+            "normalization_rms": 72.10324051729019,
+            "sparse_lambda": 0.1,
+            "gamma": 0.1,
+            "admm_mu": 0.35511786851712174,
+            "randomized_downsampling": false,
+            "noise_model": "absorbed into low-rank/sparse"
+          },
+          "fit_seconds": 0.4554563089986914,
+          "selection_score": 0.9399919737171746
+        },
+        {
+          "condition": "weak_decorrelating",
+          "family": "statistical",
+          "seed": 17,
+          "metrics": {
+            "observed_flow_iq_nrmse": 0.9944959312679035,
+            "observed_near_wall_iq_nrmse": 0.9365575451184464,
+            "paired_flow_iq_nrmse": 0.5596147835531791,
+            "paired_near_wall_iq_nrmse": 0.546538247367332,
+            "tissue_only_background_power_ratio": 3.5878601206883266e-05,
+            "tissue_only_flow_power_to_blood_ratio": 0.4994678102231854,
+            "near_wall_output_power_to_blood_ratio": 1.5810944690286644,
+            "near_wall_velocity_coverage": 1.0,
+            "near_wall_velocity_mae_vs_blood_iq_mps": 0.009979808249698656,
+            "near_wall_velocity_mae_vs_prescribed_mps": 0.010936938240877537,
+            "blood_only_near_wall_velocity_mae_vs_prescribed_mps": 0.0023336956724989127,
+            "near_wall_pixel_count": 16,
+            "velocity_gate_power_fraction": 0.01,
+            "mean_valid_near_wall_coherence": 0.4056920946916198
+          },
+          "diagnostics": {
+            "method": "cauchy_rpca_core",
+            "iterations": 120,
+            "converged": false,
+            "relative_change": 0.4982282098240103,
+            "relative_residual": 0.0032954682565388047,
+            "normalization_rms": 72.11206842872089,
+            "sparse_lambda": 0.1,
+            "gamma": 0.1,
+            "admm_mu": 0.35517499460695573,
+            "randomized_downsampling": false,
+            "noise_model": "absorbed into low-rank/sparse"
+          },
+          "fit_seconds": 0.4943011479990673,
+          "selection_score": 0.8796377455974049
+        },
+        {
+          "condition": "psf_bulk_motion",
+          "family": "psf_scatterer",
+          "seed": 17,
+          "metrics": {
+            "observed_flow_iq_nrmse": 0.9848107911996754,
+            "observed_near_wall_iq_nrmse": 1.006664805872119,
+            "paired_flow_iq_nrmse": 0.9837998012402334,
+            "paired_near_wall_iq_nrmse": 1.0066676934640217,
+            "tissue_only_background_power_ratio": 2.2503992673651156e-05,
+            "tissue_only_flow_power_to_blood_ratio": 0.006033441947311286,
+            "near_wall_output_power_to_blood_ratio": 0.007803495334190296,
+            "near_wall_velocity_coverage": 0.4375,
+            "near_wall_velocity_mae_vs_blood_iq_mps": 0.04173256673420056,
+            "near_wall_velocity_mae_vs_prescribed_mps": 0.041928640132379395,
+            "blood_only_near_wall_velocity_mae_vs_prescribed_mps": 0.0007060648263401603,
+            "near_wall_pixel_count": 16,
+            "velocity_gate_power_fraction": 0.01,
+            "mean_valid_near_wall_coherence": 0.16855524118403056
+          },
+          "diagnostics": {
+            "method": "cauchy_rpca_core",
+            "iterations": 120,
+            "converged": false,
+            "relative_change": 0.3739120448479547,
+            "relative_residual": 0.001223104637274484,
+            "normalization_rms": 20.048328991833362,
+            "sparse_lambda": 0.1,
+            "gamma": 0.1,
+            "admm_mu": 0.3914158340358423,
+            "randomized_downsampling": false,
+            "noise_model": "absorbed into low-rank/sparse"
+          },
+          "fit_seconds": 0.44662465199508006,
+          "selection_score": 1.0451613587009847
+        },
+        {
+          "condition": "psf_deforming_tissue",
+          "family": "psf_scatterer",
+          "seed": 17,
+          "metrics": {
+            "observed_flow_iq_nrmse": 1.0101004439643109,
+            "observed_near_wall_iq_nrmse": 1.0063193260648857,
+            "paired_flow_iq_nrmse": 1.0082015142272616,
+            "paired_near_wall_iq_nrmse": 1.0020989408536705,
+            "tissue_only_background_power_ratio": 2.5403509075466962e-05,
+            "tissue_only_flow_power_to_blood_ratio": 0.006273958470937941,
+            "near_wall_output_power_to_blood_ratio": 0.009090273460458563,
+            "near_wall_velocity_coverage": 0.5,
+            "near_wall_velocity_mae_vs_blood_iq_mps": 0.005939072959955058,
+            "near_wall_velocity_mae_vs_prescribed_mps": 0.0063436731449531564,
+            "blood_only_near_wall_velocity_mae_vs_prescribed_mps": 0.00036556202098962296,
+            "near_wall_pixel_count": 16,
+            "velocity_gate_power_fraction": 0.01,
+            "mean_valid_near_wall_coherence": 0.5202997212948723
+          },
+          "diagnostics": {
+            "method": "cauchy_rpca_core",
+            "iterations": 120,
+            "converged": false,
+            "relative_change": 0.30177697869055803,
+            "relative_residual": 0.0010516116976539245,
+            "normalization_rms": 20.17806099149195,
+            "sparse_lambda": 0.1,
+            "gamma": 0.1,
+            "admm_mu": 0.4032901913571656,
+            "randomized_downsampling": false,
+            "noise_model": "absorbed into low-rank/sparse"
+          },
+          "fit_seconds": 0.5156246749975253,
+          "selection_score": 1.043907338620017
+        }
+      ]
+    },
+    {
+      "method": "cauchy_rpca_core",
+      "candidate_index": 2,
+      "params": {
+        "sparse_lambda": 0.3,
+        "gamma": 0.1
+      },
+      "mean_selection_score": 1.1177705880016295,
+      "cases": [
+        {
+          "condition": "slow_overlap",
+          "family": "statistical",
+          "seed": 17,
+          "metrics": {
+            "observed_flow_iq_nrmse": 1.040921772180679,
+            "observed_near_wall_iq_nrmse": 1.08829606659987,
+            "paired_flow_iq_nrmse": 1.0416838694961805,
+            "paired_near_wall_iq_nrmse": 1.0939021957192312,
+            "tissue_only_background_power_ratio": 1.4199150278219277e-07,
+            "tissue_only_flow_power_to_blood_ratio": 0.0021304712727597793,
+            "near_wall_output_power_to_blood_ratio": 0.5610839369596624,
+            "near_wall_velocity_coverage": 1.0,
+            "near_wall_velocity_mae_vs_blood_iq_mps": 0.02277239618620395,
+            "near_wall_velocity_mae_vs_prescribed_mps": 0.022993715468475673,
+            "blood_only_near_wall_velocity_mae_vs_prescribed_mps": 0.0005512941179121122,
+            "near_wall_pixel_count": 16,
+            "velocity_gate_power_fraction": 0.01,
+            "mean_valid_near_wall_coherence": 0.22931322935690726
+          },
+          "diagnostics": {
+            "method": "cauchy_rpca_core",
+            "iterations": 120,
+            "converged": false,
+            "relative_change": 1.0098377397665472,
+            "relative_residual": 0.008103815175838225,
+            "normalization_rms": 72.10324051729019,
+            "sparse_lambda": 0.3,
+            "gamma": 0.1,
+            "admm_mu": 0.35511786851712174,
+            "randomized_downsampling": false,
+            "noise_model": "absorbed into low-rank/sparse"
+          },
+          "fit_seconds": 0.5330968839989509,
+          "selection_score": 1.1058659963481055
+        },
+        {
+          "condition": "weak_decorrelating",
+          "family": "statistical",
+          "seed": 17,
+          "metrics": {
+            "observed_flow_iq_nrmse": 1.3309488506235803,
+            "observed_near_wall_iq_nrmse": 1.3157357887434349,
+            "paired_flow_iq_nrmse": 1.4205152335941211,
+            "paired_near_wall_iq_nrmse": 1.3405251645863114,
+            "tissue_only_background_power_ratio": 7.67122967541113e-05,
+            "tissue_only_flow_power_to_blood_ratio": 1.1333803026968199,
+            "near_wall_output_power_to_blood_ratio": 1.9861720452273492,
+            "near_wall_velocity_coverage": 1.0,
+            "near_wall_velocity_mae_vs_blood_iq_mps": 0.02187138442259574,
+            "near_wall_velocity_mae_vs_prescribed_mps": 0.021465816114202858,
+            "blood_only_near_wall_velocity_mae_vs_prescribed_mps": 0.0023336956724989127,
+            "near_wall_pixel_count": 16,
+            "velocity_gate_power_fraction": 0.01,
+            "mean_valid_near_wall_coherence": 0.21082873402183847
+          },
+          "diagnostics": {
+            "method": "cauchy_rpca_core",
+            "iterations": 120,
+            "converged": false,
+            "relative_change": 1.2308818468474374,
+            "relative_residual": 0.01849946309791878,
+            "normalization_rms": 72.11206842872089,
+            "sparse_lambda": 0.3,
+            "gamma": 0.1,
+            "admm_mu": 0.35517499460695573,
+            "randomized_downsampling": false,
+            "noise_model": "absorbed into low-rank/sparse"
+          },
+          "fit_seconds": 0.526176564002526,
+          "selection_score": 1.2664435301815085
+        },
+        {
+          "condition": "psf_bulk_motion",
+          "family": "psf_scatterer",
+          "seed": 17,
+          "metrics": {
+            "observed_flow_iq_nrmse": 0.9954934502105003,
+            "observed_near_wall_iq_nrmse": 1.0093420190777684,
+            "paired_flow_iq_nrmse": 1.0002723998105758,
+            "paired_near_wall_iq_nrmse": 1.0123483184023712,
+            "tissue_only_background_power_ratio": 4.8855138387295234e-05,
+            "tissue_only_flow_power_to_blood_ratio": 0.024546456335287667,
+            "near_wall_output_power_to_blood_ratio": 0.023560062094217505,
+            "near_wall_velocity_coverage": 0.8125,
+            "near_wall_velocity_mae_vs_blood_iq_mps": 0.041564743465433936,
+            "near_wall_velocity_mae_vs_prescribed_mps": 0.041316880060945596,
+            "blood_only_near_wall_velocity_mae_vs_prescribed_mps": 0.0007060648263401603,
+            "near_wall_pixel_count": 16,
+            "velocity_gate_power_fraction": 0.01,
+            "mean_valid_near_wall_coherence": 0.23745830664551637
+          },
+          "diagnostics": {
+            "method": "cauchy_rpca_core",
+            "iterations": 120,
+            "converged": false,
+            "relative_change": 1.1389728825783465,
+            "relative_residual": 0.008914065784897148,
+            "normalization_rms": 20.048328991833362,
+            "sparse_lambda": 0.3,
+            "gamma": 0.1,
+            "admm_mu": 0.3914158340358423,
+            "randomized_downsampling": false,
+            "noise_model": "absorbed into low-rank/sparse"
+          },
+          "fit_seconds": 0.5907731059996877,
+          "selection_score": 1.0484332173412445
+        },
+        {
+          "condition": "psf_deforming_tissue",
+          "family": "psf_scatterer",
+          "seed": 17,
+          "metrics": {
+            "observed_flow_iq_nrmse": 1.0078503149449536,
+            "observed_near_wall_iq_nrmse": 1.0126882095488203,
+            "paired_flow_iq_nrmse": 1.0128756999507968,
+            "paired_near_wall_iq_nrmse": 1.0130656564745528,
+            "tissue_only_background_power_ratio": 5.208420640386448e-05,
+            "tissue_only_flow_power_to_blood_ratio": 0.02912090242954168,
+            "near_wall_output_power_to_blood_ratio": 0.015977723640696814,
+            "near_wall_velocity_coverage": 0.6875,
+            "near_wall_velocity_mae_vs_blood_iq_mps": 0.05264223169658482,
+            "near_wall_velocity_mae_vs_prescribed_mps": 0.05291062436195872,
+            "blood_only_near_wall_velocity_mae_vs_prescribed_mps": 0.00036556202098962296,
+            "near_wall_pixel_count": 16,
+            "velocity_gate_power_fraction": 0.01,
+            "mean_valid_near_wall_coherence": 0.2723874458100468
+          },
+          "diagnostics": {
+            "method": "cauchy_rpca_core",
+            "iterations": 120,
+            "converged": false,
+            "relative_change": 1.4774537450359464,
+            "relative_residual": 0.00847004005505117,
+            "normalization_rms": 20.17806099149195,
+            "sparse_lambda": 0.3,
+            "gamma": 0.1,
+            "admm_mu": 0.4032901913571656,
+            "randomized_downsampling": false,
+            "noise_model": "absorbed into low-rank/sparse"
+          },
+          "fit_seconds": 0.464945681997051,
+          "selection_score": 1.0503396081356595
+        }
+      ]
+    },
+    {
+      "method": "cauchy_rpca_core",
+      "candidate_index": 3,
+      "params": {
+        "sparse_lambda": 1.0,
+        "gamma": 0.1
+      },
+      "mean_selection_score": 1.1275977663010928,
+      "cases": [
+        {
+          "condition": "slow_overlap",
+          "family": "statistical",
+          "seed": 17,
+          "metrics": {
+            "observed_flow_iq_nrmse": 1.1844607075316296,
+            "observed_near_wall_iq_nrmse": 1.342392443949238,
+            "paired_flow_iq_nrmse": 1.1706194469181888,
+            "paired_near_wall_iq_nrmse": 1.3384766282858342,
+            "tissue_only_background_power_ratio": 2.5451238780907507e-07,
+            "tissue_only_flow_power_to_blood_ratio": 0.0036746263168020276,
+            "near_wall_output_power_to_blood_ratio": 1.2522555737663776,
+            "near_wall_velocity_coverage": 0.9375,
+            "near_wall_velocity_mae_vs_blood_iq_mps": 0.009131480571864007,
+            "near_wall_velocity_mae_vs_prescribed_mps": 0.0089756087092647,
+            "blood_only_near_wall_velocity_mae_vs_prescribed_mps": 0.0005512941179121122,
+            "near_wall_pixel_count": 16,
+            "velocity_gate_power_fraction": 0.01,
+            "mean_valid_near_wall_coherence": 0.3151861221369289
+          },
+          "diagnostics": {
+            "method": "cauchy_rpca_core",
+            "iterations": 120,
+            "converged": false,
+            "relative_change": 1.051206228863165,
+            "relative_residual": 0.011500718345001675,
+            "normalization_rms": 72.10324051729019,
+            "sparse_lambda": 1.0,
+            "gamma": 0.1,
+            "admm_mu": 0.35511786851712174,
+            "randomized_downsampling": false,
+            "noise_model": "absorbed into low-rank/sparse"
+          },
+          "fit_seconds": 0.5625160429990501,
+          "selection_score": 1.2759277610972006
+        },
+        {
+          "condition": "weak_decorrelating",
+          "family": "statistical",
+          "seed": 17,
+          "metrics": {
+            "observed_flow_iq_nrmse": 1.1459796616301765,
+            "observed_near_wall_iq_nrmse": 1.0968302916067756,
+            "paired_flow_iq_nrmse": 1.2421296371711619,
+            "paired_near_wall_iq_nrmse": 1.2175424508806894,
+            "tissue_only_background_power_ratio": 3.4335008673396375e-05,
+            "tissue_only_flow_power_to_blood_ratio": 0.47847950879414103,
+            "near_wall_output_power_to_blood_ratio": 0.4401959086060701,
+            "near_wall_velocity_coverage": 0.9375,
+            "near_wall_velocity_mae_vs_blood_iq_mps": 0.02204608108541401,
+            "near_wall_velocity_mae_vs_prescribed_mps": 0.02232395723641192,
+            "blood_only_near_wall_velocity_mae_vs_prescribed_mps": 0.0023336956724989127,
+            "near_wall_pixel_count": 16,
+            "velocity_gate_power_fraction": 0.01,
+            "mean_valid_near_wall_coherence": 0.10225261407795488
+          },
+          "diagnostics": {
+            "method": "cauchy_rpca_core",
+            "iterations": 120,
+            "converged": false,
+            "relative_change": 1.4749536585495238,
+            "relative_residual": 0.019586853858576215,
+            "normalization_rms": 72.11206842872089,
+            "sparse_lambda": 1.0,
+            "gamma": 0.1,
+            "admm_mu": 0.35517499460695573,
+            "randomized_downsampling": false,
+            "noise_model": "absorbed into low-rank/sparse"
+          },
+          "fit_seconds": 0.5846012270048959,
+          "selection_score": 1.1393121327808022
+        },
+        {
+          "condition": "psf_bulk_motion",
+          "family": "psf_scatterer",
+          "seed": 17,
+          "metrics": {
+            "observed_flow_iq_nrmse": 0.9992425101004682,
+            "observed_near_wall_iq_nrmse": 1.001183470979247,
+            "paired_flow_iq_nrmse": 0.9999381458225933,
+            "paired_near_wall_iq_nrmse": 1.002352279652984,
+            "tissue_only_background_power_ratio": 2.054981162889479e-05,
+            "tissue_only_flow_power_to_blood_ratio": 0.0010838944334213253,
+            "near_wall_output_power_to_blood_ratio": 0.0012599157364474856,
+            "near_wall_velocity_coverage": 0.125,
+            "near_wall_velocity_mae_vs_blood_iq_mps": 0.001130613513683847,
+            "near_wall_velocity_mae_vs_prescribed_mps": 0.0021599999999999987,
+            "blood_only_near_wall_velocity_mae_vs_prescribed_mps": 0.0007060648263401603,
+            "near_wall_pixel_count": 16,
+            "velocity_gate_power_fraction": 0.01,
+            "mean_valid_near_wall_coherence": 0.0
+          },
+          "diagnostics": {
+            "method": "cauchy_rpca_core",
+            "iterations": 120,
+            "converged": false,
+            "relative_change": 4.200411265733554,
+            "relative_residual": 0.010041236572773006,
+            "normalization_rms": 20.048328991833362,
+            "sparse_lambda": 1.0,
+            "gamma": 0.1,
+            "admm_mu": 0.3914158340358423,
+            "randomized_downsampling": false,
+            "noise_model": "absorbed into low-rank/sparse"
+          },
+          "fit_seconds": 0.6110194650027552,
+          "selection_score": 1.041310630196544
+        },
+        {
+          "condition": "psf_deforming_tissue",
+          "family": "psf_scatterer",
+          "seed": 17,
+          "metrics": {
+            "observed_flow_iq_nrmse": 1.0216094970860925,
+            "observed_near_wall_iq_nrmse": 1.020706927427002,
+            "paired_flow_iq_nrmse": 1.01540092455875,
+            "paired_near_wall_iq_nrmse": 1.0117518171197815,
+            "tissue_only_background_power_ratio": 4.460821065376433e-05,
+            "tissue_only_flow_power_to_blood_ratio": 0.02854290393120321,
+            "near_wall_output_power_to_blood_ratio": 0.04704905474160933,
+            "near_wall_velocity_coverage": 1.0,
+            "near_wall_velocity_mae_vs_blood_iq_mps": 0.03944804953685422,
+            "near_wall_velocity_mae_vs_prescribed_mps": 0.03931207341905354,
+            "blood_only_near_wall_velocity_mae_vs_prescribed_mps": 0.00036556202098962296,
+            "near_wall_pixel_count": 16,
+            "velocity_gate_power_fraction": 0.01,
+            "mean_valid_near_wall_coherence": 0.2166790718893472
+          },
+          "diagnostics": {
+            "method": "cauchy_rpca_core",
+            "iterations": 120,
+            "converged": false,
+            "relative_change": 1.0246147131642527,
+            "relative_residual": 0.010593808005596518,
+            "normalization_rms": 20.17806099149195,
+            "sparse_lambda": 1.0,
+            "gamma": 0.1,
+            "admm_mu": 0.4032901913571656,
+            "randomized_downsampling": false,
+            "noise_model": "absorbed into low-rank/sparse"
+          },
+          "fit_seconds": 0.5707291389990132,
+          "selection_score": 1.053840541129824
+        }
+      ]
+    },
+    {
+      "method": "batch_irls_reconstruction",
+      "candidate_index": 0,
+      "params": {
+        "low_rank_lambda": 0.03,
+        "sparse_mu": 0.003,
+        "rank": 12,
+        "epsilon": 0.02
+      },
+      "mean_selection_score": 0.9536139751346848,
+      "cases": [
+        {
+          "condition": "slow_overlap",
+          "family": "statistical",
+          "seed": 17,
+          "metrics": {
+            "observed_flow_iq_nrmse": 0.7434829144132101,
+            "observed_near_wall_iq_nrmse": 0.8693058937872634,
+            "paired_flow_iq_nrmse": 0.737016947931691,
+            "paired_near_wall_iq_nrmse": 0.8666863119169035,
+            "tissue_only_background_power_ratio": 6.501009811109416e-07,
+            "tissue_only_flow_power_to_blood_ratio": 0.009089924457426582,
+            "near_wall_output_power_to_blood_ratio": 0.6772935774625758,
+            "near_wall_velocity_coverage": 1.0,
+            "near_wall_velocity_mae_vs_blood_iq_mps": 0.0005190803745957105,
+            "near_wall_velocity_mae_vs_prescribed_mps": 0.000626339830667514,
+            "blood_only_near_wall_velocity_mae_vs_prescribed_mps": 0.0005512941179121122,
+            "near_wall_pixel_count": 16,
+            "velocity_gate_power_fraction": 0.01,
+            "mean_valid_near_wall_coherence": 0.9627567403459906
+          },
+          "diagnostics": {
+            "method": "batch_irls_reconstruction",
+            "iterations": 120,
+            "converged": false,
+            "relative_change": 1.2928720049075774e-05,
+            "relative_residual": 0.0006675914903142616,
+            "normalization_rms": 72.10324051729019,
+            "low_rank_lambda": 0.03,
+            "sparse_mu": 0.003,
+            "factor_rank": 12,
+            "epsilon": 0.02,
+            "chen_paper_parity_verified": false,
+            "noise_model": "quadratic residual"
+          },
+          "fit_seconds": 0.09024808600224787,
+          "selection_score": 0.9376626003957331
+        },
+        {
+          "condition": "weak_decorrelating",
+          "family": "statistical",
+          "seed": 17,
+          "metrics": {
+            "observed_flow_iq_nrmse": 1.0260104244900767,
+            "observed_near_wall_iq_nrmse": 0.9662762032987484,
+            "paired_flow_iq_nrmse": 0.24678930485729533,
+            "paired_near_wall_iq_nrmse": 0.2511599702729413,
+            "tissue_only_background_power_ratio": 6.742295689027945e-05,
+            "tissue_only_flow_power_to_blood_ratio": 0.9544729565519791,
+            "near_wall_output_power_to_blood_ratio": 1.7737689880591583,
+            "near_wall_velocity_coverage": 1.0,
+            "near_wall_velocity_mae_vs_blood_iq_mps": 0.009797410904583534,
+            "near_wall_velocity_mae_vs_prescribed_mps": 0.010942136805145976,
+            "blood_only_near_wall_velocity_mae_vs_prescribed_mps": 0.0023336956724989127,
+            "near_wall_pixel_count": 16,
+            "velocity_gate_power_fraction": 0.01,
+            "mean_valid_near_wall_coherence": 0.4062005114103223
+          },
+          "diagnostics": {
+            "method": "batch_irls_reconstruction",
+            "iterations": 28,
+            "converged": true,
+            "relative_change": 9.422143937210906e-06,
+            "relative_residual": 0.0016061762993212182,
+            "normalization_rms": 72.11206842872089,
+            "low_rank_lambda": 0.03,
+            "sparse_mu": 0.003,
+            "factor_rank": 12,
+            "epsilon": 0.02,
+            "chen_paper_parity_verified": false,
+            "noise_model": "quadratic residual"
+          },
+          "fit_seconds": 0.02399388100457145,
+          "selection_score": 0.7895209840635284
+        },
+        {
+          "condition": "psf_bulk_motion",
+          "family": "psf_scatterer",
+          "seed": 17,
+          "metrics": {
+            "observed_flow_iq_nrmse": 0.9731579816484621,
+            "observed_near_wall_iq_nrmse": 1.0047005780773226,
+            "paired_flow_iq_nrmse": 0.971856129885299,
+            "paired_near_wall_iq_nrmse": 1.0038991745942942,
+            "tissue_only_background_power_ratio": 3.022871934767135e-05,
+            "tissue_only_flow_power_to_blood_ratio": 0.004578144142417905,
+            "near_wall_output_power_to_blood_ratio": 0.0065117812347311324,
+            "near_wall_velocity_coverage": 0.4375,
+            "near_wall_velocity_mae_vs_blood_iq_mps": 0.03431005777759764,
+            "near_wall_velocity_mae_vs_prescribed_mps": 0.034359167035074904,
+            "blood_only_near_wall_velocity_mae_vs_prescribed_mps": 0.0007060648263401603,
+            "near_wall_pixel_count": 16,
+            "velocity_gate_power_fraction": 0.01,
+            "mean_valid_near_wall_coherence": 0.2229931330435352
+          },
+          "diagnostics": {
+            "method": "batch_irls_reconstruction",
+            "iterations": 42,
+            "converged": true,
+            "relative_change": 9.252327925249159e-06,
+            "relative_residual": 0.000829766083087304,
+            "normalization_rms": 20.048328991833362,
+            "low_rank_lambda": 0.03,
+            "sparse_mu": 0.003,
+            "factor_rank": 12,
+            "epsilon": 0.02,
+            "chen_paper_parity_verified": false,
+            "noise_model": "quadratic residual"
+          },
+          "fit_seconds": 0.04812130599748343,
+          "selection_score": 1.0436458093771779
+        },
+        {
+          "condition": "psf_deforming_tissue",
+          "family": "psf_scatterer",
+          "seed": 17,
+          "metrics": {
+            "observed_flow_iq_nrmse": 1.009271245648055,
+            "observed_near_wall_iq_nrmse": 1.0061575892963566,
+            "paired_flow_iq_nrmse": 1.0058278814634496,
+            "paired_near_wall_iq_nrmse": 0.999507944450099,
+            "tissue_only_background_power_ratio": 4.784911398081962e-05,
+            "tissue_only_flow_power_to_blood_ratio": 0.006479700690186773,
+            "near_wall_output_power_to_blood_ratio": 0.01281323419558392,
+            "near_wall_velocity_coverage": 0.6875,
+            "near_wall_velocity_mae_vs_blood_iq_mps": 0.00816331472824286,
+            "near_wall_velocity_mae_vs_prescribed_mps": 0.00835981988542869,
+            "blood_only_near_wall_velocity_mae_vs_prescribed_mps": 0.00036556202098962296,
+            "near_wall_pixel_count": 16,
+            "velocity_gate_power_fraction": 0.01,
+            "mean_valid_near_wall_coherence": 0.43525785106013026
+          },
+          "diagnostics": {
+            "method": "batch_irls_reconstruction",
+            "iterations": 92,
+            "converged": true,
+            "relative_change": 9.91022042630306e-06,
+            "relative_residual": 0.0009003272926672392,
+            "normalization_rms": 20.17806099149195,
+            "low_rank_lambda": 0.03,
+            "sparse_mu": 0.003,
+            "factor_rank": 12,
+            "epsilon": 0.02,
+            "chen_paper_parity_verified": false,
+            "noise_model": "quadratic residual"
+          },
+          "fit_seconds": 0.08865791100106435,
+          "selection_score": 1.0436265067023
+        }
+      ]
+    },
+    {
+      "method": "batch_irls_reconstruction",
+      "candidate_index": 1,
+      "params": {
+        "low_rank_lambda": 0.1,
+        "sparse_mu": 0.01,
+        "rank": 12,
+        "epsilon": 0.02
+      },
+      "mean_selection_score": 0.9155799224286618,
+      "cases": [
+        {
+          "condition": "slow_overlap",
+          "family": "statistical",
+          "seed": 17,
+          "metrics": {
+            "observed_flow_iq_nrmse": 0.6921519565209561,
+            "observed_near_wall_iq_nrmse": 0.7426487540582609,
+            "paired_flow_iq_nrmse": 0.6881079347371344,
+            "paired_near_wall_iq_nrmse": 0.7412143370115026,
+            "tissue_only_background_power_ratio": 3.927579108579852e-07,
+            "tissue_only_flow_power_to_blood_ratio": 0.005349022070033002,
+            "near_wall_output_power_to_blood_ratio": 0.5147044452497216,
+            "near_wall_velocity_coverage": 1.0,
+            "near_wall_velocity_mae_vs_blood_iq_mps": 0.000524014292458666,
+            "near_wall_velocity_mae_vs_prescribed_mps": 0.0006449559603430609,
+            "blood_only_near_wall_velocity_mae_vs_prescribed_mps": 0.0005512941179121122,
+            "near_wall_pixel_count": 16,
+            "velocity_gate_power_fraction": 0.01,
+            "mean_valid_near_wall_coherence": 0.9702790502963914
+          },
+          "diagnostics": {
+            "method": "batch_irls_reconstruction",
+            "iterations": 18,
+            "converged": true,
+            "relative_change": 7.63909426210851e-06,
+            "relative_residual": 0.002201832269426517,
+            "normalization_rms": 72.10324051729019,
+            "low_rank_lambda": 0.1,
+            "sparse_mu": 0.01,
+            "factor_rank": 12,
+            "epsilon": 0.02,
+            "chen_paper_parity_verified": false,
+            "noise_model": "quadratic residual"
+          },
+          "fit_seconds": 0.040018985004280694,
+          "selection_score": 0.8327054655181347
+        },
+        {
+          "condition": "weak_decorrelating",
+          "family": "statistical",
+          "seed": 17,
+          "metrics": {
+            "observed_flow_iq_nrmse": 0.8707205394641969,
+            "observed_near_wall_iq_nrmse": 0.8193035370068468,
+            "paired_flow_iq_nrmse": 0.3374662640768505,
+            "paired_near_wall_iq_nrmse": 0.3377228966846773,
+            "tissue_only_background_power_ratio": 4.199795097816098e-05,
+            "tissue_only_flow_power_to_blood_ratio": 0.5925384126588461,
+            "near_wall_output_power_to_blood_ratio": 1.156343210318226,
+            "near_wall_velocity_coverage": 1.0,
+            "near_wall_velocity_mae_vs_blood_iq_mps": 0.009858846686553714,
+            "near_wall_velocity_mae_vs_prescribed_mps": 0.011016015217552817,
+            "blood_only_near_wall_velocity_mae_vs_prescribed_mps": 0.0023336956724989127,
+            "near_wall_pixel_count": 16,
+            "velocity_gate_power_fraction": 0.01,
+            "mean_valid_near_wall_coherence": 0.40252597213465224
+          },
+          "diagnostics": {
+            "method": "batch_irls_reconstruction",
+            "iterations": 13,
+            "converged": true,
+            "relative_change": 9.476380562493538e-06,
+            "relative_residual": 0.00462484285396466,
+            "normalization_rms": 72.11206842872089,
+            "low_rank_lambda": 0.1,
+            "sparse_mu": 0.01,
+            "factor_rank": 12,
+            "epsilon": 0.02,
+            "chen_paper_parity_verified": false,
+            "noise_model": "quadratic residual"
+          },
+          "fit_seconds": 0.014490214001853019,
+          "selection_score": 0.7447763748065049
+        },
+        {
+          "condition": "psf_bulk_motion",
+          "family": "psf_scatterer",
+          "seed": 17,
+          "metrics": {
+            "observed_flow_iq_nrmse": 0.9728115683250101,
+            "observed_near_wall_iq_nrmse": 1.0029983890407121,
+            "paired_flow_iq_nrmse": 0.9721845426471021,
+            "paired_near_wall_iq_nrmse": 1.0026166092762643,
+            "tissue_only_background_power_ratio": 4.9745806996434005e-05,
+            "tissue_only_flow_power_to_blood_ratio": 0.0029764062069483096,
+            "near_wall_output_power_to_blood_ratio": 0.004042437917626995,
+            "near_wall_velocity_coverage": 0.3125,
+            "near_wall_velocity_mae_vs_blood_iq_mps": 0.042063827521349774,
+            "near_wall_velocity_mae_vs_prescribed_mps": 0.04181272888358793,
+            "blood_only_near_wall_velocity_mae_vs_prescribed_mps": 0.0007060648263401603,
+            "near_wall_pixel_count": 16,
+            "velocity_gate_power_fraction": 0.01,
+            "mean_valid_near_wall_coherence": 0.24573617659309815
+          },
+          "diagnostics": {
+            "method": "batch_irls_reconstruction",
+            "iterations": 23,
+            "converged": true,
+            "relative_change": 9.111093060456539e-06,
+            "relative_residual": 0.002369045909339037,
+            "normalization_rms": 20.048328991833362,
+            "low_rank_lambda": 0.1,
+            "sparse_mu": 0.01,
+            "factor_rank": 12,
+            "epsilon": 0.02,
+            "chen_paper_parity_verified": false,
+            "noise_model": "quadratic residual"
+          },
+          "fit_seconds": 0.02511720100301318,
+          "selection_score": 1.0428650171377678
+        },
+        {
+          "condition": "psf_deforming_tissue",
+          "family": "psf_scatterer",
+          "seed": 17,
+          "metrics": {
+            "observed_flow_iq_nrmse": 1.004435795681244,
+            "observed_near_wall_iq_nrmse": 1.0035326181220494,
+            "paired_flow_iq_nrmse": 1.0023622949435391,
+            "paired_near_wall_iq_nrmse": 0.9993719322121337,
+            "tissue_only_background_power_ratio": 3.2269556832864214e-05,
+            "tissue_only_flow_power_to_blood_ratio": 0.0038870359685529883,
+            "near_wall_output_power_to_blood_ratio": 0.007714759269509792,
+            "near_wall_velocity_coverage": 0.5,
+            "near_wall_velocity_mae_vs_blood_iq_mps": 0.004900738324138048,
+            "near_wall_velocity_mae_vs_prescribed_mps": 0.005305338509136145,
+            "blood_only_near_wall_velocity_mae_vs_prescribed_mps": 0.00036556202098962296,
+            "near_wall_pixel_count": 16,
+            "velocity_gate_power_fraction": 0.01,
+            "mean_valid_near_wall_coherence": 0.4872157365756821
+          },
+          "diagnostics": {
+            "method": "batch_irls_reconstruction",
+            "iterations": 28,
+            "converged": true,
+            "relative_change": 8.826123505328475e-06,
+            "relative_residual": 0.002480524094041398,
+            "normalization_rms": 20.17806099149195,
+            "low_rank_lambda": 0.1,
+            "sparse_mu": 0.01,
+            "factor_rank": 12,
+            "epsilon": 0.02,
+            "chen_paper_parity_verified": false,
+            "noise_model": "quadratic residual"
+          },
+          "fit_seconds": 0.024850453999533784,
+          "selection_score": 1.0419728322522401
+        }
+      ]
+    },
+    {
+      "method": "batch_irls_reconstruction",
+      "candidate_index": 2,
+      "params": {
+        "low_rank_lambda": 0.3,
+        "sparse_mu": 0.03,
+        "rank": 12,
+        "epsilon": 0.02
+      },
+      "mean_selection_score": 0.9300658232642346,
+      "cases": [
+        {
+          "condition": "slow_overlap",
+          "family": "statistical",
+          "seed": 17,
+          "metrics": {
+            "observed_flow_iq_nrmse": 0.7664212986467632,
+            "observed_near_wall_iq_nrmse": 0.7789756035522816,
+            "paired_flow_iq_nrmse": 0.7649259070934018,
+            "paired_near_wall_iq_nrmse": 0.7802322771366361,
+            "tissue_only_background_power_ratio": 1.5452166745379697e-07,
+            "tissue_only_flow_power_to_blood_ratio": 0.001928784347976884,
+            "near_wall_output_power_to_blood_ratio": 0.18142796773734315,
+            "near_wall_velocity_coverage": 1.0,
+            "near_wall_velocity_mae_vs_blood_iq_mps": 0.000521620974152999,
+            "near_wall_velocity_mae_vs_prescribed_mps": 0.0006447881748937528,
+            "blood_only_near_wall_velocity_mae_vs_prescribed_mps": 0.0005512941179121122,
+            "near_wall_pixel_count": 16,
+            "velocity_gate_power_fraction": 0.01,
+            "mean_valid_near_wall_coherence": 0.9706361410307422
+          },
+          "diagnostics": {
+            "method": "batch_irls_reconstruction",
+            "iterations": 7,
+            "converged": true,
+            "relative_change": 5.4542355610308565e-06,
+            "relative_residual": 0.004218887367380744,
+            "normalization_rms": 72.10324051729019,
+            "low_rank_lambda": 0.3,
+            "sparse_mu": 0.03,
+            "factor_rank": 12,
+            "epsilon": 0.02,
+            "chen_paper_parity_verified": false,
+            "noise_model": "quadratic residual"
+          },
+          "fit_seconds": 0.013388061001023743,
+          "selection_score": 0.8644127097073506
+        },
+        {
+          "condition": "weak_decorrelating",
+          "family": "statistical",
+          "seed": 17,
+          "metrics": {
+            "observed_flow_iq_nrmse": 0.7566735741322603,
+            "observed_near_wall_iq_nrmse": 0.7245665581549355,
+            "paired_flow_iq_nrmse": 0.5833265563816942,
+            "paired_near_wall_iq_nrmse": 0.5813411141254341,
+            "tissue_only_background_power_ratio": 1.478200404360258e-05,
+            "tissue_only_flow_power_to_blood_ratio": 0.20810728523461322,
+            "near_wall_output_power_to_blood_ratio": 0.41012394809358177,
+            "near_wall_velocity_coverage": 1.0,
+            "near_wall_velocity_mae_vs_blood_iq_mps": 0.009902226705596689,
+            "near_wall_velocity_mae_vs_prescribed_mps": 0.011054855660667395,
+            "blood_only_near_wall_velocity_mae_vs_prescribed_mps": 0.0023336956724989127,
+            "near_wall_pixel_count": 16,
+            "velocity_gate_power_fraction": 0.01,
+            "mean_valid_near_wall_coherence": 0.40236212032697394
+          },
+          "diagnostics": {
+            "method": "batch_irls_reconstruction",
+            "iterations": 7,
+            "converged": true,
+            "relative_change": 8.205599253400606e-06,
+            "relative_residual": 0.009481276244927438,
+            "normalization_rms": 72.11206842872089,
+            "low_rank_lambda": 0.3,
+            "sparse_mu": 0.03,
+            "factor_rank": 12,
+            "epsilon": 0.02,
+            "chen_paper_parity_verified": false,
+            "noise_model": "quadratic residual"
+          },
+          "fit_seconds": 0.012483048005378805,
+          "selection_score": 0.774407816770538
+        },
+        {
+          "condition": "psf_bulk_motion",
+          "family": "psf_scatterer",
+          "seed": 17,
+          "metrics": {
+            "observed_flow_iq_nrmse": 0.9704231339746723,
+            "observed_near_wall_iq_nrmse": 1.0013403568488457,
+            "paired_flow_iq_nrmse": 0.9702783193916888,
+            "paired_near_wall_iq_nrmse": 1.0013603047843551,
+            "tissue_only_background_power_ratio": 1.8388317635766397e-05,
+            "tissue_only_flow_power_to_blood_ratio": 0.0010728428372461106,
+            "near_wall_output_power_to_blood_ratio": 0.0020248048600399766,
+            "near_wall_velocity_coverage": 0.1875,
+            "near_wall_velocity_mae_vs_blood_iq_mps": 0.02382584087224522,
+            "near_wall_velocity_mae_vs_prescribed_mps": 0.024041858592596662,
+            "blood_only_near_wall_velocity_mae_vs_prescribed_mps": 0.0007060648263401603,
+            "near_wall_pixel_count": 16,
+            "velocity_gate_power_fraction": 0.01,
+            "mean_valid_near_wall_coherence": 0.28248570505006004
+          },
+          "diagnostics": {
+            "method": "batch_irls_reconstruction",
+            "iterations": 17,
+            "converged": true,
+            "relative_change": 8.934822210892462e-06,
+            "relative_residual": 0.006478200449529671,
+            "normalization_rms": 20.048328991833362,
+            "low_rank_lambda": 0.3,
+            "sparse_mu": 0.03,
+            "factor_rank": 12,
+            "epsilon": 0.02,
+            "chen_paper_parity_verified": false,
+            "noise_model": "quadratic residual"
+          },
+          "fit_seconds": 0.019451091000519227,
+          "selection_score": 1.041098114028177
+        },
+        {
+          "condition": "psf_deforming_tissue",
+          "family": "psf_scatterer",
+          "seed": 17,
+          "metrics": {
+            "observed_flow_iq_nrmse": 0.9990781143421138,
+            "observed_near_wall_iq_nrmse": 1.0009221429146902,
+            "paired_flow_iq_nrmse": 0.9983690599993081,
+            "paired_near_wall_iq_nrmse": 0.9993674149320032,
+            "tissue_only_background_power_ratio": 1.6067283916374362e-05,
+            "tissue_only_flow_power_to_blood_ratio": 0.0014773609154681779,
+            "near_wall_output_power_to_blood_ratio": 0.0028771413704881776,
+            "near_wall_velocity_coverage": 0.25,
+            "near_wall_velocity_mae_vs_blood_iq_mps": 0.0037570284466563685,
+            "near_wall_velocity_mae_vs_prescribed_mps": 0.004069400525954281,
+            "blood_only_near_wall_velocity_mae_vs_prescribed_mps": 0.00036556202098962296,
+            "near_wall_pixel_count": 16,
+            "velocity_gate_power_fraction": 0.01,
+            "mean_valid_near_wall_coherence": 0.5909205531966302
+          },
+          "diagnostics": {
+            "method": "batch_irls_reconstruction",
+            "iterations": 12,
+            "converged": true,
+            "relative_change": 8.973870086267182e-06,
+            "relative_residual": 0.005055461178552224,
+            "normalization_rms": 20.17806099149195,
+            "low_rank_lambda": 0.3,
+            "sparse_mu": 0.03,
+            "factor_rank": 12,
+            "epsilon": 0.02,
+            "chen_paper_parity_verified": false,
+            "noise_model": "quadratic residual"
+          },
+          "fit_seconds": 0.01383544399868697,
+          "selection_score": 1.0403446525508726
+        }
+      ]
+    },
+    {
+      "method": "batch_irls_reconstruction",
+      "candidate_index": 3,
+      "params": {
+        "low_rank_lambda": 1.0,
+        "sparse_mu": 0.1,
+        "rank": 12,
+        "epsilon": 0.02
+      },
+      "mean_selection_score": 0.9881550612037664,
+      "cases": [
+        {
+          "condition": "slow_overlap",
+          "family": "statistical",
+          "seed": 17,
+          "metrics": {
+            "observed_flow_iq_nrmse": 0.8923789047094015,
+            "observed_near_wall_iq_nrmse": 0.8912288528980719,
+            "paired_flow_iq_nrmse": 0.8920936191525386,
+            "paired_near_wall_iq_nrmse": 0.892659190397443,
+            "tissue_only_background_power_ratio": 4.326827415905804e-08,
+            "tissue_only_flow_power_to_blood_ratio": 0.000339104937654071,
+            "near_wall_output_power_to_blood_ratio": 0.0304785786203811,
+            "near_wall_velocity_coverage": 1.0,
+            "near_wall_velocity_mae_vs_blood_iq_mps": 0.0005193278585183434,
+            "near_wall_velocity_mae_vs_prescribed_mps": 0.0006407402837446158,
+            "blood_only_near_wall_velocity_mae_vs_prescribed_mps": 0.0005512941179121122,
+            "near_wall_pixel_count": 16,
+            "velocity_gate_power_fraction": 0.01,
+            "mean_valid_near_wall_coherence": 0.9712861627009113
+          },
+          "diagnostics": {
+            "method": "batch_irls_reconstruction",
+            "iterations": 4,
+            "converged": true,
+            "relative_change": 7.221473190617925e-06,
+            "relative_residual": 0.006000571649233964,
+            "normalization_rms": 72.10324051729019,
+            "low_rank_lambda": 1.0,
+            "sparse_mu": 0.1,
+            "factor_rank": 12,
+            "epsilon": 0.02,
+            "chen_paper_parity_verified": false,
+            "noise_model": "quadratic residual"
+          },
+          "fit_seconds": 0.005086102995846886,
+          "selection_score": 0.9562190794990271
+        },
+        {
+          "condition": "weak_decorrelating",
+          "family": "statistical",
+          "seed": 17,
+          "metrics": {
+            "observed_flow_iq_nrmse": 0.8565461715941945,
+            "observed_near_wall_iq_nrmse": 0.8468575584669,
+            "paired_flow_iq_nrmse": 0.8339321112109408,
+            "paired_near_wall_iq_nrmse": 0.8336084122931099,
+            "tissue_only_background_power_ratio": 2.404836648320017e-06,
+            "tissue_only_flow_power_to_blood_ratio": 0.033762911924208716,
+            "near_wall_output_power_to_blood_ratio": 0.06220779735719817,
+            "near_wall_velocity_coverage": 1.0,
+            "near_wall_velocity_mae_vs_blood_iq_mps": 0.009815003453009018,
+            "near_wall_velocity_mae_vs_prescribed_mps": 0.010941557498211282,
+            "blood_only_near_wall_velocity_mae_vs_prescribed_mps": 0.0023336956724989127,
+            "near_wall_pixel_count": 16,
+            "velocity_gate_power_fraction": 0.01,
+            "mean_valid_near_wall_coherence": 0.4087524206611317
+          },
+          "diagnostics": {
+            "method": "batch_irls_reconstruction",
+            "iterations": 4,
+            "converged": true,
+            "relative_change": 9.854885095787653e-06,
+            "relative_residual": 0.013824531372873596,
+            "normalization_rms": 72.11206842872089,
+            "low_rank_lambda": 1.0,
+            "sparse_mu": 0.1,
+            "factor_rank": 12,
+            "epsilon": 0.02,
+            "chen_paper_parity_verified": false,
+            "noise_model": "quadratic residual"
+          },
+          "fit_seconds": 0.008322293993842322,
+          "selection_score": 0.9166765864022532
+        },
+        {
+          "condition": "psf_bulk_motion",
+          "family": "psf_scatterer",
+          "seed": 17,
+          "metrics": {
+            "observed_flow_iq_nrmse": 0.9719707700552183,
+            "observed_near_wall_iq_nrmse": 1.0003181561855754,
+            "paired_flow_iq_nrmse": 0.9720690441090983,
+            "paired_near_wall_iq_nrmse": 1.000582048751131,
+            "tissue_only_background_power_ratio": 4.492452359954404e-06,
+            "tissue_only_flow_power_to_blood_ratio": 0.0001971431400787877,
+            "near_wall_output_power_to_blood_ratio": 0.0005697444461307389,
+            "near_wall_velocity_coverage": 0.0625,
+            "near_wall_velocity_mae_vs_blood_iq_mps": 0.0029701148845720704,
+            "near_wall_velocity_mae_vs_prescribed_mps": 0.0018882680892949098,
+            "blood_only_near_wall_velocity_mae_vs_prescribed_mps": 0.0007060648263401603,
+            "near_wall_pixel_count": 16,
+            "velocity_gate_power_fraction": 0.01,
+            "mean_valid_near_wall_coherence": 0.6017642266951636
+          },
+          "diagnostics": {
+            "method": "batch_irls_reconstruction",
+            "iterations": 15,
+            "converged": true,
+            "relative_change": 8.340026950310354e-06,
+            "relative_residual": 0.016921175496862045,
+            "normalization_rms": 20.048328991833362,
+            "low_rank_lambda": 1.0,
+            "sparse_mu": 0.1,
+            "factor_rank": 12,
+            "epsilon": 0.02,
+            "chen_paper_parity_verified": false,
+            "noise_model": "quadratic residual"
+          },
+          "fit_seconds": 0.015913210998405702,
+          "selection_score": 1.040115156170334
+        },
+        {
+          "condition": "psf_deforming_tissue",
+          "family": "psf_scatterer",
+          "seed": 17,
+          "metrics": {
+            "observed_flow_iq_nrmse": 0.9949742431177138,
+            "observed_near_wall_iq_nrmse": 0.9993803734955038,
+            "paired_flow_iq_nrmse": 0.994937507922273,
+            "paired_near_wall_iq_nrmse": 0.9993011943837363,
+            "tissue_only_background_power_ratio": 1.8679679303960517e-05,
+            "tissue_only_flow_power_to_blood_ratio": 0.0004909964977745908,
+            "near_wall_output_power_to_blood_ratio": 0.0013531531087263389,
+            "near_wall_velocity_coverage": 0.0625,
+            "near_wall_velocity_mae_vs_blood_iq_mps": 0.0008892993208934845,
+            "near_wall_velocity_mae_vs_prescribed_mps": 0.0008858890724054233,
+            "blood_only_near_wall_velocity_mae_vs_prescribed_mps": 0.00036556202098962296,
+            "near_wall_pixel_count": 16,
+            "velocity_gate_power_fraction": 0.01,
+            "mean_valid_near_wall_coherence": 0.9647147414792693
+          },
+          "diagnostics": {
+            "method": "batch_irls_reconstruction",
+            "iterations": 20,
+            "converged": true,
+            "relative_change": 8.978696384250806e-06,
+            "relative_residual": 0.015262029622166917,
+            "normalization_rms": 20.17806099149195,
+            "low_rank_lambda": 1.0,
+            "sparse_mu": 0.1,
+            "factor_rank": 12,
+            "epsilon": 0.02,
+            "chen_paper_parity_verified": false,
+            "noise_model": "quadratic residual"
+          },
+          "fit_seconds": 0.03697739700146485,
+          "selection_score": 1.0396094227434516
+        }
+      ]
+    }
+  ]
+}

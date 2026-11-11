@@ -23,6 +23,11 @@ README_ADD = (
     "capture inventory is unfilled; there is no physical outcome yet.\n"
 )
 CI_OLD = "      - run: python scripts/verify_transport_lag_information.py\n"
+CI_RPCA_SOURCE_OLD = "--exclude-current-source esdiva_aperture.py\n"
+CI_RPCA_SOURCE_NEW = "--exclude-current-source esdiva_aperture.py --exclude-current-source rpca_comparators.py\n"
+CI_RPCA_V07_OLD = "                     Path('src/btbench/esdiva_aperture.py')]\n"
+CI_RPCA_V07_NEW = ("                     Path('src/btbench/esdiva_aperture.py'),\n"
+                   "                     Path('src/btbench/rpca_comparators.py')]\n")
 CI_NEW = (
     "      - run: python scripts/verify_transport_lag_historical_checkout.py\n"
     "      - run: python scripts/verify_transport_lag_physical.py\n"
@@ -33,10 +38,15 @@ def original_bytes():
     readme, ci = README.read_bytes(), CI.read_bytes()
     addition = README_ADD.encode()
     current_ci = CI_NEW.encode()
-    if readme.count(addition) != 1 or ci.count(current_ci) != 1:
+    rpca_source = CI_RPCA_SOURCE_NEW.encode()
+    rpca_v07 = CI_RPCA_V07_NEW.encode()
+    if (readme.count(addition) != 1 or ci.count(current_ci) != 1 or
+            ci.count(rpca_source) != 1 or ci.count(rpca_v07) != 1):
         raise ValueError("Unexpected README/CI edits; historical checkout cannot be reconstructed")
     original_readme = readme.replace(addition, b"", 1)
     original_ci = ci.replace(current_ci, CI_OLD.encode(), 1)
+    original_ci = original_ci.replace(rpca_source, CI_RPCA_SOURCE_OLD.encode(), 1)
+    original_ci = original_ci.replace(rpca_v07, CI_RPCA_V07_OLD.encode(), 1)
     expected = json.loads(MANIFEST.read_text())["sha256"]
     for path, data in (("README.md", original_readme),
                        (".github/workflows/ci.yml", original_ci)):

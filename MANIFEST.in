@@ -1,4 +1,4 @@
-include README.md pyproject.toml requirements-tested.txt
+include README.md RESEARCH_ARCHIVE.md LICENSE pyproject.toml requirements-tested.txt
 recursive-include tests *.py
 recursive-include configs *.json
 recursive-include examples *.py

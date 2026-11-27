@@ -1,8 +1,9 @@
 """Run the original transport-lag archive verifier against its frozen docs.
 
-README and CI gained *only* the later physical-study additions. Recover their
-original exact bytes for the historical hash check, restore even on failure.
-The old archive, manifest, numerical source and verifier are never rewritten.
+The full research README is preserved in RESEARCH_ARCHIVE.md after the public
+landing page was shortened. Recover its original exact bytes and the frozen
+CI for the historical hash check, then restore current files even on failure.
+The old study archive, manifest, numerical source and verifier are never rewritten.
 """
 import argparse
 import hashlib
@@ -13,6 +14,7 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 README = ROOT / "README.md"
+ARCHIVED_README = ROOT / "RESEARCH_ARCHIVE.md"
 CI = ROOT / ".github/workflows/ci.yml"
 MANIFEST = ROOT / "runs/transport_lag_information_v1/manifest.json"
 
@@ -38,16 +40,17 @@ CI_NEW = (
 
 def original_bytes():
     readme, ci = README.read_bytes(), CI.read_bytes()
+    archived_readme = ARCHIVED_README.read_bytes()
     addition = README_ADD.encode()
     current_ci = CI_NEW.encode()
     rpca_source = CI_RPCA_SOURCE_NEW.encode()
     rpca_v07 = CI_RPCA_V07_NEW.encode()
     temp_change = CI_TEMP_NEW.encode()
-    if (readme.count(addition) != 1 or ci.count(current_ci) != 1 or
+    if (archived_readme.count(addition) != 1 or ci.count(current_ci) != 1 or
             ci.count(rpca_source) != 1 or ci.count(rpca_v07) != 1 or
             ci.count(temp_change) != 1):
         raise ValueError("Unexpected README/CI edits; historical checkout cannot be reconstructed")
-    original_readme = readme.replace(addition, b"", 1)
+    original_readme = archived_readme.replace(addition, b"", 1)
     original_ci = ci.replace(current_ci, CI_OLD.encode(), 1)
     original_ci = original_ci.replace(rpca_source, CI_RPCA_SOURCE_OLD.encode(), 1)
     original_ci = original_ci.replace(rpca_v07, CI_RPCA_V07_OLD.encode(), 1)
